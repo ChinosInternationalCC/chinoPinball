@@ -19,6 +19,19 @@ void testApp::setup() {
 	world.setCamera(&camera);
 	world.setGravity( ofVec3f(0, 25., 0) );
 
+    
+    int ii = 0;
+    idBall = 0;
+    shapes.push_back( new ofxBulletSphere() );
+    ii = shapes.size()-1;
+    ((ofxBulletSphere*)shapes[ii])->init(sphereShape);
+    // no need to pass radius, since we already created it in the sphereShape //
+    ((ofxBulletSphere*)shapes[ii])->create(world.world, ofVec3f(0,0,0), 0.1);
+    shapes[ii]->setActivationState( DISABLE_DEACTIVATION );
+    shapes[ii]->add();
+    bColliding.push_back( false );
+    
+    /**
 	int ii = 0;
 	// let's make a shape that all of the rigid bodies use, since it is faster //
 	// though all of the spheres will be the same radius //
@@ -45,7 +58,7 @@ void testApp::setup() {
 		shapes[ii]->add();
 		bColliding.push_back( false );
 	}
-
+*/
 	ofVec3f startLoc;
 	ofPoint dimens;
 	boundsWidth = 30.;
@@ -100,12 +113,14 @@ void testApp::update() {
 		ofVec3f mouseLoc = camera.screenToWorld( ofVec3f((float)ofGetMouseX(), (float)ofGetMouseY(), 0) );
 		mouseLoc.z += 15;
 		ofVec3f diff;
-		for(int i = 0; i < shapes.size(); i++) {
+		
+        for(int i = 0; i < shapes.size(); i++) {
 			diff = mouseLoc - shapes[i]->getPosition();
 			diff *= 2.f;
 			if (!bAddCenterAttract) diff *= -1.f;
 			shapes[i]->applyCentralForce( diff );
 		}
+        
 	}
 
 	world.update();
@@ -206,7 +221,7 @@ void testApp::keyPressed(int key) {
 	ofVec3f mouseLoc = camera.screenToWorld( ofVec3f((float)ofGetMouseX(), (float)ofGetMouseY(), 0) );
 	float rsize = ofRandom(.3, 1.8);
 	mouseLoc.z += 15;
-
+    
 	switch (key) {
 		case OF_KEY_DEL:
 			if(mousePickIndex > -1) {
@@ -242,9 +257,15 @@ void testApp::keyPressed(int key) {
 		case ' ':
 			bSpacebar = true;
 			break;
+            
+		case 'p':
+            shapes[idBall]->applyCentralForce(ofVec3f(0,0,+1)*100);
+			break;
+            
 		case 'f':
 			bAddCenterAttract = !bAddCenterAttract;
 			break;
+
 		default:
 			break;
 	}

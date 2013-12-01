@@ -43,4 +43,7 @@ public:
 	
 	ofCamera					camera;
 		
+    // pinball variables
+    
+    int idBall;
 };
