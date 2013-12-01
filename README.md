@@ -2,5 +2,3 @@ chinoPinball
 ============
 
 Pinball
-
-Prueba Bruno
