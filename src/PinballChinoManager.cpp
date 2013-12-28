@@ -19,16 +19,28 @@ void PinballChinoManager::setup(){
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
     
 	world.setup();
-	world.enableGrabbing();
-	//world.enableDebugDraw();
 	world.setCamera(&camera);
+    
+    myScenario.setup(world);
     
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
+    
+	world.update();
+    myScenario.update();
+    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::draw(){
+    
+	glEnable( GL_DEPTH_TEST );
+	camera.begin();
+	
+    myScenario.draw();
+	
+	camera.end();
+    
 }
