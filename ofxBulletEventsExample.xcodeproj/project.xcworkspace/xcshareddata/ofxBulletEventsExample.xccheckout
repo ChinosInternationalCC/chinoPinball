@@ -5,42 +5,38 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>47C1D8F4-16F6-44BF-8AFB-E7575DE42FCD</string>
+	<string>389EAA5E-7350-47D3-9D76-EEEF593BEA9C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ofxBulletEventsExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4D363E1C-681E-4C1B-9296-CC14C4FC5DDF</key>
-		<string>https://github.com/NickHardeman/ofxBullet.git</string>
-		<key>4E021EA7-75F2-4ECA-88F1-DC060C2AF37C</key>
-		<string>https://github.com/openframeworks/openFrameworks.git</string>
-		<key>F17E1187-D284-4AAD-ACB7-27340F3588C5</key>
-		<string>https://github.com/aluizioneto/chinoPinball.git</string>
+		<key>38556980-93AA-4E6A-826E-BD61015920A1</key>
+		<string>https://github.com/ovicin/chinoPinball.git</string>
+		<key>5ECBB68F-B67B-477E-B07D-34D180A2911E</key>
+		<string>https://github.com/NickHardeman/ofxBullet</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>addons/ofxBullet/chinoPinball/ofxBulletEventsExample.xcodeproj/project.xcworkspace</string>
+	<string>chinoPinball/ofxBulletEventsExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4D363E1C-681E-4C1B-9296-CC14C4FC5DDF</key>
-		<string>../../..</string>
-		<key>4E021EA7-75F2-4ECA-88F1-DC060C2AF37C</key>
-		<string>../../../../..</string>
-		<key>F17E1187-D284-4AAD-ACB7-27340F3588C5</key>
+		<key>38556980-93AA-4E6A-826E-BD61015920A1</key>
 		<string>../..</string>
+		<key>5ECBB68F-B67B-477E-B07D-34D180A2911E</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/aluizioneto/chinoPinball.git</string>
+	<string>https://github.com/ovicin/chinoPinball.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4E021EA7-75F2-4ECA-88F1-DC060C2AF37C</string>
+	<string>5ECBB68F-B67B-477E-B07D-34D180A2911E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F17E1187-D284-4AAD-ACB7-27340F3588C5</string>
+			<string>38556980-93AA-4E6A-826E-BD61015920A1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>chinoPinball</string>
 		</dict>
@@ -48,17 +44,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4D363E1C-681E-4C1B-9296-CC14C4FC5DDF</string>
+			<string>5ECBB68F-B67B-477E-B07D-34D180A2911E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxBullet</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4E021EA7-75F2-4ECA-88F1-DC060C2AF37C</string>
-			<key>IDESourceControlWCCName</key>
-			<string>openFrameworks</string>
 		</dict>
 	</array>
 </dict>
