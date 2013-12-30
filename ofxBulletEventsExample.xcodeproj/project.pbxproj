@@ -19,6 +19,9 @@
 		2EEF326B17BB2A74003CFA1C /* ofxBulletCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319517BB2A73003CFA1C /* ofxBulletCylinder.cpp */; };
 		2EEF326C17BB2A74003CFA1C /* ofxBulletSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319717BB2A73003CFA1C /* ofxBulletSphere.cpp */; };
 		2EFCD34217BB3B6B00C9A987 /* ofxBulletConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */; };
+		A59A1028187225D200BA19E5 /* ScenarioEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */; };
+		A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A10291872260B00BA19E5 /* SimpleMission.cpp */; };
+		A59A102E1872262500BA19E5 /* objDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A102C1872262500BA19E5 /* objDisplay.cpp */; };
 		A5E981BC1870DFAA00BCDF4E /* SimpleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981BA1870DFAA00BCDF4E /* SimpleObject.cpp */; };
 		A5E981C61870DFD600BCDF4E /* PinballChinoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981BE1870DFD600BCDF4E /* PinballChinoManager.cpp */; };
 		A5E981C71870DFD600BCDF4E /* Scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981C31870DFD600BCDF4E /* Scenario.cpp */; };
@@ -107,6 +110,12 @@
 		2EEF319817BB2A73003CFA1C /* ofxBulletSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletSphere.h; sourceTree = "<group>"; };
 		2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletConvexShape.cpp; sourceTree = "<group>"; };
 		2EFCD34117BB3B6B00C9A987 /* ofxBulletConvexShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletConvexShape.h; sourceTree = "<group>"; };
+		A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScenarioEditor.cpp; sourceTree = "<group>"; };
+		A59A1027187225D200BA19E5 /* ScenarioEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioEditor.h; sourceTree = "<group>"; };
+		A59A10291872260B00BA19E5 /* SimpleMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMission.cpp; sourceTree = "<group>"; };
+		A59A102A1872260B00BA19E5 /* SimpleMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMission.h; sourceTree = "<group>"; };
+		A59A102C1872262500BA19E5 /* objDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = objDisplay.cpp; sourceTree = "<group>"; };
+		A59A102D1872262500BA19E5 /* objDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objDisplay.h; sourceTree = "<group>"; };
 		A5E981BA1870DFAA00BCDF4E /* SimpleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleObject.cpp; sourceTree = "<group>"; };
 		A5E981BB1870DFAA00BCDF4E /* SimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleObject.h; sourceTree = "<group>"; };
 		A5E981BE1870DFD600BCDF4E /* PinballChinoManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PinballChinoManager.cpp; sourceTree = "<group>"; };
@@ -271,6 +280,8 @@
 		A5E981C01870DFD600BCDF4E /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				A59A102C1872262500BA19E5 /* objDisplay.cpp */,
+				A59A102D1872262500BA19E5 /* objDisplay.h */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -278,6 +289,8 @@
 		A5E981C11870DFD600BCDF4E /* Missions */ = {
 			isa = PBXGroup;
 			children = (
+				A59A10291872260B00BA19E5 /* SimpleMission.cpp */,
+				A59A102A1872260B00BA19E5 /* SimpleMission.h */,
 			);
 			path = Missions;
 			sourceTree = "<group>";
@@ -294,6 +307,8 @@
 		A5E981C51870DFD600BCDF4E /* ScenarioEditor */ = {
 			isa = PBXGroup;
 			children = (
+				A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */,
+				A59A1027187225D200BA19E5 /* ScenarioEditor.h */,
 			);
 			path = ScenarioEditor;
 			sourceTree = "<group>";
@@ -485,8 +500,11 @@
 				2EEF326417BB2A74003CFA1C /* ofxBulletWorldRigid.cpp in Sources */,
 				2EEF326517BB2A74003CFA1C /* GLDebugDrawer.cpp in Sources */,
 				2EEF326617BB2A74003CFA1C /* ofxBulletBaseShape.cpp in Sources */,
+				A59A1028187225D200BA19E5 /* ScenarioEditor.cpp in Sources */,
+				A59A102E1872262500BA19E5 /* objDisplay.cpp in Sources */,
 				2EEF326717BB2A74003CFA1C /* ofxBulletBox.cpp in Sources */,
 				2EEF326817BB2A74003CFA1C /* ofxBulletCapsule.cpp in Sources */,
+				A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */,
 				A5E981C61870DFD600BCDF4E /* PinballChinoManager.cpp in Sources */,
 				2EEF326917BB2A74003CFA1C /* ofxBulletCone.cpp in Sources */,
 				2EEF326A17BB2A74003CFA1C /* ofxBulletCustomShape.cpp in Sources */,
