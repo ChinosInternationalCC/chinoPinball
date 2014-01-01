@@ -1,2 +1,15 @@
-bin/ofxBulletEventsExampleDebug.app
-ofxBulletEventsExample.xcodeproj/project.xcworkspace/xcuserdata/ovidiu.xcuserdatad/UserInterfaceState.xcuserstate
+#xcode files
+*.mode*
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata/
+
+#builds
+build/
+obj/
+*.o
+*.app
+
+#mac files
+.DS_Store
