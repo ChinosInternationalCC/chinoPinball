@@ -9,6 +9,7 @@
 
 #include "ofxBullet.h"
 #include "SimpleObject.h"
+#include "Ball.h"
 
 class Scenario {
     
@@ -19,7 +20,8 @@ public:
     
     ofxBulletWorldRigid *     world;
     
-    SimpleObject              ball;
+    SimpleObject              m_sphere;
+    Ball                      m_Ball;
     
     
 };
