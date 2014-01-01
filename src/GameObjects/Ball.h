@@ -13,12 +13,12 @@
 #include "ofxBullet.h"
 
 
-class Ball{
+class Ball : ofxBulletSphere{
 public:
     Ball(void);
     void setup(ofxBulletWorldRigid &world);
     void update(void);
-    void draw(void);
+    void drawBall(void);
     bool isInsideScenario(ofBoxPrimitive box);
     bool setGameOverBall(void); //callback from GameOverCollision,
                                 //returns true if the status was changed, false if already set
@@ -31,7 +31,7 @@ public:
 
 private:
     BallStatus m_status; // waiting, playing, game over
-    ofxBulletSphere *BulletBallShape; // generic bullet shape object
+   // ofxBulletSphere *BulletBallShape; // generic bullet shape object
 };
 
 #endif /* defined(__ofxBulletEventsExample__Ball__) */
