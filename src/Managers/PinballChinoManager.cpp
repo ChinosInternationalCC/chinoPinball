@@ -38,6 +38,9 @@ void PinballChinoManager::draw(){
     
 	glEnable( GL_DEPTH_TEST );
 	camera.begin();
+    
+    // debug draw
+	world.drawDebug();
 	
     myScenario.draw();
 	

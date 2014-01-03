@@ -21,7 +21,7 @@ void Ball::setup(ofxBulletWorldRigid &world){
 	BulletBallShape->create(world.world, ofVec3f(0, 0, 0), 0.1, .25);
 	BulletBallShape->add();*/
     
-    this->create(world.world, ofVec3f(0, 0, 0), 0.1, .25);
+    this->create(world.world, ofVec3f(2, 0, 0), 0.1, .25);
     this->add();
 }
 
@@ -31,11 +31,11 @@ void Ball::update(void){
 }
 
 //--------------------------------------------------------------
-void Ball::drawBall(void){
+void Ball::draw(void){
     
 	ofSetColor(225, 225, 225);
 	//BulletBallShape->draw();
-    this->draw();
+    ofxBulletSphere::draw();
     
 }
 
