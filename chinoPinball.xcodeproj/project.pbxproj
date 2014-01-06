@@ -26,6 +26,7 @@
 		A5E981C61870DFD600BCDF4E /* PinballChinoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981BE1870DFD600BCDF4E /* PinballChinoManager.cpp */; };
 		A5E981C71870DFD600BCDF4E /* Scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981C31870DFD600BCDF4E /* Scenario.cpp */; };
 		A5E981CA1870E06600BCDF4E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981C81870E06600BCDF4E /* Ball.cpp */; };
+		A7412AD3187B43A9000C881F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7412AD1187B43A9000C881F /* Lever.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -124,6 +125,8 @@
 		A5E981C41870DFD600BCDF4E /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
 		A5E981C81870E06600BCDF4E /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
 		A5E981C91870E06600BCDF4E /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		A7412AD1187B43A9000C881F /* Lever.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lever.cpp; sourceTree = "<group>"; };
+		A7412AD2187B43A9000C881F /* Lever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lever.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -260,6 +263,8 @@
 		A5E981B91870DFAA00BCDF4E /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				A7412AD1187B43A9000C881F /* Lever.cpp */,
+				A7412AD2187B43A9000C881F /* Lever.h */,
 				A5E981BA1870DFAA00BCDF4E /* SimpleObject.cpp */,
 				A5E981BB1870DFAA00BCDF4E /* SimpleObject.h */,
 				A5E981C81870E06600BCDF4E /* Ball.cpp */,
@@ -514,6 +519,7 @@
 				2EFCD34217BB3B6B00C9A987 /* ofxBulletConvexShape.cpp in Sources */,
 				A5E981C71870DFD600BCDF4E /* Scenario.cpp in Sources */,
 				2E78C20917D8CCDF0020A15A /* ofxBulletStaticPlane.cpp in Sources */,
+				A7412AD3187B43A9000C881F /* Lever.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +548,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -577,6 +584,7 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
