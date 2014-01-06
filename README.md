@@ -9,8 +9,19 @@ Finally, edit how to edit the scenario for dinamic scenes. After warp objects to
 
 
 GITHUB ( fork and master branch )
-Dude, where's my fork? Each chinos has to make a fork in Github and after
-clone it to you git client. So your machine will save u fork. 
-When a big change it's clear, we will push it to the master branch from chinos group. 
+Dude, where's my fork? 
+Each developer has to fork in his Github ( click on website fork ) 
+Then
+clone it to you git client 
+	>> git clone http://GitHubProjectAdresss
+develop your code
+upload your changes to your github branch 
+	>> git stage xxx file
+	>> git commit -m 'message to the statge files'
+	>> git push or git push -u origin master
+When finally
+u wanna merge it, to chinos  master branch 
+push from origin to master 	
+	>> git push -u origin masterChinos
 
 
