@@ -6,6 +6,8 @@
 //
 //
 
+#pragma once
+
 #ifndef __ofxBulletEventsExample__ScenarioEditor__
 #define __ofxBulletEventsExample__ScenarioEditor__
 

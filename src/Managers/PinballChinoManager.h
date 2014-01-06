@@ -7,6 +7,8 @@
 //  Description: La clase mas basica que actualiza el mundo, el estado del juego, y puede crear/tener mas de un escenario.
 //
 
+#pragma once
+
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "Scenario.h"

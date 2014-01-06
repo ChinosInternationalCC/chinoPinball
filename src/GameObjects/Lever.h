@@ -6,15 +6,22 @@
 //
 //
 
-#include "ofxBullet.h"
+#pragma once
 
-class Lever : public ofxBulletBox {
+#include "SimpleObject.h"
+
+class Lever : public SimpleObject {
     
 public:
-	void setup(ofxBulletWorldRigid &world);
-	void update();
-	void draw();
+	
+	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void update();
+	virtual void draw();
     
+	ofxBulletBox	body;
     ofxBulletJoint joint;
+	
+	//ofxBulletSphere *           shape; // generic bullet shape object. it is a sphere only for testing.
+    
     
 };

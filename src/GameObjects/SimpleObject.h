@@ -6,24 +6,55 @@
 //
 //
 
-#include "ofxBullet.h"
+#pragma once
 
+#include "ofMain.h"
+#include "ofxBullet.h"
+//#include "objDisplay.h"
+
+
+enum shapeType{
+	ShapeTypeBall = 0,
+	ShapeTypeSimpleBox,
+	ShapeTypeSpring,
+	ShapeTypeLever,
+	ShapeTypeContainer
+};
+
+ 
 class SimpleObject {
     
 public:
-	void setup(ofxBulletWorldRigid &world);
-	void update();
-	void draw();
+	
+	SimpleObject();
+	//virtual  ~SimpleObject();
+	
+	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void update();
+	virtual void draw();
     
-    enum {
-        ShapeTypeBall = 0,
-        ShapeTypeSimpleBox,
-        ShapeTypeSpring,
-        ShapeTypeLever,
-        ShapeTypeContainer
-    }shapeType;
-    
-    ofxBulletWorldRigid *       world;
-    ofxBulletSphere *           shape; // generic bullet shape object. it is a sphere only for testing.
-    
+	//general vars
+	int idobject;
+    ofMatrix4x4 worldposition;
+	ofVec3f centroide;
+	bool bvisible;
+	int colisionCounter;
+	
+	//physics vars
+	//enum {Static/dynamic/Kinematic}
+	float damping;
+	float friction;
+	
+	//var status
+	bool bAnimation;
+	
+	//var events
+	//ofEvent bColision;
+	bool bColision;
+	
+	//graphic vars
+	//objDisplay mygraphicobject;
+	
+	
+   
 };
