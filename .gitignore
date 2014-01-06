@@ -13,3 +13,10 @@ obj/
 
 #mac files
 .DS_Store
+*.pbxproj
+
+*.pbxproj
+
+chinoPinball.xcodeproj/project.pbxproj
+
+chinoPinball.xcodeproj/project.pbxproj
