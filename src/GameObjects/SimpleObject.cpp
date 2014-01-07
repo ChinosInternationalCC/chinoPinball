@@ -8,13 +8,13 @@
 
 #include "SimpleObject.h"
 
+SimpleObject::SimpleObject(){
+	idobject = -1;
+	bAnimation = false;
+}
+
 //--------------------------------------------------------------
 void SimpleObject::setup(ofxBulletWorldRigid &world){
-    
-    shape = new ofxBulletSphere();
-	shape->create(world.world, ofVec3f(0, 0, 0), 0.1, .25);
-	shape->add();
-    
 }
 
 //--------------------------------------------------------------
@@ -23,8 +23,4 @@ void SimpleObject::update(){
 
 //--------------------------------------------------------------
 void SimpleObject::draw(){
-    
-	ofSetColor(225, 225, 225);
-	shape->draw();
-    
 }

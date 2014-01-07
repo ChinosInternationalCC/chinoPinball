@@ -13,12 +13,12 @@
 #include "ofxBullet.h"
 
 
-class Ball : ofxBulletSphere{
+class Ball : public ofxBulletSphere{
 public:
     Ball(void);
     void setup(ofxBulletWorldRigid &world);
     void update(void);
-    void drawBall(void);
+    void draw(void);
     bool isInsideScenario(ofBoxPrimitive box);
     bool setGameOverBall(void); //callback from GameOverCollision,
                                 //returns true if the status was changed, false if already set

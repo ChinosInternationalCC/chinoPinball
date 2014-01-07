@@ -11,8 +11,9 @@
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &world){
     
-    m_sphere.setup(world);
+    //m_sphere.setup(world);
     m_Ball.setup(world);
+    leverLeft.setup(world);
     
 }
 
@@ -23,7 +24,8 @@ void Scenario::update(){
 //--------------------------------------------------------------
 void Scenario::draw(){
     
-    m_sphere.draw();
-    m_Ball.drawBall();
+    //m_sphere.draw();
+    m_Ball.draw();
+    leverLeft.draw();
     
 }

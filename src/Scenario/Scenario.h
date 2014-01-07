@@ -7,9 +7,12 @@
 //  Description: Responsable por inicializar y controlar los elementos de un escenario del juego.
 //
 
+#pragma once
+
 #include "ofxBullet.h"
-#include "SimpleObject.h"
+
 #include "Ball.h"
+#include "Lever.h"
 
 class Scenario {
     
@@ -20,8 +23,9 @@ public:
     
     ofxBulletWorldRigid *     world;
     
-    SimpleObject              m_sphere;
+ 
     Ball                      m_Ball;
+    Lever                     leverLeft;
     
     
 };
