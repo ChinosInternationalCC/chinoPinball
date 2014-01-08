@@ -19,6 +19,7 @@ void Scenario::setup(ofxBulletWorldRigid &world){
 
 //--------------------------------------------------------------
 void Scenario::update(){
+	leverLeft.update();
 }
 
 //--------------------------------------------------------------
