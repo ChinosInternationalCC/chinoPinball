@@ -13,7 +13,6 @@
 
 #include "Ball.h"
 #include "Lever.h"
-#include "LeverKinematic.h"
 
 class Scenario {
     
