@@ -1,0 +1,22 @@
+#xcode files
+*.mode*
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata/
+
+#builds
+build/
+obj/
+*.o
+*.app
+
+#mac files
+.DS_Store
+*.pbxproj
+
+*.pbxproj
+
+chinoPinball.xcodeproj/project.pbxproj
+
+chinoPinball.xcodeproj/project.pbxproj
