@@ -6,10 +6,10 @@
 //
 //
 
-#include "Lever.h"
+#include "LeverKinematic.h"
 
 //---------------------------------
-void Lever::setup(ofxBulletWorldRigid &world){
+void LeverKinematic::setup(ofxBulletWorldRigid &world){
     
     body.create(world.world, ofVec3f(3, 4, 0), 0, 4, .5, .5); // we set m=0 for kinematic body
     body.add();
@@ -24,12 +24,12 @@ void Lever::setup(ofxBulletWorldRigid &world){
     speed = 15;    // degrees per frame
     
     // rotate lever to lower position
-    rotate(lowerLimit, 0, 0);
+    rotateLever(lowerLimit, 0, 0); 
     
 }
 
 //--------------------------------------------------------------
-void Lever::update(){
+void LeverKinematic::update(){
     
 	// get current rotation
     ofVec3f rotation = body.getRotation();
@@ -39,21 +39,21 @@ void Lever::update(){
     {
         if (rotationX < upperLimit) // rotate up
         {
-            rotate(rotationX + speed, 0, 0);
+            rotateLever(rotationX + speed, 0, 0);
         }
     }
     else
     {
         if (rotationX > lowerLimit) // rotate down
         {
-            rotate(rotationX - speed, 0, 0);
+            rotateLever(rotationX - speed, 0, 0);
         }
     }
     
 }
 
 //--------------------------------------------------------------
-void Lever::draw(){
+void LeverKinematic::draw(){
     
 	ofSetColor(0, 255, 0);
     body.draw();
@@ -61,21 +61,21 @@ void Lever::draw(){
 }
 
 //--------------------------------------------------------------
-void Lever::keyPressed(ofKeyEventArgs& key) {
+void LeverKinematic::keyPressed(ofKeyEventArgs& key) {
 	
 	isKeyPressed = true;
     
 }
 
 //--------------------------------------------------------------
-void Lever::keyReleased(ofKeyEventArgs& key) {
+void LeverKinematic::keyReleased(ofKeyEventArgs& key) {
 	
 	isKeyPressed = false;
 	
 }
 
 //--------------------------------------------------------------
-void Lever::rotate(float a_yaw, float a_pitch, float a_roll) {
+void LeverKinematic::rotateLever(float a_yaw, float a_pitch, float a_roll){
 	
     btTransform transform;
     

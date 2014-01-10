@@ -111,6 +111,7 @@
 		2EEF319817BB2A73003CFA1C /* ofxBulletSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletSphere.h; sourceTree = "<group>"; };
 		2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletConvexShape.cpp; sourceTree = "<group>"; };
 		2EFCD34117BB3B6B00C9A987 /* ofxBulletConvexShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletConvexShape.h; sourceTree = "<group>"; };
+		8CD580401880238C00DE18D9 /* rotate kinematic shape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotate kinematic shape.txt"; sourceTree = "<group>"; };
 		A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScenarioEditor.cpp; sourceTree = "<group>"; };
 		A59A1027187225D200BA19E5 /* ScenarioEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioEditor.h; sourceTree = "<group>"; };
 		A59A10291872260B00BA19E5 /* SimpleMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMission.cpp; sourceTree = "<group>"; };
@@ -260,6 +261,14 @@
 			path = shapes;
 			sourceTree = "<group>";
 		};
+		8CD5803F1880232F00DE18D9 /* code_snippets */ = {
+			isa = PBXGroup;
+			children = (
+				8CD580401880238C00DE18D9 /* rotate kinematic shape.txt */,
+			);
+			path = code_snippets;
+			sourceTree = "<group>";
+		};
 		A5E981B91870DFAA00BCDF4E /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +385,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				8CD5803F1880232F00DE18D9 /* code_snippets */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
