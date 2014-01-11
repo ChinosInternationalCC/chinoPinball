@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="chinoPinball" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="addons\;src\;addons\ofxBullet\src\;addons\ofxBullet\libs\bullet2.8.1\include\BulletSoftBody\;addons\ofxBullet\libs\bullet2.8.1\include\BulletDynamics\ConstraintSolver\;addons\ofxBullet\libs\bullet2.8.1\include\BulletCollision\Gimpact\;addons\ofxBullet\libs\bullet2.8.1\include\BulletCollision\CollisionShapes\;addons\ofxBullet\libs\bullet2.8.1\include\BulletCollision\CollisionDispatch\;addons\ofxBullet\libs\bullet2.8.1\include\vectormath\scalar\;addons\ofxBullet\libs\bullet2.8.1\include\LinearMath\;addons\ofxBullet\src\shapes\;addons\ofxBullet\libs\bullet2.8.1\include\BulletCollision\BroadphaseCollision\;addons\ofxBullet\libs\bullet2.8.1\include\BulletCollision\NarrowPhaseCollision\;addons\ofxBullet\libs\bullet2.8.1\include\BulletDynamics\Dynamics\;addons\ofxBullet\src\joints\;addons\ofxBullet\src\events\;addons\ofxBullet\libs\bullet2.8.1\include\BulletDynamics\Vehicle\;addons\ofxBullet\libs\bullet2.8.1\include\vectormath\neon\;addons\ofxBullet\libs\bullet2.8.1\include\vectormath\sse\;addons\ofxBullet\libs\bullet2.8.1\include\;addons\ofxBullet\libs\bullet2.8.1\include\BulletDynamics\Character\;addons\ofxBullet\src\render\;addons\ofxBullet\libs\bullet2.8.1\include\vectormath\;" />
+		<Build>
+			<Target title="release">
+				<Option output="bin/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/Release" />
+				<Option external_deps="../../../libs/openFrameworksCompiled/lib/win_cb/openFrameworks.lib;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="src/Managers" />
+					<Add directory="src/GameObjects" />
+					<Add directory="src/Media" />
+					<Add directory="src/Missions" />
+					<Add directory="src/Scenario" />
+					<Add directory="src/ScenarioEditor" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="../../../libs/openFrameworksCompiled/lib/win_cb/openFrameworks.lib" />
+				</Linker>
+			</Target>
+			<Target title="debug">
+				<Option output="bin/$(PROJECT_NAME)_DEBUG" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/Debug/" />
+				<Option external_deps="../../../libs/openFrameworksCompiled/lib/win_cb/openFrameworksDebug.lib;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="../../../libs/openFrameworksCompiled/lib/win_cb/openFrameworksDebug.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wno-multichar" />
+			<Add directory="../../../libs/glu/include" />
+			<Add directory="../../../libs/freetype/include" />
+			<Add directory="../../../libs/freetype/include/freetype2" />
+			<Add directory="../../../libs/FreeImage/include" />
+			<Add directory="../../../libs/quicktime/include" />
+			<Add directory="../../../libs/rtAudio/include" />
+			<Add directory="../../../libs/fmodex/include" />
+			<Add directory="../../../libs/videoInput/include" />
+			<Add directory="../../../libs/glew/include" />
+			<Add directory="../../../libs/glut/include" />
+			<Add directory="../../../libs/glfw/include" />
+			<Add directory="../../../libs/openFrameworks" />
+			<Add directory="../../../libs/openFrameworks/3d" />
+			<Add directory="../../../libs/openFrameworks/app" />
+			<Add directory="../../../libs/openFrameworks/communication" />
+			<Add directory="../../../libs/openFrameworks/events" />
+			<Add directory="../../../libs/openFrameworks/gl" />
+			<Add directory="../../../libs/openFrameworks/graphics" />
+			<Add directory="../../../libs/openFrameworks/math" />
+			<Add directory="../../../libs/openFrameworks/sound" />
+			<Add directory="../../../libs/openFrameworks/types" />
+			<Add directory="../../../libs/openFrameworks/utils" />
+			<Add directory="../../../libs/openFrameworks/video" />
+			<Add directory="../../../libs/poco/include" />
+			<Add directory="../../../libs/tess2/include" />
+			<Add directory="../../../libs/cairo/include/cairo" />
+			<Add directory="../../../addons/ofxBullet/libs" />
+			<Add directory="../../../addons/ofxBullet/src" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+			<Add directory="../../../addons/ofxBullet/libs/bullet2.8.1/lib" />
+			<Add directory="../../../addons/ofxBullet/src/events" />
+			<Add directory="../../../addons/ofxBullet/src/joints" />
+			<Add directory="../../../addons/ofxBullet/src/render" />
+			<Add directory="../../../addons/ofxBullet/src/shapes" />
+		</Compiler>
+		<Linker>
+			<Add library="..\..\..\libs\FreeImage\lib\win_cb\FreeImage.lib" />
+			<Add library="..\..\..\libs\rtAudio\lib\win_cb\librtaudio.a" />
+			<Add library="..\..\..\libs\quicktime\lib\win_cb\qtmlClient.lib" />
+			<Add library="..\..\..\libs\cairo\lib\win_cb\libcairo.a" />
+			<Add library="..\..\..\libs\cairo\lib\win_cb\libpixman-1.a" />
+			<Add library="..\..\..\libs\freetype\lib\win_cb\libfreetype.a" />
+			<Add library="..\..\..\libs\glut\lib\win_cb\libglut.a" />
+			<Add library="..\..\..\libs\glfw\lib\win_cb\libglfw3.a" />
+			<Add library="..\..\..\libs\videoInput\lib\win_cb\videoInputLib.a" />
+			<Add library="..\..\..\libs\fmodex\lib\win_cb\libfmodex.a" />
+			<Add library="..\..\..\libs\glew\lib\win_cb\glew32s.lib" />
+			<Add library="..\..\..\libs\glu\lib\win_cb\glu32.lib" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoNetSSL.a" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoCrypto.a" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoNet.a" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoUtil.a" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoXML.a" />
+			<Add library="..\..\..\libs\poco\lib\win_cb\libPocoFoundation.a" />
+			<Add library="..\..\..\libs\openssl\lib\win_cb\libssl.a" />
+			<Add library="..\..\..\libs\openssl\lib\win_cb\libcrypto.a" />
+			<Add library="..\..\..\libs\tess2\lib\win_cb\libtess2.a" />
+			<Add library="opengl32" />
+			<Add library="gdi32" />
+			<Add library="msimg32" />
+			<Add library="glu32" />
+			<Add library="dsound" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add library="strmbase" />
+			<Add library="strmiids" />
+			<Add library="z" />
+			<Add library="uuid" />
+			<Add library="ole32" />
+			<Add library="oleaut32" />
+			<Add library="setupapi" />
+			<Add library="wsock32" />
+			<Add library="ws2_32" />
+			<Add library="Iphlpapi" />
+			<Add library="Comdlg32" />
+		</Linker>
+		<ExtraCommands>
+			<Add after='xcopy /e /i /y &quot;$(PROJECT_DIR)..\..\..\export\win_cb\*.dll&quot;  &quot;$(PROJECT_DIR)bin&quot;' />
+			<Add after='cmd /c if not exist &quot;$(PROJECT_DIR)bin/data&quot; mkdir &quot;$(PROJECT_DIR)bin/data&quot;' />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/Bullet-C-Api.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btAxisSweep3.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btAxisSweep3.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDbvt.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDbvt.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDbvtBroadphase.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDispatcher.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btDispatcher.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btQuantizedBvh.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btQuantizedBvh.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btSimpleBroadphase.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/SphereTriangleDetector.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btBoxBoxDetector.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionConfiguration.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionDispatcher.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionWorld.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionWorld.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btGhostObject.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btGhostObject.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btInternalEdgeUtility.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btInternalEdgeUtility.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btManifoldResult.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btManifoldResult.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSimulationIslandManager.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btUnionFind.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btUnionFind.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBox2dShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBox2dShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBoxShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBoxShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCapsuleShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCapsuleShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCollisionMargin.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCollisionShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCollisionShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCompoundShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCompoundShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConeShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConeShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvex2dShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvex2dShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexHullShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexHullShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexInternalShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexInternalShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexPointCloudShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexPolyhedron.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexPolyhedron.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCylinderShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCylinderShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btEmptyShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btEmptyShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMaterial.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMinkowskiSumShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMultiSphereShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMultiSphereShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btOptimizedBvh.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btOptimizedBvh.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btShapeHull.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btShapeHull.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btSphereShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btSphereShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btStaticPlaneShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btStridingMeshInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTetrahedronShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTetrahedronShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleBuffer.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleBuffer.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleCallback.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleCallback.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleInfoMap.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleMesh.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleMesh.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleMeshShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btTriangleShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btUniformScalingShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btUniformScalingShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btBoxCollision.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btClipPolygon.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btContactProcessing.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btContactProcessing.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactBvh.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactBvh.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactMassUtil.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactQuantizedBvh.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactQuantizedBvh.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGImpactShape.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGenericPoolAllocator.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGenericPoolAllocator.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGeometryOperations.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btQuantization.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btTriangleShapeEx.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btTriangleShapeEx.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_basic_geometry_operations.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_bitset.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_box_collision.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_box_set.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_box_set.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_clip_polygon.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_contact.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_contact.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geometry.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_hash_table.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_linear_math.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_math.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_memory.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_memory.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_radixsort.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexCast.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexCast.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpa2.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPointCollector.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btRaycastCallback.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btRaycastCallback.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character/btCharacterControllerInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character/btKinematicCharacterController.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character/btKinematicCharacterController.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btConstraintSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btContactConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btContactConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btContactSolverInfo.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGearConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGearConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHinge2Constraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHingeConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btJacobianEntry.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSliderConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSolverBody.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSolverConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btTypedConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btUniversalConstraint.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/Bullet-C-API.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btActionInterface.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btDynamicsWorld.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btRigidBody.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btRigidBody.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btRaycastVehicle.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btRaycastVehicle.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btVehicleRaycaster.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btWheelInfo.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btWheelInfo.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btDefaultSoftBodySolver.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btDefaultSoftBodySolver.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBody.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBody.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyData.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyHelpers.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyHelpers.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyInternals.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodySolverVertexBuffer.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftBodySolvers.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftSoftCollisionAlgorithm.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSparseSDF.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btAabbUtil2.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btAlignedAllocator.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btAlignedAllocator.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btAlignedObjectArray.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btConvexHull.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btConvexHull.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btConvexHullComputer.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btConvexHullComputer.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btDefaultMotionState.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btGeometryUtil.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btGeometryUtil.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btGrahamScan2dConvexHull.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btHashMap.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btIDebugDraw.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btList.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btMatrix3x3.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btMinMax.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btMotionState.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btPolarDecomposition.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btPolarDecomposition.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btPoolAllocator.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btQuadWord.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btQuaternion.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btQuickprof.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btQuickprof.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btRandom.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btScalar.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btSerializer.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btSerializer.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btStackAlloc.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btTransform.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btTransformUtil.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btVector3.cpp">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btVector3.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/LinearMath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/btBulletCollisionCommon.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/btBulletDynamicsCommon.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/boolInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/floatInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/mat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/quat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/vec_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/vectormath_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/boolInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/floatInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/mat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/quat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/vec_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar/vectormath_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/boolInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/floatInVec.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/mat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/quat_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/vec_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/vecidx_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse/vectormath_aos.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/vmInclude.h">
+			<Option virtualFolder="addons/ofxBullet/libs/bullet2.8.1/include/vectormath" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/events/ofxBulletCollisionData.h">
+			<Option virtualFolder="addons/ofxBullet/src/events" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/events/ofxBulletMousePickEvent.h">
+			<Option virtualFolder="addons/ofxBullet/src/events" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/events/ofxBulletRaycastData.h">
+			<Option virtualFolder="addons/ofxBullet/src/events" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/joints/ofxBulletJoint.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/joints" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/joints/ofxBulletJoint.h">
+			<Option virtualFolder="addons/ofxBullet/src/joints" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBullet.h">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBulletConstants.h">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBulletUserData.h">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBulletUtils.h">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBulletWorldRigid.cpp">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/ofxBulletWorldRigid.h">
+			<Option virtualFolder="addons/ofxBullet/src" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/render/GLDebugDrawer.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/render" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/render/GLDebugDrawer.h">
+			<Option virtualFolder="addons/ofxBullet/src/render" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletBaseShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletBaseShape.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletBox.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletBox.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCapsule.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCapsule.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCone.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCone.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletConvexShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletConvexShape.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCustomShape.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCustomShape.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCylinder.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletCylinder.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletSphere.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletSphere.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletStaticPlane.cpp">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="../../../addons/ofxBullet/src/shapes/ofxBulletStaticPlane.h">
+			<Option virtualFolder="addons/ofxBullet/src/shapes" />
+		</Unit>
+		<Unit filename="icon.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/GameObjects/Ball.cpp" />
+		<Unit filename="src/GameObjects/Ball.h" />
+		<Unit filename="src/GameObjects/Lever.cpp" />
+		<Unit filename="src/GameObjects/Lever.h" />
+		<Unit filename="src/GameObjects/SimpleObject.cpp" />
+		<Unit filename="src/GameObjects/SimpleObject.h" />
+		<Unit filename="src/Managers/PinballChinoManager.cpp" />
+		<Unit filename="src/Managers/PinballChinoManager.h" />
+		<Unit filename="src/Media/objDisplay.cpp" />
+		<Unit filename="src/Media/objDisplay.h" />
+		<Unit filename="src/Missions/SimpleMission.cpp" />
+		<Unit filename="src/Missions/SimpleMission.h" />
+		<Unit filename="src/ScenarioEditor/ScenarioEditor.cpp" />
+		<Unit filename="src/ScenarioEditor/ScenarioEditor.h" />
+		<Unit filename="src/Scenario/Scenario.cpp" />
+		<Unit filename="src/Scenario/Scenario.h" />
+		<Unit filename="src/main.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="src/testApp.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="src/testApp.h">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

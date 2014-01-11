@@ -10,6 +10,8 @@ build/
 obj/
 *.o
 *.app
+*.dll
+*.exe
 
 #mac files
 .DS_Store
@@ -20,3 +22,4 @@ obj/
 chinoPinball.xcodeproj/project.pbxproj
 
 chinoPinball.xcodeproj/project.pbxproj
+
