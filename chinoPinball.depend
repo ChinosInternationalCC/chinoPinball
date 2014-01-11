@@ -3467,10 +3467,10 @@
 	"ofxBulletMousePickEvent.h"
 	"ofxBulletCollisionData.h"
 
-1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.cpp
+1389478697 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.cpp
 	"Lever.h"
 
-1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.h
+1389479107 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.h
 	"SimpleObject.h"
 
 1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.h
@@ -3524,4 +3524,6 @@
 
 1389443821 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\testapp.cpp
 	"testApp.h"
+
+1376287980 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\icon.rc
 

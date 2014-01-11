@@ -40,6 +40,12 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src/GameObjects" />
+					<Add directory="src/Managers" />
+					<Add directory="src/Media" />
+					<Add directory="src/Missions" />
+					<Add directory="src/Scenario" />
+					<Add directory="src/ScenarioEditor" />
 				</Compiler>
 				<Linker>
 					<Add option="../../../libs/openFrameworksCompiled/lib/win_cb/openFrameworksDebug.lib" />
