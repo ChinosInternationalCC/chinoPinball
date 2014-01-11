@@ -25,7 +25,7 @@ public:
     
  
     Ball                      m_Ball;
-    Lever                     leverLeft;
+    Lever                  leverLeft;
     
     
 };
