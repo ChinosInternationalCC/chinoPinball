@@ -1,0 +1,16 @@
+
+
+    btTransform transform;
+    btRigidBody* a_rb = body.getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+
+    // translate
+    btVector3 origin = transform.getOrigin();
+    origin.setX(position.x + axisX - axisX * cos(ofDegToRad(angle)));
+    origin.setY(position.y - axisX * sin(ofDegToRad(angle)));
+
+    transform.setOrigin(origin);
+
+    a_rb->getMotionState()->setWorldTransform( transform );
+
+    body.activate();

@@ -1,0 +1,3529 @@
+# depslib dependency file v1.0
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btaxissweep3.cpp
+	"btAxisSweep3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btaxissweep3.h
+	"LinearMath/btVector3.h"
+	"btOverlappingPairCache.h"
+	"btBroadphaseInterface.h"
+	"btBroadphaseProxy.h"
+	"btOverlappingPairCallback.h"
+	"btDbvtBroadphase.h"
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btvector3.h
+	"btScalar.h"
+	"btMinMax.h"
+	"btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btscalar.h
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<ppcintrinsics.h>
+	<emmintrin.h>
+	<stdio.h>
+	<assert.h>
+	<assert.h>
+	<spu_printf.h>
+	<assert.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+	<arm_neon.h>
+	<assert.h>
+	<stdio.h>
+	<assert.h>
+	<arm_neon.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btminmax.h
+	"btScalar.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btalignedallocator.h
+	"btScalar.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btoverlappingpaircache.h
+	"btBroadphaseInterface.h"
+	"btBroadphaseProxy.h"
+	"btOverlappingPairCallback.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btbroadphaseinterface.h
+	"btBroadphaseProxy.h"
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btbroadphaseproxy.h
+	"LinearMath/btScalar.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btoverlappingpaircallback.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btalignedobjectarray.h
+	"btScalar.h"
+	"btAlignedAllocator.h"
+	<memory.h>
+	<string.h>
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdbvtbroadphase.h
+	"BulletCollision/BroadphaseCollision/btDbvt.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
+	"LinearMath/btQuickprof.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdbvt.h
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btAabbUtil2.h"
+	<emmintrin.h>
+	<memory.h>
+	<string.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\bttransform.h
+	"btMatrix3x3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btmatrix3x3.h
+	"btVector3.h"
+	"btQuaternion.h"
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btquaternion.h
+	"btVector3.h"
+	"btQuadWord.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btquadword.h
+	"btScalar.h"
+	"btMinMax.h"
+	<altivec.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btaabbutil2.h
+	"btTransform.h"
+	"btVector3.h"
+	"btMinMax.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btquickprof.h
+	<stdio.h>
+	"btScalar.h"
+	"btAlignedAllocator.h"
+	<new>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btbroadphaseproxy.cpp
+	"btBroadphaseProxy.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btcollisionalgorithm.cpp
+	"btCollisionAlgorithm.h"
+	"btDispatcher.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btcollisionalgorithm.h
+	"LinearMath/btScalar.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdispatcher.h
+	"LinearMath/btScalar.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdbvt.cpp
+	"btDbvt.h"
+	<stdio.h>
+	<stdlib.h>
+	"LinearMath/btQuickProf.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdbvtbroadphase.cpp
+	"btDbvtBroadphase.h"
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btdispatcher.cpp
+	"btDispatcher.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btmultisapbroadphase.cpp
+	"btMultiSapBroadphase.h"
+	"btSimpleBroadphase.h"
+	"LinearMath/btAabbUtil2.h"
+	"btQuantizedBvh.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btmultisapbroadphase.h
+	"btBroadphaseInterface.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btOverlappingPairCache.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btsimplebroadphase.h
+	"btOverlappingPairCache.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btquantizedbvh.h
+	<stdio.h>
+	<stdlib.h>
+	"LinearMath/btVector3.h"
+	"LinearMath/btAlignedAllocator.h"
+	"LinearMath/btAlignedAllocator.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btoverlappingpaircache.cpp
+	"btOverlappingPairCache.h"
+	"btDispatcher.h"
+	"btCollisionAlgorithm.h"
+	"LinearMath/btAabbUtil2.h"
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btquantizedbvh.cpp
+	"btQuantizedBvh.h"
+	"LinearMath/btAabbUtil2.h"
+	"LinearMath/btIDebugDraw.h"
+	"LinearMath/btSerializer.h"
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btidebugdraw.h
+	"btVector3.h"
+	"btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btserializer.h
+	"btScalar.h"
+	"btStackAlloc.h"
+	"btHashMap.h"
+	<memory.h>
+	<string.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btstackalloc.h
+	"btScalar.h"
+	"btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\bthashmap.h
+	"btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\broadphasecollision\btsimplebroadphase.cpp
+	"btSimpleBroadphase.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btMatrix3x3.h"
+	"LinearMath/btAabbUtil2.h"
+	<new>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btactivatingcollisionalgorithm.cpp
+	"btActivatingCollisionAlgorithm.h"
+	"btCollisionDispatcher.h"
+	"btCollisionObject.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btactivatingcollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisiondispatcher.h
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btCollisionCreateFunc.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btpersistentmanifold.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"btManifoldPoint.h"
+	"LinearMath/btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btmanifoldpoint.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransformUtil.h"
+	"physics_effects/base_level/solver/pfx_constraint_row.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\bttransformutil.h
+	"btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btmanifoldresult.h
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+	"LinearMath/btTransform.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btdiscretecollisiondetectorinterface.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionobjectwrapper.h
+	"LinearMath/btScalar.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionobject.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btMotionState.h"
+	"LinearMath/btAlignedAllocator.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btmotionstate.h
+	"btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisioncreatefunc.h
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btbox2dbox2dcollisionalgorithm.cpp
+	"btBox2dBox2dCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionDispatch/btBoxBoxDetector.h"
+	"BulletCollision/CollisionShapes/btBox2dShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btbox2dbox2dcollisionalgorithm.h
+	"BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btboxshape.h
+	"btPolyhedralConvexShape.h"
+	"btCollisionMargin.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btMinMax.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btpolyhedralconvexshape.h
+	"LinearMath/btMatrix3x3.h"
+	"btConvexInternalShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexinternalshape.h
+	"btConvexShape.h"
+	"LinearMath/btAabbUtil2.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexshape.h
+	"btCollisionShape.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btMatrix3x3.h"
+	"btCollisionMargin.h"
+	"LinearMath/btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcollisionshape.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btMatrix3x3.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcollisionmargin.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btboxboxdetector.h
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btbox2dshape.h
+	"BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btMinMax.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btboxboxcollisionalgorithm.cpp
+	"btBoxBoxCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"btBoxBoxDetector.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btboxboxcollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btboxboxdetector.cpp
+	"btBoxBoxDetector.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	<float.h>
+	<string.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisiondispatcher.cpp
+	"btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
+	"LinearMath/btPoolAllocator.h"
+	"BulletCollision/CollisionDispatch/btCollisionConfiguration.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btpoolallocator.h
+	"btScalar.h"
+	"btAlignedAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionconfiguration.h
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionobject.cpp
+	"btCollisionObject.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionworld.cpp
+	"btCollisionWorld.h"
+	"btCollisionDispatcher.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
+	"BulletCollision/NarrowPhaseCollision/btRaycastCallback.h"
+	"BulletCollision/CollisionShapes/btCompoundShape.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/BroadphaseCollision/btDbvt.h"
+	"LinearMath/btAabbUtil2.h"
+	"LinearMath/btQuickprof.h"
+	"LinearMath/btStackAlloc.h"
+	"LinearMath/btSerializer.h"
+	"BulletCollision/CollisionShapes/btConvexPolyhedron.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btSimpleBroadphase.h"
+	"BulletCollision/CollisionDispatch/btCollisionConfiguration.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionShapes/btCapsuleShape.h"
+	"BulletCollision/CollisionShapes/btCompoundShape.h"
+	"BulletCollision/CollisionShapes/btConeShape.h"
+	"BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btCylinderShape.h"
+	"BulletCollision/CollisionShapes/btMultiSphereShape.h"
+	"BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btTriangleCallback.h"
+	"BulletCollision/CollisionShapes/btTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcollisionworld.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"btCollisionObject.h"
+	"btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkepapenetrationdepthsolver.h
+	"btConvexPenetrationDepthSolver.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btconvexpenetrationdepthsolver.h
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btsimplexsolverinterface.h
+	"LinearMath/btVector3.h"
+	"btVoronoiSimplexSolver.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btvoronoisimplexsolver.h
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btsphereshape.h
+	"btConvexInternalShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btbvhtrianglemeshshape.h
+	"btTriangleMeshShape.h"
+	"btOptimizedBvh.h"
+	"LinearMath/btAlignedAllocator.h"
+	"btTriangleInfoMap.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglemeshshape.h
+	"btConcaveShape.h"
+	"btStridingMeshInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconcaveshape.h
+	"btCollisionShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"btTriangleCallback.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglecallback.h
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btstridingmeshinterface.h
+	"LinearMath/btVector3.h"
+	"btTriangleCallback.h"
+	"btConcaveShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btoptimizedbvh.h
+	"BulletCollision/BroadphaseCollision/btQuantizedBvh.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleinfomap.h
+	"LinearMath/btHashMap.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btraycastcallback.h
+	"BulletCollision/CollisionShapes/btTriangleCallback.h"
+	"LinearMath/btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcompoundshape.h
+	"btCollisionShape.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btMatrix3x3.h"
+	"btCollisionMargin.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btsubsimplexconvexcast.h
+	"btConvexCast.h"
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btconvexcast.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btScalar.h"
+	"LinearMath/btIDebugDraw.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkconvexcast.h
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btVector3.h"
+	"btConvexCast.h"
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btcontinuousconvexcollision.h
+	"btConvexCast.h"
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexpolyhedron.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcapsuleshape.h
+	"btConvexInternalShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconeshape.h
+	"btConvexInternalShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvextrianglemeshshape.h
+	"btPolyhedralConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcylindershape.h
+	"btBoxShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btmultisphereshape.h
+	"btConvexInternalShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btAabbUtil2.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btstaticplaneshape.h
+	"btConcaveShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcompoundcollisionalgorithm.cpp
+	"BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btCompoundShape.h"
+	"BulletCollision/BroadphaseCollision/btDbvt.h"
+	"LinearMath/btIDebugDraw.h"
+	"LinearMath/btAabbUtil2.h"
+	"btManifoldResult.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btcompoundcollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"btCollisionCreateFunc.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvex2dconvex2dalgorithm.cpp
+	"btConvex2dConvex2dAlgorithm.h"
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/CollisionShapes/btCapsuleShape.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvex2dconvex2dalgorithm.h
+	"BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkpairdetector.h
+	"btDiscreteCollisionDetectorInterface.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"btSimplexSolverInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btminkowskipenetrationdepthsolver.h
+	"btConvexPenetrationDepthSolver.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkepa2.h
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexconcavecollisionalgorithm.cpp
+	"btConvexConcaveCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btMultiSphereShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionShapes/btConcaveShape.h"
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"BulletCollision/NarrowPhaseCollision/btRaycastCallback.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexconcavecollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/CollisionShapes/btTriangleCallback.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"btCollisionCreateFunc.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleshape.h
+	"btConvexShape.h"
+	"btBoxShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexconvexalgorithm.cpp
+	"btConvexConvexAlgorithm.h"
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/CollisionShapes/btCapsuleShape.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexconvexalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btpolyhedralcontactclipping.h
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btTransform.h"
+	"btDiscreteCollisionDetectorInterface.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexplanecollisionalgorithm.cpp
+	"btConvexPlaneCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btconvexplanecollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+	"LinearMath/btVector3.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btdefaultcollisionconfiguration.cpp
+	"btDefaultCollisionConfiguration.h"
+	"BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"LinearMath/btStackAlloc.h"
+	"LinearMath/btPoolAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btdefaultcollisionconfiguration.h
+	"btCollisionConfiguration.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btemptycollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btspherespherecollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btsphereboxcollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btspheretrianglecollisionalgorithm.h
+	"btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"btCollisionDispatcher.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btemptycollisionalgorithm.cpp
+	"btEmptyCollisionAlgorithm.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btghostobject.cpp
+	"btGhostObject.h"
+	"btCollisionWorld.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"LinearMath/btAabbUtil2.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btghostobject.h
+	"btCollisionObject.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h"
+	"LinearMath/btAlignedAllocator.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
+	"btCollisionWorld.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btinternaledgeutility.cpp
+	"btInternalEdgeUtility.h"
+	"BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btinternaledgeutility.h
+	"LinearMath/btHashMap.h"
+	"LinearMath/btVector3.h"
+	"BulletCollision/CollisionShapes/btTriangleInfoMap.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btscaledbvhtrianglemeshshape.h
+	"BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btmanifoldresult.cpp
+	"btManifoldResult.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btsimulationislandmanager.cpp
+	"LinearMath/btScalar.h"
+	"btSimulationIslandManager.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionDispatch/btCollisionWorld.h"
+	"LinearMath/btQuickprof.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btsimulationislandmanager.h
+	"BulletCollision/CollisionDispatch/btUnionFind.h"
+	"btCollisionCreateFunc.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btCollisionObject.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btunionfind.h
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btsphereboxcollisionalgorithm.cpp
+	"btSphereBoxCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btspherespherecollisionalgorithm.cpp
+	"btSphereSphereCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btspheretrianglecollisionalgorithm.cpp
+	"btSphereTriangleCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"SphereTriangleDetector.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\spheretriangledetector.h
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\btunionfind.cpp
+	"btUnionFind.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisiondispatch\spheretriangledetector.cpp
+	"LinearMath/btScalar.h"
+	"SphereTriangleDetector.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btbox2dshape.cpp
+	"btBox2dShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btboxshape.cpp
+	"btBoxShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btbvhtrianglemeshshape.cpp
+	"BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btOptimizedBvh.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcapsuleshape.cpp
+	"btCapsuleShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcollisionshape.cpp
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcompoundshape.cpp
+	"btCompoundShape.h"
+	"btCollisionShape.h"
+	"BulletCollision/BroadphaseCollision/btDbvt.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconcaveshape.cpp
+	"btConcaveShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconeshape.cpp
+	"btConeShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvex2dshape.cpp
+	"btConvex2dShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvex2dshape.h
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexhullshape.cpp
+	"btConvexHullShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexhullshape.h
+	"btPolyhedralConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexinternalshape.cpp
+	"btConvexInternalShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexpointcloudshape.cpp
+	"btConvexPointCloudShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexpointcloudshape.h
+	"btPolyhedralConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexpolyhedron.cpp
+	"btConvexPolyhedron.h"
+	"LinearMath/btHashMap.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvexshape.cpp
+	"btConvexShape.h"
+	"btTriangleShape.h"
+	"btSphereShape.h"
+	"btCylinderShape.h"
+	"btCapsuleShape.h"
+	"btConvexHullShape.h"
+	"btConvexPointCloudShape.h"
+	<spu_intrinsics.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btconvextrianglemeshshape.cpp
+	"btConvexTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+	"BulletCollision/CollisionShapes/btStridingMeshInterface.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btcylindershape.cpp
+	"btCylinderShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btemptyshape.cpp
+	"btEmptyShape.h"
+	"btCollisionShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btemptyshape.h
+	"btConcaveShape.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btMatrix3x3.h"
+	"btCollisionMargin.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btheightfieldterrainshape.cpp
+	"btHeightfieldTerrainShape.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btheightfieldterrainshape.h
+	"btConcaveShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btminkowskisumshape.cpp
+	"btMinkowskiSumShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btminkowskisumshape.h
+	"btConvexInternalShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btmultimaterialtrianglemeshshape.cpp
+	"BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btmultimaterialtrianglemeshshape.h
+	"btBvhTriangleMeshShape.h"
+	"btMaterial.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btmaterial.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleindexvertexmaterialarray.h
+	"btTriangleIndexVertexArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleindexvertexarray.h
+	"btStridingMeshInterface.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btScalar.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btmultisphereshape.cpp
+	"btMultiSphereShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btoptimizedbvh.cpp
+	"btOptimizedBvh.h"
+	"btStridingMeshInterface.h"
+	"LinearMath/btAabbUtil2.h"
+	"LinearMath/btIDebugDraw.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btpolyhedralconvexshape.cpp
+	"BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
+	"btConvexPolyhedron.h"
+	"LinearMath/btConvexHullComputer.h"
+	<new>
+	"LinearMath/btGeometryUtil.h"
+	"LinearMath/btGrahamScan2dConvexHull.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btconvexhullcomputer.h
+	"btVector3.h"
+	"btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btgeometryutil.h
+	"btVector3.h"
+	"btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btgrahamscan2dconvexhull.h
+	"btVector3.h"
+	"btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btscaledbvhtrianglemeshshape.cpp
+	"btScaledBvhTriangleMeshShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btshapehull.cpp
+	"btShapeHull.h"
+	"LinearMath/btConvexHull.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btshapehull.h
+	"LinearMath/btAlignedObjectArray.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btconvexhull.h
+	"btVector3.h"
+	"btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btsphereshape.cpp
+	"btSphereShape.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"LinearMath/btQuaternion.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btstaticplaneshape.cpp
+	"btStaticPlaneShape.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btstridingmeshinterface.cpp
+	"btStridingMeshInterface.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttetrahedronshape.cpp
+	"btTetrahedronShape.h"
+	"LinearMath/btMatrix3x3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttetrahedronshape.h
+	"btPolyhedralConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglebuffer.cpp
+	"btTriangleBuffer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglebuffer.h
+	"btTriangleCallback.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglecallback.cpp
+	"btTriangleCallback.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleindexvertexarray.cpp
+	"btTriangleIndexVertexArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttriangleindexvertexmaterialarray.cpp
+	"btTriangleIndexVertexMaterialArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglemesh.cpp
+	"btTriangleMesh.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglemesh.h
+	"btTriangleIndexVertexArray.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\bttrianglemeshshape.cpp
+	"btTriangleMeshShape.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btQuaternion.h"
+	"btStridingMeshInterface.h"
+	"LinearMath/btAabbUtil2.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btuniformscalingshape.cpp
+	"btUniformScalingShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\collisionshapes\btuniformscalingshape.h
+	"btConvexShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btcontactprocessing.cpp
+	"btContactProcessing.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btcontactprocessing.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btTriangleShapeEx.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\bttriangleshapeex.h
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"btBoxCollision.h"
+	"btClipPolygon.h"
+	"btGeometryOperations.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btboxcollision.h
+	"LinearMath/btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btclippolygon.h
+	"LinearMath/btTransform.h"
+	"LinearMath/btGeometryUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgeometryoperations.h
+	"btBoxCollision.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgenericpoolallocator.cpp
+	"btGenericPoolAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgenericpoolallocator.h
+	<limits.h>
+	<stdio.h>
+	<string.h>
+	"LinearMath/btAlignedAllocator.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactbvh.cpp
+	"btGImpactBvh.h"
+	"LinearMath/btQuickprof.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactbvh.h
+	"LinearMath/btAlignedObjectArray.h"
+	"btBoxCollision.h"
+	"btTriangleShapeEx.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactcollisionalgorithm.cpp
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"btGImpactCollisionAlgorithm.h"
+	"btContactProcessing.h"
+	"LinearMath/btQuickprof.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactcollisionalgorithm.h
+	"BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btGImpactShape.h"
+	"BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+	"BulletCollision/CollisionShapes/btCompoundShape.h"
+	"BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactshape.h
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/CollisionShapes/btStridingMeshInterface.h"
+	"BulletCollision/CollisionShapes/btCollisionMargin.h"
+	"BulletCollision/CollisionDispatch/btCollisionWorld.h"
+	"BulletCollision/CollisionShapes/btConcaveShape.h"
+	"BulletCollision/CollisionShapes/btTetrahedronShape.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btMatrix3x3.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btGImpactQuantizedBvh.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactquantizedbvh.h
+	"btGImpactBvh.h"
+	"btQuantization.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btquantization.h
+	"LinearMath/btTransform.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactquantizedbvh.cpp
+	"btGImpactQuantizedBvh.h"
+	"LinearMath/btQuickprof.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactshape.cpp
+	"btGImpactShape.h"
+	"btGImpactMassUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\btgimpactmassutil.h
+	"LinearMath/btTransform.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\bttriangleshapeex.cpp
+	"btTriangleShapeEx.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_box_set.cpp
+	"gim_box_set.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_box_set.h
+	"gim_array.h"
+	"gim_radixsort.h"
+	"gim_box_collision.h"
+	"gim_tri_collision.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_array.h
+	"gim_memory.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_memory.h
+	"gim_math.h"
+	<string.h>
+	<xmmintrin.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_math.h
+	"LinearMath/btScalar.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_radixsort.h
+	"gim_memory.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_box_collision.h
+	"gim_basic_geometry_operations.h"
+	"LinearMath/btTransform.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_basic_geometry_operations.h
+	"gim_linear_math.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_linear_math.h
+	"gim_math.h"
+	"gim_geom_types.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_geom_types.h
+	"gim_math.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_tri_collision.h
+	"gim_box_collision.h"
+	"gim_clip_polygon.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_clip_polygon.h
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_contact.cpp
+	"gim_contact.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_contact.h
+	"gim_geometry.h"
+	"gim_radixsort.h"
+	"gim_array.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_geometry.h
+	"gim_basic_geometry_operations.h"
+	"gim_clip_polygon.h"
+	"gim_box_collision.h"
+	"gim_tri_collision.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_memory.cpp
+	"gim_memory.h"
+	"stdlib.h"
+	"LinearMath/btAlignedAllocator.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\gimpact\gim_tri_collision.cpp
+	"gim_tri_collision.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btcontinuousconvexcollision.cpp
+	"btContinuousConvexCollision.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h"
+	"LinearMath/btTransformUtil.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"btGjkPairDetector.h"
+	"btPointCollector.h"
+	"BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btpointcollector.h
+	"btDiscreteCollisionDetectorInterface.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btconvexcast.cpp
+	"btConvexCast.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkconvexcast.cpp
+	"btGjkConvexCast.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"btGjkPairDetector.h"
+	"btPointCollector.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkepa2.cpp
+	"BulletCollision/CollisionShapes/btConvexInternalShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"btGjkEpa2.h"
+	<stdio.h>
+	<spu_printf.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkepapenetrationdepthsolver.cpp
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btgjkpairdetector.cpp
+	"btGjkPairDetector.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h"
+	"BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h"
+	<stdio.h>
+	<spu_printf.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btminkowskipenetrationdepthsolver.cpp
+	"btMinkowskiPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btpersistentmanifold.cpp
+	"btPersistentManifold.h"
+	"LinearMath/btTransform.h"
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btpolyhedralcontactclipping.cpp
+	"btPolyhedralContactClipping.h"
+	"BulletCollision/CollisionShapes/btConvexPolyhedron.h"
+	<float.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btraycastcallback.cpp
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"btRaycastCallback.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btsubsimplexconvexcast.cpp
+	"btSubSimplexConvexCast.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"BulletCollision/CollisionShapes/btMinkowskiSumShape.h"
+	"BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h"
+	"btPointCollector.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletcollision\narrowphasecollision\btvoronoisimplexsolver.cpp
+	"btVoronoiSimplexSolver.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\character\btkinematiccharactercontroller.cpp
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/CollisionDispatch/btGhostObject.h"
+	"BulletCollision/CollisionShapes/btMultiSphereShape.h"
+	"BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionWorld.h"
+	"LinearMath/btDefaultMotionState.h"
+	"btKinematicCharacterController.h"
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btdefaultmotionstate.h
+	"btMotionState.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\character\btkinematiccharactercontroller.h
+	"LinearMath/btVector3.h"
+	"btCharacterControllerInterface.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\character\btcharactercontrollerinterface.h
+	"LinearMath/btVector3.h"
+	"BulletDynamics/Dynamics/btActionInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btactioninterface.h
+	"LinearMath/btScalar.h"
+	"btRigidBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btrigidbody.h
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btTransform.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btconetwistconstraint.cpp
+	"btConeTwistConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+	"LinearMath/btMinMax.h"
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btconetwistconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btjacobianentry.h
+	"LinearMath/btMatrix3x3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bttypedconstraint.h
+	"LinearMath/btScalar.h"
+	"btSolverConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsolverconstraint.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btMatrix3x3.h"
+	"btJacobianEntry.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btSolverBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsolverbody.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btMatrix3x3.h"
+	"LinearMath/btAlignedAllocator.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btcontactconstraint.cpp
+	"btContactConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btContactSolverInfo.h"
+	"LinearMath/btMinMax.h"
+	"BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+	"btContactConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btContactSolverInfo.h"
+	"LinearMath/btMinMax.h"
+	"BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btcontactconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btcontactsolverinfo.h
+	"LinearMath/btScalar.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgearconstraint.cpp
+	"btGearConstraint.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgearconstraint.h
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgeneric6dofconstraint.cpp
+	"btGeneric6DofConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+	"LinearMath/btTransformUtil.h"
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgeneric6dofconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgeneric6dofspringconstraint.cpp
+	"btGeneric6DofSpringConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btgeneric6dofspringconstraint.h
+	"LinearMath/btVector3.h"
+	"btTypedConstraint.h"
+	"btGeneric6DofConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bthinge2constraint.cpp
+	"btHinge2Constraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bthinge2constraint.h
+	"LinearMath/btVector3.h"
+	"btTypedConstraint.h"
+	"btGeneric6DofSpringConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bthingeconstraint.cpp
+	"btHingeConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+	"LinearMath/btMinMax.h"
+	<new>
+	"btSolverBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bthingeconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btpoint2pointconstraint.cpp
+	"btPoint2PointConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btpoint2pointconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsequentialimpulseconstraintsolver.cpp
+	"btSequentialImpulseConstraintSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"LinearMath/btIDebugDraw.h"
+	"LinearMath/btMinMax.h"
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+	<new>
+	"LinearMath/btStackAlloc.h"
+	"LinearMath/btQuickprof.h"
+	"LinearMath/btAlignedObjectArray.h"
+	<string.h>
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	<emmintrin.h>
+	<stdio.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsequentialimpulseconstraintsolver.h
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+	"BulletDynamics/ConstraintSolver/btContactSolverInfo.h"
+	"BulletDynamics/ConstraintSolver/btSolverBody.h"
+	"BulletDynamics/ConstraintSolver/btSolverConstraint.h"
+	"BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+	"BulletDynamics/ConstraintSolver/btConstraintSolver.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btconstraintsolver.h
+	"LinearMath/btScalar.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsliderconstraint.cpp
+	"btSliderConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+	<new>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsliderconstraint.h
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+	"btTypedConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsolve2linearconstraint.cpp
+	"btSolve2LinearConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btVector3.h"
+	"btJacobianEntry.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btsolve2linearconstraint.h
+	"LinearMath/btMatrix3x3.h"
+	"LinearMath/btVector3.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\bttypedconstraint.cpp
+	"btTypedConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btuniversalconstraint.cpp
+	"btUniversalConstraint.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"LinearMath/btTransformUtil.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\constraintsolver\btuniversalconstraint.h
+	"LinearMath/btVector3.h"
+	"btTypedConstraint.h"
+	"btGeneric6DofConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btdiscretedynamicsworld.cpp
+	"btDiscreteDynamicsWorld.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btSimpleBroadphase.h"
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletCollision/CollisionDispatch/btSimulationIslandManager.h"
+	"LinearMath/btTransformUtil.h"
+	"LinearMath/btQuickprof.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
+	"BulletDynamics/ConstraintSolver/btContactSolverInfo.h"
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+	"BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h"
+	"BulletDynamics/ConstraintSolver/btHingeConstraint.h"
+	"BulletDynamics/ConstraintSolver/btConeTwistConstraint.h"
+	"BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h"
+	"BulletDynamics/ConstraintSolver/btSliderConstraint.h"
+	"BulletDynamics/ConstraintSolver/btContactConstraint.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletDynamics/Dynamics/btActionInterface.h"
+	"LinearMath/btQuickprof.h"
+	"LinearMath/btMotionState.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btdiscretedynamicsworld.h
+	"btDynamicsWorld.h"
+	"LinearMath/btAlignedObjectArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btdynamicsworld.h
+	"BulletCollision/CollisionDispatch/btCollisionWorld.h"
+	"BulletDynamics/ConstraintSolver/btContactSolverInfo.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btrigidbody.cpp
+	"btRigidBody.h"
+	"BulletCollision/CollisionShapes/btConvexShape.h"
+	"LinearMath/btMinMax.h"
+	"LinearMath/btTransformUtil.h"
+	"LinearMath/btMotionState.h"
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btsimpledynamicsworld.cpp
+	"btSimpleDynamicsWorld.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btSimpleBroadphase.h"
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
+	"BulletDynamics/ConstraintSolver/btContactSolverInfo.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\btsimpledynamicsworld.h
+	"btDynamicsWorld.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\dynamics\bullet-c-api.cpp
+	"Bullet-C-Api.h"
+	"btBulletDynamicsCommon.h"
+	"LinearMath/btAlignedAllocator.h"
+	"LinearMath/btVector3.h"
+	"LinearMath/btScalar.h"
+	"LinearMath/btMatrix3x3.h"
+	"LinearMath/btTransform.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
+	"BulletCollision/NarrowPhaseCollision/btPointCollector.h"
+	"BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+	"BulletCollision/CollisionShapes/btMinkowskiSumShape.h"
+	"BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h"
+	"BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h"
+	"BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bullet-c-api.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\btbulletdynamicscommon.h
+	"btBulletCollisionCommon.h"
+	"BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
+	"BulletDynamics/Dynamics/btSimpleDynamicsWorld.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h"
+	"BulletDynamics/ConstraintSolver/btHingeConstraint.h"
+	"BulletDynamics/ConstraintSolver/btConeTwistConstraint.h"
+	"BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h"
+	"BulletDynamics/ConstraintSolver/btSliderConstraint.h"
+	"BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h"
+	"BulletDynamics/ConstraintSolver/btUniversalConstraint.h"
+	"BulletDynamics/ConstraintSolver/btHinge2Constraint.h"
+	"BulletDynamics/ConstraintSolver/btGearConstraint.h"
+	"BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
+	"BulletDynamics/Vehicle/btRaycastVehicle.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\btbulletcollisioncommon.h
+	"BulletCollision/CollisionDispatch/btCollisionWorld.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btCapsuleShape.h"
+	"BulletCollision/CollisionShapes/btCylinderShape.h"
+	"BulletCollision/CollisionShapes/btConeShape.h"
+	"BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+	"BulletCollision/CollisionShapes/btConvexHullShape.h"
+	"BulletCollision/CollisionShapes/btTriangleMesh.h"
+	"BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btTriangleMeshShape.h"
+	"BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h"
+	"BulletCollision/CollisionShapes/btCompoundShape.h"
+	"BulletCollision/CollisionShapes/btTetrahedronShape.h"
+	"BulletCollision/CollisionShapes/btEmptyShape.h"
+	"BulletCollision/CollisionShapes/btMultiSphereShape.h"
+	"BulletCollision/CollisionShapes/btUniformScalingShape.h"
+	"BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btSimpleBroadphase.h"
+	"BulletCollision/BroadphaseCollision/btAxisSweep3.h"
+	"BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h"
+	"BulletCollision/BroadphaseCollision/btDbvtBroadphase.h"
+	"LinearMath/btQuaternion.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btDefaultMotionState.h"
+	"LinearMath/btQuickprof.h"
+	"LinearMath/btIDebugDraw.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\vehicle\btraycastvehicle.h
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+	"btVehicleRaycaster.h"
+	"LinearMath/btAlignedObjectArray.h"
+	"btWheelInfo.h"
+	"BulletDynamics/Dynamics/btActionInterface.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\vehicle\btvehicleraycaster.h
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\vehicle\btwheelinfo.h
+	"LinearMath/btVector3.h"
+	"LinearMath/btTransform.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\vehicle\btraycastvehicle.cpp
+	"LinearMath/btVector3.h"
+	"btRaycastVehicle.h"
+	"BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h"
+	"BulletDynamics/ConstraintSolver/btJacobianEntry.h"
+	"LinearMath/btQuaternion.h"
+	"BulletDynamics/Dynamics/btDynamicsWorld.h"
+	"btVehicleRaycaster.h"
+	"btWheelInfo.h"
+	"LinearMath/btMinMax.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletDynamics/ConstraintSolver/btContactConstraint.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletdynamics\vehicle\btwheelinfo.cpp
+	"btWheelInfo.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btdefaultsoftbodysolver.cpp
+	"BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btCollisionShape.h"
+	"btDefaultSoftBodySolver.h"
+	"BulletCollision/CollisionShapes/btCapsuleShape.h"
+	"BulletSoftBody/btSoftBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btdefaultsoftbodysolver.h
+	"BulletSoftBody/btSoftBodySolvers.h"
+	"btSoftBodySolverVertexBuffer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodysolvers.h
+	"BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodysolververtexbuffer.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbody.h
+	"LinearMath/btAlignedObjectArray.h"
+	"LinearMath/btTransform.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+	"BulletCollision/CollisionShapes/btConcaveShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"btSparseSDF.h"
+	"BulletCollision/BroadphaseCollision/btDbvt.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsparsesdf.h
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbody.cpp
+	"btSoftBodyInternals.h"
+	"BulletSoftBody/btSoftBodySolvers.h"
+	"btSoftBodyData.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyinternals.h
+	"btSoftBody.h"
+	"LinearMath/btQuickprof.h"
+	"LinearMath/btPolarDecomposition.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btConvexInternalShape.h"
+	"BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
+	<string.h>
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btpolardecomposition.h
+	"btMatrix3x3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodydata.h
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletDynamics/Dynamics/btRigidBody.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyconcavecollisionalgorithm.cpp
+	"btSoftBodyConcaveCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletCollision/CollisionShapes/btMultiSphereShape.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionShapes/btConcaveShape.h"
+	"BulletCollision/CollisionDispatch/btManifoldResult.h"
+	"BulletCollision/NarrowPhaseCollision/btRaycastCallback.h"
+	"BulletCollision/CollisionShapes/btTriangleShape.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btTetrahedronShape.h"
+	"BulletCollision/CollisionShapes/btConvexHullShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	"LinearMath/btIDebugDraw.h"
+	"BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h"
+	"BulletSoftBody/btSoftBody.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyconcavecollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
+	"BulletCollision/CollisionShapes/btTriangleCallback.h"
+	"BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"LinearMath/btHashMap.h"
+	"BulletCollision/BroadphaseCollision/btQuantizedBvh.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyhelpers.cpp
+	"btSoftBodyInternals.h"
+	<stdio.h>
+	<string.h>
+	"btSoftBodyHelpers.h"
+	"LinearMath/btConvexHull.h"
+	"LinearMath/btConvexHullComputer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyhelpers.h
+	"btSoftBody.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyrigidbodycollisionconfiguration.cpp
+	"btSoftBodyRigidBodyCollisionConfiguration.h"
+	"btSoftRigidCollisionAlgorithm.h"
+	"btSoftBodyConcaveCollisionAlgorithm.h"
+	"btSoftSoftCollisionAlgorithm.h"
+	"LinearMath/btPoolAllocator.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftbodyrigidbodycollisionconfiguration.h
+	"BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftrigidcollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"LinearMath/btVector3.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftsoftcollisionalgorithm.h
+	"BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+	"BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+	"BulletCollision/BroadphaseCollision/btDispatcher.h"
+	"BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftrigidcollisionalgorithm.cpp
+	"btSoftRigidCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btSphereShape.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"btSoftBody.h"
+	"BulletSoftBody/btSoftBodySolvers.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftrigiddynamicsworld.cpp
+	"btSoftRigidDynamicsWorld.h"
+	"LinearMath/btQuickprof.h"
+	"btSoftBody.h"
+	"btSoftBodyHelpers.h"
+	"btSoftBodySolvers.h"
+	"btDefaultSoftBodySolver.h"
+	"LinearMath/btSerializer.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftrigiddynamicsworld.h
+	"BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
+	"btSoftBody.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\bulletsoftbody\btsoftsoftcollisionalgorithm.cpp
+	"btSoftSoftCollisionAlgorithm.h"
+	"BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+	"BulletCollision/CollisionShapes/btBoxShape.h"
+	"BulletCollision/CollisionDispatch/btCollisionObject.h"
+	"BulletSoftBody/btSoftBodySolvers.h"
+	"btSoftBody.h"
+	"BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btalignedallocator.cpp
+	"btAlignedAllocator.h"
+	<malloc.h>
+	<stdlib.h>
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btconvexhull.cpp
+	<string.h>
+	"btConvexHull.h"
+	"btAlignedObjectArray.h"
+	"btMinMax.h"
+	"btVector3.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btconvexhullcomputer.cpp
+	<string.h>
+	"btConvexHullComputer.h"
+	"btAlignedObjectArray.h"
+	"btMinMax.h"
+	"btVector3.h"
+	<stdint.h>
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btgeometryutil.cpp
+	"btGeometryUtil.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btpolardecomposition.cpp
+	"btPolarDecomposition.h"
+	"btMinMax.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btquickprof.cpp
+	"btQuickprof.h"
+	<sys/sys_time.h>
+	<sys/time_util.h>
+	<stdio.h>
+	<stdio.h>
+	<Xtl.h>
+	<windows.h>
+	<time.h>
+	<sys/time.h>
+	<stdio.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btserializer.cpp
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\include\linearmath\btvector3.cpp
+	"btVector3.h"
+	<stdint.h>
+	<emmintrin.h>
+	<arm_neon.h>
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\joints\ofxbulletjoint.cpp
+	"ofxBulletJoint.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\joints\ofxbulletjoint.h
+	"ofMain.h"
+	"btBulletDynamicsCommon.h"
+	"ofxBulletConstants.h"
+	"ofxBulletUtils.h"
+	"ofxBulletBaseShape.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\ofmain.h
+	"ofConstants.h"
+	"ofFileUtils.h"
+	"ofLog.h"
+	"ofSystemUtils.h"
+	"ofThread.h"
+	"ofURLFileLoader.h"
+	"ofUtils.h"
+	"ofBaseTypes.h"
+	"ofTypes.h"
+	"ofColor.h"
+	"ofPoint.h"
+	"ofRectangle.h"
+	"ofXml.h"
+	"ofParameter.h"
+	"ofParameterGroup.h"
+	"ofMath.h"
+	"ofVectorMath.h"
+	"ofSerial.h"
+	"ofArduino.h"
+	"ofFbo.h"
+	"ofGLRenderer.h"
+	"ofGLUtils.h"
+	"ofLight.h"
+	"ofMaterial.h"
+	"ofShader.h"
+	"ofTexture.h"
+	"ofVbo.h"
+	"ofVboMesh.h"
+	"ofGLProgrammableRenderer.h"
+	"ofGLRenderer.h"
+	"ofCairoRenderer.h"
+	"ofGraphics.h"
+	"ofImage.h"
+	"ofPath.h"
+	"ofPixels.h"
+	"ofPolyline.h"
+	"ofRendererCollection.h"
+	"ofTessellator.h"
+	"ofTrueTypeFont.h"
+	"ofBaseApp.h"
+	"ofAppRunner.h"
+	"ofSoundStream.h"
+	"ofSoundPlayer.h"
+	"ofVideoGrabber.h"
+	"ofVideoPlayer.h"
+	"ofEvents.h"
+	"of3dUtils.h"
+	"ofCamera.h"
+	"ofEasyCam.h"
+	"ofMesh.h"
+	"ofNode.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofconstants.h
+	<stdint.h>
+	<TargetConditionals.h>
+	<windows.h>
+	"GL\glew.h"
+	"GL\wglew.h"
+	"glu.h"
+	<stdint.h>
+	<functional>
+	<unistd.h>
+	"GL/glew.h"
+	<OpenGL/gl.h>
+	<ApplicationServices/ApplicationServices.h>
+	<unistd.h>
+	"bcm_host.h"
+	"GLES/gl.h"
+	"GLES/glext.h"
+	"GLES2/gl2.h"
+	"GLES2/gl2ext.h"
+	"EGL/egl.h"
+	"EGL/eglext.h"
+	<GL/glew.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<typeinfo>
+	<unistd.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	"tesselator.h"
+	<cstdlib>
+	<cstdio>
+	<cstdarg>
+	<cmath>
+	<ctime>
+	<cstdlib>
+	<string>
+	<iostream>
+	<vector>
+	<cstring>
+	<sstream>
+	<iomanip>
+	<fstream>
+	<algorithm>
+	<cfloat>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\glew\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\glew\include\gl\wglew.h
+	<windows.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\glu\include\glu.h
+	"glu_mangle.h"
+	<GL/gl.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\tess2\include\tesselator.h
+	<TargetConditionals.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\offileutils.h
+	"ofConstants.h"
+	"Poco/File.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file.h
+	"Poco/Foundation.h"
+	"Poco/Timestamp.h"
+	<vector>
+	"File_WINCE.h"
+	"Poco/File_WIN32U.h"
+	"Poco/File_WIN32.h"
+	"Poco/File_VX.h"
+	"Poco/File_UNIX.h"
+	"Poco/File_VMS.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\foundation.h
+	"Poco/Config.h"
+	"Poco/Platform.h"
+	"Poco/Platform_WIN32.h"
+	"Poco/Platform_VMS.h"
+	"Poco/Platform_VX.h"
+	"Poco/Platform_POSIX.h"
+	"Poco/Bugcheck.h"
+	"Poco/Types.h"
+	<string>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\config.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\platform.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\platform_win32.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\platform_vms.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\platform_vx.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\platform_posix.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\bugcheck.h
+	"Poco/Foundation.h"
+	<string>
+	<iostream>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\types.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\timestamp.h
+	"Poco/Foundation.h"
+	<ctime>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_wince.h
+	"Poco/Foundation.h"
+	"Poco/Timestamp.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_win32u.h
+	"Poco/Foundation.h"
+	"Poco/Timestamp.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_win32.h
+	"Poco/Foundation.h"
+	"Poco/Timestamp.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_vx.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_unix.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\file_vms.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\oflog.h
+	"ofConstants.h"
+	"ofFileUtils.h"
+	"ofTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\oftypes.h
+	"ofConstants.h"
+	"ofColor.h"
+	<memory>
+	<tr1/memory>
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofcolor.h
+	<limits>
+	"ofMath.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofmath.h
+	"ofPoint.h"
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofpoint.h
+	"ofVec3f.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofvec3f.h
+	"ofVec2f.h"
+	"ofVec4f.h"
+	"ofConstants.h"
+	<cmath>
+	<iostream>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofvec2f.h
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofvec4f.h
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\mutex.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/ScopedLock.h"
+	"Poco/Mutex_WINCE.h"
+	"Poco/Mutex_WIN32.h"
+	"Poco/Mutex_VX.h"
+	"Poco/Mutex_POSIX.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\exception.h
+	"Poco/Foundation.h"
+	<stdexcept>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\scopedlock.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\mutex_wince.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/UnWindows.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\unwindows.h
+	<windows.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\mutex_win32.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/UnWindows.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\mutex_vx.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	<semLib.h>
+	<errno.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\mutex_posix.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	<pthread.h>
+	<errno.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofsystemutils.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofthread.h
+	"ofConstants.h"
+	"ofTypes.h"
+	"Poco/Thread.h"
+	"Poco/Runnable.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\thread.h
+	"Poco/Foundation.h"
+	"Poco/Mutex.h"
+	"Poco/Thread_WINCE.h"
+	"Poco/Thread_WIN32.h"
+	"Poco/Thread_VX.h"
+	"Poco/Thread_POSIX.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\thread_wince.h
+	"Poco/Foundation.h"
+	"Poco/Runnable.h"
+	"Poco/UnWindows.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\runnable.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\thread_win32.h
+	"Poco/Foundation.h"
+	"Poco/Runnable.h"
+	"Poco/UnWindows.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\thread_vx.h
+	"Poco/Foundation.h"
+	"Poco/Runnable.h"
+	"Poco/SignalHandler.h"
+	"Poco/Event.h"
+	"Poco/RefCountedObject.h"
+	"Poco/AutoPtr.h"
+	<taskLib.h>
+	<taskVarLib.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\signalhandler.h
+	"Poco/Foundation.h"
+	<vector>
+	<setjmp.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\event.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/Event_WIN32.h"
+	"Poco/Event_VX.h"
+	"Poco/Event_POSIX.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\event_win32.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/UnWindows.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\event_vx.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	<semLib.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\event_posix.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	<pthread.h>
+	<errno.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\refcountedobject.h
+	"Poco/Foundation.h"
+	"Poco/AtomicCounter.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\atomiccounter.h
+	"Poco/Foundation.h"
+	"Poco/UnWindows.h"
+	<libkern/OSAtomic.h>
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\autoptr.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	<algorithm>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\thread_posix.h
+	"Poco/Foundation.h"
+	"Poco/Runnable.h"
+	"Poco/SignalHandler.h"
+	"Poco/Event.h"
+	"Poco/RefCountedObject.h"
+	"Poco/AutoPtr.h"
+	<pthread.h>
+	<limits.h>
+	<sys/select.h>
+	<errno.h>
+	<cstring>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofurlfileloader.h
+	<deque>
+	<queue>
+	"ofThread.h"
+	"ofEvents.h"
+	"ofFileUtils.h"
+	"Poco/Condition.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\events\ofevents.h
+	"ofConstants.h"
+	"ofPoint.h"
+	"ofEventUtils.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\events\ofeventutils.h
+	"ofConstants.h"
+	"Poco/PriorityEvent.h"
+	"Poco/PriorityDelegate.h"
+	"ofDelegate.h"
+	<stdio.h>
+	<stdlib.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\priorityevent.h
+	"Poco/AbstractEvent.h"
+	"Poco/PriorityStrategy.h"
+	"Poco/AbstractPriorityDelegate.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\abstractevent.h
+	"Poco/Foundation.h"
+	"Poco/SingletonHolder.h"
+	"Poco/SharedPtr.h"
+	"Poco/ActiveResult.h"
+	"Poco/ActiveMethod.h"
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\singletonholder.h
+	"Poco/Foundation.h"
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sharedptr.h
+	"Poco/Foundation.h"
+	"Poco/Exception.h"
+	"Poco/AtomicCounter.h"
+	<algorithm>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\activeresult.h
+	"Poco/Foundation.h"
+	"Poco/Mutex.h"
+	"Poco/Event.h"
+	"Poco/RefCountedObject.h"
+	"Poco/Exception.h"
+	<algorithm>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\activemethod.h
+	"Poco/Foundation.h"
+	"Poco/ActiveResult.h"
+	"Poco/ActiveRunnable.h"
+	"Poco/ActiveStarter.h"
+	"Poco/AutoPtr.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\activerunnable.h
+	"Poco/Foundation.h"
+	"Poco/ActiveResult.h"
+	"Poco/Runnable.h"
+	"Poco/RefCountedObject.h"
+	"Poco/AutoPtr.h"
+	"Poco/Exception.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\activestarter.h
+	"Poco/Foundation.h"
+	"Poco/ThreadPool.h"
+	"Poco/ActiveRunnable.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\threadpool.h
+	"Poco/Foundation.h"
+	"Poco/Thread.h"
+	"Poco/Mutex.h"
+	<vector>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\prioritystrategy.h
+	"Poco/NotificationStrategy.h"
+	"Poco/SharedPtr.h"
+	<vector>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\notificationstrategy.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\abstractprioritydelegate.h
+	"Poco/Foundation.h"
+	"Poco/AbstractDelegate.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\abstractdelegate.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\prioritydelegate.h
+	"Poco/Foundation.h"
+	"Poco/AbstractPriorityDelegate.h"
+	"Poco/PriorityExpire.h"
+	"Poco/FunctionPriorityDelegate.h"
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\priorityexpire.h
+	"Poco/Foundation.h"
+	"Poco/Timestamp.h"
+	"Poco/AbstractPriorityDelegate.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\functionprioritydelegate.h
+	"Poco/Foundation.h"
+	"Poco/AbstractPriorityDelegate.h"
+	"Poco/Mutex.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\events\ofdelegate.h
+	"Poco/AbstractPriorityDelegate.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\condition.h
+	"Poco/Foundation.h"
+	"Poco/Mutex.h"
+	"Poco/ScopedUnlock.h"
+	"Poco/Event.h"
+	"Poco/Exception.h"
+	<deque>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\scopedunlock.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofutils.h
+	"ofConstants.h"
+	<bitset>
+	"ofLog.h"
+	<shellapi.h>
+	"Poco/Path.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\path.h
+	"Poco/Foundation.h"
+	<vector>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofbasetypes.h
+	"ofPoint.h"
+	"ofRectangle.h"
+	"ofConstants.h"
+	"ofColor.h"
+	"ofMesh.h"
+	"ofPixels.h"
+	"ofMatrix4x4.h"
+	"ofTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofrectangle.h
+	"ofConstants.h"
+	"ofPoint.h"
+	"ofLog.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\ofmesh.h
+	"ofVec3f.h"
+	"ofVec2f.h"
+	"ofColor.h"
+	"ofUtils.h"
+	"ofConstants.h"
+	"ofGLUtils.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofglutils.h
+	"ofConstants.h"
+	"ofTypes.h"
+	"ofPixels.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofpixels.h
+	"ofConstants.h"
+	"ofUtils.h"
+	"ofColor.h"
+	"ofMath.h"
+	<limits>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofmatrix4x4.h
+	"ofVec3f.h"
+	"ofVec4f.h"
+	"ofQuaternion.h"
+	"ofConstants.h"
+	<cmath>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofquaternion.h
+	"ofConstants.h"
+	"ofVec3f.h"
+	"ofVec4f.h"
+	<cmath>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofxml.h
+	"ofMain.h"
+	<numeric>
+	<Poco/DOM/Document.h>
+	<Poco/DOM/DocumentFragment.h>
+	<Poco/DOM/Element.h>
+	<Poco/DOM/DOMParser.h>
+	<Poco/DOM/DOMException.h>
+	<Poco/SAX/SAXException.h>
+	<Poco/XML/XMLString.h>
+	<Poco/XML/XMLWriter.h>
+	<Poco/DOM/DOMParser.h>
+	<Poco/DOM/DOMWriter.h>
+	<Poco/DOM/Document.h>
+	<Poco/DOM/Attr.h>
+	<Poco/DOM/Node.h>
+	<Poco/DOM/Text.h>
+	<Poco/DOM/NodeIterator.h>
+	<Poco/DOM/NodeFilter.h>
+	<Poco/DOM/NamedNodeMap.h>
+	<Poco/DOM/ChildNodesList.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\document.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractContainerNode.h"
+	"Poco/DOM/DocumentEvent.h"
+	"Poco/DOM/Element.h"
+	"Poco/XML/XMLString.h"
+	"Poco/XML/NamePool.h"
+	"Poco/AutoReleasePool.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\xml.h
+	"Poco/Foundation.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\abstractcontainernode.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractNode.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\abstractnode.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/Node.h"
+	"Poco/DOM/MutationEvent.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\node.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/EventTarget.h"
+	"Poco/XML/XMLString.h"
+	"Poco/SAX/NamespaceSupport.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\eventtarget.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/DOMObject.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\domobject.h
+	"Poco/XML/XML.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\xmlstring.h
+	"Poco/XML/XML.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\namespacesupport.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+	<set>
+	<map>
+	<vector>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\mutationevent.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/Event.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\event.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+	"Poco/DOM/DOMObject.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\documentevent.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\element.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractContainerNode.h"
+	"Poco/XML/Name.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\name.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\namepool.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+	"Poco/XML/Name.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\autoreleasepool.h
+	"Poco/Foundation.h"
+	<list>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\documentfragment.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractContainerNode.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\domparser.h
+	"Poco/XML/XML.h"
+	"Poco/SAX/SAXParser.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\saxparser.h
+	"Poco/XML/XML.h"
+	"Poco/SAX/XMLReader.h"
+	"Poco/XML/ParserEngine.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\xmlreader.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\parserengine.h
+	"Poco/XML/XML.h"
+	<expat.h>
+	"Poco/XML/expat.h"
+	"Poco/XML/XMLString.h"
+	"Poco/XML/XMLStream.h"
+	"Poco/SAX/Locator.h"
+	"Poco/TextEncoding.h"
+	<map>
+	<vector>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\expat.h
+	<stdlib.h>
+	"expat_external.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\expat_external.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\xmlstream.h
+	"Poco/XML/XML.h"
+	<istream>
+	<ostream>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\locator.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\textencoding.h
+	"Poco/Foundation.h"
+	"Poco/SharedPtr.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\domexception.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLException.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\xmlexception.h
+	"Poco/XML/XML.h"
+	"Poco/Exception.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\saxexception.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLException.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\xml\xmlwriter.h
+	"Poco/XML/XML.h"
+	"Poco/SAX/ContentHandler.h"
+	"Poco/SAX/LexicalHandler.h"
+	"Poco/SAX/DTDHandler.h"
+	"Poco/SAX/NamespaceSupport.h"
+	"Poco/XML/XMLString.h"
+	"Poco/XML/XMLStream.h"
+	"Poco/XML/Name.h"
+	"Poco/TextEncoding.h"
+	"Poco/StreamConverter.h"
+	<vector>
+	<map>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\contenthandler.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\lexicalhandler.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\sax\dtdhandler.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\streamconverter.h
+	"Poco/Foundation.h"
+	"Poco/TextEncoding.h"
+	"Poco/UnbufferedStreamBuf.h"
+	<istream>
+	<ostream>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\unbufferedstreambuf.h
+	"Poco/Foundation.h"
+	"Poco/StreamUtil.h"
+	<streambuf>
+	<iosfwd>
+	<ios>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\streamutil.h
+	"Poco/Foundation.h"
+
+1387115321 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\libs\bullet2.8.1\lib\ios
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\domwriter.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+	"Poco/XML/XMLStream.h"
+	"Poco/TextEncoding.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\attr.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractNode.h"
+	"Poco/DOM/Element.h"
+	"Poco/XML/Name.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\text.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/CharacterData.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\characterdata.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/AbstractNode.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\nodeiterator.h
+	"Poco/XML/XML.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\nodefilter.h
+	"Poco/XML/XML.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\namednodemap.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/DOMObject.h"
+	"Poco/XML/XMLString.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\childnodeslist.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/NodeList.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\dom\nodelist.h
+	"Poco/XML/XML.h"
+	"Poco/DOM/DOMObject.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofparameter.h
+	"ofEvents.h"
+	"ofTypes.h"
+	"ofUtils.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\types\ofparametergroup.h
+	<map>
+	"Poco/Any.h"
+	"ofConstants.h"
+	"ofLog.h"
+	"ofParameter.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\poco\include\poco\any.h
+	"Poco/Exception.h"
+	<algorithm>
+	<typeinfo>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofvectormath.h
+	"ofVec2f.h"
+	"ofVec3f.h"
+	"ofVec4f.h"
+	"ofMatrix3x3.h"
+	"ofMatrix4x4.h"
+	"ofQuaternion.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\math\ofmatrix3x3.h
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\communication\ofserial.h
+	"ofConstants.h"
+	"ofTypes.h"
+	<termios.h>
+	<winbase.h>
+	<tchar.h>
+	<iostream>
+	<string.h>
+	<setupapi.h>
+	<regstr.h>
+	<winioctl.h>
+	<initguid.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\communication\ofarduino.h
+	<list>
+	<vector>
+	<string>
+	<iostream>
+	"ofEvents.h"
+	"ofSerial.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\offbo.h
+	"ofTexture.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\oftexture.h
+	"ofPoint.h"
+	"ofRectangle.h"
+	"ofBaseTypes.h"
+	"ofConstants.h"
+	"ofVboMesh.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofvbomesh.h
+	"ofMesh.h"
+	"ofVbo.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofvbo.h
+	"ofConstants.h"
+	"ofVec3f.h"
+	"ofColor.h"
+	"ofUtils.h"
+	"ofMesh.h"
+	"ofGLUtils.h"
+	<map>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofglrenderer.h
+	"ofBaseTypes.h"
+	"ofPolyline.h"
+	"ofMatrix4x4.h"
+	<stack>
+	"ofGraphics.h"
+	"ofMatrixStack.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofpolyline.h
+	"ofPoint.h"
+	"ofConstants.h"
+	<deque>
+	"ofRectangle.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofgraphics.h
+	"ofConstants.h"
+	"ofColor.h"
+	"ofPoint.h"
+	"ofMatrix4x4.h"
+	"ofRectangle.h"
+	"ofTypes.h"
+	"ofBaseTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\utils\ofmatrixstack.h
+	<stack>
+	"ofConstants.h"
+	"ofRectangle.h"
+	"ofGraphics.h"
+	"ofMatrix4x4.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\oflight.h
+	"ofNode.h"
+	"ofColor.h"
+	"of3dGraphics.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\ofnode.h
+	"ofVectorMath.h"
+	"of3dUtils.h"
+	"ofGraphics.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\of3dutils.h
+	"ofVectorMath.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\of3dgraphics.h
+	"ofConstants.h"
+	"ofColor.h"
+	"ofPoint.h"
+	"ofMatrix4x4.h"
+	"ofRectangle.h"
+	"ofTypes.h"
+	"ofBaseTypes.h"
+	"ofGLRenderer.h"
+	"of3dPrimitives.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\of3dprimitives.h
+	"ofVboMesh.h"
+	"ofRectangle.h"
+	"ofNode.h"
+	"ofTexture.h"
+	<map>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofmaterial.h
+	"ofColor.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofshader.h
+	"ofConstants.h"
+	"ofBaseTypes.h"
+	"ofTexture.h"
+	"ofMatrix4x4.h"
+	<map>
+	"ofAppBaseWindow.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\app\ofappbasewindow.h
+	"ofPoint.h"
+	"ofTypes.h"
+	<X11/Xlib.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\gl\ofglprogrammablerenderer.h
+	"ofBaseTypes.h"
+	"ofPolyline.h"
+	"ofMatrix4x4.h"
+	"ofShader.h"
+	"ofGraphics.h"
+	"ofMatrixStack.h"
+	<stack>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofcairorenderer.h
+	"cairo-features.h"
+	"cairo-pdf.h"
+	"cairo-svg.h"
+	"cairo.h"
+	<deque>
+	<stack>
+	"ofMatrix4x4.h"
+	"ofBaseTypes.h"
+	"ofPath.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo-features.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo-pdf.h
+	"cairo.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo.h
+	"cairo-version.h"
+	"cairo-features.h"
+	"cairo-deprecated.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo-version.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo-deprecated.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\cairo\include\cairo\cairo-svg.h
+	"cairo.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofpath.h
+	"ofConstants.h"
+	"ofPoint.h"
+	"ofColor.h"
+	"ofPolyline.h"
+	"ofBaseTypes.h"
+	"ofVboMesh.h"
+	"ofTessellator.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\oftessellator.h
+	"ofConstants.h"
+	"ofMesh.h"
+	"ofTypes.h"
+	"ofPolyline.h"
+	"tesselator.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofimage.h
+	"ofFileUtils.h"
+	"ofTexture.h"
+	"ofPixels.h"
+	"ofBaseTypes.h"
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\ofrenderercollection.h
+	"ofBaseTypes.h"
+	"ofGLRenderer.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\graphics\oftruetypefont.h
+	<vector>
+	"ofPoint.h"
+	"ofRectangle.h"
+	"ofConstants.h"
+	"ofPath.h"
+	"ofTexture.h"
+	"ofMesh.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\app\ofbaseapp.h
+	"ofPoint.h"
+	"ofEvents.h"
+	"ofBaseTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\app\ofapprunner.h
+	"ofConstants.h"
+	"ofPoint.h"
+	"ofRectangle.h"
+	"ofTypes.h"
+	<X11/Xlib.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofsoundstream.h
+	"ofConstants.h"
+	"ofBaseTypes.h"
+	"ofBaseApp.h"
+	"ofTypes.h"
+	"ofBaseSoundStream.h"
+	"ofRtAudioSoundStream.h"
+	"ofPASoundStream.h"
+	"ofxAndroidSoundStream.h"
+	"ofxiOSSoundStream.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofbasesoundstream.h
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofrtaudiosoundstream.h
+	"ofConstants.h"
+	"ofBaseSoundStream.h"
+	"ofTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofpasoundstream.h
+	"ofConstants.h"
+	"ofBaseSoundStream.h"
+	"ofTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofsoundplayer.h
+	"ofConstants.h"
+	"ofTypes.h"
+	"ofBaseTypes.h"
+	"ofBaseSoundPlayer.h"
+	"ofQuicktimeSoundPlayer.h"
+	"ofFmodSoundPlayer.h"
+	"ofOpenALSoundPlayer.h"
+	"ofxiOSSoundPlayer.h"
+	"ofxAndroidSoundPlayer.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofbasesoundplayer.h
+	"ofConstants.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\offmodsoundplayer.h
+	"ofConstants.h"
+	"ofBaseSoundPlayer.h"
+	"fmod.h"
+	"fmod_errors.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\fmodex\include\fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\fmodex\include\fmod_codec.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\fmodex\include\fmod_dsp.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\fmodex\include\fmod_memoryinfo.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\fmodex\include\fmod_errors.h
+	"fmod.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\sound\ofopenalsoundplayer.h
+	"ofConstants.h"
+	"ofBaseSoundPlayer.h"
+	"ofEvents.h"
+	"ofThread.h"
+	<OpenAL/al.h>
+	<OpenAL/alc.h>
+	<AL/al.h>
+	<AL/alc.h>
+	"kiss_fft.h"
+	"kiss_fftr.h"
+	<sndfile.h>
+	<mpg123.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofvideograbber.h
+	"ofConstants.h"
+	"ofTexture.h"
+	"ofBaseTypes.h"
+	"ofPixels.h"
+	"ofTypes.h"
+	"ofxiOSVideoGrabber.h"
+	"ofQuickTimeGrabber.h"
+	"ofQTKitGrabber.h"
+	"ofDirectShowGrabber.h"
+	"ofGstVideoGrabber.h"
+	"ofxAndroidVideoGrabber.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofquicktimegrabber.h
+	"ofConstants.h"
+	"ofQtUtils.h"
+	"ofTexture.h"
+	"ofBaseTypes.h"
+	"ofPixels.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofqtutils.h
+	"ofConstants.h"
+	<QuickTime/QuickTime.h>
+	<CoreServices/CoreServices.h>
+	<ApplicationServices/ApplicationServices.h>
+	<QTML.h>
+	<FixMath.h>
+	<QuickTimeComponents.h>
+	<TextUtils.h>
+	<MediaHandlers.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\qtml.h
+	<MacTypes.h>
+	<MacMemory.h>
+	<MacWindows.h>
+	<OSUtils.h>
+	<Files.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\mactypes.h
+	<ConditionalMacros.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\conditionalmacros.h
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\macmemory.h
+	<MacTypes.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\mixedmode.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\macwindows.h
+	<MacTypes.h>
+	<Aliases.h>
+	<AppleEvents.h>
+	<Collections.h>
+	<Drag.h>
+	<Events.h>
+	<Menus.h>
+	<MixedMode.h>
+	<QDOffscreen.h>
+	<Quickdraw.h>
+	<TextCommon.h>
+	<Icons.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\aliases.h
+	<MacTypes.h>
+	<AppleTalk.h>
+	<Files.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\appletalk.h
+	<MacTypes.h>
+	<OSUtils.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\osutils.h
+	<MacTypes.h>
+	<MixedMode.h>
+	<MacMemory.h>
+	<Patches.h>
+	<DateTimeUtils.h>
+	<Endian.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\patches.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\datetimeutils.h
+	<ConditionalMacros.h>
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\endian.h
+	<ConditionalMacros.h>
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\files.h
+	<MacTypes.h>
+	<MixedMode.h>
+	<OSUtils.h>
+	<TextCommon.h>
+	<UTCUtils.h>
+	<Finder.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\textcommon.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\utcutils.h
+	<MacTypes.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\macerrors.h
+	<ConditionalMacros.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\finder.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\appleevents.h
+	<MacTypes.h>
+	<MixedMode.h>
+	<Notification.h>
+	<Events.h>
+	<AEDataModel.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\notification.h
+	<MacTypes.h>
+	<OSUtils.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\events.h
+	<OSUtils.h>
+	<Quickdraw.h>
+	<MacTypes.h>
+	<Endian.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\quickdraw.h
+	<Components.h>
+	<MacTypes.h>
+	<MixedMode.h>
+	<QuickdrawText.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\components.h
+	<MacErrors.h>
+	<MacTypes.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\quickdrawtext.h
+	<MacTypes.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\aedatamodel.h
+	<MacTypes.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\collections.h
+	<MacTypes.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\drag.h
+	<MacTypes.h>
+	<Events.h>
+	<Files.h>
+	<AppleEvents.h>
+	<Quickdraw.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\menus.h
+	<MacTypes.h>
+	<Events.h>
+	<Quickdraw.h>
+	<Fonts.h>
+	<TextCommon.h>
+	<Processes.h>
+	<AppleEvents.h>
+	<Collections.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\fonts.h
+	<MacTypes.h>
+	<Files.h>
+	<Quickdraw.h>
+	<TextCommon.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\processes.h
+	<MacTypes.h>
+	<Events.h>
+	<Files.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\qdoffscreen.h
+	<MacErrors.h>
+	<Quickdraw.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\icons.h
+	<MacTypes.h>
+	<Quickdraw.h>
+	<Files.h>
+	<CodeFragments.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\codefragments.h
+	<MacTypes.h>
+	<Files.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\fixmath.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\quicktimecomponents.h
+	<MacTypes.h>
+	<MixedMode.h>
+	<Components.h>
+	<ImageCompression.h>
+	<Movies.h>
+	<Quickdraw.h>
+	<Video.h>
+	<Sound.h>
+	<QuickTimeMusic.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\imagecompression.h
+	<MacTypes.h>
+	<Quickdraw.h>
+	<QDOffscreen.h>
+	<Components.h>
+	<StandardFile.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\standardfile.h
+	<MacTypes.h>
+	<Dialogs.h>
+	<Files.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\dialogs.h
+	<MacTypes.h>
+	<MixedMode.h>
+	<Events.h>
+	<MacWindows.h>
+	<TextEdit.h>
+	<Controls.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\textedit.h
+	<MacTypes.h>
+	<Quickdraw.h>
+	<MixedMode.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\controls.h
+	<MacTypes.h>
+	<Quickdraw.h>
+	<Menus.h>
+	<TextEdit.h>
+	<Drag.h>
+	<Icons.h>
+	<Collections.h>
+	<MacErrors.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\movies.h
+	<Quickdraw.h>
+	<Aliases.h>
+	<Events.h>
+	<Menus.h>
+	<Components.h>
+	<ImageCompression.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\video.h
+	<Quickdraw.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\sound.h
+	<MacTypes.h>
+	<Dialogs.h>
+	<Components.h>
+	<MixedMode.h>
+	<Movies.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\quicktimemusic.h
+	<Components.h>
+	<ImageCompression.h>
+	<Movies.h>
+	<Quickdraw.h>
+	<Video.h>
+	<MacMemory.h>
+	<Sound.h>
+	<Endian.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\textutils.h
+	<MacTypes.h>
+	<NumberFormatting.h>
+	<StringCompare.h>
+	<DateTimeUtils.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\numberformatting.h
+	<ConditionalMacros.h>
+	<MacTypes.h>
+	<IntlResources.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\intlresources.h
+	<MacTypes.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\stringcompare.h
+	<MacTypes.h>
+	<TextCommon.h>
+	<Script.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\script.h
+	<MacTypes.h>
+	<Quickdraw.h>
+	<IntlResources.h>
+	<Events.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\quicktime\include\mediahandlers.h
+	<ConditionalMacros.h>
+	<MacTypes.h>
+	<Components.h>
+	<Movies.h>
+	<Sound.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofqtkitgrabber.h
+	"ofMain.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofdirectshowgrabber.h
+	"ofConstants.h"
+	"ofTexture.h"
+	"ofBaseTypes.h"
+	"ofPixels.h"
+	"videoInput.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\videoinput\include\videoinput.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<wchar.h>
+	<string>
+	<vector>
+	<windows.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofgstvideograbber.h
+	"ofGstUtils.h"
+	"ofTypes.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofgstutils.h
+	"ofConstants.h"
+	"ofConstants.h"
+	"ofBaseTypes.h"
+	"ofPixels.h"
+	"ofTypes.h"
+	"ofEvents.h"
+	"ofThread.h"
+	<gst/gst.h>
+	<gst/gstpad.h>
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofvideoplayer.h
+	"ofConstants.h"
+	"ofTexture.h"
+	"ofBaseTypes.h"
+	"ofTypes.h"
+	"ofGstVideoPlayer.h"
+	"ofQuickTimePlayer.h"
+	"ofQTKitPlayer.h"
+	"ofxiOSVideoPlayer.h"
+	"ofxAndroidVideoPlayer.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofgstvideoplayer.h
+	"ofGstUtils.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofquicktimeplayer.h
+	"ofConstants.h"
+	"ofBaseTypes.h"
+	"ofPixels.h"
+	"ofQtUtils.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\video\ofqtkitplayer.h
+	"ofMain.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\ofcamera.h
+	"ofRectangle.h"
+	"ofAppRunner.h"
+	"ofNode.h"
+
+1376287980 d:\work\openframeworks\of_v0.8.0_win_cb_release\libs\openframeworks\3d\ofeasycam.h
+	"ofCamera.h"
+	"ofEvents.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbulletconstants.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbulletutils.h
+	"btBulletDynamicsCommon.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletbaseshape.h
+	"ofMain.h"
+	"btBulletDynamicsCommon.h"
+	"ofxBulletConstants.h"
+	"ofxBulletUtils.h"
+	"ofxBulletUserData.h"
+	"ofxBulletCollisionData.h"
+	"ofxBulletMousePickEvent.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbulletuserdata.h
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\events\ofxbulletcollisiondata.h
+	"ofMain.h"
+	"ofxBulletBaseShape.h"
+	"ofxBulletUserData.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\events\ofxbulletmousepickevent.h
+	"ofMain.h"
+	"ofxBulletRaycastData.h"
+	"ofxBulletBaseShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\events\ofxbulletraycastdata.h
+	"ofMain.h"
+	"ofxBulletBaseShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbulletworldrigid.cpp
+	"ofxBulletWorldRigid.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbulletworldrigid.h
+	"ofMain.h"
+	"btBulletDynamicsCommon.h"
+	"ofxBulletUtils.h"
+	"ofxBulletConstants.h"
+	"ofxBulletBaseShape.h"
+	"ofxBulletCollisionData.h"
+	"ofxBulletMousePickEvent.h"
+	"GLDebugDrawer.h"
+	"ofxBulletRaycastData.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\render\gldebugdrawer.h
+	"LinearMath/btIDebugDraw.h"
+	"ofMain.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\render\gldebugdrawer.cpp
+	"GLDebugDrawer.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletbaseshape.cpp
+	"ofxBulletBaseShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletbox.cpp
+	"ofxBulletBox.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletbox.h
+	"ofxBulletBaseShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcapsule.cpp
+	"ofxBulletCapsule.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcapsule.h
+	"ofxBulletBaseShape.h"
+	"btShapeHull.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcone.cpp
+	"ofxBulletCone.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcone.h
+	"ofxBulletBaseShape.h"
+	"ofMain.h"
+	"ofVbo.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletconvexshape.cpp
+	"ofxBulletConvexShape.h"
+	"btShapeHull.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletconvexshape.h
+	"ofxBulletBaseShape.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcustomshape.cpp
+	"ofxBulletCustomShape.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcustomshape.h
+	"ofxBulletBaseShape.h"
+	"btShapeHull.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcylinder.cpp
+	"ofxBulletCylinder.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletcylinder.h
+	"ofxBulletBaseShape.h"
+	"ofVbo.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletsphere.cpp
+	"ofxBulletSphere.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletsphere.h
+	"ofxBulletBaseShape.h"
+	"ofVbo.h"
+
+1386165000 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletstaticplane.cpp
+	"ofxBulletStaticPlane.h"
+	"btBulletDynamicsCommon.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletstaticplane.h
+	"ofxBulletBaseShape.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.cpp
+	"Ball.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.h
+	"ofMain.h"
+	"ofxBullet.h"
+
+1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\ofxbullet.h
+	"ofxBulletWorldRigid.h"
+	"ofxBulletConstants.h"
+	"ofxBulletUtils.h"
+	"ofxBulletUserData.h"
+	"ofxBulletSphere.h"
+	"ofxBulletCylinder.h"
+	"ofxBulletBox.h"
+	"ofxBulletBaseShape.h"
+	"ofxBulletCone.h"
+	"ofxBulletCapsule.h"
+	"ofxBulletCustomShape.h"
+	"ofxBulletConvexShape.h"
+	"ofxBulletStaticPlane.h"
+	"ofxBulletJoint.h"
+	"ofxBulletMousePickEvent.h"
+	"ofxBulletCollisionData.h"
+
+1389478697 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.cpp
+	"Lever.h"
+
+1389479107 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.h
+	"SimpleObject.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.h
+	"ofMain.h"
+	"ofxBullet.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.cpp
+	"SimpleObject.h"
+
+1389443796 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\main.cpp
+	"ofMain.h"
+	"testApp.h"
+
+1389443827 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\testapp.h
+	"ofMain.h"
+	"PinballChinoManager.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\managers\pinballchinomanager.h
+	"ofMain.h"
+	"ofxBullet.h"
+	"Scenario.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\scenario\scenario.h
+	"ofxBullet.h"
+	"Ball.h"
+	"Lever.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\managers\pinballchinomanager.cpp
+	"PinballChinoManager.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\media\objdisplay.cpp
+	"objDisplay.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\media\objdisplay.h
+	"ofMain.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\missions\simplemission.cpp
+	"SimpleMission.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\missions\simplemission.h
+	<iostream>
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\scenario\scenario.cpp
+	"Scenario.h"
+
+1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\scenarioeditor\scenarioeditor.cpp
+	"ScenarioEditor.h"
+
+1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\scenarioeditor\scenarioeditor.h
+	<iostream>
+
+1389443821 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\testapp.cpp
+	"testApp.h"
+
+1376287980 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\icon.rc
+

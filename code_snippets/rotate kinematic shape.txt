@@ -1,4 +1,4 @@
-in this example body is ofxBulletBox
+in this example body is ofxBulletBox. rotate around body center.
 
 
 void Lever::rotate(float a_yaw, float a_pitch, float a_roll) {
@@ -19,4 +19,34 @@ void Lever::rotate(float a_yaw, float a_pitch, float a_roll) {
     
     body.activate();
 	
+}
+
+
+
+
+
+Rotate around other axis (rotate & translate)
+
+//- rotate around axis ---------------------------------------
+void Lever::rotate(float angle) {
+
+    btTransform transform;
+    btRigidBody* a_rb = body.getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+
+    // rotate
+    btQuaternion rotation = transform.getRotation();
+    rotation.setRotation(btVector3(0,0,2), ofDegToRad(angle));
+    transform.setRotation(rotation);
+
+    // translate
+    btVector3 origin = transform.getOrigin();
+    origin.setX(position.x + axisX - axisX * cos(ofDegToRad(angle)));
+    origin.setY(position.y - axisX * sin(ofDegToRad(angle)));
+
+    transform.setOrigin(origin);
+
+    a_rb->getMotionState()->setWorldTransform( transform );
+
+    body.activate();
 }

@@ -11,23 +11,26 @@
 #include "SimpleObject.h"
 
 class Lever : public SimpleObject {
-    
+
 public:
-	
+
 	virtual void setup(ofxBulletWorldRigid &world);
 	virtual void update();
 	virtual void draw();
-	void rotate(float a_yaw, float a_pitch, float a_roll);
-	
+	void rotate(float angle);
+
 	void keyPressed(ofKeyEventArgs& key);
 	void keyReleased(ofKeyEventArgs& key);
-    
+
 	ofxBulletBox	body;
-    
+
+	ofVec3f position;
+
 	float lowerLimit;
 	float upperLimit;
-    float speed;   
-    
+    float speed;
+    float axisX;
+
     bool isKeyPressed;
-    
+
 };
