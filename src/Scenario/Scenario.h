@@ -13,6 +13,7 @@
 
 #include "Ball.h"
 #include "Lever.h"
+#include "Hammer.h"
 
 class Scenario {
     
@@ -26,6 +27,6 @@ public:
  
     Ball                      m_Ball;
     Lever                  leverLeft;
-    
+    Hammer                   m_Hammer;
     
 };

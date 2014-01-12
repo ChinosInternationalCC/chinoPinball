@@ -19,6 +19,7 @@
 		2EEF326B17BB2A74003CFA1C /* ofxBulletCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319517BB2A73003CFA1C /* ofxBulletCylinder.cpp */; };
 		2EEF326C17BB2A74003CFA1C /* ofxBulletSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319717BB2A73003CFA1C /* ofxBulletSphere.cpp */; };
 		2EFCD34217BB3B6B00C9A987 /* ofxBulletConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */; };
+		A58DAF751882CA2C0059646D /* Hammer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DAF731882CA2C0059646D /* Hammer.cpp */; };
 		A59A1028187225D200BA19E5 /* ScenarioEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */; };
 		A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A10291872260B00BA19E5 /* SimpleMission.cpp */; };
 		A59A102E1872262500BA19E5 /* objDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A102C1872262500BA19E5 /* objDisplay.cpp */; };
@@ -112,6 +113,8 @@
 		2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletConvexShape.cpp; sourceTree = "<group>"; };
 		2EFCD34117BB3B6B00C9A987 /* ofxBulletConvexShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletConvexShape.h; sourceTree = "<group>"; };
 		8CD580401880238C00DE18D9 /* rotate kinematic shape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotate kinematic shape.txt"; sourceTree = "<group>"; };
+		A58DAF731882CA2C0059646D /* Hammer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hammer.cpp; sourceTree = "<group>"; };
+		A58DAF741882CA2C0059646D /* Hammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hammer.h; sourceTree = "<group>"; };
 		A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScenarioEditor.cpp; sourceTree = "<group>"; };
 		A59A1027187225D200BA19E5 /* ScenarioEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioEditor.h; sourceTree = "<group>"; };
 		A59A10291872260B00BA19E5 /* SimpleMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMission.cpp; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				A5E981BB1870DFAA00BCDF4E /* SimpleObject.h */,
 				A5E981C81870E06600BCDF4E /* Ball.cpp */,
 				A5E981C91870E06600BCDF4E /* Ball.h */,
+				A58DAF731882CA2C0059646D /* Hammer.cpp */,
+				A58DAF741882CA2C0059646D /* Hammer.h */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				2EEF326817BB2A74003CFA1C /* ofxBulletCapsule.cpp in Sources */,
 				A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */,
 				A5E981C61870DFD600BCDF4E /* PinballChinoManager.cpp in Sources */,
+				A58DAF751882CA2C0059646D /* Hammer.cpp in Sources */,
 				2EEF326917BB2A74003CFA1C /* ofxBulletCone.cpp in Sources */,
 				2EEF326A17BB2A74003CFA1C /* ofxBulletCustomShape.cpp in Sources */,
 				2EEF326B17BB2A74003CFA1C /* ofxBulletCylinder.cpp in Sources */,
@@ -624,6 +630,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_BULLET)",
 					"$(OF_CORE_HEADERS)",
@@ -646,6 +653,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_BULLET)",
 					"$(OF_CORE_HEADERS)",
