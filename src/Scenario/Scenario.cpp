@@ -11,10 +11,10 @@
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &world){
     
-    //m_sphere.setup(world);
-    m_Ball.setup(world);
+    m_Ball.setup(world,ofVec3f(2,0,0));
+    m_Ball2.setup(world,ofVec3f(7,-6,0));
     leverLeft.setup(world);
-    m_Hammer.setup(world);
+    m_Hammer.setup(world,ofVec3f(7,4,0));
     
 }
 
@@ -27,8 +27,8 @@ void Scenario::update(){
 //--------------------------------------------------------------
 void Scenario::draw(){
     
-    //m_sphere.draw();
     m_Ball.draw();
+    m_Ball2.draw();
     leverLeft.draw();
     m_Hammer.draw();
     

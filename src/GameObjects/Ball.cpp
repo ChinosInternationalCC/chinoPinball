@@ -14,14 +14,10 @@ Ball::Ball(void){
 }
 
 //---------------------------------
-void Ball::setup(ofxBulletWorldRigid &world){
+void Ball::setup(ofxBulletWorldRigid &world, ofVec3f position){
     m_status = BallStatusWaiting;
     
-    /*BulletBallShape = new ofxBulletSphere();
-	BulletBallShape->create(world.world, ofVec3f(0, 0, 0), 0.1, .25);
-	BulletBallShape->add();*/
-    
-    this->create(world.world, ofVec3f(2, 0, 0), 0.1, .25);
+    this->create(world.world, position, 0.1, .25);
     this->add();
 }
 
