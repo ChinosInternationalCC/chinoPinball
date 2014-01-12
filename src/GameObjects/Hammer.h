@@ -18,7 +18,7 @@ class Hammer : public SimpleObject {
     
 public:
     
-	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position);
 	virtual void update();
 	virtual void draw();
 	void move(float height);
@@ -27,8 +27,6 @@ public:
 	void keyReleased(ofKeyEventArgs& key);
     
 	ofxBulletBox	body;
-    
-	ofVec3f position;
     
 	float lowerLimit;
 	float upperLimit;

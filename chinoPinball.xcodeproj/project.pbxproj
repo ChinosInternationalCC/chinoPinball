@@ -20,6 +20,7 @@
 		2EEF326C17BB2A74003CFA1C /* ofxBulletSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319717BB2A73003CFA1C /* ofxBulletSphere.cpp */; };
 		2EFCD34217BB3B6B00C9A987 /* ofxBulletConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */; };
 		A58DAF751882CA2C0059646D /* Hammer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DAF731882CA2C0059646D /* Hammer.cpp */; };
+		A58DB99E18834DDD003D4FAF /* outObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */; };
 		A59A1028187225D200BA19E5 /* ScenarioEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */; };
 		A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A10291872260B00BA19E5 /* SimpleMission.cpp */; };
 		A59A102E1872262500BA19E5 /* objDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A102C1872262500BA19E5 /* objDisplay.cpp */; };
@@ -115,6 +116,8 @@
 		8CD580401880238C00DE18D9 /* rotate kinematic shape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotate kinematic shape.txt"; sourceTree = "<group>"; };
 		A58DAF731882CA2C0059646D /* Hammer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hammer.cpp; sourceTree = "<group>"; };
 		A58DAF741882CA2C0059646D /* Hammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hammer.h; sourceTree = "<group>"; };
+		A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = outObjectScenario.cpp; sourceTree = "<group>"; };
+		A58DB99D18834DDD003D4FAF /* outObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = outObjectScenario.h; sourceTree = "<group>"; };
 		A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScenarioEditor.cpp; sourceTree = "<group>"; };
 		A59A1027187225D200BA19E5 /* ScenarioEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioEditor.h; sourceTree = "<group>"; };
 		A59A10291872260B00BA19E5 /* SimpleMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMission.cpp; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 			children = (
 				A5E981C31870DFD600BCDF4E /* Scenario.cpp */,
 				A5E981C41870DFD600BCDF4E /* Scenario.h */,
+				A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */,
+				A58DB99D18834DDD003D4FAF /* outObjectScenario.h */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E981CA1870E06600BCDF4E /* Ball.cpp in Sources */,
+				A58DB99E18834DDD003D4FAF /* outObjectScenario.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				2EEF326317BB2A74003CFA1C /* ofxBulletJoint.cpp in Sources */,

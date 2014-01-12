@@ -16,7 +16,7 @@
 class Ball : public ofxBulletSphere{
 public:
     Ball(void);
-    void setup(ofxBulletWorldRigid &world);
+    void setup(ofxBulletWorldRigid &world, ofVec3f position);
     void update(void);
     void draw(void);
     bool isInsideScenario(ofBoxPrimitive box);
