@@ -10,26 +10,38 @@
 
 //---------------------------------
 void Lever::setup(ofxBulletWorldRigid &world){
+    
+    position = ofVec3f(2, 4, 0);
 
-    position = ofVec3f(3, 4, 0);
-
-    body.create(world.world, position, 0, 4, .5, .5); // we set m=0 for kinematic body
+    // load 3D model
+    ofVec3f scale(0.03, 0.03, 0.03);
+	assimpModel.loadModel("street_lamp.dae", true);
+	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setPosition(0, 0, 0);
+    
+    // add 3D mash to ofxBullet shape
+    body.addMesh(assimpModel.getMesh(0), scale, true);
+    
+    // create ofxBullet shape
+    body.create(world.world, position, ofQuaternion(-3., ofDegToRad(125), 4., PI), 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
 
-	ofRegisterKeyEvents(this);
-    isKeyPressed = false;
-
-	//degrees
+    
+	// lever rotation angles
 	lowerLimit = -30;
 	upperLimit = 60;
     speed = 15;    // degrees per frame
 
-    // position of rotation axis, relative to body center
-    axisX = 1.5;
+    // distance from object center to rotation axis
+    axisX = 1;
 
     // rotate lever to lower position
-    rotate(lowerLimit);
+//    rotate(lowerLimit);
+    
+    
+	ofRegisterKeyEvents(this);
+    isKeyPressed = false;
 
 }
 
@@ -59,10 +71,19 @@ void Lever::update(){
 
 //--------------------------------------------------------------
 void Lever::draw(){
-
-	ofSetColor(0, 255, 0);
-    body.draw();
-
+	
+	ofSetColor(255, 255, 255);
+	
+    material.begin();
+	
+    body.transformGL();
+    ofPoint scale = assimpModel.getScale();
+    ofScale(scale.x,scale.y,scale.z);
+    assimpModel.getMesh(0).drawFaces();
+    body.restoreTramsformGL();
+    
+	material.end();
+	
 }
 
 //--------------------------------------------------------------

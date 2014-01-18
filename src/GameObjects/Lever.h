@@ -19,10 +19,12 @@ public:
 	virtual void draw();
 	void rotate(float angle);
 
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
-
-	ofxBulletBox	body;
+	ofxBulletCustomShape	body;
+	ofxAssimpModelLoader	assimpModel;
+    ofMaterial				material;
+    
+    
+    
 
 	ofVec3f position;
 
@@ -30,7 +32,9 @@ public:
 	float upperLimit;
     float speed;
     float axisX;
-
+    
+	void keyPressed(ofKeyEventArgs& key);
+	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
 
 };
