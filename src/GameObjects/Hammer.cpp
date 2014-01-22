@@ -9,9 +9,9 @@
 #include "Hammer.h"
 
 //---------------------------------
-void Hammer::setup(ofxBulletWorldRigid &world){
+void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
     
-    position = ofVec3f(7, 4, 0);
+   /* position = ofVec3f(7, 4, 0);*/
                 /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
     body.create(world.world, position, 0, .5, 4, .5); // we set m=0 for kinematic body
     body.add();

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		0023DE6F213DB7965C8EA9A9 /* btAlignedAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FECEAC386885AB4E1012E15 /* btAlignedAllocator.cpp */; };
 		00F1989034165F0A44EB88C2 /* btBvhTriangleMeshShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BBF59D8DAAD71B258AEBE8F /* btBvhTriangleMeshShape.cpp */; };
 		00FD1E8355CABFF6F3B960A0 /* gim_box_set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27EC994002666852158A8DFE /* gim_box_set.cpp */; };
@@ -130,6 +131,30 @@
 		B8846EF8E504895A4A9EFEC0 /* ofxAssimpTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F2EE44AD04FF549AB13699 /* ofxAssimpTexture.cpp */; };
 		B8E8938FC5AB7FE23FDC9F9A /* ofxBulletCapsule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24423382B2B9074E89180975 /* ofxBulletCapsule.cpp */; };
 		B9F0755B97951C4C919D8370 /* btGeometryUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D796DD51C4184C0EB68B20E8 /* btGeometryUtil.cpp */; };
+=======
+		2E78C20917D8CCDF0020A15A /* ofxBulletStaticPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E78C20717D8CCDF0020A15A /* ofxBulletStaticPlane.cpp */; };
+		2EEF326317BB2A74003CFA1C /* ofxBulletJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF317F17BB2A73003CFA1C /* ofxBulletJoint.cpp */; };
+		2EEF326417BB2A74003CFA1C /* ofxBulletWorldRigid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF318517BB2A73003CFA1C /* ofxBulletWorldRigid.cpp */; };
+		2EEF326517BB2A74003CFA1C /* GLDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF318817BB2A73003CFA1C /* GLDebugDrawer.cpp */; };
+		2EEF326617BB2A74003CFA1C /* ofxBulletBaseShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF318B17BB2A73003CFA1C /* ofxBulletBaseShape.cpp */; };
+		2EEF326717BB2A74003CFA1C /* ofxBulletBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF318D17BB2A73003CFA1C /* ofxBulletBox.cpp */; };
+		2EEF326817BB2A74003CFA1C /* ofxBulletCapsule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF318F17BB2A73003CFA1C /* ofxBulletCapsule.cpp */; };
+		2EEF326917BB2A74003CFA1C /* ofxBulletCone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319117BB2A73003CFA1C /* ofxBulletCone.cpp */; };
+		2EEF326A17BB2A74003CFA1C /* ofxBulletCustomShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319317BB2A73003CFA1C /* ofxBulletCustomShape.cpp */; };
+		2EEF326B17BB2A74003CFA1C /* ofxBulletCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319517BB2A73003CFA1C /* ofxBulletCylinder.cpp */; };
+		2EEF326C17BB2A74003CFA1C /* ofxBulletSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF319717BB2A73003CFA1C /* ofxBulletSphere.cpp */; };
+		2EFCD34217BB3B6B00C9A987 /* ofxBulletConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */; };
+		A58DAF751882CA2C0059646D /* Hammer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DAF731882CA2C0059646D /* Hammer.cpp */; };
+		A58DB99E18834DDD003D4FAF /* outObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */; };
+		A59A1028187225D200BA19E5 /* ScenarioEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */; };
+		A59A102B1872260B00BA19E5 /* SimpleMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A10291872260B00BA19E5 /* SimpleMission.cpp */; };
+		A59A102E1872262500BA19E5 /* objDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59A102C1872262500BA19E5 /* objDisplay.cpp */; };
+		A5E981BC1870DFAA00BCDF4E /* SimpleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981BA1870DFAA00BCDF4E /* SimpleObject.cpp */; };
+		A5E981C61870DFD600BCDF4E /* PinballChinoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981BE1870DFD600BCDF4E /* PinballChinoManager.cpp */; };
+		A5E981C71870DFD600BCDF4E /* Scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981C31870DFD600BCDF4E /* Scenario.cpp */; };
+		A5E981CA1870E06600BCDF4E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E981C81870E06600BCDF4E /* Ball.cpp */; };
+		A7412AD3187B43A9000C881F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7412AD1187B43A9000C881F /* Lever.cpp */; };
+>>>>>>> 16f6451d4c2bd209db40a45c3ae2703bccfb1c74
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		BCD2FC543E687AC392DAF298 /* btGpu3DGridBroadphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00189B04ABA61A61B0398F4C /* btGpu3DGridBroadphase.cpp */; };
 		BF8273797EA05A8E8904CAD7 /* btSoftBodyRigidBodyCollisionConfiguration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C4746FD558207D8D7EF095A /* btSoftBodyRigidBodyCollisionConfiguration.cpp */; };
@@ -239,6 +264,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		00189B04ABA61A61B0398F4C /* btGpu3DGridBroadphase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btGpu3DGridBroadphase.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/btGpu3DGridBroadphase.cpp; sourceTree = SOURCE_ROOT; };
 		00A1BFCBB38848AD0E0C8539 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		00A5CB37E695AB24686E6A9E /* btMotionState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btMotionState.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btMotionState.h; sourceTree = SOURCE_ROOT; };
@@ -624,6 +650,60 @@
 		BA6E6A4BB189A6053C918019 /* btConvexCast.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btConvexCast.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexCast.h; sourceTree = SOURCE_ROOT; };
 		BACD507A0CB2B9E0736104D0 /* ofxBulletCone.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBulletCone.h; path = ../../../addons/ofxBullet/src/shapes/ofxBulletCone.h; sourceTree = SOURCE_ROOT; };
 		BB9A14E2832320B051A25EF1 /* btPersistentManifold.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btPersistentManifold.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h; sourceTree = SOURCE_ROOT; };
+=======
+		2E78C20717D8CCDF0020A15A /* ofxBulletStaticPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletStaticPlane.cpp; sourceTree = "<group>"; };
+		2E78C20817D8CCDF0020A15A /* ofxBulletStaticPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletStaticPlane.h; sourceTree = "<group>"; };
+		2EEF317B17BB2A73003CFA1C /* ofxBulletCollisionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletCollisionData.h; sourceTree = "<group>"; };
+		2EEF317C17BB2A73003CFA1C /* ofxBulletMousePickEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletMousePickEvent.h; sourceTree = "<group>"; };
+		2EEF317D17BB2A73003CFA1C /* ofxBulletRaycastData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletRaycastData.h; sourceTree = "<group>"; };
+		2EEF317F17BB2A73003CFA1C /* ofxBulletJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletJoint.cpp; sourceTree = "<group>"; };
+		2EEF318017BB2A73003CFA1C /* ofxBulletJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletJoint.h; sourceTree = "<group>"; };
+		2EEF318117BB2A73003CFA1C /* ofxBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBullet.h; sourceTree = "<group>"; };
+		2EEF318217BB2A73003CFA1C /* ofxBulletConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletConstants.h; sourceTree = "<group>"; };
+		2EEF318317BB2A73003CFA1C /* ofxBulletUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletUserData.h; sourceTree = "<group>"; };
+		2EEF318417BB2A73003CFA1C /* ofxBulletUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletUtils.h; sourceTree = "<group>"; };
+		2EEF318517BB2A73003CFA1C /* ofxBulletWorldRigid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletWorldRigid.cpp; sourceTree = "<group>"; };
+		2EEF318617BB2A73003CFA1C /* ofxBulletWorldRigid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletWorldRigid.h; sourceTree = "<group>"; };
+		2EEF318817BB2A73003CFA1C /* GLDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDebugDrawer.cpp; sourceTree = "<group>"; };
+		2EEF318917BB2A73003CFA1C /* GLDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDebugDrawer.h; sourceTree = "<group>"; };
+		2EEF318B17BB2A73003CFA1C /* ofxBulletBaseShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletBaseShape.cpp; sourceTree = "<group>"; };
+		2EEF318C17BB2A73003CFA1C /* ofxBulletBaseShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletBaseShape.h; sourceTree = "<group>"; };
+		2EEF318D17BB2A73003CFA1C /* ofxBulletBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletBox.cpp; sourceTree = "<group>"; };
+		2EEF318E17BB2A73003CFA1C /* ofxBulletBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletBox.h; sourceTree = "<group>"; };
+		2EEF318F17BB2A73003CFA1C /* ofxBulletCapsule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletCapsule.cpp; sourceTree = "<group>"; };
+		2EEF319017BB2A73003CFA1C /* ofxBulletCapsule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletCapsule.h; sourceTree = "<group>"; };
+		2EEF319117BB2A73003CFA1C /* ofxBulletCone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletCone.cpp; sourceTree = "<group>"; };
+		2EEF319217BB2A73003CFA1C /* ofxBulletCone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletCone.h; sourceTree = "<group>"; };
+		2EEF319317BB2A73003CFA1C /* ofxBulletCustomShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletCustomShape.cpp; sourceTree = "<group>"; };
+		2EEF319417BB2A73003CFA1C /* ofxBulletCustomShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletCustomShape.h; sourceTree = "<group>"; };
+		2EEF319517BB2A73003CFA1C /* ofxBulletCylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletCylinder.cpp; sourceTree = "<group>"; };
+		2EEF319617BB2A73003CFA1C /* ofxBulletCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletCylinder.h; sourceTree = "<group>"; };
+		2EEF319717BB2A73003CFA1C /* ofxBulletSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletSphere.cpp; sourceTree = "<group>"; };
+		2EEF319817BB2A73003CFA1C /* ofxBulletSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletSphere.h; sourceTree = "<group>"; };
+		2EFCD34017BB3B6B00C9A987 /* ofxBulletConvexShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBulletConvexShape.cpp; sourceTree = "<group>"; };
+		2EFCD34117BB3B6B00C9A987 /* ofxBulletConvexShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBulletConvexShape.h; sourceTree = "<group>"; };
+		8CD580401880238C00DE18D9 /* rotate kinematic shape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "rotate kinematic shape.txt"; sourceTree = "<group>"; };
+		A58DAF731882CA2C0059646D /* Hammer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hammer.cpp; sourceTree = "<group>"; };
+		A58DAF741882CA2C0059646D /* Hammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hammer.h; sourceTree = "<group>"; };
+		A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = outObjectScenario.cpp; sourceTree = "<group>"; };
+		A58DB99D18834DDD003D4FAF /* outObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = outObjectScenario.h; sourceTree = "<group>"; };
+		A59A1026187225D200BA19E5 /* ScenarioEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScenarioEditor.cpp; sourceTree = "<group>"; };
+		A59A1027187225D200BA19E5 /* ScenarioEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioEditor.h; sourceTree = "<group>"; };
+		A59A10291872260B00BA19E5 /* SimpleMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMission.cpp; sourceTree = "<group>"; };
+		A59A102A1872260B00BA19E5 /* SimpleMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMission.h; sourceTree = "<group>"; };
+		A59A102C1872262500BA19E5 /* objDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = objDisplay.cpp; sourceTree = "<group>"; };
+		A59A102D1872262500BA19E5 /* objDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objDisplay.h; sourceTree = "<group>"; };
+		A5E981BA1870DFAA00BCDF4E /* SimpleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleObject.cpp; sourceTree = "<group>"; };
+		A5E981BB1870DFAA00BCDF4E /* SimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleObject.h; sourceTree = "<group>"; };
+		A5E981BE1870DFD600BCDF4E /* PinballChinoManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PinballChinoManager.cpp; sourceTree = "<group>"; };
+		A5E981BF1870DFD600BCDF4E /* PinballChinoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinballChinoManager.h; sourceTree = "<group>"; };
+		A5E981C31870DFD600BCDF4E /* Scenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scenario.cpp; sourceTree = "<group>"; };
+		A5E981C41870DFD600BCDF4E /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
+		A5E981C81870E06600BCDF4E /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		A5E981C91870E06600BCDF4E /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		A7412AD1187B43A9000C881F /* Lever.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lever.cpp; sourceTree = "<group>"; };
+		A7412AD2187B43A9000C881F /* Lever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lever.h; sourceTree = "<group>"; };
+>>>>>>> 16f6451d4c2bd209db40a45c3ae2703bccfb1c74
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		BC4E67DF6E78BC43BBC0EE81 /* btGenericPoolAllocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btGenericPoolAllocator.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btGenericPoolAllocator.h; sourceTree = SOURCE_ROOT; };
 		BCE8AB0AA4F33CDEE0BDF2F5 /* btTransform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btTransform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btTransform.h; sourceTree = SOURCE_ROOT; };
@@ -1251,6 +1331,7 @@
 		6946F6402B6DACF4A230D149 /* sse */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				7E7168E7D5B589899659CED0 /* boolInVec.h */,
 				C019A1A2DE910148515F894F /* floatInVec.h */,
 				588C6479CEE8B2063F37B500 /* mat_aos.h */,
@@ -1258,6 +1339,12 @@
 				DACD98560D2EC1A912D93575 /* vec_aos.h */,
 				BA10FC5452470E344C08DF87 /* vecidx_aos.h */,
 				7C56812844B938CF64E6AC0A /* vectormath_aos.h */,
+=======
+				A5E981C31870DFD600BCDF4E /* Scenario.cpp */,
+				A5E981C41870DFD600BCDF4E /* Scenario.h */,
+				A58DB99C18834DDD003D4FAF /* outObjectScenario.cpp */,
+				A58DB99D18834DDD003D4FAF /* outObjectScenario.h */,
+>>>>>>> 16f6451d4c2bd209db40a45c3ae2703bccfb1c74
 			);
 			name = sse;
 			sourceTree = "<group>";
@@ -1858,6 +1945,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+=======
+				A5E981CA1870E06600BCDF4E /* Ball.cpp in Sources */,
+				A58DB99E18834DDD003D4FAF /* outObjectScenario.cpp in Sources */,
+>>>>>>> 16f6451d4c2bd209db40a45c3ae2703bccfb1c74
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				1281E1B325A191ADA506D1E5 /* Ball.cpp in Sources */,
 				E91ADC2F2BE2DA9DB2A07BDB /* Hammer.cpp in Sources */,
