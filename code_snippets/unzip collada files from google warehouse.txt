@@ -1,0 +1,5 @@
+PROBLEM: 
+you download .ZIP from google warehouse on MAC, when you try to unzip it, it creates .CPGZ File and you enter into an infinite loop
+
+SOLUTION:
+download the file again with Safari instead of Firefox

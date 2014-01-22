@@ -17,7 +17,7 @@ public:
 	virtual void setup(ofxBulletWorldRigid &world);
 	virtual void update();
 	virtual void draw();
-	void rotate(float angle);
+	void rotate(float degrees);
 
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;
@@ -26,8 +26,10 @@ public:
     
     
 
-	ofVec3f position;
+	ofVec3f         position;
+    btQuaternion    rotation;
 
+    float angle; // degrees
 	float lowerLimit;
 	float upperLimit;
     float speed;
