@@ -11,6 +11,7 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 //#include "objDisplay.h"
+#include "ofxAssimpModelLoader.h"
 
 
 enum shapeType{

@@ -17,20 +17,26 @@ public:
 	virtual void setup(ofxBulletWorldRigid &world);
 	virtual void update();
 	virtual void draw();
-	void rotate(float angle);
-
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
-
-	ofxBulletBox	body;
-
-	ofVec3f position;
-
+	void rotate(float degrees);
+    
+	ofxBulletCustomShape	body;
+	ofxAssimpModelLoader	assimpModel;
+    ofMaterial				material;
+    
+    
+    
+    
+	ofVec3f         position;
+    btQuaternion    rotation;
+    
+    float angle; // degrees
 	float lowerLimit;
 	float upperLimit;
     float speed;
     float axisX;
-
+    
+	void keyPressed(ofKeyEventArgs& key);
+	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
 
 };
