@@ -3442,10 +3442,10 @@
 1386165000 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxbullet\src\shapes\ofxbulletstaticplane.h
 	"ofxBulletBaseShape.h"
 
-1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.cpp
+1390757856 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.cpp
 	"Ball.h"
 
-1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.h
+1390757856 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\ball.h
 	"ofMain.h"
 	"ofxBullet.h"
 
@@ -3467,17 +3467,18 @@
 	"ofxBulletMousePickEvent.h"
 	"ofxBulletCollisionData.h"
 
-1389478697 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.cpp
+1390757856 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.cpp
 	"Lever.h"
 
-1389479107 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.h
+1390757856 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\lever.h
 	"SimpleObject.h"
 
-1389441516 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.h
+1390757856 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.h
 	"ofMain.h"
 	"ofxBullet.h"
+	"ofxAssimpModelLoader.h"
 
-1389441516 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.cpp
+1390757856 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\simpleobject.cpp
 	"SimpleObject.h"
 
 1389443796 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\main.cpp
@@ -3525,5 +3526,171 @@
 1389443821 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\testapp.cpp
 	"testApp.h"
 
-1376287980 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\icon.rc
+1390757856 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\icon.rc
+
+1376287920 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpanimation.cpp
+	"ofxAssimpAnimation.h"
+	"assimp.h"
+	"aiScene.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpanimation.h
+	"ofMain.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\assimp.h
+	"aiTypes.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aitypes.h
+	<sys/types.h>
+	<memory.h>
+	<math.h>
+	<stddef.h>
+	"aiDefines.h"
+	"aiVector3D.h"
+	"aiVector2D.h"
+	"aiColor4D.h"
+	"aiMatrix3x3.h"
+	"aiMatrix4x4.h"
+	"aiQuaternion.h"
+	<new>
+	<string>
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+	"aiVector3D.inl"
+	"aiColor4D.inl"
+	"aiMatrix3x3.inl"
+	"aiMatrix4x4.inl"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aidefines.h
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aivector3d.h
+	<math.h>
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aivector2d.h
+	<math.h>
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\compiler\pushpack1.h
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\compiler\poppack1.h
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aicolor4d.h
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimatrix3x3.h
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimatrix4x4.h
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aiquaternion.h
+	<math.h>
+	"aiTypes.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aivector3d.inl
+	"aiVector3D.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aicolor4d.inl
+	"aiColor4D.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimatrix3x3.inl
+	"aiMatrix3x3.h"
+	"aiMatrix4x4.h"
+	<algorithm>
+	<limits>
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimatrix4x4.inl
+	"aiMatrix4x4.h"
+	"aiMatrix3x3.h"
+	<algorithm>
+	<limits>
+	<math.h>
+	"aiAssert.h"
+	"aiQuaternion.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aiassert.h
+	<string>
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aiscene.h
+	"aiTypes.h"
+	"aiTexture.h"
+	"aiMesh.h"
+	"aiLight.h"
+	"aiCamera.h"
+	"aiMaterial.h"
+	"aiAnim.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aitexture.h
+	"aiTypes.h"
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimesh.h
+	"aiTypes.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\ailight.h
+	"aiTypes.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aicamera.h
+	"aiTypes.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimaterial.h
+	"aiTypes.h"
+	"./Compiler/pushpack1.h"
+	"./Compiler/poppack1.h"
+	"aiMaterial.inl"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aimaterial.inl
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aianim.h
+	"aiTypes.h"
+	"aiQuaternion.h"
+
+1376287920 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpmeshhelper.cpp
+	"ofxAssimpMeshHelper.h"
+	"ofxAssimpUtils.h"
+	"aiMesh.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpmeshhelper.h
+	"ofMain.h"
+	"assimp.h"
+	"ofxAssimpTexture.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimptexture.h
+	"ofMain.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimputils.h
+	"ofMain.h"
+	"ofxAssimpMeshHelper.h"
+	"assimp.h"
+	"aiMesh.h"
+
+1376287920 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpmodelloader.cpp
+	"ofxAssimpModelLoader.h"
+	"ofxAssimpUtils.h"
+	"assimp.h"
+	"aiScene.h"
+	"aiConfig.h"
+	"aiPostProcess.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimpmodelloader.h
+	"ofMain.h"
+	"ofxAssimpMeshHelper.h"
+	"ofxAssimpAnimation.h"
+	"ofxAssimpTexture.h"
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aiconfig.h
+
+1376287920 d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\libs\assimp\include\aipostprocess.h
+	"aiTypes.h"
+
+1376287920 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\addons\ofxassimpmodelloader\src\ofxassimptexture.cpp
+	"ofxAssimpTexture.h"
+
+1390757856 source:d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\hammer.cpp
+	"Hammer.h"
+
+1390757856 d:\work\openframeworks\of_v0.8.0_win_cb_release\apps\myapps\chinopinball\src\gameobjects\hammer.h
+	"SimpleObject.h"
 
