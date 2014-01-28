@@ -21,12 +21,15 @@ public:
 	void setup(ofxBulletWorldRigid &world);
 	void update();
 	void draw();
-    
+    void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
+	
     ofxBulletWorldRigid *     world;
     
- 
     Ball                      m_Ball,m_Ball2;
     Lever                  leverLeft;
     Hammer                   m_Hammer;
-    
+	
+	//basic World
+	vector <ofxBulletBox*>		bounds;
+	float						boundsWidth;
 };
