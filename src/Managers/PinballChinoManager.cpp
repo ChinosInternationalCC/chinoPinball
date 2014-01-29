@@ -10,33 +10,42 @@
 
 //--------------------------------------------------------------
 void PinballChinoManager::setup(){
-    
-    // setup OF
-    ofSetFrameRate(60);
-	ofSetVerticalSync(true);
-	ofBackground( 10, 10, 10);
-    
+
+    //do things just once
+	bstartup = true;
+	
     // setup bullet world
 	world.setup();
 	world.setGravity( ofVec3f(0, 10, 0) );
     world.enableGrabbing();
 	
-    // setup camera
-	camera.setPosition(ofVec3f(0, 0, -10.f));
+
+	// setup camera
+	camera.setPosition(ofVec3f(0, 0, -34.5));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
-	world.setCamera(&camera);
+	
+	world.setCamera(&camera);	
+	world.setCameraPosition(ofVec3f(0, 0, -34.5));
     
     // setup scenario
     myScenario.setup(world);
-    
+
+
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
     
+	//do things just once
+	if(bstartup){
+		//camera.setGlobalPosition(ofVec3f(0, 0, -34.5)); //don't work 
+		bstartup = false;
+	}
+	
+	world.setCameraPosition(ofVec3f(0, 0, -34.5));
+	
 	world.update();
     myScenario.update();
-    
 }
 
 //--------------------------------------------------------------

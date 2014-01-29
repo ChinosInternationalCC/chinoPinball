@@ -14,17 +14,14 @@ class Lever : public SimpleObject {
 
 public:
 
-	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
 	virtual void update();
 	virtual void draw();
 	void rotate(float degrees);
     
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;
-    ofMaterial				material;
-    
-    
-    
+    ofMaterial				material;    
     
 	ofVec3f         position;
     btQuaternion    rotation;

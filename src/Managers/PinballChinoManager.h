@@ -21,10 +21,12 @@ public:
 	void draw();
     
     ofxBulletWorldRigid     world;
-	//ofCamera                camera;
-	ofEasyCam				camera;
+	ofCamera                camera;
+	//ofEasyCam				camera;
 	ofLight					light;
     
     Scenario                myScenario;
+	
+	bool bstartup;
     
 };
