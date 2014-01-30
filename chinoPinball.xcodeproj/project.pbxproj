@@ -117,6 +117,8 @@
 		9FD9730332408EA267BA0E7D /* btQuickprof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6A8B75B3076C1A375A5963 /* btQuickprof.cpp */; };
 		A1AC89E9D8DAC3C116114616 /* btConvex2dConvex2dAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D64767FE0DD5558FBFAED25D /* btConvex2dConvex2dAlgorithm.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
+		A528063318985A5F0058A0D9 /* GameStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528062F18985A5F0058A0D9 /* GameStatus.cpp */; };
+		A528063418985A5F0058A0D9 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528063118985A5F0058A0D9 /* Ranking.cpp */; };
 		A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */; };
 		AD11061519B5BE17E0AEB743 /* btStridingMeshInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7559ECCEBF5E92706490477 /* btStridingMeshInterface.cpp */; };
 		AE278440A4852E628138B806 /* btSubSimplexConvexCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41EE43A88D826DB4EF2D7969 /* btSubSimplexConvexCast.cpp */; };
@@ -581,6 +583,10 @@
 		A309102D19BCB56BA0130302 /* gim_array.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_array.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h; sourceTree = SOURCE_ROOT; };
 		A430FFBD7BF0BA514D54CBDB /* gim_geom_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geom_types.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h; sourceTree = SOURCE_ROOT; };
 		A4CB26411CB1901F8D91B850 /* cl_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl_platform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/cl_platform.h; sourceTree = SOURCE_ROOT; };
+		A528062F18985A5F0058A0D9 /* GameStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameStatus.cpp; path = Managers/GameStatus.cpp; sourceTree = "<group>"; };
+		A528063018985A5F0058A0D9 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatus.h; path = Managers/GameStatus.h; sourceTree = "<group>"; };
+		A528063118985A5F0058A0D9 /* Ranking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ranking.cpp; path = Managers/Ranking.cpp; sourceTree = "<group>"; };
+		A528063218985A5F0058A0D9 /* Ranking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ranking.h; path = Managers/Ranking.h; sourceTree = "<group>"; };
 		A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConcaveShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp; sourceTree = SOURCE_ROOT; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
 		A626AFF72A089B0674C727F3 /* gim_tri_collision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_tri_collision.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h; sourceTree = SOURCE_ROOT; };
@@ -1006,6 +1012,10 @@
 		39B672E7BE2B8F8845101DE2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A528062F18985A5F0058A0D9 /* GameStatus.cpp */,
+				A528063018985A5F0058A0D9 /* GameStatus.h */,
+				A528063118985A5F0058A0D9 /* Ranking.cpp */,
+				A528063218985A5F0058A0D9 /* Ranking.h */,
 				75240502820DCAC951F9A057 /* PinballChinoManager.cpp */,
 				B7E3028856D5357BACA429A4 /* PinballChinoManager.h */,
 			);
@@ -1925,6 +1935,7 @@
 				00F1989034165F0A44EB88C2 /* btBvhTriangleMeshShape.cpp in Sources */,
 				455BC0A6B02E335D606793F4 /* btCapsuleShape.cpp in Sources */,
 				15C4FFE67623853FB1296D81 /* btCollisionShape.cpp in Sources */,
+				A528063418985A5F0058A0D9 /* Ranking.cpp in Sources */,
 				887D2177F40E13FA207F944A /* btCompoundShape.cpp in Sources */,
 				A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */,
 				E5AEF5187E9E7742F33EAC05 /* btConeShape.cpp in Sources */,
@@ -1993,6 +2004,7 @@
 				43C82059AE35C8E8B91A1564 /* btSolve2LinearConstraint.cpp in Sources */,
 				F43DBF762746AAEB1E1EF7D1 /* btTypedConstraint.cpp in Sources */,
 				B164D28B5B7395F71AF43DD8 /* btUniversalConstraint.cpp in Sources */,
+				A528063318985A5F0058A0D9 /* GameStatus.cpp in Sources */,
 				E4FA099CF6BCC6059D56A440 /* btDiscreteDynamicsWorld.cpp in Sources */,
 				36A9EE25E1B3180DF9E90956 /* btRigidBody.cpp in Sources */,
 				D9AD408952855C6517A94BB9 /* btSimpleDynamicsWorld.cpp in Sources */,
