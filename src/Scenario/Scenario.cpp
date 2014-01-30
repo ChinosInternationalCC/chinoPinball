@@ -13,7 +13,8 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     
     m_Ball.setup(world,ofVec3f(2,-10,-0.5));
     m_Ball2.setup(world,ofVec3f(7,-6,-0.5));
-    leverLeft.setup(world, ofVec3f(4, 12, -0.3));
+    leverLeft.setup(world, ofVec3f(-3, 7, -0.3), 0);
+    leverRight.setup(world, ofVec3f(3, 7, -0.3), 1);
     m_Hammer.setup(world,ofVec3f(7,4,-0.3));
 	
 	ofVec3f initworldpos = ofVec3f(0,0,0);
@@ -60,7 +61,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		 }*/
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
-		bounds[i]->setProperties(.90, .95); // .25 (more restituition means more energy) , .95 ( friction )
+		bounds[i]->setProperties(.95, .05); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 	}
     
@@ -72,6 +73,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 //--------------------------------------------------------------
 void Scenario::update(){
 	leverLeft.update();
+	leverRight.update();
     m_Hammer.update();
 }
 
@@ -81,6 +83,7 @@ void Scenario::draw(){
     m_Ball.draw();
     m_Ball2.draw();
     leverLeft.draw();
+    leverRight.draw();
     m_Hammer.draw();
     
 }

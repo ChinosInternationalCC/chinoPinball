@@ -26,7 +26,8 @@ public:
     ofxBulletWorldRigid *     world;
     
     Ball                      m_Ball,m_Ball2;
-    Lever                  leverLeft;
+    Lever                   leverLeft;
+    Lever                   leverRight;
     Hammer                   m_Hammer;
 	
 	//basic World
