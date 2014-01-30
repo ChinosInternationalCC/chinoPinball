@@ -9,9 +9,9 @@
 #include "Lever.h"
 
 //---------------------------------
-void Lever::setup(ofxBulletWorldRigid &world){
+void Lever::setup(ofxBulletWorldRigid &world, ofVec3f position){
     
-    position = ofVec3f(2, 4, 0);
+    position = ofVec3f(4, 12, -0.3);
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     // load 3D model

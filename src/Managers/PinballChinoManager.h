@@ -22,7 +22,7 @@ public:
     
     ofxBulletWorldRigid     world;
 	//ofCamera                camera;
-	ofEasyCam				camera;
+    ofEasyCam				camera;
 	ofLight					light;
     
     Scenario                myScenario;
