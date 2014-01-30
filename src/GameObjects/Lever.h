@@ -14,7 +14,7 @@ class Lever : public SimpleObject {
 
 public:
 
-	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position);
 	virtual void update();
 	virtual void draw();
 	void rotate(float degrees);
