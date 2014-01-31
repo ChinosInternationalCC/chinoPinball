@@ -21,8 +21,8 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
     isKeyPressed = false;
     
 	//y position
-	lowerLimit = 0;
-	upperLimit = 3;
+	lowerLimit = position.y;
+	upperLimit = 7;
     speed = 0.4;    // pos per frame
     
     
@@ -42,7 +42,7 @@ void Hammer::update(){
     {
         if (translationY < upperLimit)
         {
-            move(translationY + speed);
+            move(translationY + speed/8);
         }
     }
     else
@@ -64,11 +64,15 @@ void Hammer::draw(){
 }
 
 //--------------------------------------------------------------
-void Hammer::keyPressed(ofKeyEventArgs& key) {
+void Hammer::keyPressed(ofKeyEventArgs& e) {
     
-	isKeyPressed = true;
-    
+    switch(e.key){
+        case OF_KEY_DOWN:
+            isKeyPressed = true;
+            break;
+    }
 }
+
 
 //--------------------------------------------------------------
 void Hammer::keyReleased(ofKeyEventArgs& key) {
