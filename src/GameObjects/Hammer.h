@@ -9,6 +9,7 @@
 #pragma once
 
 #include "SimpleObject.h"
+#include "ofMain.h"
 /*
  Objeto que se usa para empujar la bola (en el estado initial o para los objectos containers)
 
