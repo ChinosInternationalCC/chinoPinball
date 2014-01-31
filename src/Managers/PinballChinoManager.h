@@ -12,10 +12,14 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "Scenario.h"
+#include "GameStatusDisplay.h"
 
 class PinballChinoManager {
     
 public:
+    
+    PinballChinoManager();
+    
 	void setup();
 	void update();
 	void draw();
@@ -26,5 +30,8 @@ public:
 	ofLight					light;
     
     Scenario                myScenario;
+    GameStatusDisplay       statusDisplay;
+    
+ 
     
 };
