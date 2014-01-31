@@ -18,12 +18,12 @@ void PinballChinoManager::setup(){
     
     // setup bullet world
 	world.setup();
-	world.setGravity( ofVec3f(0, 10, 0) );
-    world.enableGrabbing();
+	world.setGravity( ofVec3f(0, 4, 7) );
 	
     // setup camera
-	camera.setPosition(ofVec3f(0, 0, -10.f));
+	camera.setPosition(ofVec3f(0, 0, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
+    camera.setDistance(20);
 	world.setCamera(&camera);
     
     // setup scenario
@@ -45,8 +45,8 @@ void PinballChinoManager::draw(){
 	glEnable( GL_DEPTH_TEST );
 	camera.begin();
     
-	ofEnableLighting();
-	light.enable();
+//	ofEnableLighting();
+//	light.enable();
     
     
     // debug draw
@@ -55,8 +55,8 @@ void PinballChinoManager::draw(){
     myScenario.draw();
     
 	
-	light.disable();
-	ofDisableLighting();
+//	light.disable();
+//	ofDisableLighting();
     
 	camera.end();
     glDisable(GL_DEPTH_TEST);

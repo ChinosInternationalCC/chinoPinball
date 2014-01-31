@@ -23,7 +23,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
 	//y position
 	lowerLimit = 0;
 	upperLimit = 3;
-    speed = 2;    // pos per frame
+    speed = 0.4;    // pos per frame
     
     
     // move hammer to lower position
