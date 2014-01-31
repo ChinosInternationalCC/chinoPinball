@@ -119,6 +119,7 @@
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
 		A528063318985A5F0058A0D9 /* GameStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528062F18985A5F0058A0D9 /* GameStatus.cpp */; };
 		A528063418985A5F0058A0D9 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528063118985A5F0058A0D9 /* Ranking.cpp */; };
+		A5EC895D189BF68E00BF3D9D /* GameStatusDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC895B189BF68E00BF3D9D /* GameStatusDisplay.cpp */; };
 		A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */; };
 		AD11061519B5BE17E0AEB743 /* btStridingMeshInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7559ECCEBF5E92706490477 /* btStridingMeshInterface.cpp */; };
 		AE278440A4852E628138B806 /* btSubSimplexConvexCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41EE43A88D826DB4EF2D7969 /* btSubSimplexConvexCast.cpp */; };
@@ -589,6 +590,8 @@
 		A528063218985A5F0058A0D9 /* Ranking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ranking.h; path = Managers/Ranking.h; sourceTree = "<group>"; };
 		A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConcaveShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp; sourceTree = SOURCE_ROOT; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
+		A5EC895B189BF68E00BF3D9D /* GameStatusDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStatusDisplay.cpp; sourceTree = "<group>"; };
+		A5EC895C189BF68E00BF3D9D /* GameStatusDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStatusDisplay.h; sourceTree = "<group>"; };
 		A626AFF72A089B0674C727F3 /* gim_tri_collision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_tri_collision.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h; sourceTree = SOURCE_ROOT; };
 		A62BE439E0BA41B8956DDA6F /* gim_geometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geometry.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geometry.h; sourceTree = SOURCE_ROOT; };
 		A6ADF3B86DB74459FB51EC3F /* btConvexConvexAlgorithm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConvexConvexAlgorithm.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp; sourceTree = SOURCE_ROOT; };
@@ -1459,6 +1462,8 @@
 			children = (
 				24433DD6207CFCD62B7C09AF /* objDisplay.cpp */,
 				1635FD059CA911EA399F67FA /* objDisplay.h */,
+				A5EC895B189BF68E00BF3D9D /* GameStatusDisplay.cpp */,
+				A5EC895C189BF68E00BF3D9D /* GameStatusDisplay.h */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -2028,6 +2033,7 @@
 				419ED4E261E1B6450AA367D2 /* SpuLibspe2Support.cpp in Sources */,
 				DB20E4F6BA8C3EAAC8EFF78E /* boxBoxDistance.cpp in Sources */,
 				38DD7AFE62377D2C680E66F5 /* SpuCollisionShapes.cpp in Sources */,
+				A5EC895D189BF68E00BF3D9D /* GameStatusDisplay.cpp in Sources */,
 				2D0843F32BF2EC0173C8904F /* SpuContactResult.cpp in Sources */,
 				E71FE4B3FB16BFBF34F253A5 /* SpuGatheringCollisionTask.cpp in Sources */,
 				59B0541E9D0599F797B1EBE1 /* SpuMinkowskiPenetrationDepthSolver.cpp in Sources */,
