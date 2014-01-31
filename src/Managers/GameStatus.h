@@ -10,17 +10,34 @@
 #include "ofMain.h"
 #include "Ranking.h"
 
+
+
 class GameStatus{
 public:
 	GameStatus();
 	static GameStatus* getInstance(void);
 	void saveRanking(void);
-	void StartMission();
+	bool StartMission();
 	void EndMission();
 	void AddPoints(int points);
-	void GetLife();//the player looses one life
+	void NewPlayer(void);
+    bool Play(void);
+	bool Death();//the player looses one life
 
-	
+	int GetRemainingLifes(void);
+	int GetRemainingMissions(void);
+	int GetPlayerId(void);
+    int GetCurrentPlayerScore(void);
+    
+    enum enGameStatus{
+        WAITING_NEW_PLAYER = 0,
+        SETTING_UP_THE_GAME,
+        WAITING_START_PLAY,
+        PLAYING,
+        DEAD
+    };
+    
+    enGameStatus GetGameStatus(void);
 
 private:
 	// singleton stuff
@@ -39,7 +56,10 @@ private:
 		NO_OF_LIVES = 3,
 		NO_OF_MISSIONS =1
 	};
+    
 
+    
+    enGameStatus status;
 
 };
 

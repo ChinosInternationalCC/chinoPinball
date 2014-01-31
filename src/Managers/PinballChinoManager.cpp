@@ -8,6 +8,10 @@
 
 #include "PinballChinoManager.h"
 
+PinballChinoManager::PinballChinoManager():statusDisplay(50,100){
+    
+}
+
 //--------------------------------------------------------------
 void PinballChinoManager::setup(){
     
@@ -28,6 +32,8 @@ void PinballChinoManager::setup(){
     
     // setup scenario
     myScenario.setup(world);
+    
+   
     
 }
 
@@ -60,5 +66,7 @@ void PinballChinoManager::draw(){
     
 	camera.end();
     glDisable(GL_DEPTH_TEST);
+    
+    statusDisplay.draw();
     
 }
