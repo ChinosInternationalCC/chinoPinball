@@ -8,7 +8,7 @@
 
 #include "PinballChinoManager.h"
 
-PinballChinoManager::PinballChinoManager():statusDisplay(50,100){
+PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
     
 }
 
