@@ -11,6 +11,10 @@
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url){
     
+    world.enableCollisionEvents();
+	ofAddListener(world.COLLISION_EVENT, this, &Obstacle::onCollision);
+
+    
     position = setPosition;
     
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
@@ -76,7 +80,18 @@ void Obstacle::draw(){
 	
 }
 
-
+//--------------------------------------------------------------
+void Obstacle::onCollision(ofxBulletCollisionData& cdata) {
+	
+		if(body == cdata) {
+			//bColliding[i] = true;
+            ofLog(OF_LOG_NOTICE, "collision TRUE");
+            GameStatus::getInstance()->AddPoints(1);
+		}else{
+            ofLog(OF_LOG_NOTICE, "collision FALSE");
+        }
+	
+}
 
 
 
