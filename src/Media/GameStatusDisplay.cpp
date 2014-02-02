@@ -25,6 +25,8 @@ void GameStatusDisplay::draw(void){
     
     int lineSpacing = 15;
     status = GameStatus::getInstance();
+    
+    ofSetColor(255, 255, 255);
 
     string fpsStr = "Remaining lives: "+ofToString(status->GetRemainingLifes(), 2);
     ofDrawBitmapString(fpsStr, posX,posY);
