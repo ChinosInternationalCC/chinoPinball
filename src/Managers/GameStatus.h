@@ -68,7 +68,7 @@ private:
 / HOW TO USE THIS CLASS IN my code? ?
 
 
-(,h)
+(.h)
 
 #include "GameStatus.h"
 
