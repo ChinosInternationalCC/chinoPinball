@@ -72,7 +72,8 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds[i]->setProperties(.95, .05); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 	}
-    
+	
+    //up right box
     bounds.push_back( new ofxBulletBox() );
 
     startLoc.set(widthPlane*0.5 - 1.2, -8.5, 0);
