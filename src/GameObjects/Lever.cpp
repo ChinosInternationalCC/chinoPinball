@@ -8,7 +8,7 @@
 
 #include "Lever.h"
 
-//---------------------------------
+//--------------------------------------------------------------
 void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
     
     position = setPosition;
@@ -101,7 +101,7 @@ void Lever::draw(){
     
     stringstream ss;
 	ss << "move lever with spacebar" << endl;
-	ofDrawBitmapString(ss.str().c_str(), -10, -10);
+	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
 	
 }
 

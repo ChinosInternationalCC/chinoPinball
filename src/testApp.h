@@ -20,6 +20,6 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
     
-    PinballChinoManager    manager;
+    PinballChinoManager    chinopinball;
 	
 };

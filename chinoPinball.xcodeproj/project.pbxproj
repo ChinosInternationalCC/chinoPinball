@@ -121,6 +121,7 @@
 		A528063418985A5F0058A0D9 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528063118985A5F0058A0D9 /* Ranking.cpp */; };
 		A5EC8961189C250300BF3D9D /* GameStatusDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC895F189C250300BF3D9D /* GameStatusDisplay.cpp */; };
 		A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */; };
+		A9575AFB189E6B59006CAAD1 /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9575AF9189E6B59006CAAD1 /* Obstacle.cpp */; };
 		AD11061519B5BE17E0AEB743 /* btStridingMeshInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7559ECCEBF5E92706490477 /* btStridingMeshInterface.cpp */; };
 		AE278440A4852E628138B806 /* btSubSimplexConvexCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41EE43A88D826DB4EF2D7969 /* btSubSimplexConvexCast.cpp */; };
 		AE83F0CEA2C8D83D72618074 /* ofxBulletWorldRigid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39157C47D15F25CBEF1E29D3 /* ofxBulletWorldRigid.cpp */; };
@@ -603,6 +604,8 @@
 		A7BDB2208576E60E004F8AC9 /* gim_contact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_contact.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_contact.h; sourceTree = SOURCE_ROOT; };
 		A8741C8D41E3B5AB45691E2B /* btGjkEpa2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btGjkEpa2.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h; sourceTree = SOURCE_ROOT; };
 		A874A1EF4BD431CBAC2F7AB8 /* btHinge2Constraint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btHinge2Constraint.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHinge2Constraint.h; sourceTree = SOURCE_ROOT; };
+		A9575AF9189E6B59006CAAD1 /* Obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Obstacle.cpp; path = GameObjects/Obstacle.cpp; sourceTree = "<group>"; };
+		A9575AFA189E6B59006CAAD1 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Obstacle.h; path = GameObjects/Obstacle.h; sourceTree = "<group>"; };
 		A9A5F2F6A520E1B1E4B55014 /* btDefaultCollisionConfiguration.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btDefaultCollisionConfiguration.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp; sourceTree = SOURCE_ROOT; };
 		AAB36CF25D6944BE9DAACEA7 /* SpuContactManifoldCollisionAlgorithm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = SpuContactManifoldCollisionAlgorithm.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuContactManifoldCollisionAlgorithm.cpp; sourceTree = SOURCE_ROOT; };
 		ABCDA33B77B845F9F6926343 /* btDefaultSoftBodySolver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btDefaultSoftBodySolver.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btDefaultSoftBodySolver.h; sourceTree = SOURCE_ROOT; };
@@ -866,6 +869,8 @@
 		0C7B7E46723914CB38E9D865 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				A9575AF9189E6B59006CAAD1 /* Obstacle.cpp */,
+				A9575AFA189E6B59006CAAD1 /* Obstacle.h */,
 				6307ED7E818A748D22DBB63B /* Ball.cpp */,
 				61036DF8AF6A2EEBFB8892E9 /* Ball.h */,
 				0B5F11AE69A054442FA8FF1B /* Hammer.cpp */,
@@ -2000,6 +2005,7 @@
 				1764BA930FA97EF966B61BA0 /* btContactConstraint.cpp in Sources */,
 				86D03BF663571ACD4D255296 /* btGearConstraint.cpp in Sources */,
 				5DFB769C8402B2A1372486E2 /* btGeneric6DofConstraint.cpp in Sources */,
+				A9575AFB189E6B59006CAAD1 /* Obstacle.cpp in Sources */,
 				E19E8C81F64B6DA2AB26BD9B /* btGeneric6DofSpringConstraint.cpp in Sources */,
 				8FB5037F12B20D61FC5653D1 /* btHinge2Constraint.cpp in Sources */,
 				0FB1224C0C32291A6DC0DFB4 /* btHingeConstraint.cpp in Sources */,
@@ -2091,6 +2097,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2202,6 +2209,7 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
