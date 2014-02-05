@@ -1,11 +1,10 @@
 #pragma once
+#include "Score.h"
 
-class Ranking{
+class Ranking: public Score{
 public:
 	Ranking(void);
-	void saveXmlScore(int gameNumber, int numMissionsCompleted, int score);
+	void saveXmlScore(Score score);
 	void loadXmlRanking();
-	int bestPlayer;
-	int bestScore;
-	int bestNumMissionsCompleted;
+
 };
