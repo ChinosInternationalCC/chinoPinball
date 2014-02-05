@@ -8,10 +8,12 @@
 
 #include "Lever.h"
 
-//---------------------------------
-void Lever::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
+//--------------------------------------------------------------
+void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
     
-    position = _pos;
+    position = setPosition;
+    direction = setDirection;
+    
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     // load 3D model
@@ -34,12 +36,21 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
     
     
 	// lever rotation angles
-	lowerLimit = -30;
 	upperLimit = 60;
+	lowerLimit = -30;
     speed = 15;    // degrees per frame
     
     // distance from object center to rotation axis
     axisX = 1.3;
+    
+    // settings for counter clockwise rotation
+    if (direction == 0)
+    {
+        upperLimit = -upperLimit;
+        lowerLimit = -lowerLimit;
+        speed = -speed;
+        axisX = -axisX;
+    }
     
     // rotate lever to lower position
     rotate(lowerLimit);
@@ -55,7 +66,7 @@ void Lever::update(){
     
     if (isKeyPressed)
     {
-        if (angle < upperLimit) // rotate up
+        if ((direction && (angle < upperLimit)) || (!direction && (angle > upperLimit))) // rotate up
         {
             angle += speed;
             rotate(angle);
@@ -63,7 +74,7 @@ void Lever::update(){
     }
     else
     {
-        if (angle > lowerLimit) // rotate down
+        if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
         {
             angle -= speed;
             rotate(angle);
@@ -87,13 +98,17 @@ void Lever::draw(){
     body.restoreTramsformGL();
     
 	material.end();
+    
+    stringstream ss;
+	ss << "move lever with spacebar" << endl;
+	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
 	
 }
 
 //--------------------------------------------------------------
 void Lever::keyPressed(ofKeyEventArgs& key) {
     
-	isKeyPressed = true;
+    if (key.key == 32)	isKeyPressed = true;
     
 }
 

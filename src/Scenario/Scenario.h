@@ -14,6 +14,7 @@
 #include "Ball.h"
 #include "Lever.h"
 #include "Hammer.h"
+#include "Obstacle.h"
 
 class Scenario {
     
@@ -22,13 +23,16 @@ public:
 	void update();
 	void draw();
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
+    void loadObstacles(ofxBulletWorldRigid &world);
 	
     ofxBulletWorldRigid *     world;
     
     Ball                      m_Ball,m_Ball2;
-    Lever                  leverLeft;
+    Lever                   leverLeft;
+    Lever                   leverRight;
     Hammer                   m_Hammer;
-	
+    vector<Obstacle>        obstacles;
+    
 	//basic World
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;

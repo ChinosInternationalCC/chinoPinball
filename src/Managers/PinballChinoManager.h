@@ -12,21 +12,26 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "Scenario.h"
+#include "GameStatusDisplay.h"
 
 class PinballChinoManager {
     
 public:
+    
+    PinballChinoManager();
+    
 	void setup();
 	void update();
 	void draw();
     
     ofxBulletWorldRigid     world;
-	ofCamera                camera;
-	//ofEasyCam				camera;
+
+	//ofCamera                camera;
+    ofEasyCam				camera;
 	ofLight					light;
     
     Scenario                myScenario;
-	
-	bool bstartup;
+    GameStatusDisplay       statusDisplay;
+
     
 };
