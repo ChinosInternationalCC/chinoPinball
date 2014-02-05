@@ -52,4 +52,4 @@ Currently developed on MAC (XCode < 4.4) and Windows (CodeBlocks)
 ***
 ###ClassHierarchy
 
-ToDo
+![ClassHierarchy](/doc/ClassHierarchy.png)
