@@ -30,7 +30,7 @@ public:
 	SimpleObject();
 	//virtual  ~SimpleObject();
 	
-	virtual void setup(ofxBulletWorldRigid &world);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
 	virtual void update();
 	virtual void draw();
     

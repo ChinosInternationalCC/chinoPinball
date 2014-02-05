@@ -14,7 +14,7 @@ SimpleObject::SimpleObject(){
 }
 
 //--------------------------------------------------------------
-void SimpleObject::setup(ofxBulletWorldRigid &world){
+void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
 }
 
 //--------------------------------------------------------------
