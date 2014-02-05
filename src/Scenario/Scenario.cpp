@@ -95,7 +95,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
     bounds[4]->create( world.world, startLoc*scaleStage, ofQuaternion(290,ofVec3f(0,0,1)), 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
     bounds[4]->setProperties(.95, .05); // .25 (more restituition means more energy) , .95 ( friction )
     bounds[4]->add();
-	 /*
+	 */
 }
 
 //--------------------------------------------------------------
