@@ -85,14 +85,17 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds[i]->add();
 	}
 
+	/*
+	
+    //up right box
+    bounds.push_back( new ofxBulletBox() );
 
-    /*
     //ofQuaternion(float angle, const ofVec3f& axis);
     //ofxBulletBox::create( btDiscreteDynamicsWorld* a_world, ofVec3f a_loc, ofQuaternion a_rot, float a_mass, float a_sizeX, float a_sizeY, float a_sizeZ )
     bounds[4]->create( world.world, startLoc*scaleStage, ofQuaternion(290,ofVec3f(0,0,1)), 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
     bounds[4]->setProperties(.95, .05); // .25 (more restituition means more energy) , .95 ( friction )
     bounds[4]->add();
-    */
+	 /*
 }
 
 //--------------------------------------------------------------
