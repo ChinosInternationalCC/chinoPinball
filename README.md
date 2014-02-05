@@ -37,7 +37,7 @@ push from origin to master
 ***
 ###Dependencies
 
-* OF080
+* OF008 http://www.openframeworks.cc 
 * ofxBullet https://github.com/NickHardeman/ofxBullet
 
 Currently developed on MAC (XCode < 4.4) and Windows (CodeBlocks)
