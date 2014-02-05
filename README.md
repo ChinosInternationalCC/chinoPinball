@@ -16,7 +16,7 @@ The project is under development.
 ***
 ###Screenshot
 
-ToDo
+![Screenshot](/doc/screenshot.png)
 
 ***
 ###GITHUB 
