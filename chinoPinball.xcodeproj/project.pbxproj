@@ -117,6 +117,7 @@
 		9FD9730332408EA267BA0E7D /* btQuickprof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6A8B75B3076C1A375A5963 /* btQuickprof.cpp */; };
 		A1AC89E9D8DAC3C116114616 /* btConvex2dConvex2dAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D64767FE0DD5558FBFAED25D /* btConvex2dConvex2dAlgorithm.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
+		A50EE11618A2E08D008C3B7F /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A50EE11418A2E08D008C3B7F /* Score.cpp */; };
 		A528063318985A5F0058A0D9 /* GameStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528062F18985A5F0058A0D9 /* GameStatus.cpp */; };
 		A528063418985A5F0058A0D9 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A528063118985A5F0058A0D9 /* Ranking.cpp */; };
 		A5EC8961189C250300BF3D9D /* GameStatusDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC895F189C250300BF3D9D /* GameStatusDisplay.cpp */; };
@@ -585,6 +586,8 @@
 		A309102D19BCB56BA0130302 /* gim_array.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_array.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h; sourceTree = SOURCE_ROOT; };
 		A430FFBD7BF0BA514D54CBDB /* gim_geom_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geom_types.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h; sourceTree = SOURCE_ROOT; };
 		A4CB26411CB1901F8D91B850 /* cl_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl_platform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/cl_platform.h; sourceTree = SOURCE_ROOT; };
+		A50EE11418A2E08D008C3B7F /* Score.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Score.cpp; path = Managers/Score.cpp; sourceTree = "<group>"; };
+		A50EE11518A2E08D008C3B7F /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Managers/Score.h; sourceTree = "<group>"; };
 		A528062F18985A5F0058A0D9 /* GameStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameStatus.cpp; path = Managers/GameStatus.cpp; sourceTree = "<group>"; };
 		A528063018985A5F0058A0D9 /* GameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStatus.h; path = Managers/GameStatus.h; sourceTree = "<group>"; };
 		A528063118985A5F0058A0D9 /* Ranking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ranking.cpp; path = Managers/Ranking.cpp; sourceTree = "<group>"; };
@@ -1026,6 +1029,8 @@
 				A528063218985A5F0058A0D9 /* Ranking.h */,
 				75240502820DCAC951F9A057 /* PinballChinoManager.cpp */,
 				B7E3028856D5357BACA429A4 /* PinballChinoManager.h */,
+				A50EE11418A2E08D008C3B7F /* Score.cpp */,
+				A50EE11518A2E08D008C3B7F /* Score.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -2069,6 +2074,7 @@
 				483FA4F6D5FA6422C559B1F5 /* ofxAssimpMeshHelper.cpp in Sources */,
 				8DED5056525646FA71980866 /* ofxAssimpModelLoader.cpp in Sources */,
 				B8846EF8E504895A4A9EFEC0 /* ofxAssimpTexture.cpp in Sources */,
+				A50EE11618A2E08D008C3B7F /* Score.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
