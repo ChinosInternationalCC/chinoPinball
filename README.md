@@ -11,20 +11,31 @@ Finally, edit how to edit the scenario for dinamic scenes. After warp objects to
 
 ***
 
-GITHUB ( fork and master branch )
+###GITHUB 
+**fork** master branch
+
 Dude, where's my fork? 
 Each developer has to fork in his Github ( click on website fork ) 
-Then
-clone it to you git client 
+Then clone it to you git client
+```
 	>> git clone http://GitHubProjectAdresss
+```	
 develop your code
-upload your changes to your github branch 
+upload your changes to your github branch
+```
 	>> git stage xxx file
 	>> git commit -m 'message to the statge files'
 	>> git push or git push -u origin master
+```
 When finally
 u wanna merge it, to chinos  master branch 
 push from origin to master 	
+```
 	>> git push -u origin masterChinos
+```
 
+***
+###Dependencies
+
+ofxBullet https://github.com/NickHardeman/ofxBullet
 ***
