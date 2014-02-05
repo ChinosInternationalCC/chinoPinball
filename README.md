@@ -3,14 +3,22 @@ chinoPinball
 
 Pinball. ChinoPinball is an opensource tool for mapping pinball via projection.
 
-***
-
-First step, build a pinball game ( forces , objects, textures, events, score, scenes, etc )
-Second build interfaces to shoot and play game
-Finally, edit how to edit the scenario for dinamic scenes. After warp objects to match with projection.
+The project is under development.
 
 ***
+###Roadmap
 
+- First step, build a pinball game ( forces , objects, textures, events, score, scenes, etc )
+- Second build interfaces to shoot and play game
+- Finally, edit how to edit the scenario for dinamic scenes. 
+- After warp objects to match with projection.
+
+***
+###Screenshot
+
+ToDo
+
+***
 ###GITHUB 
 **fork** master branch
 
@@ -42,3 +50,6 @@ push from origin to master
 
 Currently developed on MAC (XCode < 4.4) and Windows (CodeBlocks)
 ***
+###ClassHierarchy
+
+ToDo
