@@ -30,6 +30,10 @@ public:
 	int GetPlayerId(void);
     int GetCurrentPlayerScore(void);
     
+    Score getBestScore(void);
+    
+    
+    
     enum enGameStatus{
         WAITING_NEW_PLAYER = 0,
         SETTING_UP_THE_GAME,
