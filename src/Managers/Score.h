@@ -13,7 +13,6 @@ class Score{
 public:
     Score();
     Score(int idPlayer, int lastMission, int points);
-protected:
     int idPlayer, lastMission, points;
 };
 

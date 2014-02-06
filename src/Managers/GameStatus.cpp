@@ -30,12 +30,24 @@ void GameStatus::NewPlayer(void){
 	idPlayer += 1;
 	points = 0;
     status = SETTING_UP_THE_GAME;
+    myRanking.loadXmlRanking();
     
 }
 
 //---------------------------------------
 void GameStatus::saveRanking(void){
+    Score score;
+    
+    score.idPlayer = idPlayer;
+    score.lastMission = lastMission;
+    score.points = points;
+    myRanking.saveXmlScore(score);
+    
+}
 
+//---------------------------------------
+Score GameStatus::getBestScore(void){
+    return myRanking.getMaxScore();
 }
 
 //---------------------------------------
