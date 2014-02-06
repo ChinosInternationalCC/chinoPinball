@@ -7,8 +7,8 @@ GameStatus* GameStatus::single = NULL;
 //--------------------------------------
 GameStatus::GameStatus(void){
 	idPlayer = 0;
-	currentMission = 0;
-	score = 0;
+	lastMission = 0;
+	points = 0;
     lives = NO_OF_LIVES;
     status = WAITING_NEW_PLAYER;
 }
@@ -28,29 +28,41 @@ GameStatus* GameStatus::getInstance(void){
 //--------------------------------------
 void GameStatus::NewPlayer(void){
 	idPlayer += 1;
-	score = 0;
+	points = 0;
     status = SETTING_UP_THE_GAME;
+    myRanking.loadXmlRanking();
     
 }
 
 //---------------------------------------
 void GameStatus::saveRanking(void){
+    Score score;
+    
+    score.idPlayer = idPlayer;
+    score.lastMission = lastMission;
+    score.points = points;
+    myRanking.saveXmlScore(score);
+    
+}
 
+//---------------------------------------
+Score GameStatus::getBestScore(void){
+    return myRanking.getMaxScore();
 }
 
 //---------------------------------------
 bool GameStatus::StartMission(){
 	bool missions_left;
 
-	if (currentMission <= NO_OF_MISSIONS ){
-		currentMission += 1;
+	if (lastMission <= NO_OF_MISSIONS ){
+		lastMission += 1;
 		lives = NO_OF_LIVES;
 		missions_left = true;
         status = WAITING_START_PLAY;
 	}
 	else{
 		lives = -1;
-		currentMission = 0xFFFF;
+		lastMission = 0xFFFF;
 		missions_left = false;
         status = WAITING_NEW_PLAYER;
 	}
@@ -67,7 +79,7 @@ void GameStatus::EndMission(){
 
 //--------------------------------------
 void GameStatus::AddPoints(int points){
-    score += points;
+    points += points;
 }
 //------------------------------------
 bool GameStatus::Play(void){
@@ -95,7 +107,7 @@ int GameStatus::GetRemainingLifes(void){
 
 //-----------------------------------------
 int GameStatus::GetRemainingMissions(void){
-	return NO_OF_MISSIONS - currentMission;
+	return NO_OF_MISSIONS - lastMission;
 }
 
 //----------------------------------------
@@ -110,6 +122,6 @@ GameStatus::enGameStatus GameStatus::GetGameStatus(void){
 
 //----------------------------------------
 int GameStatus::GetCurrentPlayerScore(void){
-    return score;
+    return points;
 }
 

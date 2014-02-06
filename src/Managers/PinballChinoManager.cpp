@@ -14,16 +14,25 @@ PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
 
 //--------------------------------------------------------------
 void PinballChinoManager::setup(){
-    
-    // setup OF
-    ofSetFrameRate(60);
-	ofSetVerticalSync(true);
-	ofBackground( 10, 10, 10);
-    
+
+	
     // setup bullet world
 	world.setup();
 	world.setGravity( ofVec3f(0, 4, 7) );
 	
+/*
+	// setup camera
+	camera.setPosition(ofVec3f(0, 0, -34.5));
+	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
+	
+	world.setCamera(&camera);	
+	world.setCameraPosition(ofVec3f(0, 0, -34.5));
+    
+    // setup scenario
+    myScenario.setup(world);
+*/
+
+
     // setup camera
 	camera.setPosition(ofVec3f(0, 0, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
@@ -32,17 +41,15 @@ void PinballChinoManager::setup(){
     
     // setup scenario
     myScenario.setup(world);
-    
-   
-    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
     
+	world.setCameraPosition(ofVec3f(0, 0, -34.5));
+	
 	world.update();
     myScenario.update();
-    
 }
 
 //--------------------------------------------------------------

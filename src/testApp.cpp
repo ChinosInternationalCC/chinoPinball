@@ -2,22 +2,26 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
+	// setup OF
+    ofSetFrameRate(60);
+	ofSetVerticalSync(true);
+	ofBackground( 10, 10, 10);
     
-    manager.setup();
+	chinopinball.setup();
     
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
     
-    manager.update();
+    chinopinball.update();
     
 }
 
 //--------------------------------------------------------------
 void testApp::draw() {
     
-    manager.draw();
+    chinopinball.draw();
     
 }
 

@@ -8,7 +8,7 @@
 
 #include "Lever.h"
 
-//---------------------------------
+//--------------------------------------------------------------
 void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
     
     position = setPosition;
