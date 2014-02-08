@@ -9,10 +9,11 @@
 
 #include "ofMain.h"
 #include "Ranking.h"
+#include "Score.h"
 
 
 
-class GameStatus{
+class GameStatus: public Score{
 public:
 	GameStatus();
 	static GameStatus* getInstance(void);
@@ -29,6 +30,10 @@ public:
 	int GetPlayerId(void);
     int GetCurrentPlayerScore(void);
     
+    Score getBestScore(void);
+    
+    
+    
     enum enGameStatus{
         WAITING_NEW_PLAYER = 0,
         SETTING_UP_THE_GAME,
@@ -44,10 +49,7 @@ private:
 	static bool    instanceFlag;
     static GameStatus *single;  
 
-	int idPlayer;
-	int score;
 	int lives;
-	int currentMission;
 	enum gamestatus {waintingStart, playing, gameOver};
 	Ranking myRanking;
 	bool missionsCompleted;

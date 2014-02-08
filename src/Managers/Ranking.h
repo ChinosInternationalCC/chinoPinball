@@ -1,11 +1,17 @@
 #pragma once
+#include "Score.h"
+#include "ofxXmlSettings.h"
 
-class Ranking{
+class Ranking: public ofxXmlSettings
+{
 public:
 	Ranking(void);
-	void saveXmlScore(int gameNumber, int numMissionsCompleted, int score);
+	void saveXmlScore(Score score);
 	void loadXmlRanking();
-	int bestPlayer;
-	int bestScore;
-	int bestNumMissionsCompleted;
+    Score getMaxScore(void);
+private:
+    int numberOfSavedPoints;
+    vector<Score> rank;
+                   
+                   
 };
