@@ -124,8 +124,6 @@
 		A58EA14318A418710013A7CD /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58EA13D18A418710013A7CD /* tinyxmlerror.cpp */; };
 		A58EA14418A418710013A7CD /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58EA13E18A418710013A7CD /* tinyxmlparser.cpp */; };
 		A58EA14518A418710013A7CD /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58EA14018A418710013A7CD /* ofxXmlSettings.cpp */; };
-		A5BEB80418A42E5500E7E6EB /* InputEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5BEB80218A42E5500E7E6EB /* InputEventManager.cpp */; };
-		A5BEB80718A42E8200E7E6EB /* OutputEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5BEB80518A42E8200E7E6EB /* OutputEventManager.cpp */; };
 		A5BEB83318A42F2200E7E6EB /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5BEB80D18A42F2200E7E6EB /* IpEndpointName.cpp */; };
 		A5BEB83418A42F2200E7E6EB /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5BEB81218A42F2200E7E6EB /* NetworkingUtils.cpp */; };
 		A5BEB83518A42F2200E7E6EB /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5BEB81318A42F2200E7E6EB /* UdpSocket.cpp */; };
@@ -618,10 +616,6 @@
 		A58EA14018A418710013A7CD /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		A58EA14118A418710013A7CD /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
-		A5BEB80218A42E5500E7E6EB /* InputEventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputEventManager.cpp; sourceTree = "<group>"; };
-		A5BEB80318A42E5500E7E6EB /* InputEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputEventManager.h; sourceTree = "<group>"; };
-		A5BEB80518A42E8200E7E6EB /* OutputEventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OutputEventManager.cpp; sourceTree = "<group>"; };
-		A5BEB80618A42E8200E7E6EB /* OutputEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputEventManager.h; sourceTree = "<group>"; };
 		A5BEB80D18A42F2200E7E6EB /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
 		A5BEB80E18A42F2200E7E6EB /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		A5BEB80F18A42F2200E7E6EB /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -1091,10 +1085,6 @@
 				B7E3028856D5357BACA429A4 /* PinballChinoManager.h */,
 				A50EE11418A2E08D008C3B7F /* Score.cpp */,
 				A50EE11518A2E08D008C3B7F /* Score.h */,
-				A5BEB80218A42E5500E7E6EB /* InputEventManager.cpp */,
-				A5BEB80318A42E5500E7E6EB /* InputEventManager.h */,
-				A5BEB80518A42E8200E7E6EB /* OutputEventManager.cpp */,
-				A5BEB80618A42E8200E7E6EB /* OutputEventManager.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -2271,8 +2261,6 @@
 				A58EA14318A418710013A7CD /* tinyxmlerror.cpp in Sources */,
 				A58EA14418A418710013A7CD /* tinyxmlparser.cpp in Sources */,
 				A58EA14518A418710013A7CD /* ofxXmlSettings.cpp in Sources */,
-				A5BEB80418A42E5500E7E6EB /* InputEventManager.cpp in Sources */,
-				A5BEB80718A42E8200E7E6EB /* OutputEventManager.cpp in Sources */,
 				A5BEB83318A42F2200E7E6EB /* IpEndpointName.cpp in Sources */,
 				A5BEB83418A42F2200E7E6EB /* NetworkingUtils.cpp in Sources */,
 				A5BEB83518A42F2200E7E6EB /* UdpSocket.cpp in Sources */,
@@ -2313,7 +2301,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2406,7 +2394,7 @@
 					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/x86_64/libMiniCL.a,
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a,
 				);
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 			};
 			name = Debug;
 		};
@@ -2425,7 +2413,7 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2518,7 +2506,7 @@
 					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/x86_64/libMiniCL.a,
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a,
 				);
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};
