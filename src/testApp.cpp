@@ -6,6 +6,7 @@ void testApp::setup() {
     ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 	ofBackground( 10, 10, 10);
+    mainOutputSyphonServer.setName("Screen Output");
     
 	chinopinball.setup();
     
@@ -22,7 +23,7 @@ void testApp::update() {
 void testApp::draw() {
     
     chinopinball.draw();
-    
+    mainOutputSyphonServer.publishScreen();
 }
 
 //--------------------------------------------------------------
