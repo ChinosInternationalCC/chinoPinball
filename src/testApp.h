@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "PinballChinoManager.h"
+#include "ofxSyphon.h"
 
 class testApp : public ofBaseApp{
 
@@ -21,5 +22,7 @@ public:
 	void gotMessage(ofMessage msg);
     
     PinballChinoManager    chinopinball;
+    
+    ofxSyphonServer mainOutputSyphonServer;
 	
 };

@@ -77,7 +77,7 @@ We don't know how to do this yet ...
 ***
 ###Scenario editor
 
-The idea is to be able to create scenario directly on the place where the game will be projected, without proir preparation (only the objects could be prepared earlier).
+The idea is to be able to create scenario directly on the place where the game will be projected, without prior preparation (only the objects could be prepared earlier).
 Then, maybe we could also let the people create scenarios by themselves. 
 
 Editor should have the following functionalities:
