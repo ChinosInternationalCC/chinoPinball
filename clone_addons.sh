@@ -11,3 +11,4 @@ PREFIX="git clone git@github.com:"
 fi
 
 ${PREFIX}NickHardeman/ofxBullet.git
+${PREFIX}astellato/ofxSyphon.git
