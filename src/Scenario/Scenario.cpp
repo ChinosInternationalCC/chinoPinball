@@ -12,11 +12,11 @@
 void Scenario::setup(ofxBulletWorldRigid &world){
     
 
-    m_Ball.setup		(world,	ofVec3f(2.5,0,	0.2));
-    m_Ball2.setup		(world,	ofVec3f(6,	0,	0.2));
-    leverLeft.setup		(world, ofVec3f(-4,	7,	0.2),0);
-    leverRight.setup	(world, ofVec3f(4,	7,	0.2),1);
-    m_Hammer.setup		(world,	ofVec3f(6,	5,	0.2));
+//    m_Ball.setup		(world,	ofVec3f(0,0,	-0.5));
+    m_Ball2.setup		(world,	ofVec3f(5,	0,	-0.5));
+    leverLeft.setup		(world, ofVec3f(-3,	8,	-0.2),0);
+    leverRight.setup	(world, ofVec3f(3,	8,	-0.2),1);
+    m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.2));
     loadObstacles		(world);
 	
 	ofVec3f initworldpos = ofVec3f(0,0,0);
@@ -27,7 +27,7 @@ void Scenario::setup(ofxBulletWorldRigid &world){
 void Scenario::loadObstacles(ofxBulletWorldRigid &world){
     obstacles.resize(4);
     for(int i = 0; i < 4; i++) {
-        obstacles[i].setup(world, ofVec3f(-5+3.3*i,-4,-0.5), "cylinder.stl");
+        obstacles[i].setup(world, ofVec3f(-3.5+3*i,-4,-.7), "cylinder.stl");
     }
 }
 
@@ -35,13 +35,13 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	/////////////////////////////////////////////////////////////////////////////////////////
     
 	// STATGE
-	float scaleStage = 0.15;
+	float scaleStage = 0.12;
 	
 	ofVec3f startLoc;
 	ofPoint dimens;
 	
-	boundsWidth = 10.;
-	float depthStage = 200;
+	boundsWidth = 7.;
+	float depthStage = 160;
 	float frontbackwallHeigh = 40;
 	float heightwalls = 20;
 	
@@ -66,10 +66,10 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds.push_back( new ofxBulletBox() );
 		if(i == 0) { // ground //
 			//startLoc.set(-widthPlane*0.5, -heightPlane*0.5, 0);
-			startLoc.set(0, 0, depthbasePlane*0.85);
+			startLoc.set(0, 0, depthbasePlane*0.5);
 			dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
 		} else if (i == 1) { // back wall //
-			startLoc.set(0, -widthbasePlane*1, -depthbasePlane*0.5);
+			startLoc.set(0, -depthStage*0.5, -depthbasePlane*0.5);
 			dimens.set(widthbkPlane, heightbkPlane, depthbkPlane);
 		} else if (i == 2) { // right wall //
 			startLoc.set(-widthbasePlane*0.5 , 0, -depthbasePlane*0.5);
@@ -81,7 +81,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
-		bounds[i]->setProperties(.90, .05); // .25 (more restituition means more energy) , .95 ( friction )
+		bounds[i]->setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 	}
 

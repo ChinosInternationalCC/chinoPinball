@@ -16,6 +16,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
     body.create(world.world, position, 0, .5, 4, .5); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
+    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
 	ofRegisterKeyEvents(this);
     isKeyPressed = false;
@@ -23,7 +24,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
 	//y position
 	lowerLimit = position.y;
 	upperLimit = 7;
-    speed = 0.4;    // pos per frame
+    speed = 0.8;    // pos per frame
     
     
     // move hammer to lower position

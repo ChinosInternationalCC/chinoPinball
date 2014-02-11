@@ -20,7 +20,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     // load 3D model
-    ofVec3f scale(0.1, 0.1, 0.1);
+    ofVec3f scale(0.05, 0.05, 0.05);
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
@@ -37,6 +37,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
+    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
     btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
@@ -85,10 +86,10 @@ void Obstacle::onCollision(ofxBulletCollisionData& cdata) {
 	
 		if(body == cdata) {
 			//bColliding[i] = true;
-            ofLog(OF_LOG_NOTICE, "collision TRUE");
+//            ofLog(OF_LOG_NOTICE, "collision TRUE");
             GameStatus::getInstance()->AddPoints(1);
 		}else{
-            ofLog(OF_LOG_NOTICE, "collision FALSE");
+//            ofLog(OF_LOG_NOTICE, "collision FALSE");
         }
 	
 }
