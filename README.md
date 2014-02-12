@@ -43,6 +43,15 @@ push from origin to master
 ```
 
 ***
+###Examples of similar projects
+
+http://www.youtube.com/watch?v=eyUKAFCaHzo
+http://www.youtube.com/watch?v=MljNwzBp1y8
+http://www.youtube.com/watch?v=YvyRM175uQ0
+
+
+
+***
 ###Dependencies
 
 * OF008 http://www.openframeworks.cc 

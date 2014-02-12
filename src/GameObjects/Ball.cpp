@@ -14,11 +14,16 @@ Ball::Ball(void){
 }
 
 //---------------------------------
-void Ball::setup(ofxBulletWorldRigid &world, ofVec3f position){
+void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f position){
     m_status = BallStatusWaiting;
+    startPosition = position;
+    world = myWorld;
     
-    this->create(world.world, position, 0.1, .25);
+    this->setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    this->create(world.world, startPosition, mass, radius);
     this->add();
+    
+	ofRegisterKeyEvents(this);
 }
 
 //----------------------------------
@@ -48,3 +53,26 @@ bool Ball::isInsideScenario(ofBoxPrimitive box){
     return true;
 }
 
+//--------------------------------------------------------------
+void Ball::keyPressed(ofKeyEventArgs& e) {
+    
+    switch(e.key){
+        case OF_KEY_RETURN:
+            reset();
+            break;
+    }
+}
+
+//--------------------------------------------------------------
+void Ball::keyReleased(ofKeyEventArgs& key) {
+}
+
+//--------------------------------------------------------------
+void Ball::reset() {
+    
+    this->remove();
+    this->create(world.world, startPosition, mass, radius);
+    this->add();
+    
+}
+    
