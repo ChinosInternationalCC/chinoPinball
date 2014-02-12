@@ -27,7 +27,7 @@ public:
     //vector<bool>				bColliding;
     
     
-	ofVec3f         position;
+	//ofVec3f         position;
     
     btQuaternion    rotation;
     
