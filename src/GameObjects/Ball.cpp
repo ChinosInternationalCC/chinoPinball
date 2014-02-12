@@ -14,14 +14,16 @@ Ball::Ball(void){
 }
 
 //---------------------------------
-void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f position){
+void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     m_status = BallStatusWaiting;
-    startPosition = position;
+    position = pos;
     world = myWorld;
     
     this->setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
-    this->create(world.world, startPosition, mass, radius);
+    this->create(world.world, position, mass, radius);
     this->add();
+    
+    type = ShapeTypeBall;
     
 	ofRegisterKeyEvents(this);
 }
@@ -71,7 +73,7 @@ void Ball::keyReleased(ofKeyEventArgs& key) {
 void Ball::reset() {
     
     this->remove();
-    this->create(world.world, startPosition, mass, radius);
+    this->create(world.world, position, mass, radius);
     this->add();
     
 }

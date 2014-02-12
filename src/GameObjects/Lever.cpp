@@ -10,7 +10,7 @@
 
 //--------------------------------------------------------------
 void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
-    
+    type = ShapeTypeLever;
     position = setPosition;
     direction = setDirection;
     

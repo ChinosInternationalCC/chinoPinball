@@ -11,16 +11,18 @@
 
 #include "ofMain.h"
 #include "ofxBullet.h"
+#include "SimpleObject.h"
 
-
-class Ball : public ofxBulletSphere{
+class Ball : public ofxBulletSphere,
+             public SimpleObject
+{
 public:
     Ball(void);
-    void setup(ofxBulletWorldRigid &world, ofVec3f position);
+    void setup(ofxBulletWorldRigid &world, ofVec3f pos);
     void update(void);
     void draw(void);
     
-    ofVec3f startPosition;
+    //ofVec3f startPosition;
     float radius = .3;
     float mass = 2;
     
