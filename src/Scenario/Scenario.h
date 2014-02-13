@@ -26,7 +26,7 @@ public:
 	void draw();
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
     void loadObstacles(ofxBulletWorldRigid &world);
-    void loadFromXml(void);
+    void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
 	
     ofxXmlSettings ScenarioXml;

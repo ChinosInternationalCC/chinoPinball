@@ -77,3 +77,17 @@ void PinballChinoManager::draw(){
     statusDisplay.draw();
     
 }
+
+void PinballChinoManager::onRestartGameEvent(void){
+    
+}
+
+void PinballChinoManager::onMoveLeftLeverEvent(void){
+    
+}
+void PinballChinoManager::onMoveRightLeverEvent(void){
+    
+}
+void PinballChinoManager::onMoveBallLauncherEvent(void){
+    
+}

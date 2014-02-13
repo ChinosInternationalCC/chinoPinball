@@ -26,12 +26,57 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     
 	ofVec3f initworldpos = ofVec3f(0,0,0);
 	loadBasicScenario(world, initworldpos);
-    saveToXml();
+    //saveToXml();
 }
 
 //------------------------------
-void Scenario::loadFromXml(){
-    
+void Scenario::loadFromXml(ofxBulletWorldRigid &world){
+    if(ScenarioXml.loadFile("scenario.xml")){
+        ScenarioXml.pushTag("scenario");
+        int numberOfSavedObjects = ScenarioXml.getNumTags("object");
+        for(int i = 0; i < numberOfSavedObjects; i++){
+            ScenarioXml.pushTag("object", i);
+            
+            SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
+            ofVec3f pos;
+            pos.x = ScenarioXml.getValue("positionX", 0);
+            pos.y = ScenarioXml.getValue("positionY", 0);
+            pos.z = ScenarioXml.getValue("positionZ", 0);
+            
+            switch(Type){
+                case SimpleObject::ShapeTypeBall:{
+                    Ball *oBall = new Ball();
+                    oBall->setup(world, pos);
+                    ScenarioObjects.push_back(oBall);
+                }
+                    break;
+
+                case SimpleObject::ShapeTypeHammer:{
+                    Hammer *oHammer = new Hammer();
+                    oHammer->setup(world, pos);
+                    ScenarioObjects.push_back(oHammer);
+                }
+                    break;
+                case SimpleObject::ShapeTypeLever:{
+                    Lever *oLever = new Lever();
+                    oLever->setup(world, pos, 0);
+                }
+                    break;
+                default:
+                    break;
+
+                
+            }
+            
+           
+            ScenarioXml.popTag();
+        }
+        
+        ScenarioXml.popTag(); //pop position
+    }
+    else{
+        ofLogError("Scenario file did not load!");
+    }
 }
 
 //------------------------------
