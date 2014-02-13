@@ -9,10 +9,11 @@
 #include "Hammer.h"
 
 //---------------------------------
-void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
+void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
    /* position = ofVec3f(7, 4, 0);*/
                 /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
+    position = pos;
     body.create(world.world, position, 0, .5, 4, .5); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
@@ -29,6 +30,8 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
     
     // move hammer to lower position
     move(lowerLimit);
+    
+    type = ShapeTypeHammer;
     
 }
 

@@ -10,7 +10,7 @@
 
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url){
-    
+    type = ShapeTypeObstacle;
     world.enableCollisionEvents();
 	ofAddListener(world.COLLISION_EVENT, this, &Obstacle::onCollision);
 

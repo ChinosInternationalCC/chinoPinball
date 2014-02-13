@@ -15,6 +15,8 @@
 #include "Lever.h"
 #include "Hammer.h"
 #include "Obstacle.h"
+#include "SimpleObject.h"
+#include "ofxXmlSettings.h"
 
 class Scenario {
     
@@ -24,7 +26,10 @@ public:
 	void draw();
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
     void loadObstacles(ofxBulletWorldRigid &world);
+    void loadFromXml(void);
+    void saveToXml(void);
 	
+    ofxXmlSettings ScenarioXml;
     ofxBulletWorldRigid *     world;
     
     Ball                      m_Ball,m_Ball2;
@@ -32,6 +37,9 @@ public:
     Lever                   leverRight;
     Hammer                   m_Hammer;
     vector<Obstacle>        obstacles;
+    
+    
+    vector<SimpleObject*> ScenarioObjects;
     
 	//basic World
 	vector <ofxBulletBox*>		bounds;

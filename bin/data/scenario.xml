@@ -1,0 +1,26 @@
+<scenario>
+    <object>
+        <type>0</type>
+        <positionX>5.000000000</positionX>
+        <positionY>0.000000000</positionY>
+        <positionZ>-0.500000000</positionZ>
+    </object>
+    <object>
+        <type>3</type>
+        <positionX>-3.000000000</positionX>
+        <positionY>8.000000000</positionY>
+        <positionZ>-0.200000003</positionZ>
+    </object>
+    <object>
+        <type>3</type>
+        <positionX>3.000000000</positionX>
+        <positionY>8.000000000</positionY>
+        <positionZ>-0.200000003</positionZ>
+    </object>
+    <object>
+        <type>5</type>
+        <positionX>5.000000000</positionX>
+        <positionY>5.000000000</positionY>
+        <positionZ>-0.200000003</positionZ>
+    </object>
+</scenario>

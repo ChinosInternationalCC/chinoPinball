@@ -19,10 +19,43 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.2));
     loadObstacles		(world);
 	
+    ScenarioObjects.push_back(&m_Ball2);
+    ScenarioObjects.push_back(&leverLeft);
+    ScenarioObjects.push_back(&leverRight);
+    ScenarioObjects.push_back(&m_Hammer);
+    
 	ofVec3f initworldpos = ofVec3f(0,0,0);
 	loadBasicScenario(world, initworldpos);
+    saveToXml();
+}
+
+//------------------------------
+void Scenario::loadFromXml(){
     
 }
+
+//------------------------------
+void Scenario::saveToXml(){
+    ScenarioXml.addTag("scenario");
+    ScenarioXml.pushTag("scenario");
+    
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+        
+        ScenarioXml.addTag("object");
+        ScenarioXml.pushTag("object",i);
+        
+        ScenarioXml.addValue("type", ScenarioObjects[i]->type);
+        ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
+        ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
+        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
+        ScenarioXml.popTag();
+    }
+    ScenarioXml.popTag();
+    ScenarioXml.saveFile("scenario.xml");
+    
+}
+
+
 
 void Scenario::loadObstacles(ofxBulletWorldRigid &world){
     obstacles.resize(4);
@@ -100,9 +133,11 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 
 //--------------------------------------------------------------
 void Scenario::update(){
-	leverLeft.update();
-	leverRight.update();
-    m_Hammer.update();
+    
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        ScenarioObjects[i]->update();
+    }
+    
     for(int i = 0; i < obstacles.size(); i++) {
         obstacles[i].update();
     }
@@ -111,12 +146,10 @@ void Scenario::update(){
 //--------------------------------------------------------------
 void Scenario::draw(){
     
-    m_Ball.draw();
-    m_Ball2.draw();
-    leverLeft.draw();
-    leverRight.draw();
-    m_Hammer.draw();
-	
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        ScenarioObjects[i]->draw();
+    }
+    
 	ofDrawAxis(1);
 
     for(int i = 0; i < obstacles.size(); i++) {

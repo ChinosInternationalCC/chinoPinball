@@ -14,30 +14,34 @@
 #include "ofxAssimpModelLoader.h"
 
 
-enum shapeType{
-	ShapeTypeBall = 0,
-	ShapeTypeSimpleBox,
-	ShapeTypeSpring,
-	ShapeTypeLever,
-	ShapeTypeContainer
-};
-
- 
 class SimpleObject {
     
 public:
+
 	
 	SimpleObject();
 	//virtual  ~SimpleObject();
 	
+    enum shapeType{
+        ShapeTypeBall = 0,
+        ShapeTypeSimpleBox = 1,
+        ShapeTypeSpring = 2,
+        ShapeTypeLever = 3,
+        ShapeTypeContainer = 4,
+        ShapeTypeHammer = 5,
+        ShapeTypeObstacle = 6
+    };
+    
+    shapeType type;
+    
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
-	virtual void update();
-	virtual void draw();
+	virtual void update()=0;
+	virtual void draw()=0;
     
 	//general vars
 	int idobject;
     ofMatrix4x4 worldposition;
-	ofVec3f centroide;
+	ofVec3f position;
 	bool bvisible;
 	int colisionCounter;
 	
