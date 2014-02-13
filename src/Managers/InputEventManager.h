@@ -17,29 +17,18 @@
  * should be extended by the PinballChino manager
  * PinbalChinoManager should implement the pure virtual methods
  */
-class InputEventManager: public ofBaseApp,
-                         public ofxOscReceiver
+class InputEventManager: public ofxOscReceiver
 {
 public:
     InputEventManager();
     
-    virtual void moveLeftLever(void) = 0;
-    virtual void moveRightLever(void) = 0;
-    virtual void moveBallLauncher(void) = 0;
+    virtual void onMoveLeftLeverEvent(void) = 0;
+    virtual void onMoveRightLeverEvent(void) = 0;
+    virtual void onMoveBallLauncherEvent(void) = 0;
+    virtual void onRestartGameEvent(void) = 0;
     
-    void setup();
-	void update();
-	void draw();
+
     
-	void keyPressed  (int key);
-	void keyReleased(int key);
-	void mouseMoved(int x, int y );
-	void mouseDragged(int x, int y, int button);
-	void mousePressed(int x, int y, int button);
-	void mouseReleased(int x, int y, int button);
-	void windowResized(int w, int h);
-	void dragEvent(ofDragInfo dragInfo);
-	void gotMessage(ofMessage msg);
     
 };
 

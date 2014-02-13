@@ -13,8 +13,9 @@
 #include "ofxBullet.h"
 #include "Scenario.h"
 #include "GameStatusDisplay.h"
+#include "InputEventManager.h"
 
-class PinballChinoManager {
+class PinballChinoManager: public InputEventManager {
     
 public:
     
@@ -32,6 +33,11 @@ public:
     
     Scenario                myScenario;
     GameStatusDisplay       statusDisplay;
+    
+    void onRestartGameEvent(void);
+    void onMoveLeftLeverEvent(void);
+    void onMoveRightLeverEvent(void);
+    void onMoveBallLauncherEvent(void);
 
     
 };

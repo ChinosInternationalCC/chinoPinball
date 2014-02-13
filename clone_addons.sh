@@ -12,3 +12,4 @@ fi
 
 ${PREFIX}NickHardeman/ofxBullet.git
 ${PREFIX}astellato/ofxSyphon.git
+${PREFIX}rezaali/ofxUI.git
