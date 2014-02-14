@@ -780,6 +780,7 @@
 		A58EA13E18A418710013A7CD /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = ../../ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
 		A58EA14018A418710013A7CD /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxXmlSettings.cpp; path = ../../ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		A58EA14118A418710013A7CD /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxXmlSettings.h; path = ../../ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
+		A58EC16618AE756B00829E0B /* ExternalsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalsConfig.h; sourceTree = "<group>"; };
 		A591FE0418A979880056F116 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageMappingOscPacketListener.h; path = ../../ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h; sourceTree = SOURCE_ROOT; };
 		A591FE0518A979880056F116 /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscException.h; path = ../../ofxOsc/libs/oscpack/src/osc/OscException.h; sourceTree = SOURCE_ROOT; };
 		A591FE0618A979880056F116 /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscHostEndianness.h; path = ../../ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
@@ -2204,6 +2205,7 @@
 				DEFCBF0706CA5A2F66614DEE /* ScenarioEditor */,
 				00A1BFCBB38848AD0E0C8539 /* testApp.cpp */,
 				2D129AB0F7D46B8DFCEADEDB /* testApp.h */,
+				A58EC16618AE756B00829E0B /* ExternalsConfig.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -2778,12 +2780,15 @@
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib,
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx,
 					../../../addons/ofxAssimpModelLoader/src,
-					../../../addons/ofxOsc/src,
 					../../../addons/ofxXmlSettings/src,
 					../../../addons/ofxXmlSettings/libs,
-					../../../addons/ofxOsc/libs/opsack/src/osc,
-					../../../addons/ofxOsc/libs/ospack/src/ip,
+					../../../addons/ofxOsc/libs,
+					../../../addons/ofxOsc/libs/ospack,
 					../../../addons/ofxOsc/libs/ospack/src/,
+					../../../addons/ofxOsc/libs/ospack/src/ip,
+					../../../addons/ofxOsc/libs/ospack/src/ip/posix,
+					../../../addons/ofxOsc/libs/ospack/src/osc,
+					../../../addons/ofxOsc/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -2896,12 +2901,15 @@
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib,
 					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx,
 					../../../addons/ofxAssimpModelLoader/src,
-					../../../addons/ofxOsc/src,
 					../../../addons/ofxXmlSettings/src,
 					../../../addons/ofxXmlSettings/libs,
-					../../../addons/ofxOsc/libs/opsack/src/osc,
-					../../../addons/ofxOsc/libs/ospack/src/ip,
+					../../../addons/ofxOsc/libs,
+					../../../addons/ofxOsc/libs/ospack,
 					../../../addons/ofxOsc/libs/ospack/src/,
+					../../../addons/ofxOsc/libs/ospack/src/ip,
+					../../../addons/ofxOsc/libs/ospack/src/ip/posix,
+					../../../addons/ofxOsc/libs/ospack/src/osc,
+					../../../addons/ofxOsc/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
