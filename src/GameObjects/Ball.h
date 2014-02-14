@@ -23,8 +23,8 @@ public:
     void draw(void);
     
     //ofVec3f startPosition;
-    float radius = .3;
-    float mass = 2;
+    float radius;
+    float mass;
     
     ofxBulletWorldRigid world;
     

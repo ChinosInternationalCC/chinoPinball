@@ -1,8 +1,12 @@
 #pragma once
 
+#define USE_SYPHON
+
 #include "ofMain.h"
 #include "PinballChinoManager.h"
+#ifdef USE_SYPHON
 #include "ofxSyphon.h"
+#endif
 
 class testApp : public ofBaseApp{
 
@@ -23,6 +27,8 @@ public:
     
     PinballChinoManager    chinopinball;
     
+#ifdef USE_SYPHON
     ofxSyphonServer mainOutputSyphonServer;
+#endif
 	
 };
