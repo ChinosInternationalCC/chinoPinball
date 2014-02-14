@@ -1,10 +1,10 @@
 #pragma once
 
-#define USE_SYPHON
 
+#include "ExternalsConfig.h"
 #include "ofMain.h"
 #include "PinballChinoManager.h"
-#ifdef USE_SYPHON
+#ifdef USE_SYPHON  /* configured in ExternalsConfig.h */
 #include "ofxSyphon.h"
 #endif
 
