@@ -10,7 +10,7 @@
 #define chinoPinball_ExternalsConfig_h
 
 /* comment define if don't want to use feature */
-#define USE_SYPHON
+//#define USE_SYPHON
 //#define USE_OSC
 
 #endif

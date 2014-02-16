@@ -1,2 +1,6 @@
 ofxAssimpModelLoader
 ofxBullet
+ofxOsc
+ofxSyphon
+ofxUI
+ofxXmlSettings
