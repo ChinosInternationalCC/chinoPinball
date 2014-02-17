@@ -16,7 +16,7 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     m_Ball2.setup		(world,	ofVec3f(5,	0,	-0.5));
     leverLeft.setup		(world, ofVec3f(-3,	8,	-0.2),0);
     leverRight.setup	(world, ofVec3f(3,	8,	-0.2),1);
-    m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.2));
+    m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.4));
     loadObstacles		(world);
 	
     ScenarioObjects.push_back(&m_Ball2);
