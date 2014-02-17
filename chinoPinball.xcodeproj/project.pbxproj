@@ -155,6 +155,7 @@
 		89281A4326A10D30C375DE20 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19111EFA709AF1F7301F0FD3 /* Ranking.cpp */; };
 		8A41EC7CA166B86C1B17B04B /* btDefaultSoftBodySolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFFCB2DDC0F9E7F2F12283E0 /* btDefaultSoftBodySolver.cpp */; };
 		8C067B5A6FF15ECF56D639B3 /* ofxUIDropDownList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6F14E0E6167B8EFCC93EA36 /* ofxUIDropDownList.cpp */; };
+		8C2FDB6018B24CCF00A5862D /* chinoWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C2FDB5E18B24CCF00A5862D /* chinoWorld.cpp */; };
 		8CCDCE6818B161FF000D3947 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58DCB2C0AEFDE6171E29540 /* Syphon.framework */; };
 		8CCDCE6A18B16223000D3947 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CCDCE6918B16223000D3947 /* Syphon.framework */; };
 		8D3B3305C87C3AA654BC3249 /* ofxUISortableList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76EA76EF69563B46ED98941F /* ofxUISortableList.cpp */; };
@@ -686,6 +687,8 @@
 		8B0B91449B395C88BAC92CA8 /* ofxUIWaveform.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxUIWaveform.cpp; path = ../../addons/ofxUI/src/ofxUIWaveform.cpp; sourceTree = SOURCE_ROOT; };
 		8BE19E9F62FE9C66E0681A52 /* btSoftRigidDynamicsWorld.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSoftRigidDynamicsWorld.h; path = ../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.h; sourceTree = SOURCE_ROOT; };
 		8C0215FD4B5831FD7F3F4B11 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
+		8C2FDB5E18B24CCF00A5862D /* chinoWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chinoWorld.cpp; sourceTree = "<group>"; };
+		8C2FDB5F18B24CCF00A5862D /* chinoWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chinoWorld.h; sourceTree = "<group>"; };
 		8CCDCE6918B16223000D3947 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
 		8D29E0464B30FF2C7BA9F264 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIWidgetWithLabel.h; path = ../../addons/ofxUI/src/ofxUIWidgetWithLabel.h; sourceTree = SOURCE_ROOT; };
 		8D9FAA75FA2AD4F0086E43C7 /* btSoftBodySolverVertexBuffer_OpenGL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSoftBodySolverVertexBuffer_OpenGL.h; path = ../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexBuffer_OpenGL.h; sourceTree = SOURCE_ROOT; };
@@ -1682,6 +1685,15 @@
 			name = oscpack;
 			sourceTree = "<group>";
 		};
+		8C2FDB5A18B24CA100A5862D /* World */ = {
+			isa = PBXGroup;
+			children = (
+				8C2FDB5E18B24CCF00A5862D /* chinoWorld.cpp */,
+				8C2FDB5F18B24CCF00A5862D /* chinoWorld.h */,
+			);
+			path = World;
+			sourceTree = "<group>";
+		};
 		8FE9CDC1E35199BFFA14D2A2 /* Scenario */ = {
 			isa = PBXGroup;
 			children = (
@@ -2110,6 +2122,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				8C2FDB5A18B24CA100A5862D /* World */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				FA8A22EC10C7ADC9613B1571 /* ExternalsConfig.h */,
 				0C7B7E46723914CB38E9D865 /* GameObjects */,
@@ -2621,6 +2634,7 @@
 				28DC652211D4AF8CC023D568 /* tinyxml.cpp in Sources */,
 				F877D69532909AE487E0EF22 /* tinyxmlerror.cpp in Sources */,
 				32E2318B89B6217AE6052155 /* tinyxmlparser.cpp in Sources */,
+				8C2FDB6018B24CCF00A5862D /* chinoWorld.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
