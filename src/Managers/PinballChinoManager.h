@@ -14,6 +14,7 @@
 #include "Scenario.h"
 #include "GameStatusDisplay.h"
 #include "InputEventManager.h"
+#include "chinoWorld.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -25,7 +26,7 @@ public:
 	void update();
 	void draw();
     
-    ofxBulletWorldRigid     world;
+    chinoWorld     world;
 
 	//ofCamera                camera;
     ofEasyCam				camera;
