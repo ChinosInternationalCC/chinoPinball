@@ -12,6 +12,7 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "Scenario.h"
+#include "ScenarioEditor.h"
 #include "GameStatusDisplay.h"
 #include "InputEventManager.h"
 #include "chinoWorld.h"
@@ -28,11 +29,12 @@ public:
     
     chinoWorld     world;
 
-	//ofCamera                camera;
+//	ofCamera                camera;
     ofEasyCam				camera;
 	ofLight					light;
     
     Scenario                myScenario;
+    ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     
     void onRestartGameEvent(void);

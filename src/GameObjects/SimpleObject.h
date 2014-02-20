@@ -32,6 +32,7 @@ public:
         ShapeTypeObstacle = 6
     };
     
+    ofxBulletCustomShape	body;
     shapeType type;
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
