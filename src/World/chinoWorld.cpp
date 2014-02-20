@@ -19,3 +19,4 @@ void chinoWorld::update() {
 		checkCollisions();
 	}
 }
+

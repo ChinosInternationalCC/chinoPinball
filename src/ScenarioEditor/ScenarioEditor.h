@@ -14,3 +14,19 @@
 #include <iostream>
 
 #endif /* defined(__ofxBulletEventsExample__ScenarioEditor__) */
+
+#include "ofxBullet.h"
+#include "Scenario.h"
+
+class ScenarioEditor {
+    
+public:
+	void setup(ofxBulletWorldRigid &world, Scenario &scenario);
+	void update();
+	void draw();
+    
+    void onMousePick( ofxBulletMousePickEvent &e );
+    
+    ofxBulletWorldRigid *     world;
+    Scenario *                scenario;
+};
