@@ -1,8 +1,7 @@
 #!/bin/bash
-
 # Dependencies for chinoPinball
 
-cd ../
+cd ../../../addons
 
 if [ -z $1 ]; then
 PREFIX="git clone https://github.com/"
