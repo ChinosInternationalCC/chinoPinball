@@ -138,6 +138,7 @@
 		A1AC89E9D8DAC3C116114616 /* btConvex2dConvex2dAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D64767FE0DD5558FBFAED25D /* btConvex2dConvex2dAlgorithm.cpp */; };
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
+		A589868818B94214007D9BB5 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
 		A7C5BC5418B788BB006187D9 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
 		A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4618B788BA006187D9 /* SyphonNameboundClient.m */; };
 		A7C5BC5618B788BB006187D9 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4B18B788BB006187D9 /* ofxSyphonClient.mm */; };
@@ -265,6 +266,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */,
+				A589868818B94214007D9BB5 /* Syphon.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
