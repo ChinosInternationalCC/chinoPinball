@@ -95,7 +95,6 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	}
 
 	/*
-	
     //up right box
     bounds.push_back( new ofxBulletBox() );
 
