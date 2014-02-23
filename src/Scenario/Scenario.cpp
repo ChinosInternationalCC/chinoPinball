@@ -11,104 +11,35 @@
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &world){
     
-
-//    m_Ball.setup		(world,	ofVec3f(0,0,	-0.5));
+    /*
     m_Ball2.setup		(world,	ofVec3f(5,	0,	-0.5));
     leverLeft.setup		(world, ofVec3f(-3,	8,	-0.2),0);
     leverRight.setup	(world, ofVec3f(3,	8,	-0.2),1);
     m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.4));
-    loadObstacles		(world);
+    
+    m_obstable1.setup(world, ofVec3f(-3.5+3*0,-4,-.7), "cylinder.stl");
+    m_obstable2.setup(world, ofVec3f(-3.5+3*1,-4,-.7), "cylinder.stl");
+    m_obstable3.setup(world, ofVec3f(-3.5+3*2,-4,-.7), "cylinder.stl");
+    m_obstable4.setup(world, ofVec3f(-3.5+3*3,-4,-.7), "cylinder.stl");
+    
+    ScenarioObjects.push_back(&m_obstable1);
+    ScenarioObjects.push_back(&m_obstable2);
+    ScenarioObjects.push_back(&m_obstable3);
+    ScenarioObjects.push_back(&m_obstable4);
 	
     ScenarioObjects.push_back(&m_Ball2);
     ScenarioObjects.push_back(&leverLeft);
     ScenarioObjects.push_back(&leverRight);
     ScenarioObjects.push_back(&m_Hammer);
+     */
     
-	ofVec3f initworldpos = ofVec3f(0,0,0);
-	loadBasicScenario(world, initworldpos);
-    //saveToXml();
-}
-
-//------------------------------
-void Scenario::loadFromXml(ofxBulletWorldRigid &world){
-    if(ScenarioXml.loadFile("scenario.xml")){
-        ScenarioXml.pushTag("scenario");
-        int numberOfSavedObjects = ScenarioXml.getNumTags("object");
-        for(int i = 0; i < numberOfSavedObjects; i++){
-            ScenarioXml.pushTag("object", i);
-            
-            SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
-            ofVec3f pos;
-            pos.x = ScenarioXml.getValue("positionX", 0);
-            pos.y = ScenarioXml.getValue("positionY", 0);
-            pos.z = ScenarioXml.getValue("positionZ", 0);
-            
-            switch(Type){
-                case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball();
-                    oBall->setup(world, pos);
-                    ScenarioObjects.push_back(oBall);
-                }
-                    break;
-
-                case SimpleObject::ShapeTypeHammer:{
-                    Hammer *oHammer = new Hammer();
-                    oHammer->setup(world, pos);
-                    ScenarioObjects.push_back(oHammer);
-                }
-                    break;
-                case SimpleObject::ShapeTypeLever:{
-                    Lever *oLever = new Lever();
-                    oLever->setup(world, pos, 0);
-                }
-                    break;
-                default:
-                    break;
-
-                
-            }
-            
-           
-            ScenarioXml.popTag();
-        }
-        
-        ScenarioXml.popTag(); //pop position
-    }
-    else{
-        ofLogError("Scenario file did not load!");
-    }
-}
-
-//------------------------------
-void Scenario::saveToXml(){
-    ScenarioXml.addTag("scenario");
-    ScenarioXml.pushTag("scenario");
-    
-    for(int i = 0; i < ScenarioObjects.size(); i++){
-        
-        ScenarioXml.addTag("object");
-        ScenarioXml.pushTag("object",i);
-        
-        ScenarioXml.addValue("type", ScenarioObjects[i]->type);
-        ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
-        ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
-        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
-        ScenarioXml.popTag();
-    }
-    ScenarioXml.popTag();
-    ScenarioXml.saveFile("scenario.xml");
+    loadFromXml(world);
+    loadBasicScenario(world, ofVec3f(0,0,0));
     
 }
 
 
-
-void Scenario::loadObstacles(ofxBulletWorldRigid &world){
-    obstacles.resize(4);
-    for(int i = 0; i < 4; i++) {
-        obstacles[i].setup(world, ofVec3f(-3.5+3*i,-4,-.7), "cylinder.stl");
-    }
-}
-
+//--------------------------------------------------------------
 void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	/////////////////////////////////////////////////////////////////////////////////////////
     
@@ -183,9 +114,6 @@ void Scenario::update(){
         ScenarioObjects[i]->update();
     }
     
-    for(int i = 0; i < obstacles.size(); i++) {
-        obstacles[i].update();
-    }
 }
 
 //--------------------------------------------------------------
@@ -196,10 +124,204 @@ void Scenario::draw(){
     }
     
 	ofDrawAxis(1);
+    
+}
 
-    for(int i = 0; i < obstacles.size(); i++) {
-        obstacles[i].draw();
+//--------------------------------------------------------------
+void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos){
+    
+ //   ScenarioObjects.push_back(&m_obstable1);
+
+/*
+    ofVec3f pos;
+
+    pos.x = ScenarioXml.getValue("positionX",0.0, 0);
+
+    pos.y = ScenarioXml.getValue("positionY",0.0, 0);
+
+    pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
+*/
+
+    switch(typeObject){
+        
+        case SimpleObject::ShapeTypeBall:{
+            
+            Ball *oBall = new Ball();
+            
+            oBall->setup(world, pos);
+            
+            ScenarioObjects.push_back(oBall);
+            
+        }
+            
+            break;
+            
+            
+        case SimpleObject::ShapeTypeHammer:{
+            
+            Hammer *oHammer = new Hammer();
+            
+            oHammer->setup(world, pos);
+            
+            ScenarioObjects.push_back(oHammer);
+            
+        }
+            
+            break;
+            
+        case SimpleObject::ShapeTypeLever:{
+            
+            Lever *oLever = new Lever();
+            
+            int dir = ScenarioXml.getValue("LeverType", 0);
+            
+            oLever->setup(world, pos, dir);
+            
+            ScenarioObjects.push_back(oLever);
+            
+        }
+            
+            break;
+            
+        case SimpleObject::ShapeTypeObstacle:{
+            
+            Obstacle *oObstable = new Obstacle();
+            oObstable->setup(world, pos, "cylinder.stl");
+            ScenarioObjects.push_back(oObstable);
+            
+        }
+            
+            break;
+            
+        default:
+            break;
+            
     }
+}
 
+//--------------------------------------------------------------
+
+void Scenario::loadFromXml(ofxBulletWorldRigid &world){
+    
+    if(ScenarioXml.loadFile("scenario.xml")){
+        
+        ScenarioXml.pushTag("scenario");
+        
+        int numberOfSavedObjects = ScenarioXml.getNumTags("object");
+        
+        for(int i = 0; i < numberOfSavedObjects; i++){
+            
+            ScenarioXml.pushTag("object", i);
+            SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
+            
+            ofVec3f pos;
+            
+            pos.x = ScenarioXml.getValue("positionX",0.0, 0);
+            pos.y = ScenarioXml.getValue("positionY",0.0, 0);
+            pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
+            
+            
+            switch(Type){
+                    
+                case SimpleObject::ShapeTypeBall:{
+                    
+                    Ball *oBall = new Ball();
+                    
+                    oBall->setup(world, pos);
+                    
+                    ScenarioObjects.push_back(oBall);
+                    
+                }
+                    
+                    break;
+                    
+                    
+                case SimpleObject::ShapeTypeHammer:{
+                    
+                    Hammer *oHammer = new Hammer();
+                    
+                    oHammer->setup(world, pos);
+                    
+                    ScenarioObjects.push_back(oHammer);
+                    
+                }
+                    
+                    break;
+                    
+                case SimpleObject::ShapeTypeLever:{
+                    
+                    Lever *oLever = new Lever();
+                    
+                    int dir = ScenarioXml.getValue("LeverType", 0);
+                    
+                    oLever->setup(world, pos, dir);
+                    
+                    ScenarioObjects.push_back(oLever);
+                    
+                }
+                    
+                    break;
+                    
+                case SimpleObject::ShapeTypeObstacle:{
+                    
+                    Obstacle *oObstable = new Obstacle();
+                    oObstable->setup(world, pos, "cylinder.stl");
+                    ScenarioObjects.push_back(oObstable);
+                    
+                }
+                    
+                    break;
+                    
+                default:
+                    break;
+
+            }
+            ScenarioXml.popTag();
+        }
+        
+        
+        
+        ScenarioXml.popTag(); //pop position
+        
+    }
+    
+    else{
+        
+        ofLogError("Scenario file did not load!");
+        
+    }
+    
+}
+
+
+//------------------------------
+
+void Scenario::saveToXml(){
+    
+    ScenarioXml.addTag("scenario");
+    ScenarioXml.pushTag("scenario");
+    
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+        
+        ScenarioXml.addTag("object");
+        ScenarioXml.pushTag("object",i);
+    
+        ScenarioXml.addValue("type", ScenarioObjects[i]->type);
+
+        ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
+        ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
+        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
+        
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
+            Lever *pLever;
+            pLever = (Lever*)ScenarioObjects[i];
+            ScenarioXml.addValue("LeverType", pLever->direction);
+        }
+        
+        ScenarioXml.popTag();
+    }
+    
+    ScenarioXml.popTag();
+    ScenarioXml.saveFile("scenario.xml");
     
 }

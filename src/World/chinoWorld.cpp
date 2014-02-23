@@ -12,7 +12,8 @@
 void chinoWorld::update() {
 	if(!checkWorld()) return;
 	// should this run on delta time? //
-	world->stepSimulation(1.0f/60.0f, 6, 1./240.);
+	//world->stepSimulation(1.0f/60.0f, 6, 1./240.);
+    world->stepSimulation(1.0f/60.0f, 6, 1./60.);
 	
 	if(bDispatchCollisionEvents) {
 		world->performDiscreteCollisionDetection();

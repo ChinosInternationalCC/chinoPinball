@@ -16,6 +16,8 @@
 #include "GameStatusDisplay.h"
 #include "InputEventManager.h"
 #include "chinoWorld.h"
+#include "ofxXmlSettings.h"
+#include "ofxGrabCam.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -26,11 +28,22 @@ public:
 	void setup();
 	void update();
 	void draw();
+    void keyReleased(int key);
     
     chinoWorld     world;
 
-//	ofCamera                camera;
-    ofEasyCam				camera;
+    //	ofCamera                camera;
+    //  ofEasyCam				camera;
+    //////////////////////////////////////////
+	//camera settings
+	ofxGrabCam camera;
+	ofMatrix4x4 savedPose;
+    
+	ofxXmlSettings XML;
+	void saveCameraPosition(ofMatrix4x4 _camPose);
+	ofMatrix4x4 loadCameraPosition();
+    //////////////////////////////////////////
+    
 	ofLight					light;
     
     Scenario                myScenario;
