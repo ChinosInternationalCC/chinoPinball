@@ -57,6 +57,7 @@ http://www.youtube.com/watch?v=YvyRM175uQ0
 * OF008 http://www.openframeworks.cc 
 * ofxBullet https://github.com/NickHardeman/ofxBullet
 * ofxSyphon https://github.com/astellato/ofxSyphon
+* ofxJSON https://github.com/jefftimesten/ofxJSON.git
 
 Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.8, LLVM compiler) and Windows (CodeBlocks) (not countinued)
 
