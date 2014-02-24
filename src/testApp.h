@@ -27,6 +27,8 @@ public:
     
     PinballChinoManager    chinopinball;
     
+    bool bFullScreen;
+    
 #ifdef USE_SYPHON
     ofxSyphonServer mainOutputSyphonServer;
 #endif

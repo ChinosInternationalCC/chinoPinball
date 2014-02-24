@@ -25,19 +25,22 @@ public:
 	void update();
 	void draw();
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
-    void loadObstacles(ofxBulletWorldRigid &world);
     void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
+    void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
     ofxXmlSettings ScenarioXml;
     ofxBulletWorldRigid *     world;
     
-    Ball                      m_Ball,m_Ball2;
+    Ball                    m_Ball,m_Ball2;
     Lever                   leverLeft;
     Lever                   leverRight;
     Hammer                   m_Hammer;
-    vector<Obstacle>        obstacles;
     
+    Obstacle                m_obstable1;
+    Obstacle                m_obstable2;
+    Obstacle                m_obstable3;
+    Obstacle                m_obstable4;
     
     vector<SimpleObject*> ScenarioObjects;
     

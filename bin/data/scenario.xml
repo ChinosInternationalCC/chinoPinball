@@ -1,5 +1,29 @@
 <scenario>
     <object>
+        <type>6</type>
+        <positionX>-3.500000000</positionX>
+        <positionY>-4.000000000</positionY>
+        <positionZ>-0.699999988</positionZ>
+    </object>
+    <object>
+        <type>6</type>
+        <positionX>-0.500000000</positionX>
+        <positionY>-4.000000000</positionY>
+        <positionZ>-0.699999988</positionZ>
+    </object>
+    <object>
+        <type>6</type>
+        <positionX>2.500000000</positionX>
+        <positionY>-4.000000000</positionY>
+        <positionZ>-0.699999988</positionZ>
+    </object>
+    <object>
+        <type>6</type>
+        <positionX>5.500000000</positionX>
+        <positionY>-4.000000000</positionY>
+        <positionZ>-0.699999988</positionZ>
+    </object>
+    <object>
         <type>0</type>
         <positionX>5.000000000</positionX>
         <positionY>0.000000000</positionY>
@@ -10,17 +34,20 @@
         <positionX>-3.000000000</positionX>
         <positionY>8.000000000</positionY>
         <positionZ>-0.200000003</positionZ>
+        <LeverType>0</LeverType>
     </object>
     <object>
         <type>3</type>
         <positionX>3.000000000</positionX>
         <positionY>8.000000000</positionY>
         <positionZ>-0.200000003</positionZ>
+        <LeverType>1</LeverType>
     </object>
     <object>
         <type>5</type>
         <positionX>5.000000000</positionX>
         <positionY>5.000000000</positionY>
-        <positionZ>-0.200000003</positionZ>
+        <positionZ>-0.400000006</positionZ>
     </object>
 </scenario>
+<scenario></scenario>
