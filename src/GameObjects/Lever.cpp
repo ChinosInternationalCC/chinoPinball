@@ -148,6 +148,17 @@ void Lever::rotate(float degrees) {
     body.activate();
 }
 
+//-------------------------------------------------------------
+ofxBulletBaseShape* Lever::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
+
+//------------------------------------------------------------
+string Lever::getObjectName(){
+    return "Lever";
+}
+
+
 
 
 

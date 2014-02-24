@@ -40,6 +40,9 @@ void GameStatusDisplay::draw(void){
     fpsStr = "Player score: "+ofToString(status->GetCurrentPlayerScore(), 2);
     ofDrawBitmapString(fpsStr, posX,posY);
     posY += lineSpacing;
+    fpsStr = "FPS: "+ofToString(ofGetFrameRate(), 0);
+    ofDrawBitmapString(fpsStr, posX,posY);
+    posY += lineSpacing;
     
     switch(status->GetGameStatus()){
         case GameStatus::WAITING_NEW_PLAYER:

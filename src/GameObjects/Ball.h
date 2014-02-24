@@ -13,8 +13,7 @@
 #include "ofxBullet.h"
 #include "SimpleObject.h"
 
-class Ball : public ofxBulletSphere,
-             public SimpleObject
+class Ball : public SimpleObject
 {
 public:
     Ball(void);
@@ -25,7 +24,7 @@ public:
     //ofVec3f startPosition;
     float radius;
     float mass;
-    
+    ofxBulletSphere body;
     ofxBulletWorldRigid world;
     
 	void keyPressed(ofKeyEventArgs& key);
@@ -41,6 +40,9 @@ public:
     };
     
     void reset();
+    ofxBulletBaseShape* getBulletBaseShape();
+    string getObjectName();
+    
 
 private:
     BallStatus m_status; // waiting, playing, game over
