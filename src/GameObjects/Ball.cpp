@@ -21,9 +21,9 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     position = pos;
     world = myWorld;
     
-    this->setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
-    this->create(world.world, position, mass, radius);
-    this->add();
+    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.create(world.world, position, mass, radius);
+    body.add();
     
     type = ShapeTypeBall;
     
@@ -40,7 +40,7 @@ void Ball::draw(void){
     
 	ofSetColor(225, 225, 225);
 	//BulletBallShape->draw();
-    ofxBulletSphere::draw();
+    body.draw();
     
 }
 
@@ -74,9 +74,19 @@ void Ball::keyReleased(ofKeyEventArgs& key) {
 //--------------------------------------------------------------
 void Ball::reset() {
     
-    this->remove();
-    this->create(world.world, position, mass, radius);
-    this->add();
+    body.remove();
+    body.create(world.world, position, mass, radius);
+    body.add();
     
+}
+
+//------------------------------------------------------------
+ofxBulletBaseShape* Ball::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
+
+//------------------------------------------------------------
+string Ball::getObjectName(){
+    return "Ball";
 }
     

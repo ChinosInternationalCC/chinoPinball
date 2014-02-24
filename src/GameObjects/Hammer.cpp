@@ -105,3 +105,12 @@ void Hammer::move(float height) {
     body.activate();
 }
 
+//------------------------------------------------------------
+ofxBulletBaseShape* Hammer::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
+
+//------------------------------------------------------------
+string Hammer::getObjectName(){
+    return "Hammer";
+}

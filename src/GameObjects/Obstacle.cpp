@@ -94,5 +94,13 @@ void Obstacle::onCollision(ofxBulletCollisionData& cdata) {
 	
 }
 
+//-------------------------------------------------------------
+ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
 
+//------------------------------------------------------------
+string Obstacle::getObjectName(){
+    return "Obstacle";
+}
 

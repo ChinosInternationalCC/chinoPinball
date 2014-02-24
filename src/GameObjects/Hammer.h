@@ -34,6 +34,8 @@ public:
     float speed;
     
     bool isKeyPressed;
+    ofxBulletBaseShape* getBulletBaseShape();
+    string getObjectName();
  /*
     energy ( float )
     Shape ( )
