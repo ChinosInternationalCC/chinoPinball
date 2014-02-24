@@ -38,5 +38,9 @@ public:
 	void keyPressed(ofKeyEventArgs& key);
 	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
+    
+    ofxBulletBaseShape* getBulletBaseShape();
+    string getObjectName();
+
 
 };

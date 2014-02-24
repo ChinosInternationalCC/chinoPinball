@@ -33,6 +33,7 @@ public:
     
     float angle; // degrees
 
-    
+    ofxBulletBaseShape* getBulletBaseShape();
+    string getObjectName();
 
 };
