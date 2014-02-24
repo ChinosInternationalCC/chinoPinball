@@ -1,7 +1,12 @@
 #pragma once
 
+
+#include "ExternalsConfig.h"
 #include "ofMain.h"
 #include "PinballChinoManager.h"
+#ifdef USE_SYPHON  /* configured in ExternalsConfig.h */
+#include "ofxSyphon.h"
+#endif
 
 class testApp : public ofBaseApp{
 
@@ -21,5 +26,11 @@ public:
 	void gotMessage(ofMessage msg);
     
     PinballChinoManager    chinopinball;
+    
+    bool bFullScreen;
+    
+#ifdef USE_SYPHON
+    ofxSyphonServer mainOutputSyphonServer;
+#endif
 	
 };

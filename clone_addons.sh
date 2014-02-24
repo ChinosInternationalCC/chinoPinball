@@ -1,8 +1,7 @@
 #!/bin/bash
-
 # Dependencies for chinoPinball
 
-cd ../
+cd ../../../addons
 
 if [ -z $1 ]; then
 PREFIX="git clone https://github.com/"
@@ -11,3 +10,6 @@ PREFIX="git clone git@github.com:"
 fi
 
 ${PREFIX}NickHardeman/ofxBullet.git
+${PREFIX}astellato/ofxSyphon.git
+${PREFIX}rezaali/ofxUI.git
+${PREFIX}elliotwoods/ofxGrabCam.git

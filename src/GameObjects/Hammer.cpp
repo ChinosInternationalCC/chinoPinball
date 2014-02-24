@@ -9,13 +9,15 @@
 #include "Hammer.h"
 
 //---------------------------------
-void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
+void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
    /* position = ofVec3f(7, 4, 0);*/
                 /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
-    body.create(world.world, position, 0, .5, 4, .5); // we set m=0 for kinematic body
+    position = pos;
+    body.create(world.world, position, 0, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
+    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
 	ofRegisterKeyEvents(this);
     isKeyPressed = false;
@@ -23,11 +25,13 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f position){
 	//y position
 	lowerLimit = position.y;
 	upperLimit = 7;
-    speed = 0.4;    // pos per frame
+    speed = 0.8;    // pos per frame
     
     
     // move hammer to lower position
     move(lowerLimit);
+    
+    type = ShapeTypeHammer;
     
 }
 
@@ -101,3 +105,12 @@ void Hammer::move(float height) {
     body.activate();
 }
 
+//------------------------------------------------------------
+ofxBulletBaseShape* Hammer::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
+
+//------------------------------------------------------------
+string Hammer::getObjectName(){
+    return "Hammer";
+}

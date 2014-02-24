@@ -10,7 +10,7 @@
 
 //--------------------------------------------------------------
 void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
-    
+    type = ShapeTypeLever;
     position = setPosition;
     direction = setDirection;
     
@@ -33,6 +33,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
+    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
     
 	// lever rotation angles
@@ -99,9 +100,9 @@ void Lever::draw(){
     
 	material.end();
     
-    stringstream ss;
-	ss << "move lever with spacebar" << endl;
-	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
+//    stringstream ss;
+//	ss << "move lever with spacebar" << endl;
+//	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
 	
 }
 
@@ -146,6 +147,17 @@ void Lever::rotate(float degrees) {
     
     body.activate();
 }
+
+//-------------------------------------------------------------
+ofxBulletBaseShape* Lever::getBulletBaseShape(){
+    return (ofxBulletBaseShape*)&body;
+}
+
+//------------------------------------------------------------
+string Lever::getObjectName(){
+    return "Lever";
+}
+
 
 
 

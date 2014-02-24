@@ -19,7 +19,7 @@ class Hammer : public SimpleObject {
     
 public:
     
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f pos);
 	virtual void update();
 	virtual void draw();
 	void move(float height);
@@ -34,6 +34,8 @@ public:
     float speed;
     
     bool isKeyPressed;
+    ofxBulletBaseShape* getBulletBaseShape();
+    string getObjectName();
  /*
     energy ( float )
     Shape ( )
