@@ -140,6 +140,10 @@
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
 		A589868818B94214007D9BB5 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
+		A58C5F0818BBDCA100E99E78 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EEF18BBDCA100E99E78 /* json_reader.cpp */; };
+		A58C5F0918BBDCA100E99E78 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EF118BBDCA100E99E78 /* json_value.cpp */; };
+		A58C5F0A18BBDCA100E99E78 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EF318BBDCA100E99E78 /* json_writer.cpp */; };
+		A58C5F0B18BBDCA100E99E78 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EF718BBDCA100E99E78 /* ofxJSONElement.cpp */; };
 		A7C5BC5418B788BB006187D9 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
 		A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4618B788BA006187D9 /* SyphonNameboundClient.m */; };
 		A7C5BC5618B788BB006187D9 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4B18B788BB006187D9 /* ofxSyphonClient.mm */; };
@@ -679,6 +683,25 @@
 		A309102D19BCB56BA0130302 /* gim_array.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_array.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h; sourceTree = SOURCE_ROOT; };
 		A430FFBD7BF0BA514D54CBDB /* gim_geom_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geom_types.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h; sourceTree = SOURCE_ROOT; };
 		A4CB26411CB1901F8D91B850 /* cl_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl_platform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/cl_platform.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE318BBDCA100E99E78 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autolink.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/autolink.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE418BBDCA100E99E78 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/config.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE518BBDCA100E99E78 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = features.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/features.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE618BBDCA100E99E78 /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = forwards.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/forwards.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE718BBDCA100E99E78 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = json.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE818BBDCA100E99E78 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = reader.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/reader.h; sourceTree = SOURCE_ROOT; };
+		A58C5EE918BBDCA100E99E78 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = value.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/value.h; sourceTree = SOURCE_ROOT; };
+		A58C5EEA18BBDCA100E99E78 /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = writer.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/writer.h; sourceTree = SOURCE_ROOT; };
+		A58C5EEC18BBDCA100E99E78 /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = json_batchallocator.h; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_batchallocator.h; sourceTree = SOURCE_ROOT; };
+		A58C5EED18BBDCA100E99E78 /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_internalarray.inl; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_internalarray.inl; sourceTree = SOURCE_ROOT; };
+		A58C5EEE18BBDCA100E99E78 /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_internalmap.inl; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_internalmap.inl; sourceTree = SOURCE_ROOT; };
+		A58C5EEF18BBDCA100E99E78 /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_reader.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_reader.cpp; sourceTree = SOURCE_ROOT; };
+		A58C5EF018BBDCA100E99E78 /* json_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = json_tool.h; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_tool.h; sourceTree = SOURCE_ROOT; };
+		A58C5EF118BBDCA100E99E78 /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_value.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_value.cpp; sourceTree = SOURCE_ROOT; };
+		A58C5EF218BBDCA100E99E78 /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json_valueiterator.inl; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_valueiterator.inl; sourceTree = SOURCE_ROOT; };
+		A58C5EF318BBDCA100E99E78 /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = json_writer.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/json_writer.cpp; sourceTree = SOURCE_ROOT; };
+		A58C5EF418BBDCA100E99E78 /* sconscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sconscript; path = ../../../addons/ofxJSON/libs/jsoncpp/src/sconscript; sourceTree = SOURCE_ROOT; };
+		A58C5EF718BBDCA100E99E78 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxJSONElement.cpp; path = ../../../addons/ofxJSON/src/ofxJSONElement.cpp; sourceTree = SOURCE_ROOT; };
+		A58C5EF818BBDCA100E99E78 /* ofxJSONElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxJSONElement.h; path = ../../../addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConcaveShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp; sourceTree = SOURCE_ROOT; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
 		A626AFF72A089B0674C727F3 /* gim_tri_collision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_tri_collision.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h; sourceTree = SOURCE_ROOT; };
@@ -1746,6 +1769,81 @@
 			name = ofxUI;
 			sourceTree = "<group>";
 		};
+		A58C5E9218BBDCA000E99E78 /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EDF18BBDCA100E99E78 /* libs */,
+				A58C5EF618BBDCA100E99E78 /* src */,
+			);
+			name = ofxJSON;
+			path = ../../../addons/ofxJSON;
+			sourceTree = "<group>";
+		};
+		A58C5EDF18BBDCA100E99E78 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EE018BBDCA100E99E78 /* jsoncpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A58C5EE018BBDCA100E99E78 /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EE118BBDCA100E99E78 /* include */,
+				A58C5EEB18BBDCA100E99E78 /* src */,
+			);
+			path = jsoncpp;
+			sourceTree = "<group>";
+		};
+		A58C5EE118BBDCA100E99E78 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EE218BBDCA100E99E78 /* json */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A58C5EE218BBDCA100E99E78 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EE318BBDCA100E99E78 /* autolink.h */,
+				A58C5EE418BBDCA100E99E78 /* config.h */,
+				A58C5EE518BBDCA100E99E78 /* features.h */,
+				A58C5EE618BBDCA100E99E78 /* forwards.h */,
+				A58C5EE718BBDCA100E99E78 /* json.h */,
+				A58C5EE818BBDCA100E99E78 /* reader.h */,
+				A58C5EE918BBDCA100E99E78 /* value.h */,
+				A58C5EEA18BBDCA100E99E78 /* writer.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		A58C5EEB18BBDCA100E99E78 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EEC18BBDCA100E99E78 /* json_batchallocator.h */,
+				A58C5EED18BBDCA100E99E78 /* json_internalarray.inl */,
+				A58C5EEE18BBDCA100E99E78 /* json_internalmap.inl */,
+				A58C5EEF18BBDCA100E99E78 /* json_reader.cpp */,
+				A58C5EF018BBDCA100E99E78 /* json_tool.h */,
+				A58C5EF118BBDCA100E99E78 /* json_value.cpp */,
+				A58C5EF218BBDCA100E99E78 /* json_valueiterator.inl */,
+				A58C5EF318BBDCA100E99E78 /* json_writer.cpp */,
+				A58C5EF418BBDCA100E99E78 /* sconscript */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A58C5EF618BBDCA100E99E78 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A58C5EF718BBDCA100E99E78 /* ofxJSONElement.cpp */,
+				A58C5EF818BBDCA100E99E78 /* ofxJSONElement.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		A7C5BC2618B788BA006187D9 /* ofxSyphon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1847,6 +1945,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A58C5E9218BBDCA000E99E78 /* ofxJSON */,
 				8423C8BF18B956BC001DFD15 /* ofxGrabCam */,
 				A7C5BC2618B788BA006187D9 /* ofxSyphon */,
 				2C8F245ACBE61E28646C17F2 /* ofxAssimpModelLoader */,
@@ -2376,6 +2475,7 @@
 				0EF00047C3D2DC9F52B6B191 /* btDispatcher.cpp in Sources */,
 				3C8B99E182190384DB525D42 /* btMultiSapBroadphase.cpp in Sources */,
 				7EE1EDD6C5FF070966C5FFBF /* btOverlappingPairCache.cpp in Sources */,
+				A58C5F0B18BBDCA100E99E78 /* ofxJSONElement.cpp in Sources */,
 				D92792A6F0998EF17BBEDCE7 /* btQuantizedBvh.cpp in Sources */,
 				0B962919C28BBA7CA9B4911D /* btSimpleBroadphase.cpp in Sources */,
 				642AF8F974C5F6B18C63B33D /* btActivatingCollisionAlgorithm.cpp in Sources */,
@@ -2387,6 +2487,7 @@
 				4AF03E8C60CFBB8F8303114A /* btCollisionWorld.cpp in Sources */,
 				E305FF1063F1C2981E53CCC0 /* btCompoundCollisionAlgorithm.cpp in Sources */,
 				A1AC89E9D8DAC3C116114616 /* btConvex2dConvex2dAlgorithm.cpp in Sources */,
+				A58C5F0A18BBDCA100E99E78 /* json_writer.cpp in Sources */,
 				927A190ACA3D515210BE09D4 /* btConvexConcaveCollisionAlgorithm.cpp in Sources */,
 				1C8AF61F96B99C0E4434470D /* btConvexConvexAlgorithm.cpp in Sources */,
 				D0864F9FDC3B0B4585BA0152 /* btConvexPlaneCollisionAlgorithm.cpp in Sources */,
@@ -2433,6 +2534,7 @@
 				E9DE71BC53218F4EE9B265CF /* btTetrahedronShape.cpp in Sources */,
 				6A79D7B9A6F5ACC1DCD4483B /* btTriangleBuffer.cpp in Sources */,
 				B32E492AADD47A777A3BD792 /* btTriangleCallback.cpp in Sources */,
+				A58C5F0818BBDCA100E99E78 /* json_reader.cpp in Sources */,
 				B5E67E19FB3C2BE672AF8641 /* btTriangleIndexVertexArray.cpp in Sources */,
 				94F68024306DA7022852B616 /* btTriangleIndexVertexMaterialArray.cpp in Sources */,
 				2D1840447E106A889E421B65 /* btTriangleMesh.cpp in Sources */,
@@ -2471,6 +2573,7 @@
 				E19E8C81F64B6DA2AB26BD9B /* btGeneric6DofSpringConstraint.cpp in Sources */,
 				8FB5037F12B20D61FC5653D1 /* btHinge2Constraint.cpp in Sources */,
 				0FB1224C0C32291A6DC0DFB4 /* btHingeConstraint.cpp in Sources */,
+				A58C5F0918BBDCA100E99E78 /* json_value.cpp in Sources */,
 				921313BA5C2E074F7702BA85 /* btPoint2PointConstraint.cpp in Sources */,
 				4DB27BC1F52F8BCFE6BD98FC /* btSequentialImpulseConstraintSolver.cpp in Sources */,
 				098506D174CF3D6FE87ECC75 /* btSliderConstraint.cpp in Sources */,
@@ -2665,6 +2768,8 @@
 					../../../addons/ofxUI/src,
 					../../../addons/ofxXmlSettings/libs,
 					../../../addons/ofxXmlSettings/src,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/src,
 					src,
 					src/GameObjects,
 					src/Managers,
@@ -2810,6 +2915,8 @@
 					../../../addons/ofxUI/src,
 					../../../addons/ofxXmlSettings/libs,
 					../../../addons/ofxXmlSettings/src,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/src,
 					src,
 					src/GameObjects,
 					src/Managers,
