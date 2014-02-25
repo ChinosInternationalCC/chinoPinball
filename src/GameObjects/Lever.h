@@ -39,6 +39,8 @@ public:
 	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
     
+    void onCollision();
+    
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
 

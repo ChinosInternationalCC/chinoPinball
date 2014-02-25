@@ -89,4 +89,7 @@ ofxBulletBaseShape* Ball::getBulletBaseShape(){
 string Ball::getObjectName(){
     return "Ball";
 }
+
+//------------------------------------------------------------
+void Ball::onCollision(){}
     

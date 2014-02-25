@@ -158,6 +158,9 @@ string Lever::getObjectName(){
     return "Lever";
 }
 
+//------------------------------------------------------------
+void Lever::onCollision(){}
+
 
 
 
