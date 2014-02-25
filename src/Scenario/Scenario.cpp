@@ -173,7 +173,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             
             Lever *oLever = new Lever();
             
-            int dir = ScenarioXml.getValue("LeverType", 0);
+            int dir = 0;
             
             oLever->setup(world, pos, dir);
             
@@ -223,6 +223,7 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
 //--------------------------------------------------------------
 
 void Scenario::loadFromXml(ofxBulletWorldRigid &world){
+    ofxXmlSettings ScenarioXml;
     
     if(ScenarioXml.loadFile("scenario.xml")){
         
@@ -318,7 +319,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 //------------------------------
 
 void Scenario::saveToXml(){
-    
+    ofxXmlSettings ScenarioXml;
     ScenarioXml.addTag("scenario");
     ScenarioXml.pushTag("scenario");
     
