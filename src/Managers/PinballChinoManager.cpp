@@ -22,8 +22,13 @@ void PinballChinoManager::setup(){
     // setup camera
 	camera.setPosition(ofVec3f(0, 0, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
-    //camera.setDistance(20);
+    camera.setDistance(20);
 	world.setCamera(&camera);
+    
+    // load camera position
+    savedPose = loadCameraPosition(); 
+    camera.setTransformMatrix(savedPose);
+    cout << "load camera Pose xml" << endl;
     
     // setup scenario
     myScenario.setup(world);
@@ -31,22 +36,15 @@ void PinballChinoManager::setup(){
     // setup scenario editor
     scenarioEditor.setup(world, myScenario);
     
-    //setup camera
-    savedPose = loadCameraPosition(); // write over the savedCamPose var
-    camera.setTransformMatrix(savedPose);
-    // ideal to load on XML
-    cout << "load camera Pose xml" << endl;
-    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
-    
-	world.setCameraPosition(ofVec3f(0, 0, -34.5));
 	
 	world.update();
     
     myScenario.update();
+    
 }
 
 //--------------------------------------------------------------
@@ -133,15 +131,16 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
-	if (key=='c')
-		camera.toggleCursorDraw();
+//	if (key=='c')
+//		camera.toggleCursorDraw();
 	
-	if (key=='u')
-		camera.toggleFixUpwards();
+//	if (key=='u')
+//		camera.toggleFixUpwards();
 	
 	if (key=='b'){ // Adding Obstacle to the world
         
-        myScenario.pushObject(world, 6, camera.getCursorWorld());
+        //        myScenario.pushObject(world, 6, camera.getCursorWorld());
+        myScenario.pushObject(world, 6, ofVec3f(0, 0, 0));
 	}
 	
 	if (key=='s'){
