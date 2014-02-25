@@ -33,10 +33,10 @@ public:
     chinoWorld     world;
 
     //	ofCamera                camera;
-    //  ofEasyCam				camera;
+    ofEasyCam				camera;
     //////////////////////////////////////////
 	//camera settings
-	ofxGrabCam camera;
+//	ofxGrabCam camera;
 	ofMatrix4x4 savedPose;
     
 	ofxXmlSettings XML;
