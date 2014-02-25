@@ -36,6 +36,10 @@ void PinballChinoManager::setup(){
     // setup scenario editor
     scenarioEditor.setup(world, myScenario);
     
+    // collision detection
+    world.enableCollisionEvents();
+	ofAddListener(world.COLLISION_EVENT, this, &PinballChinoManager::onCollision);
+    
 }
 
 //--------------------------------------------------------------
@@ -160,4 +164,22 @@ void PinballChinoManager::keyReleased(int key){
         myScenario.saveToXml();
         cout << "saving scenario to Xml" << endl;
     }
+}
+
+
+//--------------------------------------------------------------
+void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata) {
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+		ofxBulletBaseShape *baseShape;
+        baseShape = myScenario.ScenarioObjects[i]->getBulletBaseShape();
+        if(*baseShape == cdata) {
+            if (myScenario.ScenarioObjects[i]->type == 0) continue;
+            myScenario.ScenarioObjects[i]->onCollision();
+            cout << "PinballChinoManager::onCollision : collision with " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
+		}
+        
+	}
+	
 }

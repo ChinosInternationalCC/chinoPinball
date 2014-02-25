@@ -29,6 +29,7 @@ public:
     
 	void keyPressed(ofKeyEventArgs& key);
 	void keyReleased(ofKeyEventArgs& key);
+    void onCollision();
     
     bool isInsideScenario(ofBoxPrimitive box);
     bool setGameOverBall(void); //callback from GameOverCollision,

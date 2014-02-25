@@ -114,3 +114,6 @@ ofxBulletBaseShape* Hammer::getBulletBaseShape(){
 string Hammer::getObjectName(){
     return "Hammer";
 }
+
+//------------------------------------------------------------
+void Hammer::onCollision(){}
