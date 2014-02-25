@@ -33,7 +33,7 @@ public:
     
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
-    ofxXmlSettings ScenarioXml;
+    //ofxXmlSettings ScenarioXml;
     
     
     
