@@ -11,9 +11,12 @@
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     type = ShapeTypeObstacle;
+    collisionTime = -120;
     
     this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    
+    //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
     // load 3D model
     ofVec3f scale(0.05, 0.05, 0.05);
@@ -63,7 +66,14 @@ void Obstacle::update(){
 //--------------------------------------------------------------
 void Obstacle::draw(){
 	
-	ofSetColor(255, 255, 255);
+	int t = ofGetElapsedTimef()*100-collisionTime;
+    if(t<120){
+        ofSetColor(255, 0, 255);
+    }else{
+        ofSetColor(255, 255, 255);
+    }
+    
+    //ofLog(OF_LOG_NOTICE, ofToString(t));
 	
     material.begin();
 	
@@ -91,6 +101,7 @@ string Obstacle::getObjectName(){
 void Obstacle::onCollision(){
     
     GameStatus::getInstance()->AddPoints(1);
+    collisionTime = ofGetElapsedTimef()*100;
 
 }
 
