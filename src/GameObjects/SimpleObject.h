@@ -57,7 +57,8 @@ public:
 	//var events
 	//ofEvent bColision;
 	bool bColision;
-	
+	int  collisionTime;
+    
 	//graphic vars
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
