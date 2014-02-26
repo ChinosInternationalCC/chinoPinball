@@ -11,8 +11,6 @@ void testApp::setup() {
 #endif
 
 	chinopinball.setup();
-    
-    bFullScreen = true;
 }
 
 //--------------------------------------------------------------
@@ -33,16 +31,12 @@ void testApp::draw() {
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {
+    chinopinball.keyPressed(key);
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key) {
     chinopinball.keyReleased(key);
-    
-    if(key == 'f' || key == 'F'){
-        bFullScreen = !bFullScreen;
-        ofSetFullscreen(bFullScreen);
-    }
 }
 
 //--------------------------------------------------------------
