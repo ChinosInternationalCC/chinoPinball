@@ -27,6 +27,7 @@ public:
 	void keyPressed(ofKeyEventArgs& key);
 	void keyReleased(ofKeyEventArgs& key);
     void onCollision();
+    void reset();
     
 	ofxBulletBox	body;
     

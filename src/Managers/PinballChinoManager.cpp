@@ -7,6 +7,7 @@
 //
 
 #include "PinballChinoManager.h"
+#include "Ball.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
     
@@ -20,7 +21,7 @@ void PinballChinoManager::setup(){
 	world.setGravity( ofVec3f(0, 4, 7) );
 
     // setup camera
-	camera.setPosition(ofVec3f(0, 0, -15.f));
+	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
     camera.setDistance(20);
 	world.setCamera(&camera);
@@ -79,6 +80,12 @@ void PinballChinoManager::draw(){
 
 void PinballChinoManager::onRestartGameEvent(void){
     
+    //reset ball & objects
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+        myScenario.ScenarioObjects[i]->reset();
+    
+    //do other stuff that should be done whe restaring game score stuff etc
+    
 }
 
 void PinballChinoManager::onMoveLeftLeverEvent(void){
@@ -135,51 +142,59 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
+    
+    InputEventManager::keyReleased(key);
+    
 //	if (key=='c')
 //		camera.toggleCursorDraw();
 	
 //	if (key=='u')
 //		camera.toggleFixUpwards();
 	
-	if (key=='b'){ // Adding Obstacle to the world
-        
-        //        myScenario.pushObject(world, 6, camera.getCursorWorld());
-        myScenario.pushObject(world, 6, ofVec3f(0, 0, 0));
-	}
+    switch(key)
+    {
+        case 'b': // Adding Obstacle to the world
+            //        myScenario.pushObject(world, 6, camera.getCursorWorld());
+            myScenario.pushObject(world, 6, ofVec3f(0, 0, 0));
+            break;
+            
+        case 's':
+            savedPose = camera.getGlobalTransformMatrix();
+            saveCameraPosition(savedPose); // ideal to save on XML
+            cout << "saved camera Pose xml" << endl;
+            break;
 	
-	if (key=='s'){
-		savedPose = camera.getGlobalTransformMatrix();
-		saveCameraPosition(savedPose); // ideal to save on XML
-		cout << "saved camera Pose xml" << endl;
-	}
+        case 'l':
+            savedPose = loadCameraPosition(); // write over the savedCamPose var
+            camera.setTransformMatrix(savedPose);
+            cout << "load camera Pose xml" << endl;
+            break;
 	
-	if (key=='l'){
-		savedPose = loadCameraPosition(); // write over the savedCamPose var
-		camera.setTransformMatrix(savedPose);
-		// ideal to load on XML
-		cout << "load camera Pose xml" << endl;
-	}
-    
-    if(key =='e'){
-        myScenario.saveToXml();
-        cout << "saving scenario to Xml" << endl;
+        case 'e':
+            myScenario.saveToXml();
+            cout << "saving scenario to Xml" << endl;
+            break;
+            
+        case 'f':
+            bFullScreen = !bFullScreen;
+            ofSetFullscreen(bFullScreen);
+            break;
+            
     }
+    
 }
 
 
 //--------------------------------------------------------------
-void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata) {
-    
+void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
+{
     for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
     {
-		ofxBulletBaseShape *baseShape;
-        baseShape = myScenario.ScenarioObjects[i]->getBulletBaseShape();
-        if(*baseShape == cdata) {
-            if (myScenario.ScenarioObjects[i]->type == 0) continue;
+        if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
+        {
+            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
+            cout << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
-            cout << "PinballChinoManager::onCollision : collision with " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
 		}
-        
 	}
-	
 }

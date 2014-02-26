@@ -19,6 +19,7 @@ public:
 	virtual void update();
 	virtual void draw();
     void onCollision();
+    void reset();
     
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;

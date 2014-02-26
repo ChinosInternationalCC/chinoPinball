@@ -40,6 +40,7 @@ public:
     bool isKeyPressed;
     
     void onCollision();
+    void reset();
     
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();

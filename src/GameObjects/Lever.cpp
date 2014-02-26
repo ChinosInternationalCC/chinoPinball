@@ -162,6 +162,8 @@ string Lever::getObjectName(){
 void Lever::onCollision(){}
 
 
+//--------------------------------------------------------------
+void Lever::reset() {}
 
 
 

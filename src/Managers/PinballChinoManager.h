@@ -51,6 +51,7 @@ public:
     Scenario                myScenario;
     ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
+    bool bFullScreen;
     
     void onRestartGameEvent(void);
     void onMoveLeftLeverEvent(void);

@@ -16,6 +16,11 @@ Ball::Ball(void){
 }
 
 //---------------------------------
+Ball::Ball(SimpleObject simpleObject){
+    return Ball::Ball();
+}
+
+//---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     m_status = BallStatusWaiting;
     position = pos;
@@ -26,8 +31,6 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     body.add();
     
     type = ShapeTypeBall;
-    
-	ofRegisterKeyEvents(this);
 }
 
 //----------------------------------
@@ -55,20 +58,6 @@ bool Ball::setGameOverBall(void){
 //--------------------------------
 bool Ball::isInsideScenario(ofBoxPrimitive box){
     return true;
-}
-
-//--------------------------------------------------------------
-void Ball::keyPressed(ofKeyEventArgs& e) {
-    
-    switch(e.key){
-        case OF_KEY_RETURN:
-            reset();
-            break;
-    }
-}
-
-//--------------------------------------------------------------
-void Ball::keyReleased(ofKeyEventArgs& key) {
 }
 
 //--------------------------------------------------------------
