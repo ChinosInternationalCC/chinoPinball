@@ -17,6 +17,7 @@
 #include "Obstacle.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
+#include "ofxJSONElement.h"
 
 class Scenario {
     
@@ -27,9 +28,15 @@ public:
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
     void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
+    void loadFromJSON(ofxBulletWorldRigid &world);
+    void saveToJSON(void);
+    
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
-    ofxXmlSettings ScenarioXml;
+    //ofxXmlSettings ScenarioXml;
+    
+    
+    
     ofxBulletWorldRigid *     world;
     
     Ball                    m_Ball,m_Ball2;

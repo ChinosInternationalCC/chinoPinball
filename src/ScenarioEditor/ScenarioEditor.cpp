@@ -31,14 +31,12 @@ void ScenarioEditor::draw(){
 //--------------------------------------------------------------
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 	
-    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
-    //mousePickIndex = -1;
+//    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
     for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
         if(*baseShape == e) {
             cout << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
-            //mousePickIndex = i;
 			//mousePickPos = e.pickPosWorld;
 			break;
 		}

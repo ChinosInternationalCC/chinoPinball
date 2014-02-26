@@ -15,10 +15,11 @@ class Obstacle : public SimpleObject {
 
 public:
 
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url);
 	virtual void update();
 	virtual void draw();
-    void onCollision(ofxBulletCollisionData& cdata);
+    void onCollision();
+    void reset();
     
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;

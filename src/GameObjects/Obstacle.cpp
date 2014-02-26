@@ -9,14 +9,10 @@
 #include "Obstacle.h"
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url){
+void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     type = ShapeTypeObstacle;
-    world.enableCollisionEvents();
-	ofAddListener(world.COLLISION_EVENT, this, &Obstacle::onCollision);
-
     
-    position = setPosition;
-    
+    this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     // load 3D model
@@ -81,19 +77,6 @@ void Obstacle::draw(){
 	
 }
 
-//--------------------------------------------------------------
-void Obstacle::onCollision(ofxBulletCollisionData& cdata) {
-	
-		if(body == cdata) {
-			//bColliding[i] = true;
-//            ofLog(OF_LOG_NOTICE, "collision TRUE");
-            GameStatus::getInstance()->AddPoints(1);
-		}else{
-//            ofLog(OF_LOG_NOTICE, "collision FALSE");
-        }
-	
-}
-
 //-------------------------------------------------------------
 ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
@@ -103,4 +86,15 @@ ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
 string Obstacle::getObjectName(){
     return "Obstacle";
 }
+
+//------------------------------------------------------------
+void Obstacle::onCollision(){
+    
+    GameStatus::getInstance()->AddPoints(1);
+
+}
+
+
+//--------------------------------------------------------------
+void Obstacle::reset() {}
 
