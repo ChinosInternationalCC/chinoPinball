@@ -12,6 +12,7 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "SimpleObject.h"
+#include "SoundManager.h"
 
 class Ball : public SimpleObject
 {

@@ -10,6 +10,7 @@
 
 #include "SimpleObject.h"
 #include "GameStatus.h"
+#include "SoundManager.h"
 
 class Obstacle : public SimpleObject {
 
