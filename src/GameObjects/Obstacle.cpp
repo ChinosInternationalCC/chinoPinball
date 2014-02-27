@@ -1,5 +1,5 @@
 //
-//  Obstacle.h
+//  Obstacle.cpp
 //  chinoPinball
 //
 //  Created by Angel on 02/02/14.
@@ -101,7 +101,10 @@ string Obstacle::getObjectName(){
 void Obstacle::onCollision(){
     
     GameStatus::getInstance()->AddPoints(1);
+    //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
+    //play sound
+    SoundManager::getInstance()->PlaySound(0);
 
 }
 
