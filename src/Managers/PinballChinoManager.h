@@ -55,8 +55,10 @@ public:
     
     void onRestartGameEvent(void);
     void onMoveLeftLeverEvent(void);
+    void onReleaseLeftLeverEvent(void);
     void onMoveRightLeverEvent(void);
+    void onReleaseRightLeverEvent(void);
     void onMoveBallLauncherEvent(void);
-
+    void onReleaseBallLauncherEvent(void);
     
 };

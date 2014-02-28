@@ -27,6 +27,8 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
 	upperLimit = 7;
     speed = 0.8;    // pos per frame
     
+    color = 0x00ff00;
+    
     
     // move hammer to lower position
     move(lowerLimit);
@@ -62,7 +64,13 @@ void Hammer::update(){
 //--------------------------------------------------------------
 void Hammer::draw(){
     
-	ofSetColor(0, 255, 0);
+	int t = ofGetElapsedTimef()*100-collisionTime;
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
+    }else{
+        ofSetHexColor(color);
+    }
+    
     body.draw();
     
 }
@@ -116,7 +124,12 @@ string Hammer::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Hammer::onCollision(){}
+void Hammer::onCollision(){
+
+    //save time to show color during some time
+    collisionTime = ofGetElapsedTimef()*100;
+
+}
 
 
 //--------------------------------------------------------------

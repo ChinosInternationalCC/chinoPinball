@@ -22,6 +22,15 @@ void InputEventManager::keyPressed(int key)
         case OF_KEY_RETURN:
             onRestartGameEvent();
             break;
+            
+        case OF_KEY_LEFT_SHIFT:
+            onMoveLeftLeverEvent();
+            break;
+            
+        case OF_KEY_RIGHT_SHIFT:
+            onMoveRightLeverEvent();
+            break;
+            
     }
     
 }

@@ -78,6 +78,8 @@ void PinballChinoManager::draw(){
     
 }
 
+
+//--------------------------------------------------------------
 void PinballChinoManager::onRestartGameEvent(void){
     
     //reset ball & objects
@@ -88,13 +90,42 @@ void PinballChinoManager::onRestartGameEvent(void){
     
 }
 
+//--------------------------------------------------------------
 void PinballChinoManager::onMoveLeftLeverEvent(void){
     
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            //            Lever lever = myScenario.ScenarioObjects[i];
+            //            lever.onMoveEvent();
+        }
+    }
+    
 }
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseLeftLeverEvent(void){
+    
+}
+
+//--------------------------------------------------------------
 void PinballChinoManager::onMoveRightLeverEvent(void){
     
 }
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseRightLeverEvent(void){
+    
+}
+
+//--------------------------------------------------------------
 void PinballChinoManager::onMoveBallLauncherEvent(void){
+    
+}
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseBallLauncherEvent(void){
     
 }
 
@@ -192,8 +223,8 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
     {
         if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
         {
-            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
-            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
+//            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
+//            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
 		}
 	}

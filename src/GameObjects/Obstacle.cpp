@@ -67,10 +67,10 @@ void Obstacle::update(){
 void Obstacle::draw(){
 	
 	int t = ofGetElapsedTimef()*100-collisionTime;
-    if(t<120){
-        ofSetColor(255, 0, 255);
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
     }else{
-        ofSetColor(255, 255, 255);
+        ofSetHexColor(color);
     }
     
     //ofLog(OF_LOG_NOTICE, ofToString(t));

@@ -38,6 +38,7 @@ public:
 	void keyPressed(ofKeyEventArgs& key);
 	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
+    void onMoveEvent();
     
     void onCollision();
     void reset();
