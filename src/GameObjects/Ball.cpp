@@ -31,6 +31,8 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     body.add();
     
     type = ShapeTypeBall;
+    
+    SoundManager::getInstance()->PlaySound(1);
 }
 
 //----------------------------------
@@ -66,7 +68,7 @@ void Ball::reset() {
     body.remove();
     body.create(world.world, position, mass, radius);
     body.add();
-    
+    SoundManager::getInstance()->PlaySound(1);
 }
 
 //------------------------------------------------------------
