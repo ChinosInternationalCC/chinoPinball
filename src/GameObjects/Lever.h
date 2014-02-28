@@ -35,10 +35,9 @@ public:
     float speed;
     float axisX;
     
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
     void onMoveEvent();
+    void onReleaseEvent();
     
     void onCollision();
     void reset();

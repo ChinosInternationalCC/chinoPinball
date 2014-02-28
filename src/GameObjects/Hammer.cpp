@@ -19,7 +19,6 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     body.enableKinematic();
     body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
-	ofRegisterKeyEvents(this);
     isKeyPressed = false;
     
 	//y position
@@ -75,19 +74,17 @@ void Hammer::draw(){
     
 }
 
+
+
 //--------------------------------------------------------------
-void Hammer::keyPressed(ofKeyEventArgs& e) {
+void Hammer::onMoveEvent() {
     
-    switch(e.key){
-        case OF_KEY_DOWN:
-            isKeyPressed = true;
-            break;
-    }
+	isKeyPressed = true;
+    
 }
 
-
 //--------------------------------------------------------------
-void Hammer::keyReleased(ofKeyEventArgs& key) {
+void Hammer::onReleaseEvent() {
     
 	isKeyPressed = false;
     
@@ -130,7 +127,3 @@ void Hammer::onCollision(){
     collisionTime = ofGetElapsedTimef()*100;
 
 }
-
-
-//--------------------------------------------------------------
-void Hammer::reset() {}
