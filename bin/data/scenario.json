@@ -86,6 +86,17 @@
          },
          "type" : 5
       }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 0.0,
+            "Y" : 0.0,
+            "Z" : 0.0
+         },
+         "type" : 6
+      }
    }
 ]
 

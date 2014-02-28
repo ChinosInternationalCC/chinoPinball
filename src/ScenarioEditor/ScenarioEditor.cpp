@@ -36,7 +36,7 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
         if(*baseShape == e) {
-            cout << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
+            ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
 			//mousePickPos = e.pickPosWorld;
 			break;
 		}
