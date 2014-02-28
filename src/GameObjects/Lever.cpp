@@ -82,13 +82,12 @@ void Lever::update(){
         }
     }
     
-    
 }
 
 //--------------------------------------------------------------
 void Lever::draw(){
 	
-	ofSetColor(255, 255, 255);
+	ofSetHexColor(color);
 	
     material.begin();
 	
@@ -119,6 +118,16 @@ void Lever::keyReleased(ofKeyEventArgs& key) {
 	isKeyPressed = false;
     
 }
+
+//--------------------------------------------------------------
+void Lever::onMoveEvent() {
+    
+	isKeyPressed = true;
+    
+}
+
+
+
 
 //- rotate around axis ---------------------------------------
 void Lever::rotate(float degrees) {

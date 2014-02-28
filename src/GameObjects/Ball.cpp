@@ -26,7 +26,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     position = pos;
     world = myWorld;
     
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., .00); // .25 (more restituition means more energy) , .95 ( friction )
     body.create(world.world, position, mass, radius);
     body.add();
     
@@ -43,8 +43,7 @@ void Ball::update(void){
 //--------------------------------------------------------------
 void Ball::draw(void){
     
-	ofSetColor(225, 225, 225);
-	//BulletBallShape->draw();
+	ofSetHexColor(color);
     body.draw();
     
 }
