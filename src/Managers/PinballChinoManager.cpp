@@ -82,9 +82,15 @@ void PinballChinoManager::draw(){
 //--------------------------------------------------------------
 void PinballChinoManager::onRestartGameEvent(void){
     
-    //reset ball & objects
+    //reset ball
     for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
-        myScenario.ScenarioObjects[i]->reset();
+    {
+        if (myScenario.ScenarioObjects[i]->type == 0)
+        {
+            Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            ball->reset();
+        }
+    }
     
     //do other stuff that should be done whe restaring game score stuff etc
     
@@ -97,8 +103,8 @@ void PinballChinoManager::onMoveLeftLeverEvent(void){
     {
         if (myScenario.ScenarioObjects[i]->type == 3)
         {
-            //            Lever lever = myScenario.ScenarioObjects[i];
-            //            lever.onMoveEvent();
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (!lever->direction) lever->onMoveEvent();
         }
     }
     
@@ -107,25 +113,70 @@ void PinballChinoManager::onMoveLeftLeverEvent(void){
 //--------------------------------------------------------------
 void PinballChinoManager::onReleaseLeftLeverEvent(void){
     
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (!lever->direction) lever->onReleaseEvent();
+        }
+    }
+    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::onMoveRightLeverEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (lever->direction) lever->onMoveEvent();
+        }
+    }
     
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::onReleaseRightLeverEvent(void){
     
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (lever->direction) lever->onReleaseEvent();
+        }
+    }
+    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::onMoveBallLauncherEvent(void){
     
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 5)
+        {
+            Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[i];
+            hammer->onMoveEvent();
+        }
+    }
+    
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::onReleaseBallLauncherEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 5)
+        {
+            Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[i];
+            hammer->onReleaseEvent();
+        }
+    }
     
 }
 

@@ -67,6 +67,5 @@ public:
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
     virtual void onCollision() = 0;
-    virtual void reset() = 0;
    
 };
