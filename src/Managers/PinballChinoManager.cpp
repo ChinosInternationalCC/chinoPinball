@@ -224,7 +224,7 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
         if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
         {
 //            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
-//            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
+            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
 		}
 	}
