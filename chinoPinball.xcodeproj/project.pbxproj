@@ -111,6 +111,7 @@
 		7FE73FEF709456B39C5ABAFD /* ofxBulletConvexShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6899DC7F52724319A35FBB7 /* ofxBulletConvexShape.cpp */; };
 		8168D5883AC54AC2E2BEE525 /* btKinematicCharacterController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B85C8FE69EAECFB5655E2AFE /* btKinematicCharacterController.cpp */; };
 		8194FB8D031BF3DAFEFBD316 /* btSoftBodySolverOutputCLtoGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 115C0294FE71A4AB62E648C0 /* btSoftBodySolverOutputCLtoGL.cpp */; };
+		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
 		8423C8E018B956BC001DFD15 /* ofxGrabCam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		86B5CB1E9CB0E4DABC2FC50F /* btUnionFind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D778CD09C48AB85212E3C3C /* btUnionFind.cpp */; };
@@ -601,6 +602,8 @@
 		838EEE9683B3D50780A99C5D /* vectormath_aos.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vectormath_aos.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon/vectormath_aos.h; sourceTree = SOURCE_ROOT; };
 		83A2062FC117430E94095D01 /* btRaycastVehicle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btRaycastVehicle.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle/btRaycastVehicle.cpp; sourceTree = SOURCE_ROOT; };
 		8411535E8E213C0D511F83CE /* btGhostObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btGhostObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btGhostObject.cpp; sourceTree = SOURCE_ROOT; };
+		8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventObjectScenario.cpp; sourceTree = "<group>"; };
+		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
 		8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGrabCam.cpp; sourceTree = "<group>"; };
 		8423C8DB18B956BC001DFD15 /* ofxGrabCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGrabCam.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
@@ -1628,6 +1631,15 @@
 			name = Missions;
 			sourceTree = "<group>";
 		};
+		8422374018C10CD6009CE9EC /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */,
+				8422374218C10D6A009CE9EC /* eventObjectScenario.h */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		8423C8BF18B956BC001DFD15 /* ofxGrabCam */ = {
 			isa = PBXGroup;
 			children = (
@@ -2181,6 +2193,7 @@
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				FA8A22EC10C7ADC9613B1571 /* ExternalsConfig.h */,
+				8422374018C10CD6009CE9EC /* Events */,
 				0C7B7E46723914CB38E9D865 /* GameObjects */,
 				39B672E7BE2B8F8845101DE2 /* Managers */,
 				9D5DF97539651A7BE60BDED7 /* Media */,
@@ -2581,6 +2594,7 @@
 				A58C5F0918BBDCA100E99E78 /* json_value.cpp in Sources */,
 				A9B2F59918BF56AB002B9892 /* SoundManager.cpp in Sources */,
 				921313BA5C2E074F7702BA85 /* btPoint2PointConstraint.cpp in Sources */,
+				8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */,
 				4DB27BC1F52F8BCFE6BD98FC /* btSequentialImpulseConstraintSolver.cpp in Sources */,
 				098506D174CF3D6FE87ECC75 /* btSliderConstraint.cpp in Sources */,
 				43C82059AE35C8E8B91A1564 /* btSolve2LinearConstraint.cpp in Sources */,

@@ -386,4 +386,3 @@ void Scenario::saveToJSON(){
     
     
 }
-

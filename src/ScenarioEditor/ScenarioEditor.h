@@ -17,6 +17,8 @@
 
 #include "ofxBullet.h"
 #include "Scenario.h"
+#include "eventObjectScenario.h"
+#include "SimpleObject.h"
 
 class ScenarioEditor {
     
@@ -29,4 +31,6 @@ public:
     
     ofxBulletWorldRigid *     world;
     Scenario *                scenario;
+	
+	bool bEscenarioEditorMode;
 };
