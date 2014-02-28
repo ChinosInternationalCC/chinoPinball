@@ -23,6 +23,10 @@ void InputEventManager::keyPressed(int key)
             onRestartGameEvent();
             break;
             
+        case OF_KEY_DOWN:
+            onMoveBallLauncherEvent();
+            break;
+            
         case OF_KEY_LEFT_SHIFT:
             onMoveLeftLeverEvent();
             break;
@@ -41,6 +45,18 @@ void InputEventManager::keyReleased(int key)
     
     switch(key)
     {
+            
+        case OF_KEY_DOWN:
+            onReleaseBallLauncherEvent();
+            break;
+            
+        case OF_KEY_LEFT_SHIFT:
+            onReleaseLeftLeverEvent();
+            break;
+            
+        case OF_KEY_RIGHT_SHIFT:
+            onReleaseRightLeverEvent();
+            break;
             
     }
     
