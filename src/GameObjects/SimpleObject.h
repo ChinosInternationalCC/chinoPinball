@@ -44,7 +44,9 @@ public:
     ofMatrix4x4 worldposition;
 	ofVec3f position;
 	bool bvisible;
-	int colisionCounter;
+    int color;
+    int highlightColor;
+    int highlightTime;
 	
 	//physics vars
 	//enum {Static/dynamic/Kinematic}
@@ -57,11 +59,13 @@ public:
 	//var events
 	//ofEvent bColision;
 	bool bColision;
-	
+	int  collisionTime;
+	int colisionCounter;
+    
 	//graphic vars
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
-	
+    virtual void onCollision() = 0;
    
 };

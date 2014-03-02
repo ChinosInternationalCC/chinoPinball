@@ -27,13 +27,19 @@ public:
     InputEventManager();
     
     virtual void onMoveLeftLeverEvent(void) = 0;
+    virtual void onReleaseLeftLeverEvent(void) = 0;
     virtual void onMoveRightLeverEvent(void) = 0;
+    virtual void onReleaseRightLeverEvent(void) = 0;
     virtual void onMoveBallLauncherEvent(void) = 0;
+    virtual void onReleaseBallLauncherEvent(void) = 0;
     virtual void onRestartGameEvent(void) = 0;
     
 #ifdef USE_OSC
     ofxOscReceiver oscReceiver;
 #endif
+    
+    void keyPressed(int key);
+    void keyReleased(int key);
     
 };
 

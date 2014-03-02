@@ -16,18 +16,23 @@ Ball::Ball(void){
 }
 
 //---------------------------------
+Ball::Ball(SimpleObject simpleObject){
+    return Ball::Ball();
+}
+
+//---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     m_status = BallStatusWaiting;
     position = pos;
     world = myWorld;
     
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., .00); // .25 (more restituition means more energy) , .95 ( friction )
     body.create(world.world, position, mass, radius);
     body.add();
     
     type = ShapeTypeBall;
     
-	ofRegisterKeyEvents(this);
+    SoundManager::getInstance()->PlaySound(1);
 }
 
 //----------------------------------
@@ -38,8 +43,7 @@ void Ball::update(void){
 //--------------------------------------------------------------
 void Ball::draw(void){
     
-	ofSetColor(225, 225, 225);
-	//BulletBallShape->draw();
+	ofSetHexColor(color);
     body.draw();
     
 }
@@ -58,26 +62,12 @@ bool Ball::isInsideScenario(ofBoxPrimitive box){
 }
 
 //--------------------------------------------------------------
-void Ball::keyPressed(ofKeyEventArgs& e) {
-    
-    switch(e.key){
-        case OF_KEY_RETURN:
-            reset();
-            break;
-    }
-}
-
-//--------------------------------------------------------------
-void Ball::keyReleased(ofKeyEventArgs& key) {
-}
-
-//--------------------------------------------------------------
 void Ball::reset() {
     
     body.remove();
     body.create(world.world, position, mass, radius);
     body.add();
-    
+    SoundManager::getInstance()->PlaySound(1);
 }
 
 //------------------------------------------------------------
@@ -89,4 +79,7 @@ ofxBulletBaseShape* Ball::getBulletBaseShape(){
 string Ball::getObjectName(){
     return "Ball";
 }
+
+//------------------------------------------------------------
+void Ball::onCollision(){}
     

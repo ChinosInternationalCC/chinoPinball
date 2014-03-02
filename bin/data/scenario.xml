@@ -49,5 +49,10 @@
         <positionY>5.000000000</positionY>
         <positionZ>-0.400000006</positionZ>
     </object>
+    <object>
+        <type>6</type>
+        <positionX>0.000000000</positionX>
+        <positionY>0.000000000</positionY>
+        <positionZ>0.000000000</positionZ>
+    </object>
 </scenario>
-<scenario></scenario>

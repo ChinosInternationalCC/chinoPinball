@@ -24,8 +24,7 @@ public:
 	virtual void draw();
 	void move(float height);
     
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
+    void onCollision();
     
 	ofxBulletBox	body;
     
@@ -34,6 +33,9 @@ public:
     float speed;
     
     bool isKeyPressed;
+    void onMoveEvent();
+    void onReleaseEvent();
+    
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
  /*

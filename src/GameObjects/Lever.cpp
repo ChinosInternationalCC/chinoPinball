@@ -56,8 +56,6 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     // rotate lever to lower position
     rotate(lowerLimit);
     
-    
-	ofRegisterKeyEvents(this);
     isKeyPressed = false;
     
 }
@@ -82,13 +80,12 @@ void Lever::update(){
         }
     }
     
-    
 }
 
 //--------------------------------------------------------------
 void Lever::draw(){
 	
-	ofSetColor(255, 255, 255);
+	ofSetHexColor(color);
 	
     material.begin();
 	
@@ -107,18 +104,21 @@ void Lever::draw(){
 }
 
 //--------------------------------------------------------------
-void Lever::keyPressed(ofKeyEventArgs& key) {
+void Lever::onMoveEvent() {
     
-    if (key.key == 32)	isKeyPressed = true;
+	isKeyPressed = true;
     
 }
 
 //--------------------------------------------------------------
-void Lever::keyReleased(ofKeyEventArgs& key) {
+void Lever::onReleaseEvent() {
     
 	isKeyPressed = false;
     
 }
+
+
+
 
 //- rotate around axis ---------------------------------------
 void Lever::rotate(float degrees) {
@@ -158,6 +158,8 @@ string Lever::getObjectName(){
     return "Lever";
 }
 
+//------------------------------------------------------------
+void Lever::onCollision(){}
 
 
 

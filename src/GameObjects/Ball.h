@@ -12,11 +12,13 @@
 #include "ofMain.h"
 #include "ofxBullet.h"
 #include "SimpleObject.h"
+#include "SoundManager.h"
 
 class Ball : public SimpleObject
 {
 public:
     Ball(void);
+    Ball(SimpleObject simpleObject);
     void setup(ofxBulletWorldRigid &world, ofVec3f pos);
     void update(void);
     void draw(void);
@@ -27,9 +29,6 @@ public:
     ofxBulletSphere body;
     ofxBulletWorldRigid world;
     
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
-    
     bool isInsideScenario(ofBoxPrimitive box);
     bool setGameOverBall(void); //callback from GameOverCollision,
                                 //returns true if the status was changed, false if already set
@@ -39,9 +38,11 @@ public:
         BallStatusGameOver
     };
     
-    void reset();
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
+    
+    void onCollision();
+    void reset();
     
 
 private:

@@ -36,10 +36,21 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
         if(*baseShape == e) {
-            cout << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
+            ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
 			//mousePickPos = e.pickPosWorld;
 			break;
 		}
-        
 	}
+	
+	//Set new objects if Editor mode is active and Selected Obstacle
+	if(bEscenarioEditorMode){
+		
+		//Create class to save type of objec and Notifie the Event to escenario
+		eventObjectScenario newObjectEvent;
+		newObjectEvent.posObject = ofVec3f(e.pickPosWorld);
+		newObjectEvent.type = SimpleObject::ShapeTypeObstacle;
+		ofNotifyEvent(eventObjectScenario::onNewObject, newObjectEvent);
+		
+	}
+
 }

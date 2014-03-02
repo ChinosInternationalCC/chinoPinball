@@ -1,5 +1,5 @@
 //
-//  Obstacle.h
+//  Obstacle.cpp
 //  chinoPinball
 //
 //  Created by Angel on 02/02/14.
@@ -9,15 +9,14 @@
 #include "Obstacle.h"
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url){
+void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     type = ShapeTypeObstacle;
-    world.enableCollisionEvents();
-	ofAddListener(world.COLLISION_EVENT, this, &Obstacle::onCollision);
-
+    collisionTime = -120;
     
-    position = setPosition;
-    
+    this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    
+    //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
     // load 3D model
     ofVec3f scale(0.05, 0.05, 0.05);
@@ -67,7 +66,14 @@ void Obstacle::update(){
 //--------------------------------------------------------------
 void Obstacle::draw(){
 	
-	ofSetColor(255, 255, 255);
+	int t = ofGetElapsedTimef()*100-collisionTime;
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
+    }else{
+        ofSetHexColor(color);
+    }
+    
+    //ofLog(OF_LOG_NOTICE, ofToString(t));
 	
     material.begin();
 	
@@ -81,19 +87,6 @@ void Obstacle::draw(){
 	
 }
 
-//--------------------------------------------------------------
-void Obstacle::onCollision(ofxBulletCollisionData& cdata) {
-	
-		if(body == cdata) {
-			//bColliding[i] = true;
-//            ofLog(OF_LOG_NOTICE, "collision TRUE");
-            GameStatus::getInstance()->AddPoints(1);
-		}else{
-//            ofLog(OF_LOG_NOTICE, "collision FALSE");
-        }
-	
-}
-
 //-------------------------------------------------------------
 ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
@@ -103,4 +96,16 @@ ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
 string Obstacle::getObjectName(){
     return "Obstacle";
 }
+
+//------------------------------------------------------------
+void Obstacle::onCollision(){
+    
+    GameStatus::getInstance()->AddPoints(1);
+    //save time to show color during some time
+    collisionTime = ofGetElapsedTimef()*100;
+    //play sound
+    SoundManager::getInstance()->PlaySound(0);
+
+}
+
 

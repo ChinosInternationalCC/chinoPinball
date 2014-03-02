@@ -19,13 +19,14 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     body.enableKinematic();
     body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
     
-	ofRegisterKeyEvents(this);
     isKeyPressed = false;
     
 	//y position
 	lowerLimit = position.y;
 	upperLimit = 7;
     speed = 0.8;    // pos per frame
+    
+    color = 0x00ff00;
     
     
     // move hammer to lower position
@@ -62,24 +63,28 @@ void Hammer::update(){
 //--------------------------------------------------------------
 void Hammer::draw(){
     
-	ofSetColor(0, 255, 0);
+	int t = ofGetElapsedTimef()*100-collisionTime;
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
+    }else{
+        ofSetHexColor(color);
+    }
+    
     body.draw();
     
 }
 
+
+
 //--------------------------------------------------------------
-void Hammer::keyPressed(ofKeyEventArgs& e) {
+void Hammer::onMoveEvent() {
     
-    switch(e.key){
-        case OF_KEY_DOWN:
-            isKeyPressed = true;
-            break;
-    }
+	isKeyPressed = true;
+    
 }
 
-
 //--------------------------------------------------------------
-void Hammer::keyReleased(ofKeyEventArgs& key) {
+void Hammer::onReleaseEvent() {
     
 	isKeyPressed = false;
     
@@ -113,4 +118,12 @@ ofxBulletBaseShape* Hammer::getBulletBaseShape(){
 //------------------------------------------------------------
 string Hammer::getObjectName(){
     return "Hammer";
+}
+
+//------------------------------------------------------------
+void Hammer::onCollision(){
+
+    //save time to show color during some time
+    collisionTime = ofGetElapsedTimef()*100;
+
 }

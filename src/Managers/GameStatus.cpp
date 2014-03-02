@@ -79,7 +79,7 @@ void GameStatus::EndMission(){
 
 //--------------------------------------
 void GameStatus::AddPoints(int points){
-    points += points;
+    this->points += points;
 }
 //------------------------------------
 bool GameStatus::Play(void){

@@ -7,6 +7,7 @@
 //
 
 #include "PinballChinoManager.h"
+#include "Ball.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
     
@@ -20,7 +21,7 @@ void PinballChinoManager::setup(){
 	world.setGravity( ofVec3f(0, 4, 7) );
 
     // setup camera
-	camera.setPosition(ofVec3f(0, 0, -15.f));
+	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
     camera.setDistance(20);
 	world.setCamera(&camera);
@@ -36,6 +37,12 @@ void PinballChinoManager::setup(){
     // setup scenario editor
     scenarioEditor.setup(world, myScenario);
     
+    // collision detection
+    world.enableCollisionEvents();
+	ofAddListener(world.COLLISION_EVENT, this, &PinballChinoManager::onCollision);
+	
+	ofAddListener(eventObjectScenario::onNewObject ,this, &PinballChinoManager::listenerAddObject2Scenario);
+
 }
 
 //--------------------------------------------------------------
@@ -73,17 +80,105 @@ void PinballChinoManager::draw(){
     
 }
 
+
+//--------------------------------------------------------------
 void PinballChinoManager::onRestartGameEvent(void){
+    
+    //reset ball
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 0)
+        {
+            Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            ball->reset();
+        }
+    }
+    
+    //do other stuff that should be done whe restaring game score stuff etc
     
 }
 
+//--------------------------------------------------------------
 void PinballChinoManager::onMoveLeftLeverEvent(void){
     
-}
-void PinballChinoManager::onMoveRightLeverEvent(void){
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (!lever->direction) lever->onMoveEvent();
+        }
+    }
     
 }
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseLeftLeverEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (!lever->direction) lever->onReleaseEvent();
+        }
+    }
+    
+}
+
+//--------------------------------------------------------------
+void PinballChinoManager::onMoveRightLeverEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (lever->direction) lever->onMoveEvent();
+        }
+    }
+    
+}
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseRightLeverEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 3)
+        {
+            Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
+            if (lever->direction) lever->onReleaseEvent();
+        }
+    }
+    
+}
+
+//--------------------------------------------------------------
 void PinballChinoManager::onMoveBallLauncherEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 5)
+        {
+            Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[i];
+            hammer->onMoveEvent();
+        }
+    }
+    
+}
+
+//--------------------------------------------------------------
+void PinballChinoManager::onReleaseBallLauncherEvent(void){
+    
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 5)
+        {
+            Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[i];
+            hammer->onReleaseEvent();
+        }
+    }
     
 }
 
@@ -131,33 +226,64 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
+    
+    InputEventManager::keyReleased(key);
+    
 //	if (key=='c')
 //		camera.toggleCursorDraw();
 	
 //	if (key=='u')
 //		camera.toggleFixUpwards();
 	
-	if (key=='b'){ // Adding Obstacle to the world
-        
-        //        myScenario.pushObject(world, 6, camera.getCursorWorld());
-        myScenario.pushObject(world, 6, ofVec3f(0, 0, 0));
-	}
+    switch(key)
+    {
+        case 's':
+            savedPose = camera.getGlobalTransformMatrix();
+            saveCameraPosition(savedPose); // ideal to save on XML
+            cout << "saved camera Pose xml" << endl;
+            break;
 	
-	if (key=='s'){
-		savedPose = camera.getGlobalTransformMatrix();
-		saveCameraPosition(savedPose); // ideal to save on XML
-		cout << "saved camera Pose xml" << endl;
-	}
+        case 'l':
+            savedPose = loadCameraPosition(); // write over the savedCamPose var
+            camera.setTransformMatrix(savedPose);
+            cout << "load camera Pose xml" << endl;
+            break;
 	
-	if (key=='l'){
-		savedPose = loadCameraPosition(); // write over the savedCamPose var
-		camera.setTransformMatrix(savedPose);
-		// ideal to load on XML
-		cout << "load camera Pose xml" << endl;
-	}
-    
-    if(key =='e'){
-        myScenario.saveToXml();
-        cout << "saving scenario to Xml" << endl;
+        case 'e':
+            myScenario.saveToXml();
+            cout << "saving scenario to Xml" << endl;
+            break;
+            
+        case 'f':
+            bFullScreen = !bFullScreen;
+            ofSetFullscreen(bFullScreen);
+            break;
+	
+		case 'm':
+            scenarioEditor.bEscenarioEditorMode = !scenarioEditor.bEscenarioEditorMode;
+			cout << "bScenarioEditorActive= " << scenarioEditor.bEscenarioEditorMode << endl;
+            break;
     }
+    
+}
+
+
+//--------------------------------------------------------------
+void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
+{
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
+        {
+//            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
+            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
+            myScenario.ScenarioObjects[i]->onCollision();
+		}
+	}
+}
+
+//listener event to add Objects
+//------------------------------
+void PinballChinoManager::listenerAddObject2Scenario(eventObjectScenario & args){
+	myScenario.pushObject(world, args.type, args.posObject);
 }
