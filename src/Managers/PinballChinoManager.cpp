@@ -40,7 +40,9 @@ void PinballChinoManager::setup(){
     // collision detection
     world.enableCollisionEvents();
 	ofAddListener(world.COLLISION_EVENT, this, &PinballChinoManager::onCollision);
-    
+	
+	ofAddListener(eventObjectScenario::onNewObject ,this, &PinballChinoManager::listenerAddObject2Scenario);
+
 }
 
 //--------------------------------------------------------------
@@ -235,11 +237,6 @@ void PinballChinoManager::keyReleased(int key){
 	
     switch(key)
     {
-        case 'b': // Adding Obstacle to the world
-            //        myScenario.pushObject(world, 6, camera.getCursorWorld());
-            myScenario.pushObject(world, 6, ofVec3f(0, 0, 0));
-            break;
-            
         case 's':
             savedPose = camera.getGlobalTransformMatrix();
             saveCameraPosition(savedPose); // ideal to save on XML
@@ -261,7 +258,11 @@ void PinballChinoManager::keyReleased(int key){
             bFullScreen = !bFullScreen;
             ofSetFullscreen(bFullScreen);
             break;
-            
+	
+		case 'm':
+            scenarioEditor.bEscenarioEditorMode = !scenarioEditor.bEscenarioEditorMode;
+			cout << "bScenarioEditorActive= " << scenarioEditor.bEscenarioEditorMode << endl;
+            break;
     }
     
 }
@@ -275,8 +276,14 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
         if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
         {
 //            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
-//            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
+            ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
 		}
 	}
+}
+
+//listener event to add Objects
+//------------------------------
+void PinballChinoManager::listenerAddObject2Scenario(eventObjectScenario & args){
+	myScenario.pushObject(world, args.type, args.posObject);
 }
