@@ -207,9 +207,15 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
 	
 	// Now parse the JSON
 	bool parsingSuccessful = ScenarioJSON.open(file);
-	
     if (parsingSuccessful) {
-		/*for ( Json::ValueIterator itr = ScenarioJSON.begin(); itr ! = ScenarioJSON.end(); itr++ ){
+        Json::Value::Members memberNames = ScenarioJSON.getMemberNames();
+        for(unsigned int i=0; i<memberNames.size(); ++i){
+            string memberName = memberNames[i];
+            Json::Value value = ScenarioJSON[memberName];
+            cout<<"Key: "<<memberName<<endl;
+            cout<<"Value: "<<value.toStyledString()<<endl;
+        }
+		/*for ( Json::ValueIterator itr = ScenarioJSON.begin(); itr ! = ScenarioJSON.endOfDataReached; itr++ ){
             
         }*/
 		
