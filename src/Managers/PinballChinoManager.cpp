@@ -29,7 +29,6 @@ void PinballChinoManager::setup(){
     // load camera position
     savedPose = loadCameraPosition(); 
     camera.setTransformMatrix(savedPose);
-    cout << "load camera Pose xml" << endl;
     
     // setup scenario
     myScenario.setup(world);
@@ -226,17 +225,14 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
-    
-    InputEventManager::keyReleased(key);
-    
-//	if (key=='c')
-//		camera.toggleCursorDraw();
-	
-//	if (key=='u')
-//		camera.toggleFixUpwards();
 	
     switch(key)
     {
+        case 'f':
+            bFullScreen = !bFullScreen;
+            ofSetFullscreen(bFullScreen);
+            break;
+            
         case 's':
             savedPose = camera.getGlobalTransformMatrix();
             saveCameraPosition(savedPose); // ideal to save on XML
@@ -248,22 +244,10 @@ void PinballChinoManager::keyReleased(int key){
             camera.setTransformMatrix(savedPose);
             cout << "load camera Pose xml" << endl;
             break;
-	
-        case 'e':
-            myScenario.saveToXml();
-            cout << "saving scenario to Xml" << endl;
-            break;
-            
-        case 'f':
-            bFullScreen = !bFullScreen;
-            ofSetFullscreen(bFullScreen);
-            break;
-	
-		case 'm':
-            scenarioEditor.bEscenarioEditorMode = !scenarioEditor.bEscenarioEditorMode;
-			cout << "bScenarioEditorActive= " << scenarioEditor.bEscenarioEditorMode << endl;
-            break;
     }
+    
+    InputEventManager::keyReleased(key);
+    scenarioEditor.keyReleased(key);
     
 }
 
