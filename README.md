@@ -101,3 +101,28 @@ Editor should have the following functionalities:
 	* rotation
 	* color
 * objects types: lever, hammer, obstacle ...
+
+
+***
+###Key bingings
+
+testApp
+* F1 - OF_LOG_SILENT
+* F2 - OF_LOG_VERBOSE
+* F3 - CollisionVerbose
+* F4 - EditorVerbose
+PinballChinoManager
+* f - fullscreen
+* s - save camera position to file
+* l - load camera postion
+InputEventManager
+* enter - restart game
+* down - move hammer
+* shift - move lever
+ScenarioEditor
+* m - toggle editor mode
+* s - saving scenario to file
+* 0 - add a ball
+* 3 - add a lever
+* 5 - add a hammer
+* 6 - add an obstacle

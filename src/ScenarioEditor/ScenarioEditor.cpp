@@ -9,7 +9,7 @@
 #include "ScenarioEditor.h"
 
 //--------------------------------------------------------------
-void ScenarioEditor::setup(ofxBulletWorldRigid &world, Scenario &scenario){
+void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     
     this->world = &world;
     this->scenario = &scenario;
@@ -17,7 +17,7 @@ void ScenarioEditor::setup(ofxBulletWorldRigid &world, Scenario &scenario){
 	// enables mouse Pick events //
 	this->world->enableGrabbing(-1);
 	ofAddListener(world.MOUSE_PICK_EVENT, this, &ScenarioEditor::onMousePick);
-
+    
 }
 
 //--------------------------------------------------------------
@@ -29,9 +29,42 @@ void ScenarioEditor::draw(){
 }
 
 //--------------------------------------------------------------
+void ScenarioEditor::keyReleased(int key){
+    
+    switch(key)
+    {
+		case 'm':
+            bEscenarioEditorMode = !bEscenarioEditorMode;
+			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
+            
+            break;
+            
+        case 'e':
+            scenario->saveToXml();
+            cout << "saving scenario to Xml" << endl;
+            break;
+            
+        case '0':
+            addObject(SimpleObject::ShapeTypeBall);
+            break;
+        case '3':
+            addObject(SimpleObject::ShapeTypeLever);
+            break;
+        case '5':
+            addObject(SimpleObject::ShapeTypeHammer);
+            break;
+        case '6':
+            addObject(SimpleObject::ShapeTypeObstacle);
+            break;
+            
+    }
+    
+}
+
+//--------------------------------------------------------------
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 	
-//    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
+    //    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
     for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
@@ -41,16 +74,21 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			break;
 		}
 	}
-	
-	//Set new objects if Editor mode is active and Selected Obstacle
-	if(bEscenarioEditorMode){
-		
-		//Create class to save type of objec and Notifie the Event to escenario
-		eventObjectScenario newObjectEvent;
-		newObjectEvent.posObject = ofVec3f(e.pickPosWorld);
-		newObjectEvent.type = SimpleObject::ShapeTypeObstacle;
-		ofNotifyEvent(eventObjectScenario::onNewObject, newObjectEvent);
-		
-	}
+    
+}
 
+//--------------------------------------------------------------
+void ScenarioEditor::addObject(SimpleObject::shapeType type) {
+	
+    //Set new objects if Editor mode is active and Selected Obstacle
+    if(bEscenarioEditorMode){
+        
+        //Create class to save type of objec and Notifie the Event to escenario
+        eventObjectScenario newObjectEvent;
+        newObjectEvent.posObject = ofVec3f(world->getWorldPos());
+        newObjectEvent.type = type;
+        ofNotifyEvent(eventObjectScenario::onNewObject, newObjectEvent);
+        
+    };
+    
 }

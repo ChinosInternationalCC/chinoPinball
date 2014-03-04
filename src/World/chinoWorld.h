@@ -6,11 +6,14 @@
 //
 //
 
+#pragma once
+
 #include "ofxBullet.h"
 
 class chinoWorld : public ofxBulletWorldRigid
 {
     public:
         void update(void);
+        ofVec3f getWorldPos();
     
 };

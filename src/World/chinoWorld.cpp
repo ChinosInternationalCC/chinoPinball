@@ -20,3 +20,8 @@ void chinoWorld::update() {
 	}
 }
 
+//--------------------------------------------------------------
+ofVec3f chinoWorld::getWorldPos() {
+    ofxBulletRaycastData data = raycastTest(ofGetMouseX(), ofGetMouseY());
+    return data.pickPosWorld;
+}
