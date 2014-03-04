@@ -19,18 +19,21 @@
 #include "Scenario.h"
 #include "eventObjectScenario.h"
 #include "SimpleObject.h"
+#include "chinoWorld.h"
 
 class ScenarioEditor {
     
 public:
-	void setup(ofxBulletWorldRigid &world, Scenario &scenario);
+	void setup(chinoWorld &world, Scenario &scenario);
 	void update();
 	void draw();
     
+    void keyReleased(int key);
     void onMousePick( ofxBulletMousePickEvent &e );
     
-    ofxBulletWorldRigid *     world;
+    chinoWorld *     world;
     Scenario *                scenario;
 	
 	bool bEscenarioEditorMode;
+    void addObject(SimpleObject::shapeType type);
 };
