@@ -28,3 +28,5 @@ void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
 //void SimpleObject::draw(){
 //}
 
+
+

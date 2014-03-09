@@ -39,11 +39,12 @@ public:
     void onMoveEvent();
     void onReleaseEvent();
     
-    void onCollision();
-    void reset();
-    
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
+    
+    void onCollision();
+    void setDefaultZ();
+    void setPosition(ofVec3f position);
 
 
 };

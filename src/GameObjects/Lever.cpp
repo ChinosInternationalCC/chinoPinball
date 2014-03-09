@@ -33,7 +33,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
     
 	// lever rotation angles
@@ -161,6 +161,29 @@ string Lever::getObjectName(){
 //------------------------------------------------------------
 void Lever::onCollision(){}
 
+
+//------------------------------------------------------------
+void Lever::setDefaultZ(){
+    
+    position.z = -0.25;
+    setPosition(position);
+    
+}
+
+//------------------------------------------------------------
+void Lever::setPosition(ofVec3f position){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
 
 
 

@@ -19,8 +19,6 @@ public:
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url);
 	virtual void update();
 	virtual void draw();
-    void onCollision();
-    void reset();
     
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;
@@ -37,5 +35,9 @@ public:
 
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
+    
+    void onCollision();
+    void setDefaultZ();
+    void setPosition(ofVec3f position);
 
 };
