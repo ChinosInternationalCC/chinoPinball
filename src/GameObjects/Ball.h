@@ -23,7 +23,6 @@ public:
     void update(void);
     void draw(void);
     
-    //ofVec3f startPosition;
     float radius;
     float mass;
     ofxBulletSphere body;
@@ -41,8 +40,11 @@ public:
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
-    void onCollision();
     void reset();
+    
+    void onCollision();
+    void setDefaultZ();
+    void setPosition(ofVec3f position);
     
 
 private:

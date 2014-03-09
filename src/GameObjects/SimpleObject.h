@@ -32,7 +32,7 @@ public:
         ShapeTypeObstacle = 6
     };
     
-    //ofxBulletCustomShape	body;
+    ofxBulletCustomShape	body;
     shapeType type;
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
@@ -67,5 +67,6 @@ public:
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
     virtual void onCollision() = 0;
+    virtual void setDefaultZ() = 0;
    
 };

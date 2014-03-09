@@ -24,8 +24,6 @@ public:
 	virtual void draw();
 	void move(float height);
     
-    void onCollision();
-    
 	ofxBulletBox	body;
     
 	float lowerLimit;
@@ -38,6 +36,11 @@ public:
     
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
+    
+    void onCollision();
+    void setDefaultZ();
+    void setPosition(ofVec3f position);
+    
  /*
     energy ( float )
     Shape ( )

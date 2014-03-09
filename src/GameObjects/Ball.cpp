@@ -16,17 +16,16 @@ Ball::Ball(void){
 }
 
 //---------------------------------
-Ball::Ball(SimpleObject simpleObject){
-    return Ball::Ball();
-}
-
-//---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     m_status = BallStatusWaiting;
     position = pos;
+    
+    // place on table
+//    position.z = -radius/2.;
+    
     world = myWorld;
     
-    body.setProperties(1., .00); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     body.create(world.world, position, mass, radius);
     body.add();
     
@@ -82,4 +81,29 @@ string Ball::getObjectName(){
 
 //------------------------------------------------------------
 void Ball::onCollision(){}
+
+
+//------------------------------------------------------------
+void Ball::setDefaultZ(){
+    
+    position.z = -radius;
+    setPosition(position);
+    
+}
+
+//------------------------------------------------------------
+void Ball::setPosition(ofVec3f position){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
+
     
