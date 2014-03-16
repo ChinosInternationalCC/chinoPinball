@@ -35,5 +35,12 @@ public:
     Scenario *                scenario;
 	
 	bool bEscenarioEditorMode;
+    
+    SimpleObject *selectedObject; /* current selected object, NULL if no object selected */
+    void mouseDragged(ofMouseEventArgs &args);
+    void mouseMoved(ofMouseEventArgs &args);
+    void mousePressed(ofMouseEventArgs &args);
+    void mouseReleased(ofMouseEventArgs &args);
+    
     void addObject(SimpleObject::shapeType type);
 };
