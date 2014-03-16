@@ -18,6 +18,9 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	this->world->enableGrabbing(-1);
 	ofAddListener(world.MOUSE_PICK_EVENT, this, &ScenarioEditor::onMousePick);
     
+    ofRegisterMouseEvents(this);
+    
+    selectedObject = NULL;
 }
 
 //--------------------------------------------------------------
@@ -62,17 +65,52 @@ void ScenarioEditor::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
+    
+    selectedObject = NULL;
 	
     //    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
     for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
         if(*baseShape == e) {
+            
+            selectedObject = scenario->ScenarioObjects[i];
+            
+            //selectedObject
             ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
+            
 			//mousePickPos = e.pickPosWorld;
 			break;
 		}
 	}
+    
+}
+
+//--------------------------------------------------------
+void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
+    ofVec3f newPos;
+    if (selectedObject != NULL){
+        
+        newPos = selectedObject->position;
+        newPos.x = newPos.x + (args.x/1000);
+        newPos.y = newPos.y + (args.y/1000);
+        selectedObject -> position = newPos;
+        selectedObject -> setPosition(newPos);
+    }
+}
+
+//--------------------------------------------------------
+void ScenarioEditor::mouseMoved(ofMouseEventArgs &args){
+    
+}
+
+//--------------------------------------------------------
+void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
+    
+}
+
+//--------------------------------------------------------
+void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
     
 }
 
