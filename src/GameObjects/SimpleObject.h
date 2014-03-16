@@ -68,5 +68,6 @@ public:
     virtual string getObjectName() = 0;
     virtual void onCollision() = 0;
     virtual void setDefaultZ() = 0;
+    virtual void setPosition(ofVec3f position) = 0;
    
 };
