@@ -93,7 +93,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
-		bounds[i]->setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+		bounds[i]->setProperties(1., .0); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 	}
 
@@ -136,67 +136,45 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
 
 /*
     ofVec3f pos;
-
     pos.x = ScenarioXml.getValue("positionX",0.0, 0);
-
     pos.y = ScenarioXml.getValue("positionY",0.0, 0);
-
     pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
 */
 
     switch(typeObject){
-        
+
         case SimpleObject::ShapeTypeBall:{
-            
             Ball *oBall = new Ball();
-            
             oBall->setup(world, pos);
-            
+            oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
-            
         }
-            
-            break;
-            
+        break;
             
         case SimpleObject::ShapeTypeHammer:{
-            
             Hammer *oHammer = new Hammer();
-            
             oHammer->setup(world, pos);
-            
+            oHammer->setDefaultZ();
             ScenarioObjects.push_back(oHammer);
-            
         }
-            
-            break;
+        break;
             
         case SimpleObject::ShapeTypeLever:{
-            
             Lever *oLever = new Lever();
-            
             int dir = 0;
-            
             oLever->setup(world, pos, dir);
-            
+            oLever->setDefaultZ();
             ScenarioObjects.push_back(oLever);
-            
         }
-            
-            break;
+        break;
             
         case SimpleObject::ShapeTypeObstacle:{
-            
             Obstacle *oObstable = new Obstacle();
             oObstable->setup(world, pos, "cylinder.stl");
+            oObstable->setDefaultZ();
             ScenarioObjects.push_back(oObstable);
-            
         }
-            
-            break;
-            
-        default:
-            break;
+        break;
             
     }
 }
@@ -224,60 +202,35 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
             switch(Type){
                     
                 case SimpleObject::ShapeTypeBall:{
-                    
                     Ball *oBall = new Ball();
-                    
                     oBall->setup(world, pos);
-                    
                     ScenarioObjects.push_back(oBall);
-                    
                 }
-                    
-                    break;
-                    
+                break;
                     
                 case SimpleObject::ShapeTypeHammer:{
-                    
                     Hammer *oHammer = new Hammer();
-                    
                     oHammer->setup(world, pos);
-                    
                     ScenarioObjects.push_back(oHammer);
-                    
                 }
-                    
-                    break;
+                break;
                     
                 case SimpleObject::ShapeTypeLever:{
-                    
                     Lever *oLever = new Lever();
-                    
                     int dir = Object["SimpleObject"]["SubType"].asInt();
-                    
                     oLever->setup(world, pos, dir);
-                    
                     ScenarioObjects.push_back(oLever);
-                    
                 }
-                    
-                    break;
+                break;
                     
                 case SimpleObject::ShapeTypeObstacle:{
-                    
                     Obstacle *oObstable = new Obstacle();
                     oObstable->setup(world, pos, "cylinder.stl");
                     ScenarioObjects.push_back(oObstable);
-                    
                 }
-                    
-                    break;
-                    
-                default:
-                    break;
+                break;
                     
             }
-
-
             
         }
 		
@@ -312,67 +265,40 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             
             switch(Type){
-                    
                 case SimpleObject::ShapeTypeBall:{
-                    
                     Ball *oBall = new Ball();
-                    
                     oBall->setup(world, pos);
-                    
                     ScenarioObjects.push_back(oBall);
-                    
                 }
-                    
-                    break;
-                    
+                break;
                     
                 case SimpleObject::ShapeTypeHammer:{
-                    
                     Hammer *oHammer = new Hammer();
-                    
                     oHammer->setup(world, pos);
-                    
                     ScenarioObjects.push_back(oHammer);
-                    
                 }
-                    
-                    break;
+                break;
                     
                 case SimpleObject::ShapeTypeLever:{
-                    
                     Lever *oLever = new Lever();
-                    
                     int dir = ScenarioXml.getValue("LeverType", 0);
-                    
                     oLever->setup(world, pos, dir);
-                    
                     ScenarioObjects.push_back(oLever);
-                    
                 }
-                    
-                    break;
+                break;
                     
                 case SimpleObject::ShapeTypeObstacle:{
-                    
                     Obstacle *oObstable = new Obstacle();
                     oObstable->setup(world, pos, "cylinder.stl");
                     ScenarioObjects.push_back(oObstable);
-                    
                 }
-                    
-                    break;
-                    
-                default:
-                    break;
+                break;
 
             }
             ScenarioXml.popTag();
         }
         
-        
-        
         ScenarioXml.popTag(); //pop position
-        
     }
     
     else{

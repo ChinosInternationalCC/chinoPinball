@@ -17,7 +17,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     body.create(world.world, position, 0, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
     isKeyPressed = false;
     
@@ -126,4 +126,27 @@ void Hammer::onCollision(){
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
 
+}
+
+//------------------------------------------------------------
+void Hammer::setDefaultZ(){
+    
+    position.z = -0.375;
+    setPosition(position);
+    
+}
+
+//------------------------------------------------------------
+void Hammer::setPosition(ofVec3f position){
+
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
 }

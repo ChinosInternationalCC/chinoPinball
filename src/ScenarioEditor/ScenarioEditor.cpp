@@ -35,8 +35,7 @@ void ScenarioEditor::keyReleased(int key){
     {
 		case 'm':
             bEscenarioEditorMode = !bEscenarioEditorMode;
-			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
-            
+			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;   
             break;
             
         case 'e':
