@@ -113,6 +113,7 @@
 		8194FB8D031BF3DAFEFBD316 /* btSoftBodySolverOutputCLtoGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 115C0294FE71A4AB62E648C0 /* btSoftBodySolverOutputCLtoGL.cpp */; };
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
 		8423C8E018B956BC001DFD15 /* ofxGrabCam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */; };
+		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		86B5CB1E9CB0E4DABC2FC50F /* btUnionFind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D778CD09C48AB85212E3C3C /* btUnionFind.cpp */; };
 		86D03BF663571ACD4D255296 /* btGearConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 315BF9DB7FADA1FFA6C10C4A /* btGearConstraint.cpp */; };
@@ -606,6 +607,8 @@
 		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
 		8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGrabCam.cpp; sourceTree = "<group>"; };
 		8423C8DB18B956BC001DFD15 /* ofxGrabCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGrabCam.h; sourceTree = "<group>"; };
+		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
+		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
 		855DCF71E53BBF4F674E54A6 /* btSoftRigidDynamicsWorld.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSoftRigidDynamicsWorld.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.h; sourceTree = SOURCE_ROOT; };
 		856BF5AB0322D0689EE63829 /* ofxUIRangeSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIRangeSlider.h; path = ../../../addons/ofxUI/src/ofxUIRangeSlider.h; sourceTree = SOURCE_ROOT; };
@@ -1634,6 +1637,8 @@
 		8422374018C10CD6009CE9EC /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */,
+				84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */,
 				8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */,
 				8422374218C10D6A009CE9EC /* eventObjectScenario.h */,
 			);
@@ -2657,6 +2662,7 @@
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				A7C5BC5618B788BB006187D9 /* ofxSyphonClient.mm in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
+				84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,

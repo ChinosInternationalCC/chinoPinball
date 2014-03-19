@@ -66,12 +66,12 @@ void ScenarioEditor::keyReleased(int key){
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
     
     selectedObject = NULL;
-	
-    //    cout << "ScenarioEditor::onMousePick : selected a body!!!" << endl;
+
     for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
 		ofxBulletBaseShape *baseShape;
         baseShape = scenario->ScenarioObjects[i]->getBulletBaseShape();
-        if(*baseShape == e) {
+      
+		if( *baseShape == e ) {
             
             selectedObject = scenario->ScenarioObjects[i];
             
@@ -79,20 +79,30 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
             ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
             
 			//mousePickPos = e.pickPosWorld;
-			break;
+			//Save current location
+			objPressedLoc = ofVec2f(selectedObject->position.x, selectedObject->position.y);
+			
+			break; //Stop looking for objects
 		}
 	}
-    
+	
 }
 
 //--------------------------------------------------------
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
-    ofVec3f newPos;
+
+	ofVec2f mousePos = ofVec2f(args.x, args.y);
+	ofVec2f mouseDir = objPressedLoc - mousePos;
+	mouseDir.normalize();
+	
+	ofVec3f newPos;
     if (selectedObject != NULL){
         
         newPos = selectedObject->position;
-        newPos.x = newPos.x + (args.x/1000);
-        newPos.y = newPos.y + (args.y/1000);
+        //newPos.x = newPos.x + (args.x/1000);
+        //newPos.y = newPos.y + (args.y/1000);
+		newPos += 1* mouseDir;
+		
         selectedObject -> position = newPos;
         selectedObject -> setPosition(newPos);
     }
@@ -105,12 +115,25 @@ void ScenarioEditor::mouseMoved(ofMouseEventArgs &args){
 
 //--------------------------------------------------------
 void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
-    
+	
+	if(bEscenarioEditorMode){
+		///deactivate camera mouse events //can be added more params to do this action in eventMoveObjectScenario
+		eventMoveObjectScenario newMoveObjectEvent;
+        newMoveObjectEvent.bMovingObject = true;
+        ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
+	}
 }
 
 //--------------------------------------------------------
 void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
     
+	if(bEscenarioEditorMode){
+		///deactivate camera mouse events //can be added more params to do this action in eventMoveObjectScenario
+		eventMoveObjectScenario newMoveObjectEvent;
+        newMoveObjectEvent.bMovingObject = false;
+        ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
+	}
+	
 }
 
 //--------------------------------------------------------------
@@ -124,7 +147,6 @@ void ScenarioEditor::addObject(SimpleObject::shapeType type) {
         newObjectEvent.posObject = ofVec3f(world->getWorldPos());
         newObjectEvent.type = type;
         ofNotifyEvent(eventObjectScenario::onNewObject, newObjectEvent);
-        
     };
     
 }
