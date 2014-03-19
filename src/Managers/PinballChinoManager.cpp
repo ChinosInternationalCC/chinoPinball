@@ -50,6 +50,8 @@ void PinballChinoManager::update(){
 	world.update();
     
     myScenario.update();
+	
+	InputEventManager::update(); // Key Events
     
 }
 

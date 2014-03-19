@@ -36,12 +36,11 @@ void ScenarioEditor::keyReleased(int key){
     
     switch(key)
     {
-		case 'm':
+		case 'e':
             bEscenarioEditorMode = !bEscenarioEditorMode;
 			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;   
             break;
-            
-        case 'e':
+        case 'x':
             scenario->saveToXml();
             cout << "saving scenario to Xml" << endl;
             break;

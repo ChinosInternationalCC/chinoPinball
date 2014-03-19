@@ -118,10 +118,11 @@ PinballChinoManager
 InputEventManager
 * enter - restart game
 * down - move hammer
-* shift - move lever
+* m/M - move right lever
+* z/Z - move right lever
 ScenarioEditor
-* m - toggle editor mode
-* s - saving scenario to file
+* e - toggle editor mode
+* x - saving scenario to file
 * 0 - add a ball
 * 3 - add a lever
 * 5 - add a hammer

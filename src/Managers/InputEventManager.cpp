@@ -10,8 +10,23 @@
 
 
 InputEventManager::InputEventManager(){
+	
+	keyStatus.resize (MAXKEYS);
+	for(int i=0; i< keyStatus.size(); i++) keyStatus[i] = false;
     
 }
+
+//--------------------------------------------------------------
+void InputEventManager::update()
+{
+	/*if( ofGetKeyPressed('z') ) {
+		onMoveLeftLeverEvent();
+	}
+	if( ofGetKeyPressed('m') ) {
+		onMoveRightLeverEvent();
+	}*/
+}
+
 
 //--------------------------------------------------------------
 void InputEventManager::keyPressed(int key)
@@ -26,14 +41,14 @@ void InputEventManager::keyPressed(int key)
         case OF_KEY_DOWN:
             onMoveBallLauncherEvent();
             break;
-            
-        case OF_KEY_LEFT_SHIFT:
+        case 'z':
+        case 'Z':
             onMoveLeftLeverEvent();
-            break;
-            
-        case OF_KEY_RIGHT_SHIFT:
+			break;
+        case 'm':
+        case 'M':
             onMoveRightLeverEvent();
-            break;
+	       break;
             
     }
     
@@ -50,11 +65,13 @@ void InputEventManager::keyReleased(int key)
             onReleaseBallLauncherEvent();
             break;
             
-        case OF_KEY_LEFT_SHIFT:
+        case 'z':
+		case 'Z':
             onReleaseLeftLeverEvent();
             break;
             
-        case OF_KEY_RIGHT_SHIFT:
+        case 'm':
+        case 'M':
             onReleaseRightLeverEvent();
             break;
             
