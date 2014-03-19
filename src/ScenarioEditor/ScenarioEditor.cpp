@@ -91,7 +91,19 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 
 //--------------------------------------------------------
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
+    
+    
+    if (bEscenarioEditorMode && (selectedObject != NULL))
+    {
+        ofVec3f newPos = selectedObject->position;
+        newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
+        newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
+        selectedObject -> position = newPos;
+        selectedObject -> setPosition(newPos);
+        mouseOldPosition = args;
+    }
 
+    /*
 	if(bEscenarioEditorMode){
 		ofVec2f mousePos = ofVec2f(args.x, args.y);
 		ofVec2f mouseDir = mousePickLoc - mousePos;
@@ -111,6 +123,7 @@ void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
 			selectedObject -> setPosition(newPos);
 		}
 	}
+     */
 }
 
 //--------------------------------------------------------
@@ -127,6 +140,8 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
         newMoveObjectEvent.bMovingObject = true;
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 	}
+    
+    mouseOldPosition = args;
 }
 
 //--------------------------------------------------------
