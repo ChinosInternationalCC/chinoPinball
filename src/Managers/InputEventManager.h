@@ -44,7 +44,6 @@ public:
     void keyReleased(int key);
 	
 	void update();
-	vector<bool> keyStatus;
     
 };
 

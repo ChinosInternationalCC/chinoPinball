@@ -11,8 +11,6 @@
 
 InputEventManager::InputEventManager(){
 	
-	keyStatus.resize (MAXKEYS);
-	for(int i=0; i< keyStatus.size(); i++) keyStatus[i] = false;
     
 }
 
