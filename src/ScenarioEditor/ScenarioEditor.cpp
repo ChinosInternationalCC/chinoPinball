@@ -79,8 +79,9 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
             ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
             
 			//mousePickPos = e.pickPosWorld;
-			//Save current location
-			objPressedLoc = ofVec2f(selectedObject->position.x, selectedObject->position.y);
+			//Save current location and current mouse
+			//objPressedLoc = ofVec2f(selectedObject->position.x, selectedObject->position.y);
+			mousePickLoc = ofVec2f(ofGetMouseX(), ofGetMouseY());
 			
 			break; //Stop looking for objects
 		}
@@ -91,21 +92,25 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 //--------------------------------------------------------
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
 
-	ofVec2f mousePos = ofVec2f(args.x, args.y);
-	ofVec2f mouseDir = objPressedLoc - mousePos;
-	mouseDir.normalize();
-	
-	ofVec3f newPos;
-    if (selectedObject != NULL){
-        
-        newPos = selectedObject->position;
-        //newPos.x = newPos.x + (args.x/1000);
-        //newPos.y = newPos.y + (args.y/1000);
-		newPos += 1* mouseDir;
+	if(bEscenarioEditorMode){
+		ofVec2f mousePos = ofVec2f(args.x, args.y);
+		ofVec2f mouseDir = mousePickLoc - mousePos;
+		mouseDir.normalize();
 		
-        selectedObject -> position = newPos;
-        selectedObject -> setPosition(newPos);
-    }
+		ofVec3f newPos;
+		if (selectedObject != NULL){
+			
+			newPos = selectedObject->position;
+			//newPos.x = newPos.x + (args.x/1000);
+			//newPos.y = newPos.y + (args.y/1000);
+			newPos += 0.1* mouseDir;
+			
+			ofLogVerbose("EditorVerbose") << "mouseDragged, newpos = " << newPos << " mouseDir =" << mouseDir << endl;
+			
+			selectedObject -> position = newPos;
+			selectedObject -> setPosition(newPos);
+		}
+	}
 }
 
 //--------------------------------------------------------

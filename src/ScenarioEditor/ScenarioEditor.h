@@ -31,7 +31,8 @@ public:
     
     void keyReleased(int key);
     void onMousePick( ofxBulletMousePickEvent &e );
-	ofVec3f objPressedLoc;
+	//ofVec3f objPressedLoc;
+	ofVec2f mousePickLoc;
     
     chinoWorld *	world;
     Scenario *		scenario;
