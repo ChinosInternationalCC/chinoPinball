@@ -112,7 +112,6 @@
 		8168D5883AC54AC2E2BEE525 /* btKinematicCharacterController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B85C8FE69EAECFB5655E2AFE /* btKinematicCharacterController.cpp */; };
 		8194FB8D031BF3DAFEFBD316 /* btSoftBodySolverOutputCLtoGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 115C0294FE71A4AB62E648C0 /* btSoftBodySolverOutputCLtoGL.cpp */; };
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
-		8423C8E018B956BC001DFD15 /* ofxGrabCam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		86B5CB1E9CB0E4DABC2FC50F /* btUnionFind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D778CD09C48AB85212E3C3C /* btUnionFind.cpp */; };
@@ -605,8 +604,6 @@
 		8411535E8E213C0D511F83CE /* btGhostObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btGhostObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btGhostObject.cpp; sourceTree = SOURCE_ROOT; };
 		8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventObjectScenario.cpp; sourceTree = "<group>"; };
 		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
-		8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGrabCam.cpp; sourceTree = "<group>"; };
-		8423C8DB18B956BC001DFD15 /* ofxGrabCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGrabCam.h; sourceTree = "<group>"; };
 		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
 		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
@@ -1645,24 +1642,6 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
-		8423C8BF18B956BC001DFD15 /* ofxGrabCam */ = {
-			isa = PBXGroup;
-			children = (
-				8423C8D918B956BC001DFD15 /* src */,
-			);
-			name = ofxGrabCam;
-			path = ../../../addons/ofxGrabCam;
-			sourceTree = "<group>";
-		};
-		8423C8D918B956BC001DFD15 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				8423C8DA18B956BC001DFD15 /* ofxGrabCam.cpp */,
-				8423C8DB18B956BC001DFD15 /* ofxGrabCam.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		86D2677079A3AF4A5A88E29A /* oscpack */ = {
 			isa = PBXGroup;
 			children = (
@@ -1968,7 +1947,6 @@
 			isa = PBXGroup;
 			children = (
 				A58C5E9218BBDCA000E99E78 /* ofxJSON */,
-				8423C8BF18B956BC001DFD15 /* ofxGrabCam */,
 				A7C5BC2618B788BA006187D9 /* ofxSyphon */,
 				2C8F245ACBE61E28646C17F2 /* ofxAssimpModelLoader */,
 				CDA47165D96F2059C5206BBD /* ofxBullet */,
@@ -2654,7 +2632,6 @@
 				EBCF8569A94863583B5C05C3 /* MiniCLTask.cpp in Sources */,
 				EF6D6D2BC16EDA04461ECBF5 /* MiniCLTaskScheduler.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
-				8423C8E018B956BC001DFD15 /* ofxGrabCam.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
