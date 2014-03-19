@@ -19,7 +19,7 @@
 #include "ofxXmlSettings.h"
 #include "Ball.h"
 #include "eventObjectScenario.h"
-#include "ofxGrabCam.h"
+#include "eventMoveObjectScenario.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -33,15 +33,16 @@ public:
     void keyReleased(int key);
     void onCollision(ofxBulletCollisionData& cdata);
     
-	////////////////////////////////////////
     chinoWorld     world;
-    /////////////////////////////////////////
+    
+	/////////////////////////////////////////
     ofEasyCam				camera;
     ofMatrix4x4 savedPose;
 	ofxXmlSettings XML;
 	void saveCameraPosition(ofMatrix4x4 _camPose);
 	ofMatrix4x4 loadCameraPosition();
-    //////////////////////////////////////////
+    bool bMouseCameraEvents(bool activate);
+	//////////////////////////////////////////
 	ofLight					light;
     
     Scenario                myScenario;
@@ -61,4 +62,6 @@ public:
 private:
 	
 	void listenerAddObject2Scenario(eventObjectScenario & args);
+	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
+	
 };
