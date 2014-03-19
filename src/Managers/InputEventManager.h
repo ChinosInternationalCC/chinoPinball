@@ -16,6 +16,8 @@
 #include "ofxOsc.h"
 #endif
 
+#define MAXKEYS 10
+
 /* this class is the entry point from all the interfaces suported
  * eg: keyboard, OSC TBD
  * should be extended by the PinballChino manager
@@ -40,6 +42,8 @@ public:
     
     void keyPressed(int key);
     void keyReleased(int key);
+	
+	void update();
     
 };
 

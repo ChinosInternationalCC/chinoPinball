@@ -38,9 +38,13 @@ void PinballChinoManager::setup(){
     
     // collision detection
     world.enableCollisionEvents();
+
+	// Listeners
 	ofAddListener(world.COLLISION_EVENT, this, &PinballChinoManager::onCollision);
 	
 	ofAddListener(eventObjectScenario::onNewObject ,this, &PinballChinoManager::listenerAddObject2Scenario);
+	
+	ofAddListener(eventMoveObjectScenario::onMoveObject ,this, &PinballChinoManager::listenerMovingObjectScenario);
 
 }
 
@@ -50,6 +54,8 @@ void PinballChinoManager::update(){
 	world.update();
     
     myScenario.update();
+	
+	InputEventManager::update(); // Key Events
     
 }
 
@@ -266,8 +272,24 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
 	}
 }
 
-//listener event to add Objects
+////////////////////////////////////////////////////////////////////////
+//listener events
+
 //------------------------------
+//Add Object
 void PinballChinoManager::listenerAddObject2Scenario(eventObjectScenario & args){
 	myScenario.pushObject(world, args.type, args.posObject);
+}
+
+//------------------------------
+//Activat / Deactivate Camera mouse events
+void PinballChinoManager::listenerMovingObjectScenario(eventMoveObjectScenario & args){
+
+	if(args.bMovingObject){
+		camera.disableMouseInput();
+	}
+	else{
+		camera.enableMouseInput();
+	}
+	
 }
