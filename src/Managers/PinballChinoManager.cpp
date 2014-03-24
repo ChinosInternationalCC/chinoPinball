@@ -8,6 +8,7 @@
 
 #include "PinballChinoManager.h"
 #include "Ball.h"
+#include "DMXManager.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
     
@@ -56,6 +57,8 @@ void PinballChinoManager::update(){
     myScenario.update();
 	
 	InputEventManager::update(); // Key Events
+    
+    DMXManager::getInstance()->update();
     
 }
 

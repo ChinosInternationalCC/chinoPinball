@@ -13,3 +13,4 @@ ${PREFIX}NickHardeman/ofxBullet.git
 ${PREFIX}astellato/ofxSyphon.git
 ${PREFIX}rezaali/ofxUI.git
 ${PREFIX}jefftimesten/ofxJSON.git
+${PREFIX}kylemcdonald/ofxDmx.git
