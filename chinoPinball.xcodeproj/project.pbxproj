@@ -141,6 +141,8 @@
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
 		A589868818B94214007D9BB5 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
+		A58AA50418E0BF4700AA5372 /* DMXManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58AA50218E0BF4700AA5372 /* DMXManager.cpp */; };
+		A58AA52D18E0BFFE00AA5372 /* ofxDmx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58AA52718E0BFFE00AA5372 /* ofxDmx.cpp */; };
 		A58C5F0818BBDCA100E99E78 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EEF18BBDCA100E99E78 /* json_reader.cpp */; };
 		A58C5F0918BBDCA100E99E78 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EF118BBDCA100E99E78 /* json_value.cpp */; };
 		A58C5F0A18BBDCA100E99E78 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58C5EF318BBDCA100E99E78 /* json_writer.cpp */; };
@@ -687,6 +689,10 @@
 		A309102D19BCB56BA0130302 /* gim_array.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_array.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h; sourceTree = SOURCE_ROOT; };
 		A430FFBD7BF0BA514D54CBDB /* gim_geom_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geom_types.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h; sourceTree = SOURCE_ROOT; };
 		A4CB26411CB1901F8D91B850 /* cl_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl_platform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/cl_platform.h; sourceTree = SOURCE_ROOT; };
+		A58AA50218E0BF4700AA5372 /* DMXManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DMXManager.cpp; path = Managers/DMXManager.cpp; sourceTree = "<group>"; };
+		A58AA50318E0BF4700AA5372 /* DMXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMXManager.h; path = Managers/DMXManager.h; sourceTree = "<group>"; };
+		A58AA52718E0BFFE00AA5372 /* ofxDmx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDmx.cpp; path = ../../../addons/ofxDmx/src/ofxDmx.cpp; sourceTree = SOURCE_ROOT; };
+		A58AA52818E0BFFE00AA5372 /* ofxDmx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxDmx.h; path = ../../../addons/ofxDmx/src/ofxDmx.h; sourceTree = SOURCE_ROOT; };
 		A58C5EE318BBDCA100E99E78 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = autolink.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/autolink.h; sourceTree = SOURCE_ROOT; };
 		A58C5EE418BBDCA100E99E78 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/config.h; sourceTree = SOURCE_ROOT; };
 		A58C5EE518BBDCA100E99E78 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = features.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/features.h; sourceTree = SOURCE_ROOT; };
@@ -1242,6 +1248,8 @@
 				8749B88BF2C6EB1FC5B9F5E6 /* Score.h */,
 				A9B2F59718BF56AB002B9892 /* SoundManager.cpp */,
 				A9B2F59818BF56AB002B9892 /* SoundManager.h */,
+				A58AA50218E0BF4700AA5372 /* DMXManager.cpp */,
+				A58AA50318E0BF4700AA5372 /* DMXManager.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1770,6 +1778,24 @@
 			name = ofxUI;
 			sourceTree = "<group>";
 		};
+		A58AA50518E0BFFE00AA5372 /* ofxDmx */ = {
+			isa = PBXGroup;
+			children = (
+				A58AA52618E0BFFE00AA5372 /* src */,
+			);
+			name = ofxDmx;
+			path = ../../../addons/ofxDmx;
+			sourceTree = "<group>";
+		};
+		A58AA52618E0BFFE00AA5372 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A58AA52718E0BFFE00AA5372 /* ofxDmx.cpp */,
+				A58AA52818E0BFFE00AA5372 /* ofxDmx.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		A58C5E9218BBDCA000E99E78 /* ofxJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -1946,6 +1972,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A58AA50518E0BFFE00AA5372 /* ofxDmx */,
 				A58C5E9218BBDCA000E99E78 /* ofxJSON */,
 				A7C5BC2618B788BA006187D9 /* ofxSyphon */,
 				2C8F245ACBE61E28646C17F2 /* ofxAssimpModelLoader */,
@@ -2608,6 +2635,7 @@
 				38DD7AFE62377D2C680E66F5 /* SpuCollisionShapes.cpp in Sources */,
 				2D0843F32BF2EC0173C8904F /* SpuContactResult.cpp in Sources */,
 				E71FE4B3FB16BFBF34F253A5 /* SpuGatheringCollisionTask.cpp in Sources */,
+				A58AA52D18E0BFFE00AA5372 /* ofxDmx.cpp in Sources */,
 				59B0541E9D0599F797B1EBE1 /* SpuMinkowskiPenetrationDepthSolver.cpp in Sources */,
 				5291D025DEB2CCAD1E9B304B /* SpuSampleTask.cpp in Sources */,
 				F4D76A7D05B937286CEC6144 /* SpuSampleTaskProcess.cpp in Sources */,
@@ -2651,6 +2679,7 @@
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
+				A58AA50418E0BF4700AA5372 /* DMXManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2972,6 +3001,104 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxAssimpModelLoader/libs,
+					../../../addons/ofxAssimpModelLoader/libs/assimp,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/include,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/include/Compiler,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/lib,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx,
+					../../../addons/ofxAssimpModelLoader/src,
+					../../../addons/ofxBullet/libs,
+					../../../addons/ofxBullet/libs/bullet2.8.1,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11/HLSL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/AMD,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Intel,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/Shared,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuNarrowPhaseCollisionTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuSampleTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/MiniCLTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/fat,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/i386,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/x86_64,
+					../../../addons/ofxBullet/src,
+					../../../addons/ofxBullet/src/events,
+					../../../addons/ofxBullet/src/joints,
+					../../../addons/ofxBullet/src/render,
+					../../../addons/ofxBullet/src/shapes,
+					../../../addons/ofxOsc/libs,
+					../../../addons/ofxOsc/libs/oscpack,
+					../../../addons/ofxOsc/libs/oscpack/src,
+					../../../addons/ofxOsc/libs/oscpack/src/ip,
+					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
+					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
+					../../../addons/ofxOsc/libs/oscpack/src/osc,
+					../../../addons/ofxOsc/src,
+					../../../addons/ofxSyphon/libs,
+					../../../addons/ofxSyphon/libs/Syphon,
+					../../../addons/ofxSyphon/libs/Syphon/lib,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/src,
+					../../../addons/ofxSyphon/src,
+					../../../addons/ofxUI/libs,
+					../../../addons/ofxUI/src,
+					../../../addons/ofxXmlSettings/libs,
+					../../../addons/ofxXmlSettings/src,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/src,
+					src,
+					src/GameObjects,
+					src/Managers,
+					src/Media,
+					src/Missions,
+					src/Scenario,
+					src/ScenarioEditor,
+					src/World,
+					../../../addons/ofxDmx/src,
+				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -3058,6 +3185,104 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxAssimpModelLoader/libs,
+					../../../addons/ofxAssimpModelLoader/libs/assimp,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/include,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/include/Compiler,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/lib,
+					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx,
+					../../../addons/ofxAssimpModelLoader/src,
+					../../../addons/ofxBullet/libs,
+					../../../addons/ofxBullet/libs/bullet2.8.1,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11/HLSL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/AMD,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Intel,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/Shared,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuNarrowPhaseCollisionTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuSampleTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/MiniCLTask,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar,
+					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/fat,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/i386,
+					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/x86_64,
+					../../../addons/ofxBullet/src,
+					../../../addons/ofxBullet/src/events,
+					../../../addons/ofxBullet/src/joints,
+					../../../addons/ofxBullet/src/render,
+					../../../addons/ofxBullet/src/shapes,
+					../../../addons/ofxOsc/libs,
+					../../../addons/ofxOsc/libs/oscpack,
+					../../../addons/ofxOsc/libs/oscpack/src,
+					../../../addons/ofxOsc/libs/oscpack/src/ip,
+					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
+					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
+					../../../addons/ofxOsc/libs/oscpack/src/osc,
+					../../../addons/ofxOsc/src,
+					../../../addons/ofxSyphon/libs,
+					../../../addons/ofxSyphon/libs/Syphon,
+					../../../addons/ofxSyphon/libs/Syphon/lib,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Headers,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources,
+					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources/English.lproj,
+					../../../addons/ofxSyphon/libs/Syphon/src,
+					../../../addons/ofxSyphon/src,
+					../../../addons/ofxUI/libs,
+					../../../addons/ofxUI/src,
+					../../../addons/ofxXmlSettings/libs,
+					../../../addons/ofxXmlSettings/src,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/src,
+					src,
+					src/GameObjects,
+					src/Managers,
+					src/Media,
+					src/Missions,
+					src/Scenario,
+					src/ScenarioEditor,
+					src/World,
+					../../../addons/ofxDmx/src,
+				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
