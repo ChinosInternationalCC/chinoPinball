@@ -47,6 +47,8 @@ public:
     void mouseReleased(ofMouseEventArgs &args);
     
     void addObject(SimpleObject::shapeType type);
+    
+    ofMouseEventArgs mouseOldPosition;
 	
 	
 };
