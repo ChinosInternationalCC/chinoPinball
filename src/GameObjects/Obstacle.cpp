@@ -36,7 +36,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
     btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
@@ -67,10 +67,10 @@ void Obstacle::update(){
 void Obstacle::draw(){
 	
 	int t = ofGetElapsedTimef()*100-collisionTime;
-    if(t<120){
-        ofSetColor(255, 0, 255);
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
     }else{
-        ofSetColor(255, 255, 255);
+        ofSetHexColor(color);
     }
     
     //ofLog(OF_LOG_NOTICE, ofToString(t));
@@ -105,10 +105,30 @@ void Obstacle::onCollision(){
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
     SoundManager::getInstance()->PlaySound(0);
-
+    
 }
 
+//------------------------------------------------------------
+void Obstacle::setDefaultZ(){
+    
+    position.z = -0.5;
+    setPosition(position);
+    
+}
 
-//--------------------------------------------------------------
-void Obstacle::reset() {}
+//------------------------------------------------------------
+void Obstacle::setPosition(ofVec3f position){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
+
 

@@ -11,14 +11,15 @@
 
 #include "ofMain.h"
 #include "ofxBullet.h"
+#include "chinoWorld.h"
 #include "Scenario.h"
 #include "ScenarioEditor.h"
 #include "GameStatusDisplay.h"
 #include "InputEventManager.h"
-#include "chinoWorld.h"
 #include "ofxXmlSettings.h"
-#include "ofxGrabCam.h"
 #include "Ball.h"
+#include "eventObjectScenario.h"
+#include "eventMoveObjectScenario.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -33,19 +34,15 @@ public:
     void onCollision(ofxBulletCollisionData& cdata);
     
     chinoWorld     world;
-
-    //	ofCamera                camera;
-    ofEasyCam				camera;
-    //////////////////////////////////////////
-	//camera settings
-//	ofxGrabCam camera;
-	ofMatrix4x4 savedPose;
     
+	/////////////////////////////////////////
+    ofEasyCam				camera;
+    ofMatrix4x4 savedPose;
 	ofxXmlSettings XML;
 	void saveCameraPosition(ofMatrix4x4 _camPose);
 	ofMatrix4x4 loadCameraPosition();
-    //////////////////////////////////////////
-    
+    bool bMouseCameraEvents(bool activate);
+	//////////////////////////////////////////
 	ofLight					light;
     
     Scenario                myScenario;
@@ -55,8 +52,16 @@ public:
     
     void onRestartGameEvent(void);
     void onMoveLeftLeverEvent(void);
+    void onReleaseLeftLeverEvent(void);
     void onMoveRightLeverEvent(void);
+    void onReleaseRightLeverEvent(void);
     void onMoveBallLauncherEvent(void);
-
+    void onReleaseBallLauncherEvent(void);
     
+	
+private:
+	
+	void listenerAddObject2Scenario(eventObjectScenario & args);
+	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
+	
 };

@@ -58,6 +58,7 @@ http://www.youtube.com/watch?v=YvyRM175uQ0
 * ofxBullet https://github.com/NickHardeman/ofxBullet
 * ofxSyphon https://github.com/astellato/ofxSyphon
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
+* ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 
 Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.8, LLVM compiler) and Windows (CodeBlocks) (not countinued)
 
@@ -101,3 +102,29 @@ Editor should have the following functionalities:
 	* rotation
 	* color
 * objects types: lever, hammer, obstacle ...
+
+
+***
+###Key bingings
+
+testApp
+* F1 - OF_LOG_SILENT
+* F2 - OF_LOG_VERBOSE
+* F3 - CollisionVerbose
+* F4 - EditorVerbose
+PinballChinoManager
+* f - fullscreen
+* s - save camera position to file
+* l - load camera postion
+InputEventManager
+* enter - restart game
+* down - move hammer
+* m/M - move right lever
+* z/Z - move right lever
+ScenarioEditor
+* e - toggle editor mode
+* x - saving scenario to file
+* 0 - add a ball
+* 3 - add a lever
+* 5 - add a hammer
+* 6 - add an obstacle

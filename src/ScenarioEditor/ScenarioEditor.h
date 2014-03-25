@@ -17,16 +17,38 @@
 
 #include "ofxBullet.h"
 #include "Scenario.h"
+#include "eventObjectScenario.h"
+#include "eventMoveObjectScenario.h"
+#include "SimpleObject.h"
+#include "chinoWorld.h"
 
 class ScenarioEditor {
     
 public:
-	void setup(ofxBulletWorldRigid &world, Scenario &scenario);
+	void setup(chinoWorld &world, Scenario &scenario);
 	void update();
 	void draw();
     
+    void keyReleased(int key);
     void onMousePick( ofxBulletMousePickEvent &e );
+	//ofVec3f objPressedLoc;
+	ofVec2f mousePickLoc;
     
-    ofxBulletWorldRigid *     world;
-    Scenario *                scenario;
+    chinoWorld *	world;
+    Scenario *		scenario;
+	
+	bool bEscenarioEditorMode;
+    
+    SimpleObject *	selectedObject; /* current selected object, NULL if no object selected */
+   
+	void mouseDragged(ofMouseEventArgs &args);
+    void mouseMoved(ofMouseEventArgs &args);
+    void mousePressed(ofMouseEventArgs &args);
+    void mouseReleased(ofMouseEventArgs &args);
+    
+    void addObject(SimpleObject::shapeType type);
+    
+    ofMouseEventArgs mouseOldPosition;
+	
+	
 };

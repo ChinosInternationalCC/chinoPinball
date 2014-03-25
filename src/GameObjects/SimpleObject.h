@@ -32,7 +32,7 @@ public:
         ShapeTypeObstacle = 6
     };
     
-    //ofxBulletCustomShape	body;
+    ofxBulletCustomShape	body;
     shapeType type;
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
@@ -44,7 +44,9 @@ public:
     ofMatrix4x4 worldposition;
 	ofVec3f position;
 	bool bvisible;
-	int colisionCounter;
+    int color;
+    int highlightColor;
+    int highlightTime;
 	
 	//physics vars
 	//enum {Static/dynamic/Kinematic}
@@ -58,12 +60,14 @@ public:
 	//ofEvent bColision;
 	bool bColision;
 	int  collisionTime;
+	int colisionCounter;
     
 	//graphic vars
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
     virtual void onCollision() = 0;
-    virtual void reset() = 0;
+    virtual void setDefaultZ() = 0;
+    virtual void setPosition(ofVec3f position) = 0;
    
 };

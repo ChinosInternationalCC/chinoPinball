@@ -19,6 +19,7 @@
 #include "ofxXmlSettings.h"
 #include "ofxJSONElement.h"
 
+
 class Scenario {
     
 public:
@@ -54,4 +55,5 @@ public:
 	//basic World
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;
+	
 };

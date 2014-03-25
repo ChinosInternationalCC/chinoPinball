@@ -35,15 +35,16 @@ public:
     float speed;
     float axisX;
     
-	void keyPressed(ofKeyEventArgs& key);
-	void keyReleased(ofKeyEventArgs& key);
     bool isKeyPressed;
-    
-    void onCollision();
-    void reset();
+    void onMoveEvent();
+    void onReleaseEvent();
     
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
+    
+    void onCollision();
+    void setDefaultZ();
+    void setPosition(ofVec3f position);
 
 
 };

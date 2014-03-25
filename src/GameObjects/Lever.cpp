@@ -33,7 +33,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
     
 	// lever rotation angles
@@ -56,8 +56,6 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     // rotate lever to lower position
     rotate(lowerLimit);
     
-    
-	ofRegisterKeyEvents(this);
     isKeyPressed = false;
     
 }
@@ -82,13 +80,12 @@ void Lever::update(){
         }
     }
     
-    
 }
 
 //--------------------------------------------------------------
 void Lever::draw(){
 	
-	ofSetColor(255, 255, 255);
+	ofSetHexColor(color);
 	
     material.begin();
 	
@@ -107,18 +104,21 @@ void Lever::draw(){
 }
 
 //--------------------------------------------------------------
-void Lever::keyPressed(ofKeyEventArgs& key) {
+void Lever::onMoveEvent() {
     
-    if (key.key == 32)	isKeyPressed = true;
+	isKeyPressed = true;
     
 }
 
 //--------------------------------------------------------------
-void Lever::keyReleased(ofKeyEventArgs& key) {
+void Lever::onReleaseEvent() {
     
 	isKeyPressed = false;
     
 }
+
+
+
 
 //- rotate around axis ---------------------------------------
 void Lever::rotate(float degrees) {
@@ -162,8 +162,28 @@ string Lever::getObjectName(){
 void Lever::onCollision(){}
 
 
-//--------------------------------------------------------------
-void Lever::reset() {}
+//------------------------------------------------------------
+void Lever::setDefaultZ(){
+    
+    position.z = -0.25;
+    setPosition(position);
+    
+}
+
+//------------------------------------------------------------
+void Lever::setPosition(ofVec3f position){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
 
 
 

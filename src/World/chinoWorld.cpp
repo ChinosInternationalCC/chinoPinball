@@ -12,8 +12,7 @@
 void chinoWorld::update() {
 	if(!checkWorld()) return;
 	// should this run on delta time? //
-	world->stepSimulation(1.0f/120.0f, 6, 1./240.);
-    //world->stepSimulation(1.0f/60.0f, 6, 1./60.);
+    world->stepSimulation(1.0f/60.0f, 6, 1./240.);
 	
 	if(bDispatchCollisionEvents) {
 		world->performDiscreteCollisionDetection();
@@ -21,3 +20,8 @@ void chinoWorld::update() {
 	}
 }
 
+//--------------------------------------------------------------
+ofVec3f chinoWorld::getWorldPos() {
+    ofxBulletRaycastData data = raycastTest(ofGetMouseX(), ofGetMouseY());
+    return data.pickPosWorld;
+}

@@ -17,15 +17,16 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     body.create(world.world, position, 0, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(.99, .05); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
-	ofRegisterKeyEvents(this);
     isKeyPressed = false;
     
 	//y position
 	lowerLimit = position.y;
 	upperLimit = 7;
     speed = 0.8;    // pos per frame
+    
+    color = 0x00ff00;
     
     
     // move hammer to lower position
@@ -62,24 +63,28 @@ void Hammer::update(){
 //--------------------------------------------------------------
 void Hammer::draw(){
     
-	ofSetColor(0, 255, 0);
+	int t = ofGetElapsedTimef()*100-collisionTime;
+    if(t<highlightTime){
+        ofSetHexColor(highlightColor);
+    }else{
+        ofSetHexColor(color);
+    }
+    
     body.draw();
     
 }
 
+
+
 //--------------------------------------------------------------
-void Hammer::keyPressed(ofKeyEventArgs& e) {
+void Hammer::onMoveEvent() {
     
-    switch(e.key){
-        case OF_KEY_DOWN:
-            isKeyPressed = true;
-            break;
-    }
+	isKeyPressed = true;
+    
 }
 
-
 //--------------------------------------------------------------
-void Hammer::keyReleased(ofKeyEventArgs& key) {
+void Hammer::onReleaseEvent() {
     
 	isKeyPressed = false;
     
@@ -116,8 +121,32 @@ string Hammer::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Hammer::onCollision(){}
+void Hammer::onCollision(){
 
+    //save time to show color during some time
+    collisionTime = ofGetElapsedTimef()*100;
 
-//--------------------------------------------------------------
-void Hammer::reset() {}
+}
+
+//------------------------------------------------------------
+void Hammer::setDefaultZ(){
+    
+    position.z = -0.375;
+    setPosition(position);
+    
+}
+
+//------------------------------------------------------------
+void Hammer::setPosition(ofVec3f position){
+
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}

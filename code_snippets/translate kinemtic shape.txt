@@ -1,16 +1,13 @@
 
 
+    
     btTransform transform;
-    btRigidBody* a_rb = body.getRigidBody();
-    a_rb->getMotionState()->getWorldTransform( transform );
-
-    // translate
-    btVector3 origin = transform.getOrigin();
-    origin.setX(position.x + axisX - axisX * cos(ofDegToRad(angle)));
-    origin.setY(position.y - axisX * sin(ofDegToRad(angle)));
-
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
     transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
 
-    a_rb->getMotionState()->setWorldTransform( transform );
-
-    body.activate();
