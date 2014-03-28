@@ -59,6 +59,9 @@ void PinballChinoManager::update(){
 	InputEventManager::update(); // Key Events
     
     DMXManager::getInstance()->update();
+	
+	//Arduino
+	arduCom.update(this);
     
 }
 

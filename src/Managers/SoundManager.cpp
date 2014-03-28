@@ -13,6 +13,19 @@
 bool SoundManager::instanceFlag = false;
 SoundManager* SoundManager::single = NULL;
 
+
+//--------------------------------------
+SoundManager* SoundManager::getInstance(void){
+	if(! instanceFlag)
+	{
+		single = new SoundManager();
+		instanceFlag = true;
+		return single;
+	}else{
+		return single;
+	}
+}
+
 //--------------------------------------
 SoundManager::SoundManager(void){
 	//loadSounds
@@ -31,19 +44,6 @@ SoundManager::SoundManager(void){
     soundObj[1]->setVolume(0.5f);
     soundObj[1]->setMultiPlay(true);
 }
-
-//--------------------------------------
-SoundManager* SoundManager::getInstance(void){
-	if(! instanceFlag)
-		{
-			single = new SoundManager();
-			instanceFlag = true;
-			return single;
-		}else{
-			return single;
-		}
-}
-
 
 //--------------------------------------
 /*void SoundManager::AddPoints(int idAudio){

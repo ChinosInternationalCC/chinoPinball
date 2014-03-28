@@ -105,7 +105,9 @@ void Obstacle::onCollision(){
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
     SoundManager::getInstance()->PlaySound(0);
-    
+   
+	//Play rele
+	//OutputEventManager::getInstance()->obstableCollision((SimpleObject*)this);
 }
 
 //------------------------------------------------------------

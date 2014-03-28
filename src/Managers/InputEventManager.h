@@ -21,13 +21,6 @@
 #define MAXKEYS 10
 
 
-#define charRUConfirm "R"
-#define charRDConfirm "r"
-#define charLUConfirm "L"
-#define charLDConfirm "l"
-#define charHUConfirm "H"
-#define charHDConfirm "h"
-
 //string charRConfirm = "R";
 //string charLConfirm = "L";
 
@@ -42,7 +35,7 @@ class InputEventManager
 public:
     InputEventManager();
     
-    virtual void onMoveLeftLeverEvent(void) = 0;
+    virtual void onMoveLeftLeverEvent(void) = 0;  // = 0, force to define this in all the clases
     virtual void onReleaseLeftLeverEvent(void) = 0;
     virtual void onMoveRightLeverEvent(void) = 0;
     virtual void onReleaseRightLeverEvent(void) = 0;
@@ -58,19 +51,6 @@ public:
     void keyReleased(int key);
 	
 	void update();
-    
-	
-	//Serial vars
-	bool		bFirstTimeReadingArduino;
-	bool		breadingArduino;
-
-	ofSerial	serial;
-	bool		bSendSerialMessage;			// a flag for sending serial
-	char		bytesRead[1];				// data from serial, we will be trying to read 3
-	char		bytesReadString[2];			// a string needs a null terminator, so we need 3 + 1 bytes
-	int			nBytesRead;					// how much did we read?
-	int			nTimesRead;					// how many times did we read?
-	float		readTime;					// when did we last read?
 
 };
 

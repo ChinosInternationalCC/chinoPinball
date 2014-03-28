@@ -20,6 +20,7 @@
 #include "Ball.h"
 #include "eventObjectScenario.h"
 #include "eventMoveObjectScenario.h"
+#include "arduComunicationManager.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -34,6 +35,9 @@ public:
     void onCollision(ofxBulletCollisionData& cdata);
     
     chinoWorld     world;
+	
+	////Inputs
+	arduComunicationManager arduCom;
     
 	/////////////////////////////////////////
     ofEasyCam				camera;
