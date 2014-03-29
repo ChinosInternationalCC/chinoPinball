@@ -31,14 +31,13 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     ScenarioObjects.push_back(&leverLeft);
     ScenarioObjects.push_back(&leverRight);
     ScenarioObjects.push_back(&m_Hammer);
-     */
+	*/
     
     loadFromXml(world);
     //loadFromJSON(world);
     //saveToJSON();
     loadBasicScenario(world, ofVec3f(0,0,0));
-   
-    
+
 }
 
 
@@ -72,7 +71,6 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	float heightrlPlane = depthStage;
 	float depthrlPlane = heightwalls;
 
-	
 	
 	for(int i = 0; i < 4; i++) {
 		bounds.push_back( new ofxBulletBox() );

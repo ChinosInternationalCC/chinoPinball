@@ -4,3 +4,4 @@ ofxOsc
 ofxSyphon
 ofxUI
 ofxXmlSettings
+ofxJSON

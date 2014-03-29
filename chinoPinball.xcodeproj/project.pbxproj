@@ -113,10 +113,11 @@
 		8194FB8D031BF3DAFEFBD316 /* btSoftBodySolverOutputCLtoGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 115C0294FE71A4AB62E648C0 /* btSoftBodySolverOutputCLtoGL.cpp */; };
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
+		84E6E5F518E6009200A582DF /* arduComunicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6E5F318E6009200A582DF /* arduComunicationManager.cpp */; };
+		84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6E5F618E60E3A00A582DF /* eventComunication.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		86B5CB1E9CB0E4DABC2FC50F /* btUnionFind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D778CD09C48AB85212E3C3C /* btUnionFind.cpp */; };
 		86D03BF663571ACD4D255296 /* btGearConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 315BF9DB7FADA1FFA6C10C4A /* btGearConstraint.cpp */; };
-		872EA0BC9EA46737BC173FA0 /* OutputEventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BACCBB296FD6F36CEA263B97 /* OutputEventManager.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
 		887D2177F40E13FA207F944A /* btCompoundShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1004EC92557919A2FE3F09E4 /* btCompoundShape.cpp */; };
 		89281A4326A10D30C375DE20 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19111EFA709AF1F7301F0FD3 /* Ranking.cpp */; };
@@ -608,6 +609,10 @@
 		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
 		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
 		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
+		84E6E5F318E6009200A582DF /* arduComunicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arduComunicationManager.cpp; sourceTree = "<group>"; };
+		84E6E5F418E6009200A582DF /* arduComunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arduComunicationManager.h; sourceTree = "<group>"; };
+		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
+		84E6E5F718E60E3A00A582DF /* eventComunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventComunication.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
 		855DCF71E53BBF4F674E54A6 /* btSoftRigidDynamicsWorld.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSoftRigidDynamicsWorld.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.h; sourceTree = SOURCE_ROOT; };
 		856BF5AB0322D0689EE63829 /* ofxUIRangeSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIRangeSlider.h; path = ../../../addons/ofxUI/src/ofxUIRangeSlider.h; sourceTree = SOURCE_ROOT; };
@@ -774,7 +779,6 @@
 		BA3094C38548AD01474EB269 /* btShapeHull.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btShapeHull.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btShapeHull.cpp; sourceTree = SOURCE_ROOT; };
 		BA601206D442ADBD8E91C6B9 /* btUniversalConstraint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btUniversalConstraint.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp; sourceTree = SOURCE_ROOT; };
 		BA6E6A4BB189A6053C918019 /* btConvexCast.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btConvexCast.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexCast.h; sourceTree = SOURCE_ROOT; };
-		BACCBB296FD6F36CEA263B97 /* OutputEventManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OutputEventManager.cpp; path = src/Managers/OutputEventManager.cpp; sourceTree = SOURCE_ROOT; };
 		BACD507A0CB2B9E0736104D0 /* ofxBulletCone.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBulletCone.h; path = ../../../addons/ofxBullet/src/shapes/ofxBulletCone.h; sourceTree = SOURCE_ROOT; };
 		BB9A14E2832320B051A25EF1 /* btPersistentManifold.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btPersistentManifold.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
@@ -910,7 +914,6 @@
 		EA83DF139B3F2085C1A56C49 /* ofxAssimpAnimation.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAssimpAnimation.h; path = ../../../addons/ofxAssimpModelLoader/src/ofxAssimpAnimation.h; sourceTree = SOURCE_ROOT; };
 		EB2D60E4FBEDF84466A70E29 /* ofxUIScrollableCanvas_mine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIScrollableCanvas_mine.h; path = ../../../addons/ofxUI/src/ofxUIScrollableCanvas_mine.h; sourceTree = SOURCE_ROOT; };
 		EBE834E9FE792E13CA76CC92 /* gim_linear_math.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_linear_math.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_linear_math.h; sourceTree = SOURCE_ROOT; };
-		EBEF980DE475294D4C88065B /* OutputEventManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OutputEventManager.h; path = src/Managers/OutputEventManager.h; sourceTree = SOURCE_ROOT; };
 		EC01DD3FF92E0E8C4B10E10F /* Ranking.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Ranking.h; path = src/Managers/Ranking.h; sourceTree = SOURCE_ROOT; };
 		ECC19B634FCF29C64CCC5E37 /* btCollisionShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btCollisionShape.cpp; sourceTree = SOURCE_ROOT; };
 		ECE6A1F168907138B7E6F821 /* btCollisionWorld.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btCollisionWorld.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionWorld.h; sourceTree = SOURCE_ROOT; };
@@ -1238,8 +1241,6 @@
 				43C165DF47345651BADBFA98 /* GameStatus.h */,
 				CB0B39471C6511D6191CB6A5 /* InputEventManager.cpp */,
 				3792D723D6405B4A899944F1 /* InputEventManager.h */,
-				BACCBB296FD6F36CEA263B97 /* OutputEventManager.cpp */,
-				EBEF980DE475294D4C88065B /* OutputEventManager.h */,
 				75240502820DCAC951F9A057 /* PinballChinoManager.cpp */,
 				B7E3028856D5357BACA429A4 /* PinballChinoManager.h */,
 				19111EFA709AF1F7301F0FD3 /* Ranking.cpp */,
@@ -1250,6 +1251,8 @@
 				A9B2F59818BF56AB002B9892 /* SoundManager.h */,
 				A58AA50218E0BF4700AA5372 /* DMXManager.cpp */,
 				A58AA50318E0BF4700AA5372 /* DMXManager.h */,
+				84E6E5F318E6009200A582DF /* arduComunicationManager.cpp */,
+				84E6E5F418E6009200A582DF /* arduComunicationManager.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1646,6 +1649,8 @@
 				84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */,
 				8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */,
 				8422374218C10D6A009CE9EC /* eventObjectScenario.h */,
+				84E6E5F618E60E3A00A582DF /* eventComunication.cpp */,
+				84E6E5F718E60E3A00A582DF /* eventComunication.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -2468,7 +2473,6 @@
 				8D3D2AB06477565715308E40 /* SimpleObject.cpp in Sources */,
 				AD2A8FA9407668D094995282 /* GameStatus.cpp in Sources */,
 				5F06E2A2683C109A99707424 /* InputEventManager.cpp in Sources */,
-				872EA0BC9EA46737BC173FA0 /* OutputEventManager.cpp in Sources */,
 				E73C375C8F36F98C275F9776 /* PinballChinoManager.cpp in Sources */,
 				89281A4326A10D30C375DE20 /* Ranking.cpp in Sources */,
 				482E2AA41DB0C0057700EA47 /* Score.cpp in Sources */,
@@ -2503,6 +2507,7 @@
 				0EF00047C3D2DC9F52B6B191 /* btDispatcher.cpp in Sources */,
 				3C8B99E182190384DB525D42 /* btMultiSapBroadphase.cpp in Sources */,
 				7EE1EDD6C5FF070966C5FFBF /* btOverlappingPairCache.cpp in Sources */,
+				84E6E5F518E6009200A582DF /* arduComunicationManager.cpp in Sources */,
 				A58C5F0B18BBDCA100E99E78 /* ofxJSONElement.cpp in Sources */,
 				D92792A6F0998EF17BBEDCE7 /* btQuantizedBvh.cpp in Sources */,
 				0B962919C28BBA7CA9B4911D /* btSimpleBroadphase.cpp in Sources */,
@@ -2654,6 +2659,7 @@
 				B9F0755B97951C4C919D8370 /* btGeometryUtil.cpp in Sources */,
 				776B3DB9EFE483951A32F56A /* btPolarDecomposition.cpp in Sources */,
 				9FD9730332408EA267BA0E7D /* btQuickprof.cpp in Sources */,
+				84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */,
 				E518B75294924CDF07B9C7A8 /* btSerializer.cpp in Sources */,
 				E8F1D0637EF0A4CFE7F66E16 /* btVector3.cpp in Sources */,
 				C31734F67B2B7F8F4BA8C055 /* MiniCL.cpp in Sources */,

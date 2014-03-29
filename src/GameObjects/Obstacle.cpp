@@ -36,7 +36,9 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+    //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+	body.setProperties(.4, .75);
+	body.setDamping( .25 );
     
     btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
@@ -105,7 +107,11 @@ void Obstacle::onCollision(){
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
     SoundManager::getInstance()->PlaySound(0);
-    
+   
+	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+	eventComunication newComEvent;
+	newComEvent.collision = true;
+	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 }
 
 //------------------------------------------------------------

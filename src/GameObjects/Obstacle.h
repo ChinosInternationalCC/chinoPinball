@@ -8,9 +8,12 @@
 
 #pragma once
 
+#include "eventComunication.h"
 #include "SimpleObject.h"
 #include "GameStatus.h"
 #include "SoundManager.h"
+#include "SimpleObject.h"
+
 
 class Obstacle : public SimpleObject {
 
