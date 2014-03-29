@@ -35,14 +35,14 @@ SoundManager::SoundManager(void){
     soundObj.push_back(audio);
     soundObj[0]->loadSound(soundFiles[0]);
     soundObj[0]->setVolume(0.5f);
-    soundObj[0]->setMultiPlay(true);
+    soundObj[0]->setMultiPlay(false);
     
     soundFiles.push_back("sounds/ball.mp3");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[1]->loadSound(soundFiles[1]);
     soundObj[1]->setVolume(0.5f);
-    soundObj[1]->setMultiPlay(true);
+    soundObj[1]->setMultiPlay(false);
 }
 
 //--------------------------------------

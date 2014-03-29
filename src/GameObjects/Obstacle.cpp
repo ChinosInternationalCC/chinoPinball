@@ -36,7 +36,9 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+    //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+	body.setProperties(.4, .75);
+	body.setDamping( .25 );
     
     btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
