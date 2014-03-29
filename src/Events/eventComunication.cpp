@@ -7,3 +7,5 @@
 //
 
 #include "eventComunication.h"
+
+ofEvent <eventComunication> eventComunication::onNewCom;

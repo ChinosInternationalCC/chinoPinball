@@ -42,12 +42,18 @@ arduComunicationManager::arduComunicationManager(){
 	bFirstTimeReadingArduino = true;
 	//--------------------------------------------------------------------
 	
-	//Listeners
+
 }
 
 //--------------------------------------------------------------------
 void arduComunicationManager::setup(){
 	
+	///arduino
+	//Listeners
+	//TODO ARDUDAY
+	ofAddListener(eventComunication::onNewCom,this, &arduComunicationManager::listenerOnCollission);
+
+
 }
 
 //--------------------------------------------------------------------
@@ -138,4 +144,13 @@ void arduComunicationManager::obstableCollision(SimpleObject* object){
 		
 	}
 
+}
+
+//Listeners
+//--------------------------------------------------------------------
+void arduComunicationManager::listenerOnCollission(eventComunication & args){
+	
+	//Send rele Envent to Arduino
+	serial.writeByte('0');
+	cout << "listenerOnCollission Serial event 0" << endl;
 }

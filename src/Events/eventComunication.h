@@ -6,9 +6,14 @@
 //
 //
 
-#ifndef __chinoPinball__eventComunication__
-#define __chinoPinball__eventComunication__
+#pragma once
 
-#include <iostream>
+#include "ofMain.h"
 
-#endif /* defined(__chinoPinball__eventComunication__) */
+class eventComunication : public ofEventArgs {
+public:
+	
+	bool collision;
+	
+    static ofEvent <eventComunication> onNewCom;
+};

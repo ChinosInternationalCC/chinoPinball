@@ -9,6 +9,7 @@
 #include "PinballChinoManager.h"
 #include "Ball.h"
 #include "DMXManager.h"
+#include "eventComunication.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
     
@@ -40,6 +41,9 @@ void PinballChinoManager::setup(){
     // collision detection
     world.enableCollisionEvents();
 
+	// Arduino Comunication
+	arduCom.setup();
+	
 	// Listeners
 	ofAddListener(world.COLLISION_EVENT, this, &PinballChinoManager::onCollision);
 	
@@ -299,3 +303,4 @@ void PinballChinoManager::listenerMovingObjectScenario(eventMoveObjectScenario &
 	}
 	
 }
+

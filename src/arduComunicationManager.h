@@ -20,6 +20,9 @@
 #include "SimpleObject.h"
 #include "InputEventManager.h"
 
+#include "arduComunicationManager.h"
+#include "eventComunication.h"
+
 
 class arduComunicationManager{
 	
@@ -33,6 +36,9 @@ public:
 	
 	ofSerial	serial;
     
+	//Events
+	void listenerOnCollission(eventComunication & args);
+
 private:
 	
 	//Serial vars

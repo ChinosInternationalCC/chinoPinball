@@ -106,8 +106,10 @@ void Obstacle::onCollision(){
     //play sound
     SoundManager::getInstance()->PlaySound(0);
    
-	//Play rele
-	//OutputEventManager::getInstance()->obstableCollision((SimpleObject*)this);
+	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+	eventComunication newComEvent;
+	newComEvent.collision = true;
+	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 }
 
 //------------------------------------------------------------
