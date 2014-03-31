@@ -32,14 +32,14 @@
     <object>
         <type>3</type>
         <positionX>-3.028410435</positionX>
-        <positionY>8.375747681</positionY>
+        <positionY>8.035743713</positionY>
         <positionZ>-0.200000003</positionZ>
         <LeverType>0</LeverType>
     </object>
     <object>
         <type>3</type>
-        <positionX>3.307854891</positionX>
-        <positionY>8.040441513</positionY>
+        <positionX>2.707855463</positionX>
+        <positionY>7.580443382</positionY>
         <positionZ>-0.200000003</positionZ>
         <LeverType>1</LeverType>
     </object>
