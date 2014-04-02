@@ -168,7 +168,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             
         case SimpleObject::ShapeTypeObstacle:{
             Obstacle *oObstable = new Obstacle();
-            oObstable->setup(world, pos, "cylinder.stl");
+            oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
             oObstable->setDefaultZ();
             ScenarioObjects.push_back(oObstable);
         }
@@ -223,7 +223,7 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl");
+                    oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -255,12 +255,18 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             ScenarioXml.pushTag("object", i);
             SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
             
-            ofVec3f pos;
+            ofVec3f pos, scale;
             
             pos.x = ScenarioXml.getValue("positionX",0.0, 0);
             pos.y = ScenarioXml.getValue("positionY",0.0, 0);
             pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
             
+            scale.x = ScenarioXml.getValue("scaleX",0.0, 0);
+            scale.y = ScenarioXml.getValue("scaleY",0.0, 0);
+            scale.z = ScenarioXml.getValue("scaleZ",0.0, 0);
+            
+            string path;
+            path = ScenarioXml.getValue("path","", 0);
             
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
@@ -287,7 +293,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl");
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oObstable->setup(world, pos, path, scale);
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -325,12 +332,18 @@ void Scenario::saveToXml(){
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
+        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
+        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
+        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
+        ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
         
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];
             ScenarioXml.addValue("LeverType", pLever->direction);
         }
+        
+
         
         ScenarioXml.popTag();
     }
