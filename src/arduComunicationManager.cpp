@@ -28,18 +28,25 @@ arduComunicationManager::arduComunicationManager(){
 	// (ie, COM4 on a pc, /dev/tty.... on linux, /dev/tty... on a mac)
 	// arduino users check in arduino app....
 	int baud = 9600;
-	serial.setup(0, baud); //open the first device
-	//serial.setup("COM4", baud); // windows example
-	//serial.setup("/dev/tty.usbserial-A4001JEC", baud); // mac osx example
-	//serial.setup("/dev/ttyUSB0", baud); //linux example
+    bool SerialOk;
+	SerialOk = serial.setup(0, baud); //open the first device
+	//SerialOk = serial.setup("COM4", baud); // windows example
+	//SerialOk = serial.setup("/dev/tty.usbserial-A4001JEC", baud); // mac osx example
+	//SerialOk = serial.setup("/dev/ttyUSB0", baud); //linux example
 	
 	
 	nTimesRead = 0;
 	nBytesRead = 0;
 	readTime = 0;
 	memset(bytesReadString, 0, 1);
-	breadingArduino = true;
-	bFirstTimeReadingArduino = true;
+    if (SerialOk){
+        breadingArduino = true;
+        bFirstTimeReadingArduino = true;
+    }
+    else{
+        breadingArduino = false;
+        bFirstTimeReadingArduino = false;
+    }
 	//--------------------------------------------------------------------
 	
 
@@ -51,7 +58,9 @@ void arduComunicationManager::setup(){
 	///arduino
 	//Listeners
 	//TODO ARDUDAY
-	ofAddListener(eventComunication::onNewCom,this, &arduComunicationManager::listenerOnCollission);
+	if (breadingArduino){
+        ofAddListener(eventComunication::onNewCom,this, &arduComunicationManager::listenerOnCollission);
+    }
 
 
 }

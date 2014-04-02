@@ -21,6 +21,7 @@
 #include "eventObjectScenario.h"
 #include "eventMoveObjectScenario.h"
 #include "arduComunicationManager.h"
+#include "DMXManager.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -38,6 +39,9 @@ public:
 	
 	////Inputs
 	arduComunicationManager arduCom;
+    
+    ///Outputs
+    DMXManager dmx;
     
 	/////////////////////////////////////////
     ofEasyCam				camera;

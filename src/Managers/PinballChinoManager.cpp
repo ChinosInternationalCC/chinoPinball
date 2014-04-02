@@ -8,7 +8,6 @@
 
 #include "PinballChinoManager.h"
 #include "Ball.h"
-#include "DMXManager.h"
 #include "eventComunication.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
@@ -62,7 +61,7 @@ void PinballChinoManager::update(){
 	
 	InputEventManager::update(); // Key Events
     
-    DMXManager::getInstance()->update();
+    dmx.update();
 	
 	//Arduino
 	arduCom.update(this);
