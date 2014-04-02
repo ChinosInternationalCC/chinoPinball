@@ -10,17 +10,23 @@
 
 #include "ofMain.h"
 #include "ofxDmx.h"
+#include "eventComunication.h"
 
 class DMXManager{
 public:
     DMXManager();
     void flashChannel(/*int channel*/void);
     void update(void);
-    static DMXManager* getInstance(void);
-private:
-    static bool    instanceFlag;
-    static DMXManager *single;
+    //static DMXManager* getInstance(void);
     
+    //Events
+	void listenerOnCollission(eventComunication & args);
+    
+    
+private:
+    //static bool    instanceFlag;
+    //static DMXManager *single;
+    bool DmxConnected;
     ofxDmx dmx;
     unsigned long long Timer;
 };
