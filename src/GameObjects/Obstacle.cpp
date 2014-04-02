@@ -9,21 +9,25 @@
 #include "Obstacle.h"
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
+void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeObstacle;
     collisionTime = -120;
-    
+    ModelPath = url;
     this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
     // load 3D model
-    ofVec3f scale(0.05, 0.05, 0.05);
+    //ofVec3f scale(0.05, 0.05, 0.05);
+    //scale = ofVec3f(0.005, 0.005, 0.005);
+    scale = ModelScale;
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
     
+    //assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
+    //assimpModel.playAllAnimations();
     
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
@@ -57,11 +61,15 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     
     body.activate();
     
+
+    
 }
 
 //--------------------------------------------------------------
 void Obstacle::update(){
-    
+    //assimpModel.update();
+    //assimpModel.setPositionForAllAnimations(animationPosition);
+
     
 }
 
