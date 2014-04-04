@@ -32,7 +32,7 @@ public:
         ShapeTypeObstacle = 6
     };
     
-    ofxBulletCustomShape	body;
+    //ofxBulletCustomShape	body;
     shapeType type;
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
@@ -61,6 +61,11 @@ public:
 	bool bColision;
 	int  collisionTime;
 	int colisionCounter;
+    
+    ofVec3f scale;  // if we load a 3D model this variable should store the scale factors
+                    // with the correct values so that our model nicely fits inside the Scenario
+    string ModelPath; //if we load an external 3D Model this variable should hold the path of the
+                      // model
     
 	//graphic vars
 	//objDisplay mygraphicobject;

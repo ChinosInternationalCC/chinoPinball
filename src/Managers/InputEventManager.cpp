@@ -11,18 +11,13 @@
 
 InputEventManager::InputEventManager(){
 	
-    
+	
 }
 
 //--------------------------------------------------------------
 void InputEventManager::update()
 {
-	/*if( ofGetKeyPressed('z') ) {
-		onMoveLeftLeverEvent();
-	}
-	if( ofGetKeyPressed('m') ) {
-		onMoveRightLeverEvent();
-	}*/
+
 }
 
 
@@ -47,7 +42,6 @@ void InputEventManager::keyPressed(int key)
         case 'M':
             onMoveRightLeverEvent();
 	       break;
-            
     }
     
 }

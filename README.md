@@ -29,11 +29,41 @@ Then clone it to you git client
 	>> git clone http://GitHubProjectAdresss
 ```	
 develop your code
+add changes to the local repo
+```
+	>> git add <filename>
+	or
+	>> git add *
+```
 upload your changes to your github branch
 ```
 	>> git stage xxx file
 	>> git commit -m 'message to the statge files'
 	>> git push or git push -u origin master
+```
+if the local repo is not connected to the remote one
+```
+	>> git remote add origin <server>
+```
+update local repository with remote changes
+```
+	git pull
+```
+branches
+```
+	>> git checkout -b <branch> #create new branch
+	>> git checkout master #switch to master branch
+	>> git branch -d <branch> #delete branch
+	>> git push origin <branch> #push branch to remote repository
+	
+```
+merge
+```
+	git merge <branch>
+```
+restore file with the last working copy from HEAD
+```
+	>> git checkout -- <filename>
 ```
 When finally
 u wanna merge it, to chinos  master branch 
@@ -58,6 +88,7 @@ http://www.youtube.com/watch?v=YvyRM175uQ0
 * ofxBullet https://github.com/NickHardeman/ofxBullet
 * ofxSyphon https://github.com/astellato/ofxSyphon
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
+* ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 
 Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.8, LLVM compiler) and Windows (CodeBlocks) (not countinued)
 
@@ -67,6 +98,10 @@ We are using MadMapper for projection mapping http://www.madmapper.com
 ###ClassHierarchy
 
 ![ClassHierarchy](/doc/ClassHierarchy.png)
+
+***
+###SystemOverview
+![SystemOverview](/doc/ChinoPinballDeploymentDiagram.jpg)
 
 ***
 ###Projection mapping
