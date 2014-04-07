@@ -29,4 +29,10 @@ void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
 //}
 
 
-
+void SimpleObject::SetObjectId(int objId){
+    ObjectId = objId;
+    
+}
+int SimpleObject::GetObjectId(void){
+    return ObjectId;
+}
