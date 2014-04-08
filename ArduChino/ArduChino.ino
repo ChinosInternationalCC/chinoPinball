@@ -13,6 +13,8 @@
  
  */
 
+unsigned long timeMillis;
+bool firstTimeEvent = true;
  
 //For testing tru, false
 bool bTesterArduino = false;
@@ -81,8 +83,8 @@ void loop(){
     buttonStateR = digitalRead(buttonPinR);
     buttonStateH = digitalRead(buttonPinH);  
     
-   // Serial.print('buttonStateL=');
-    //Serial.println(buttonStateL);
+   if(bTesterArduino) Serial.print('buttonStateL=');
+   if(bTesterArduino) Serial.println(buttonStateL);
     
  
      //LEVER
@@ -142,7 +144,7 @@ void loop(){
       }
     
     //LEDS
-    loopLeds();
+    //loopLeds();
 }
 
 //----------------------------------------
@@ -185,25 +187,46 @@ void sendData(int typeButton, int bPressed) {
  response.  Multiple bytes of data may be available.
  */
 void serialEvent() {
-  while (Serial.available()) {
-    
-    if (Serial.available() > 0)
-    {
-      int data = Serial.read();
-      
-      if(data == '0'){
-        digitalWrite(rele1, HIGH);   // turn the LED on (HIGH is the voltage level)
-        delay(200);               // wait for a second
-        digitalWrite(rele1, LOW);    // turn the LED off by making the voltage LOW
-      }
-      else if(data == '1'){
-        digitalWrite(rele2, HIGH);   // turn the LED on (HIGH is the voltage level)
-        delay(200);               // wait for a second
-        digitalWrite(rele2, LOW);    // turn the LED off by making the voltage LOW
-      }
+  
 
+ if(firstTimeEvent){ 
+   timeMillis = millis();
+   firstTimeEvent = false;
+ }else {
+  
+    while (Serial.available()) {
+      
+      if (Serial.available() > 0)
+      {
+        int data = Serial.read();
+        
+        if(data == '0'){
+          if(timeMillis < 200){
+            digitalWrite(rele1, HIGH);   // turn the LED on (HIGH is the voltage level)
+            //delay(200);               // wait for a second
+          }
+          else{
+              digitalWrite(rele1, LOW);    // turn the LED off by making the voltage LOW
+              firstTimeEvent = true;
+          }
+        }
+        else if(data == '1'){
+          if(timeMillis < 200){
+            digitalWrite(rele2, HIGH);   // turn the LED on (HIGH is the voltage level)
+            firstTimeEvent = true;
+            //delay(200);    
+          }          // wait for a second
+          else {
+            digitalWrite(rele2, LOW);    // turn the LED off by making the voltage LOW
+            firstTimeEvent = false;
+          }
+        }else if(data == '2'){
+          //loopLeds();   //led sequence
+        }
+  
+      }
     }
-  }
+ }//Else
 }
 
 
