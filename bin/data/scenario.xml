@@ -1,64 +1,114 @@
 <scenario>
     <object>
         <type>6</type>
+        <id>0</id>
         <positionX>-3.500000000</positionX>
         <positionY>-4.000000000</positionY>
         <positionZ>-0.699999988</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
     <object>
         <type>6</type>
+        <id>1</id>
         <positionX>-0.500000000</positionX>
         <positionY>-4.000000000</positionY>
         <positionZ>-0.699999988</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
     <object>
         <type>6</type>
+        <id>2</id>
         <positionX>2.500000000</positionX>
         <positionY>-4.000000000</positionY>
         <positionZ>-0.699999988</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
     <object>
         <type>6</type>
+        <id>3</id>
         <positionX>5.500000000</positionX>
         <positionY>-4.000000000</positionY>
         <positionZ>-0.699999988</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
     <object>
         <type>0</type>
+        <id>4</id>
         <positionX>5.000000000</positionX>
         <positionY>0.000000000</positionY>
         <positionZ>-0.500000000</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <path></path>
     </object>
     <object>
         <type>3</type>
+        <id>5</id>
         <positionX>-3.028410435</positionX>
         <positionY>8.035743713</positionY>
         <positionZ>-0.200000003</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <path></path>
         <LeverType>0</LeverType>
     </object>
     <object>
         <type>3</type>
-        <positionX>2.707855463</positionX>
-        <positionY>7.580443382</positionY>
+        <id>6</id>
+        <positionX>3.307854891</positionX>
+        <positionY>8.040441513</positionY>
         <positionZ>-0.200000003</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <path></path>
         <LeverType>1</LeverType>
     </object>
     <object>
         <type>5</type>
+        <id>7</id>
         <positionX>5.000000000</positionX>
         <positionY>5.000000000</positionY>
         <positionZ>-0.400000006</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <path></path>
     </object>
     <object>
         <type>6</type>
+        <id>8</id>
         <positionX>-0.461380750</positionX>
         <positionY>9.045289993</positionY>
         <positionZ>0.000000000</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
     <object>
         <type>6</type>
+        <id>9</id>
         <positionX>0.047696337</positionX>
         <positionY>-0.293577969</positionY>
         <positionZ>-0.000014305</positionZ>
+        <scaleX>0.005000000</scaleX>
+        <scaleY>0.005000000</scaleY>
+        <scaleZ>0.005000000</scaleZ>
+        <path>3DModels/chino_6.dae</path>
     </object>
 </scenario>

@@ -7,7 +7,6 @@
 //
 
 #include "SoundManager.h"
-#include "DMXManager.h"
 
 // SINGLETON initalizations
 bool SoundManager::instanceFlag = false;
@@ -52,5 +51,4 @@ SoundManager::SoundManager(void){
 //------------------------------------
 void SoundManager::PlaySound(int idAudio){
     this->soundObj[idAudio]->play();
-    DMXManager::getInstance()->flashChannel();
 }

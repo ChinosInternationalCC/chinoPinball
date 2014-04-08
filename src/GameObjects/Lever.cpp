@@ -16,6 +16,9 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
+    // create ofxBullet shape
+    body.create(world.world, position, 0); // we set m=0 for kinematic body
+    
     // load 3D model
     ofVec3f scale(0.033, 0.033, 0.033);
 	assimpModel.loadModel("Tuscan_Column.dae", true);
@@ -29,8 +32,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     }
     //    body.addMesh(assimpModel.getMesh(0), scale, true);
     
-    // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
+   
     body.add();
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
