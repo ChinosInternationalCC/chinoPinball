@@ -31,14 +31,13 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     ScenarioObjects.push_back(&leverLeft);
     ScenarioObjects.push_back(&leverRight);
     ScenarioObjects.push_back(&m_Hammer);
-     */
+	*/
     
     loadFromXml(world);
     //loadFromJSON(world);
     //saveToJSON();
     loadBasicScenario(world, ofVec3f(0,0,0));
-   
-    
+
 }
 
 
@@ -73,7 +72,6 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	float depthrlPlane = heightwalls;
 
 	
-	
 	for(int i = 0; i < 4; i++) {
 		bounds.push_back( new ofxBulletBox() );
 		if(i == 0) { // ground //
@@ -96,7 +94,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds[i]->setProperties(1., .0); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 	}
-
+    
 	/*
     //up right box
     bounds.push_back( new ofxBulletBox() );
@@ -170,7 +168,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             
         case SimpleObject::ShapeTypeObstacle:{
             Obstacle *oObstable = new Obstacle();
-            oObstable->setup(world, pos, "cylinder.stl");
+            oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
             oObstable->setDefaultZ();
             ScenarioObjects.push_back(oObstable);
         }
@@ -180,6 +178,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
 }
 
 //--------------------------------------------------------------
+#if 0 //the function is not mentained, update it first if you want to use it
 void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
     ofxJSONElement ScenarioJSON;
     
@@ -225,7 +224,7 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl");
+                    oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -240,6 +239,7 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
 
     
 }
+#endif
 
 //--------------------------------------------------------------
 
@@ -256,18 +256,27 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             ScenarioXml.pushTag("object", i);
             SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
+            int objId = ScenarioXml.getValue("id", 0);
             
-            ofVec3f pos;
+            
+            ofVec3f pos, scale;
             
             pos.x = ScenarioXml.getValue("positionX",0.0, 0);
             pos.y = ScenarioXml.getValue("positionY",0.0, 0);
             pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
             
+            scale.x = ScenarioXml.getValue("scaleX",0.0, 0);
+            scale.y = ScenarioXml.getValue("scaleY",0.0, 0);
+            scale.z = ScenarioXml.getValue("scaleZ",0.0, 0);
+            
+            string path;
+            path = ScenarioXml.getValue("path","", 0);
             
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball();
                     oBall->setup(world, pos);
+                    oBall->SetObjectId(objId);
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -275,6 +284,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeHammer:{
                     Hammer *oHammer = new Hammer();
                     oHammer->setup(world, pos);
+                    oHammer->SetObjectId(objId);
                     ScenarioObjects.push_back(oHammer);
                 }
                 break;
@@ -283,13 +293,16 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Lever *oLever = new Lever();
                     int dir = ScenarioXml.getValue("LeverType", 0);
                     oLever->setup(world, pos, dir);
+                    oLever->SetObjectId(objId);
                     ScenarioObjects.push_back(oLever);
                 }
                 break;
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl");
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oObstable->setup(world, pos, path, scale);
+                    oObstable->SetObjectId(objId);
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -323,16 +336,23 @@ void Scenario::saveToXml(){
         ScenarioXml.pushTag("object",i);
     
         ScenarioXml.addValue("type", ScenarioObjects[i]->type);
-
+        ScenarioXml.addValue("id", ScenarioObjects[i]->GetObjectId());
+        
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
+        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
+        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
+        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
+        ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
         
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];
             ScenarioXml.addValue("LeverType", pLever->direction);
         }
+        
+
         
         ScenarioXml.popTag();
     }
@@ -343,7 +363,7 @@ void Scenario::saveToXml(){
 }
 
 //------------------------------
-
+#if 0 //the function is not mentained, update it firs if you want to use it
 void Scenario::saveToJSON(){
    
     ofxJSONElement ScenarioJSON;
@@ -380,3 +400,4 @@ void Scenario::saveToJSON(){
     
     
 }
+#endif

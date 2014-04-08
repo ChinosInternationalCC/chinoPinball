@@ -9,21 +9,28 @@
 #include "Obstacle.h"
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
+void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeObstacle;
     collisionTime = -120;
-    
+    ModelPath = url;
     this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
+    // create ofxBullet shape
+    body.create(world.world, position, 0); // we set m=0 for kinematic body
+
+    
+    
     // load 3D model
-    ofVec3f scale(0.05, 0.05, 0.05);
+    //ofVec3f scale(0.05, 0.05, 0.05);
+    //scale = ofVec3f(0.005, 0.005, 0.005);
+    scale = ModelScale;
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
-    
+
     
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
@@ -32,11 +39,11 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     }
     //    body.addMesh(assimpModel.getMesh(0), scale, true);
     
-    // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+    //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+	body.setProperties(.4, .75);
+	body.setDamping( .25 );
     
     btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
@@ -55,11 +62,13 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url){
     
     body.activate();
     
+
+    
 }
 
 //--------------------------------------------------------------
 void Obstacle::update(){
-    
+
     
 }
 
@@ -105,7 +114,11 @@ void Obstacle::onCollision(){
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
     SoundManager::getInstance()->PlaySound(0);
-    
+   
+	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+	eventComunication newComEvent;
+	newComEvent.collision = true;
+	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 }
 
 //------------------------------------------------------------
