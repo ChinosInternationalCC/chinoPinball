@@ -11,8 +11,8 @@
 //---------------------------------
 Ball::Ball(void){
     m_status = BallStatusWaiting;
-	radius = .3;
-	mass = 2;
+	radius = .5;
+	mass = 1;
 }
 
 //---------------------------------

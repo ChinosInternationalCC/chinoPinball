@@ -46,7 +46,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	/////////////////////////////////////////////////////////////////////////////////////////
     
 	// STATGE
-	float scaleStage = 0.12;
+	float scaleStage = 0.15;
 	
 	ofVec3f startLoc;
 	ofPoint dimens;
