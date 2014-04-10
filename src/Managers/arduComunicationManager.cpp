@@ -158,7 +158,7 @@ void arduComunicationManager::obstableCollision(SimpleObject* object){
 //Listeners
 //--------------------------------------------------------------------
 void arduComunicationManager::listenerOnCollission(eventComunication & args){
-	
+	//int id = args.pObject->GetObjectId();
 	//Send rele Envent to Arduino
 	serial.writeByte('0');
 	serial.writeByte('2');

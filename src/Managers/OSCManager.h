@@ -7,6 +7,8 @@
 //
 
 #pragma once
+#include "ExternalsConfig.h"
+
 #ifdef USE_OSC /* configured in ExternalsConfig.h */
 
 #include "ofMain.h"
