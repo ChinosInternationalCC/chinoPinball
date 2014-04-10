@@ -118,6 +118,7 @@ void Obstacle::onCollision(){
 	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
 	eventComunication newComEvent;
 	newComEvent.collision = true;
+    newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 }
 

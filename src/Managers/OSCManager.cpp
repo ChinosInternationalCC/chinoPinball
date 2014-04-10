@@ -5,8 +5,9 @@
 //  Created by Ovidiu on 07/04/14.
 //
 //
-#ifdef USE_OSC /* configured in ExternalsConfig.h */
 #include "OSCManager.h"
+#ifdef USE_OSC /* configured in ExternalsConfig.h */
+
 
 OSCManager::OSCManager(){
     sender.setup(HOST, PORT);
@@ -17,7 +18,7 @@ OSCManager::OSCManager(){
 void OSCManager::listenerOnCollission(eventComunication & args){
     ofxOscMessage m;
     m.setAddress("/ObjectId");
-    m.addIntArg(1);
+    m.addIntArg(args.pObject->GetObjectId());
     sender.sendMessage(m);
     
 }
