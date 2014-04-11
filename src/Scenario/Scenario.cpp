@@ -46,7 +46,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	/////////////////////////////////////////////////////////////////////////////////////////
     
 	// STATGE
-	float scaleStage = 0.12;
+	float scaleStage = 0.15;
 	
 	ofVec3f startLoc;
 	ofPoint dimens;
@@ -178,6 +178,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
 }
 
 //--------------------------------------------------------------
+#if 0 //the function is not mentained, update it first if you want to use it
 void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
     ofxJSONElement ScenarioJSON;
     
@@ -238,6 +239,7 @@ void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
 
     
 }
+#endif
 
 //--------------------------------------------------------------
 
@@ -254,6 +256,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             ScenarioXml.pushTag("object", i);
             SimpleObject::shapeType Type = (SimpleObject::shapeType)ScenarioXml.getValue("type", 0);
+            int objId = ScenarioXml.getValue("id", 0);
+            
             
             ofVec3f pos, scale;
             
@@ -272,6 +276,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball();
                     oBall->setup(world, pos);
+                    oBall->SetObjectId(objId);
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -279,6 +284,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeHammer:{
                     Hammer *oHammer = new Hammer();
                     oHammer->setup(world, pos);
+                    oHammer->SetObjectId(objId);
                     ScenarioObjects.push_back(oHammer);
                 }
                 break;
@@ -287,6 +293,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Lever *oLever = new Lever();
                     int dir = ScenarioXml.getValue("LeverType", 0);
                     oLever->setup(world, pos, dir);
+                    oLever->SetObjectId(objId);
                     ScenarioObjects.push_back(oLever);
                 }
                 break;
@@ -295,6 +302,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Obstacle *oObstable = new Obstacle();
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oObstable->setup(world, pos, path, scale);
+                    oObstable->SetObjectId(objId);
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -328,7 +336,8 @@ void Scenario::saveToXml(){
         ScenarioXml.pushTag("object",i);
     
         ScenarioXml.addValue("type", ScenarioObjects[i]->type);
-
+        ScenarioXml.addValue("id", ScenarioObjects[i]->GetObjectId());
+        
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
@@ -354,7 +363,7 @@ void Scenario::saveToXml(){
 }
 
 //------------------------------
-
+#if 0 //the function is not mentained, update it firs if you want to use it
 void Scenario::saveToJSON(){
    
     ofxJSONElement ScenarioJSON;
@@ -391,3 +400,4 @@ void Scenario::saveToJSON(){
     
     
 }
+#endif

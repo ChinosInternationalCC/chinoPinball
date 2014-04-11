@@ -66,7 +66,9 @@ public:
                     // with the correct values so that our model nicely fits inside the Scenario
     string ModelPath; //if we load an external 3D Model this variable should hold the path of the
                       // model
-    
+    int ObjectId; //this should be a unique identificator for each object that we have on the scenario
+    void SetObjectId(int objId);
+    int GetObjectId(void);
 	//graphic vars
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
