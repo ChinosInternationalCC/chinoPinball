@@ -8,12 +8,6 @@
 
 #pragma once
 
-#ifndef __ofxBulletEventsExample__ScenarioEditor__
-#define __ofxBulletEventsExample__ScenarioEditor__
-
-#include <iostream>
-
-#endif /* defined(__ofxBulletEventsExample__ScenarioEditor__) */
 
 #include "ofxBullet.h"
 #include "Scenario.h"
@@ -21,6 +15,7 @@
 #include "eventMoveObjectScenario.h"
 #include "SimpleObject.h"
 #include "chinoWorld.h"
+#include "ofxUI.h"
 
 class ScenarioEditor {
     
@@ -49,6 +44,28 @@ public:
     void addObject(SimpleObject::shapeType type);
     
     ofMouseEventArgs mouseOldPosition;
-	
+    
+    
+    /* GUI stuff */
+    ofxUICanvas *gui;
+    void guiEvent(ofxUIEventArgs &e);
+    bool drawFill;
+	float red, green, blue, alpha;
+	ofColor backgroundColor;
+    float radius;
+    int resolution;
+    ofPoint position;
+    
+    float noiseScale;
+    float *buffer;
+    vector<float> xPos;
+    vector<float> yPos;
+    
+    ofxUIMovingGraph *xGraph;
+    ofxUIMovingGraph *yGraph;
+    
+    int bufferSize;
+    
+    ofImage *image;
 	
 };
