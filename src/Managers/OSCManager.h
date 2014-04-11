@@ -16,7 +16,7 @@
 #include "eventComunication.h"
 
 #define HOST "localhost"
-#define PORT 12345
+#define PORT 9001
 
 class OSCManager{
 public:
