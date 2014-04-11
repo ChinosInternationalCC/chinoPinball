@@ -21,6 +21,35 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     ofRegisterMouseEvents(this);
     
     selectedObject = NULL;
+    
+    /*GUI setup */
+    //set some sketch parameters
+    //Background Color
+    red = 233;     blue = 240;    green = 52;    alpha = 200;
+    radius = 150;    noiseScale = .1;
+    drawFill = true;
+    backgroundColor = ofColor(233, 52, 27);
+    resolution = 30;
+    position = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
+    ofSetCircleResolution(resolution);
+    
+    gui = new ofxUICanvas();
+    gui->addLabel("CONTEXTUAL MENU");
+    gui->addSpacer();
+    gui->addFPSSlider("FPS");
+    gui->addSpacer();
+    gui->addSlider("RADIUS", 0.0, 255.0, &radius);
+    gui->addSlider("RED", 0.0, 255.0, &red);
+    gui->addSlider("GREEN", 0.0, 255.0, &green);
+    gui->addSlider("BLUE", 0.0, 255.0, &blue);
+    gui->addSlider("ALPHA", 0.0, 255.0, &alpha);
+    gui->addSpacer();
+    gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &position);
+    gui->addLabelToggle("DRAWFILL", &drawFill);
+    gui->autoSizeToFitWidgets();
+    ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
+    gui->loadSettings("GUI/guiSettings.xml");
+    gui->setVisible(false);
 }
 
 //--------------------------------------------------------------
@@ -141,8 +170,28 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 	}
     
+    if(args.button == 2)
+    {
+        gui->setPosition(args.x, args.y);
+        gui->setVisible(true);
+        return;
+    }
+    
+    if(!gui->isHit(args.x, args.y))
+    {
+        gui->setVisible(false);
+    }
+    
     mouseOldPosition = args;
 }
+
+//--------------------------------------------------------
+void ScenarioEditor::guiEvent(ofxUIEventArgs &e)
+{
+    //	string name = e.widget->getName();
+    //	int kind = e.widget->getKind();
+}
+
 
 //--------------------------------------------------------
 void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
