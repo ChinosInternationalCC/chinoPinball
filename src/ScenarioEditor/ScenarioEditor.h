@@ -47,19 +47,22 @@ public:
     
     
     /* GUI stuff */
+	bool bgui;
+	bool createGUI(SimpleObject *);
+	void resetUIvalues();
     ofxUICanvas *gui;
     void guiEvent(ofxUIEventArgs &e);
     bool drawFill;
-	float red, green, blue, alpha;
+	float gred, ggreen, gblue, galpha;
 	ofColor backgroundColor;
-    float radius;
-    int resolution;
-    ofPoint position;
+    float gradius;
+    float gresolution;
+    ofPoint gposition;
     
-    float noiseScale;
+    float gnoiseScale;
     float *buffer;
-    vector<float> xPos;
-    vector<float> yPos;
+    //vector<float> xPos;
+    //vector<float> yPos;
     
     ofxUIMovingGraph *xGraph;
     ofxUIMovingGraph *yGraph;
