@@ -22,35 +22,60 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     
     selectedObject = NULL;
     
-    /*GUI setup */
-    //set some sketch parameters
-    //Background Color
-    red = 233;     blue = 240;    green = 52;    alpha = 200;
-    radius = 150;    noiseScale = .1;
-    drawFill = true;
-    backgroundColor = ofColor(233, 52, 27);
-    resolution = 30;
-    position = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
-    ofSetCircleResolution(resolution);
+	resetUIvalues();
     
-    gui = new ofxUICanvas();
-    gui->addLabel("CONTEXTUAL MENU");
-    gui->addSpacer();
-    gui->addFPSSlider("FPS");
-    gui->addSpacer();
-    gui->addSlider("RADIUS", 0.0, 255.0, &radius);
-    gui->addSlider("RED", 0.0, 255.0, &red);
-    gui->addSlider("GREEN", 0.0, 255.0, &green);
-    gui->addSlider("BLUE", 0.0, 255.0, &blue);
-    gui->addSlider("ALPHA", 0.0, 255.0, &alpha);
-    gui->addSpacer();
-    gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &position);
-    gui->addLabelToggle("DRAWFILL", &drawFill);
-    gui->autoSizeToFitWidgets();
-    ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
-    gui->loadSettings("GUI/guiSettings.xml");
-    gui->setVisible(false);
+ 
 }
+
+//--------------------------------------------------------------
+void ScenarioEditor::resetUIvalues(){
+	/*GUI setup */
+	//set some sketch parameters
+	//Background Color
+	gred = 233;     gblue = 240;    ggreen = 52;    galpha = 200;
+	gradius = 150;    gnoiseScale = .1;
+	drawFill = true;
+	backgroundColor = ofColor(233, 52, 27);
+	gresolution = 30;
+	gposition = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
+	ofSetCircleResolution(gresolution);
+}
+
+//--------------------------------------------------------------
+bool ScenarioEditor::createGUI(SimpleObject * _obj){
+	
+	bool bcreated;
+	
+	if(gui != NULL){
+		delete gui;
+	}else bcreated = false;
+	
+	gui = new ofxUICanvas();
+	gui->addLabel("CONTEXTUAL MENU");
+	gui->addSpacer();
+	gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
+	gui->addSpacer();
+	gui->addLabel("ObjectId ["+ofToString(_obj->ObjectId)+"]");
+	gui->addSpacer();
+	gui->addSlider("Resolution", 0.0, 100.0, &gresolution);
+	gui->addSpacer();
+	gui->addSlider("RED", 0.0, 255.0, &gred);
+	gui->addSlider("GREEN", 0.0, 255.0, &ggreen);
+	gui->addSlider("BLUE", 0.0, 255.0, &gblue);
+	gui->addSlider("ALPHA", 0.0, 255.0, &galpha);
+	gui->addSpacer();
+	gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);
+	gui->addLabelToggle("DRAWFILL", &drawFill);
+	gui->autoSizeToFitWidgets();
+	ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
+	gui->loadSettings("GUI/guiSettings.xml");
+	
+	gui->setVisible(false);
+	
+	return bcreated;
+
+}
+
 
 //--------------------------------------------------------------
 void ScenarioEditor::update(){
@@ -95,6 +120,7 @@ void ScenarioEditor::keyReleased(int key){
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
     
     selectedObject = NULL;
+	//delete gui;
 
     for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
 		ofxBulletBaseShape *baseShape;
@@ -111,6 +137,10 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			//Save current location and current mouse
 			//objPressedLoc = ofVec2f(selectedObject->position.x, selectedObject->position.y);
 			mousePickLoc = ofVec2f(ofGetMouseX(), ofGetMouseY());
+			
+			
+			//Create Personal GUI of this type
+			bgui = createGUI(selectedObject);
 			
 			break; //Stop looking for objects
 		}
@@ -168,19 +198,19 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
 		eventMoveObjectScenario newMoveObjectEvent;
         newMoveObjectEvent.bMovingObject = true;
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
+	
+		if(bgui){
+			if(args.button == 2){
+				gui->setPosition(args.x, args.y);
+				gui->setVisible(true);
+				return;
+			}
+			
+			if(!gui->isHit(args.x, args.y)){
+				gui->setVisible(false);
+			}
+		}
 	}
-    
-    if(args.button == 2)
-    {
-        gui->setPosition(args.x, args.y);
-        gui->setVisible(true);
-        return;
-    }
-    
-    if(!gui->isHit(args.x, args.y))
-    {
-        gui->setVisible(false);
-    }
     
     mouseOldPosition = args;
 }
