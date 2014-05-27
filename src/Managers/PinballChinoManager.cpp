@@ -199,6 +199,8 @@ void PinballChinoManager::onReleaseBallLauncherEvent(void){
 //--------------------------------------------------------------
 void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 {
+	cout << "saveCameraPosition ?? " << endl;
+	
 	//_camPose = cam.getTarget().getGlobalTransformMatrix();
 	ofxXmlSettings *XML = new ofxXmlSettings("cameraSettings.xml");
     XML->setValue("_camPose_00", _camPose(0,0), 0); XML->setValue("_camPose_01", _camPose(0,1), 0); XML->setValue("_camPose_02", _camPose(0,2), 0); XML->setValue("_camPose_03", _camPose(0,3), 0);
@@ -208,6 +210,8 @@ void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 	//XML->setValue("distance", cam.getDistance(), 0);
 	XML->saveFile("cameraSettings.xml");
     delete XML;
+	
+	cout << "end saveCameraPosition ?? " << endl;
 }
 
 //--------------------------------------------------------------

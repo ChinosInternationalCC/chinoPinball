@@ -21,10 +21,11 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     ofRegisterMouseEvents(this);
     
     selectedObject = NULL;
-    
+	
+	gui = NULL;
+	
 	resetUIvalues();
     
- 
 }
 
 //--------------------------------------------------------------
@@ -71,6 +72,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				
 				cout << "Going to create a new Gui" << endl;
 				gui = new ofxUICanvas();
+
 				bGuiPointer = true;
 				cout << "new ofxUICanvas()" << endl;
 				
@@ -189,14 +191,17 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
     
     
-    if (bEscenarioEditorMode && (selectedObject != NULL))
-    {
-        ofVec3f newPos = selectedObject->position;
-        newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
-        newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
-        selectedObject -> position = newPos;
-        selectedObject -> setPosition(newPos);
-        mouseOldPosition = args;
+    if (bEscenarioEditorMode){
+		if( (gui != NULL) && (selectedObject != NULL) ){
+			if(gui->isHit(args.x, args.y) == false){
+				ofVec3f newPos = selectedObject->position;
+				newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
+				newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
+				selectedObject -> position = newPos;
+				selectedObject -> setPosition(newPos);
+				mouseOldPosition = args;
+			}
+		}
     }
 
     /*
@@ -268,6 +273,9 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
 		eventMoveObjectScenario newMoveObjectEvent;
         newMoveObjectEvent.bMovingObject = false;
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
+		
+		//free the selectedObject
+		//selectedObject = NULL;
 	}
 	
 }
