@@ -53,9 +53,13 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 		//Link directly to the main properties of the object selected // (selectedObject != NULL))
 		
 		
-		if(gui != NULL){
+		if(gui != NULL && bGuiPointer){
+			
+			cout << "Going to del Gui" << endl;
 			delete gui;
 			cout << "Del Gui" << endl;
+			bGuiPointer = false;
+			
 		}else bcreated = false;
 		
 		resetUIvalues();
@@ -64,8 +68,12 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 		if(selectedObject != NULL){
 			
 			if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
+				
 				cout << "Going to create a new Gui" << endl;
 				gui = new ofxUICanvas();
+				bGuiPointer = true;
+				cout << "new ofxUICanvas()" << endl;
+				
 				gui->addLabel("CONTEXTUAL MENU");
 				gui->addSpacer();
 				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
@@ -92,7 +100,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
 				gui->loadSettings("GUI/guiSettings.xml");
 				
-				gui->setVisible(false);
+				//gui->setVisible(false);
 				
 				cout << "new Gui Done" << endl;
 			}
