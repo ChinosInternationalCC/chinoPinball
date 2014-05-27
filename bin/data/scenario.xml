@@ -2,8 +2,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-3.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-10.440005302</positionX>
+        <positionY>-3.580000401</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -13,8 +13,8 @@
     <object>
         <type>6</type>
         <id>1</id>
-        <positionX>-0.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-10.259994507</positionX>
+        <positionY>-0.980002046</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -24,8 +24,8 @@
     <object>
         <type>6</type>
         <id>2</id>
-        <positionX>2.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-10.160000801</positionX>
+        <positionY>4.139999866</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -35,8 +35,8 @@
     <object>
         <type>6</type>
         <id>3</id>
-        <positionX>5.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-10.419994354</positionX>
+        <positionY>-6.379999161</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -57,8 +57,8 @@
     <object>
         <type>3</type>
         <id>5</id>
-        <positionX>-3.028410435</positionX>
-        <positionY>8.035743713</positionY>
+        <positionX>-3.548409939</positionX>
+        <positionY>9.815750122</positionY>
         <positionZ>-0.200000003</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
@@ -69,8 +69,8 @@
     <object>
         <type>3</type>
         <id>6</id>
-        <positionX>3.307854891</positionX>
-        <positionY>8.040441513</positionY>
+        <positionX>3.667854548</positionX>
+        <positionY>9.620450974</positionY>
         <positionZ>-0.200000003</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
@@ -92,8 +92,8 @@
     <object>
         <type>6</type>
         <id>8</id>
-        <positionX>-0.461380750</positionX>
-        <positionY>9.045289993</positionY>
+        <positionX>-10.081387520</positionX>
+        <positionY>6.005284309</positionY>
         <positionZ>0.000000000</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -103,12 +103,89 @@
     <object>
         <type>6</type>
         <id>9</id>
-        <positionX>0.047696337</positionX>
-        <positionY>-0.293577969</positionY>
+        <positionX>-10.712309837</positionX>
+        <positionY>1.286422014</positionY>
         <positionZ>-0.000014305</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
         <scaleZ>0.005000000</scaleZ>
         <path>3DModels/chino_6.dae</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-0.305105090</positionX>
+        <positionY>8.018747330</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-4.654901981</positionX>
+        <positionY>-6.407327652</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-0.636698961</positionX>
+        <positionY>-5.902965546</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>2.895070076</positionX>
+        <positionY>-5.748165131</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>5.401752472</positionX>
+        <positionY>-6.161945343</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-5.451670647</positionX>
+        <positionY>4.188827515</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>6.308994293</positionX>
+        <positionY>7.778794765</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
     </object>
 </scenario>

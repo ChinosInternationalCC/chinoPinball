@@ -51,6 +51,8 @@ public:
 	bool createGUI(SimpleObject *);
 	void resetUIvalues();
     ofxUICanvas *gui;
+	bool bGuiPointer;
+	
     void guiEvent(ofxUIEventArgs &e);
     bool drawFill;
 	float gred, ggreen, gblue, galpha;

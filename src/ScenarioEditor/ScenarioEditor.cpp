@@ -21,10 +21,11 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     ofRegisterMouseEvents(this);
     
     selectedObject = NULL;
-    
+	
+	gui = NULL;
+	
 	resetUIvalues();
     
- 
 }
 
 //--------------------------------------------------------------
@@ -44,33 +45,71 @@ void ScenarioEditor::resetUIvalues(){
 //--------------------------------------------------------------
 bool ScenarioEditor::createGUI(SimpleObject * _obj){
 	
-	bool bcreated;
+	bool bcreated = false;
 	
-	if(gui != NULL){
-		delete gui;
-	}else bcreated = false;
+	if(bEscenarioEditorMode){
 	
-	gui = new ofxUICanvas();
-	gui->addLabel("CONTEXTUAL MENU");
-	gui->addSpacer();
-	gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
-	gui->addSpacer();
-	gui->addLabel("ObjectId ["+ofToString(_obj->ObjectId)+"]");
-	gui->addSpacer();
-	gui->addSlider("Resolution", 0.0, 100.0, &gresolution);
-	gui->addSpacer();
-	gui->addSlider("RED", 0.0, 255.0, &gred);
-	gui->addSlider("GREEN", 0.0, 255.0, &ggreen);
-	gui->addSlider("BLUE", 0.0, 255.0, &gblue);
-	gui->addSlider("ALPHA", 0.0, 255.0, &galpha);
-	gui->addSpacer();
-	gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);
-	gui->addLabelToggle("DRAWFILL", &drawFill);
-	gui->autoSizeToFitWidgets();
-	ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
-	gui->loadSettings("GUI/guiSettings.xml");
+		//create speficic gui for each object selected
+		
+		//Link directly to the main properties of the object selected // (selectedObject != NULL))
+		
+		
+		if(gui != NULL && bGuiPointer){
+			
+			cout << "Going to del Gui" << endl;
+			delete gui;
+			cout << "Del Gui" << endl;
+			bGuiPointer = false;
+			
+		}else bcreated = false;
+		
+		resetUIvalues();
+		
+		
+		if(selectedObject != NULL){
+			
+			if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
+				
+				cout << "Going to create a new Gui" << endl;
+				gui = new ofxUICanvas();
+
+				bGuiPointer = true;
+				cout << "new ofxUICanvas()" << endl;
+				
+				gui->addLabel("CONTEXTUAL MENU");
+				gui->addSpacer();
+				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
+				gui->addSpacer();
+				gui->addLabel("ObjectId ["+ofToString(_obj->ObjectId)+"]");
+				gui->addSpacer();
+				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
+				//gui->addSpacer();
+				gui->addSlider("COLOR", 0.0, 255.0, selectedObject->color);
+				//gui->addSlider("GREEN", 0.0, 255.0, &ggreen);
+				//gui->addSlider("BLUE", 0.0, 255.0, &gblue);
+				//gui->addSlider("ALPHA", 0.0, 255.0, &galpha);
+				gui->addSpacer();
+				gui->addSlider("Scale X", 0.0, 255.0, selectedObject->scale.x);
+				gui->addSlider("Scale Y", 0.0, 255.0, selectedObject->scale.y);
+				gui->addSlider("Scale Z", 0.0, 255.0, selectedObject->scale.z);
+				gui->addSpacer();
+				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
+				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
+				gui->addSpacer();
+				gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);
+				gui->addLabelToggle("DRAWFILL", &drawFill);
+				gui->autoSizeToFitWidgets();
+				ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
+				gui->loadSettings("GUI/guiSettings.xml");
+				
+				//gui->setVisible(false);
+				
+				cout << "new Gui Done" << endl;
+			}
+		}
+		
+	}
 	
-	gui->setVisible(false);
 	
 	return bcreated;
 
@@ -152,14 +191,17 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
     
     
-    if (bEscenarioEditorMode && (selectedObject != NULL))
-    {
-        ofVec3f newPos = selectedObject->position;
-        newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
-        newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
-        selectedObject -> position = newPos;
-        selectedObject -> setPosition(newPos);
-        mouseOldPosition = args;
+    if (bEscenarioEditorMode){
+		if( (gui != NULL) && (selectedObject != NULL) ){
+			if(gui->isHit(args.x, args.y) == false){
+				ofVec3f newPos = selectedObject->position;
+				newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
+				newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
+				selectedObject -> position = newPos;
+				selectedObject -> setPosition(newPos);
+				mouseOldPosition = args;
+			}
+		}
     }
 
     /*
@@ -231,6 +273,9 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
 		eventMoveObjectScenario newMoveObjectEvent;
         newMoveObjectEvent.bMovingObject = false;
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
+		
+		//free the selectedObject
+		//selectedObject = NULL;
 	}
 	
 }
