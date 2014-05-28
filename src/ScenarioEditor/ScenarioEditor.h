@@ -50,8 +50,10 @@ public:
 	bool bgui;
 	bool createGUI(SimpleObject *);
 	void resetUIvalues();
-    ofxUICanvas *gui;
-	bool bGuiPointer;
+    
+	ofxUICanvas *gui;
+	
+	bool bGuiPointer;//var to protect from gui * bad accsss
 	
     void guiEvent(ofxUIEventArgs &e);
     bool drawFill;

@@ -192,8 +192,8 @@ void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
     
     
     if (bEscenarioEditorMode){
-		if( (gui != NULL) && (selectedObject != NULL) ){
-			if(gui->isHit(args.x, args.y) == false){
+		if( (gui != NULL) && (selectedObject != NULL) && bGuiPointer ){
+			if(gui->isHit(args.x, args.y) == false){ // BAD ACCES While moving Objects out of Shape Collision
 				ofVec3f newPos = selectedObject->position;
 				newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
 				newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
@@ -275,7 +275,7 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 		
 		//free the selectedObject
-		//selectedObject = NULL;
+		selectedObject = NULL;
 	}
 	
 }
