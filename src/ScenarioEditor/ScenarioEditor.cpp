@@ -84,14 +84,12 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSpacer();
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
-				gui->addSlider("COLOR", 0.0, 255.0, selectedObject->color);
-				//gui->addSlider("GREEN", 0.0, 255.0, &ggreen);
-				//gui->addSlider("BLUE", 0.0, 255.0, &gblue);
-				//gui->addSlider("ALPHA", 0.0, 255.0, &galpha);
+				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
+	
 				gui->addSpacer();
-				gui->addSlider("Scale X", 0.0, 255.0, selectedObject->scale.x);
-				gui->addSlider("Scale Y", 0.0, 255.0, selectedObject->scale.y);
-				gui->addSlider("Scale Z", 0.0, 255.0, selectedObject->scale.z);
+				gui->addSlider("Scale X", 0.0, 255.0, &selectedObject->scale.x);
+				gui->addSlider("Scale Y", 0.0, 255.0, &selectedObject->scale.y);
+				gui->addSlider("Scale Z", 0.0, 255.0, &selectedObject->scale.z);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);

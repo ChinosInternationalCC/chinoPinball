@@ -44,8 +44,10 @@ public:
     ofMatrix4x4 worldposition;
 	ofVec3f position;
 	bool bvisible;
+
     int color;
-    int highlightColor;
+    
+	int highlightColor;
     int highlightTime;
 	
 	//physics vars
