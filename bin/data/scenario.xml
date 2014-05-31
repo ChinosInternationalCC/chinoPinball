@@ -2,8 +2,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-10.440005302</positionX>
-        <positionY>-3.580000401</positionY>
+        <positionX>-12.900005341</positionX>
+        <positionY>-1.240000129</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -13,8 +13,8 @@
     <object>
         <type>6</type>
         <id>1</id>
-        <positionX>-10.259994507</positionX>
-        <positionY>-0.980002046</positionY>
+        <positionX>-8.959992409</positionX>
+        <positionY>1.219993353</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -24,8 +24,8 @@
     <object>
         <type>6</type>
         <id>2</id>
-        <positionX>-10.160000801</positionX>
-        <positionY>4.139999866</positionY>
+        <positionX>-11.619997978</positionX>
+        <positionY>6.739998817</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -59,7 +59,7 @@
         <id>5</id>
         <positionX>-3.548409939</positionX>
         <positionY>9.815750122</positionY>
-        <positionZ>-0.200000003</positionZ>
+        <positionZ>-0.500000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -71,7 +71,7 @@
         <id>6</id>
         <positionX>3.667854548</positionX>
         <positionY>9.620450974</positionY>
-        <positionZ>-0.200000003</positionZ>
+        <positionZ>-0.500000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -92,8 +92,8 @@
     <object>
         <type>6</type>
         <id>8</id>
-        <positionX>-10.081387520</positionX>
-        <positionY>6.005284309</positionY>
+        <positionX>-10.061388969</positionX>
+        <positionY>7.345280170</positionY>
         <positionZ>0.000000000</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -103,8 +103,8 @@
     <object>
         <type>6</type>
         <id>9</id>
-        <positionX>-10.712309837</positionX>
-        <positionY>1.286422014</positionY>
+        <positionX>-11.772303581</positionX>
+        <positionY>5.626420975</positionY>
         <positionZ>-0.000014305</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -114,8 +114,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-0.305105090</positionX>
-        <positionY>8.018747330</positionY>
+        <positionX>-0.225101963</positionX>
+        <positionY>7.878749371</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -125,8 +125,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-4.654901981</positionX>
-        <positionY>-6.407327652</positionY>
+        <positionX>-4.974901676</positionX>
+        <positionY>-6.047327995</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -136,8 +136,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-0.636698961</positionX>
-        <positionY>-5.902965546</positionY>
+        <positionX>2.383300066</positionX>
+        <positionY>2.717033863</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -147,8 +147,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>2.895070076</positionX>
-        <positionY>-5.748165131</positionY>
+        <positionX>-2.304927588</positionX>
+        <positionY>2.971834660</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -158,8 +158,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>5.401752472</positionX>
-        <positionY>-6.161945343</positionY>
+        <positionX>5.581752300</positionX>
+        <positionY>-6.301945210</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -169,8 +169,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-5.451670647</positionX>
-        <positionY>4.188827515</positionY>
+        <positionX>-3.031672716</positionX>
+        <positionY>-1.071172476</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -180,8 +180,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>6.308994293</positionX>
-        <positionY>7.778794765</positionY>
+        <positionX>3.168997288</positionX>
+        <positionY>-1.381204247</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
