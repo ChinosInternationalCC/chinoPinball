@@ -84,14 +84,12 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSpacer();
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
-				gui->addSlider("COLOR", 0.0, 255.0, selectedObject->color);
-				//gui->addSlider("GREEN", 0.0, 255.0, &ggreen);
-				//gui->addSlider("BLUE", 0.0, 255.0, &gblue);
-				//gui->addSlider("ALPHA", 0.0, 255.0, &galpha);
+				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
+	
 				gui->addSpacer();
-				gui->addSlider("Scale X", 0.0, 255.0, selectedObject->scale.x);
-				gui->addSlider("Scale Y", 0.0, 255.0, selectedObject->scale.y);
-				gui->addSlider("Scale Z", 0.0, 255.0, selectedObject->scale.z);
+				gui->addSlider("Scale X", 0.0, 1.0, &selectedObject->scale.x);
+				gui->addSlider("Scale Y", 0.0, 1.0, &selectedObject->scale.y);
+				gui->addSlider("Scale Z", 0.0, 1.0, &selectedObject->scale.z);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
@@ -104,7 +102,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				
 				//gui->setVisible(false);
 				
-				cout << "new Gui Done" << endl;
+					cout << "new Gui Done" << endl;
 			}
 		}
 		
@@ -192,8 +190,8 @@ void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
     
     
     if (bEscenarioEditorMode){
-		if( (gui != NULL) && (selectedObject != NULL) ){
-			if(gui->isHit(args.x, args.y) == false){
+		if( (gui != NULL) && (selectedObject != NULL) && bGuiPointer ){
+			if(gui->isHit(args.x, args.y) == false){ // BAD ACCES While moving Objects out of Shape Collision
 				ofVec3f newPos = selectedObject->position;
 				newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
 				newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
@@ -275,7 +273,7 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 		
 		//free the selectedObject
-		//selectedObject = NULL;
+		selectedObject = NULL;
 	}
 	
 }
