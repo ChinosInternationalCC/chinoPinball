@@ -54,11 +54,13 @@ public:
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
 	ofLight					light;
+    ofVec3f                 lightPos;
     
     Scenario                myScenario;
     ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     bool bFullScreen;
+    bool bDrawDebug;
     
     void onRestartGameEvent(void);
     void onMoveLeftLeverEvent(void);
@@ -67,6 +69,7 @@ public:
     void onReleaseRightLeverEvent(void);
     void onMoveBallLauncherEvent(void);
     void onReleaseBallLauncherEvent(void);
+    void ToggleDrawDebug(void);
 	
 
 

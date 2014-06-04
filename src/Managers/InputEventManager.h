@@ -42,6 +42,7 @@ public:
     virtual void onMoveBallLauncherEvent(void) = 0;
     virtual void onReleaseBallLauncherEvent(void) = 0;
     virtual void onRestartGameEvent(void) = 0;
+    virtual void ToggleDrawDebug(void) = 0;
     
 #ifdef USE_OSC
     ofxOscReceiver oscReceiver;

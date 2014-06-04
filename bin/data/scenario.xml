@@ -183,9 +183,9 @@
         <positionX>3.168997288</positionX>
         <positionY>-1.381204247</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.201970443</scaleX>
+        <scaleY>0.201970443</scaleY>
+        <scaleZ>0.197044328</scaleZ>
+        <path>TurbochiFromXSI.dae</path>
     </object>
 </scenario>
