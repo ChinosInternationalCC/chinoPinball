@@ -26,6 +26,7 @@ public:
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;
     ofMaterial				material;
+    ofMesh                  assimpModelMesh;
     
     //vector<bool>				bColliding;
     
