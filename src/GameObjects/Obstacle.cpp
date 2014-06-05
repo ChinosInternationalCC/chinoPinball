@@ -69,10 +69,18 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 //--------------------------------------------------------------
 void Obstacle::update(){
 	cout << "update SimpleObject Obstacle";
-	if(scale != last_scale){
+	
+	if (scaleXyz != last_scaleXyz) {
+		float diff = last_scaleXyz - scaleXyz;
+		last_scaleXyz = scaleXyz;
+		//Apply diff to actual model
+		scale = scale + diff;
+	}
+	else if(scale != last_scale){
 		assimpModel.setScale(scale.x, scale.y, scale.z);
 		last_scale = scale;
 	}
+
     
 }
 
