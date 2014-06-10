@@ -42,6 +42,10 @@ void InputEventManager::keyPressed(int key)
         case 'M':
             onMoveRightLeverEvent();
 	       break;
+        case 'd':
+        case 'D':
+            ToggleDrawDebug();
+            break;
     }
     
 }

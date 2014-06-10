@@ -24,13 +24,12 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     
     
     // load 3D model
-    //ofVec3f scale(0.05, 0.05, 0.05);
-    //scale = ofVec3f(0.005, 0.005, 0.005);
     scale = ModelScale;
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
 
+    //ofEnableSeparateSpecularLight();
     
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
@@ -38,8 +37,17 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
     //    body.addMesh(assimpModel.getMesh(0), scale, true);
-    
+    assimpModelMesh = assimpModel.getMesh(0);
+    assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
+    assimpModel.playAllAnimations();
     body.add();
+    
+    //material.setAmbientColor(ofFloatColor(0, 0, 0));
+	//material.setDiffuseColor(ofFloatColor(150, 0, 150));
+	//material.setSpecularColor(ofFloatColor(220, 0, 220));
+	//material.setShininess(40);
+    
+    
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
@@ -69,11 +77,14 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 
 //--------------------------------------------------------------
 void Obstacle::update(){
-	cout << "update SimpleObject Obstacle";
+	//cout << "update SimpleObject Obstacle";
 	if(scale != last_scale){
 		assimpModel.setScale(scale.x, scale.y, scale.z);
 		last_scale = scale;
 	}
+    assimpModel.update();
+    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);
+    
     
 }
 
@@ -94,7 +105,11 @@ void Obstacle::draw(){
     body.transformGL();
     ofPoint scale = assimpModel.getScale();
     ofScale(scale.x,scale.y,scale.z);
-    assimpModel.getMesh(0).drawFaces();
+    assimpModel.drawFaces();
+    /* what is the diference between drawing the faces of the model or the mesh????*/
+    //assimpModelMesh.drawFaces();
+    //assimpModelMesh.drawWireframe();
+    
     body.restoreTramsformGL();
     
 	material.end();
