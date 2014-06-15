@@ -22,7 +22,6 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.create(world.world, position, 0); // we set m=0 for kinematic body
 
     
-    
     // load 3D model
     scale = ModelScale;
 	assimpModel.loadModel(url, true);
@@ -31,6 +30,10 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 
     //ofEnableSeparateSpecularLight();
     
+	//save init values
+	initScale = scale;
+	
+	
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
@@ -71,28 +74,70 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     
     body.activate();
     
-
-    
 }
 
 //--------------------------------------------------------------
 void Obstacle::update(){
 
-	cout << "update SimpleObject Obstacle";
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = last_scaleXyz - scaleXyz;
-		last_scaleXyz = scaleXyz;
-		//Apply diff to actual model
-		scale = scale + diff;
-	}
-	else if(scale != last_scale){
-		assimpModel.setScale(scale.x, scale.y, scale.z);
-		last_scale = scale;
-	}
+	autoScalingXYZ();
 
     assimpModel.update();
     assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);    
+
+	//Udpate mesch if there are changes
+	// add 3D mashes to ofxBullet shape
+    //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
+    //{
+		//btVector3 myBtScale;
+		//myBtScale.setX(scale.x);
+		//myBtScale.setY(scale.y);
+		//myBtScale.setZ(scale.z);
+		
+        //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
+		//setImplicitShapeDimensions(myBtScale);
+		//addMesh(assimpModel.getMesh(i), scale, true);
+    //}
+
+}
+/*
+//--------------------------------------------------------------
+void Obstacle::autoScalingXYZ(){
+	
+}*/
+
+//--------------------------------------------------------------
+void Obstacle::autoScalingXYZ(){
+	
+	btVector3 myObjectScale;
+	ofVec3f myOfObjectScale;
+	
+	
+	if (scaleXyz != last_scaleXyz) {
+		float diff = scaleXyz - last_scaleXyz;
+		last_scaleXyz = scaleXyz;
+		
+		//Get Scales
+		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
+		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
+
+		//Update sizes values
+		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
+		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
+
+		myObjectScale.setX(myOfObjectScale.x);
+		myObjectScale.setY(myOfObjectScale.y);
+		myObjectScale.setZ(myOfObjectScale.z);		
+
+		//update physyc object
+		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
+		assimpModel.setScale(scale.x, scale.y, scale.z);
+	}
+	/*
+	else if(scale != last_scale){
+		assimpModel.setScale(scale.x, scale.y, scale.z);
+		last_scale = scale;
+		//myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling()+ diff;
+	}*/
 }
 
 //--------------------------------------------------------------
@@ -112,10 +157,10 @@ void Obstacle::draw(){
     body.transformGL();
     ofPoint scale = assimpModel.getScale();
     ofScale(scale.x,scale.y,scale.z);
-    assimpModel.drawFaces();
+    //assimpModel.drawFaces();
     /* what is the diference between drawing the faces of the model or the mesh????*/
     //assimpModelMesh.drawFaces();
-    //assimpModelMesh.drawWireframe();
+    assimpModelMesh.drawWireframe();
     
     body.restoreTramsformGL();
     
