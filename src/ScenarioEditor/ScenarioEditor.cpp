@@ -118,6 +118,11 @@ void ScenarioEditor::update(){
 
 //--------------------------------------------------------------
 void ScenarioEditor::draw(){
+    if(bEscenarioEditorMode){
+        //ofSetColor(100, 100, 100);
+        string fpsStr = "Scenario Editor Mode";
+        ofDrawBitmapString(fpsStr, 50,ofGetHeight()-100);
+    }
 }
 
 //--------------------------------------------------------------
