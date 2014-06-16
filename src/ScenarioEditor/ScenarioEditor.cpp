@@ -33,13 +33,13 @@ void ScenarioEditor::resetUIvalues(){
 	/*GUI setup */
 	//set some sketch parameters
 	//Background Color
-	gred = 233;     gblue = 240;    ggreen = 52;    galpha = 200;
-	gradius = 150;    gnoiseScale = .1;
-	drawFill = true;
+	//gred = 233;     gblue = 240;    ggreen = 52;    galpha = 200;
+	//gradius = 150;    gnoiseScale = .1;
+	//drawFill = true;
 	backgroundColor = ofColor(233, 52, 27);
-	gresolution = 30;
-	gposition = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
-	ofSetCircleResolution(gresolution);
+	//gresolution = 30;
+	//gposition = ofPoint(ofGetWidth()*.5, ofGetHeight()*.5);
+	//ofSetCircleResolution(gresolution);
 }
 
 //--------------------------------------------------------------
@@ -92,8 +92,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
 				gui->addSpacer();
-				gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);
-				gui->addLabelToggle("DRAWFILL", &drawFill);
+				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
+                gui->addLabelButton("DELETE OBJECT", &deleteObject);
+				//gui->addLabelToggle("DRAWFILL", &drawFill);
 				gui->autoSizeToFitWidgets();
 				ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
 				gui->loadSettings("GUI/guiSettings.xml");
@@ -261,8 +262,12 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
 //--------------------------------------------------------
 void ScenarioEditor::guiEvent(ofxUIEventArgs &e)
 {
-    //	string name = e.widget->getName();
+    string name = e.widget->getName();
     //	int kind = e.widget->getKind();
+    if (name == "DELETE OBJECT"){
+        if(deleteObject)
+            scenario->popObject(selectedObject);
+    }
 }
 
 

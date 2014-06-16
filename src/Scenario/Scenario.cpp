@@ -182,6 +182,11 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
     }
 }
 
+void Scenario::popObject(SimpleObject* obj){
+    vector<SimpleObject*>::iterator it;
+    //TODO
+    
+}
 //--------------------------------------------------------------
 #if 0 //the function is not mentained, update it first if you want to use it
 void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
