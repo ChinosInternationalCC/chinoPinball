@@ -123,6 +123,7 @@ void Obstacle::autoScalingXYZ(){
 		//Update sizes values
 		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
 		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
+		last_scale = scale;
 
 		myObjectScale.setX(myOfObjectScale.x);
 		myObjectScale.setY(myOfObjectScale.y);
@@ -132,38 +133,36 @@ void Obstacle::autoScalingXYZ(){
 		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
 		assimpModel.setScale(scale.x, scale.y, scale.z);
 	}
-	/*
-	else if(scale != last_scale){
-		assimpModel.setScale(scale.x, scale.y, scale.z);
-		last_scale = scale;
-		//myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling()+ diff;
-	}*/
+
 }
 
 //--------------------------------------------------------------
 void Obstacle::draw(){
 	
+	bool debug = true;
+	
+	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
         ofSetHexColor(color);
     }
-    
-    //ofLog(OF_LOG_NOTICE, ofToString(t));
+	//<<??
 	
-    material.begin();
-	
-    body.transformGL();
+	body.transformGL();
     ofPoint scale = assimpModel.getScale();
     ofScale(scale.x,scale.y,scale.z);
-    //assimpModel.drawFaces();
-    /* what is the diference between drawing the faces of the model or the mesh????*/
-    //assimpModelMesh.drawFaces();
-    assimpModelMesh.drawWireframe();
     
+	if(debug){
+		assimpModelMesh.drawWireframe();
+	}else{
+		assimpModelMesh.drawFaces();
+		/* what is the diference between drawing the faces of the model or the mesh????*/
+		material.begin();
+	}
+	
     body.restoreTramsformGL();
-    
 	material.end();
 	
 }
