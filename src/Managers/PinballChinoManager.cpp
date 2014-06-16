@@ -103,6 +103,7 @@ void PinballChinoManager::draw(){
     
     statusDisplay.draw();
     
+    scenarioEditor.draw();
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
