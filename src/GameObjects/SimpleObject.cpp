@@ -13,6 +13,8 @@ SimpleObject::SimpleObject(){
 	bAnimation = false;
     color = 0xffffff;
     highlightColor = 0xff00ff;
+	scale = ofVec3f(); last_scale = scale;
+	scaleXyz = 0; last_scaleXyz = scaleXyz;
     highlightTime = 60; // what units?
 }
 

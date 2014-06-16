@@ -22,6 +22,9 @@ public:
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
 	virtual void update();
 	virtual void draw();
+	
+	void autoScalingXYZ();
+	//void autoScalingXYZ();
     
 	ofxBulletCustomShape	body;
 	ofxAssimpModelLoader	assimpModel;
@@ -30,8 +33,9 @@ public:
     
     //vector<bool>				bColliding;
     
+	
     
-	//ofVec3f         position;
+	ofVec3f         initScale;
     
     btQuaternion    rotation;
     

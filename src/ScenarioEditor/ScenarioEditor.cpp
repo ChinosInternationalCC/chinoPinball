@@ -87,6 +87,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
 	
 				gui->addSpacer();
+				gui->addSlider("Scale XYZ", 0, 1, &selectedObject->scaleXyz);
 				gui->addSlider("Scale X", 0.0, 1.0, &selectedObject->scale.x);
 				gui->addSlider("Scale Y", 0.0, 1.0, &selectedObject->scale.y);
 				gui->addSlider("Scale Z", 0.0, 1.0, &selectedObject->scale.z);
