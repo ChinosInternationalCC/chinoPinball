@@ -32,6 +32,7 @@ public:
     void loadFromJSON(ofxBulletWorldRigid &world);
     void saveToJSON(void);
     
+    void popObject(SimpleObject* obj);
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
     //ofxXmlSettings ScenarioXml;
