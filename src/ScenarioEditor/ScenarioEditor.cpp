@@ -88,9 +88,6 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 	
 				gui->addSpacer();
 				gui->addSlider("Scale XYZ", 0, 1, &selectedObject->scaleXyz);
-				gui->addSlider("Scale X", 0.0, 1.0, &selectedObject->scale.x);
-				gui->addSlider("Scale Y", 0.0, 1.0, &selectedObject->scale.y);
-				gui->addSlider("Scale Z", 0.0, 1.0, &selectedObject->scale.z);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
