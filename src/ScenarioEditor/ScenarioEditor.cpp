@@ -71,12 +71,13 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
 				
 				cout << "Going to create a new Gui" << endl;
-				gui = new ofxUICanvas();
+				posGui = ofVec2f(ofGetWidth()-OFX_UI_GLOBAL_CANVAS_WIDTH, 0);
+				gui = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 
 				bGuiPointer = true;
 				cout << "new ofxUICanvas()" << endl;
 				
-				gui->addLabel("CONTEXTUAL MENU");
+				gui->addLabel("Editor Object");
 				gui->addSpacer();
 				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
 				gui->addSpacer();
