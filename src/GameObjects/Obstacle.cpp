@@ -139,8 +139,6 @@ void Obstacle::autoScalingXYZ(){
 //--------------------------------------------------------------
 void Obstacle::draw(){
 	
-	bool debug = true;
-	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
     if(t<highlightTime){
@@ -154,17 +152,13 @@ void Obstacle::draw(){
     ofPoint scale = assimpModel.getScale();
     ofScale(scale.x,scale.y,scale.z);
     
-	if(debug){
-		assimpModelMesh.drawWireframe();
-	}else{
-		assimpModelMesh.drawFaces();
-		/* what is the diference between drawing the faces of the model or the mesh????*/
-		material.begin();
-	}
-	
+	//assimpModelMesh.drawWireframe(); //makes slow framerate
+	assimpModelMesh.drawFaces();
+	/* what is the diference between drawing the faces of the model or the mesh????*/
+	material.begin();
+
     body.restoreTramsformGL();
 	material.end();
-	
 }
 
 //-------------------------------------------------------------
