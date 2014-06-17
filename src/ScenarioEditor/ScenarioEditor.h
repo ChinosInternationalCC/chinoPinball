@@ -53,6 +53,7 @@ public:
 	void resetUIvalues();
     
 	ofxUICanvas *gui;
+	//bool bGoForRemove;
 	ofVec2f posGui;
 	
 	bool bGuiPointer;//var to protect from gui * bad accsss
