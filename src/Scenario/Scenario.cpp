@@ -32,6 +32,7 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     ScenarioObjects.push_back(&leverRight);
     ScenarioObjects.push_back(&m_Hammer);
 	*/
+	
     
     loadFromXml(world);
     //loadFromJSON(world);
@@ -63,7 +64,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	
 	//BackWall
 	float widthbkPlane = 100;
-	float heightbkPlane = boundsWidth;
+	float heightbkPlane = boundsWidth*1.5;
 	float depthbkPlane = frontbackwallHeigh;
 	
 	//RightLeftWall
@@ -72,7 +73,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	float depthrlPlane = heightwalls;
 
 	
-	for(int i = 0; i < 4; i++) {
+	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
 		if(i == 0) { // ground //
 			//startLoc.set(-widthPlane*0.5, -heightPlane*0.5, 0);
@@ -88,6 +89,11 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 			startLoc.set(+widthbasePlane*0.5 , 0, -depthbasePlane*0.5);
 			dimens.set(widthrlPlane, heightrlPlane, depthrlPlane);
 		}
+		//TODO Better to set a dynamic ceiling. That can be added and removed easyly to let scenario to be free for Editor.
+		/*else if(i == 4) { // ground //
+			startLoc.set(0, 0, -2*heightbkPlane);
+			dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
+		}*/
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
@@ -177,11 +183,21 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
     }
 }
 
+//--------------------------------------------------------------
 void Scenario::popObject(SimpleObject* obj){
-    vector<SimpleObject*>::iterator it;
+    //vector<SimpleObject*>::iterator it;
     //TODO
-    
+	//SEarch the object and pop it
+	for(int i = 0; i < ScenarioObjects.size(); i++) {
+		if(ScenarioObjects[i] == obj){
+			cout << "goig to remove i = " << i << endl;
+			//ScenarioObjects.pop_back();
+			ScenarioObjects.erase(ScenarioObjects.begin()+i);
+			break;
+		}
+	}
 }
+
 //--------------------------------------------------------------
 #if 0 //the function is not mentained, update it first if you want to use it
 void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
@@ -356,8 +372,6 @@ void Scenario::saveToXml(){
             pLever = (Lever*)ScenarioObjects[i];
             ScenarioXml.addValue("LeverType", pLever->direction);
         }
-        
-
         
         ScenarioXml.popTag();
     }

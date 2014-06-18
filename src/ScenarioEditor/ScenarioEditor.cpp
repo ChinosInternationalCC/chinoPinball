@@ -23,7 +23,8 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     selectedObject = NULL;
 	
 	gui = NULL;
-	
+	//bGoForRemove = false;
+	deleteObject = false;
 	resetUIvalues();
     
 }
@@ -71,12 +72,13 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
 				
 				cout << "Going to create a new Gui" << endl;
-				gui = new ofxUICanvas();
+				posGui = ofVec2f(ofGetWidth()-OFX_UI_GLOBAL_CANVAS_WIDTH, 0);
+				gui = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 
 				bGuiPointer = true;
 				cout << "new ofxUICanvas()" << endl;
 				
-				gui->addLabel("CONTEXTUAL MENU");
+				gui->addLabel("Editor Object");
 				gui->addSpacer();
 				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
 				gui->addSpacer();
@@ -88,15 +90,12 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 	
 				gui->addSpacer();
 				gui->addSlider("Scale XYZ", 0, 1, &selectedObject->scaleXyz);
-				gui->addSlider("Scale X", 0.0, 1.0, &selectedObject->scale.x);
-				gui->addSlider("Scale Y", 0.0, 1.0, &selectedObject->scale.y);
-				gui->addSlider("Scale Z", 0.0, 1.0, &selectedObject->scale.z);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
 				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
-                gui->addLabelButton("DELETE OBJECT", &deleteObject);
+                gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
 				//gui->addLabelToggle("DRAWFILL", &drawFill);
 				gui->autoSizeToFitWidgets();
 				ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
@@ -183,8 +182,15 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			mousePickLoc = ofVec2f(ofGetMouseX(), ofGetMouseY());
 			
 			
-			//Create Personal GUI of this type
-			bgui = createGUI(selectedObject);
+			//Create Personal GUI of this type OR Remove Object Touched
+			if(deleteObject){
+				scenario->popObject(selectedObject);
+				deleteObject = false;
+			}
+			else {
+				bgui = createGUI(selectedObject);
+			}
+			
 			
 			break; //Stop looking for objects
 		}
@@ -262,14 +268,14 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
     mouseOldPosition = args;
 }
 
+
+
 //--------------------------------------------------------
-void ScenarioEditor::guiEvent(ofxUIEventArgs &e)
-{
+void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
     string name = e.widget->getName();
     //	int kind = e.widget->getKind();
-    if (name == "DELETE OBJECT"){
-        if(deleteObject)
-            scenario->popObject(selectedObject);
+    if (name == "PRESS & PICK TO DELETE IT"){
+
     }
 }
 

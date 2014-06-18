@@ -16,6 +16,7 @@
 #include "SimpleObject.h"
 #include "chinoWorld.h"
 #include "ofxUI.h"
+#include "ofxUIDefines.h"
 
 class ScenarioEditor {
     
@@ -52,6 +53,8 @@ public:
 	void resetUIvalues();
     
 	ofxUICanvas *gui;
+	//bool bGoForRemove;
+	ofVec2f posGui;
 	
 	bool bGuiPointer;//var to protect from gui * bad accsss
 	
