@@ -193,6 +193,7 @@ void Scenario::popObject(SimpleObject* obj){
 			cout << "goig to remove i = " << i << endl;
 			//ScenarioObjects.pop_back();
 			ScenarioObjects.erase(ScenarioObjects.begin()+i);
+            delete obj;
 			break;
 		}
 	}
