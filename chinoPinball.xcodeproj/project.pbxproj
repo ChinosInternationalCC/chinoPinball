@@ -193,6 +193,9 @@
 		A58DD22B18F8577300B1FE41 /* ofxUIWaveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FA18F8577300B1FE41 /* ofxUIWaveform.cpp */; };
 		A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FC18F8577300B1FE41 /* ofxUIWidget.cpp */; };
 		A58DD22D18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */; };
+		A5EC6C461952309B0053D4C1 /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6C1A1952309B0053D4C1 /* ofxFTGLFont.cpp */; };
+		A5EC6C471952309B0053D4C1 /* ofxFTGLSimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6C1C1952309B0053D4C1 /* ofxFTGLSimpleLayout.cpp */; };
+		A5EC6C481952309B0053D4C1 /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EC6C3F1952309B0053D4C1 /* libftgl.a */; };
 		A7C5BC5418B788BB006187D9 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
 		A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4618B788BA006187D9 /* SyphonNameboundClient.m */; };
 		A7C5BC5618B788BB006187D9 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4B18B788BB006187D9 /* ofxSyphonClient.mm */; };
@@ -559,7 +562,7 @@
 		65BAC5A3B9C9387859A2B0E0 /* pushpack1.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pushpack1.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/Compiler/pushpack1.h; sourceTree = SOURCE_ROOT; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
 		66758EEBF261DC6EC9531959 /* Bullet-C-API.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = "Bullet-C-API.cpp"; path = "../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics/Bullet-C-API.cpp"; sourceTree = SOURCE_ROOT; };
-		66D92C80DA6EAA0004DBE707 /* GameStatusDisplay.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GameStatusDisplay.cpp; path = src/Media/GameStatusDisplay.cpp; sourceTree = SOURCE_ROOT; };
+		66D92C80DA6EAA0004DBE707 /* GameStatusDisplay.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GameStatusDisplay.cpp; path = src/Media/GameStatusDisplay.cpp; sourceTree = SOURCE_ROOT; };
 		66FD979D37EE31EFA3D89365 /* btConvexHullComputer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConvexHullComputer.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath/btConvexHullComputer.cpp; sourceTree = SOURCE_ROOT; };
 		670B702135020F50ED2ED5AE /* btTriangleShapeEx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btTriangleShapeEx.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/btTriangleShapeEx.h; sourceTree = SOURCE_ROOT; };
 		671BDF04DB9719B36493E674 /* btConvexCast.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConvexCast.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btConvexCast.cpp; sourceTree = SOURCE_ROOT; };
@@ -832,6 +835,35 @@
 		A58DD20118F8577300B1FE41 /* ofxUIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWrapper.h; sourceTree = "<group>"; };
 		A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConcaveShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp; sourceTree = SOURCE_ROOT; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
+		A5EC6C191952309B0053D4C1 /* ofxFTGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxFTGL.h; sourceTree = "<group>"; };
+		A5EC6C1A1952309B0053D4C1 /* ofxFTGLFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFTGLFont.cpp; sourceTree = "<group>"; };
+		A5EC6C1B1952309B0053D4C1 /* ofxFTGLFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxFTGLFont.h; sourceTree = "<group>"; };
+		A5EC6C1C1952309B0053D4C1 /* ofxFTGLSimpleLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFTGLSimpleLayout.cpp; sourceTree = "<group>"; };
+		A5EC6C1D1952309B0053D4C1 /* ofxFTGLSimpleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxFTGLSimpleLayout.h; sourceTree = "<group>"; };
+		A5EC6C221952309B0053D4C1 /* FTBBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTBBox.h; sourceTree = "<group>"; };
+		A5EC6C231952309B0053D4C1 /* FTBitmapGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTBitmapGlyph.h; sourceTree = "<group>"; };
+		A5EC6C241952309B0053D4C1 /* FTBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTBuffer.h; sourceTree = "<group>"; };
+		A5EC6C251952309B0053D4C1 /* FTBufferFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTBufferFont.h; sourceTree = "<group>"; };
+		A5EC6C261952309B0053D4C1 /* FTBufferGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTBufferGlyph.h; sourceTree = "<group>"; };
+		A5EC6C271952309B0053D4C1 /* FTExtrdGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTExtrdGlyph.h; sourceTree = "<group>"; };
+		A5EC6C281952309B0053D4C1 /* FTFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTFont.h; sourceTree = "<group>"; };
+		A5EC6C291952309B0053D4C1 /* ftgl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ftgl.h; sourceTree = "<group>"; };
+		A5EC6C2A1952309B0053D4C1 /* FTGLBitmapFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLBitmapFont.h; sourceTree = "<group>"; };
+		A5EC6C2B1952309B0053D4C1 /* FTGLExtrdFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLExtrdFont.h; sourceTree = "<group>"; };
+		A5EC6C2C1952309B0053D4C1 /* FTGLOutlineFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLOutlineFont.h; sourceTree = "<group>"; };
+		A5EC6C2D1952309B0053D4C1 /* FTGLPixmapFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLPixmapFont.h; sourceTree = "<group>"; };
+		A5EC6C2E1952309B0053D4C1 /* FTGLPolygonFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLPolygonFont.h; sourceTree = "<group>"; };
+		A5EC6C2F1952309B0053D4C1 /* FTGLTextureFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGLTextureFont.h; sourceTree = "<group>"; };
+		A5EC6C301952309B0053D4C1 /* FTGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTGlyph.h; sourceTree = "<group>"; };
+		A5EC6C311952309B0053D4C1 /* FTLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTLayout.h; sourceTree = "<group>"; };
+		A5EC6C321952309B0053D4C1 /* FTOutlineGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTOutlineGlyph.h; sourceTree = "<group>"; };
+		A5EC6C331952309B0053D4C1 /* FTPixmapGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTPixmapGlyph.h; sourceTree = "<group>"; };
+		A5EC6C341952309B0053D4C1 /* FTPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTPoint.h; sourceTree = "<group>"; };
+		A5EC6C351952309B0053D4C1 /* FTPolyGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTPolyGlyph.h; sourceTree = "<group>"; };
+		A5EC6C361952309B0053D4C1 /* FTSimpleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTSimpleLayout.h; sourceTree = "<group>"; };
+		A5EC6C371952309B0053D4C1 /* FTTextureGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTTextureGlyph.h; sourceTree = "<group>"; };
+		A5EC6C3E1952309B0053D4C1 /* buildFTGL.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildFTGL.sh; sourceTree = "<group>"; };
+		A5EC6C3F1952309B0053D4C1 /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
 		A626AFF72A089B0674C727F3 /* gim_tri_collision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_tri_collision.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h; sourceTree = SOURCE_ROOT; };
 		A62BE439E0BA41B8956DDA6F /* gim_geometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geometry.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geometry.h; sourceTree = SOURCE_ROOT; };
 		A6ADF3B86DB74459FB51EC3F /* btConvexConvexAlgorithm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConvexConvexAlgorithm.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp; sourceTree = SOURCE_ROOT; };
@@ -1069,6 +1101,7 @@
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+				A5EC6C481952309B0053D4C1 /* libftgl.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -2072,6 +2105,100 @@
 			path = ../../../addons/ofxUI/src;
 			sourceTree = "<group>";
 		};
+		A5EC6C171952309B0053D4C1 /* ofxFTGL */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C181952309B0053D4C1 /* src */,
+				A5EC6C1E1952309B0053D4C1 /* libs */,
+			);
+			name = ofxFTGL;
+			sourceTree = "<group>";
+		};
+		A5EC6C181952309B0053D4C1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C191952309B0053D4C1 /* ofxFTGL.h */,
+				A5EC6C1A1952309B0053D4C1 /* ofxFTGLFont.cpp */,
+				A5EC6C1B1952309B0053D4C1 /* ofxFTGLFont.h */,
+				A5EC6C1C1952309B0053D4C1 /* ofxFTGLSimpleLayout.cpp */,
+				A5EC6C1D1952309B0053D4C1 /* ofxFTGLSimpleLayout.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxFTGL/src;
+			sourceTree = "<group>";
+		};
+		A5EC6C1E1952309B0053D4C1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C1F1952309B0053D4C1 /* FTGL */,
+			);
+			name = libs;
+			path = ../../../addons/ofxFTGL/libs;
+			sourceTree = "<group>";
+		};
+		A5EC6C1F1952309B0053D4C1 /* FTGL */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C201952309B0053D4C1 /* include */,
+				A5EC6C381952309B0053D4C1 /* lib */,
+			);
+			path = FTGL;
+			sourceTree = "<group>";
+		};
+		A5EC6C201952309B0053D4C1 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C211952309B0053D4C1 /* FTGL */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A5EC6C211952309B0053D4C1 /* FTGL */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C221952309B0053D4C1 /* FTBBox.h */,
+				A5EC6C231952309B0053D4C1 /* FTBitmapGlyph.h */,
+				A5EC6C241952309B0053D4C1 /* FTBuffer.h */,
+				A5EC6C251952309B0053D4C1 /* FTBufferFont.h */,
+				A5EC6C261952309B0053D4C1 /* FTBufferGlyph.h */,
+				A5EC6C271952309B0053D4C1 /* FTExtrdGlyph.h */,
+				A5EC6C281952309B0053D4C1 /* FTFont.h */,
+				A5EC6C291952309B0053D4C1 /* ftgl.h */,
+				A5EC6C2A1952309B0053D4C1 /* FTGLBitmapFont.h */,
+				A5EC6C2B1952309B0053D4C1 /* FTGLExtrdFont.h */,
+				A5EC6C2C1952309B0053D4C1 /* FTGLOutlineFont.h */,
+				A5EC6C2D1952309B0053D4C1 /* FTGLPixmapFont.h */,
+				A5EC6C2E1952309B0053D4C1 /* FTGLPolygonFont.h */,
+				A5EC6C2F1952309B0053D4C1 /* FTGLTextureFont.h */,
+				A5EC6C301952309B0053D4C1 /* FTGlyph.h */,
+				A5EC6C311952309B0053D4C1 /* FTLayout.h */,
+				A5EC6C321952309B0053D4C1 /* FTOutlineGlyph.h */,
+				A5EC6C331952309B0053D4C1 /* FTPixmapGlyph.h */,
+				A5EC6C341952309B0053D4C1 /* FTPoint.h */,
+				A5EC6C351952309B0053D4C1 /* FTPolyGlyph.h */,
+				A5EC6C361952309B0053D4C1 /* FTSimpleLayout.h */,
+				A5EC6C371952309B0053D4C1 /* FTTextureGlyph.h */,
+			);
+			path = FTGL;
+			sourceTree = "<group>";
+		};
+		A5EC6C381952309B0053D4C1 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C3D1952309B0053D4C1 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		A5EC6C3D1952309B0053D4C1 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC6C3E1952309B0053D4C1 /* buildFTGL.sh */,
+				A5EC6C3F1952309B0053D4C1 /* libftgl.a */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
 		A7C5BC2618B788BA006187D9 /* ofxSyphon */ = {
 			isa = PBXGroup;
 			children = (
@@ -2173,6 +2300,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC6C171952309B0053D4C1 /* ofxFTGL */,
 				A58DD1A218F8577200B1FE41 /* ofxUI */,
 				A58AA50518E0BFFE00AA5372 /* ofxDmx */,
 				A58C5E9218BBDCA000E99E78 /* ofxJSON */,
@@ -2629,6 +2757,7 @@
 				A58DD20418F8577300B1FE41 /* ofxUIBaseDraws.cpp in Sources */,
 				F333F5135A1714F382A7A287 /* chinoWorld.cpp in Sources */,
 				3B8120368B4FCCD80883BAF3 /* ofxAssimpAnimation.cpp in Sources */,
+				A5EC6C461952309B0053D4C1 /* ofxFTGLFont.cpp in Sources */,
 				483FA4F6D5FA6422C559B1F5 /* ofxAssimpMeshHelper.cpp in Sources */,
 				8DED5056525646FA71980866 /* ofxAssimpModelLoader.cpp in Sources */,
 				A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */,
@@ -2677,6 +2806,7 @@
 				9418042F4553CFAA7C9875B9 /* btGhostObject.cpp in Sources */,
 				2C97B9B2586FA58ADFCBAC6E /* btInternalEdgeUtility.cpp in Sources */,
 				EE315F5FA22EB05D8FF1CCA9 /* btManifoldResult.cpp in Sources */,
+				A5EC6C471952309B0053D4C1 /* ofxFTGLSimpleLayout.cpp in Sources */,
 				A58DD21D18F8577300B1FE41 /* ofxUIRectangle.cpp in Sources */,
 				F1F726F1F5F723E1E64F2A98 /* btSimulationIslandManager.cpp in Sources */,
 				23D64136590F721BCB1DCB67 /* btSphereBoxCollisionAlgorithm.cpp in Sources */,
@@ -3357,9 +3487,10 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
+					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxFTGL/libs/FTGL/include/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3542,9 +3673,10 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxFTGL/libs/FTGL/include/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

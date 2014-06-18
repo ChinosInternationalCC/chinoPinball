@@ -9,12 +9,22 @@
 #ifndef __chinoPinball__GameStatusDisplay__
 #define __chinoPinball__GameStatusDisplay__
 
+#include "ofxFTGL.h"
 
 
 class GameStatusDisplay{
 public:
     GameStatusDisplay(int posX, int posY);
     void draw(void);
+    
+    ofxFTGLFont font;
+    string str;
+    
+    ofEasyCam cam;
+    ofLight light;
+    ofMaterial material;
+    
+    
 private:
     int startPositionX, startPositionY;
 };
