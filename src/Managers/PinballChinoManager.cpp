@@ -27,6 +27,7 @@ void PinballChinoManager::setup(){
     camera.setDistance(20);
 	world.setCamera(&camera);
     
+    
     // load camera position
     savedPose = loadCameraPosition(); 
     camera.setTransformMatrix(savedPose);
@@ -108,6 +109,7 @@ void PinballChinoManager::draw(){
 
 void PinballChinoManager::ToggleDrawDebug(void){
     bDrawDebug = !bDrawDebug;
+    statusDisplay.show3dfont = !statusDisplay.show3dfont;
 }
 
 //--------------------------------------------------------------
