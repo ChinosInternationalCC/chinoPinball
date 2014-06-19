@@ -7,6 +7,8 @@
 //
 
 #pragma once
+#include "ExternalsConfig.h"
+
 #ifdef USE_OSC /* configured in ExternalsConfig.h */
 
 #include "ofMain.h"
@@ -14,7 +16,7 @@
 #include "eventComunication.h"
 
 #define HOST "localhost"
-#define PORT 12345
+#define PORT 9001
 
 class OSCManager{
 public:

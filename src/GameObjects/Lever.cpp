@@ -20,7 +20,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     
     // load 3D model
-    ofVec3f scale(0.033, 0.033, 0.033);
+    ofVec3f scale(0.04, 0.033, 0.04);
 	assimpModel.loadModel("Tuscan_Column.dae", true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
@@ -167,7 +167,7 @@ void Lever::onCollision(){}
 //------------------------------------------------------------
 void Lever::setDefaultZ(){
     
-    position.z = -0.25;
+    position.z = -0.5;
     setPosition(position);
     
 }

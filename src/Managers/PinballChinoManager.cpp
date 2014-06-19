@@ -49,7 +49,12 @@ void PinballChinoManager::setup(){
 	ofAddListener(eventObjectScenario::onNewObject ,this, &PinballChinoManager::listenerAddObject2Scenario);
 	
 	ofAddListener(eventMoveObjectScenario::onMoveObject ,this, &PinballChinoManager::listenerMovingObjectScenario);
-
+    
+    /* set light position */
+    lightPos = ofVec3f(0, 10, -15.f);
+    
+    bDrawDebug = false;
+    
 }
 
 //--------------------------------------------------------------
@@ -74,26 +79,36 @@ void PinballChinoManager::draw(){
 	glEnable( GL_DEPTH_TEST );
 	camera.begin();
     
-//	ofEnableLighting();
-//	light.enable();
+    /* set light position 
+     Tip: we could move it in setup if we will not change the position of the light at runtime
+     */
+    light.setPosition(lightPos);
+    
+	ofEnableLighting();
+	light.enable();
     
     
     // debug draw
-	world.drawDebug();
+    if(bDrawDebug)
+        world.drawDebug();
 	
     myScenario.draw();
     
 	
-//	light.disable();
-//	ofDisableLighting();
+	light.disable();
+	ofDisableLighting();
     
 	camera.end();
     glDisable(GL_DEPTH_TEST);
     
     statusDisplay.draw();
     
+    scenarioEditor.draw();
 }
 
+void PinballChinoManager::ToggleDrawDebug(void){
+    bDrawDebug = !bDrawDebug;
+}
 
 //--------------------------------------------------------------
 void PinballChinoManager::onRestartGameEvent(void){
@@ -199,6 +214,8 @@ void PinballChinoManager::onReleaseBallLauncherEvent(void){
 //--------------------------------------------------------------
 void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 {
+	cout << "saveCameraPosition ?? " << endl;
+	
 	//_camPose = cam.getTarget().getGlobalTransformMatrix();
 	ofxXmlSettings *XML = new ofxXmlSettings("cameraSettings.xml");
     XML->setValue("_camPose_00", _camPose(0,0), 0); XML->setValue("_camPose_01", _camPose(0,1), 0); XML->setValue("_camPose_02", _camPose(0,2), 0); XML->setValue("_camPose_03", _camPose(0,3), 0);
@@ -208,6 +225,8 @@ void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 	//XML->setValue("distance", cam.getDistance(), 0);
 	XML->saveFile("cameraSettings.xml");
     delete XML;
+	
+	cout << "end saveCameraPosition ?? " << endl;
 }
 
 //--------------------------------------------------------------

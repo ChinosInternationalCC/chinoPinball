@@ -2,8 +2,8 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-3.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-12.900005341</positionX>
+        <positionY>-1.240000129</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -13,8 +13,8 @@
     <object>
         <type>6</type>
         <id>1</id>
-        <positionX>-0.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-8.959992409</positionX>
+        <positionY>1.219993353</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -24,8 +24,8 @@
     <object>
         <type>6</type>
         <id>2</id>
-        <positionX>2.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-11.619997978</positionX>
+        <positionY>6.739998817</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -35,8 +35,8 @@
     <object>
         <type>6</type>
         <id>3</id>
-        <positionX>5.500000000</positionX>
-        <positionY>-4.000000000</positionY>
+        <positionX>-10.419994354</positionX>
+        <positionY>-6.379999161</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -57,9 +57,9 @@
     <object>
         <type>3</type>
         <id>5</id>
-        <positionX>-3.028410435</positionX>
-        <positionY>8.035743713</positionY>
-        <positionZ>-0.200000003</positionZ>
+        <positionX>-3.548409939</positionX>
+        <positionY>9.815750122</positionY>
+        <positionZ>-0.500000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -69,9 +69,9 @@
     <object>
         <type>3</type>
         <id>6</id>
-        <positionX>3.307854891</positionX>
-        <positionY>8.040441513</positionY>
-        <positionZ>-0.200000003</positionZ>
+        <positionX>3.667854548</positionX>
+        <positionY>9.620450974</positionY>
+        <positionZ>-0.500000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -92,8 +92,8 @@
     <object>
         <type>6</type>
         <id>8</id>
-        <positionX>-0.461380750</positionX>
-        <positionY>9.045289993</positionY>
+        <positionX>-10.061388969</positionX>
+        <positionY>7.345280170</positionY>
         <positionZ>0.000000000</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -103,12 +103,89 @@
     <object>
         <type>6</type>
         <id>9</id>
-        <positionX>0.047696337</positionX>
-        <positionY>-0.293577969</positionY>
+        <positionX>-11.772303581</positionX>
+        <positionY>5.626420975</positionY>
         <positionZ>-0.000014305</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
         <scaleZ>0.005000000</scaleZ>
         <path>3DModels/chino_6.dae</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-0.225101963</positionX>
+        <positionY>7.878749371</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-4.974901676</positionX>
+        <positionY>-6.047327995</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>2.383300066</positionX>
+        <positionY>2.717033863</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-2.304927588</positionX>
+        <positionY>2.971834660</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>5.581752300</positionX>
+        <positionY>-6.301945210</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>-3.031672716</positionX>
+        <positionY>-1.071172476</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.050000001</scaleX>
+        <scaleY>0.050000001</scaleY>
+        <scaleZ>0.050000001</scaleZ>
+        <path>cylinder.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
+        <positionX>3.168997288</positionX>
+        <positionY>-1.381204247</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.201970443</scaleX>
+        <scaleY>0.201970443</scaleY>
+        <scaleZ>0.197044328</scaleZ>
+        <path>TurbochiFromXSI.dae</path>
     </object>
 </scenario>

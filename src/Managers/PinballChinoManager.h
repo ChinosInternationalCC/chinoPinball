@@ -22,6 +22,7 @@
 #include "eventMoveObjectScenario.h"
 #include "arduComunicationManager.h"
 #include "DMXManager.h"
+#include "OSCManager.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -42,6 +43,7 @@ public:
     
     ///Outputs
     DMXManager dmx;
+    OSCManager osc;
     
 	/////////////////////////////////////////
     ofEasyCam				camera;
@@ -52,11 +54,13 @@ public:
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
 	ofLight					light;
+    ofVec3f                 lightPos;
     
     Scenario                myScenario;
     ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     bool bFullScreen;
+    bool bDrawDebug;
     
     void onRestartGameEvent(void);
     void onMoveLeftLeverEvent(void);
@@ -65,6 +69,7 @@ public:
     void onReleaseRightLeverEvent(void);
     void onMoveBallLauncherEvent(void);
     void onReleaseBallLauncherEvent(void);
+    void ToggleDrawDebug(void);
 	
 
 

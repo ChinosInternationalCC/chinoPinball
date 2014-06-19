@@ -155,6 +155,7 @@ InputEventManager
 * down - move hammer
 * m/M - move right lever
 * z/Z - move right lever
+* d/D - draw debug
 ScenarioEditor
 * e - toggle editor mode
 * x - saving scenario to file
