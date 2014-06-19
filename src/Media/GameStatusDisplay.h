@@ -20,13 +20,22 @@ public:
     ofxFTGLFont font;
     string str;
     
-    ofEasyCam cam;
+    
     ofLight light;
     ofMaterial material;
     
+    bool show3dfont;
+
+    //void setCamera(ofEasyCam *cam);
     
 private:
+    ofEasyCam cam;
     int startPositionX, startPositionY;
+    void setup3dFont(void);
+    void draw3dFont(void);
+    void draw2dFont(void);
+    void billboardBegin();
+    void billboardEnd();
 };
 
 #endif /* defined(__chinoPinball__GameStatusDisplay__) */

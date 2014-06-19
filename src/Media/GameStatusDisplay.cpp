@@ -14,23 +14,55 @@
 GameStatusDisplay::GameStatusDisplay(int posX, int posY){
     startPositionX = posX;
     startPositionY = posY;
-    
-    str = "初音ミク";
-    
-    // The third parameter is depth, use it to extrude the shape.
-    font.loadFont("mplus-1c-regular.ttf", 100, 20);
-    
-    light.setDiffuseColor(ofColor(200, 64, 64));
-    light.setSpecularColor(ofColor(255, 255, 255));
-    light.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 200);
-    
-    material.setShininess(64);
+    show3dfont = true;
+    setup3dFont();
     
     
 }
 
-//------------------------------
-void GameStatusDisplay::draw(void){
+//--------------------------------
+void GameStatusDisplay::setup3dFont(void){
+    //str = "初音ミク";
+    str = "score";
+    // The third parameter is depth, use it to extrude the shape.
+    font.loadFont("mplus-1c-regular.ttf", 25, 8);
+    
+    //light.setDiffuseColor(ofColor(200, 64, 64));
+    //light.setSpecularColor(ofColor(255, 255, 255));
+    //light.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 200);
+    light.setPosition(startPositionX, startPositionY, 200);
+    material.setShininess(64);
+    
+}
+
+/*void GameStatusDisplay::setCamera(ofEasyCam *cam){
+    this->cam = cam;
+}*/
+//--------------------------------
+void GameStatusDisplay::draw3dFont(void){
+    GameStatus *status;
+    status = GameStatus::getInstance();
+    
+    ofEnableLighting();
+    
+    light.enable();
+    material.begin();
+    cam.begin();
+    billboardBegin();//always facing the camera
+	{
+        ofScale(1, -1, 1);  // Flip back since we're in 3D.
+        //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+        font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
+        font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
+        
+    }
+    billboardEnd();
+    cam.end();
+    material.end();
+    
+}
+
+void GameStatusDisplay::draw2dFont(void){
     GameStatus *status;
     
     int posX = startPositionX;
@@ -86,19 +118,49 @@ void GameStatusDisplay::draw(void){
         default:
             break;
     }
+
     
+}
+//------------------------------
+void GameStatusDisplay::draw(void){
     
-    //ofBackground(255);
+    if (show3dfont)
+        draw3dFont();
+    else
+        draw2dFont();
     
-    ofEnableLighting();
+}
+
+void GameStatusDisplay::billboardBegin() {
     
-    light.enable();
-    material.begin();
-    cam.begin();
-	{
-        ofScale(1, -1, 1);  // Flip back since we're in 3D.
-        font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
-    }
-    cam.end();
-    material.end();
+    float modelview[16];
+	int i,j;
+    
+	// save the current modelview matrix
+	glPushMatrix();
+    
+	// get the current modelview matrix
+	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
+    
+	// undo all rotations
+	// beware all scaling is lost as well
+	for( i=0; i<3; i++ )
+	    for( j=0; j<3; j++ ) {
+            if ( i==j )
+                modelview[i*4+j] = 1.0;
+            else
+                modelview[i*4+j] = 0.0;
+	    }
+    
+	// set the modelview with no rotations
+	glLoadMatrixf(modelview);
+}
+
+
+
+void GameStatusDisplay::billboardEnd() {
+    
+	// restore the previously
+	// stored modelview matrix
+	glPopMatrix();
 }
