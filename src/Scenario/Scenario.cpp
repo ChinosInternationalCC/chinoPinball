@@ -90,10 +90,10 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 			dimens.set(widthrlPlane, heightrlPlane, depthrlPlane);
 		}
 		//TODO Better to set a dynamic ceiling. That can be added and removed easyly to let scenario to be free for Editor.
-		/*else if(i == 4) { // ground //
-			startLoc.set(0, 0, -2*heightbkPlane);
-			dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
-		}*/
+		//else if(i == 4) { // ground //
+		//	startLoc.set(0, 0, -2*heightbkPlane);
+		//	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
+		//}
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
@@ -326,6 +326,14 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oObstable->setup(world, pos, path, scale);
                     oObstable->SetObjectId(objId);
                     ScenarioObjects.push_back(oObstable);
+                }
+                break;
+                    
+                case SimpleObject::ShapeTypeBounds:{
+                    Bounds *oBounds = new Bounds();
+                    oBounds->setup(world, pos, path, scale);
+                    oBounds->SetObjectId(objId);
+                    ScenarioObjects.push_back(oBounds);
                 }
                 break;
 
