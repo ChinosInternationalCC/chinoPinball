@@ -202,6 +202,7 @@
 		A7C5BC5718B788BB006187D9 /* ofxSyphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4D18B788BB006187D9 /* ofxSyphonServer.mm */; };
 		A7C5BC5818B788BB006187D9 /* ofxSyphonServerDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4F18B788BB006187D9 /* ofxSyphonServerDirectory.mm */; };
 		A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */; };
+		A99834FD19540EAB0086E53E /* Bounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A99834FB19540EAB0086E53E /* Bounds.cpp */; };
 		A9B2F59918BF56AB002B9892 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9B2F59718BF56AB002B9892 /* SoundManager.cpp */; };
 		AD11061519B5BE17E0AEB743 /* btStridingMeshInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7559ECCEBF5E92706490477 /* btStridingMeshInterface.cpp */; };
 		AD2A8FA9407668D094995282 /* GameStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BE00BCB6354681E4D18380F /* GameStatus.cpp */; };
@@ -886,6 +887,8 @@
 		A7C5BC4F18B788BB006187D9 /* ofxSyphonServerDirectory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSyphonServerDirectory.mm; sourceTree = "<group>"; };
 		A8741C8D41E3B5AB45691E2B /* btGjkEpa2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btGjkEpa2.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h; sourceTree = SOURCE_ROOT; };
 		A874A1EF4BD431CBAC2F7AB8 /* btHinge2Constraint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btHinge2Constraint.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btHinge2Constraint.h; sourceTree = SOURCE_ROOT; };
+		A99834FB19540EAB0086E53E /* Bounds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bounds.cpp; path = GameObjects/Bounds.cpp; sourceTree = "<group>"; };
+		A99834FC19540EAB0086E53E /* Bounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bounds.h; path = GameObjects/Bounds.h; sourceTree = "<group>"; };
 		A9A5F2F6A520E1B1E4B55014 /* btDefaultCollisionConfiguration.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btDefaultCollisionConfiguration.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp; sourceTree = SOURCE_ROOT; };
 		A9B2F59718BF56AB002B9892 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundManager.cpp; path = Managers/SoundManager.cpp; sourceTree = "<group>"; };
 		A9B2F59818BF56AB002B9892 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = Managers/SoundManager.h; sourceTree = "<group>"; };
@@ -1185,6 +1188,8 @@
 				BBF2C1C9F7F371F8B1268B74 /* Obstacle.h */,
 				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
 				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
+				A99834FB19540EAB0086E53E /* Bounds.cpp */,
+				A99834FC19540EAB0086E53E /* Bounds.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -2872,6 +2877,7 @@
 				BFD66BE9A430E23525C0C4EB /* btTriangleShapeEx.cpp in Sources */,
 				00FD1E8355CABFF6F3B960A0 /* gim_box_set.cpp in Sources */,
 				16A9A294698091176117AA73 /* gim_contact.cpp in Sources */,
+				A99834FD19540EAB0086E53E /* Bounds.cpp in Sources */,
 				E1EBB0DA4CEF3A792D887E9D /* gim_memory.cpp in Sources */,
 				A58DD20A18F8577300B1FE41 /* ofxUIDropDownList.cpp in Sources */,
 				A58DD20718F8577300B1FE41 /* ofxUICanvas.cpp in Sources */,
