@@ -33,6 +33,9 @@ public:
     void loadFromJSON(ofxBulletWorldRigid &world);
     void saveToJSON(void);
     
+    void popAllObjects(void); /* Can be usefull if we want to reload the scenario 
+                                 call popAllObjects() and after load from Xml */
+    
     void popObject(SimpleObject* obj);
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	

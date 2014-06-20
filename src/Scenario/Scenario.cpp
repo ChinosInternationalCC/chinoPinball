@@ -11,29 +11,6 @@
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &world){
     
-    /*
-    m_Ball2.setup		(world,	ofVec3f(5,	0,	-0.5));
-    leverLeft.setup		(world, ofVec3f(-3,	8,	-0.2),0);
-    leverRight.setup	(world, ofVec3f(3,	8,	-0.2),1);
-    m_Hammer.setup		(world,	ofVec3f(5,	5,	-0.4));
-    
-    m_obstable1.setup(world, ofVec3f(-3.5+3*0,-4,-.7), "cylinder.stl");
-    m_obstable2.setup(world, ofVec3f(-3.5+3*1,-4,-.7), "cylinder.stl");
-    m_obstable3.setup(world, ofVec3f(-3.5+3*2,-4,-.7), "cylinder.stl");
-    m_obstable4.setup(world, ofVec3f(-3.5+3*3,-4,-.7), "cylinder.stl");
-    
-    ScenarioObjects.push_back(&m_obstable1);
-    ScenarioObjects.push_back(&m_obstable2);
-    ScenarioObjects.push_back(&m_obstable3);
-    ScenarioObjects.push_back(&m_obstable4);
-	
-    ScenarioObjects.push_back(&m_Ball2);
-    ScenarioObjects.push_back(&leverLeft);
-    ScenarioObjects.push_back(&leverRight);
-    ScenarioObjects.push_back(&m_Hammer);
-	*/
-	
-    
     loadFromXml(world);
     //loadFromJSON(world);
     //saveToJSON();
@@ -181,6 +158,17 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
     }
+}
+
+//--------------------------------------------------------------
+void Scenario::popAllObjects(void){
+    
+    while(ScenarioObjects.size()){
+        SimpleObject *obj = ScenarioObjects.front();
+        ScenarioObjects.erase(ScenarioObjects.begin());
+        delete obj;
+    }
+    
 }
 
 //--------------------------------------------------------------
