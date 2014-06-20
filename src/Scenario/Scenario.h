@@ -15,6 +15,7 @@
 #include "Lever.h"
 #include "Hammer.h"
 #include "Obstacle.h"
+#include "Bounds.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 #include "ofxJSONElement.h"
@@ -39,8 +40,6 @@ public:
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
     //ofxXmlSettings ScenarioXml;
-    
-    
     
     ofxBulletWorldRigid *     world;
     

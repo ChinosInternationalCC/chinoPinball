@@ -144,4 +144,16 @@
         <scaleZ>0.197044328</scaleZ>
         <path>TurbochiFromXSI.dae</path>
     </object>
+	<!--load 3d model of scenerio, it's commented until we have the correct one -->
+	<!--<object>
+        <type>7</type>
+        <id>0</id>
+        <positionX>3.168997288</positionX>
+        <positionY>-1.381204247</positionY>
+        <positionZ>-0.50000000</positionZ>
+        <scaleX>0.0501970443</scaleX>
+        <scaleY>0.0501970443</scaleY>
+        <scaleZ>0.0501970443</scaleZ>
+        <path>3DModels/scenario1.obj</path>
+    </object>-->
 </scenario>
