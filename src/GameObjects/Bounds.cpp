@@ -1,16 +1,16 @@
 //
-//  Obstacle.cpp
+//  Bounds.cpp
 //  chinoPinball
 //
-//  Created by Angel on 02/02/14.
+//  Created by Angel Muc on 20/06/14.
 //
 //
 
-#include "Obstacle.h"
+#include "Bounds.h"
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeObstacle;
+void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+    type = ShapeTypeBounds;
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
@@ -20,14 +20,14 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     
     // create ofxBullet shape
     body.create(world.world, position, 0); // we set m=0 for kinematic body
-
+    
     
     // load 3D model
     scale = ModelScale;
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
-
+    
     //ofEnableSeparateSpecularLight();
     
 	//save init values
@@ -77,36 +77,36 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 }
 
 //--------------------------------------------------------------
-void Obstacle::update(){
-
+void Bounds::update(){
+    
 	autoScalingXYZ();
-
+    
     assimpModel.update();
-    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);    
-
+    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);
+    
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
     //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     //{
-		//btVector3 myBtScale;
-		//myBtScale.setX(scale.x);
-		//myBtScale.setY(scale.y);
-		//myBtScale.setZ(scale.z);
-		
-        //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
-		//setImplicitShapeDimensions(myBtScale);
-		//addMesh(assimpModel.getMesh(i), scale, true);
+    //btVector3 myBtScale;
+    //myBtScale.setX(scale.x);
+    //myBtScale.setY(scale.y);
+    //myBtScale.setZ(scale.z);
+    
+    //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
+    //setImplicitShapeDimensions(myBtScale);
+    //addMesh(assimpModel.getMesh(i), scale, true);
     //}
-
+    
 }
 /*
-//--------------------------------------------------------------
-void Obstacle::autoScalingXYZ(){
-	
-}*/
+ //--------------------------------------------------------------
+ void Bounds::autoScalingXYZ(){
+ 
+ }*/
 
 //--------------------------------------------------------------
-void Obstacle::autoScalingXYZ(){
+void Bounds::autoScalingXYZ(){
 	
 	btVector3 myObjectScale;
 	ofVec3f myOfObjectScale;
@@ -119,25 +119,25 @@ void Obstacle::autoScalingXYZ(){
 		//Get Scales
 		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
 		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-
+        
 		//Update sizes values
 		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
 		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
 		last_scale = scale;
-
+        
 		myObjectScale.setX(myOfObjectScale.x);
 		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);		
-
+		myObjectScale.setZ(myOfObjectScale.z);
+        
 		//update physyc object
 		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
 		assimpModel.setScale(scale.x, scale.y, scale.z);
 	}
-
+    
 }
 
 //--------------------------------------------------------------
-void Obstacle::draw(){
+void Bounds::draw(){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
@@ -156,39 +156,39 @@ void Obstacle::draw(){
 	assimpModelMesh.drawFaces();
 	/* what is the diference between drawing the faces of the model or the mesh????*/
 	material.begin();
-
+    
     body.restoreTramsformGL();
 	material.end();
 }
 
 //-------------------------------------------------------------
-ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
+ofxBulletBaseShape* Bounds::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
 }
 
 //------------------------------------------------------------
-string Obstacle::getObjectName(){
+string Bounds::getObjectName(){
     return "Obstacle";
 }
 
 //------------------------------------------------------------
-void Obstacle::onCollision(){
+void Bounds::onCollision(){
     
-    GameStatus::getInstance()->AddPoints(1);
+    /*GameStatus::getInstance()->AddPoints(1);
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
     SoundManager::getInstance()->PlaySound(0);
-   
+    
 	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
 	eventComunication newComEvent;
 	newComEvent.collision = true;
     newComEvent.pObject = this;
-	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+	ofNotifyEvent(eventComunication::onNewCom, newComEvent);*/
 }
 
 //------------------------------------------------------------
-void Obstacle::setDefaultZ(){
+void Bounds::setDefaultZ(){
     
     position.z = -0.5;
     setPosition(position);
@@ -196,7 +196,7 @@ void Obstacle::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void Obstacle::setPosition(ofVec3f position){
+void Bounds::setPosition(ofVec3f position){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -209,5 +209,3 @@ void Obstacle::setPosition(ofVec3f position){
     rigidBody->getMotionState()->setWorldTransform( transform );
     
 }
-
-

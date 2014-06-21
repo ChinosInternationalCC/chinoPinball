@@ -27,6 +27,7 @@ void PinballChinoManager::setup(){
     camera.setDistance(20);
 	world.setCamera(&camera);
     
+    
     // load camera position
     savedPose = loadCameraPosition(); 
     camera.setTransformMatrix(savedPose);
@@ -71,6 +72,18 @@ void PinballChinoManager::update(){
 	//Arduino
 	arduCom.update(this);
     
+    //check if ball inside box
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 0)
+        {
+            Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            if (!ball->isInsideBox(myScenario.ballLimitsBoxSize))
+                onRestartGameEvent();
+        }
+    }
+
+    
 }
 
 //--------------------------------------------------------------
@@ -87,10 +100,15 @@ void PinballChinoManager::draw(){
 	ofEnableLighting();
 	light.enable();
     
-    
+
     // debug draw
-    if(bDrawDebug)
+    if(bDrawDebug){
         world.drawDebug();
+        // draw the box that is used to detect if the ball is outside the scenario
+        ofNoFill();
+        ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
+        ofFill();
+    }
 	
     myScenario.draw();
     
@@ -103,10 +121,12 @@ void PinballChinoManager::draw(){
     
     statusDisplay.draw();
     
+    scenarioEditor.draw();
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
     bDrawDebug = !bDrawDebug;
+    statusDisplay.show3dfont = !statusDisplay.show3dfont;
 }
 
 //--------------------------------------------------------------

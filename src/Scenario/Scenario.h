@@ -15,6 +15,7 @@
 #include "Lever.h"
 #include "Hammer.h"
 #include "Obstacle.h"
+#include "Bounds.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 #include "ofxJSONElement.h"
@@ -32,11 +33,13 @@ public:
     void loadFromJSON(ofxBulletWorldRigid &world);
     void saveToJSON(void);
     
+    void popAllObjects(void); /* Can be usefull if we want to reload the scenario 
+                                 call popAllObjects() and after load from Xml */
+    
+    void popObject(SimpleObject* obj);
     void pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos);
 	
     //ofxXmlSettings ScenarioXml;
-    
-    
     
     ofxBulletWorldRigid *     world;
     
@@ -55,5 +58,6 @@ public:
 	//basic World
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;
+    float                       ballLimitsBoxSize;
 	
 };

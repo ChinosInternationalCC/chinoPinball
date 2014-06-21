@@ -1,8 +1,8 @@
 //
-//  Obstacle.h
+//  Bounds.h
 //  chinoPinball
 //
-//  Created by Angel on 02/02/14.
+//  Created by Angel Muc on 20/06/14.
 //
 //
 
@@ -15,10 +15,10 @@
 #include "SimpleObject.h"
 
 
-class Obstacle : public SimpleObject {
-
+class Bounds : public SimpleObject {
+    
 public:
-
+    
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
 	virtual void update();
 	virtual void draw();
@@ -40,12 +40,12 @@ public:
     btQuaternion    rotation;
     
     float angle; // degrees
-
+    
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
-
+    
 };

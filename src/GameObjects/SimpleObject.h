@@ -29,7 +29,8 @@ public:
         ShapeTypeLever = 3,
         ShapeTypeContainer = 4,
         ShapeTypeHammer = 5,
-        ShapeTypeObstacle = 6
+        ShapeTypeObstacle = 6,
+        ShapeTypeBounds = 7
     };
     
     //ofxBulletCustomShape	body;
@@ -65,6 +66,7 @@ public:
 	int colisionCounter;
     
     ofVec3f scale, last_scale;  // if we load a 3D model this variable should store the scale factors
+	float scaleXyz, last_scaleXyz;
                     // with the correct values so that our model nicely fits inside the Scenario
     string ModelPath; //if we load an external 3D Model this variable should hold the path of the
                       // model

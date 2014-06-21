@@ -16,6 +16,7 @@
 #include "SimpleObject.h"
 #include "chinoWorld.h"
 #include "ofxUI.h"
+#include "ofxUIDefines.h"
 
 class ScenarioEditor {
     
@@ -52,15 +53,19 @@ public:
 	void resetUIvalues();
     
 	ofxUICanvas *gui;
+	//bool bGoForRemove;
+	ofVec2f posGui;
 	
 	bool bGuiPointer;//var to protect from gui * bad accsss
 	
+    bool deleteObject;
+    
     void guiEvent(ofxUIEventArgs &e);
-    bool drawFill;
-	float gred, ggreen, gblue, galpha;
+    //bool drawFill;
+	//float gred, ggreen, gblue, galpha;
 	ofColor backgroundColor;
-    float gradius;
-    float gresolution;
+    //float gradius;
+    //float gresolution;
     ofPoint gposition;
     
     float gnoiseScale;

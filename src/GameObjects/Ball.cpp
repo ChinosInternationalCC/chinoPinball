@@ -55,8 +55,20 @@ bool Ball::setGameOverBall(void){
 }
 
 //--------------------------------
-bool Ball::isInsideScenario(ofBoxPrimitive box){
-    return true;
+bool Ball::isInsideBox(float boxSize){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin = transform.getOrigin();
+    
+    if ((origin.getX() > boxSize) ||
+        (origin.getY() > boxSize) ||
+        (origin.getZ() > boxSize))
+        return false;
+    else
+        return true;
 }
 
 //--------------------------------------------------------------
