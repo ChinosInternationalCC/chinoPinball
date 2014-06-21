@@ -94,6 +94,8 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
 				gui->addSpacer();
+                gui->addSlider("ballLimitBox", 0.0, 50.0, &scenario->ballLimitsBoxSize);
+				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
                 gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
 				//gui->addLabelToggle("DRAWFILL", &drawFill);

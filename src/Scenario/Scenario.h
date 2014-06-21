@@ -58,5 +58,6 @@ public:
 	//basic World
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;
+    float                       ballLimitsBoxSize;
 	
 };
