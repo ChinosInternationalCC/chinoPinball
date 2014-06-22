@@ -59,5 +59,7 @@ public:
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;
     float                       ballLimitsBoxSize;
+    
+    ofVec3f                 lightPos;
 	
 };
