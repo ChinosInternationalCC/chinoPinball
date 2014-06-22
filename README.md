@@ -140,9 +140,8 @@ Editor should have the following functionalities:
 
 
 ***
-###Key bingings
+###Key bindings
 
-testApp
 * F1 - OF_LOG_SILENT
 * F2 - OF_LOG_VERBOSE
 * F3 - CollisionVerbose
