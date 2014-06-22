@@ -17,6 +17,9 @@ void Scenario::setup(ofxBulletWorldRigid &world){
     loadBasicScenario(world, ofVec3f(0,0,0));
     
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
+    
+    /* set light position */
+    lightPos = ofVec3f(0, 10, -15.f);
 
 }
 
