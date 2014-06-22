@@ -51,8 +51,7 @@ void PinballChinoManager::setup(){
 	
 	ofAddListener(eventMoveObjectScenario::onMoveObject ,this, &PinballChinoManager::listenerMovingObjectScenario);
     
-    /* set light position */
-    lightPos = ofVec3f(0, 10, -15.f);
+   
     
     bDrawDebug = false;
     
@@ -95,7 +94,8 @@ void PinballChinoManager::draw(){
     /* set light position 
      Tip: we could move it in setup if we will not change the position of the light at runtime
      */
-    light.setPosition(lightPos);
+    light.setPosition(myScenario.lightPos);
+
     
 	ofEnableLighting();
 	light.enable();
@@ -107,6 +107,7 @@ void PinballChinoManager::draw(){
         // draw the box that is used to detect if the ball is outside the scenario
         ofNoFill();
         ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
+        ofDrawSphere(myScenario.lightPos, 2);
         ofFill();
     }
 	

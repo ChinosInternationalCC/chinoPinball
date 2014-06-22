@@ -96,6 +96,10 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSpacer();
                 gui->addSlider("ballLimitBox", 0.0, 50.0, &scenario->ballLimitsBoxSize);
 				gui->addSpacer();
+                gui->addSlider("LightX", -50.0, 50.0, &scenario->lightPos.x);
+                gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
+                gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
+				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
                 gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
 				//gui->addLabelToggle("DRAWFILL", &drawFill);

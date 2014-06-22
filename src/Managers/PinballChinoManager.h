@@ -54,7 +54,7 @@ public:
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
 	ofLight					light;
-    ofVec3f                 lightPos;
+    
     
     Scenario                myScenario;
     ScenarioEditor          scenarioEditor;
