@@ -96,19 +96,19 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 }
 
 //--------------------------------------------------------------
-void Scenario::update(){
+void Scenario::update(bool bEditorMode){
     
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->update();
+        ScenarioObjects[i]->update(bEditorMode);
     }
     
 }
 
 //--------------------------------------------------------------
-void Scenario::draw(){
+void Scenario::draw(bool bEditorMode){
     
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->draw();
+        ScenarioObjects[i]->draw(bEditorMode);
     }
     
 	ofDrawAxis(1);

@@ -20,8 +20,8 @@ class Hammer : public SimpleObject {
 public:
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f pos);
-	virtual void update();
-	virtual void draw();
+	virtual void update(bool bEditorMode);
+	virtual void draw(bool bEditorMode);
 	void move(float height);
     
 	ofxBulletBox	body;

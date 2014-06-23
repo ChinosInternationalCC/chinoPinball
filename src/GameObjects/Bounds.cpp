@@ -77,7 +77,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
 }
 
 //--------------------------------------------------------------
-void Bounds::update(){
+void Bounds::update(bool bEditorMode){
     
 	autoScalingXYZ();
     
@@ -137,7 +137,7 @@ void Bounds::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void Bounds::draw(){
+void Bounds::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;

@@ -19,7 +19,16 @@
 #include "ofxUIDefines.h"
 
 class ScenarioEditor {
-    
+	
+	// variables & methods for singleton
+private:
+    static bool	instanceFlag;
+    static ScenarioEditor *single;
+	
+public:
+	static ScenarioEditor* getInstance();
+	// end singleton
+	
 public:
 	void setup(chinoWorld &world, Scenario &scenario);
 	void update();

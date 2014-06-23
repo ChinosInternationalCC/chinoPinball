@@ -72,17 +72,17 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     
     a_rb->getMotionState()->setWorldTransform( transform );
     
-    //body.activate();
+    body.activate();
     
 }
 
 //--------------------------------------------------------------
-void Obstacle::update(){
+void Obstacle::update(bool bEditorMode){
 
 	autoScalingXYZ();
 
     assimpModel.update();
-    //assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0); // Animation Player
+    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0); // Animation Player
 
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -97,6 +97,8 @@ void Obstacle::update(){
 		//setImplicitShapeDimensions(myBtScale);
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	body.activate();
 
 }
 /*
@@ -137,7 +139,7 @@ void Obstacle::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void Obstacle::draw(){
+void Obstacle::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;

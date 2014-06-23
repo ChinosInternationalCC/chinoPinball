@@ -37,7 +37,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
 }
 
 //--------------------------------------------------------------
-void Hammer::update(){
+void Hammer::update(bool bEditorMode){
     
 	// get current translation
     ofVec3f translation = body.getPosition();
@@ -52,16 +52,18 @@ void Hammer::update(){
     }
     else
     {
-        if (translationY > lowerLimit)
-        {
-            move(translationY - speed);
-        }
+		if(!bEditorMode){
+			if (translationY > lowerLimit)
+			{
+				move(translationY - speed);
+			}
+		}
     }
     
 }
 
 //--------------------------------------------------------------
-void Hammer::draw(){
+void Hammer::draw(bool bEditorMode){
     
 	int t = ofGetElapsedTimef()*100-collisionTime;
     if(t<highlightTime){
