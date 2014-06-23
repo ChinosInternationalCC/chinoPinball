@@ -51,8 +51,7 @@ void PinballChinoManager::setup(){
 	
 	ofAddListener(eventMoveObjectScenario::onMoveObject ,this, &PinballChinoManager::listenerMovingObjectScenario);
     
-    /* set light position */
-    lightPos = ofVec3f(0, 10, -15.f);
+   
     
     bDrawDebug = false;
     
@@ -72,6 +71,18 @@ void PinballChinoManager::update(){
 	//Arduino
 	arduCom.update(this);
     
+    //check if ball inside box
+    for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
+    {
+        if (myScenario.ScenarioObjects[i]->type == 0)
+        {
+            Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            if (!ball->isInsideBox(myScenario.ballLimitsBoxSize))
+                onRestartGameEvent();
+        }
+    }
+
+    
 }
 
 //--------------------------------------------------------------
@@ -83,15 +94,22 @@ void PinballChinoManager::draw(){
     /* set light position 
      Tip: we could move it in setup if we will not change the position of the light at runtime
      */
-    light.setPosition(lightPos);
+    light.setPosition(myScenario.lightPos);
+
     
 	ofEnableLighting();
 	light.enable();
     
-    
+
     // debug draw
-    if(bDrawDebug)
+    if(bDrawDebug){
         world.drawDebug();
+        // draw the box that is used to detect if the ball is outside the scenario
+        ofNoFill();
+        ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
+        ofDrawSphere(myScenario.lightPos, 2);
+        ofFill();
+    }
 	
     myScenario.draw();
     

@@ -28,7 +28,7 @@ public:
     ofxBulletSphere body;
     ofxBulletWorldRigid world;
     
-    bool isInsideScenario(ofBoxPrimitive box);
+    bool isInsideBox(float boxSize);
     bool setGameOverBall(void); //callback from GameOverCollision,
                                 //returns true if the status was changed, false if already set
     enum BallStatus{
