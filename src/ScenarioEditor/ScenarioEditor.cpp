@@ -159,7 +159,14 @@ void ScenarioEditor::keyReleased(int key){
     {
 		case 'e':
             bEscenarioEditorMode = !bEscenarioEditorMode;
-			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;   
+			
+			if(bEscenarioEditorMode){
+				scenario->removeCoverScenario();
+			}else {
+				//Need to be at least once time created to be removed
+				scenario->addCoverScenario(*world); //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			}
+			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
             break;
         case 'x':
             scenario->saveToXml();

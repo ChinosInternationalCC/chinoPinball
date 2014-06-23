@@ -161,9 +161,11 @@ void Obstacle::draw(bool bEditorMode){
 	//assimpModelMesh.drawFaces();
 	
 	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	assimpModel.getMesh(0).drawFaces(); // Normal..
-	assimpModel.drawFaces(); // Gigante!
-	
+	//assimpModel.getMesh(0).drawFaces(); // Normal..
+	//ofPushMatrix();
+	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
+	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado
+	//ofPopMatrix();
 	//assimpModel.getMesh(0).enableTextures();
 	//assimpModel.getMesh(0).drawFaces(); // Normal..
 	
