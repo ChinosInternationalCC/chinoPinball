@@ -23,11 +23,11 @@ void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
 }
 
 //--------------------------------------------------------------
-//void SimpleObject::update(){
+//void SimpleObject::update(bool bEditorMode){
 //}
 
 //--------------------------------------------------------------
-//void SimpleObject::draw(){
+//void SimpleObject::draw(bool bEditorMode){
 //}
 
 

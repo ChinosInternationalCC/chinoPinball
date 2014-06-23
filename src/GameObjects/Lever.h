@@ -10,14 +10,15 @@
 
 #include "SimpleObject.h"
 
+
 class Lever : public SimpleObject {
 
 public:
 
 	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection);
 
-	void update();
-	void draw();
+	void update(bool bEditorMode);
+	void draw(bool bEditorMode);
 	void rotate(float degrees);
     
 	ofxBulletCustomShape	body;

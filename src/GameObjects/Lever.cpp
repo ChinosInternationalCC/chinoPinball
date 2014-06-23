@@ -63,7 +63,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
 }
 
 //--------------------------------------------------------------
-void Lever::update(){
+void Lever::update(bool bEditorMode){
     
     if (isKeyPressed)
     {
@@ -75,17 +75,20 @@ void Lever::update(){
     }
     else
     {
-        if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
-        {
-            angle -= speed;
-            rotate(angle);
-        }
+		if(!bEditorMode)
+		{
+			if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
+			{
+				angle -= speed;
+				rotate(angle);
+			}
+		}
     }
     
 }
 
 //--------------------------------------------------------------
-void Lever::draw(){
+void Lever::draw(bool bEditorMode){
 	
 	ofSetHexColor(color);
 	
@@ -147,7 +150,7 @@ void Lever::rotate(float degrees) {
     
     a_rb->getMotionState()->setWorldTransform( transform );
     
-    body.activate();
+    body.activate(); // Necesary to update the physic world model with the updated rotation
 }
 
 //-------------------------------------------------------------

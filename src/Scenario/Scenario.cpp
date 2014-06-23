@@ -9,21 +9,58 @@
 #include "Scenario.h"
 
 //--------------------------------------------------------------
-void Scenario::setup(ofxBulletWorldRigid &world){
+void Scenario::setup(ofxBulletWorldRigid &_world){
     
-    loadFromXml(world);
+    loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
-    loadBasicScenario(world, ofVec3f(0,0,0));
-    
+	loadBasicScenario(_world, ofVec3f(0,0,0));
+    addCoverScenario(_world);
+	
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
+    
+    /* set light position */
+    lightPos = ofVec3f(0, 10, -15.f);
+	
+	//copy a reference
+	//world = _world;
 
 }
 
 
 //--------------------------------------------------------------
+void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
+	
+	// STATGE
+	float scaleStage = 0.15;
+	ofVec3f startLoc;
+	ofPoint dimens;
+	boundsWidth = 7.;
+	float depthStage = 160;
+	float widthbasePlane = 100;
+	float depthbasePlane = boundsWidth;
+	float heightbasePlane = depthStage;
+	float heightbkPlane = boundsWidth*1.5;
+	
+	bounds.push_back( new ofxBulletBox() );
+	startLoc.set(0, 0, -2*heightbkPlane);
+	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
+	
+	bounds[lastPosIdCoverScenario]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
+	bounds[lastPosIdCoverScenario]->setProperties(.95, .5);
+	bounds[lastPosIdCoverScenario]->add();
+	
+}
+
+//--------------------------------------------------------------
+void Scenario::removeCoverScenario(){
+	bounds[lastPosIdCoverScenario]->removeRigidBody();
+	bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+}
+
+
+//--------------------------------------------------------------
 void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
-	/////////////////////////////////////////////////////////////////////////////////////////
     
 	// STATGE
 	float scaleStage = 0.15;
@@ -51,6 +88,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 	float heightrlPlane = depthStage;
 	float depthrlPlane = heightwalls;
 
+	int lastposId = 0;
 	
 	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
@@ -78,34 +116,25 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
 		bounds[i]->setProperties(.95, .5); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
+		
+		lastPosIdCoverScenario = i;
 	}
-    
-	/*
-    //up right box
-    bounds.push_back( new ofxBulletBox() );
-
-    //ofQuaternion(float angle, const ofVec3f& axis);
-    //ofxBulletBox::create( btDiscreteDynamicsWorld* a_world, ofVec3f a_loc, ofQuaternion a_rot, float a_mass, float a_sizeX, float a_sizeY, float a_sizeZ )
-    bounds[4]->create( world.world, startLoc*scaleStage, ofQuaternion(290,ofVec3f(0,0,1)), 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
-    bounds[4]->setProperties(.95, .05); // .25 (more restituition means more energy) , .95 ( friction )
-    bounds[4]->add();
-	 */
 }
 
 //--------------------------------------------------------------
-void Scenario::update(){
+void Scenario::update(bool bEditorMode){
     
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->update();
+        ScenarioObjects[i]->update(bEditorMode);
     }
     
 }
 
 //--------------------------------------------------------------
-void Scenario::draw(){
+void Scenario::draw(bool bEditorMode){
     
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->draw();
+        ScenarioObjects[i]->draw(bEditorMode);
     }
     
 	ofDrawAxis(1);

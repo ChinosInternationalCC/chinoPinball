@@ -13,7 +13,7 @@
 #include "ofxBullet.h"
 #include "chinoWorld.h"
 #include "Scenario.h"
-#include "ScenarioEditor.h"
+
 #include "GameStatusDisplay.h"
 #include "InputEventManager.h"
 #include "ofxXmlSettings.h"
@@ -23,6 +23,8 @@
 #include "arduComunicationManager.h"
 #include "DMXManager.h"
 #include "OSCManager.h"
+
+#include "ScenarioEditor.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -54,10 +56,10 @@ public:
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
 	ofLight					light;
-    ofVec3f                 lightPos;
+    
     
     Scenario                myScenario;
-    ScenarioEditor          scenarioEditor;
+    //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     bool bFullScreen;
     bool bDrawDebug;

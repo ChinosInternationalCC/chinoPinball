@@ -25,9 +25,11 @@ class Scenario {
     
 public:
 	void setup(ofxBulletWorldRigid &world);
-	void update();
-	void draw();
+	void update(bool bEditorMode);
+	void draw(bool bEditorMode);
     void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
+	void addCoverScenario(ofxBulletWorldRigid &world);
+	void removeCoverScenario();
     void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
     void loadFromJSON(ofxBulletWorldRigid &world);
@@ -59,5 +61,11 @@ public:
 	vector <ofxBulletBox*>		bounds;
 	float						boundsWidth;
     float                       ballLimitsBoxSize;
+    
+    ofVec3f                 lightPos;
+	
+private:
+
+		int			lastPosIdCoverScenario;
 	
 };
