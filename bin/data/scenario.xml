@@ -122,4 +122,26 @@
         <scaleZ>0.050000001</scaleZ>
         <path>cylinder.stl</path>
     </object>
+    <object>
+        <type>7</type>
+        <id>0</id>
+        <positionX>-8.428985596</positionX>
+        <positionY>-0.161205381</positionY>
+        <positionZ>-4.500000000</positionZ>
+        <scaleX>0.201970443</scaleX>
+        <scaleY>0.201970443</scaleY>
+        <scaleZ>0.201970443</scaleZ>
+        <path>3DModels/MURO1.obj</path>
+    </object>
+    <object>
+        <type>7</type>
+        <id>1</id>
+        <positionX>11.091015816</positionX>
+        <positionY>-1.081205249</positionY>
+        <positionZ>-4.500000000</positionZ>
+        <scaleX>0.201970443</scaleX>
+        <scaleY>0.201970443</scaleY>
+        <scaleZ>0.201970443</scaleZ>
+        <path>3DModels/MURO2.obj</path>
+    </object>
 </scenario>
