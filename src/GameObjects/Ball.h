@@ -20,8 +20,8 @@ public:
     Ball(void);
     Ball(SimpleObject simpleObject);
     void setup(ofxBulletWorldRigid &world, ofVec3f pos);
-    void update(void);
-    void draw(void);
+    void update(bool bEditorMode);
+    void draw(bool bEditorMode);
     
     float radius;
     float mass;

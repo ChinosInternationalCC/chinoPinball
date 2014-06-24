@@ -34,12 +34,12 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
 }
 
 //----------------------------------
-void Ball::update(void){
+void Ball::update(bool bEditorMode){
     
 }
 
 //--------------------------------------------------------------
-void Ball::draw(void){
+void Ball::draw(bool bEditorMode){
     
 	ofSetHexColor(color);
     body.draw();

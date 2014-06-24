@@ -37,8 +37,8 @@ public:
     shapeType type;
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
-	virtual void update()=0;
-	virtual void draw()=0;
+	virtual void update(bool bEditorMode)=0;
+	virtual void draw(bool bEditorMode)=0;
     
 	//general vars
 	int idobject;

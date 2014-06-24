@@ -20,8 +20,8 @@ class Obstacle : public SimpleObject {
 public:
 
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
-	virtual void update();
-	virtual void draw();
+	virtual void update(bool bEditorMode);
+	virtual void draw(bool bEditorMode);
 	
 	void autoScalingXYZ();
 	//void autoScalingXYZ();
