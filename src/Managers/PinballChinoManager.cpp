@@ -55,6 +55,9 @@ void PinballChinoManager::setup(){
     
     bDrawDebug = false;
     
+    
+    currentMission = new SimpleMission(1);
+    
 }
 
 //--------------------------------------------------------------

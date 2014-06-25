@@ -23,6 +23,7 @@
 #include "arduComunicationManager.h"
 #include "DMXManager.h"
 #include "OSCManager.h"
+#include "SimpleMission.h"
 
 #include "ScenarioEditor.h"
 
@@ -61,6 +62,8 @@ public:
     Scenario                myScenario;
     //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
+    
+    SimpleMission *currentMission;
     bool bFullScreen;
     bool bDrawDebug;
     
