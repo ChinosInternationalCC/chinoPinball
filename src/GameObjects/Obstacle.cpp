@@ -16,7 +16,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     this->position = position;
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
-    //to try with ofBtGetCylinderCollisionShape, for improve collision detection
+    //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
     // create ofxBullet shape
     body.create(world.world, position, 0); // we set m=0 for kinematic body
@@ -34,22 +34,22 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	initScale = scale;
 	
 	
-    // add 3D mashes to ofxBullet shape
+    // add 3D meshes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
-    //    body.addMesh(assimpModel.getMesh(0), scale, true);
-    assimpModelMesh = assimpModel.getMesh(0);
+
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
     
-    //material.setAmbientColor(ofFloatColor(0, 0, 0));
-	//material.setDiffuseColor(ofFloatColor(150, 0, 150));
-	//material.setSpecularColor(ofFloatColor(220, 0, 220));
-	//material.setShininess(40);
-    
+	/*
+    material.setAmbientColor(ofFloatColor(0, 0, 0));
+	material.setDiffuseColor(ofFloatColor(150, 0, 150));
+	material.setSpecularColor(ofFloatColor(220, 0, 220));
+	material.setShininess(40);
+    */
     
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -77,12 +77,12 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 }
 
 //--------------------------------------------------------------
-void Obstacle::update(){
+void Obstacle::update(bool bEditorMode){
 
 	autoScalingXYZ();
 
     assimpModel.update();
-    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);    
+    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0); // Animation Player
 
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -97,6 +97,8 @@ void Obstacle::update(){
 		//setImplicitShapeDimensions(myBtScale);
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	body.activate();
 
 }
 /*
@@ -137,7 +139,7 @@ void Obstacle::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void Obstacle::draw(){
+void Obstacle::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
@@ -147,20 +149,37 @@ void Obstacle::draw(){
         ofSetHexColor(color);
     }
 	//<<??
-	
+
+	//material.begin();
 	body.transformGL();
-    ofPoint scale = assimpModel.getScale();
-    ofScale(scale.x,scale.y,scale.z);
+	
+    ofPoint scaleModel = assimpModel.getScale();
+    ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     
 	//assimpModelMesh.drawWireframe(); //makes slow framerate
-	assimpModelMesh.drawFaces();
+	
+	//assimpModelMesh.drawFaces();
+	
+	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
+	//assimpModel.getMesh(0).drawFaces(); // Normal..
+	//ofPushMatrix();
+	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
+	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado
+	//ofPopMatrix();
+	//assimpModel.getMesh(0).enableTextures();
+	//assimpModel.getMesh(0).drawFaces(); // Normal..
+	
+	
 	/* what is the diference between drawing the faces of the model or the mesh????*/
-	material.begin();
-
+	
+	
+	
+	
     body.restoreTramsformGL();
-	material.end();
+	//material.end();
+	
+	
 }
-
 //-------------------------------------------------------------
 ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;

@@ -8,6 +8,24 @@
 
 #include "ScenarioEditor.h"
 
+
+//----------------------------------------------
+// SINGLETON initalizations
+bool ScenarioEditor::instanceFlag = false;
+ScenarioEditor* ScenarioEditor::single = NULL;
+
+
+ScenarioEditor* ScenarioEditor::getInstance(){
+    if(! instanceFlag)
+    {
+        single = new ScenarioEditor();
+        instanceFlag = true;
+        return single;
+    }else{
+        return single;
+    }
+}
+
 //--------------------------------------------------------------
 void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     
@@ -69,7 +87,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 		
 		if(selectedObject != NULL){
 			
-			if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
+			//if (selectedObject->type == SimpleObject::ShapeTypeObstacle) {
 				
 				cout << "Going to create a new Gui" << endl;
 				posGui = ofVec2f(ofGetWidth()-OFX_UI_GLOBAL_CANVAS_WIDTH, 0);
@@ -110,7 +128,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				//gui->setVisible(false);
 				
 					cout << "new Gui Done" << endl;
-			}
+			//}
 		}
 		
 	}
@@ -141,7 +159,14 @@ void ScenarioEditor::keyReleased(int key){
     {
 		case 'e':
             bEscenarioEditorMode = !bEscenarioEditorMode;
-			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;   
+			
+			if(bEscenarioEditorMode){
+				scenario->removeCoverScenario();
+			}else {
+				//Need to be at least once time created to be removed
+				scenario->addCoverScenario(*world); //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			}
+			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
             break;
         case 'x':
             scenario->saveToXml();

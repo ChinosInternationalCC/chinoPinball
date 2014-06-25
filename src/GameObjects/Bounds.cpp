@@ -14,7 +14,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
-    rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(90));
     
     //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
@@ -77,7 +77,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
 }
 
 //--------------------------------------------------------------
-void Bounds::update(){
+void Bounds::update(bool bEditorMode){
     
 	autoScalingXYZ();
     
@@ -137,7 +137,7 @@ void Bounds::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void Bounds::draw(){
+void Bounds::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
