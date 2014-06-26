@@ -167,7 +167,7 @@ void Obstacle::draw(bool bEditorMode){
 	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado // Model Draw
 	//ofPopMatrix();
 	//assimpModel.getMesh(0).enableTextures();
-	assimpModel.getMesh(0).drawFaces(); // Mesh Draw
+	//assimpModel.getMesh(0).drawFaces(); // Mesh Draw
 	
 	
 	/* what is the diference between drawing the faces of the model or the mesh????*/
