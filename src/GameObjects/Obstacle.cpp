@@ -44,12 +44,12 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     assimpModel.playAllAnimations();
     body.add();
     
-	/*
+	
     material.setAmbientColor(ofFloatColor(0, 0, 0));
 	material.setDiffuseColor(ofFloatColor(150, 0, 150));
 	material.setSpecularColor(ofFloatColor(220, 0, 220));
 	material.setShininess(40);
-    */
+    
     
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -150,7 +150,7 @@ void Obstacle::draw(bool bEditorMode){
     }
 	//<<??
 
-	//material.begin();
+	material.begin();
 	body.transformGL();
 	
     ofPoint scaleModel = assimpModel.getScale();
@@ -164,10 +164,10 @@ void Obstacle::draw(bool bEditorMode){
 	//assimpModel.getMesh(0).drawFaces(); // Normal..
 	//ofPushMatrix();
 	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado
+	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado // Model Draw
 	//ofPopMatrix();
 	//assimpModel.getMesh(0).enableTextures();
-	//assimpModel.getMesh(0).drawFaces(); // Normal..
+	assimpModel.getMesh(0).drawFaces(); // Mesh Draw
 	
 	
 	/* what is the diference between drawing the faces of the model or the mesh????*/
@@ -176,7 +176,7 @@ void Obstacle::draw(bool bEditorMode){
 	
 	
     body.restoreTramsformGL();
-	//material.end();
+	material.end();
 	
 	
 }

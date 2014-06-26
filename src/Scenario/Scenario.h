@@ -27,9 +27,7 @@ public:
 	void setup(ofxBulletWorldRigid &world);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
-    void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
-	void addCoverScenario(ofxBulletWorldRigid &world);
-	void removeCoverScenario();
+
     void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
     void loadFromJSON(ofxBulletWorldRigid &world);
@@ -59,13 +57,47 @@ public:
     
 	//basic World
 	vector <ofxBulletBox*>		bounds;
-	float						boundsWidth;
+
     float                       ballLimitsBoxSize;
-    
+
+    //general Light ambient
     ofVec3f                 lightPos;
 	
-private:
+	void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
+	void addCoverScenario(ofxBulletWorldRigid &world);
+	void removeCoverScenario();
 
-		int			lastPosIdCoverScenario;
+	
+private:
+	
+	//BASIC SCENARIO STATGE/////////////////////////////////////
+	ofVec3f startLoc;
+	ofPoint dimens;
+	
+	float scaleStage = 0.15;
+	float	boundsWidth = 7.;;
+	float depthStage = 160;
+	float frontbackwallHeigh = 40;
+	float heightwalls = 20;
+	
+	//Ground
+	float widthbasePlane = 100;
+	float heightbasePlane = depthStage;
+	float depthbasePlane = boundsWidth;
+	
+	//BackWall
+	float widthbkPlane = 100;
+	float heightbkPlane = boundsWidth*1.5;
+	float depthbkPlane = frontbackwallHeigh;
+	
+	//RightLeftWall
+	float widthrlPlane = boundsWidth;
+	float heightrlPlane = depthStage;
+	float depthrlPlane = heightwalls;
+	
+	int	 lastPosIdCoverScenario;
+	//BASIC SCENARIO STATGE/////////////////////////////////////
+	
+
 	
 };

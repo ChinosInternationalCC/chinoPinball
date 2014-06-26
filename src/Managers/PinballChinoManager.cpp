@@ -10,7 +10,7 @@
 #include "Ball.h"
 #include "eventComunication.h"
 
-PinballChinoManager::PinballChinoManager():statusDisplay(20,60){
+PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
     
 }
 
