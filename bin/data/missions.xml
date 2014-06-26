@@ -1,0 +1,16 @@
+<missions>
+    <mission>
+        <missionID>1</missionID>
+        <duration>100</duration>
+        <ID>1</ID>
+	<ID>2</ID>
+	<ID>3</ID>
+    </mission>
+    <mission>
+        <missionID>2</missionID>
+        <duration>100</duration>
+        <ID>4</ID>
+	<ID>5</ID>
+	<ID>6</ID>
+    </mission>
+</missions>
