@@ -31,17 +31,6 @@ void Scenario::setup(ofxBulletWorldRigid &_world){
 //--------------------------------------------------------------
 void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 	
-	// STATGE
-	float scaleStage = 0.15;
-	ofVec3f startLoc;
-	ofPoint dimens;
-	boundsWidth = 7.;
-	float depthStage = 160;
-	float widthbasePlane = 100;
-	float depthbasePlane = boundsWidth;
-	float heightbasePlane = depthStage;
-	float heightbkPlane = boundsWidth*1.5;
-	
 	bounds.push_back( new ofxBulletBox() );
 	startLoc.set(0, 0, -2*heightbkPlane);
 	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
@@ -63,32 +52,6 @@ void Scenario::removeCoverScenario(){
 void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
     
 	// STATGE
-	float scaleStage = 0.15;
-	
-	ofVec3f startLoc;
-	ofPoint dimens;
-	
-	boundsWidth = 7.;
-	float depthStage = 160;
-	float frontbackwallHeigh = 40;
-	float heightwalls = 20;
-	
-	//Ground
-	float widthbasePlane = 100;
-	float heightbasePlane = depthStage;
-	float depthbasePlane = boundsWidth;
-	
-	//BackWall
-	float widthbkPlane = 100;
-	float heightbkPlane = boundsWidth*1.5;
-	float depthbkPlane = frontbackwallHeigh;
-	
-	//RightLeftWall
-	float widthrlPlane = boundsWidth;
-	float heightrlPlane = depthStage;
-	float depthrlPlane = heightwalls;
-
-	int lastposId = 0;
 	
 	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
@@ -106,14 +69,8 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 			startLoc.set(+widthbasePlane*0.5 , 0, -depthbasePlane*0.5);
 			dimens.set(widthrlPlane, heightrlPlane, depthrlPlane);
 		}
-		//TODO Better to set a dynamic ceiling. That can be added and removed easyly to let scenario to be free for Editor.
-		//else if(i == 4) { // ground //
-		//	startLoc.set(0, 0, -2*heightbkPlane);
-		//	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
-		//}
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
-		//bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.z*scaleStage, dimens.y*scaleStage );
 		bounds[i]->setProperties(.95, .5); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 		
