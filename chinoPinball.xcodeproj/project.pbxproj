@@ -3595,6 +3595,7 @@
 					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs64,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				SDKROOT = macosx10.8;
 				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxFTGL/libs/FTGL/include/;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3725,6 +3726,7 @@
 					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs64,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxFTGL/libs/FTGL/include/;
 				WRAPPER_EXTENSION = app;
 			};

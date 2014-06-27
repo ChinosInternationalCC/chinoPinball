@@ -2,8 +2,8 @@
     <object>
         <type>6</type>
         <id>1</id>
-        <positionX>-8.959992409</positionX>
-        <positionY>1.219993353</positionY>
+        <positionX>-5.199992180</positionX>
+        <positionY>1.259993196</positionY>
         <positionZ>-0.699999988</positionZ>
         <scaleX>0.005000000</scaleX>
         <scaleY>0.005000000</scaleY>
@@ -58,74 +58,85 @@
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
         <positionX>-0.225101963</positionX>
         <positionY>7.878749371</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem1.obj</path>
     </object>
     <object>
         <type>6</type>
-        <id>2</id>
+        <id>0</id>
         <positionX>-4.974901676</positionX>
         <positionY>-6.047327995</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem2.obj</path>
     </object>
     <object>
         <type>6</type>
-        <id>3</id>
+        <id>0</id>
         <positionX>2.383300066</positionX>
         <positionY>2.717033863</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem3.obj</path>
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
         <positionX>-2.304927588</positionX>
         <positionY>2.971834660</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem4.obj</path>
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
         <positionX>5.581752300</positionX>
         <positionY>-6.301945210</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem5.obj</path>
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
+        <positionX>0.468326747</positionX>
+        <positionY>-0.971172571</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.10000001</scaleX>
+        <scaleY>0.10000001</scaleY>
+        <scaleZ>0.10000001</scaleZ>
+        <path>3DMODELS/new/totem6.obj</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>0</id>
         <positionX>-3.031672716</positionX>
         <positionY>-1.071172476</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
-        <path>cylinder.stl</path>
+        <scaleX>0.100000009</scaleX>
+        <scaleY>0.100000009</scaleY>
+        <scaleZ>0.100000009</scaleZ>
+        <path>3DMODELS/new/arbol_single_rotate.dae</path>
     </object>
     <object>
         <type>7</type>
         <id>0</id>
-        <positionX>-8.428985596</positionX>
+        <positionX>-8.588988304</positionX>
         <positionY>-0.161205381</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
