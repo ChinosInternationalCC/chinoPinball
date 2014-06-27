@@ -47,6 +47,7 @@ void SimpleObject::setDebugMode(bool &DebugMode){
 }
 
 void SimpleObject::drawDebug(void){
+    
         ofSetColor(255, 255, 255);
         ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
         ofDrawBitmapString("HIT:"+ofToString(currentMission->isElementHit(GetObjectId())), position.x,position.y+1);
