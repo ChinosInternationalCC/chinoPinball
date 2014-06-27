@@ -154,7 +154,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         case SimpleObject::ShapeTypeLever:{
             Lever *oLever = new Lever(currentMission);
             int dir = 0;
-            oLever->setup(world, pos, dir);
+            oLever->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05), dir);
             oLever->setDefaultZ();
             ScenarioObjects.push_back(oLever);
         }
@@ -313,7 +313,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeLever:{
                     Lever *oLever = new Lever(currentMission);
                     int dir = ScenarioXml.getValue("LeverType", 0);
-                    oLever->setup(world, pos, dir);
+                    oLever->setup(world, pos, path, scale, dir);
                     oLever->SetObjectId(objId);
                     ScenarioObjects.push_back(oLever);
                 }
