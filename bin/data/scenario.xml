@@ -58,7 +58,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>1</id>
         <positionX>-0.225101963</positionX>
         <positionY>7.878749371</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -69,7 +69,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>2</id>
         <positionX>-4.974901676</positionX>
         <positionY>-6.047327995</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -80,7 +80,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>3</id>
         <positionX>2.383300066</positionX>
         <positionY>2.717033863</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -91,7 +91,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>1</id>
         <positionX>-2.304927588</positionX>
         <positionY>2.971834660</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -102,7 +102,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>1</id>
         <positionX>5.581752300</positionX>
         <positionY>-6.301945210</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -113,7 +113,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>1</id>
         <positionX>-3.031672716</positionX>
         <positionY>-1.071172476</positionY>
         <positionZ>-0.500000000</positionZ>

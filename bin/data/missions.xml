@@ -2,15 +2,33 @@
     <mission>
         <missionID>1</missionID>
         <duration>100</duration>
-        <ID>1</ID>
-	<ID>2</ID>
-	<ID>3</ID>
+	<object>
+        	<id>1</id>
+		<color>1</color>
+	</object>
+	<object>
+		<id>2</id>
+		<color>1</color>
+	</object>
+	<object>
+		<id>3</id>
+		<color>1</color>
+	</object>
     </mission>
     <mission>
         <missionID>2</missionID>
         <duration>100</duration>
-        <ID>4</ID>
-	<ID>5</ID>
-	<ID>6</ID>
+	<object>
+        	<id>4</id>
+		<color>1</color>
+	</object>
+	<object>
+		<id>5</id>
+		<color>1</color>
+	</object>
+	<object>
+		<id>6</id>
+		<color>1</color>
+	</object>
     </mission>
 </missions>

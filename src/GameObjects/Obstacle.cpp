@@ -8,6 +8,12 @@
 
 #include "Obstacle.h"
 
+Obstacle::Obstacle(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
+    
+}
+
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeObstacle;
@@ -146,9 +152,16 @@ void Obstacle::draw(bool bEditorMode){
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
+        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */currentMission->isElementHit(GetObjectId())){
+            ofSetHexColor(highlightColor);
+        }
+        else{
         ofSetHexColor(color);
+        }
     }
 	//<<??
+    
+
 
 	material.begin();
 	body.transformGL();

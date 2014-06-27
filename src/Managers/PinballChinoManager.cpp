@@ -11,11 +11,13 @@
 #include "eventComunication.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
-    
+  currentMission = new SimpleMission(1);  
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::setup(){
+    
+    
 
     // setup bullet world
 	world.setup();
@@ -33,6 +35,7 @@ void PinballChinoManager::setup(){
     camera.setTransformMatrix(savedPose);
     
     // setup scenario
+    myScenario.setCurrentMission(currentMission);
     myScenario.setup(world);
     
     // setup scenario editor
@@ -56,7 +59,7 @@ void PinballChinoManager::setup(){
     bDrawDebug = false;
     
     
-    currentMission = new SimpleMission(1);
+    
     
 }
 
@@ -106,6 +109,8 @@ void PinballChinoManager::draw(){
 
     // debug draw
     if(bDrawDebug){
+        myScenario.drawDebug();
+        
         world.drawDebug();
         // draw the box that is used to detect if the ball is outside the scenario
         ofNoFill();
@@ -126,11 +131,17 @@ void PinballChinoManager::draw(){
     statusDisplay.draw();
     
     ScenarioEditor::getInstance()->draw();
+    
+    if(bDrawDebug){
+
+        currentMission->debugDraw();
+    }
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
     bDrawDebug = !bDrawDebug;
     statusDisplay.show3dfont = !statusDisplay.show3dfont;
+    //myScenario.setDebugMode(bDrawDebug);
 }
 
 //--------------------------------------------------------------
@@ -147,6 +158,8 @@ void PinballChinoManager::onRestartGameEvent(void){
     }
     
     //do other stuff that should be done whe restaring game score stuff etc
+    
+    currentMission->resetMission();
     
 }
 
@@ -317,9 +330,9 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
     {
         if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
         {
-//            if (myScenario.ScenarioObjects[i]->type == 0) continue; // ball
             ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
+            currentMission->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
 		}
 	}
 }

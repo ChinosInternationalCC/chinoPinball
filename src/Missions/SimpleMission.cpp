@@ -23,17 +23,21 @@ void SimpleMission::loadMissionFromXML(int MissionID){
         MissionXml.pushTag("missions");
         
         int numberOfSavedObjects = MissionXml.getNumTags("mission");
-        cout<<ofToString(numberOfSavedObjects)<<endl;
         for(int i = 0; i < numberOfSavedObjects; i++){
             
             MissionXml.pushTag("mission", i);
             if (MissionID == MissionXml.getValue("missionID", 0)){
                 this->MissionID = MissionID;
                 MissionDuration = MissionXml.getValue("duration", 0);
-                int numberOfObjects = MissionXml.getNumTags("ID");
-                for(int i = 0; i < numberOfObjects; i++){
-                MissionXml.pushTag("mission", i);
-                    cout<< ofToString(MissionXml.getValue("duration", 0))<<endl;
+                int numberOfObjects = MissionXml.getNumTags("object");
+                for(int j = 0; j < numberOfObjects; j++){
+                MissionXml.pushTag("object", j);
+                    MissionElement element;
+                    //cout<< ofToString(MissionXml.getValue("id", 0))<<endl;
+                    element.identifier = MissionXml.getValue("id", 0);
+                    element.color = MissionXml.getValue("color", 0);
+                    element.hit = false;
+                    MissionElements.push_back(element);
                 MissionXml.popTag();
                 }
             }
@@ -64,11 +68,125 @@ int SimpleMission::GetCurrentMissionId(void){
     return MissionID;
 }
 
+void SimpleMission::debugDraw(void){
+    int posX = 100;
+    int posY = ofGetHeight()-100;
+    ofSetColor(255, 255, 255);
+    string tmp;
+    switch(MissionState){
+        case MISSION_IDLE:
+            tmp = "MISSION_IDLE";
+            break;
+        case MISSION_CALIFICATIONS:
+            tmp = "MISSION_CALIFICATIONS";
+            break;
+        case MISSION_STARTED:
+            tmp = "MISSION_STARTED";
+            break;
+        case MISSION_COMPLETED:
+            tmp = "MISSION_COMPLETED";
+            break;
+            
+    }
+
+    ofDrawBitmapString(tmp, posX,posY);
+    
+    ofDrawBitmapString("Mission Elements:", posX,posY+10);
+    ofDrawBitmapString("HIT", posX,posY+20);
+    int NoOfElements = MissionElements.size();
+    for (int i=0; i < NoOfElements; i++){
+        ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+10);
+        if (true == MissionElements[i].hit){
+            ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+20);
+        }
+    }
+    if (MISSION_STARTED == MissionState)
+        ofDrawBitmapString("Elapsed Milis"+ofToString(ofGetElapsedTimeMillis()-Timer),posX, posY+40);
+}
+
 //------------------------------------------------
 void SimpleMission::OnCollision(int elementID){
-    //if (elementID) in MissionElements
-    //  MissionElements.pop_back();
-    // MissionState = MISSION_CALIFICATIONS;
+    int i;
+    switch(MissionState){
+        case MISSION_IDLE:
+            if (isElementPartOfMission(elementID,i)){
+                MissionElements[i].hit = true;
+                MissionState = MISSION_CALIFICATIONS;
+            }
+            break;
+        case MISSION_CALIFICATIONS:
+            if (isElementPartOfMission(elementID,i)){
+                MissionElements[i].hit = true;
+                if (0 == getNoOfRemainingElements())
+                    MissionState = MISSION_STARTED;
+                
+            }
+            
+            break;
+        case MISSION_STARTED:
+            //start the mission timer
+            Timer = ofGetElapsedTimeMillis();
+            break;
+        case MISSION_COMPLETED:
+            resetMission();
+            break;
+     
+    }
+
     
     
+}
+
+//------------------------------------------------
+void SimpleMission::update(void){
+    if (MissionState == MISSION_STARTED){
+        /* the timer is checked only in the MISSION_STARTED state */
+        if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration)
+            MissionState = MISSION_COMPLETED;
+    }
+    
+}
+
+//------------------------------------------------
+bool SimpleMission::isElementPartOfMission(int elementID, int &index){
+    bool bResult = false;
+    int NoOfElements = MissionElements.size();
+    for (int i=0; i < NoOfElements; i++){
+        if (elementID == MissionElements[i].identifier){
+            index = i;
+            bResult = true;
+        }
+    }
+    return bResult;
+}
+
+//------------------------------------------------
+int SimpleMission::getNoOfRemainingElements(void){
+    int count = 0;
+    int NoOfElements = MissionElements.size();
+    for (int i=0; i < NoOfElements; i++){
+        if (false == MissionElements[i].hit)
+            count++;
+    }
+    return count;
+}
+
+//------------------------------------------------
+void SimpleMission::resetMission(void){
+    int NoOfElements = MissionElements.size();
+    for (int i=0; i < NoOfElements; i++){
+        MissionElements[i].hit = false;
+    }
+    MissionState = MISSION_IDLE;
+}
+
+//------------------------------------------------
+bool SimpleMission::isElementHit(int elementID){
+    int NoOfElements = MissionElements.size();
+    for (int i=0; i < NoOfElements; i++){
+        if ((elementID == MissionElements[i].identifier)&&
+            (true == MissionElements[i].hit))
+        return true;
+    }
+    return false;
 }

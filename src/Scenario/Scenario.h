@@ -19,14 +19,17 @@
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 #include "ofxJSONElement.h"
+#include "SimpleMission.h"
 
 
 class Scenario {
     
 public:
+    void setCurrentMission(SimpleMission *currentMission);
 	void setup(ofxBulletWorldRigid &world);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
+    void drawDebug(void);
 
     void loadFromXml(ofxBulletWorldRigid &world);
     void saveToXml(void);
@@ -42,7 +45,7 @@ public:
     //ofxXmlSettings ScenarioXml;
     
     ofxBulletWorldRigid *     world;
-    
+   /*
     Ball                    m_Ball,m_Ball2;
     Lever                   leverLeft;
     Lever                   leverRight;
@@ -52,7 +55,7 @@ public:
     Obstacle                m_obstable2;
     Obstacle                m_obstable3;
     Obstacle                m_obstable4;
-    
+    */
     vector<SimpleObject*> ScenarioObjects;
     
 	//basic World
@@ -66,6 +69,8 @@ public:
 	void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
 	void addCoverScenario(ofxBulletWorldRigid &world);
 	void removeCoverScenario();
+    
+    void setDebugMode(bool &DebugMode);
 
 	
 private:
@@ -98,6 +103,7 @@ private:
 	int	 lastPosIdCoverScenario;
 	//BASIC SCENARIO STATGE/////////////////////////////////////
 	
-
+    SimpleMission *currentMission;
+    bool DebugMode;
 	
 };
