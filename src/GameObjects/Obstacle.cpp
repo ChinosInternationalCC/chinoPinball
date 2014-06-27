@@ -8,6 +8,12 @@
 
 #include "Obstacle.h"
 
+Obstacle::Obstacle(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
+    
+}
+
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeObstacle;
@@ -44,12 +50,12 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     assimpModel.playAllAnimations();
     body.add();
     
-	/*
+	
     material.setAmbientColor(ofFloatColor(0, 0, 0));
 	material.setDiffuseColor(ofFloatColor(150, 0, 150));
 	material.setSpecularColor(ofFloatColor(220, 0, 220));
 	material.setShininess(40);
-    */
+    
     
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -79,30 +85,86 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 //--------------------------------------------------------------
 void Obstacle::update(bool bEditorMode){
 
+	autoScalingXYZ();
+
     assimpModel.update();
     assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0); // Animation Player
+
+	//Udpate mesch if there are changes
+	// add 3D mashes to ofxBullet shape
+    //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
+    //{
+		//btVector3 myBtScale;
+		//myBtScale.setX(scale.x);
+		//myBtScale.setY(scale.y);
+		//myBtScale.setZ(scale.z);
+		
+        //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
+		//setImplicitShapeDimensions(myBtScale);
+		//addMesh(assimpModel.getMesh(i), scale, true);
+    //}
 	
 	body.activate();
 
 }
+/*
+//--------------------------------------------------------------
+void Obstacle::autoScalingXYZ(){
+	
+}*/
 
+//--------------------------------------------------------------
+void Obstacle::autoScalingXYZ(){
+	
+	btVector3 myObjectScale;
+	ofVec3f myOfObjectScale;
+	
+	
+	if (scaleXyz != last_scaleXyz) {
+		float diff = scaleXyz - last_scaleXyz;
+		last_scaleXyz = scaleXyz;
+		
+		//Get Scales
+		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
+		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
+
+		//Update sizes values
+		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
+		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
+		last_scale = scale;
+
+		myObjectScale.setX(myOfObjectScale.x);
+		myObjectScale.setY(myOfObjectScale.y);
+		myObjectScale.setZ(myOfObjectScale.z);		
+
+		//update physyc object
+		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
+		assimpModel.setScale(scale.x, scale.y, scale.z);
+	}
+
+}
 
 //--------------------------------------------------------------
 void Obstacle::draw(bool bEditorMode){
-    
-    
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
+        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */currentMission->isElementHit(GetObjectId())){
+            ofSetHexColor(highlightColor);
+        }
+        else{
         ofSetHexColor(color);
+        }
     }
 	//<<??
-
     
-    glPushAttrib(GL_ALL_ATTRIB_BITS);
+
+
+	//material.begin();
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
     glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
     glEnable(GL_NORMALIZE);
     glDisable(GL_CULL_FACE);
@@ -114,6 +176,8 @@ void Obstacle::draw(bool bEditorMode){
 	body.restoreTramsformGL();
 	
 	glPopAttrib();
+	//material.end();
+	
 	
 }
 //-------------------------------------------------------------

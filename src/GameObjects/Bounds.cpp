@@ -146,7 +146,7 @@ void Bounds::autoScalingXYZ(){
 //--------------------------------------------------------------
 void Bounds::draw(bool bEditorMode){
 	
-	if(bEditorMode){
+	//if(bEditorMode){
 		//>>??
 		int t = ofGetElapsedTimef()*100-collisionTime;
 		if(t<highlightTime){
@@ -160,15 +160,15 @@ void Bounds::draw(bool bEditorMode){
 		ofPoint scale = assimpModel.getScale();
 		ofScale(scale.x,scale.y,scale.z);
 		
-		assimpModelMesh.drawWireframe(); //makes slow framerate
-		//assimpModelMesh.drawFaces();
+		//assimpModelMesh.drawWireframe(); //makes slow framerate
+		assimpModelMesh.drawFaces();
 		//assimpModel.drawFaces();
 		/* what is the diference between drawing the faces of the model or the mesh????*/
 		material.begin();
 		
 		body.restoreTramsformGL();
 		material.end();
-	}
+	//}
 }
 
 //-------------------------------------------------------------
