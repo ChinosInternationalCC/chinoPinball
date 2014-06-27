@@ -8,6 +8,12 @@
 
 #include "Bounds.h"
 
+Bounds::Bounds(SimpleMission *currentmission) :
+    SimpleObject(currentmission)
+{
+    
+}
+
 //---------------------------------
 void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeBounds;

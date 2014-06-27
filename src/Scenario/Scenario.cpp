@@ -8,6 +8,11 @@
 
 #include "Scenario.h"
 
+//---------------------------------------------------
+void Scenario::setCurrentMission(SimpleMission *currentMission){
+    this->currentMission = currentMission;
+}
+
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &_world){
     
@@ -24,9 +29,19 @@ void Scenario::setup(ofxBulletWorldRigid &_world){
 	
 	//copy a reference
 	//world = _world;
+    DebugMode = false;
+    
+    
 
 }
 
+void Scenario::setDebugMode(bool &DebugMode){
+    this->DebugMode = DebugMode;
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        ScenarioObjects[i]->setDebugMode(DebugMode);
+    }
+    
+}
 
 //--------------------------------------------------------------
 void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
@@ -98,6 +113,14 @@ void Scenario::draw(bool bEditorMode){
     
 }
 
+void Scenario::drawDebug(void){
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        ScenarioObjects[i]->drawDebug();
+    }
+    
+}
+
+
 //--------------------------------------------------------------
 void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f pos){
     
@@ -113,7 +136,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
     switch(typeObject){
 
         case SimpleObject::ShapeTypeBall:{
-            Ball *oBall = new Ball();
+            Ball *oBall = new Ball(currentMission);
             oBall->setup(world, pos);
             oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
@@ -121,7 +144,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
         case SimpleObject::ShapeTypeHammer:{
-            Hammer *oHammer = new Hammer();
+            Hammer *oHammer = new Hammer(currentMission);
             oHammer->setup(world, pos);
             oHammer->setDefaultZ();
             ScenarioObjects.push_back(oHammer);
@@ -129,7 +152,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
         case SimpleObject::ShapeTypeLever:{
-            Lever *oLever = new Lever();
+            Lever *oLever = new Lever(currentMission);
             int dir = 0;
             oLever->setup(world, pos, dir);
             oLever->setDefaultZ();
@@ -138,7 +161,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
         case SimpleObject::ShapeTypeObstacle:{
-            Obstacle *oObstable = new Obstacle();
+            Obstacle *oObstable = new Obstacle(currentMission);
             oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
             oObstable->setDefaultZ();
             ScenarioObjects.push_back(oObstable);
@@ -272,7 +295,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball();
+                    Ball *oBall = new Ball(currentMission);
                     oBall->setup(world, pos);
                     oBall->SetObjectId(objId);
                     ScenarioObjects.push_back(oBall);
@@ -280,7 +303,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 break;
                     
                 case SimpleObject::ShapeTypeHammer:{
-                    Hammer *oHammer = new Hammer();
+                    Hammer *oHammer = new Hammer(currentMission);
                     oHammer->setup(world, pos);
                     oHammer->SetObjectId(objId);
                     ScenarioObjects.push_back(oHammer);
@@ -288,7 +311,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 break;
                     
                 case SimpleObject::ShapeTypeLever:{
-                    Lever *oLever = new Lever();
+                    Lever *oLever = new Lever(currentMission);
                     int dir = ScenarioXml.getValue("LeverType", 0);
                     oLever->setup(world, pos, dir);
                     oLever->SetObjectId(objId);
@@ -297,7 +320,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 break;
                     
                 case SimpleObject::ShapeTypeObstacle:{
-                    Obstacle *oObstable = new Obstacle();
+                    Obstacle *oObstable = new Obstacle(currentMission);
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oObstable->setup(world, pos, path, scale);
                     oObstable->SetObjectId(objId);
@@ -306,7 +329,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 break;
                     
                 case SimpleObject::ShapeTypeBounds:{
-                    Bounds *oBounds = new Bounds();
+                    Bounds *oBounds = new Bounds(currentMission);
                     oBounds->setup(world, pos, path, scale);
                     oBounds->SetObjectId(objId);
                     ScenarioObjects.push_back(oBounds);

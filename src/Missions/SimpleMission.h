@@ -9,6 +9,13 @@
 #pragma once
 #include "ofMain.h"
 
+class MissionElement{
+public:
+    int identifier;
+    int color;
+    bool hit;
+};
+
 class SimpleMission{
 public:
     SimpleMission(int MissionID);
@@ -28,10 +35,17 @@ public:
     void OnCollision(int elementID); //onCollision should be called by the pinballChinoManager when we have
                                      //a collision and pass the element ID
     
+    bool isElementPartOfMission(int elementID, int &index);
+    bool isElementHit(int elementID);
+    int getNoOfRemainingElements(void);
+    void resetMission(void);
+    void update(void); //should be called cyclic, used by the timer
+    void debugDraw(void);
+    
 private:
-    vector <int> MissionElements; //list with the IDs of the objects that are part of the mission
+    vector <MissionElement> MissionElements; //list with the IDs of the objects that are part of the mission
     int MissionID; //each Mission has a unique identifier eg. 1,2,3... configured in xml, this stores the ID of the current mission
     int MissionDuration; //each Mission has a duration configured in xml
-    int Timer;
+    double Timer;
     enMissionStates MissionState;
 };
