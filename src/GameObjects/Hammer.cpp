@@ -8,6 +8,12 @@
 
 #include "Hammer.h"
 
+Hammer::Hammer(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
+    
+}
+
 //---------------------------------
 void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     

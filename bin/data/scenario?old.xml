@@ -58,8 +58,8 @@
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
-        <positionX>-0.225101963</positionX>
+        <id>0</id>
+        <positionX>0.494898021</positionX>
         <positionY>7.878749371</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
@@ -69,7 +69,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>2</id>
+        <id>0</id>
         <positionX>-4.974901676</positionX>
         <positionY>-6.047327995</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -80,9 +80,9 @@
     </object>
     <object>
         <type>6</type>
-        <id>3</id>
-        <positionX>2.383300066</positionX>
-        <positionY>2.717033863</positionY>
+        <id>0</id>
+        <positionX>0.643298388</positionX>
+        <positionY>2.237032890</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.050000001</scaleX>
         <scaleY>0.050000001</scaleY>
@@ -91,7 +91,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
         <positionX>-2.304927588</positionX>
         <positionY>2.971834660</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -102,18 +102,18 @@
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
-        <positionX>5.581752300</positionX>
-        <positionY>-6.301945210</positionY>
+        <id>0</id>
+        <positionX>5.481751442</positionX>
+        <positionY>-6.261945248</positionY>
         <positionZ>-0.500000000</positionZ>
-        <scaleX>0.050000001</scaleX>
-        <scaleY>0.050000001</scaleY>
-        <scaleZ>0.050000001</scaleZ>
+        <scaleX>0.069704473</scaleX>
+        <scaleY>0.069704473</scaleY>
+        <scaleZ>0.069704473</scaleZ>
         <path>cylinder.stl</path>
     </object>
     <object>
         <type>6</type>
-        <id>1</id>
+        <id>0</id>
         <positionX>-3.031672716</positionX>
         <positionY>-1.071172476</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -121,27 +121,5 @@
         <scaleY>0.050000001</scaleY>
         <scaleZ>0.050000001</scaleZ>
         <path>cylinder.stl</path>
-    </object>
-    <object>
-        <type>7</type>
-        <id>0</id>
-        <positionX>-8.428985596</positionX>
-        <positionY>-0.161205381</positionY>
-        <positionZ>-4.500000000</positionZ>
-        <scaleX>0.201970443</scaleX>
-        <scaleY>0.201970443</scaleY>
-        <scaleZ>0.201970443</scaleZ>
-        <path>3DModels/MURO1.obj</path>
-    </object>
-    <object>
-        <type>7</type>
-        <id>1</id>
-        <positionX>11.091015816</positionX>
-        <positionY>-1.081205249</positionY>
-        <positionZ>-4.500000000</positionZ>
-        <scaleX>0.201970443</scaleX>
-        <scaleY>0.201970443</scaleY>
-        <scaleZ>0.201970443</scaleZ>
-        <path>3DModels/MURO2.obj</path>
     </object>
 </scenario>

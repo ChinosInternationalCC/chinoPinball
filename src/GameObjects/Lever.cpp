@@ -7,6 +7,11 @@
 //
 
 #include "Lever.h"
+Lever::Lever(SimpleMission *currentMission):
+    SimpleObject(currentMission)
+{
+    
+}
 
 //--------------------------------------------------------------
 void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){

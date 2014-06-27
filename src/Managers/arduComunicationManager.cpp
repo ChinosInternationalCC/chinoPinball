@@ -162,5 +162,5 @@ void arduComunicationManager::listenerOnCollission(eventComunication & args){
 	//Send rele Envent to Arduino
 	serial.writeByte('0');
 	serial.writeByte('2');
-	cout << "listenerOnCollission Serial event 0" << endl;
+	
 }

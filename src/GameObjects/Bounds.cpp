@@ -8,6 +8,12 @@
 
 #include "Bounds.h"
 
+Bounds::Bounds(SimpleMission *currentmission) :
+    SimpleObject(currentmission)
+{
+    
+}
+
 //---------------------------------
 void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeBounds;
@@ -39,6 +45,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     {
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
+	
     //    body.addMesh(assimpModel.getMesh(0), scale, true);
     assimpModelMesh = assimpModel.getMesh(0);
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
@@ -82,7 +89,7 @@ void Bounds::update(bool bEditorMode){
 	autoScalingXYZ();
     
     assimpModel.update();
-    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);
+    //assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);
     
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -139,26 +146,29 @@ void Bounds::autoScalingXYZ(){
 //--------------------------------------------------------------
 void Bounds::draw(bool bEditorMode){
 	
-	//>>??
-	int t = ofGetElapsedTimef()*100-collisionTime;
-    if(t<highlightTime){
-        ofSetHexColor(highlightColor);
-    }else{
-        ofSetHexColor(color);
-    }
-	//<<??
-	
-	body.transformGL();
-    ofPoint scale = assimpModel.getScale();
-    ofScale(scale.x,scale.y,scale.z);
-    
-	//assimpModelMesh.drawWireframe(); //makes slow framerate
-	assimpModelMesh.drawFaces();
-	/* what is the diference between drawing the faces of the model or the mesh????*/
-	material.begin();
-    
-    body.restoreTramsformGL();
-	material.end();
+	if(bEditorMode){
+		//>>??
+		int t = ofGetElapsedTimef()*100-collisionTime;
+		if(t<highlightTime){
+			ofSetHexColor(highlightColor);
+		}else{
+			ofSetHexColor(color);
+		}
+		//<<??
+		
+		body.transformGL();
+		ofPoint scale = assimpModel.getScale();
+		ofScale(scale.x,scale.y,scale.z);
+		
+		assimpModelMesh.drawWireframe(); //makes slow framerate
+		//assimpModelMesh.drawFaces();
+		//assimpModel.drawFaces();
+		/* what is the diference between drawing the faces of the model or the mesh????*/
+		material.begin();
+		
+		body.restoreTramsformGL();
+		material.end();
+	}
 }
 
 //-------------------------------------------------------------
