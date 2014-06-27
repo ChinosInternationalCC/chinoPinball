@@ -88,6 +88,7 @@ void PinballChinoManager::update(){
         }
     }
 
+    currentMission->update();
     
 }
 
@@ -109,7 +110,7 @@ void PinballChinoManager::draw(){
 
     // debug draw
     if(bDrawDebug){
-        myScenario.drawDebug();
+        //myScenario.drawDebug();
         
         world.drawDebug();
         // draw the box that is used to detect if the ball is outside the scenario
@@ -117,6 +118,7 @@ void PinballChinoManager::draw(){
         ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
         ofDrawSphere(myScenario.lightPos, 2);
         ofFill();
+         
     }
 	
     myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);

@@ -117,18 +117,20 @@ void SimpleMission::OnCollision(int elementID){
         case MISSION_CALIFICATIONS:
             if (isElementPartOfMission(elementID,i)){
                 MissionElements[i].hit = true;
-                if (0 == getNoOfRemainingElements())
+                if (0 == getNoOfRemainingElements()){
                     MissionState = MISSION_STARTED;
+                    //start the mission timer
+                    Timer = ofGetElapsedTimeMillis();
+                }
                 
             }
             
             break;
         case MISSION_STARTED:
-            //start the mission timer
-            Timer = ofGetElapsedTimeMillis();
+
             break;
         case MISSION_COMPLETED:
-            resetMission();
+
             break;
      
     }
@@ -141,8 +143,12 @@ void SimpleMission::OnCollision(int elementID){
 void SimpleMission::update(void){
     if (MissionState == MISSION_STARTED){
         /* the timer is checked only in the MISSION_STARTED state */
-        if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration)
+        if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration){
             MissionState = MISSION_COMPLETED;
+        }
+    }
+    if (MissionState == MISSION_COMPLETED){
+        resetMission();
     }
     
 }

@@ -22,7 +22,7 @@ public:
     
     
     enum enMissionStates{
-        MISSION_IDLE = 0,               // initial state
+        MISSION_IDLE,               // initial state
         MISSION_CALIFICATIONS,  // if one of the objects that are part of the mission is hit start tge Mission Callification
         MISSION_STARTED,        // if all the objects are hit start the mission
         MISSION_COMPLETED       // when the mission timer expires finish the mission
