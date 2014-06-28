@@ -85,10 +85,10 @@
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>-1.551724195</rotationX>
-        <rotationY>-0.960591137</rotationY>
-        <rotationZ>1.788177252</rotationZ>
-        <rotationW>1.000000119</rotationW>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
         <path>3DMODELS/new/totem1.obj</path>
     </object>
     <object>
@@ -184,30 +184,30 @@
     <object>
         <type>7</type>
         <id>0</id>
-        <positionX>-47.009010315</positionX>
-        <positionY>6.258793354</positionY>
+        <positionX>-21.888994217</positionX>
+        <positionY>6.778792858</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
         <scaleY>0.201970443</scaleY>
         <scaleZ>0.201970443</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
+        <rotationZ>1.226601005</rotationZ>
         <rotationW>1.000000119</rotationW>
         <path>3DModels/MURO1.obj</path>
     </object>
     <object>
         <type>7</type>
         <id>1</id>
-        <positionX>28.791017532</positionX>
-        <positionY>12.178793907</positionY>
+        <positionX>27.111000061</positionX>
+        <positionY>11.598787308</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
         <scaleY>0.201970443</scaleY>
         <scaleZ>0.201970443</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
+        <rotationZ>1.137931108</rotationZ>
         <rotationW>1.000000119</rotationW>
         <path>3DModels/MURO2.obj</path>
     </object>
