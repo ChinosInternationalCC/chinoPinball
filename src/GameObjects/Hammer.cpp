@@ -8,6 +8,12 @@
 
 #include "Hammer.h"
 
+Hammer::Hammer(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
+    
+}
+
 //---------------------------------
 void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
@@ -23,7 +29,7 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
 	//y position
 	lowerLimit = position.y;
-	upperLimit = 7;
+	upperLimit = position.y+2;
     speed = 0.8;    // pos per frame
     
     color = 0x00ff00;
@@ -38,6 +44,9 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
 
 //--------------------------------------------------------------
 void Hammer::update(bool bEditorMode){
+    
+    lowerLimit = position.y;
+	upperLimit = position.y+2;
     
 	// get current translation
     ofVec3f translation = body.getPosition();

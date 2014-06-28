@@ -8,6 +8,12 @@
 
 #include "Obstacle.h"
 
+Obstacle::Obstacle(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
+    
+}
+
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
     type = ShapeTypeObstacle;
@@ -44,12 +50,12 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     assimpModel.playAllAnimations();
     body.add();
     
-	/*
+	
     material.setAmbientColor(ofFloatColor(0, 0, 0));
 	material.setDiffuseColor(ofFloatColor(150, 0, 150));
 	material.setSpecularColor(ofFloatColor(220, 0, 220));
 	material.setShininess(40);
-    */
+    
     
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -146,36 +152,30 @@ void Obstacle::draw(bool bEditorMode){
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
+        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */currentMission->isElementHit(GetObjectId())){
+            ofSetHexColor(highlightColor);
+        }
+        else{
         ofSetHexColor(color);
+        }
     }
 	//<<??
+    
+
 
 	//material.begin();
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
+    glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
+    glEnable(GL_NORMALIZE);
+    glDisable(GL_CULL_FACE);
+	ofPoint scaleModel		= assimpModel.getScale();
+	
 	body.transformGL();
-	
-    ofPoint scaleModel = assimpModel.getScale();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    
-	//assimpModelMesh.drawWireframe(); //makes slow framerate
+    assimpModel.getMesh(0).drawFaces();
+	body.restoreTramsformGL();
 	
-	//assimpModelMesh.drawFaces();
-	
-	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	//assimpModel.getMesh(0).drawFaces(); // Normal..
-	//ofPushMatrix();
-	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado
-	//ofPopMatrix();
-	//assimpModel.getMesh(0).enableTextures();
-	//assimpModel.getMesh(0).drawFaces(); // Normal..
-	
-	
-	/* what is the diference between drawing the faces of the model or the mesh????*/
-	
-	
-	
-	
-    body.restoreTramsformGL();
+	glPopAttrib();
 	//material.end();
 	
 	

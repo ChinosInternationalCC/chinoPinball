@@ -9,7 +9,9 @@
 #include "Ball.h"
 
 //---------------------------------
-Ball::Ball(void){
+Ball::Ball(SimpleMission *currentMission) :
+    SimpleObject(currentMission)
+{
     m_status = BallStatusWaiting;
 	radius = .5;
 	mass = 1;

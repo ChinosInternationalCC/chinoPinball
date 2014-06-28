@@ -15,7 +15,8 @@ class Lever : public SimpleObject {
 
 public:
 
-	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection);
+    Lever(SimpleMission *currentMission);
+	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url, ofVec3f ModelScale, int setDirection);
 
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);

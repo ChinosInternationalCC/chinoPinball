@@ -8,7 +8,7 @@
 
 #include "SimpleObject.h"
 
-SimpleObject::SimpleObject(){
+SimpleObject::SimpleObject(SimpleMission *currentMission){
 	idobject = -1;
 	bAnimation = false;
     color = 0xffffff;
@@ -16,6 +16,8 @@ SimpleObject::SimpleObject(){
 	scale = ofVec3f(); last_scale = scale;
 	scaleXyz = 0; last_scaleXyz = scaleXyz;
     highlightTime = 60; // what units?
+    this->currentMission = currentMission;
+    bDebugMode = false;
 }
 
 //--------------------------------------------------------------
@@ -37,4 +39,17 @@ void SimpleObject::SetObjectId(int objId){
 }
 int SimpleObject::GetObjectId(void){
     return ObjectId;
+}
+
+void SimpleObject::setDebugMode(bool &DebugMode){
+    this->bDebugMode = DebugMode;
+    
+}
+
+void SimpleObject::drawDebug(void){
+    
+        ofSetColor(255, 255, 255);
+        ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
+        ofDrawBitmapString("HIT:"+ofToString(currentMission->isElementHit(GetObjectId())), position.x,position.y+1);
+    
 }

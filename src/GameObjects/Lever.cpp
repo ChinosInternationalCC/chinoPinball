@@ -7,21 +7,35 @@
 //
 
 #include "Lever.h"
+Lever::Lever(SimpleMission *currentMission):
+    SimpleObject(currentMission)
+{
+    
+}
 
 //--------------------------------------------------------------
-void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirection = 1){
+void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, ofVec3f ModelScale, int setDirection = 1){
     type = ShapeTypeLever;
     position = setPosition;
     direction = setDirection;
     
     rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    rotation = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
     
     // create ofxBullet shape
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     
+    /*
     // load 3D model
     ofVec3f scale(0.04, 0.033, 0.03);
 	assimpModel.loadModel("Tuscan_Column.dae", true);
+	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setPosition(0, 0, 0);
+     */
+    
+    // load 3D model
+    scale = ModelScale;
+	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
     
@@ -35,7 +49,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition, int setDirect
    
     body.add();
     body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
     
     
 	// lever rotation angles
@@ -73,16 +87,13 @@ void Lever::update(bool bEditorMode){
             rotate(angle);
         }
     }
-    else
+    if (!isKeyPressed)
     {
-		if(!bEditorMode)
-		{
 			if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
 			{
 				angle -= speed;
 				rotate(angle);
 			}
-		}
     }
     
 }

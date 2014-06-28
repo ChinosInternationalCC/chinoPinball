@@ -10,18 +10,19 @@
 
 #include "ofMain.h"
 #include "ofxBullet.h"
-//#include "objDisplay.h"
 #include "ofxAssimpModelLoader.h"
-
+#include "SimpleMission.h"
 
 class SimpleObject {
     
 public:
 
 	
-	SimpleObject();
+	SimpleObject(SimpleMission *currentMission);
 	//virtual  ~SimpleObject();
 	
+    
+    
     enum shapeType{
         ShapeTypeBall = 0,
         ShapeTypeSimpleBox = 1,
@@ -39,6 +40,9 @@ public:
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f _pos);
 	virtual void update(bool bEditorMode)=0;
 	virtual void draw(bool bEditorMode)=0;
+    
+    void setDebugMode(bool &DebugMode);
+    void drawDebug(void);
     
 	//general vars
 	int idobject;
@@ -80,5 +84,9 @@ public:
     virtual void onCollision() = 0;
     virtual void setDefaultZ() = 0;
     virtual void setPosition(ofVec3f position) = 0;
+    bool bDebugMode;
+    
+protected:
+    SimpleMission *currentMission;
    
 };
