@@ -12,25 +12,24 @@
 
 
 class Lever : public SimpleObject {
-    
+
 public:
-    
+
     Lever(SimpleMission *currentMission);
 	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url, ofVec3f ModelScale, int setDirection);
-    
+
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
 	void rotate(float degrees);
-	
-	void setupRot();
     
 	ofxBulletCustomShape	body;
-    
+	ofxAssimpModelLoader	assimpModel;
+    ofMaterial				material;    
     
 	//ofVec3f         position;
     int             direction; // rotation direction: 1 - clockwise, 0 - counter clockwise
     
-    btQuaternion    rotationLever;
+    btQuaternion    rotation;
     
     float angle; // degrees
 	float lowerLimit;
@@ -48,7 +47,6 @@ public:
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
-    void setRotation(ofQuaternion rotation);
-    
-    
+
+
 };

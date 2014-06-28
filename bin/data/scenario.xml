@@ -42,7 +42,7 @@
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
-        <path>3DMODELS/new/pusher1.obj</path>
+        <path>3DModels/new/pusher_def_ok.obj</path>
         <LeverType>0</LeverType>
     </object>
     <object>
@@ -58,7 +58,7 @@
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
-        <path>3DMODELS/new/pusher1.obj</path>
+        <path>3DModels/new/pusher2_def_ok.obj</path>
         <LeverType>1</LeverType>
     </object>
     <object>
