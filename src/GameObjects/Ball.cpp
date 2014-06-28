@@ -119,4 +119,22 @@ void Ball::setPosition(ofVec3f position){
     
 }
 
+
+//------------------------------------------------------------
+void Ball::setRotation(ofQuaternion rotation){
     
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
