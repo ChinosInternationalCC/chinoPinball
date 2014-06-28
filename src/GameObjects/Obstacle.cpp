@@ -163,33 +163,20 @@ void Obstacle::draw(bool bEditorMode){
     
 
 
-	material.begin();
+	//material.begin();
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
+    glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
+    glEnable(GL_NORMALIZE);
+    glDisable(GL_CULL_FACE);
+	ofPoint scaleModel		= assimpModel.getScale();
+	
 	body.transformGL();
-	
-    ofPoint scaleModel = assimpModel.getScale();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    
-	//assimpModelMesh.drawWireframe(); //makes slow framerate
+    assimpModel.getMesh(0).drawFaces();
+	body.restoreTramsformGL();
 	
-	//assimpModelMesh.drawFaces();
-	
-	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	//assimpModel.getMesh(0).drawFaces(); // Normal..
-	//ofPushMatrix();
-	//ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-	assimpModel.drawFaces(); // Gigante en el caso del AssimpLoader animado // Model Draw
-	//ofPopMatrix();
-	//assimpModel.getMesh(0).enableTextures();
-	//assimpModel.getMesh(0).drawFaces(); // Mesh Draw
-	
-	
-	/* what is the diference between drawing the faces of the model or the mesh????*/
-	
-	
-	
-	
-    body.restoreTramsformGL();
-	material.end();
+	glPopAttrib();
+	//material.end();
 	
 	
 }
