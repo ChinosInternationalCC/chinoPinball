@@ -20,8 +20,27 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     direction = setDirection;
 	ModelPath = url;
     //Two rotationLever to set the lever in the right position
-    rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    //rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
+    
+    // lever rotationLever angles
+    angle = 0;
+	upperLimit = 60;
+	lowerLimit = -30;
+    speed = 15;    // degrees per frame
+    
+    // distance from object center to rotation axis
+    axisX = 1.3;
+    
+    // settings for counter clockwise rotation
+    if (direction == 0)
+    {
+        upperLimit = -upperLimit;
+        lowerLimit = -lowerLimit;
+        speed = -speed;
+        axisX = -axisX;
+        rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(-90));
+    }
     
     // create ofxBullet shape
     body.create(world.world, position, 0); // we set m=0 for kinematic body
