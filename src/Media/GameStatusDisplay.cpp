@@ -25,13 +25,13 @@ void GameStatusDisplay::setup3dFont(void){
     //str = "初音ミク";
     str = "score";
     // The third parameter is depth, use it to extrude the shape.
-    font.loadFont("mplus-1c-regular.ttf", 25, 8);
+    font.loadFont("ARCADE.TTF", 25);
     
     //light.setDiffuseColor(ofColor(200, 64, 64));
     //light.setSpecularColor(ofColor(255, 255, 255));
     //light.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 200);
-    light.setPosition(startPositionX, startPositionY, 200);
-    material.setShininess(64);
+    //light.setPosition(startPositionX, startPositionY, 200);
+    //material.setShininess(64);
     
 }
 
@@ -43,22 +43,23 @@ void GameStatusDisplay::draw3dFont(void){
     GameStatus *status;
     status = GameStatus::getInstance();
     
-    ofEnableLighting();
+    //ofEnableLighting();
     
-    light.enable();
-    material.begin();
+    //light.enable();
+    //material.begin();
     cam.begin();
     billboardBegin();//always facing the camera
 	{
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+        ofSetColor(5, 200, 220);
         font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
         font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
         
     }
     billboardEnd();
     cam.end();
-    material.end();
+    //material.end();
     
 }
 
