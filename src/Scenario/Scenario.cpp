@@ -281,7 +281,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             
             ofVec3f pos, scale;
-            
+			
             pos.x = ScenarioXml.getValue("positionX",0.0, 0);
             pos.y = ScenarioXml.getValue("positionY",0.0, 0);
             pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
@@ -289,7 +289,16 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             scale.x = ScenarioXml.getValue("scaleX",0.0, 0);
             scale.y = ScenarioXml.getValue("scaleY",0.0, 0);
             scale.z = ScenarioXml.getValue("scaleZ",0.0, 0);
-            
+			
+			ofQuaternion rotation;
+            ofVec4f rot;
+			
+			rot.x = ScenarioXml.getValue("rotationX",0.0,0);
+			rot.y = ScenarioXml.getValue("rotationY",0.0,0);
+			rot.z = ScenarioXml.getValue("rotationZ",0.0,0);
+            rot.w = ScenarioXml.getValue("rotationW",0.0,0);
+			rotation.set(rot);
+			
             string path;
             path = ScenarioXml.getValue("path","", 0);
             
@@ -298,6 +307,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Ball *oBall = new Ball(currentMission);
                     oBall->setup(world, pos);
                     oBall->SetObjectId(objId);
+					oBall->setRotation(rotation);
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -306,6 +316,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Hammer *oHammer = new Hammer(currentMission);
                     oHammer->setup(world, pos);
                     oHammer->SetObjectId(objId);
+					oHammer->setRotation(rotation);
                     ScenarioObjects.push_back(oHammer);
                 }
                 break;
@@ -315,6 +326,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     int dir = ScenarioXml.getValue("LeverType", 0);
                     oLever->setup(world, pos, path, scale, dir);
                     oLever->SetObjectId(objId);
+					oLever->setRotation(rotation);
                     ScenarioObjects.push_back(oLever);
                 }
                 break;
@@ -324,6 +336,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oObstable->setup(world, pos, path, scale);
                     oObstable->SetObjectId(objId);
+					oObstable->setRotation(rotation);
                     ScenarioObjects.push_back(oObstable);
                 }
                 break;
@@ -332,6 +345,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Bounds *oBounds = new Bounds(currentMission);
                     oBounds->setup(world, pos, path, scale);
                     oBounds->SetObjectId(objId);
+					oBounds->setRotation(rotation);
                     ScenarioObjects.push_back(oBounds);
                 }
                 break;
@@ -373,8 +387,19 @@ void Scenario::saveToXml(){
         ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
         ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
         ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
+		ScenarioXml.addValue("rotationX", ScenarioObjects[i]->rotation.x());
+		ScenarioXml.addValue("rotationY", ScenarioObjects[i]->rotation.y());
+		ScenarioXml.addValue("rotationZ", ScenarioObjects[i]->rotation.z());
+		ScenarioXml.addValue("rotationW", ScenarioObjects[i]->rotation.w());
         ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
-        
+       
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeObstacle){
+			cout << "rotationX" << ScenarioObjects[i]->rotation.x() << endl;
+			cout << "rotationY" << ScenarioObjects[i]->rotation.y() << endl;
+			cout << "rotationZ" << ScenarioObjects[i]->rotation.z() << endl;
+			cout << "rotationW" << ScenarioObjects[i]->rotation.w() << endl;
+		}
+		
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];

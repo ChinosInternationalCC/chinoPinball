@@ -23,6 +23,8 @@ public:
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	void move(float height);
+	
+	void setupRot();
     
 	ofxBulletBox	body;
     
@@ -40,6 +42,7 @@ public:
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
+	void setRotation(ofQuaternion rotation);
     
  /*
     energy ( float )

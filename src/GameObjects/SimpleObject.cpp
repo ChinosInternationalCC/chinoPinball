@@ -53,3 +53,5 @@ void SimpleObject::drawDebug(void){
         ofDrawBitmapString("HIT:"+ofToString(currentMission->isElementHit(GetObjectId())), position.x,position.y+1);
     
 }
+
+
