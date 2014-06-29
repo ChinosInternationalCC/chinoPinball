@@ -155,6 +155,18 @@ void PinballChinoManager::onRestartGameEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 0)
         {
             Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            
+            for(int j = 0; j < myScenario.ScenarioObjects.size(); j++)
+            {
+                if (myScenario.ScenarioObjects[j]->type == 5)
+                {
+                    Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
+                    ofVec3f pos;
+                    pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    ball->setPosition(pos);
+                }
+            }
+            
             ball->reset();
         }
     }
