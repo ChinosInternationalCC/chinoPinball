@@ -221,6 +221,12 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			
 			//Create Personal GUI of this type OR Remove Object Touched
 			if(deleteObject){
+				
+				cout << "Going to del Gui and Object" << endl;
+				delete gui;
+				cout << "Del Gui" << endl;
+				bGuiPointer = false;
+				
 				scenario->popObject(selectedObject);
 				deleteObject = false;
 			}

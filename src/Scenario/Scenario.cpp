@@ -400,13 +400,6 @@ void Scenario::saveToXml(){
 		ScenarioXml.addValue("rotationZ", ScenarioObjects[i]->rotation.z());
 		ScenarioXml.addValue("rotationW", ScenarioObjects[i]->rotation.w());
         ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
-       
-		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeObstacle){
-			cout << "rotationX" << ScenarioObjects[i]->rotation.x() << endl;
-			cout << "rotationY" << ScenarioObjects[i]->rotation.y() << endl;
-			cout << "rotationZ" << ScenarioObjects[i]->rotation.z() << endl;
-			cout << "rotationW" << ScenarioObjects[i]->rotation.w() << endl;
-		}
 		
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
@@ -442,6 +435,7 @@ void Scenario::saveToJSON(){
             /* The other objects don«t have this field so we put it to 0*/
             Object["SimpleObject"]["SubType"] = 0;
         }
+		
         Object["SimpleObject"]["position"]["X"] = ScenarioObjects[i]->position.x;
         Object["SimpleObject"]["position"]["Y"] = ScenarioObjects[i]->position.y;
         Object["SimpleObject"]["position"]["Z"] = ScenarioObjects[i]->position.z;
