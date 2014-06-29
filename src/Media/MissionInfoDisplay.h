@@ -23,7 +23,7 @@ public:
 private:
     SimpleMission *currentMission;
     SimpleMission::enMissionStates currentMissionState;
-    ofxFTGLFont font;
+    ofxFTGLFont fontLarge, fontMedium;
     string str;
     ofLight light;
     ofMaterial material;

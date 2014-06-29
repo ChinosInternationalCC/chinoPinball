@@ -16,6 +16,7 @@ SimpleMission::SimpleMission(int MissionID){
     
     
     eventMission evtMission;
+    evtMission.pMission = this;
     evtMission.eventType = eventMission::MISSION_EVENT_NEW_MISSION;
     ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
     
@@ -115,6 +116,7 @@ void SimpleMission::debugDraw(void){
 void SimpleMission::OnCollision(int elementID){
     int i;
     eventMission evtMission;
+    evtMission.pMission = this;
     
     switch(MissionState){
         case MISSION_IDLE:
@@ -166,6 +168,7 @@ void SimpleMission::update(void){
             /* Notify the state change */
             
             eventMission evtMission;
+            evtMission.pMission = this;
             evtMission.eventType = eventMission::MISSION_EVENT_MISSION_COMPLETED;
             ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
 
@@ -211,6 +214,7 @@ void SimpleMission::resetMission(void){
     MissionState = MISSION_IDLE;
     
     eventMission evtMission;
+    evtMission.pMission = this;
     evtMission.eventType = eventMission::MISSION_EVENT_RESTART_MISSION;
     ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
 
