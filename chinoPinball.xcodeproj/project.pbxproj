@@ -218,6 +218,9 @@
 		AEB3F954EC98A3E7B15EEE78 /* btContactProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452363509B83E066EF498C0D /* btContactProcessing.cpp */; };
 		AF094D7A1367EFD3A921A1B8 /* PosixThreadSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E24995407937C9093E9C1AB /* PosixThreadSupport.cpp */; };
 		B083A7841960853D00BC0D89 /* eventMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B083A7821960853D00BC0D89 /* eventMission.cpp */; };
+		B083A7871960972900BC0D89 /* MissionInfoDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B083A7851960972900BC0D89 /* MissionInfoDisplay.cpp */; };
+		B083A78A196097AD00BC0D89 /* MediaUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B083A788196097AD00BC0D89 /* MediaUtils.cpp */; };
+		B083A78D1960997300BC0D89 /* LightsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B083A78B1960997300BC0D89 /* LightsManager.cpp */; };
 		B164D28B5B7395F71AF43DD8 /* btUniversalConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA601206D442ADBD8E91C6B9 /* btUniversalConstraint.cpp */; };
 		B32E492AADD47A777A3BD792 /* btTriangleCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522767081C9CA286CA671509 /* btTriangleCallback.cpp */; };
 		B5E67E19FB3C2BE672AF8641 /* btTriangleIndexVertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BD18581BDD9DD16505B782 /* btTriangleIndexVertexArray.cpp */; };
@@ -916,6 +919,12 @@
 		B03DE2F64A89CDA5E2AE2408 /* btOverlappingPairCache.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btOverlappingPairCache.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h; sourceTree = SOURCE_ROOT; };
 		B083A7821960853D00BC0D89 /* eventMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMission.cpp; sourceTree = "<group>"; };
 		B083A7831960853D00BC0D89 /* eventMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMission.h; sourceTree = "<group>"; };
+		B083A7851960972900BC0D89 /* MissionInfoDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MissionInfoDisplay.cpp; path = Media/MissionInfoDisplay.cpp; sourceTree = "<group>"; };
+		B083A7861960972900BC0D89 /* MissionInfoDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissionInfoDisplay.h; path = Media/MissionInfoDisplay.h; sourceTree = "<group>"; };
+		B083A788196097AD00BC0D89 /* MediaUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MediaUtils.cpp; path = Media/MediaUtils.cpp; sourceTree = "<group>"; };
+		B083A789196097AD00BC0D89 /* MediaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaUtils.h; path = Media/MediaUtils.h; sourceTree = "<group>"; };
+		B083A78B1960997300BC0D89 /* LightsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightsManager.cpp; path = Managers/LightsManager.cpp; sourceTree = "<group>"; };
+		B083A78C1960997300BC0D89 /* LightsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightsManager.h; path = Managers/LightsManager.h; sourceTree = "<group>"; };
 		B170EE628BE77202946345E5 /* aiPostProcess.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiPostProcess.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiPostProcess.h; sourceTree = SOURCE_ROOT; };
 		B20D34AE45A28E958D62AA42 /* btSequentialImpulseConstraintSolver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSequentialImpulseConstraintSolver.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h; sourceTree = SOURCE_ROOT; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
@@ -1406,6 +1415,8 @@
 				A58AA50318E0BF4700AA5372 /* DMXManager.h */,
 				A535952D18F3435100065D69 /* OSCManager.cpp */,
 				A535952E18F3435100065D69 /* OSCManager.h */,
+				B083A78B1960997300BC0D89 /* LightsManager.cpp */,
+				B083A78C1960997300BC0D89 /* LightsManager.h */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1910,6 +1921,10 @@
 				830033FC4AC81DE5E33CE618 /* GameStatusDisplay.h */,
 				24433DD6207CFCD62B7C09AF /* objDisplay.cpp */,
 				1635FD059CA911EA399F67FA /* objDisplay.h */,
+				B083A7851960972900BC0D89 /* MissionInfoDisplay.cpp */,
+				B083A7861960972900BC0D89 /* MissionInfoDisplay.h */,
+				B083A788196097AD00BC0D89 /* MediaUtils.cpp */,
+				B083A789196097AD00BC0D89 /* MediaUtils.h */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -2849,6 +2864,7 @@
 				1B28D9E87BAC3931A8CE50D8 /* btDbvtBroadphase.cpp in Sources */,
 				0EF00047C3D2DC9F52B6B191 /* btDispatcher.cpp in Sources */,
 				3C8B99E182190384DB525D42 /* btMultiSapBroadphase.cpp in Sources */,
+				B083A78D1960997300BC0D89 /* LightsManager.cpp in Sources */,
 				7EE1EDD6C5FF070966C5FFBF /* btOverlappingPairCache.cpp in Sources */,
 				A58C5F0B18BBDCA100E99E78 /* ofxJSONElement.cpp in Sources */,
 				D92792A6F0998EF17BBEDCE7 /* btQuantizedBvh.cpp in Sources */,
@@ -2903,6 +2919,7 @@
 				0D8F359716A086448237934C /* btCylinderShape.cpp in Sources */,
 				4E5F49A6791BB0E19693A183 /* btEmptyShape.cpp in Sources */,
 				05DDF5F7A6CF25D6D564505E /* btHeightfieldTerrainShape.cpp in Sources */,
+				B083A78A196097AD00BC0D89 /* MediaUtils.cpp in Sources */,
 				2129B2DE318F750BCF28E1DC /* btMinkowskiSumShape.cpp in Sources */,
 				5464279258DFADF2BA2C2740 /* btMultimaterialTriangleMeshShape.cpp in Sources */,
 				5B47E945944840EB67CAFAE6 /* btMultiSphereShape.cpp in Sources */,
@@ -2952,6 +2969,7 @@
 				A7C5BC5718B788BB006187D9 /* ofxSyphonServer.mm in Sources */,
 				7E7C449DB9A0E04800F356AE /* btGjkEpaPenetrationDepthSolver.cpp in Sources */,
 				5CF37BFB7D265894AFD9BB37 /* btGjkPairDetector.cpp in Sources */,
+				B083A7871960972900BC0D89 /* MissionInfoDisplay.cpp in Sources */,
 				E5B243CC1E9E4CB633A31F92 /* btMinkowskiPenetrationDepthSolver.cpp in Sources */,
 				B85E86521F414BC676809344 /* btPersistentManifold.cpp in Sources */,
 				A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */,

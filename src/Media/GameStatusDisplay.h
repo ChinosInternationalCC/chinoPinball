@@ -10,6 +10,7 @@
 #define __chinoPinball__GameStatusDisplay__
 
 #include "ofxFTGL.h"
+#include "MediaUtils.h"
 
 
 class GameStatusDisplay{
@@ -34,8 +35,7 @@ private:
     void setup3dFont(void);
     void draw3dFont(void);
     void draw2dFont(void);
-    void billboardBegin();
-    void billboardEnd();
+
 };
 
 #endif /* defined(__chinoPinball__GameStatusDisplay__) */

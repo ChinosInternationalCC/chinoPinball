@@ -24,6 +24,7 @@
 #include "DMXManager.h"
 #include "OSCManager.h"
 #include "SimpleMission.h"
+#include "MissionInfoDisplay.h"
 
 #include "ScenarioEditor.h"
 
@@ -62,6 +63,7 @@ public:
     Scenario                myScenario;
     //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
+    MissionInfoDisplay      missionDisplay;
     
     SimpleMission *currentMission;
     bool bFullScreen;

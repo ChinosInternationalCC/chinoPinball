@@ -12,6 +12,7 @@
 OSCManager::OSCManager(){
     sender.setup(HOST, PORT);
     ofAddListener(eventComunication::onNewCom,this, &OSCManager::listenerOnCollission);
+    ofAddListener(eventMission::onMissionUpdate,this, &OSCManager::listenerOnUpdateMission);
     
 }
 

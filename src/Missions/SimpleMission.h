@@ -41,6 +41,8 @@ public:
     void resetMission(void);
     void update(void); //should be called cyclic, used by the timer
     void debugDraw(void);
+    int getElapsedMissionTime(void);
+    int getRemainingMissionTime(void);
     
 private:
     vector <MissionElement> MissionElements; //list with the IDs of the objects that are part of the mission

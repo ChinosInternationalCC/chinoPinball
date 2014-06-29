@@ -131,6 +131,7 @@ void PinballChinoManager::draw(){
     glDisable(GL_DEPTH_TEST);
     
     statusDisplay.draw();
+    missionDisplay.draw();
     
     ScenarioEditor::getInstance()->draw();
     

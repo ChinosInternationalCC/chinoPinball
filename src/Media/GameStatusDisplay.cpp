@@ -48,7 +48,7 @@ void GameStatusDisplay::draw3dFont(void){
     //light.enable();
     //material.begin();
     cam.begin();
-    billboardBegin();//always facing the camera
+    MediaUtils::billboardBegin();//always facing the camera
 	{
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
@@ -57,7 +57,7 @@ void GameStatusDisplay::draw3dFont(void){
         font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
         
     }
-    billboardEnd();
+    MediaUtils::billboardEnd();
     cam.end();
     //material.end();
     
@@ -132,36 +132,3 @@ void GameStatusDisplay::draw(void){
     
 }
 
-void GameStatusDisplay::billboardBegin() {
-    
-    float modelview[16];
-	int i,j;
-    
-	// save the current modelview matrix
-	glPushMatrix();
-    
-	// get the current modelview matrix
-	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
-    
-	// undo all rotations
-	// beware all scaling is lost as well
-	for( i=0; i<3; i++ )
-	    for( j=0; j<3; j++ ) {
-            if ( i==j )
-                modelview[i*4+j] = 1.0;
-            else
-                modelview[i*4+j] = 0.0;
-	    }
-    
-	// set the modelview with no rotations
-	glLoadMatrixf(modelview);
-}
-
-
-
-void GameStatusDisplay::billboardEnd() {
-    
-	// restore the previously
-	// stored modelview matrix
-	glPopMatrix();
-}

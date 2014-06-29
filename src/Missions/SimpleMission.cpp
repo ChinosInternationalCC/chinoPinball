@@ -227,3 +227,19 @@ bool SimpleMission::isElementHit(int elementID){
     }
     return false;
 }
+
+int SimpleMission::getElapsedMissionTime(void){
+    int elapsedTime = -1;
+    if (MISSION_STARTED == MissionState)
+        elapsedTime = ofGetElapsedTimeMillis()-Timer;
+    return elapsedTime;
+}
+
+int SimpleMission::getRemainingMissionTime(void){
+    int elapsedTime = -1;
+    if (MISSION_STARTED == MissionState)
+        elapsedTime = Timer - ofGetElapsedTimeMillis();
+    return elapsedTime;
+    
+}
+
