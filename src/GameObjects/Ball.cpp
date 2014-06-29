@@ -105,7 +105,9 @@ void Ball::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void Ball::setPosition(ofVec3f position){
+void Ball::setPosition(ofVec3f pos){
+    
+    position = pos;
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
