@@ -8,9 +8,15 @@
 
 #include "SimpleMission.h"
 #include "ofxXmlSettings.h"
+#include "eventMission.h"
 
 SimpleMission::SimpleMission(int MissionID){
     loadMissionFromXML(MissionID);
+    
+    
+    eventMission evtMission;
+    evtMission.eventType = eventMission::MISSION_EVENT_NEW_MISSION;
+    ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
     
 }
 
@@ -107,11 +113,17 @@ void SimpleMission::debugDraw(void){
 //------------------------------------------------
 void SimpleMission::OnCollision(int elementID){
     int i;
+    eventMission evtMission;
+    
     switch(MissionState){
         case MISSION_IDLE:
             if (isElementPartOfMission(elementID,i)){
                 MissionElements[i].hit = true;
                 MissionState = MISSION_CALIFICATIONS;
+                
+                /* notify the state change */
+                evtMission.eventType = eventMission::MISSION_EVENT_START_CALIFICATION;
+                ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
             }
             break;
         case MISSION_CALIFICATIONS:
@@ -119,6 +131,11 @@ void SimpleMission::OnCollision(int elementID){
                 MissionElements[i].hit = true;
                 if (0 == getNoOfRemainingElements()){
                     MissionState = MISSION_STARTED;
+                    
+                    /* notify the state change */
+                    evtMission.eventType = eventMission::MISSION_EVENT_START_MISSION;
+                    ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
+                    
                     //start the mission timer
                     Timer = ofGetElapsedTimeMillis();
                 }
@@ -145,6 +162,13 @@ void SimpleMission::update(void){
         /* the timer is checked only in the MISSION_STARTED state */
         if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration){
             MissionState = MISSION_COMPLETED;
+            /* Notify the state change */
+            
+            eventMission evtMission;
+            evtMission.eventType = eventMission::MISSION_EVENT_MISSION_COMPLETED;
+            ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
+
+            
         }
     }
     if (MissionState == MISSION_COMPLETED){
@@ -184,6 +208,13 @@ void SimpleMission::resetMission(void){
         MissionElements[i].hit = false;
     }
     MissionState = MISSION_IDLE;
+    
+    eventMission evtMission;
+    evtMission.eventType = eventMission::MISSION_EVENT_RESTART_MISSION;
+    ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
+
+    
+    
 }
 
 //------------------------------------------------

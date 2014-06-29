@@ -79,7 +79,7 @@ private:
 	ofVec3f startLoc;
 	ofPoint dimens;
 	
-	float scaleStage = 0.15;
+	float scaleStage = 0.25;
 	float	boundsWidth = 7.;;
 	float depthStage = 160;
 	float frontbackwallHeigh = 40;
