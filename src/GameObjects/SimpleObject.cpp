@@ -18,6 +18,14 @@ SimpleObject::SimpleObject(SimpleMission *currentMission){
     highlightTime = 60; // what units?
     this->currentMission = currentMission;
     bDebugMode = false;
+	
+	last_angleValX = angleValX = 0;
+	last_angleValY = angleValY = 0;
+	last_angleValZ = angleValZ = 0;
+	
+	axis2RotateX = ofVec3f(1,0,0);
+	axis2RotateY = ofVec3f(0,1,0);
+	axis2RotateZ = ofVec3f(0,0,1);
 }
 
 //--------------------------------------------------------------

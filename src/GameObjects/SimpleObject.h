@@ -50,7 +50,16 @@ public:
 	int idobject;
     ofMatrix4x4 worldposition;
 	ofVec3f position;
+
 	ofQuaternion    rotation, last_rotation;
+	
+	ofVec3f		axis2RotateX;
+	ofVec3f		axis2RotateY;
+	ofVec3f		axis2RotateZ;
+	
+	float		angleValX, last_angleValX;
+	float		angleValY, last_angleValY;
+	float		angleValZ, last_angleValZ;
 	
 	float angleRotX;
 	float angleRotY;

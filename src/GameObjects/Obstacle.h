@@ -39,5 +39,5 @@ public:
     void setDefaultZ();
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
-
+	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
 };

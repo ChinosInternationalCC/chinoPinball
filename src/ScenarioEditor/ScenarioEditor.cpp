@@ -118,10 +118,28 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
                 gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
                 gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
 
+			/*
 				gui->addSlider("RotX", -3.0, +3.0, &selectedObject->rotation.x());
 				gui->addSlider("RotY", -3.0, +3.0, &selectedObject->rotation.y());
 				gui->addSlider("RotZ", -3.0, +3.0, &selectedObject->rotation.z());
 				gui->addSlider("RotW", -3.0, +3.0, &selectedObject->rotation.w());
+			*/
+
+				gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
+				gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
+				gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
+			
+				gui->addSlider("Angel2RotXx", -1, +1, &selectedObject->axis2RotateX.x);
+				gui->addSlider("Angel2RotXy", -1, +1, &selectedObject->axis2RotateX.y);
+				gui->addSlider("Angel2RotXz", -1, +1, &selectedObject->axis2RotateX.z);
+
+				gui->addSlider("Angel2RotYx", -1, +1, &selectedObject->axis2RotateY.x);
+				gui->addSlider("Angel2RotYy", -1, +1, &selectedObject->axis2RotateY.y);
+				gui->addSlider("Angel2RotYz", -1, +1, &selectedObject->axis2RotateY.z);
+			
+				gui->addSlider("Angel2RotZx", -1, +1, &selectedObject->axis2RotateZ.x);
+				gui->addSlider("Angel2RotZy", -1, +1, &selectedObject->axis2RotateZ.y);
+				gui->addSlider("Angel2RotZz", -1, +1, &selectedObject->axis2RotateZ.z);
 			
 				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/

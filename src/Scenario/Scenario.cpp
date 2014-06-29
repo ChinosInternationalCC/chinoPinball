@@ -401,6 +401,13 @@ void Scenario::saveToXml(){
 		ScenarioXml.addValue("rotationW", ScenarioObjects[i]->rotation.w());
         ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
 		
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBounds){
+			
+			cout << "rotation.x()= " << ScenarioObjects[i]->rotation.x() << endl;
+			cout << "rotation.y()= " << ScenarioObjects[i]->rotation.y() << endl;
+			cout << "rotation.z()= " << ScenarioObjects[i]->rotation.z() << endl;
+		}
+		
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];

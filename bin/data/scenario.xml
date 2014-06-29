@@ -85,10 +85,10 @@
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225564</rotationX>
-        <rotationY>-0.030766364</rotationY>
-        <rotationZ>-0.338430315</rotationZ>
-        <rotationW>0.297408640</rotationW>
+        <rotationX>0.892225623</rotationX>
+        <rotationY>-0.030766357</rotationY>
+        <rotationZ>-0.338430285</rotationZ>
+        <rotationW>0.297408611</rotationW>
         <path>3DMODELS/new/totem2.obj</path>
     </object>
     <object>
@@ -100,10 +100,10 @@
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225564</rotationX>
-        <rotationY>-0.030766364</rotationY>
-        <rotationZ>-0.338430315</rotationZ>
-        <rotationW>0.297408640</rotationW>
+        <rotationX>0.892225623</rotationX>
+        <rotationY>-0.030766357</rotationY>
+        <rotationZ>-0.338430285</rotationZ>
+        <rotationW>0.297408611</rotationW>
         <path>3DMODELS/new/totem2.obj</path>
     </object>
     <object>
@@ -115,10 +115,10 @@
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225564</rotationX>
-        <rotationY>-0.030766364</rotationY>
-        <rotationZ>-0.338430315</rotationZ>
-        <rotationW>0.297408640</rotationW>
+        <rotationX>0.892225623</rotationX>
+        <rotationY>-0.030766357</rotationY>
+        <rotationZ>-0.338430285</rotationZ>
+        <rotationW>0.297408611</rotationW>
         <path>3DMODELS/new/totem2.obj</path>
     </object>
     <object>
@@ -154,46 +154,46 @@
     <object>
         <type>6</type>
         <id>0</id>
-        <positionX>-8.068325996</positionX>
-        <positionY>-0.671172619</positionY>
+        <positionX>-4.528328419</positionX>
+        <positionY>0.548827469</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.000000000</rotationX>
-        <rotationY>-0.398441076</rotationY>
-        <rotationZ>-0.602769971</rotationZ>
-        <rotationW>0.691312551</rotationW>
+        <rotationX>-0.645468354</rotationX>
+        <rotationY>0.241437137</rotationY>
+        <rotationZ>-0.342327297</rotationZ>
+        <rotationW>0.638663352</rotationW>
         <path>3DMODELS/new/totem6.obj</path>
     </object>
     <object>
         <type>7</type>
         <id>0</id>
-        <positionX>-11.308985710</positionX>
-        <positionY>3.518794298</positionY>
+        <positionX>-12.608975410</positionX>
+        <positionY>4.998793125</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
         <scaleY>0.201970443</scaleY>
         <scaleZ>0.201970443</scaleZ>
-        <rotationX>-0.499999940</rotationX>
-        <rotationY>-0.499999940</rotationY>
-        <rotationZ>0.500000119</rotationZ>
-        <rotationW>0.500000119</rotationW>
+        <rotationX>-0.511609197</rotationX>
+        <rotationY>-0.487488061</rotationY>
+        <rotationZ>0.479393214</rotationZ>
+        <rotationW>0.520378530</rotationW>
         <path>3DModels/MURO1.obj</path>
     </object>
     <object>
         <type>7</type>
         <id>1</id>
-        <positionX>16.590959549</positionX>
-        <positionY>3.038781404</positionY>
+        <positionX>16.730951309</positionX>
+        <positionY>8.178780556</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
         <scaleY>0.201970443</scaleY>
         <scaleZ>0.201970443</scaleZ>
-        <rotationX>0.442459285</rotationX>
-        <rotationY>-0.349310100</rotationY>
-        <rotationZ>-0.628757775</rotationZ>
-        <rotationW>0.535608053</rotationW>
+        <rotationX>0.502223849</rotationX>
+        <rotationY>0.517170072</rotationY>
+        <rotationZ>-0.480890512</rotationZ>
+        <rotationW>-0.499049872</rotationW>
         <path>3DModels/MURO2.obj</path>
     </object>
 </scenario>

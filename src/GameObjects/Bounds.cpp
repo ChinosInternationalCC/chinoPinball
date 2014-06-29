@@ -110,10 +110,26 @@ void Bounds::update(bool bEditorMode){
     //}
 	
 	//Update Physic work rotation if GUI change it
-	if(rotation != last_rotation){
-		setRotation(rotation);
-		last_rotation = rotation;
+//	if(rotation != last_rotation){
+//		setRotation(rotation);
+//		last_rotation = rotation;
+//	}
+	if(angleValX != last_angleValX){
+
+		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValX = angleValX;
 	}
+	if(angleValY != last_angleValY){
+
+		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValY = angleValY;
+	}
+	if(angleValZ != last_angleValZ){
+
+		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValZ = angleValZ;
+	}
+	
     
 }
 /*
@@ -258,10 +274,123 @@ void Bounds::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
     last_rotation = rotation;
+	//Save angle Val too
+	angleValX = last_angleValX;
+	angleValY = last_angleValY;
+	angleValZ = last_angleValZ;
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
 
 	body.activate();
+}
+
+//--------------------------------------------------------------
+void Bounds::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+	
+	/*
+	btRigidBody* a_rb = body.getRigidBody();
+	btTransform transform;
+    
+	ofVec3f pos = body.getPosition();
+	transform.setOrigin( btVector3(btScalar(pos.x), btScalar(pos.y), btScalar(pos.z)) );
+	
+	ofQuaternion rotQuat = body.getRotationQuat();
+	
+	btQuaternion rotate;// = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
+	rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+	
+	btQuaternion rotation = btQuaternion( btVector3(rotQuat.x(), rotQuat.y(), rotQuat.z() ) ,  angle2rot);
+	transform.setRotation(rotate * rotation);
+	
+	a_rb->getMotionState()->setWorldTransform(transform);
+	
+	body.activate();
+	*/
+	
+	/*
+	btRigidBody* a_rb = body.getRigidBody();
+	btTransform trans = body.getRigidBody()->getCenterOfMassTransform();
+	btQuaternion transrot = trans.getRotation();
+	
+	btQuaternion rotquat;
+	rotquat = rotquat.getIdentity();
+	rotquat.setX((btScalar)angle2rotx);
+	rotquat.setY((btScalar)angle2roty);
+	rotquat.setZ((btScalar)angle2rotz);
+	
+	transrot = transrot * rotquat;
+	
+	trans.setRotation(transrot);
+	
+	//body.getRigidBody()->setCenterOfMassTransform(trans);
+	
+	//a_rb->getMotionState()->setWorldTransform( trans );
+	
+	body.activate();
+*/
+	
+	
+	 
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+    
+    // rotate
+	btQuaternion currentRotation = transform.getRotation();
+	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
+    
+	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
+	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+	transform.setRotation(rotate * currentRotation);
+    
+	a_rb->getMotionState()->setWorldTransform( transform );
+	
+	btQuaternion Rotation2Save = a_rb->getOrientation();
+	//save this var for the XML
+	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
+	
+	body.activate();
+	 
+	
+	
+	/*
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+	a_rb->getMotionState()->getWorldTransform( transform );
+	
+	//Get actual Rotation
+	//ofQuaternion obj_rotation = rotation;
+	
+	rotation.set(transform.getRotation().x(), transform.getRotation().y(), transform.getRotation().z(), transform.getRotation().w());
+	
+	
+	cout << "Actual rotation \n" << rotation << endl;
+	//cout << "rotation" << rotation << endl;
+	//cout << "rotation" << rotation << endl;
+	
+	//Apply angle rotation
+	rotation.makeRotate(angle2rot, axis2rot);
+	
+	//Save Rotation
+	btQuaternion quaternionResult;
+	quaternionResult.setValue(rotation.x(), rotation.y(), rotation.z(), rotation.w());
+	
+	//rotation.set(quaternionResult.x(), quaternionResult.y(), quaternionResult.z(), quaternionResult.w());
+	//cout << "quaternionResult \n" << rotation << endl;
+	
+	//Apply Transform to the object
+	transform.setRotation(quaternionResult);
+	a_rb->getMotionState()->setWorldTransform( transform );
+	
+	body.activate();
+	*/
+	
+
+	
+
+
+	
+	
 }
 
