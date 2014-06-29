@@ -67,7 +67,6 @@ void Scenario::removeCoverScenario(){
 void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
     
 	// STATGE
-	
 	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
 		if(i == 0) { // ground //
@@ -318,6 +317,9 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oHammer->SetObjectId(objId);
 					oHammer->setRotation(rotation);
                     ScenarioObjects.push_back(oHammer);
+					
+					oHammer->setupRot();
+
                 }
                 break;
                     
@@ -328,6 +330,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oLever->SetObjectId(objId);
 					oLever->setRotation(rotation);
                     ScenarioObjects.push_back(oLever);
+
                 }
                 break;
                     
@@ -338,6 +341,9 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oObstable->SetObjectId(objId);
 					oObstable->setRotation(rotation);
                     ScenarioObjects.push_back(oObstable);
+					
+					oObstable->setupRot();
+
                 }
                 break;
                     
@@ -347,6 +353,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBounds->SetObjectId(objId);
 					oBounds->setRotation(rotation);
                     ScenarioObjects.push_back(oBounds);
+					
+					oBounds->setupRot();
                 }
                 break;
 

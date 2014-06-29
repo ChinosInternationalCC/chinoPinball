@@ -98,9 +98,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				
 				gui->addLabel("Editor Object");
 				gui->addSpacer();
-				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
+				gui->addLabel("Object Type ["+ofToString(selectedObject->type)+"]");
 				gui->addSpacer();
-				gui->addLabel("ObjectId ["+ofToString(_obj->ObjectId)+"]");
+				gui->addLabel("ObjectId ["+ofToString(selectedObject->ObjectId)+"]");
 				gui->addSpacer();
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
@@ -118,10 +118,10 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
                 gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
                 gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
 
-				gui->addSlider("RotX", -3.0, +3.0, &_obj->rotation.x());
-				gui->addSlider("RotY", -3.0, +3.0, &_obj->rotation.y());
-				gui->addSlider("RotZ", -3.0, +3.0, &_obj->rotation.z());
-				gui->addSlider("RotW", -3.0, +3.0, &_obj->rotation.w());
+				gui->addSlider("RotX", -3.0, +3.0, &selectedObject->rotation.x());
+				gui->addSlider("RotY", -3.0, +3.0, &selectedObject->rotation.y());
+				gui->addSlider("RotZ", -3.0, +3.0, &selectedObject->rotation.z());
+				gui->addSlider("RotW", -3.0, +3.0, &selectedObject->rotation.w());
 			
 				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
