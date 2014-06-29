@@ -13,10 +13,13 @@ MissionInfoDisplay::MissionInfoDisplay(void){
     str = "";
     // The third parameter is depth, use it to extrude the shape.
     font.loadFont("ARCADE.TTF", 200);
-    startPositionX = 200;
-    startPositionY = 200;
+    startPositionX = -500;
+    startPositionY = 0;
     
     ofAddListener(eventMission::onMissionUpdate,this, &MissionInfoDisplay::listenerOnUpdateMission);
+    SplashScreenDuration = 1000;
+    SplashScreenTimer = 0;
+    
 }
 
 void MissionInfoDisplay::draw(void){
@@ -29,12 +32,27 @@ void MissionInfoDisplay::draw(void){
            
                 break;
             case SimpleMission::MISSION_CALIFICATIONS:
+                if ((ofGetElapsedTimeMillis() - SplashScreenTimer) < SplashScreenDuration){
+                    cam.begin();
+                    MediaUtils::billboardBegin();//always facing the camera
+                    {
+                        ofScale(1, -1, 1);  // Flip back since we're in 3D.
+                        //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+                        ofSetColor(5, 200, 220);
+                        str = "CALIFICATION";
+                        font.drawString(ofToString(str, 2), startPositionX, startPositionY);
+                        
+                        
+                    }
+                    MediaUtils::billboardEnd();
+                    cam.end();
+    
+                }
            
                 break;
             case SimpleMission::MISSION_STARTED:
                 drawElapsedMissionTime();
-            
-                       break;
+                break;
             case SimpleMission::MISSION_COMPLETED:
         
                 break;
@@ -48,6 +66,7 @@ void MissionInfoDisplay::draw(void){
 
 void MissionInfoDisplay::listenerOnUpdateMission(eventMission & args){
     
+    if (NULL != args.pMission){
     currentMission = args.pMission;
     currentMissionState = args.pMission->GetMissionState();
     
@@ -64,7 +83,7 @@ void MissionInfoDisplay::listenerOnUpdateMission(eventMission & args){
             
             break;
         case eventMission::MISSION_EVENT_START_CALIFICATION:
-
+            SplashScreenTimer = ofGetElapsedTimeMillis();
             
             break;
         case eventMission::MISSION_EVENT_RESTART_MISSION:
@@ -77,6 +96,7 @@ void MissionInfoDisplay::listenerOnUpdateMission(eventMission & args){
             break;
             
     }
+    }
 }
 
 void MissionInfoDisplay::drawElapsedMissionTime(void){
@@ -86,7 +106,7 @@ void MissionInfoDisplay::drawElapsedMissionTime(void){
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
         ofSetColor(5, 200, 220);
-        font.drawString(str+"  "+ofToString(currentMission->getElapsedMissionTime(), 2), -500, 0);
+        font.drawString(ofToString(currentMission->getElapsedMissionTime(), 2), startPositionX, startPositionY);
         
         
     }

@@ -30,6 +30,9 @@ private:
     int startPositionX, startPositionY;
     ofEasyCam cam;
     
+    int SplashScreenDuration;
+    double SplashScreenTimer;
+    
     
     void drawElapsedMissionTime(void);
 };

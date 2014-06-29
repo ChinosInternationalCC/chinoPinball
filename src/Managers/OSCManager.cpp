@@ -59,9 +59,11 @@ void OSCManager::listenerOnUpdateMission(eventMission & args){
             sender.sendMessage(m);
             m.clear();
             
-            m.setAddress("/Mission/ID");
-            m.addIntArg(args.pMission->GetCurrentMissionId());
-            sender.sendMessage(m);
+            if (NULL != args.pMission){
+                m.setAddress("/Mission/ID");
+                m.addIntArg(args.pMission->GetCurrentMissionId());
+                sender.sendMessage(m);
+            }
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
@@ -70,10 +72,11 @@ void OSCManager::listenerOnUpdateMission(eventMission & args){
             sender.sendMessage(m);
             m.clear();
             
-            m.setAddress("/Mission/ID");
-            m.addIntArg(args.pMission->GetCurrentMissionId());
-            sender.sendMessage(m);
-            
+            if (NULL != args.pMission){
+                m.setAddress("/Mission/ID");
+                m.addIntArg(args.pMission->GetCurrentMissionId());
+                sender.sendMessage(m);
+            }
             break;
         case eventMission::MISSION_EVENT_MISSION_COMPLETED:
             m.setAddress("/Mission/Event");
