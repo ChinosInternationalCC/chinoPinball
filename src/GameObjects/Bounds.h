@@ -26,11 +26,11 @@ public:
 	virtual void draw(bool bEditorMode);
 	
 	void autoScalingXYZ();
+	void setupRot();
 	//void autoScalingXYZ();
     
 	ofxBulletCustomShape	body;
-	ofxAssimpModelLoader	assimpModel;
-    ofMaterial				material;
+
     ofMesh                  assimpModelMesh;
     
     //vector<bool>				bColliding;
@@ -39,7 +39,7 @@ public:
     
 	ofVec3f         initScale;
     
-    btQuaternion    rotation;
+
     
     float angle; // degrees
     
@@ -49,5 +49,6 @@ public:
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
+		void setRotation(ofQuaternion rotation);
     
 };

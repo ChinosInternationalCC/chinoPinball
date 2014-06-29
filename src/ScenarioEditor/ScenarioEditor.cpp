@@ -98,9 +98,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				
 				gui->addLabel("Editor Object");
 				gui->addSpacer();
-				gui->addLabel("Object Type ["+ofToString(_obj->type)+"]");
+				gui->addLabel("Object Type ["+ofToString(selectedObject->type)+"]");
 				gui->addSpacer();
-				gui->addLabel("ObjectId ["+ofToString(_obj->ObjectId)+"]");
+				gui->addLabel("ObjectId ["+ofToString(selectedObject->ObjectId)+"]");
 				gui->addSpacer();
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
@@ -117,6 +117,12 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
                 gui->addSlider("LightX", -50.0, 50.0, &scenario->lightPos.x);
                 gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
                 gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
+
+				gui->addSlider("RotX", -3.0, +3.0, &selectedObject->rotation.x());
+				gui->addSlider("RotY", -3.0, +3.0, &selectedObject->rotation.y());
+				gui->addSlider("RotZ", -3.0, +3.0, &selectedObject->rotation.z());
+				gui->addSlider("RotW", -3.0, +3.0, &selectedObject->rotation.w());
+			
 				gui->addSpacer();
 				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
                 gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
@@ -231,21 +237,46 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 
 //--------------------------------------------------------
 void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
-    
+   
+	bool bEscenarioEditorRotation = true;
+	
+	
+	//btTransform transform;
+    //btRigidBody* a_rb = body.getRigidBody();
+    //a_rb->getMotionState()->getWorldTransform( transform );
+	//Apply ROTs..
+	//a_rb->getMotionState()->getWorldTransform( transform );
     
     if (bEscenarioEditorMode){
-		if( (gui != NULL) && (selectedObject != NULL) && bGuiPointer ){
-			if(gui->isHit(args.x, args.y) == false){ // BAD ACCES While moving Objects out of Shape Collision
-				ofVec3f newPos = selectedObject->position;
-				newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
-				newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
-				selectedObject -> position = newPos;
-				selectedObject -> setPosition(newPos);
-				mouseOldPosition = args;
+
+			if( (gui != NULL) && (selectedObject != NULL) && bGuiPointer ){
+				if(gui->isHit(args.x, args.y) == false){ // BAD ACCES While moving Objects out of Shape Collision
+					
+						ofVec3f newPos = selectedObject->position;
+						newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
+						newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
+						selectedObject -> position = newPos;
+						selectedObject -> setPosition(newPos);
+					
+					mouseOldPosition = args;
+				}
 			}
-		}
     }
 
+	
+	/* TODO to ROT
+	ofQuaternion objectRotation = selectedObject->rotation;
+	
+	float newRotX = objectRotation.x() + (args.x - mouseOldPosition.x)/50;
+	float newRotY = objectRotation.y() + (args.y - mouseOldPosition.y)/50;
+	float newRotZ = objectRotation.z();
+	float newRotW = objectRotation.w();
+	
+	objectRotation.set(newRotX, newRotY, newRotZ, newRotW);
+	
+	selectedObject->setRotation(objectRotation);
+	*/
+	
     /*
 	if(bEscenarioEditorMode){
 		ofVec2f mousePos = ofVec2f(args.x, args.y);

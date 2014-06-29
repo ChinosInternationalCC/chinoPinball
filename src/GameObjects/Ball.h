@@ -22,6 +22,8 @@ public:
     void setup(ofxBulletWorldRigid &world, ofVec3f pos);
     void update(bool bEditorMode);
     void draw(bool bEditorMode);
+
+	void setupRot();
     
     float radius;
     float mass;
@@ -45,7 +47,7 @@ public:
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
-    
+    		void setRotation(ofQuaternion rotation);
 
 private:
     BallStatus m_status; // waiting, playing, game over

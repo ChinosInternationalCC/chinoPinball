@@ -20,7 +20,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
-    rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(90));
+   // rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(90));
     
     //to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
@@ -47,7 +47,7 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     }
 	
     //    body.addMesh(assimpModel.getMesh(0), scale, true);
-    assimpModelMesh = assimpModel.getMesh(0);
+
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
@@ -63,8 +63,9 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     // to add force to the ball on collision set restitution to > 1
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
+  
+	/*
     
-    btTransform transform;
     btRigidBody* a_rb = body.getRigidBody();
     a_rb->getMotionState()->getWorldTransform( transform );
     
@@ -78,7 +79,10 @@ void Bounds::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofV
     transform.setRotation(rotate * rotation);
     
     a_rb->getMotionState()->setWorldTransform( transform );
-    
+    */
+	
+	setupRot();
+	
     body.activate();
     
 }
@@ -89,7 +93,7 @@ void Bounds::update(bool bEditorMode){
 	autoScalingXYZ();
     
     assimpModel.update();
-    //assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0);
+
     
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -104,6 +108,12 @@ void Bounds::update(bool bEditorMode){
     //setImplicitShapeDimensions(myBtScale);
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	//Update Physic work rotation if GUI change it
+	if(rotation != last_rotation){
+		setRotation(rotation);
+		last_rotation = rotation;
+	}
     
 }
 /*
@@ -156,18 +166,15 @@ void Bounds::draw(bool bEditorMode){
 		}
 		//<<??
 		
+	material.begin();
 		body.transformGL();
 		ofPoint scale = assimpModel.getScale();
 		ofScale(scale.x,scale.y,scale.z);
 		
-		//assimpModelMesh.drawWireframe(); //makes slow framerate
-		assimpModelMesh.drawFaces();
-		//assimpModel.drawFaces();
-		/* what is the diference between drawing the faces of the model or the mesh????*/
-		material.begin();
+		assimpModel.getMesh(0).drawFaces();
 		
 		body.restoreTramsformGL();
-		material.end();
+	material.end();
 	//}
 }
 
@@ -219,3 +226,42 @@ void Bounds::setPosition(ofVec3f position){
     rigidBody->getMotionState()->setWorldTransform( transform );
     
 }
+
+
+//------------------------------------------------------------
+void Bounds::setRotation(ofQuaternion rotation){
+	
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+	
+	body.activate();
+    
+}
+
+//--------------------------------------------------------------
+void Bounds::setupRot(){
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+	a_rb->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion currentRotation = transform.getRotation();
+	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
+    last_rotation = rotation;
+	
+	transform.setRotation(currentRotation);
+	a_rb->getMotionState()->setWorldTransform( transform );
+
+	body.activate();
+}
+

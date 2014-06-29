@@ -8,7 +8,7 @@
 
 #include "Lever.h"
 Lever::Lever(SimpleMission *currentMission):
-SimpleObject(currentMission)
+    SimpleObject(currentMission)
 {
     
 }
@@ -18,13 +18,11 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     type = ShapeTypeLever;
     position = setPosition;
     direction = setDirection;
-	ModelPath = url;
-    //Two rotationLever to set the lever in the right position
-    //rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
     
-    // lever rotationLever angles
-    angle = 0;
+    //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+    rotation = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
+    
+    // lever rotation angles
 	upperLimit = 60;
 	lowerLimit = -30;
     speed = 15;    // degrees per frame
@@ -39,15 +37,23 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
         lowerLimit = -lowerLimit;
         speed = -speed;
         axisX = -axisX;
-        rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(-90));
+        rotation = btQuaternion(btVector3(0,0,1), ofDegToRad(-90));
     }
     
     // create ofxBullet shape
     body.create(world.world, position, 0); // we set m=0 for kinematic body
     
+    /*
+    // load 3D model
+    ofVec3f scale(0.04, 0.033, 0.03);
+	assimpModel.loadModel("Tuscan_Column.dae", true);
+	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setPosition(0, 0, 0);
+     */
+    
     // load 3D model
     scale = ModelScale;
-	assimpModel.loadModel(ModelPath, true);
+	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
     
@@ -56,29 +62,15 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     {
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
+    //    body.addMesh(assimpModel.getMesh(0), scale, true);
     
-    
+   
     body.add();
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
     
-	// lever rotationLever angles
-    angle = 0;
-	upperLimit = 60;
-	lowerLimit = -30;
-    speed = 15;    // degrees per frame
     
-    // distance from object center to rotationLever axis
-    axisX = 1.3;
-    
-    // settings for counter clockwise rotationLever
-    if (direction == 0)
-    {
-        upperLimit = -upperLimit;
-        lowerLimit = -lowerLimit;
-        speed = -speed;
-        axisX = -axisX;
-    }
+	
     
     // rotate lever to lower position
     rotate(lowerLimit);
@@ -100,11 +92,11 @@ void Lever::update(bool bEditorMode){
     }
     if (!isKeyPressed)
     {
-        if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
-        {
-            angle -= speed;
-            rotate(angle);
-        }
+			if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
+			{
+				angle -= speed;
+				rotate(angle);
+			}
     }
     
 }
@@ -124,9 +116,9 @@ void Lever::draw(bool bEditorMode){
     
 	material.end();
     
-    //    stringstream ss;
-    //	ss << "move lever with spacebar" << endl;
-    //	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
+//    stringstream ss;
+//	ss << "move lever with spacebar" << endl;
+//	ofDrawBitmapString(ss.str().c_str(), -14.8, 3);
 	
 }
 
@@ -155,13 +147,13 @@ void Lever::rotate(float degrees) {
     a_rb->getMotionState()->getWorldTransform( transform );
     
     // rotate
-    //    btQuaternion currentrotationLever = transform.getrotation();
+    //    btQuaternion currentRotation = transform.getRotation();
     //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
     btQuaternion rotate;
     
     //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
     rotate.setEuler(ofDegToRad(0), ofDegToRad(0), ofDegToRad(degrees));
-    transform.setRotation(rotate * rotationLever);
+    transform.setRotation(rotate * rotation);
     
     // translate
     btVector3 origin = transform.getOrigin();
@@ -211,18 +203,6 @@ void Lever::setPosition(ofVec3f position){
     rigidBody->getMotionState()->setWorldTransform( transform );
     
 }
-
-
-//------------------------------------------------------------
-void Lever::setRotation(ofQuaternion rotation){
-}
-
-//--------------------------------------------------------------
-void Lever::setupRot(){
-    
-}
-
-
 
 
 
