@@ -217,6 +217,7 @@
 		AE83F0CEA2C8D83D72618074 /* ofxBulletWorldRigid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39157C47D15F25CBEF1E29D3 /* ofxBulletWorldRigid.cpp */; };
 		AEB3F954EC98A3E7B15EEE78 /* btContactProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452363509B83E066EF498C0D /* btContactProcessing.cpp */; };
 		AF094D7A1367EFD3A921A1B8 /* PosixThreadSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E24995407937C9093E9C1AB /* PosixThreadSupport.cpp */; };
+		B083A7841960853D00BC0D89 /* eventMission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B083A7821960853D00BC0D89 /* eventMission.cpp */; };
 		B164D28B5B7395F71AF43DD8 /* btUniversalConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA601206D442ADBD8E91C6B9 /* btUniversalConstraint.cpp */; };
 		B32E492AADD47A777A3BD792 /* btTriangleCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522767081C9CA286CA671509 /* btTriangleCallback.cpp */; };
 		B5E67E19FB3C2BE672AF8641 /* btTriangleIndexVertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BD18581BDD9DD16505B782 /* btTriangleIndexVertexArray.cpp */; };
@@ -913,6 +914,8 @@
 		AE335EB4709BFD4671EEAC84 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MessageMappingOscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h; sourceTree = SOURCE_ROOT; };
 		AF5F174951315BDB7EA500EC /* btConvexConvexAlgorithm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btConvexConvexAlgorithm.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h; sourceTree = SOURCE_ROOT; };
 		B03DE2F64A89CDA5E2AE2408 /* btOverlappingPairCache.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btOverlappingPairCache.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h; sourceTree = SOURCE_ROOT; };
+		B083A7821960853D00BC0D89 /* eventMission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMission.cpp; sourceTree = "<group>"; };
+		B083A7831960853D00BC0D89 /* eventMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMission.h; sourceTree = "<group>"; };
 		B170EE628BE77202946345E5 /* aiPostProcess.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiPostProcess.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiPostProcess.h; sourceTree = SOURCE_ROOT; };
 		B20D34AE45A28E958D62AA42 /* btSequentialImpulseConstraintSolver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSequentialImpulseConstraintSolver.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h; sourceTree = SOURCE_ROOT; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
@@ -1801,6 +1804,8 @@
 				8422374218C10D6A009CE9EC /* eventObjectScenario.h */,
 				84E6E5F618E60E3A00A582DF /* eventComunication.cpp */,
 				84E6E5F718E60E3A00A582DF /* eventComunication.h */,
+				B083A7821960853D00BC0D89 /* eventMission.cpp */,
+				B083A7831960853D00BC0D89 /* eventMission.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -2985,6 +2990,7 @@
 				4A47C181859499AF2AC2BD5E /* btWheelInfo.cpp in Sources */,
 				BCD2FC543E687AC392DAF298 /* btGpu3DGridBroadphase.cpp in Sources */,
 				184613F26526D1BDFC2A0AFF /* btParallelConstraintSolver.cpp in Sources */,
+				B083A7841960853D00BC0D89 /* eventMission.cpp in Sources */,
 				DAC7EA9AFB68F3DA8ADB7960 /* btThreadSupportInterface.cpp in Sources */,
 				A58DD21B18F8577300B1FE41 /* ofxUIRadio.cpp in Sources */,
 				2B4F9A0FE433DB948CC5E097 /* btSoftBodySolver_OpenCL.cpp in Sources */,

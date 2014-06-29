@@ -48,4 +48,62 @@ void OSCManager::listenerOnCollission(eventComunication & args){
     
 }
 
+void OSCManager::listenerOnUpdateMission(eventMission & args){
+    ofxOscMessage m;
+    
+    switch(args.eventType){
+        case eventMission::MISSION_EVENT_START_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            m.setAddress("/Mission/ID");
+            m.addIntArg(args.pMission->GetCurrentMissionId());
+            sender.sendMessage(m);
+            
+            break;
+        case eventMission::MISSION_EVENT_END_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            m.setAddress("/Mission/ID");
+            m.addIntArg(args.pMission->GetCurrentMissionId());
+            sender.sendMessage(m);
+            
+            break;
+        case eventMission::MISSION_EVENT_MISSION_COMPLETED:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_START_CALIFICATION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_RESTART_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_NEW_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+            
+    }
+}
+
 #endif
