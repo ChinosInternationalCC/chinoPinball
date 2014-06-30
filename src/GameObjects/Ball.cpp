@@ -27,7 +27,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     
     world = myWorld;
     body.create(world.world, position, mass, radius);
-    body.setProperties(0.95, 0.95); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(0.45, 0.45); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
     type = ShapeTypeBall;
@@ -105,7 +105,9 @@ void Ball::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void Ball::setPosition(ofVec3f position){
+void Ball::setPosition(ofVec3f pos){
+    
+    position = pos;
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -119,4 +121,22 @@ void Ball::setPosition(ofVec3f position){
     
 }
 
+
+//------------------------------------------------------------
+void Ball::setRotation(ofQuaternion rotation){
     
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}

@@ -43,11 +43,29 @@ public:
     
     void setDebugMode(bool &DebugMode);
     void drawDebug(void);
+	
+	void setupRot();
     
 	//general vars
 	int idobject;
     ofMatrix4x4 worldposition;
 	ofVec3f position;
+
+	ofQuaternion    rotation, last_rotation;
+	
+	ofVec3f		axis2RotateX;
+	ofVec3f		axis2RotateY;
+	ofVec3f		axis2RotateZ;
+	
+	float		angleValX, last_angleValX;
+	float		angleValY, last_angleValY;
+	float		angleValZ, last_angleValZ;
+	
+	float angleRotX;
+	float angleRotY;
+	float angleRotZ;
+	
+	
 	bool bvisible;
 
     int color;
@@ -84,7 +102,13 @@ public:
     virtual void onCollision() = 0;
     virtual void setDefaultZ() = 0;
     virtual void setPosition(ofVec3f position) = 0;
+	virtual void setRotation(ofQuaternion rotation) = 0;
     bool bDebugMode;
+	
+	//3d models, Texteres and Colors
+	ofMesh                  assimpModelMesh;
+	ofxAssimpModelLoader	assimpModel;
+	ofMaterial				material;
     
 protected:
     SimpleMission *currentMission;

@@ -20,7 +20,8 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
-    rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
+	
+    //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
@@ -51,36 +52,34 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.add();
     
 	
-    material.setAmbientColor(ofFloatColor(0, 0, 0));
-	material.setDiffuseColor(ofFloatColor(150, 0, 150));
-	material.setSpecularColor(ofFloatColor(220, 0, 220));
-	material.setShininess(40);
-    
-    
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
-    btTransform transform;
-    btRigidBody* a_rb = body.getRigidBody();
-    a_rb->getMotionState()->getWorldTransform( transform );
+   // btTransform transform;
+    //btRigidBody* a_rb = body.getRigidBody();
+    //a_rb->getMotionState()->getWorldTransform( transform );
     
     // rotate
     //    btQuaternion currentRotation = transform.getRotation();
     //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
-    btQuaternion rotate;
+//    btQuaternion rotate;
     
     //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
-    rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
-    transform.setRotation(rotate * rotation);
+ //   rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+ //   transform.setRotation(rotate * rotation);
     
-    a_rb->getMotionState()->setWorldTransform( transform );
-    
+ //   a_rb->getMotionState()->setWorldTransform( transform );
+	
+	//Set Rotation Objects
+	setupRot();
+	
     body.activate();
     
 }
+
 
 //--------------------------------------------------------------
 void Obstacle::update(bool bEditorMode){
@@ -88,7 +87,6 @@ void Obstacle::update(bool bEditorMode){
 	autoScalingXYZ();
 
     assimpModel.update();
-    assimpModelMesh = assimpModel.getCurrentAnimatedMesh(0); // Animation Player
 
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -103,6 +101,22 @@ void Obstacle::update(bool bEditorMode){
 		//setImplicitShapeDimensions(myBtScale);
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	if(angleValX != last_angleValX){
+		
+		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValX = angleValX;
+	}
+	if(angleValY != last_angleValY){
+		
+		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValY = angleValY;
+	}
+	if(angleValZ != last_angleValZ){
+		
+		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValZ = angleValZ;
+	}
 	
 	body.activate();
 
@@ -160,14 +174,9 @@ void Obstacle::draw(bool bEditorMode){
         }
     }
 	//<<??
-    
 
+	material.begin();
 
-	//material.begin();
-	glPushAttrib(GL_ALL_ATTRIB_BITS);
-    glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
-    glEnable(GL_NORMALIZE);
-    glDisable(GL_CULL_FACE);
 	ofPoint scaleModel		= assimpModel.getScale();
 	
 	body.transformGL();
@@ -176,9 +185,8 @@ void Obstacle::draw(bool bEditorMode){
 	body.restoreTramsformGL();
 	
 	glPopAttrib();
-	//material.end();
-	
-	
+	material.end();
+
 }
 //-------------------------------------------------------------
 ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
@@ -228,5 +236,68 @@ void Obstacle::setPosition(ofVec3f position){
     rigidBody->getMotionState()->setWorldTransform( transform );
     
 }
+
+//------------------------------------------------------------
+void Obstacle::setRotation(ofQuaternion rotation){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+   
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
+
+//--------------------------------------------------------------
+void Obstacle::setupRot(){
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+	a_rb->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion currentRotation = transform.getRotation();
+	//rotation.set(0, 0, 0, 0);
+	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
+    last_rotation = rotation;
+	
+	transform.setRotation(currentRotation);
+	a_rb->getMotionState()->setWorldTransform( transform );
+}
+
+
+//--------------------------------------------------------------
+void Obstacle::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+	
+	
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+    
+    // rotate
+	btQuaternion currentRotation = transform.getRotation();
+	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
+    
+	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
+	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+	transform.setRotation(rotate * currentRotation);
+    
+	a_rb->getMotionState()->setWorldTransform( transform );
+	
+	btQuaternion Rotation2Save = a_rb->getOrientation();
+	//save this var for the XML
+	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
+	
+	body.activate();
+	
+	
+}
+
 
 

@@ -14,6 +14,7 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
 #include "eventComunication.h"
+#include "eventMission.h"
 
 #define HOST "localhost"
 #define PORT 9001
@@ -24,7 +25,7 @@ public:
     
     //Events
 	void listenerOnCollission(eventComunication & args);
-    
+    void listenerOnUpdateMission(eventMission & args);
     
 private:
     

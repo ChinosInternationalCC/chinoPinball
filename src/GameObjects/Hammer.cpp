@@ -68,6 +68,13 @@ void Hammer::update(bool bEditorMode){
 			}
 		}
     }
+	
+	//Update Physic work rotation if GUI change it
+	if(rotation != last_rotation){
+		setRotation(rotation);
+		last_rotation = rotation;
+	}
+
     
 }
 
@@ -81,8 +88,9 @@ void Hammer::draw(bool bEditorMode){
         ofSetHexColor(color);
     }
     
+	material.begin();
     body.draw();
-    
+    material.end();
 }
 
 
@@ -161,3 +169,39 @@ void Hammer::setPosition(ofVec3f position){
     rigidBody->getMotionState()->setWorldTransform( transform );
     
 }
+
+
+//------------------------------------------------------------
+void Hammer::setRotation(ofQuaternion rotation){
+    
+    btTransform transform;
+    btRigidBody* rigidBody = body.getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
+
+//--------------------------------------------------------------
+void Hammer::setupRot(){
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+	a_rb->getMotionState()->getWorldTransform( transform );
+	
+	btQuaternion currentRotation = transform.getRotation();
+	//rotation.set(0, 0, 0, 0);
+	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
+    last_rotation = rotation;
+	
+	transform.setRotation(currentRotation);
+	a_rb->getMotionState()->setWorldTransform( transform );
+}
+

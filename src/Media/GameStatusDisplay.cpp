@@ -25,13 +25,13 @@ void GameStatusDisplay::setup3dFont(void){
     //str = "初音ミク";
     str = "score";
     // The third parameter is depth, use it to extrude the shape.
-    font.loadFont("mplus-1c-regular.ttf", 25, 8);
+    font.loadFont("ARCADE.TTF", 25);
     
     //light.setDiffuseColor(ofColor(200, 64, 64));
     //light.setSpecularColor(ofColor(255, 255, 255));
     //light.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 200);
-    light.setPosition(startPositionX, startPositionY, 200);
-    material.setShininess(64);
+    //light.setPosition(startPositionX, startPositionY, 200);
+    //material.setShininess(64);
     
 }
 
@@ -43,22 +43,23 @@ void GameStatusDisplay::draw3dFont(void){
     GameStatus *status;
     status = GameStatus::getInstance();
     
-    ofEnableLighting();
+    //ofEnableLighting();
     
-    light.enable();
-    material.begin();
+    //light.enable();
+    //material.begin();
     cam.begin();
-    billboardBegin();//always facing the camera
+    MediaUtils::billboardBegin();//always facing the camera
 	{
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+        ofSetColor(5, 200, 220);
         font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
         font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
         
     }
-    billboardEnd();
+    MediaUtils::billboardEnd();
     cam.end();
-    material.end();
+    //material.end();
     
 }
 
@@ -131,36 +132,3 @@ void GameStatusDisplay::draw(void){
     
 }
 
-void GameStatusDisplay::billboardBegin() {
-    
-    float modelview[16];
-	int i,j;
-    
-	// save the current modelview matrix
-	glPushMatrix();
-    
-	// get the current modelview matrix
-	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
-    
-	// undo all rotations
-	// beware all scaling is lost as well
-	for( i=0; i<3; i++ )
-	    for( j=0; j<3; j++ ) {
-            if ( i==j )
-                modelview[i*4+j] = 1.0;
-            else
-                modelview[i*4+j] = 0.0;
-	    }
-    
-	// set the modelview with no rotations
-	glLoadMatrixf(modelview);
-}
-
-
-
-void GameStatusDisplay::billboardEnd() {
-    
-	// restore the previously
-	// stored modelview matrix
-	glPopMatrix();
-}
