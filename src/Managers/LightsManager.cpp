@@ -23,9 +23,9 @@ void LightsManager::setup(void){
     
 }
 void LightsManager::update(void){
-    pointLight.setPosition(cos(ofGetElapsedTimef()*.6f) * radius * 2 + center.x,
-						   sin(ofGetElapsedTimef()*.8f) * radius * 2 + center.y,
-						   -cos(ofGetElapsedTimef()*.8f) * radius * 2 + center.z);
+    pointLight.setPosition(cos(ofGetElapsedTimef()*.06f) * radius * 2 + center.x,
+						   sin(ofGetElapsedTimef()*.08f) * radius * 2 + center.y,
+						   -cos(ofGetElapsedTimef()*.08f) * radius * 2 + center.z);
     
 }
 
