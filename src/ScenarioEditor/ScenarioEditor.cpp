@@ -186,9 +186,11 @@ void ScenarioEditor::keyReleased(int key){
 			
 			if(bEscenarioEditorMode){
 				scenario->removeCoverScenario();
+			if(gui != NULL && bGuiPointer)gui->setVisible(true);
 			}else {
 				//Need to be at least once time created to be removed
-				scenario->addCoverScenario(*world); //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				scenario->addCoverScenario(*world); //
+				if(gui != NULL && bGuiPointer)gui->setVisible(false);
 			}
 			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
             break;
