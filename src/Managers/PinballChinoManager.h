@@ -67,7 +67,9 @@ public:
     GameStatusDisplay       statusDisplay;
     MissionInfoDisplay      missionDisplay;
     
-    SimpleMission *currentMission;
+	vector<SimpleMission *> currentMissions;
+	int idcurrentMission;
+	
     bool bFullScreen;
     bool bDrawDebug;
     

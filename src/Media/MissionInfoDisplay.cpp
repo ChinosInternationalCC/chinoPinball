@@ -10,6 +10,7 @@
 
 MissionInfoDisplay::MissionInfoDisplay(void){
     currentMission = NULL;
+	
     str = "";
     // The third parameter is depth, use it to extrude the shape.
     fontLarge.loadFont("ARCADE.TTF", 200);
@@ -68,8 +69,9 @@ void MissionInfoDisplay::draw(void){
 void MissionInfoDisplay::listenerOnUpdateMission(eventMission & args){
     
     if (NULL != args.pMission){
-    currentMission = args.pMission;
-    currentMissionState = args.pMission->GetMissionState();
+    currentMission = args.pMission; //The Id could be also used...
+    
+	currentMissionState = args.pMission->GetMissionState();
     
     switch(args.eventType){
         case eventMission::MISSION_EVENT_START_MISSION:

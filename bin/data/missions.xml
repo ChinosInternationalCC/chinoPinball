@@ -1,5 +1,10 @@
 <missions>
     <mission>
+        <missionID>0</missionID>
+        <duration>200000</duration>
+    </mission>
+
+	<mission>
         <missionID>1</missionID>
         <duration>2000</duration>
 	<object>

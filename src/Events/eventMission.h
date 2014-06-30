@@ -26,6 +26,8 @@ public:
     
 	MissionEvent eventType;
     SimpleMission *pMission;
+	//vector <SimpleMission *> * currentMissions;
+	int idCurrentMission;
 	
     static ofEvent <eventMission> onMissionUpdate;
 };

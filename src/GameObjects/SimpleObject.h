@@ -18,7 +18,7 @@ class SimpleObject {
 public:
 
 	
-	SimpleObject(SimpleMission *currentMission);
+	SimpleObject(vector <SimpleMission *> * _currentMissions);
 	//virtual  ~SimpleObject();
 	
     
@@ -109,8 +109,13 @@ public:
 	ofMesh                  assimpModelMesh;
 	ofxAssimpModelLoader	assimpModel;
 	ofMaterial				material;
+	
+	
+	//Missions
+	void setCurrentMissionId(int _idCurrentMission);
     
 protected:
-    SimpleMission *currentMission;
+	int						idCurrtentMission;
+    vector <SimpleMission *> *currentMissions;
    
 };

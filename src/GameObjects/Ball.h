@@ -17,7 +17,7 @@
 class Ball : public SimpleObject
 {
 public:
-    Ball(SimpleMission *currentMission);
+    Ball(vector <SimpleMission *> * _currentMissions);//SimpleObjects force that
     Ball(SimpleObject simpleObject);
     void setup(ofxBulletWorldRigid &world, ofVec3f pos);
     void update(bool bEditorMode);

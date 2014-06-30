@@ -160,9 +160,9 @@
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.645468175</rotationX>
-        <rotationY>0.241437078</rotationY>
-        <rotationZ>-0.342327207</rotationZ>
+        <rotationX>-0.645468295</rotationX>
+        <rotationY>0.241437092</rotationY>
+        <rotationZ>-0.342327267</rotationZ>
         <rotationW>0.638663352</rotationW>
         <path>3DMODELS/new/totem6.obj</path>
     </object>
@@ -177,15 +177,15 @@
         <scaleZ>0.201970443</scaleZ>
         <rotationX>-0.511609137</rotationX>
         <rotationY>-0.487488002</rotationY>
-        <rotationZ>0.479393154</rotationZ>
+        <rotationZ>0.479393184</rotationZ>
         <rotationW>0.520378470</rotationW>
         <path>3DModels/MURO1.obj</path>
     </object>
     <object>
         <type>7</type>
         <id>13</id>
-        <positionX>16.730951309</positionX>
-        <positionY>8.178780556</positionY>
+        <positionX>16.010934830</positionX>
+        <positionY>8.458786011</positionY>
         <positionZ>-4.500000000</positionZ>
         <scaleX>0.201970443</scaleX>
         <scaleY>0.201970443</scaleY>

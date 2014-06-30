@@ -19,7 +19,7 @@ class Bounds : public SimpleObject {
     
 public:
     
-    Bounds(SimpleMission *currentmission);
+    Bounds(vector <SimpleMission *> * _currentMissions);
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
 	virtual void update(bool bEditorMode);

@@ -8,8 +8,8 @@
 
 #include "Obstacle.h"
 
-Obstacle::Obstacle(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     
 }
@@ -166,7 +166,8 @@ void Obstacle::draw(bool bEditorMode){
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
-        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */currentMission->isElementHit(GetObjectId())){
+        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */
+		   (*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())){
             ofSetHexColor(highlightColor);
         }
         else{
