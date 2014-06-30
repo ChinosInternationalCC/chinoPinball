@@ -58,7 +58,7 @@ void PinballChinoManager::setup(){
     
     bDrawDebug = false;
     
-    
+    chinoLights.setup();
     
     
 }
@@ -67,6 +67,7 @@ void PinballChinoManager::setup(){
 void PinballChinoManager::update(){
 	
 	world.update();
+    chinoLights.update();
     
     myScenario.update(ScenarioEditor::getInstance()->bEscenarioEditorMode);
 	
@@ -104,8 +105,10 @@ void PinballChinoManager::draw(){
     light.setPosition(myScenario.lightPos);
 
     
+    
 	ofEnableLighting();
-	light.enable();
+	//light.enable();
+    chinoLights.enable();
     
 
     // debug draw
@@ -123,8 +126,8 @@ void PinballChinoManager::draw(){
 	
     myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
     
-	
-	light.disable();
+	chinoLights.disable();
+	//light.disable();
 	ofDisableLighting();
     
 	camera.end();
@@ -139,6 +142,8 @@ void PinballChinoManager::draw(){
 
         currentMission->debugDraw();
     }
+    
+    chinoLights.draw();
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
