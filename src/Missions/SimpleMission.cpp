@@ -98,14 +98,15 @@ void SimpleMission::debugDraw(void){
     }
 
     ofDrawBitmapString(tmp, posX,posY);
-    
-    ofDrawBitmapString("Mission Elements:", posX,posY+10);
-    ofDrawBitmapString("HIT", posX,posY+20);
+
+    ofDrawBitmapString("Mission Elements:", posX,posY+20);
+	
+    ofDrawBitmapString("HIT", posX,posY+40);
     int NoOfElements = MissionElements.size();
     for (int i=0; i < NoOfElements; i++){
-        ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+10);
+        ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(20*i), posY+20);
         if (true == MissionElements[i].hit){
-            ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+20);
+            ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(20*i), posY+20);
         }
     }
     if (MISSION_STARTED == MissionState)
