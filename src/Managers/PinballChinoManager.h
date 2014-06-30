@@ -25,6 +25,7 @@
 #include "OSCManager.h"
 #include "SimpleMission.h"
 #include "MissionInfoDisplay.h"
+#include "LightsManager.h"
 
 #include "ScenarioEditor.h"
 
@@ -58,6 +59,7 @@ public:
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
 	ofLight					light;
+    LightsManager           chinoLights;
     
     
     Scenario                myScenario;
