@@ -20,6 +20,9 @@
 #define PORT 9001
 
 class OSCManager{
+	
+	
+	
 public:
     OSCManager();
     

@@ -243,4 +243,19 @@
         <rotationW>-0.010885811</rotationW>
         <path>3DMODELS/pinball_stl/channel1_a.stl</path>
     </object>
+    <object>
+        <type>6</type>
+        <id>16</id>
+        <positionX>3.643310547</positionX>
+        <positionY>-6.783004761</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.931490958</rotationX>
+        <rotationY>0.363535970</rotationY>
+        <rotationZ>0.006907926</rotationZ>
+        <rotationW>-0.010885811</rotationW>
+        <path>3DMODELS/pinball_stl/MODEL_PRUEBA.obj</path>
+    </object>
 </scenario>

@@ -6,7 +6,7 @@
 
 	<mission>
         <missionID>1</missionID>
-        <duration>2000</duration>
+        <duration>100000</duration>
 	<object>
         	<id>9</id>
 			<color>1</color>
@@ -23,7 +23,7 @@
 
 	<mission>
         <missionID>2</missionID>
-        <duration>4000</duration>
+        <duration>10000</duration>
 	<object>
         	<id>6</id>
 		<color>2</color>

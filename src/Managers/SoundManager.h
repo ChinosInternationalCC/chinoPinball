@@ -17,6 +17,10 @@
 
 class SoundManager {
 public:
+	
+	enum SoundsType { startGame = 1, launchBall = 2, ObjCol1
+		= 3, ObjCol3 = 0, songGeneralGame = 4};
+	
 	SoundManager();
 	static SoundManager* getInstance(void);
 	void PlaySound(int idAudio);
