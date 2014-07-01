@@ -25,7 +25,12 @@
 class Scenario {
     
 public:
-    void setCurrentMission(SimpleMission *currentMission);
+	
+	//Missions
+    void setCurrentMission(int idMission);
+    void setupMissions(vector <SimpleMission *> *missions);
+	
+	///
 	void setup(ofxBulletWorldRigid &world);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
@@ -103,7 +108,9 @@ private:
 	int	 lastPosIdCoverScenario;
 	//BASIC SCENARIO STATGE/////////////////////////////////////
 	
-    SimpleMission *currentMission;
+    vector<SimpleMission *> *currentMissions;
+	int idCurrentMission;
+	
     bool DebugMode;
 	
 };

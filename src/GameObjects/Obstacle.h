@@ -19,7 +19,7 @@ class Obstacle : public SimpleObject {
 
 public:
 
-    Obstacle(SimpleMission *currentMission);
+    Obstacle(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);

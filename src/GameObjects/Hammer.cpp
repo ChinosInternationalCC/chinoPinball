@@ -8,8 +8,8 @@
 
 #include "Hammer.h"
 
-Hammer::Hammer(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     
 }

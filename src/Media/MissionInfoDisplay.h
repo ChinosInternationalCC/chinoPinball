@@ -21,7 +21,10 @@ public:
     void listenerOnUpdateMission(eventMission & args);
     
 private:
-    SimpleMission *currentMission;
+	SimpleMission *currentMission;
+	//vector <SimpleMission *> * _currentMissions;
+	int currentMissionId;
+	
     SimpleMission::enMissionStates currentMissionState;
     ofxFTGLFont fontLarge, fontMedium;
     string str;

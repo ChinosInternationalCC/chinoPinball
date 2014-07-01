@@ -95,13 +95,15 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 
 				bGuiPointer = true;
 				cout << "new ofxUICanvas()" << endl;
+			
+			gui->addLabel("Editor Object");
+			gui->addSpacer();
+			
+			gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
+			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
+			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
 				
-				gui->addLabel("Editor Object");
-				gui->addSpacer();
-				gui->addLabel("Object Type ["+ofToString(selectedObject->type)+"]");
-				gui->addSpacer();
-				gui->addLabel("ObjectId ["+ofToString(selectedObject->ObjectId)+"]");
-				gui->addSpacer();
+
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
 				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
@@ -111,9 +113,24 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
+			
+
+			gui->addLabel("Object Type ["+ofToString(selectedObject->type)+"]");
+			gui->addSpacer();
+			gui->addLabel("ObjectId ["+ofToString(selectedObject->ObjectId)+"]");
+			gui->addSpacer();
+			
+			gui->addSpacer();
+			gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
+			
+			gui->addLabel("Escenario BoundingBox");
+			gui->addSpacer();
+			
 				gui->addSpacer();
                 gui->addSlider("ballLimitBox", 0.0, 50.0, &scenario->ballLimitsBoxSize);
-				gui->addSpacer();
+			
+			gui->addLabel("Escenario Lighting");
+			gui->addSpacer();
                 gui->addSlider("LightX", -50.0, 50.0, &scenario->lightPos.x);
                 gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
                 gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
@@ -125,10 +142,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSlider("RotW", -3.0, +3.0, &selectedObject->rotation.w());
 			*/
 
-				gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
-				gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
-				gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
+
 			
+			/*
 				gui->addSlider("Angel2RotXx", -1, +1, &selectedObject->axis2RotateX.x);
 				gui->addSlider("Angel2RotXy", -1, +1, &selectedObject->axis2RotateX.y);
 				gui->addSlider("Angel2RotXz", -1, +1, &selectedObject->axis2RotateX.z);
@@ -140,10 +156,8 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSlider("Angel2RotZx", -1, +1, &selectedObject->axis2RotateZ.x);
 				gui->addSlider("Angel2RotZy", -1, +1, &selectedObject->axis2RotateZ.y);
 				gui->addSlider("Angel2RotZz", -1, +1, &selectedObject->axis2RotateZ.z);
-			
-				gui->addSpacer();
-				/*gui->add2DPad("CENTER", ofPoint(0,ofGetWidth()), ofPoint(0, ofGetHeight()), &gposition);*/
-                gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
+			*/
+
 				//gui->addLabelToggle("DRAWFILL", &drawFill);
 				gui->autoSizeToFitWidgets();
 				ofAddListener(gui->newGUIEvent,this,&ScenarioEditor::guiEvent);
@@ -186,9 +200,11 @@ void ScenarioEditor::keyReleased(int key){
 			
 			if(bEscenarioEditorMode){
 				scenario->removeCoverScenario();
+			if(gui != NULL && bGuiPointer)gui->setVisible(true);
 			}else {
 				//Need to be at least once time created to be removed
-				scenario->addCoverScenario(*world); //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				scenario->addCoverScenario(*world); //
+				if(gui != NULL && bGuiPointer)gui->setVisible(false);
 			}
 			cout << "bScenarioEditorActive= " << bEscenarioEditorMode << endl;
             break;

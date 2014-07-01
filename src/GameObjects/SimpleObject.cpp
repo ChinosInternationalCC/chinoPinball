@@ -8,7 +8,7 @@
 
 #include "SimpleObject.h"
 
-SimpleObject::SimpleObject(SimpleMission *currentMission){
+SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	idobject = -1;
 	bAnimation = false;
     color = 0xffffff;
@@ -16,7 +16,7 @@ SimpleObject::SimpleObject(SimpleMission *currentMission){
 	scale = ofVec3f(); last_scale = scale;
 	scaleXyz = 0; last_scaleXyz = scaleXyz;
     highlightTime = 60; // what units?
-    this->currentMission = currentMission;
+
     bDebugMode = false;
 	
 	last_angleValX = angleValX = 0;
@@ -26,7 +26,19 @@ SimpleObject::SimpleObject(SimpleMission *currentMission){
 	axis2RotateX = ofVec3f(1,0,0);
 	axis2RotateY = ofVec3f(0,1,0);
 	axis2RotateZ = ofVec3f(0,0,1);
+	
+	
+	//////
+	this->idCurrtentMission = 0;
+	this->currentMissions = _currentMissions;
+	
 }
+
+//--------------------------------------------------------------
+void SimpleObject::setCurrentMissionId(int _idCurrentMission){
+	this->idCurrtentMission = _idCurrentMission;
+}
+
 
 //--------------------------------------------------------------
 void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
@@ -58,8 +70,7 @@ void SimpleObject::drawDebug(void){
     
         ofSetColor(255, 255, 255);
         ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
-        ofDrawBitmapString("HIT:"+ofToString(currentMission->isElementHit(GetObjectId())), position.x,position.y+1);
-    
+        ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), position.x,position.y+1);
 }
 
 

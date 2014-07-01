@@ -11,7 +11,17 @@
 #include "eventComunication.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
-  currentMission = new SimpleMission(1);  
+//  currentMission = new SimpleMission(1);
+	
+
+	SimpleMission* mission0 = new SimpleMission(0);
+	idcurrentMission = 0;
+	SimpleMission* mission1 = new SimpleMission(1);
+	SimpleMission* mission2 = new SimpleMission(2);
+	
+	
+	currentMissions.push_back(mission1);
+	currentMissions.push_back(mission2);
 }
 
 //--------------------------------------------------------------
@@ -35,7 +45,8 @@ void PinballChinoManager::setup(){
     camera.setTransformMatrix(savedPose);
     
     // setup scenario
-    myScenario.setCurrentMission(currentMission);
+	myScenario.setupMissions(&currentMissions);
+	myScenario.setCurrentMission(idcurrentMission);
     myScenario.setup(world);
     
     // setup scenario editor
@@ -89,7 +100,7 @@ void PinballChinoManager::update(){
         }
     }
 
-    currentMission->update();
+    (currentMissions)[idcurrentMission]->update();
     
 }
 
@@ -140,7 +151,7 @@ void PinballChinoManager::draw(){
     
     if(bDrawDebug){
 
-        currentMission->debugDraw();
+        (currentMissions)[idcurrentMission]->debugDraw();
     }
     
     chinoLights.draw();
@@ -179,7 +190,7 @@ void PinballChinoManager::onRestartGameEvent(void){
     
     //do other stuff that should be done whe restaring game score stuff etc
     
-    currentMission->resetMission();
+    (currentMissions)[idcurrentMission]->resetMission();
     
 }
 
@@ -352,7 +363,7 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
         {
             ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
-            currentMission->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
+            (currentMissions)[idcurrentMission]->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
 		}
 	}
 }

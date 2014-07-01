@@ -9,8 +9,8 @@
 #include "Ball.h"
 
 //---------------------------------
-Ball::Ball(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Ball::Ball(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     m_status = BallStatusWaiting;
 	radius = .5;

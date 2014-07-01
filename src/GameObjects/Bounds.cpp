@@ -8,8 +8,8 @@
 
 #include "Bounds.h"
 
-Bounds::Bounds(SimpleMission *currentmission) :
-    SimpleObject(currentmission)
+Bounds::Bounds(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     
 }

@@ -16,10 +16,13 @@ SimpleMission::SimpleMission(int MissionID){
     
     
     eventMission evtMission;
-    evtMission.pMission = this;
+    evtMission.idCurrentMission = MissionID;
+	//evtMission.currentMissions = this; //TODO solve how to copy this..
+	
     evtMission.eventType = eventMission::MISSION_EVENT_NEW_MISSION;
     ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
     
+	MissionID = 0;
 }
 
 //------------------------------------------------
@@ -98,14 +101,18 @@ void SimpleMission::debugDraw(void){
     }
 
     ofDrawBitmapString(tmp, posX,posY);
-    
-    ofDrawBitmapString("Mission Elements:", posX,posY+10);
-    ofDrawBitmapString("HIT", posX,posY+20);
+
+    ofDrawBitmapString("Id mission:", posX,posY-20);
+	ofDrawBitmapString(ofToString(MissionID, 0), posX + 100,posY-20);
+	
+    ofDrawBitmapString("Mission Elements:", posX,posY);
+	
+    ofDrawBitmapString("HIT", posX,posY+40);
     int NoOfElements = MissionElements.size();
     for (int i=0; i < NoOfElements; i++){
-        ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+10);
+        ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(20*i), posY+20);
         if (true == MissionElements[i].hit){
-            ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(10*i), posY+20);
+            ofDrawBitmapString(ofToString(MissionElements[i].identifier),posX+150+(20*i), posY+20);
         }
     }
     if (MISSION_STARTED == MissionState)
@@ -116,8 +123,12 @@ void SimpleMission::debugDraw(void){
 void SimpleMission::OnCollision(int elementID){
     int i;
     eventMission evtMission;
-    evtMission.pMission = this;
     
+	evtMission.pMission = this;
+	evtMission.idCurrentMission = MissionID;
+    
+	
+	
     switch(MissionState){
         case MISSION_IDLE:
             if (isElementPartOfMission(elementID,i)){
@@ -163,12 +174,15 @@ void SimpleMission::OnCollision(int elementID){
 void SimpleMission::update(void){
     if (MissionState == MISSION_STARTED){
         /* the timer is checked only in the MISSION_STARTED state */
-        if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration){
+        if ((ofGetElapsedTimeMillis() - Timer) > MissionDuration){     /// TODO SET idcurrentMission to 0 when this finish the timer
             MissionState = MISSION_COMPLETED;
             /* Notify the state change */
             
             eventMission evtMission;
-            evtMission.pMission = this;
+            
+			evtMission.pMission = this;//TODO
+			evtMission.idCurrentMission = MissionID;
+			
             evtMission.eventType = eventMission::MISSION_EVENT_MISSION_COMPLETED;
             ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
 
@@ -214,7 +228,10 @@ void SimpleMission::resetMission(void){
     MissionState = MISSION_IDLE;
     
     eventMission evtMission;
-    evtMission.pMission = this;
+    
+	evtMission.pMission = this; //TODO
+	evtMission.idCurrentMission = MissionID;
+	
     evtMission.eventType = eventMission::MISSION_EVENT_RESTART_MISSION;
     ofNotifyEvent(eventMission::onMissionUpdate, evtMission);
 

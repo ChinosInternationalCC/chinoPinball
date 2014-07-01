@@ -1,10 +1,10 @@
 <scenario>
     <object>
         <type>0</type>
-        <id>4</id>
-        <positionX>5.000000000</positionX>
-        <positionY>0.000000000</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <id>1</id>
+        <positionX>10.940005302</positionX>
+        <positionY>6.779992104</positionY>
+        <positionZ>-0.400000006</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -16,9 +16,9 @@
     </object>
     <object>
         <type>3</type>
-        <id>5</id>
-        <positionX>-5.168408394</positionX>
-        <positionY>15.095759392</positionY>
+        <id>2</id>
+        <positionX>-8.528407097</positionX>
+        <positionY>15.875760078</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
@@ -32,9 +32,9 @@
     </object>
     <object>
         <type>3</type>
-        <id>6</id>
-        <positionX>5.747853756</positionX>
-        <positionY>15.320462227</positionY>
+        <id>3</id>
+        <positionX>8.127855301</positionX>
+        <positionY>16.360452652</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
@@ -48,9 +48,9 @@
     </object>
     <object>
         <type>5</type>
-        <id>7</id>
-        <positionX>5.000000000</positionX>
-        <positionY>5.000000000</positionY>
+        <id>4</id>
+        <positionX>10.940005302</positionX>
+        <positionY>11.779992104</positionY>
         <positionZ>-0.400000006</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
@@ -63,9 +63,9 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
-        <positionX>0.554898202</positionX>
-        <positionY>12.578759193</positionY>
+        <id>5</id>
+        <positionX>0.474898070</positionX>
+        <positionY>12.638760567</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
@@ -78,52 +78,52 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
-        <positionX>2.725098133</positionX>
-        <positionY>-5.167327881</positionY>
+        <id>6</id>
+        <positionX>-1.954901218</positionX>
+        <positionY>-16.347349167</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225623</rotationX>
-        <rotationY>-0.030766357</rotationY>
-        <rotationZ>-0.338430285</rotationZ>
-        <rotationW>0.297408611</rotationW>
-        <path>3DMODELS/new/totem2.obj</path>
+        <rotationX>0.995659769</rotationX>
+        <rotationY>0.092062652</rotationY>
+        <rotationZ>0.005060362</rotationZ>
+        <rotationW>-0.012668238</rotationW>
+        <path>3DMODELS/pinball_stl/totem5.stl</path>
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
-        <positionX>4.463302135</positionX>
-        <positionY>-5.962964058</positionY>
+        <id>7</id>
+        <positionX>0.763302624</positionX>
+        <positionY>-14.322977066</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225623</rotationX>
-        <rotationY>-0.030766357</rotationY>
-        <rotationZ>-0.338430285</rotationZ>
-        <rotationW>0.297408611</rotationW>
-        <path>3DMODELS/new/totem2.obj</path>
+        <rotationX>0.999819279</rotationX>
+        <rotationY>0.015967002</rotationY>
+        <rotationZ>-0.009050521</rotationZ>
+        <rotationW>-0.004963317</rotationW>
+        <path>3DMODELS/pinball_stl/totem5.stl</path>
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
-        <positionX>6.103299618</positionX>
-        <positionY>-4.662964344</positionY>
+        <id>8</id>
+        <positionX>3.683302402</positionX>
+        <positionY>-15.562970161</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.892225623</rotationX>
-        <rotationY>-0.030766357</rotationY>
-        <rotationZ>-0.338430285</rotationZ>
-        <rotationW>0.297408611</rotationW>
-        <path>3DMODELS/new/totem2.obj</path>
+        <rotationX>0.995323896</rotationX>
+        <rotationY>0.096134186</rotationY>
+        <rotationZ>0.007713288</rotationZ>
+        <rotationW>-0.005390263</rotationW>
+        <path>3DMODELS/pinball_stl/totem5.stl</path>
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>9</id>
         <positionX>-8.144927025</positionX>
         <positionY>3.131835222</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -138,7 +138,7 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>10</id>
         <positionX>-7.671668053</positionX>
         <positionY>-3.971171379</positionY>
         <positionZ>-0.500000000</positionZ>
@@ -153,47 +153,94 @@
     </object>
     <object>
         <type>6</type>
-        <id>0</id>
+        <id>11</id>
         <positionX>-4.528328419</positionX>
         <positionY>0.548827469</positionY>
         <positionZ>-0.500000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.645468354</rotationX>
-        <rotationY>0.241437137</rotationY>
-        <rotationZ>-0.342327297</rotationZ>
+        <rotationX>-0.645468175</rotationX>
+        <rotationY>0.241437078</rotationY>
+        <rotationZ>-0.342327267</rotationZ>
         <rotationW>0.638663352</rotationW>
         <path>3DMODELS/new/totem6.obj</path>
     </object>
     <object>
         <type>7</type>
-        <id>0</id>
+        <id>12</id>
         <positionX>-12.608975410</positionX>
         <positionY>4.998793125</positionY>
         <positionZ>-4.500000000</positionZ>
-        <scaleX>0.201970443</scaleX>
-        <scaleY>0.201970443</scaleY>
-        <scaleZ>0.201970443</scaleZ>
-        <rotationX>-0.511609197</rotationX>
-        <rotationY>-0.487488061</rotationY>
-        <rotationZ>0.479393214</rotationZ>
-        <rotationW>0.520378530</rotationW>
+        <scaleX>0.200000003</scaleX>
+        <scaleY>0.200000003</scaleY>
+        <scaleZ>0.200000003</scaleZ>
+        <rotationX>-0.511609137</rotationX>
+        <rotationY>-0.487488002</rotationY>
+        <rotationZ>0.479393244</rotationZ>
+        <rotationW>0.520378470</rotationW>
         <path>3DModels/MURO1.obj</path>
     </object>
     <object>
         <type>7</type>
-        <id>1</id>
-        <positionX>16.730951309</positionX>
-        <positionY>8.178780556</positionY>
+        <id>13</id>
+        <positionX>16.250940323</positionX>
+        <positionY>8.538787842</positionY>
         <positionZ>-4.500000000</positionZ>
-        <scaleX>0.201970443</scaleX>
-        <scaleY>0.201970443</scaleY>
-        <scaleZ>0.201970443</scaleZ>
+        <scaleX>0.200000003</scaleX>
+        <scaleY>0.200000003</scaleY>
+        <scaleZ>0.200000003</scaleZ>
         <rotationX>0.502223849</rotationX>
         <rotationY>0.517170072</rotationY>
-        <rotationZ>-0.480890512</rotationZ>
-        <rotationW>-0.499049872</rotationW>
+        <rotationZ>-0.480890542</rotationZ>
+        <rotationW>-0.499049842</rotationW>
         <path>3DModels/MURO2.obj</path>
+    </object>
+    <object>
+        <type>3</type>
+        <id>14</id>
+        <positionX>-3.168408394</positionX>
+        <positionY>15.095759392</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>3DModels/new/pusher_def_ok.obj</path>
+        <LeverType>0</LeverType>
+    </object>
+    <object>
+        <type>3</type>
+        <id>15</id>
+        <positionX>3.747853756</positionX>
+        <positionY>15.320462227</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>3DModels/new/pusher2_def_ok.obj</path>
+        <LeverType>1</LeverType>
+    </object>
+    <object>
+        <type>6</type>
+        <id>16</id>
+        <positionX>10.643310547</positionX>
+        <positionY>-16.783004761</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.931490958</rotationX>
+        <rotationY>0.363535970</rotationY>
+        <rotationZ>0.006907926</rotationZ>
+        <rotationW>-0.010885811</rotationW>
+        <path>3DMODELS/pinball_stl/channel1_a.stl</path>
     </object>
 </scenario>
