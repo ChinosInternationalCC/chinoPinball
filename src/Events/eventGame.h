@@ -6,9 +6,21 @@
 //
 //
 
-#ifndef __chinoPinball__eventGame__
-#define __chinoPinball__eventGame__
+#pragma once
 
-#include <iostream>
+#include "ofMain.h"
 
-#endif /* defined(__chinoPinball__eventGame__) */
+class eventGame : public ofEventArgs {
+public:
+	
+    enum GameEvent{
+        GAME_EVENT_HAMMER_LAUNCH
+    };
+    
+	GameEvent gameEvent;
+	
+    static ofEvent <eventGame> onGameEvent;
+};
+
+
+

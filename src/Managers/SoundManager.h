@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "eventGame.h"
 
 
 class SoundManager {
@@ -17,6 +18,8 @@ public:
 	static SoundManager* getInstance(void);
 	void PlaySound(int idAudio);
 
+	void listenerOnHammerLaunch(eventGame & args);
+	
 private:
 	// singleton stuff
 	static bool    instanceFlag;
@@ -24,6 +27,7 @@ private:
     
     vector<string> soundFiles;
     vector<ofSoundPlayer*> soundObj;
+	
 };
 
 /*

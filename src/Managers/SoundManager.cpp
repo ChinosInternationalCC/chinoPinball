@@ -29,7 +29,7 @@ SoundManager* SoundManager::getInstance(void){
 SoundManager::SoundManager(void){
 	//loadSounds
     
-    soundFiles.push_back("sounds/obstacle.wav");
+    soundFiles.push_back("sounds/campanaraval.wav");
     ofSoundPlayer *audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[0]->loadSound(soundFiles[0]);
@@ -42,6 +42,21 @@ SoundManager::SoundManager(void){
     soundObj[1]->loadSound(soundFiles[1]);
     soundObj[1]->setVolume(0.5f);
     soundObj[1]->setMultiPlay(false);
+
+
+	soundFiles.push_back("sounds/bengalalanzabola.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[2]->loadSound(soundFiles[2]);
+    soundObj[2]->setVolume(0.5f);
+    soundObj[2]->setMultiPlay(false);
+ 
+	
+	
+	//EVENTS
+	ofAddListener(eventGame::onGameEvent,this, &SoundManager::listenerOnHammerLaunch);
+
+	
 }
 
 //--------------------------------------
@@ -52,3 +67,15 @@ SoundManager::SoundManager(void){
 void SoundManager::PlaySound(int idAudio){
     this->soundObj[idAudio]->play();
 }
+
+
+//Listeners
+//--------------------------------------------------------------------
+void SoundManager::listenerOnHammerLaunch(eventGame & args){
+
+	if(args.gameEvent == eventGame::GAME_EVENT_HAMMER_LAUNCH){
+		soundObj[2]->play();
+	}
+	
+}
+

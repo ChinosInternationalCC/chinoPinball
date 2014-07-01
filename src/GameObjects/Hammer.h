@@ -9,6 +9,7 @@
 #pragma once
 
 #include "SimpleObject.h"
+#include "eventGame.h"
 
 /*
  Objeto que se usa para empujar la bola (en el estado initial o para los objectos containers)
@@ -43,6 +44,10 @@ public:
     void setDefaultZ();
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
+	
+	
+	//Event launch hammer
+	bool bLaunch = true;
     
  /*
     energy ( float )
