@@ -10,7 +10,10 @@
 
 #include "ofMain.h"
 #include "eventGame.h"
+#include "eventMission.h"
 
+#include "eventComunication.h"
+#include "eventMission.h"
 
 class SoundManager {
 public:
@@ -18,7 +21,10 @@ public:
 	static SoundManager* getInstance(void);
 	void PlaySound(int idAudio);
 
+	//Events
 	void listenerOnHammerLaunch(eventGame & args);
+	void listenerOnCollission(eventComunication & args);
+	void listenerOnUpdateMission(eventMission & args);
 	
 private:
 	// singleton stuff

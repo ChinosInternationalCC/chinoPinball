@@ -51,10 +51,19 @@ SoundManager::SoundManager(void){
     soundObj[2]->setVolume(0.5f);
     soundObj[2]->setMultiPlay(false);
  
+	soundFiles.push_back("sounds/bumper02.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[3]->loadSound(soundFiles[3]);
+    soundObj[3]->setVolume(0.5f);
+    soundObj[3]->setMultiPlay(false);
 	
 	
 	//EVENTS
 	ofAddListener(eventGame::onGameEvent,this, &SoundManager::listenerOnHammerLaunch);
+	
+	ofAddListener(eventComunication::onNewCom,this, &SoundManager::listenerOnCollission);
+    ofAddListener(eventMission::onMissionUpdate,this, &SoundManager::listenerOnUpdateMission);
 
 	
 }
@@ -77,5 +86,18 @@ void SoundManager::listenerOnHammerLaunch(eventGame & args){
 		soundObj[2]->play();
 	}
 	
+}
+
+//--------------------------------------------------------------------
+void SoundManager::listenerOnCollission(eventComunication & args){
+			
+	if(args.collision){
+		soundObj[3]->play();
+	}
+}
+
+//--------------------------------------------------------------------
+void SoundManager::listenerOnUpdateMission(eventMission & args){
+    //
 }
 

@@ -206,7 +206,7 @@ void Obstacle::onCollision(){
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
-    SoundManager::getInstance()->PlaySound(0);
+    //SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
    
 	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
 	eventComunication newComEvent;
