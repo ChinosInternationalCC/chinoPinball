@@ -112,6 +112,7 @@
 		8168D5883AC54AC2E2BEE525 /* btKinematicCharacterController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B85C8FE69EAECFB5655E2AFE /* btKinematicCharacterController.cpp */; };
 		8194FB8D031BF3DAFEFBD316 /* btSoftBodySolverOutputCLtoGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 115C0294FE71A4AB62E648C0 /* btSoftBodySolverOutputCLtoGL.cpp */; };
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
+		845EA3F11963358500A6EC71 /* eventGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3EF1963358500A6EC71 /* eventGame.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
 		84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6E5F618E60E3A00A582DF /* eventComunication.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
@@ -642,6 +643,8 @@
 		8411535E8E213C0D511F83CE /* btGhostObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btGhostObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btGhostObject.cpp; sourceTree = SOURCE_ROOT; };
 		8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventObjectScenario.cpp; sourceTree = "<group>"; };
 		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
+		845EA3EF1963358500A6EC71 /* eventGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventGame.cpp; sourceTree = "<group>"; };
+		845EA3F01963358500A6EC71 /* eventGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventGame.h; sourceTree = "<group>"; };
 		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
 		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
 		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
@@ -1817,6 +1820,8 @@
 				84E6E5F718E60E3A00A582DF /* eventComunication.h */,
 				B083A7821960853D00BC0D89 /* eventMission.cpp */,
 				B083A7831960853D00BC0D89 /* eventMission.h */,
+				845EA3EF1963358500A6EC71 /* eventGame.cpp */,
+				845EA3F01963358500A6EC71 /* eventGame.h */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -2865,6 +2870,7 @@
 				0EF00047C3D2DC9F52B6B191 /* btDispatcher.cpp in Sources */,
 				3C8B99E182190384DB525D42 /* btMultiSapBroadphase.cpp in Sources */,
 				B083A78D1960997300BC0D89 /* LightsManager.cpp in Sources */,
+				845EA3F11963358500A6EC71 /* eventGame.cpp in Sources */,
 				7EE1EDD6C5FF070966C5FFBF /* btOverlappingPairCache.cpp in Sources */,
 				A58C5F0B18BBDCA100E99E78 /* ofxJSONElement.cpp in Sources */,
 				D92792A6F0998EF17BBEDCE7 /* btQuantizedBvh.cpp in Sources */,
