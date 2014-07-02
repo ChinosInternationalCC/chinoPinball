@@ -58,7 +58,6 @@ public:
 	ofMatrix4x4 loadCameraPosition();
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
-	ofLight					light;
     LightsManager           chinoLights;
     
     
