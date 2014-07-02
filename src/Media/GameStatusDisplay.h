@@ -22,8 +22,8 @@ public:
     string str;
     
     
-    ofLight light;
-    ofMaterial material;
+    //ofLight light;
+    //ofMaterial material;
     
     bool show3dfont;
 

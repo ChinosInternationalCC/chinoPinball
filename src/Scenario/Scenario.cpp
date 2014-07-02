@@ -306,12 +306,17 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             string path;
             path = ScenarioXml.getValue("path","", 0);
             
+            int color = 0xFFFFFF;
+            //TODO uncomment the line below when the xml is properly configured
+            //color = ScenarioXml.getValue("color",0, 0);
+            
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball(currentMissions);
                     oBall->setup(world, pos);
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
+                    oBall->color = color;
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -321,6 +326,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oHammer->setup(world, pos);
                     oHammer->SetObjectId(objId);
 					oHammer->setRotation(rotation);
+                    oHammer->color = color;
                     ScenarioObjects.push_back(oHammer);
 					
 					oHammer->setupRot();
@@ -334,6 +340,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oLever->setup(world, pos, path, scale, dir);
                     oLever->SetObjectId(objId);
 					oLever->setRotation(rotation);
+                    oLever->color = color;
                     ScenarioObjects.push_back(oLever);
 
                 }
@@ -345,6 +352,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oObstable->setup(world, pos, path, scale);
                     oObstable->SetObjectId(objId);
 					oObstable->setRotation(rotation);
+                    oObstable->color = color;
                     ScenarioObjects.push_back(oObstable);
 					
 					oObstable->setupRot();
@@ -357,6 +365,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBounds->setup(world, pos, path, scale);
                     oBounds->SetObjectId(objId);
 					oBounds->setRotation(rotation);
+                    oBounds->color = color;
                     ScenarioObjects.push_back(oBounds);
 					
 					oBounds->setupRot();
@@ -393,6 +402,7 @@ void Scenario::saveToXml(){
     
         ScenarioXml.addValue("type", ScenarioObjects[i]->type);
         ScenarioXml.addValue("id", ScenarioObjects[i]->GetObjectId());
+        ScenarioXml.addValue("color", ScenarioObjects[i]->color);
         
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);

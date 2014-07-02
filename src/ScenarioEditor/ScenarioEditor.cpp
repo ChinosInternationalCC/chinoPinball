@@ -134,6 +134,13 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
                 gui->addSlider("LightX", -50.0, 50.0, &scenario->lightPos.x);
                 gui->addSlider("LightY", -50.0, 50.0, &scenario->lightPos.y);
                 gui->addSlider("LightZ", -50.0, 50.0, &scenario->lightPos.z);
+            gui->addLabel("ObjectDefaultColor");
+			gui->addSpacer();
+            ofImage *img;
+            img = new ofImage();
+            img->loadImage("colorpicker.png");
+            
+            gui->addImageSampler("SAMPLER", img);
 
 			/*
 				gui->addSlider("RotX", -3.0, +3.0, &selectedObject->rotation.x());
@@ -378,6 +385,13 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
     //	int kind = e.widget->getKind();
     if (name == "PRESS & PICK TO DELETE IT"){
 
+    }else if(name == "SAMPLER"){
+        ofxUIImageSampler *is = (ofxUIImageSampler *) e.widget;
+        ofColor clr = is->getColor();
+        //red = clr.r;
+        //blue = clr.b;
+        //green = clr.g;
+        clr.getHex();
     }
 }
 
