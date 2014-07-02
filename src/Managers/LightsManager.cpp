@@ -23,6 +23,8 @@ void LightsManager::setup(void){
     
 }
 void LightsManager::update(void){
+    center = mainLightPosition;
+    
     pointLight.setPosition(cos(ofGetElapsedTimef()*.06f) * radius * 2 + center.x,
 						   sin(ofGetElapsedTimef()*.08f) * radius * 2 + center.y,
 						   -cos(ofGetElapsedTimef()*.08f) * radius * 2 + center.z);
@@ -31,10 +33,17 @@ void LightsManager::update(void){
 
 void LightsManager::enable(void){
     pointLight.enable();
+    //mainLight.enable();
 }
 void LightsManager::disable(void){
     pointLight.disable();
+    //mainLight.disable();
 }
 void LightsManager::draw(void){
     pointLight.draw();
+}
+
+void LightsManager::setMainLightPosition(ofVec3f lightPos){
+    mainLightPosition = lightPos;
+    mainLight.setPosition(lightPos);
 }
