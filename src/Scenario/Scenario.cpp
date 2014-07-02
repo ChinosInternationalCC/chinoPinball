@@ -308,7 +308,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             
             int color = 0xFFFFFF;
             //TODO uncomment the line below when the xml is properly configured
-            //color = ScenarioXml.getValue("color",0, 0);
+            color = ScenarioXml.getValue("color",0, 0);
             
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{

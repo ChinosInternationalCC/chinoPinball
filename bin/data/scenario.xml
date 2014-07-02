@@ -2,6 +2,7 @@
     <object>
         <type>0</type>
         <id>1</id>
+		<color>FFFFBB</color>
         <positionX>-11.099989891</positionX>
         <positionY>8.760010719</positionY>
         <positionZ>-0.400000006</positionZ>
@@ -246,6 +247,7 @@
     <object>
         <type>6</type>
         <id>16</id>
+				<color>FFFFBB</color>
         <positionX>-5.076687813</positionX>
         <positionY>9.717001915</positionY>
         <positionZ>-0.500000000</positionZ>
