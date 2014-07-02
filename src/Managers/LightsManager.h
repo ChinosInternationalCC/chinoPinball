@@ -16,9 +16,11 @@ public:
     void enable(void);
     void disable(void);
     void draw(void);
+    void setMainLightPosition(ofVec3f lightPos);
 private:
     
-    ofLight pointLight;
+    ofLight pointLight,mainLight;
     float radius;
 	ofVec3f center;
+    ofVec3f mainLightPosition;
 };

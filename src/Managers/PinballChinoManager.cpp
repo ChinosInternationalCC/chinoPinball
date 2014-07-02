@@ -110,15 +110,11 @@ void PinballChinoManager::draw(){
 	glEnable( GL_DEPTH_TEST );
 	camera.begin();
     
-    /* set light position 
-     Tip: we could move it in setup if we will not change the position of the light at runtime
-     */
-    light.setPosition(myScenario.lightPos);
-
+   
+    chinoLights.setMainLightPosition(myScenario.lightPos);
     
     
 	ofEnableLighting();
-	//light.enable();
     chinoLights.enable();
     
 
@@ -138,7 +134,6 @@ void PinballChinoManager::draw(){
     myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
     
 	chinoLights.disable();
-	//light.disable();
 	ofDisableLighting();
     
 	camera.end();
