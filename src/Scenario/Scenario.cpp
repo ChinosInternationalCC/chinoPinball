@@ -306,10 +306,10 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             string path;
             path = ScenarioXml.getValue("path","", 0);
             
-            int color = 0xFFFFFF;
             //TODO uncomment the line below when the xml is properly configured
-            color = ScenarioXml.getValue("color",0, 0);
-            
+            string strcolor = ScenarioXml.getValue("color", "0xFFFFFF", 0);
+			int color = ofHexToInt(strcolor);
+			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball(currentMissions);
