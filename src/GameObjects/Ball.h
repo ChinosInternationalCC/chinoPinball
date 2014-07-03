@@ -51,7 +51,10 @@ public:
 
 private:
     BallStatus m_status; // waiting, playing, game over
-   // ofxBulletSphere *BulletBallShape; // generic bullet shape object
+	
+	
+	//shadow fake
+	ofCylinderPrimitive shadow;
     
 };
 
