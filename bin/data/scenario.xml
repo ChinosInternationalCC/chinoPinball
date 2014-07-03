@@ -71,14 +71,14 @@
         <color>7156518</color>
         <positionX>0.474898070</positionX>
         <positionY>12.638760567</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.227402121</rotationX>
-        <rotationY>-0.682206511</rotationY>
-        <rotationZ>0.187854037</rotationZ>
-        <rotationW>0.669024110</rotationW>
+        <rotationX>-0.541731715</rotationX>
+        <rotationY>-0.442292124</rotationY>
+        <rotationZ>0.587128937</rotationZ>
+        <rotationW>0.407656848</rotationW>
         <path>3DMODELS/new/totem1.obj</path>
     </object>
     <object>
@@ -87,7 +87,7 @@
         <color>7156518</color>
         <positionX>-1.954901218</positionX>
         <positionY>-16.347349167</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -103,7 +103,7 @@
         <color>7156518</color>
         <positionX>0.763302624</positionX>
         <positionY>-14.322977066</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -119,7 +119,7 @@
         <color>7156518</color>
         <positionX>3.683302402</positionX>
         <positionY>-15.562970161</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -135,7 +135,7 @@
         <color>7156518</color>
         <positionX>-8.144927025</positionX>
         <positionY>3.131835222</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -151,7 +151,7 @@
         <color>7156518</color>
         <positionX>-7.671668053</positionX>
         <positionY>-3.971171379</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -167,7 +167,7 @@
         <color>7156518</color>
         <positionX>-4.528328419</positionX>
         <positionY>0.548827469</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -249,7 +249,7 @@
         <color>16777215</color>
         <positionX>10.643310547</positionX>
         <positionY>-16.783004761</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
@@ -265,7 +265,7 @@
         <color>16777215</color>
         <positionX>-5.076687813</positionX>
         <positionY>9.717001915</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.899999976</positionZ>
         <scaleX>0.244088620</scaleX>
         <scaleY>0.244088620</scaleY>
         <scaleZ>0.244088620</scaleZ>

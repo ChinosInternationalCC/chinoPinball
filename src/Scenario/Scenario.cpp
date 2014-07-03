@@ -92,7 +92,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds[i]->add();
 		
 		lastPosIdCoverScenario = i;
-		
+
 
 	}
 	

@@ -77,6 +77,8 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	setupRot();
 	
     body.activate();
+	
+	setDefaultZ();
     
 }
 
@@ -218,7 +220,7 @@ void Obstacle::onCollision(){
 //------------------------------------------------------------
 void Obstacle::setDefaultZ(){
     
-    position.z = -1.5;
+    position.z = -0.9;
     setPosition(position);
     
 }
