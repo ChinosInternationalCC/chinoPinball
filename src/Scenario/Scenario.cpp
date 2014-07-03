@@ -125,13 +125,13 @@ void Scenario::draw(bool bEditorMode){
 	
 	ofSetColor(ofColor::white);
 	
-	for(int i = 0; i < bounds.size(); i++) {
+	//for(int i = 0; i < bounds.size(); i++) {
 		
 		material.begin();
-		bounds[i]->draw();
+		bounds[0]->draw();
 		material.end();
 		
-    }
+  //  }
 	
 
     
