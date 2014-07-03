@@ -71,6 +71,9 @@ public:
     //general Light ambient
     ofVec3f                 lightPos;
 	
+	//material for shadows
+	ofMaterial material;
+	
 	void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
 	void addCoverScenario(ofxBulletWorldRigid &world);
 	void removeCoverScenario();

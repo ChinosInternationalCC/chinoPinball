@@ -44,7 +44,10 @@ void Ball::update(bool bEditorMode){
 void Ball::draw(bool bEditorMode){
     
 	ofSetHexColor(color);
+	
+	material.begin();
     body.draw();
+    material.end();
     
 }
 

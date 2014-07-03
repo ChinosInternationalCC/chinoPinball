@@ -35,8 +35,6 @@ void Scenario::setup(ofxBulletWorldRigid &_world){
 	//copy a reference
 	//world = _world;
     DebugMode = false;
-    
-    
 
 }
 
@@ -94,7 +92,14 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		bounds[i]->add();
 		
 		lastPosIdCoverScenario = i;
+		
+
 	}
+	
+	
+	
+	
+
 }
 
 //--------------------------------------------------------------
@@ -109,18 +114,39 @@ void Scenario::update(bool bEditorMode){
 //--------------------------------------------------------------
 void Scenario::draw(bool bEditorMode){
     
+	ofSetColor(ofColor::white);
+	
+	material.begin();
+	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
         ScenarioObjects[i]->draw(bEditorMode);
     }
+	material.end();
+	
+	ofSetColor(ofColor::white);
+	
+	for(int i = 0; i < bounds.size(); i++) {
+		
+		material.begin();
+		bounds[i]->draw();
+		material.end();
+		
+    }
+	
+
     
 	ofDrawAxis(1);
     
 }
 
 void Scenario::drawDebug(void){
+	
+		material.begin();
+	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
         ScenarioObjects[i]->drawDebug();
     }
+		material.end();
     
 }
 
@@ -307,8 +333,11 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             path = ScenarioXml.getValue("path","", 0);
             
             //TODO uncomment the line below when the xml is properly configured
-            string strcolor = ScenarioXml.getValue("color", "0xFFFFFF", 0);
-			int color = ofHexToInt(strcolor);
+            //string strcolor = ScenarioXml.getValue("color", "0xFFFFFF", 0);
+			int color = ScenarioXml.getValue("color", 0xFFFFFF, 0);
+			
+			//int color = ofHexToInt(strcolor);
+
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
@@ -402,7 +431,14 @@ void Scenario::saveToXml(){
     
         ScenarioXml.addValue("type", ScenarioObjects[i]->type);
         ScenarioXml.addValue("id", ScenarioObjects[i]->GetObjectId());
-        ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		
+		//string auxColor = ofToHex(ofColor(ScenarioObjects[i]->color);
+		//string resColor = auxColor.substr(2,auxColor.length());
+		//resColor = ofToUpper(resColor);
+        //ScenarioXml.addValue("color", "0x"+resColor);
+		
+		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		
         
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
