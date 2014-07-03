@@ -33,11 +33,11 @@ void LightsManager::update(void){
 
 void LightsManager::enable(void){
     pointLight.enable();
-    //mainLight.enable();
+    mainLight.enable();
 }
 void LightsManager::disable(void){
     pointLight.disable();
-    //mainLight.disable();
+    mainLight.disable();
 }
 void LightsManager::draw(void){
     pointLight.draw();

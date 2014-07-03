@@ -123,7 +123,7 @@ void Scenario::draw(bool bEditorMode){
     }
 	material.end();
 	
-	ofSetColor(ofColor::white);
+	ofSetColor(ofColor::gray);
 	
 	//for(int i = 0; i < bounds.size(); i++) {
 		

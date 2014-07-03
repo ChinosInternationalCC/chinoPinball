@@ -26,7 +26,7 @@
 #include "SimpleMission.h"
 #include "MissionInfoDisplay.h"
 #include "LightsManager.h"
-
+//#include "ofxShadow.h"
 #include "ScenarioEditor.h"
 
 class PinballChinoManager: public InputEventManager {
@@ -81,7 +81,8 @@ public:
     void onReleaseBallLauncherEvent(void);
     void ToggleDrawDebug(void);
 	
-
+	//Shadoew
+	//ofxShadow simple_shadow;
 
     
 	
