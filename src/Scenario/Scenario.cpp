@@ -125,15 +125,12 @@ void Scenario::draw(bool bEditorMode){
 	
 	ofSetColor(ofColor::gray);
 	
-	//for(int i = 0; i < bounds.size(); i++) {
-		
+	//Draw the basic scneario ground
+	if(bounds.size()>0){
 		material.begin();
 		bounds[0]->draw();
 		material.end();
-		
-  //  }
-	
-
+	}
     
 	ofDrawAxis(1);
     
