@@ -30,7 +30,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     
     world = myWorld;
     body.create(world.world, position, mass, radius);
-    body.setProperties(0.45, 0.45); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(0.45, 0.25); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
     type = ShapeTypeBall;

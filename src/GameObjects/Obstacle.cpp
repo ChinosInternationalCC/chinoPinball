@@ -55,6 +55,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
+	
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     

@@ -88,7 +88,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		}
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
-		bounds[i]->setProperties(.95, .5); // .25 (more restituition means more energy) , .95 ( friction )
+		bounds[i]->setProperties(.95, .3); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 		
 		lastPosIdCoverScenario = i;
@@ -119,7 +119,12 @@ void Scenario::draw(bool bEditorMode){
 	material.begin();
 	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->draw(bEditorMode);
+		//Not Paint the Walls, id 9 and 10...
+		if( i == 11){}
+		else if (i == 12){}
+		else {
+			ScenarioObjects[i]->draw(bEditorMode);
+		}
     }
 	material.end();
 	
