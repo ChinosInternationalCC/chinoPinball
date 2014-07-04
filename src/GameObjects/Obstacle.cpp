@@ -11,7 +11,7 @@
 Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
-    
+    collisionPoints = 0;
 }
 
 //---------------------------------
@@ -204,7 +204,7 @@ string Obstacle::getObjectName(){
 //------------------------------------------------------------
 void Obstacle::onCollision(){
     
-    GameStatus::getInstance()->AddPoints(1);
+	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
     //play sound

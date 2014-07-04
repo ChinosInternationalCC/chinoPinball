@@ -54,7 +54,7 @@ void GameStatusDisplay::draw3dFont(void){
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
         ofSetColor(5, 200, 220);
         font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
-        font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
+        //font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
         
     }
     MediaUtils::billboardEnd();

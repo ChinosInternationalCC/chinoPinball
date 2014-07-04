@@ -76,6 +76,8 @@ void PinballChinoManager::setup(){
 	
 	//Shadows
 	//simple_shadow.setup(&camera);
+	
+
     
 }
 
@@ -361,6 +363,15 @@ void PinballChinoManager::keyReleased(int key){
             camera.setTransformMatrix(savedPose);
             cout << "load camera Pose xml" << endl;
             break;
+			/*
+		case 'g':
+			myScenario.ScenarioObjects[11]->onCollision();
+			myScenario.ScenarioObjects[12]->onCollision();
+			myScenario.ScenarioObjects[13]->onCollision();
+            break;
+			*/
+			
+			
     }
     
     InputEventManager::keyReleased(key);

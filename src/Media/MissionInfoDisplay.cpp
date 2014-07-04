@@ -13,10 +13,10 @@ MissionInfoDisplay::MissionInfoDisplay(void){
 	
     str = "";
     // The third parameter is depth, use it to extrude the shape.
-    fontLarge.loadFont("ARCADE.TTF", 200);
-    fontMedium.loadFont("ARCADE.TTF", 80);
-    startPositionX = -500;
-    startPositionY = 0;
+    fontLarge.loadFont("ARCADE.TTF", 30);
+    fontMedium.loadFont("ARCADE.TTF", 30);
+    startPositionX = 0;
+    startPositionY = -ofGetHeight()*0.5;
     
     ofAddListener(eventMission::onMissionUpdate,this, &MissionInfoDisplay::listenerOnUpdateMission);
     SplashScreenDuration = 1000;
@@ -41,7 +41,7 @@ void MissionInfoDisplay::draw(void){
                         ofScale(1, -1, 1);  // Flip back since we're in 3D.
                         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
                         ofSetColor(5, 200, 220);
-                        str = "CALIFICATION";
+                        str = "MISSIO ACTIVADA";
                         fontMedium.drawString(ofToString(str, 2), startPositionX, startPositionY);
                         
                         
@@ -109,7 +109,7 @@ void MissionInfoDisplay::drawElapsedMissionTime(void){
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
         ofSetColor(5, 200, 220);
-        fontLarge.drawString(ofToString(currentMission->getElapsedMissionTime(), 2), startPositionX, startPositionY);
+        fontLarge.drawString(ofToString(currentMission->getRemainingMissionTime(), 2), startPositionX, startPositionY);
         
         
     }

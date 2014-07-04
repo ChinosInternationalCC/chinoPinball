@@ -333,7 +333,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             //string strcolor = ScenarioXml.getValue("color", "0xFFFFFF", 0);
 			int color = ScenarioXml.getValue("color", 0xFFFFFF, 0);
 			
-			//int color = ofHexToInt(strcolor);
+			int pointsCollision = ScenarioXml.getValue("pointsCollision", 0, 0);
 
 			
             switch(Type){
@@ -343,6 +343,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
                     oBall->color = color;
+					
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -356,7 +357,6 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     ScenarioObjects.push_back(oHammer);
 					
 					oHammer->setupRot();
-
                 }
                 break;
                     
@@ -380,7 +380,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oObstable->setRotation(rotation);
                     oObstable->color = color;
                     ScenarioObjects.push_back(oObstable);
-					
+					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
 
                 }
@@ -435,7 +435,8 @@ void Scenario::saveToXml(){
         //ScenarioXml.addValue("color", "0x"+resColor);
 		
 		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
-		
+		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
+
         
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
