@@ -23,6 +23,16 @@ void OSCManager::listenerOnCollission(eventComunication & args){
         m.setAddress("/Collision/Object/Id");
         m.addIntArg(args.pObject->GetObjectId());
         sender.sendMessage(m);
+		
+		m.clear();
+        m.setAddress("/Collision/Object/"+ofToString(args.pObject->GetObjectId()));
+        m.addFloatArg(1.0);
+        sender.sendMessage(m);
+		
+		m.clear();
+        m.setAddress("/Collision/Object/"+ofToString(args.pObject->GetObjectId()));
+        m.addFloatArg(0.0);
+        sender.sendMessage(m);
     
         m.clear();
         m.setAddress("/Collision/Object/Name");

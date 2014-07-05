@@ -216,10 +216,10 @@
         <scaleX>0.316684633</scaleX>
         <scaleY>0.316684633</scaleY>
         <scaleZ>0.316684633</scaleZ>
-        <rotationX>-0.519131660</rotationX>
-        <rotationY>-0.500197053</rotationY>
-        <rotationZ>0.464041829</rotationZ>
-        <rotationW>0.514752746</rotationW>
+        <rotationX>0.499863565</rotationX>
+        <rotationY>0.519454718</rotationY>
+        <rotationZ>-0.483158171</rotationZ>
+        <rotationW>-0.496851504</rotationW>
         <path>3DModels/MURO2.obj</path>
     </object>
     <object>
@@ -263,67 +263,67 @@
         <id>16</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>6.703311920</positionX>
-        <positionY>4.317001820</positionY>
+        <positionX>7.823314190</positionX>
+        <positionY>8.177000999</positionY>
         <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
         <rotationX>0.274471372</rotationX>
-        <rotationY>0.961508930</rotationY>
+        <rotationY>0.961508870</rotationY>
         <rotationZ>-0.004483534</rotationZ>
         <rotationW>-0.012087960</rotationW>
         <path>3DMODELS/pinball_stl/channel1_a.stl</path>
     </object>
     <object>
-        <type>6</type>
+        <type>7</type>
         <id>16</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>6.496696949</positionX>
-        <positionY>6.777013302</positionY>
+        <positionX>7.776697159</positionX>
+        <positionY>10.577007294</positionY>
         <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.334528774</rotationX>
-        <rotationY>0.942297339</rotationY>
-        <rotationZ>-0.003712730</rotationZ>
-        <rotationW>-0.012346482</rotationW>
+        <rotationX>0.413528293</rotationX>
+        <rotationY>0.910399973</rotationY>
+        <rotationZ>-0.002648243</rotationZ>
+        <rotationW>-0.012617726</rotationW>
         <path>3DMODELS/pinball_stl/channel1_b.stl</path>
     </object>
-	<object>
-        <type>6</type>
+    <object>
+        <type>7</type>
         <id>17</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>8.703311920</positionX>
-        <positionY>4.317001820</positionY>
+        <positionX>9.903333664</positionX>
+        <positionY>12.596945763</positionY>
         <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.274471372</rotationX>
-        <rotationY>0.961508930</rotationY>
-        <rotationZ>-0.004483534</rotationZ>
-        <rotationW>-0.012087960</rotationW>
+        <rotationX>0.955862105</rotationX>
+        <rotationY>-0.293532580</rotationY>
+        <rotationZ>0.012174705</rotationZ>
+        <rotationW>-0.004242356</rotationW>
         <path>3DMODELS/pinball_stl/channel2_a.stl</path>
     </object>
     <object>
-        <type>6</type>
+        <type>7</type>
         <id>18</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>4.496696949</positionX>
-        <positionY>3.777013302</positionY>
+        <positionX>10.276722908</positionX>
+        <positionY>10.217011452</positionY>
         <positionZ>-0.899999976</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.334528774</rotationX>
-        <rotationY>0.942297339</rotationY>
-        <rotationZ>-0.003712730</rotationZ>
-        <rotationW>-0.012346482</rotationW>
+        <rotationX>0.968602419</rotationX>
+        <rotationY>-0.248280510</rotationY>
+        <rotationZ>0.011961820</rotationZ>
+        <rotationW>-0.004809889</rotationW>
         <path>3DMODELS/pinball_stl/channel2_b.stl</path>
     </object>
     <object>

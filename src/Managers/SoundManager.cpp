@@ -65,11 +65,22 @@ SoundManager::SoundManager(void){
     soundObj[4]->setVolume(0.5f);
     soundObj[4]->setMultiPlay(false);
 	
+
+	soundFiles.push_back("sounds/bumper01.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[5]->loadSound(soundFiles[5]);
+    soundObj[5]->setVolume(0.5f);
+    soundObj[5]->setMultiPlay(false);
+	
+	
 	//EVENTS
 	ofAddListener(eventGame::onGameEvent,this, &SoundManager::listenerOnHammerLaunch);
 	
 	ofAddListener(eventComunication::onNewCom,this, &SoundManager::listenerOnCollission);
     ofAddListener(eventMission::onMissionUpdate,this, &SoundManager::listenerOnUpdateMission);
+	
+	bMute = false;
 	
 }
 
@@ -79,7 +90,8 @@ SoundManager::SoundManager(void){
 }*/
 //------------------------------------
 void SoundManager::PlaySound(int idAudio){
-    this->soundObj[idAudio]->play();
+	if (!bMute)
+		this->soundObj[idAudio]->play();
 }
 
 
@@ -88,7 +100,8 @@ void SoundManager::PlaySound(int idAudio){
 void SoundManager::listenerOnHammerLaunch(eventGame & args){
 
 	if(args.gameEvent == eventGame::GAME_EVENT_HAMMER_LAUNCH){
-		soundObj[launchBall]->play();
+		if (!bMute)
+			soundObj[launchBall]->play();
 	}
 	
 }
@@ -97,8 +110,18 @@ void SoundManager::listenerOnHammerLaunch(eventGame & args){
 void SoundManager::listenerOnCollission(eventComunication & args){
 			
 	if(args.collision){
-		soundObj[ObjCol1]->play();
+		if (!bMute)
+			soundObj[ObjCol1]->play();
 	}
+}
+
+void SoundManager::Mute(bool flag){
+	bMute = flag;
+}
+
+void SoundManager::TogleMute(){
+	bMute = !bMute;
+	
 }
 
 //--------------------------------------------------------------------
@@ -109,8 +132,8 @@ void SoundManager::listenerOnUpdateMission(eventMission & args){
             
             if (NULL != args.pMission){
 			}
-			
-			soundObj[songGeneralGame]->play();
+			if (!bMute)
+				soundObj[songGeneralGame]->play();
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:

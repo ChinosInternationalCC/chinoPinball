@@ -21,7 +21,7 @@ public:
     ofxFTGLFont font;
     string str;
     
-    
+    void GameOver(void);
     //ofLight light;
     //ofMaterial material;
     
@@ -32,9 +32,16 @@ public:
 private:
     ofEasyCam cam;
     int startPositionX, startPositionY;
+	 ofxFTGLFont fontMedium;
+	int GOstartPositionX, GOstartPositionY;
     void setup3dFont(void);
     void draw3dFont(void);
     void draw2dFont(void);
+	
+	
+	int SplashScreenDuration;
+    double SplashScreenTimer;
+	bool displayGameOver;
 
 };
 

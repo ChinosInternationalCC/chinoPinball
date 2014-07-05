@@ -30,6 +30,9 @@ public:
 	void listenerOnCollission(eventComunication & args);
 	void listenerOnUpdateMission(eventMission & args);
 	
+	void Mute(bool flag);
+	void TogleMute();
+	
 private:
 	// singleton stuff
 	static bool    instanceFlag;
@@ -37,6 +40,7 @@ private:
     
     vector<string> soundFiles;
     vector<ofSoundPlayer*> soundObj;
+	bool bMute;
 	
 };
 

@@ -208,7 +208,13 @@ void PinballChinoManager::onRestartGameEvent(void){
     
     //do other stuff that should be done whe restaring game score stuff etc
     
+	/* reset current mission */
     (currentMissions)[idcurrentMission]->resetMission();
+	if(GameStatus::getInstance()->Death()){
+		GameStatus::getInstance()->NewPlayer();
+		statusDisplay.GameOver();
+	}
+	
     
 }
 
@@ -362,6 +368,9 @@ void PinballChinoManager::keyReleased(int key){
             savedPose = loadCameraPosition(); // write over the savedCamPose var
             camera.setTransformMatrix(savedPose);
             cout << "load camera Pose xml" << endl;
+            break;
+		case 'n':
+			SoundManager::getInstance()->TogleMute();
             break;
 			/*
 		case 'g':
