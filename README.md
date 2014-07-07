@@ -1,17 +1,13 @@
 chinoPinball
 ============
 
-Pinball. ChinoPinball is an opensource tool for mapping pinball via projection.
-
-The project is under development.
+ChinoPinball is an opensource tool for mapping pinball via projection.
 
 ***
-###Roadmap
+###Videos with the ChinoPinball in action
 
-- First step, build a pinball game ( forces , objects, textures, events, score, scenes, etc )
-- Map the game projection to a physical space
-- Create scenario editor for editing scenario directly at the place where it is projected 
-- Build interfaces to shoot and play game
+ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
+
 
 ***
 ###Screenshot
@@ -91,7 +87,7 @@ http://www.youtube.com/watch?v=YvyRM175uQ0
 * ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 * ofxFTGL https://github.com/Flightphase/ofxFTGL
 
-Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.8, LLVM compiler) and Windows (CodeBlocks) (not countinued)
+Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (CodeBlocks) (not countinued)
 
 We are using MadMapper for projection mapping http://www.madmapper.com
 
