@@ -35,7 +35,7 @@ public:
     float angle; // degrees
 	float lowerLimit;
 	float upperLimit;
-    float speed;
+    float speed, speedUp, speedDown;
     float axisX;
     
     bool isKeyPressed;

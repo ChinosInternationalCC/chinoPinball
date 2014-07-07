@@ -29,6 +29,7 @@ GameStatus* GameStatus::getInstance(void){
 void GameStatus::NewPlayer(void){
 	idPlayer += 1;
 	points = 0;
+	lives = NO_OF_LIVES;
     status = SETTING_UP_THE_GAME;
     myRanking.loadXmlRanking();
     

@@ -11,7 +11,7 @@
 Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
-    
+    collisionPoints = 0;
 }
 
 //---------------------------------
@@ -55,6 +55,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
+	
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
@@ -77,6 +78,8 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	setupRot();
 	
     body.activate();
+	
+	setDefaultZ();
     
 }
 
@@ -202,7 +205,7 @@ string Obstacle::getObjectName(){
 //------------------------------------------------------------
 void Obstacle::onCollision(){
     
-    GameStatus::getInstance()->AddPoints(1);
+	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
@@ -218,7 +221,7 @@ void Obstacle::onCollision(){
 //------------------------------------------------------------
 void Obstacle::setDefaultZ(){
     
-    position.z = -0.5;
+    position.z = -0.9;
     setPosition(position);
     
 }

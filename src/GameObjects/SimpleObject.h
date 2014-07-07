@@ -113,6 +113,12 @@ public:
 	
 	//Missions
 	void setCurrentMissionId(int _idCurrentMission);
+	
+	
+	//Game vars
+	void setPointsCollision(int points);
+	int collisionPoints = 0;
+	
     
 protected:
 	int						idCurrtentMission;

@@ -65,7 +65,8 @@ void SimpleMission::loadMissionFromXML(int MissionID){
         
     }
 
-    MissionState = MISSION_IDLE;
+	MissionState = MISSION_IDLE;
+
 }
 
 //------------------------------------------------

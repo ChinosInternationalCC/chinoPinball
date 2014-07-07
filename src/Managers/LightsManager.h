@@ -19,7 +19,8 @@ public:
     void setMainLightPosition(ofVec3f lightPos);
 private:
     
-    ofLight pointLight,mainLight;
+    //ofLight pointLight,
+	ofLight mainLight;
     float radius;
 	ofVec3f center;
     ofVec3f mainLightPosition;

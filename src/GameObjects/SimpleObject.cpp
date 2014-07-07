@@ -32,6 +32,8 @@ SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	this->idCurrtentMission = 0;
 	this->currentMissions = _currentMissions;
 	
+	collisionPoints = 0;
+	
 }
 
 //--------------------------------------------------------------
@@ -52,25 +54,34 @@ void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
 //void SimpleObject::draw(bool bEditorMode){
 //}
 
-
+//--------------------------------------------------------------
 void SimpleObject::SetObjectId(int objId){
     ObjectId = objId;
     
 }
+//--------------------------------------------------------------
 int SimpleObject::GetObjectId(void){
     return ObjectId;
 }
 
+//--------------------------------------------------------------
 void SimpleObject::setDebugMode(bool &DebugMode){
     this->bDebugMode = DebugMode;
     
 }
 
+//--------------------------------------------------------------
 void SimpleObject::drawDebug(void){
     
         ofSetColor(255, 255, 255);
         ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
         ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), position.x,position.y+1);
 }
+
+//--------------------------------------------------------------
+void SimpleObject::setPointsCollision(int points){
+	collisionPoints = points;
+}
+
 
 

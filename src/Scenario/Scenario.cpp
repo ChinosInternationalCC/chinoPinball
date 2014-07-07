@@ -35,8 +35,6 @@ void Scenario::setup(ofxBulletWorldRigid &_world){
 	//copy a reference
 	//world = _world;
     DebugMode = false;
-    
-    
 
 }
 
@@ -90,11 +88,18 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 		}
 		
 		bounds[i]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
-		bounds[i]->setProperties(.95, .5); // .25 (more restituition means more energy) , .95 ( friction )
+		bounds[i]->setProperties(.95, .3); // .25 (more restituition means more energy) , .95 ( friction )
 		bounds[i]->add();
 		
 		lastPosIdCoverScenario = i;
+
+
 	}
+	
+	
+	
+	
+
 }
 
 //--------------------------------------------------------------
@@ -109,18 +114,41 @@ void Scenario::update(bool bEditorMode){
 //--------------------------------------------------------------
 void Scenario::draw(bool bEditorMode){
     
+	ofSetColor(ofColor::white);
+	
+	material.begin();
+	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-        ScenarioObjects[i]->draw(bEditorMode);
+		//Not Paint the Walls, id 9 and 10...
+		if( i == 11){}
+		else if (i == 12){}
+		else {
+			ScenarioObjects[i]->draw(bEditorMode);
+		}
     }
+	material.end();
+	
+	ofSetColor(ofColor::gray);
+	
+	//Draw the basic scneario ground
+	if(bounds.size()>0){
+		material.begin();
+		bounds[0]->draw();
+		material.end();
+	}
     
 	ofDrawAxis(1);
     
 }
 
 void Scenario::drawDebug(void){
+	
+		material.begin();
+	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
         ScenarioObjects[i]->drawDebug();
     }
+		material.end();
     
 }
 
@@ -306,10 +334,13 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             string path;
             path = ScenarioXml.getValue("path","", 0);
             
-            int color = 0xFFFFFF;
             //TODO uncomment the line below when the xml is properly configured
-            //color = ScenarioXml.getValue("color",0, 0);
-            
+            //string strcolor = ScenarioXml.getValue("color", "0xFFFFFF", 0);
+			int color = ScenarioXml.getValue("color", 0xFFFFFF, 0);
+			
+			int pointsCollision = ScenarioXml.getValue("pointsCollision", 0, 0);
+
+			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball(currentMissions);
@@ -317,6 +348,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
                     oBall->color = color;
+					
                     ScenarioObjects.push_back(oBall);
                 }
                 break;
@@ -330,7 +362,6 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     ScenarioObjects.push_back(oHammer);
 					
 					oHammer->setupRot();
-
                 }
                 break;
                     
@@ -354,7 +385,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oObstable->setRotation(rotation);
                     oObstable->color = color;
                     ScenarioObjects.push_back(oObstable);
-					
+					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
 
                 }
@@ -402,7 +433,15 @@ void Scenario::saveToXml(){
     
         ScenarioXml.addValue("type", ScenarioObjects[i]->type);
         ScenarioXml.addValue("id", ScenarioObjects[i]->GetObjectId());
-        ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		
+		//string auxColor = ofToHex(ofColor(ScenarioObjects[i]->color);
+		//string resColor = auxColor.substr(2,auxColor.length());
+		//resColor = ofToUpper(resColor);
+        //ScenarioXml.addValue("color", "0x"+resColor);
+		
+		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
+
         
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);

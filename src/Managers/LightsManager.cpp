@@ -19,28 +19,28 @@ void LightsManager::setup(void){
     
     // specular color, the highlight/shininess color //
 	//pointLight.setSpecularColor( ofColor(255.f, 255.f, 0.f));
-	pointLight.setPointLight();
+	//pointLight.setPointLight();
     
 }
 void LightsManager::update(void){
     center = mainLightPosition;
     
-    pointLight.setPosition(cos(ofGetElapsedTimef()*.06f) * radius * 2 + center.x,
+    /*pointLight.setPosition(cos(ofGetElapsedTimef()*.06f) * radius * 2 + center.x,
 						   sin(ofGetElapsedTimef()*.08f) * radius * 2 + center.y,
-						   -cos(ofGetElapsedTimef()*.08f) * radius * 2 + center.z);
+						   -cos(ofGetElapsedTimef()*.08f) * radius * 2 + center.z);*/
     
 }
 
 void LightsManager::enable(void){
-    pointLight.enable();
-    //mainLight.enable();
+    //pointLight.enable();
+    mainLight.enable();
 }
 void LightsManager::disable(void){
-    pointLight.disable();
-    //mainLight.disable();
+   // pointLight.disable();
+    mainLight.disable();
 }
 void LightsManager::draw(void){
-    pointLight.draw();
+    //pointLight.draw();
 }
 
 void LightsManager::setMainLightPosition(ofVec3f lightPos){

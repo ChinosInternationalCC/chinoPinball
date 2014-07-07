@@ -22,6 +22,8 @@ PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGe
 	
 	currentMissions.push_back(mission1);
 	currentMissions.push_back(mission2);
+	
+
 }
 
 //--------------------------------------------------------------
@@ -70,12 +72,24 @@ void PinballChinoManager::setup(){
     bDrawDebug = false;
     
     chinoLights.setup();
-    
+	
+	
+	//Shadows
+	//simple_shadow.setup(&camera);
+	
+
     
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
+	
+	// Shadows
+	//updating shadow color using mouse position
+	//ofColor shadow_color = ofFloatColor(0.1);
+	//simple_shadow.setShadowColor( shadow_color );
+	//simple_shadow.setLightPosition(myScenario.lightPos);
+
 	
 	world.update();
     chinoLights.update();
@@ -107,8 +121,9 @@ void PinballChinoManager::update(){
 //--------------------------------------------------------------
 void PinballChinoManager::draw(){
     
-	glEnable( GL_DEPTH_TEST );
+	
 	camera.begin();
+	glEnable( GL_DEPTH_TEST );
     
    
     chinoLights.setMainLightPosition(myScenario.lightPos);
@@ -131,13 +146,21 @@ void PinballChinoManager::draw(){
          
     }
 	
-    myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
-    
+	//Draw Scenario
+	myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
+	
+	//Draw Sceario shadow Map
+	//simple_shadow.begin();
+    //myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
+	//simple_shadow.end();
+	
 	chinoLights.disable();
 	ofDisableLighting();
-    
+
+ 
+	glDisable(GL_DEPTH_TEST);
 	camera.end();
-    glDisable(GL_DEPTH_TEST);
+
     
     statusDisplay.draw();
     missionDisplay.draw();
@@ -185,7 +208,13 @@ void PinballChinoManager::onRestartGameEvent(void){
     
     //do other stuff that should be done whe restaring game score stuff etc
     
+	/* reset current mission */
     (currentMissions)[idcurrentMission]->resetMission();
+	if(GameStatus::getInstance()->Death()){
+		GameStatus::getInstance()->NewPlayer();
+		statusDisplay.GameOver();
+	}
+	
     
 }
 
@@ -340,6 +369,18 @@ void PinballChinoManager::keyReleased(int key){
             camera.setTransformMatrix(savedPose);
             cout << "load camera Pose xml" << endl;
             break;
+		case 'n':
+			SoundManager::getInstance()->TogleMute();
+            break;
+			/*
+		case 'g':
+			myScenario.ScenarioObjects[11]->onCollision();
+			myScenario.ScenarioObjects[12]->onCollision();
+			myScenario.ScenarioObjects[13]->onCollision();
+            break;
+			*/
+			
+			
     }
     
     InputEventManager::keyReleased(key);
