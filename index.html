@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Chinopinball : Openframeworks Pinball with the Bullet 3D engine" />
+    <meta name="description" content="ChinoPinball : Openframeworks Pinball with the Bullet 3D engine" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Chinopinball</title>
+    <title>ChinoPinball</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/ChinosInternationalCC/chinoPinball">View on GitHub</a>
 
-          <h1 id="project_title">Chinopinball</h1>
+          <h1 id="project_title">ChinoPinball</h1>
           <h2 id="project_tagline">Openframeworks Pinball with the Bullet 3D engine</h2>
 
             <section id="downloads">
@@ -31,7 +31,185 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
+        <h1>
+<a name="chinopinball" class="anchor" href="#chinopinball"><span class="octicon octicon-link"></span></a>chinoPinball</h1>
+
+<p>ChinoPinball is an opensource tool for mapping pinball via projection.</p>
+
+<hr><h3>
+<a name="videos-with-the-chinopinball-in-action" class="anchor" href="#videos-with-the-chinopinball-in-action"><span class="octicon octicon-link"></span></a>Videos with the ChinoPinball in action</h3>
+
+<p>ChinoPinball@FAB10 2014 DHUB Barcelona <a href="https://vimeo.com/100059297">https://vimeo.com/100059297</a></p>
+
+<hr><h3>
+<a name="screenshot" class="anchor" href="#screenshot"><span class="octicon octicon-link"></span></a>Screenshot</h3>
+
+<p><img src="/doc/screenshot.png" alt="Screenshot"></p>
+
+<hr><h3>
+<a name="github" class="anchor" href="#github"><span class="octicon octicon-link"></span></a>GITHUB</h3>
+
+<p><strong>fork</strong> master branch</p>
+
+<p>Dude, where's my fork? 
+Each developer has to fork in his Github ( click on website fork ) 
+Then clone it to you git client</p>
+
+<pre><code>    &gt;&gt; git clone http://GitHubProjectAdresss
+</code></pre>
+
+<p>develop your code
+add changes to the local repo</p>
+
+<pre><code>    &gt;&gt; git add &lt;filename&gt;
+    or
+    &gt;&gt; git add *
+</code></pre>
+
+<p>upload your changes to your github branch</p>
+
+<pre><code>    &gt;&gt; git stage xxx file
+    &gt;&gt; git commit -m 'message to the statge files'
+    &gt;&gt; git push or git push -u origin master
+</code></pre>
+
+<p>if the local repo is not connected to the remote one</p>
+
+<pre><code>    &gt;&gt; git remote add origin &lt;server&gt;
+</code></pre>
+
+<p>update local repository with remote changes</p>
+
+<pre><code>    git pull
+</code></pre>
+
+<p>branches</p>
+
+<pre><code>    &gt;&gt; git checkout -b &lt;branch&gt; #create new branch
+    &gt;&gt; git checkout master #switch to master branch
+    &gt;&gt; git branch -d &lt;branch&gt; #delete branch
+    &gt;&gt; git push origin &lt;branch&gt; #push branch to remote repository
+
+</code></pre>
+
+<p>merge</p>
+
+<pre><code>    git merge &lt;branch&gt;
+</code></pre>
+
+<p>restore file with the last working copy from HEAD</p>
+
+<pre><code>    &gt;&gt; git checkout -- &lt;filename&gt;
+</code></pre>
+
+<p>When finally
+u wanna merge it, to chinos  master branch 
+push from origin to master  </p>
+
+<pre><code>    &gt;&gt; git push -u origin masterChinos
+</code></pre>
+
+<hr><h3>
+<a name="examples-of-similar-projects" class="anchor" href="#examples-of-similar-projects"><span class="octicon octicon-link"></span></a>Examples of similar projects</h3>
+
+<p><a href="http://www.youtube.com/watch?v=eyUKAFCaHzo">http://www.youtube.com/watch?v=eyUKAFCaHzo</a>
+<a href="http://www.youtube.com/watch?v=MljNwzBp1y8">http://www.youtube.com/watch?v=MljNwzBp1y8</a>
+<a href="http://www.youtube.com/watch?v=YvyRM175uQ0">http://www.youtube.com/watch?v=YvyRM175uQ0</a></p>
+
+<hr><h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<ul>
+<li>OF008 <a href="http://www.openframeworks.cc">http://www.openframeworks.cc</a> </li>
+<li>ofxBullet <a href="https://github.com/NickHardeman/ofxBullet">https://github.com/NickHardeman/ofxBullet</a>
+</li>
+<li>ofxSyphon <a href="https://github.com/astellato/ofxSyphon">https://github.com/astellato/ofxSyphon</a>
+</li>
+<li>ofxJSON <a href="https://github.com/jefftimesten/ofxJSON.git">https://github.com/jefftimesten/ofxJSON.git</a>
+</li>
+<li>ofxDmx <a href="https://github.com/kylemcdonald/ofxDmx.git">https://github.com/kylemcdonald/ofxDmx.git</a>
+</li>
+<li>ofxFTGL <a href="https://github.com/Flightphase/ofxFTGL">https://github.com/Flightphase/ofxFTGL</a>
+</li>
+</ul><p>Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (CodeBlocks) (not countinued)</p>
+
+<p>We are using MadMapper for projection mapping <a href="http://www.madmapper.com">http://www.madmapper.com</a></p>
+
+<hr><h3>
+<a name="classhierarchy" class="anchor" href="#classhierarchy"><span class="octicon octicon-link"></span></a>ClassHierarchy</h3>
+
+<p><img src="/doc/ClassHierarchy.png" alt="ClassHierarchy"></p>
+
+<hr><h3>
+<a name="systemoverview" class="anchor" href="#systemoverview"><span class="octicon octicon-link"></span></a>SystemOverview</h3>
+
+<p><img src="/doc/ChinoPinballDeploymentDiagram.jpg" alt="SystemOverview"></p>
+
+<hr><h3>
+<a name="projection-mapping" class="anchor" href="#projection-mapping"><span class="octicon octicon-link"></span></a>Projection mapping</h3>
+
+<p><strong>Mappig the game on one surface with 3D elements</strong></p>
+
+<ul>
+<li>First step is to find or build a physical space for mapping (like a wall or ramp with some 3D elements)</li>
+<li>Second, setup projector and don't touch it later</li>
+<li>Next, in the game, adjust free camera position and FOV according to spectators' point of view (it is not the same as projector's point of view) and fix the camera</li>
+<li>In Madmapper grab video from Syphon and adjust it so that game's perspective fits to the physical space</li>
+<li>Edit scenario using scenario editor to fit the table and objects to physical elements<br>
+</li>
+</ul><p><strong>Mappig the game on multiple surfaces with 3D elements</strong></p>
+
+<p>We don't know how to do this yet ...</p>
+
+<hr><h3>
+<a name="scenario-editor" class="anchor" href="#scenario-editor"><span class="octicon octicon-link"></span></a>Scenario editor</h3>
+
+<p>The idea is to be able to create scenario directly on the place where the game will be projected, without prior preparation (only the objects could be prepared earlier).
+Then, maybe we could also let the people create scenarios by themselves. </p>
+
+<p>Editor should have the following functionalities:</p>
+
+<ul>
+<li>saved/load scenario to a file</li>
+<li>change width and height of a table (with walls)</li>
+<li>add new objects</li>
+<li>select object to edit</li>
+<li>edit object's properties:
+
+<ul>
+<li>position XY (we can forget about Z for now), the best would be drag&amp;drop</li>
+<li>scale</li>
+<li>rotation</li>
+<li>color</li>
+</ul>
+</li>
+<li>objects types: lever, hammer, obstacle ...</li>
+</ul><hr><h3>
+<a name="key-bindings" class="anchor" href="#key-bindings"><span class="octicon octicon-link"></span></a>Key bindings</h3>
+
+<ul>
+<li>F1 - OF_LOG_SILENT</li>
+<li>F2 - OF_LOG_VERBOSE</li>
+<li>F3 - CollisionVerbose</li>
+<li>F4 - EditorVerbose
+PinballChinoManager</li>
+<li>f - fullscreen</li>
+<li>s - save camera position to file</li>
+<li>l - load camera postion
+InputEventManager</li>
+<li>enter - restart game</li>
+<li>down - move hammer</li>
+<li>m/M - move right lever</li>
+<li>z/Z - move right lever</li>
+<li>d/D - draw debug
+ScenarioEditor</li>
+<li>e - toggle editor mode</li>
+<li>x - saving scenario to file</li>
+<li>0 - add a ball</li>
+<li>3 - add a lever</li>
+<li>5 - add a hammer</li>
+<li>6 - add an obstacle</li>
+</ul><h3>
 <a name="github-pages-tutorial" class="anchor" href="#github-pages-tutorial"><span class="octicon octicon-link"></span></a>GitHub Pages Tutorial.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
@@ -68,7 +246,7 @@ $ git checkout gh-pages
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Chinopinball maintained by <a href="https://github.com/ChinosInternationalCC">ChinosInternationalCC</a></p>
+        <p class="copyright">ChinoPinball maintained by <a href="https://github.com/ChinosInternationalCC">ChinosInternationalCC</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
