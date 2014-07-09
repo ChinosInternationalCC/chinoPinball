@@ -25,7 +25,12 @@
 class Scenario {
     
 public:
-    void setCurrentMission(SimpleMission *currentMission);
+	
+	//Missions
+    void setCurrentMission(int idMission);
+    void setupMissions(vector <SimpleMission *> *missions);
+	
+	///
 	void setup(ofxBulletWorldRigid &world);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
@@ -66,6 +71,9 @@ public:
     //general Light ambient
     ofVec3f                 lightPos;
 	
+	//material for shadows
+	ofMaterial material;
+	
 	void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
 	void addCoverScenario(ofxBulletWorldRigid &world);
 	void removeCoverScenario();
@@ -103,7 +111,9 @@ private:
 	int	 lastPosIdCoverScenario;
 	//BASIC SCENARIO STATGE/////////////////////////////////////
 	
-    SimpleMission *currentMission;
+    vector<SimpleMission *> *currentMissions;
+	int idCurrentMission;
+	
     bool DebugMode;
 	
 };

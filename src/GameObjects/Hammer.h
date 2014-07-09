@@ -9,6 +9,7 @@
 #pragma once
 
 #include "SimpleObject.h"
+#include "eventGame.h"
 
 /*
  Objeto que se usa para empujar la bola (en el estado initial o para los objectos containers)
@@ -18,7 +19,7 @@
 class Hammer : public SimpleObject {
     
 public:
-    Hammer(SimpleMission *currentMission);
+    Hammer(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f pos);
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
@@ -43,6 +44,10 @@ public:
     void setDefaultZ();
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
+	
+	
+	//Event launch hammer
+	bool bLaunch = true;
     
  /*
     energy ( float )

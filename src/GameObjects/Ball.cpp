@@ -9,12 +9,15 @@
 #include "Ball.h"
 
 //---------------------------------
-Ball::Ball(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Ball::Ball(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     m_status = BallStatusWaiting;
 	radius = .5;
 	mass = 1;
+	
+	shadow.set(radius, 0.1);
+	shadow.setResolution(20, 1);
 }
 
 //---------------------------------
@@ -27,7 +30,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     
     world = myWorld;
     body.create(world.world, position, mass, radius);
-    body.setProperties(0.95, 0.95); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(0.45, 0.25); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
     type = ShapeTypeBall;
@@ -37,14 +40,30 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
 
 //----------------------------------
 void Ball::update(bool bEditorMode){
-    
+
+    shadow.setPosition(body.getPosition().x, body.getPosition().y, 0.0);
+	shadow.setRadius(radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
+
 }
 
 //--------------------------------------------------------------
 void Ball::draw(bool bEditorMode){
     
 	ofSetHexColor(color);
+	
+	material.begin();
     body.draw();
+    material.end();
+	
+	ofSetColor(ofColor::black);
+	
+	//black color
+	ofPushMatrix();
+		ofTranslate(shadow.getPosition());
+		ofRotate(90, 1, 0, 0);
+		ofTranslate(-shadow.getPosition());
+		shadow.draw();
+	ofPopMatrix();
     
 }
 
@@ -105,7 +124,9 @@ void Ball::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void Ball::setPosition(ofVec3f position){
+void Ball::setPosition(ofVec3f pos){
+    
+    position = pos;
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();

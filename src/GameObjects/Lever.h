@@ -15,7 +15,7 @@ class Lever : public SimpleObject {
     
 public:
     
-    Lever(SimpleMission *currentMission);
+    Lever(vector <SimpleMission *> * _currentMissions);
 	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url, ofVec3f ModelScale, int setDirection);
     
 	void update(bool bEditorMode);
@@ -35,7 +35,7 @@ public:
     float angle; // degrees
 	float lowerLimit;
 	float upperLimit;
-    float speed;
+    float speed, speedUp, speedDown;
     float axisX;
     
     bool isKeyPressed;

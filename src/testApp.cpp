@@ -5,12 +5,16 @@ void testApp::setup() {
 	// setup OF
     //ofSetFrameRate(60);
 	//ofSetVerticalSync(true);
-	ofBackground( 10, 10, 10);
+	ofBackground( 255, 255, 255, 0);
+	
 #ifdef USE_SYPHON
     mainOutputSyphonServer.setName("Screen Output");
+	//mainOutputSyphonServer.
 #endif
 
 	chinopinball.setup();
+	
+	ofEnableAlphaBlending(); //TODO TEST for send Alpha with Syphon ??
 	
 }
 
@@ -24,10 +28,15 @@ void testApp::update() {
 //--------------------------------------------------------------
 void testApp::draw() {
     
+	// Clear with alpha, so we can capture via syphon and composite elsewhere should we want.
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
     chinopinball.draw();
 #ifdef USE_SYPHON
     mainOutputSyphonServer.publishScreen();
 #endif
+
 }
 
 //--------------------------------------------------------------

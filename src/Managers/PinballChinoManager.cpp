@@ -11,7 +11,19 @@
 #include "eventComunication.h"
 
 PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
-  currentMission = new SimpleMission(1);  
+//  currentMission = new SimpleMission(1);
+	
+
+	SimpleMission* mission0 = new SimpleMission(0);
+	idcurrentMission = 0;
+	SimpleMission* mission1 = new SimpleMission(1);
+	SimpleMission* mission2 = new SimpleMission(2);
+	
+	
+	currentMissions.push_back(mission1);
+	currentMissions.push_back(mission2);
+	
+
 }
 
 //--------------------------------------------------------------
@@ -35,7 +47,8 @@ void PinballChinoManager::setup(){
     camera.setTransformMatrix(savedPose);
     
     // setup scenario
-    myScenario.setCurrentMission(currentMission);
+	myScenario.setupMissions(&currentMissions);
+	myScenario.setCurrentMission(idcurrentMission);
     myScenario.setup(world);
     
     // setup scenario editor
@@ -58,15 +71,28 @@ void PinballChinoManager::setup(){
     
     bDrawDebug = false;
     
-    
-    
+    chinoLights.setup();
+	
+	
+	//Shadows
+	//simple_shadow.setup(&camera);
+	
+
     
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
 	
+	// Shadows
+	//updating shadow color using mouse position
+	//ofColor shadow_color = ofFloatColor(0.1);
+	//simple_shadow.setShadowColor( shadow_color );
+	//simple_shadow.setLightPosition(myScenario.lightPos);
+
+	
 	world.update();
+    chinoLights.update();
     
     myScenario.update(ScenarioEditor::getInstance()->bEscenarioEditorMode);
 	
@@ -88,24 +114,23 @@ void PinballChinoManager::update(){
         }
     }
 
-    currentMission->update();
+    (currentMissions)[idcurrentMission]->update();
     
 }
 
 //--------------------------------------------------------------
 void PinballChinoManager::draw(){
     
-	glEnable( GL_DEPTH_TEST );
+	
 	camera.begin();
+	glEnable( GL_DEPTH_TEST );
     
-    /* set light position 
-     Tip: we could move it in setup if we will not change the position of the light at runtime
-     */
-    light.setPosition(myScenario.lightPos);
-
+   
+    chinoLights.setMainLightPosition(myScenario.lightPos);
+    
     
 	ofEnableLighting();
-	light.enable();
+    chinoLights.enable();
     
 
     // debug draw
@@ -121,23 +146,33 @@ void PinballChinoManager::draw(){
          
     }
 	
-    myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
-    
+	//Draw Scenario
+	myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
 	
-	light.disable();
+	//Draw Sceario shadow Map
+	//simple_shadow.begin();
+    //myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
+	//simple_shadow.end();
+	
+	chinoLights.disable();
 	ofDisableLighting();
-    
+
+ 
+	glDisable(GL_DEPTH_TEST);
 	camera.end();
-    glDisable(GL_DEPTH_TEST);
+
     
     statusDisplay.draw();
+    missionDisplay.draw();
     
     ScenarioEditor::getInstance()->draw();
     
     if(bDrawDebug){
 
-        currentMission->debugDraw();
+        (currentMissions)[idcurrentMission]->debugDraw();
     }
+    
+    chinoLights.draw();
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
@@ -155,13 +190,31 @@ void PinballChinoManager::onRestartGameEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 0)
         {
             Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
+            
+            for(int j = 0; j < myScenario.ScenarioObjects.size(); j++)
+            {
+                if (myScenario.ScenarioObjects[j]->type == 5)
+                {
+                    Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
+                    ofVec3f pos;
+                    pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    ball->setPosition(pos);
+                }
+            }
+            
             ball->reset();
         }
     }
     
     //do other stuff that should be done whe restaring game score stuff etc
     
-    currentMission->resetMission();
+	/* reset current mission */
+    (currentMissions)[idcurrentMission]->resetMission();
+	if(GameStatus::getInstance()->Death()){
+		GameStatus::getInstance()->NewPlayer();
+		statusDisplay.GameOver();
+	}
+	
     
 }
 
@@ -316,6 +369,18 @@ void PinballChinoManager::keyReleased(int key){
             camera.setTransformMatrix(savedPose);
             cout << "load camera Pose xml" << endl;
             break;
+		case 'n':
+			SoundManager::getInstance()->TogleMute();
+            break;
+			/*
+		case 'g':
+			myScenario.ScenarioObjects[11]->onCollision();
+			myScenario.ScenarioObjects[12]->onCollision();
+			myScenario.ScenarioObjects[13]->onCollision();
+            break;
+			*/
+			
+			
     }
     
     InputEventManager::keyReleased(key);
@@ -334,7 +399,7 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
         {
             ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
             myScenario.ScenarioObjects[i]->onCollision();
-            currentMission->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
+            (currentMissions)[idcurrentMission]->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
 		}
 	}
 }

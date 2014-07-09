@@ -10,6 +10,7 @@
 #define __chinoPinball__GameStatusDisplay__
 
 #include "ofxFTGL.h"
+#include "MediaUtils.h"
 
 
 class GameStatusDisplay{
@@ -20,9 +21,9 @@ public:
     ofxFTGLFont font;
     string str;
     
-    
-    ofLight light;
-    ofMaterial material;
+    void GameOver(void);
+    //ofLight light;
+    //ofMaterial material;
     
     bool show3dfont;
 
@@ -31,11 +32,17 @@ public:
 private:
     ofEasyCam cam;
     int startPositionX, startPositionY;
+	 ofxFTGLFont fontMedium;
+	int GOstartPositionX, GOstartPositionY;
     void setup3dFont(void);
     void draw3dFont(void);
     void draw2dFont(void);
-    void billboardBegin();
-    void billboardEnd();
+	
+	
+	int SplashScreenDuration;
+    double SplashScreenTimer;
+	bool displayGameOver;
+
 };
 
 #endif /* defined(__chinoPinball__GameStatusDisplay__) */

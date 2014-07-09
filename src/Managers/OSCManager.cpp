@@ -12,6 +12,7 @@
 OSCManager::OSCManager(){
     sender.setup(HOST, PORT);
     ofAddListener(eventComunication::onNewCom,this, &OSCManager::listenerOnCollission);
+    ofAddListener(eventMission::onMissionUpdate,this, &OSCManager::listenerOnUpdateMission);
     
 }
 
@@ -21,6 +22,16 @@ void OSCManager::listenerOnCollission(eventComunication & args){
         ofxOscMessage m;
         m.setAddress("/Collision/Object/Id");
         m.addIntArg(args.pObject->GetObjectId());
+        sender.sendMessage(m);
+		
+		m.clear();
+        m.setAddress("/Collision/Object/"+ofToString(args.pObject->GetObjectId()));
+        m.addFloatArg(1.0);
+        sender.sendMessage(m);
+		
+		m.clear();
+        m.setAddress("/Collision/Object/"+ofToString(args.pObject->GetObjectId()));
+        m.addFloatArg(0.0);
         sender.sendMessage(m);
     
         m.clear();
@@ -46,6 +57,67 @@ void OSCManager::listenerOnCollission(eventComunication & args){
         sender.sendMessage(m);
     }
     
+}
+
+void OSCManager::listenerOnUpdateMission(eventMission & args){
+    ofxOscMessage m;
+    
+    switch(args.eventType){
+        case eventMission::MISSION_EVENT_START_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            if (NULL != args.pMission){
+                m.setAddress("/Mission/ID");
+                m.addIntArg(args.pMission->GetCurrentMissionId());
+                sender.sendMessage(m);
+            }
+            
+            break;
+        case eventMission::MISSION_EVENT_END_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            if (NULL != args.pMission){
+                m.setAddress("/Mission/ID");
+                m.addIntArg(args.pMission->GetCurrentMissionId());
+                sender.sendMessage(m);
+            }
+            break;
+        case eventMission::MISSION_EVENT_MISSION_COMPLETED:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_START_CALIFICATION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_RESTART_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+        case eventMission::MISSION_EVENT_NEW_MISSION:
+            m.setAddress("/Mission/Event");
+            m.addIntArg(args.eventType);
+            sender.sendMessage(m);
+            m.clear();
+            
+            break;
+            
+    }
 }
 
 #endif

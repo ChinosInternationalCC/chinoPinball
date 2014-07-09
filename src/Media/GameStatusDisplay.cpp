@@ -16,7 +16,9 @@ GameStatusDisplay::GameStatusDisplay(int posX, int posY){
     startPositionY = posY;
     show3dfont = true;
     setup3dFont();
-    
+	SplashScreenDuration = 1000;
+    SplashScreenTimer = SplashScreenDuration;
+	displayGameOver= false;
     
 }
 
@@ -32,6 +34,9 @@ void GameStatusDisplay::setup3dFont(void){
     //light.setPosition(ofGetWidth() / 2, ofGetHeight() / 2, 200);
     //light.setPosition(startPositionX, startPositionY, 200);
     //material.setShininess(64);
+	fontMedium.loadFont("ARCADE.TTF", 30);
+    GOstartPositionX = 0;
+    GOstartPositionY = -ofGetHeight()*0.5;
     
 }
 
@@ -48,16 +53,16 @@ void GameStatusDisplay::draw3dFont(void){
     //light.enable();
     //material.begin();
     cam.begin();
-    billboardBegin();//always facing the camera
+    MediaUtils::billboardBegin();//always facing the camera
 	{
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
         ofSetColor(5, 200, 220);
         font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
-        font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
-        
+        //font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
+        font.drawString("balls  "+ofToString(status->GetRemainingLifes(), 0), -450, -200);
     }
-    billboardEnd();
+    MediaUtils::billboardEnd();
     cam.end();
     //material.end();
     
@@ -122,6 +127,14 @@ void GameStatusDisplay::draw2dFont(void){
 
     
 }
+
+void GameStatusDisplay::GameOver(void){
+	
+	SplashScreenTimer = ofGetElapsedTimeMillis();
+	displayGameOver = true;
+
+		
+}
 //------------------------------
 void GameStatusDisplay::draw(void){
     
@@ -129,39 +142,27 @@ void GameStatusDisplay::draw(void){
         draw3dFont();
     else
         draw2dFont();
+	
+	if (displayGameOver)
+	//game over
+		if ((ofGetElapsedTimeMillis() - SplashScreenTimer) < SplashScreenDuration){
+			cam.begin();
+			MediaUtils::billboardBegin();//always facing the camera
+			{
+				ofScale(1, -1, 1);  // Flip back since we're in 3D.
+				//font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+				ofSetColor(5, 200, 220);
+				string GOstr = "GAME OVER";
+				fontMedium.drawString(GOstr, GOstartPositionX, GOstartPositionY);
+			
+			
+			}
+			MediaUtils::billboardEnd();
+			cam.end();
+		}
+		else{
+			displayGameOver = false;
+		}
     
 }
 
-void GameStatusDisplay::billboardBegin() {
-    
-    float modelview[16];
-	int i,j;
-    
-	// save the current modelview matrix
-	glPushMatrix();
-    
-	// get the current modelview matrix
-	glGetFloatv(GL_MODELVIEW_MATRIX , modelview);
-    
-	// undo all rotations
-	// beware all scaling is lost as well
-	for( i=0; i<3; i++ )
-	    for( j=0; j<3; j++ ) {
-            if ( i==j )
-                modelview[i*4+j] = 1.0;
-            else
-                modelview[i*4+j] = 0.0;
-	    }
-    
-	// set the modelview with no rotations
-	glLoadMatrixf(modelview);
-}
-
-
-
-void GameStatusDisplay::billboardEnd() {
-    
-	// restore the previously
-	// stored modelview matrix
-	glPopMatrix();
-}

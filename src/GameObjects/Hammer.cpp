@@ -8,8 +8,8 @@
 
 #include "Hammer.h"
 
-Hammer::Hammer(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
     
 }
@@ -58,13 +58,27 @@ void Hammer::update(bool bEditorMode){
         {
             move(translationY + speed/8);
         }
+		
+		bLaunch = false;
     }
     else
     {
 		if(!bEditorMode){
 			if (translationY > lowerLimit)
 			{
+
 				move(translationY - speed);
+			}
+			else{
+				//TODO play once the sound play
+				if(!bLaunch){
+					bLaunch = true;
+					//Launch Event
+					eventGame lanchHammerSoundEvent;
+					lanchHammerSoundEvent.gameEvent = eventGame::GAME_EVENT_HAMMER_LAUNCH;
+					ofNotifyEvent(eventGame::onGameEvent, lanchHammerSoundEvent);
+					//ofNotifyEvent(eventComunication::onNewCom, newComEvent);					
+				}
 			}
 		}
     }
@@ -204,4 +218,5 @@ void Hammer::setupRot(){
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
 }
+
 

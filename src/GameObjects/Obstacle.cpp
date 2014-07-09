@@ -8,10 +8,10 @@
 
 #include "Obstacle.h"
 
-Obstacle::Obstacle(SimpleMission *currentMission) :
-    SimpleObject(currentMission)
+Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
+    SimpleObject(_currentMissions)
 {
-    
+    collisionPoints = 0;
 }
 
 //---------------------------------
@@ -55,6 +55,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
+	
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
@@ -77,6 +78,8 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	setupRot();
 	
     body.activate();
+	
+	setDefaultZ();
     
 }
 
@@ -102,10 +105,20 @@ void Obstacle::update(bool bEditorMode){
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
-	//Update Physic work rotation if GUI change it
-	if(rotation != last_rotation){
-		setRotation(rotation);
-		last_rotation = rotation;
+	if(angleValX != last_angleValX){
+		
+		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValX = angleValX;
+	}
+	if(angleValY != last_angleValY){
+		
+		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValY = angleValY;
+	}
+	if(angleValZ != last_angleValZ){
+		
+		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValZ = angleValZ;
 	}
 	
 	body.activate();
@@ -156,7 +169,8 @@ void Obstacle::draw(bool bEditorMode){
     if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
-        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */currentMission->isElementHit(GetObjectId())){
+        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */
+		   (*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())){
             ofSetHexColor(highlightColor);
         }
         else{
@@ -191,11 +205,11 @@ string Obstacle::getObjectName(){
 //------------------------------------------------------------
 void Obstacle::onCollision(){
     
-    GameStatus::getInstance()->AddPoints(1);
+	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
     //play sound
-    SoundManager::getInstance()->PlaySound(0);
+    //SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
    
 	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
 	eventComunication newComEvent;
@@ -207,7 +221,7 @@ void Obstacle::onCollision(){
 //------------------------------------------------------------
 void Obstacle::setDefaultZ(){
     
-    position.z = -0.5;
+    position.z = -0.9;
     setPosition(position);
     
 }
@@ -260,5 +274,34 @@ void Obstacle::setupRot(){
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
 }
+
+
+//--------------------------------------------------------------
+void Obstacle::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+	
+	
+	btTransform transform;
+	btRigidBody* a_rb = body.getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+    
+    // rotate
+	btQuaternion currentRotation = transform.getRotation();
+	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
+    
+	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
+	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+	transform.setRotation(rotate * currentRotation);
+    
+	a_rb->getMotionState()->setWorldTransform( transform );
+	
+	btQuaternion Rotation2Save = a_rb->getOrientation();
+	//save this var for the XML
+	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
+	
+	body.activate();
+	
+	
+}
+
 
 

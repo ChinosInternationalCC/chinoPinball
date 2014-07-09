@@ -24,7 +24,9 @@
 #include "DMXManager.h"
 #include "OSCManager.h"
 #include "SimpleMission.h"
-
+#include "MissionInfoDisplay.h"
+#include "LightsManager.h"
+//#include "ofxShadow.h"
 #include "ScenarioEditor.h"
 
 class PinballChinoManager: public InputEventManager {
@@ -56,14 +58,17 @@ public:
 	ofMatrix4x4 loadCameraPosition();
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
-	ofLight					light;
+    LightsManager           chinoLights;
     
     
     Scenario                myScenario;
     //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
+    MissionInfoDisplay      missionDisplay;
     
-    SimpleMission *currentMission;
+	vector<SimpleMission *> currentMissions;
+	int idcurrentMission;
+	
     bool bFullScreen;
     bool bDrawDebug;
     
@@ -76,7 +81,8 @@ public:
     void onReleaseBallLauncherEvent(void);
     void ToggleDrawDebug(void);
 	
-
+	//Shadoew
+	//ofxShadow simple_shadow;
 
     
 	

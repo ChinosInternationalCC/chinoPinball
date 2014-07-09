@@ -7,8 +7,8 @@
 //
 
 #include "Lever.h"
-Lever::Lever(SimpleMission *currentMission):
-SimpleObject(currentMission)
+Lever::Lever(vector <SimpleMission *> * _currentMissions):
+SimpleObject(_currentMissions)
 {
     
 }

@@ -19,36 +19,30 @@ class Bounds : public SimpleObject {
     
 public:
     
-    Bounds(SimpleMission *currentmission);
+    Bounds(vector <SimpleMission *> * _currentMissions);
     
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	
-	void autoScalingXYZ();
-	void setupRot();
-	//void autoScalingXYZ();
-    
+
 	ofxBulletCustomShape	body;
-
     ofMesh                  assimpModelMesh;
-    
-    //vector<bool>				bColliding;
-    
-	
-    
 	ofVec3f         initScale;
-    
 
-    
-    float angle; // degrees
-    
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
     void onCollision();
     void setDefaultZ();
+	void autoScalingXYZ();
+
     void setPosition(ofVec3f position);
-		void setRotation(ofQuaternion rotation);
+
+	void setupRot();
+	void setRotation(ofQuaternion rotation);
+	
+	//void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
+	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
     
 };

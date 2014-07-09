@@ -9,14 +9,30 @@
 #pragma once
 
 #include "ofMain.h"
+#include "eventGame.h"
+#include "eventMission.h"
 
+#include "eventComunication.h"
+#include "eventMission.h"
 
 class SoundManager {
 public:
+	
+	enum SoundsType { startGame = 1, launchBall = 2, ObjCol1
+		= 3, ObjCol3 = 0, songGeneralGame = 4};
+	
 	SoundManager();
 	static SoundManager* getInstance(void);
 	void PlaySound(int idAudio);
 
+	//Events
+	void listenerOnHammerLaunch(eventGame & args);
+	void listenerOnCollission(eventComunication & args);
+	void listenerOnUpdateMission(eventMission & args);
+	
+	void Mute(bool flag);
+	void TogleMute();
+	
 private:
 	// singleton stuff
 	static bool    instanceFlag;
@@ -24,6 +40,8 @@ private:
     
     vector<string> soundFiles;
     vector<ofSoundPlayer*> soundObj;
+	bool bMute;
+	
 };
 
 /*
