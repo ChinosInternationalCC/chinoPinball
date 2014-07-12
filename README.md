@@ -3,6 +3,7 @@ chinoPinball
 
 ChinoPinball is an opensource tool for mapping pinball via projection.
 
+
 ***
 ###Videos with the ChinoPinball in action
 
@@ -13,9 +14,14 @@ ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
 ###Screenshot
 
 ![Screenshot](/doc/screenshot.png)
+![Screenshot](/doc/pinball.jpg)
 
 ***
-###GITHUB 
+###Contributing to ChinoPinball
+
+In order to contribute to ChinoPinball the first step is to fork the project. Bellow you can find a small github tutorial on how to do it.
+When you have updates that you want to merge in the main repository, make a pull request.
+
 **fork** master branch
 
 Dude, where's my fork? 
@@ -103,7 +109,7 @@ We are using MadMapper for projection mapping http://www.madmapper.com
 ***
 ###Projection mapping
 
-**Mappig the game on one surface with 3D elements**
+**Mapping the game on one surface with 3D elements**
 
 * First step is to find or build a physical space for mapping (like a wall or ramp with some 3D elements)
 * Second, setup projector and don't touch it later
@@ -146,6 +152,7 @@ PinballChinoManager
 * f - fullscreen
 * s - save camera position to file
 * l - load camera postion
+* m - mute sounds
 InputEventManager
 * enter - restart game
 * down - move hammer
@@ -159,3 +166,23 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+
+***
+###OSC
+
+All the collision events and other information regarding the game like the curent mission, score etc are sent via OSC in order to be available to other external application like MadMapper, Module8, PureData, MaxMsp, SuperCollider etc
+
+The following OSC addresses are currently implemented
+
+```
+/Collision/Object/Id
+/Collision/Object/Name
+/Collision/Object/Position
+/Mission/Event
+/Mission/ID
+```
+
+Example PureData/collision.pd
+![PureData](/doc/PureData.png)
+
+The OSC implementation can be found in the OSCManager class
