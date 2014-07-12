@@ -3,6 +3,7 @@ chinoPinball
 
 ChinoPinball is an opensource tool for mapping pinball via projection.
 
+
 ***
 ###Videos with the ChinoPinball in action
 
@@ -13,6 +14,7 @@ ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
 ###Screenshot
 
 ![Screenshot](/doc/screenshot.png)
+![Screenshot](/doc/pinball.jpg)
 
 ***
 ###GITHUB 
