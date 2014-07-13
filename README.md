@@ -13,8 +13,8 @@ ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
 ***
 ###Screenshot
 
-![Screenshot](https://github.com/ChinosInternationalCC/chinoPinball/blob/master/doc/screenshot.png)
-![Screenshot](https://github.com/ChinosInternationalCC/chinoPinball/blob/master/doc/pinball.jpg)
+![Screenshot](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/pinball.jpg)
 
 ***
 ###Contributing to ChinoPinball
@@ -100,11 +100,11 @@ We are using MadMapper for projection mapping http://www.madmapper.com
 ***
 ###ClassHierarchy
 
-![ClassHierarchy](https://github.com/ChinosInternationalCC/chinoPinball/blob/master/doc/ClassHierarchy.png)
+![ClassHierarchy](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/ClassHierarchy.png)
 
 ***
 ###SystemOverview
-![SystemOverview](https://github.com/ChinosInternationalCC/chinoPinball/blob/master/doc/ChinoPinballDeploymentDiagram.jpg)
+![SystemOverview](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/ChinoPinballDeploymentDiagram.jpg)
 
 ***
 ###Projection mapping
@@ -183,6 +183,6 @@ The following OSC addresses are currently implemented
 ```
 
 Example PureData/collision.pd
-![PureData](https://github.com/ChinosInternationalCC/chinoPinball/blob/master/doc/PureData.png)
+![PureData](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PureData.png)
 
 The OSC implementation can be found in the OSCManager class
