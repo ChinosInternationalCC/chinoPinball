@@ -20,10 +20,16 @@
 
   <!-- Initializer -->
   <script>
+      
     Flatdoc.run({
      <!--  fetcher: Flatdoc.file('Readme.md')-->
 	 fetcher: Flatdoc.github('ChinosInternationalCC/chinoPinball')
     });
+   /* removes photos
+    jQuery(document).on('flatdoc:ready', function() {
+      $('img').remove();
+    });
+  */
   </script>
 
   <!-- Meta -->

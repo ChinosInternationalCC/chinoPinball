@@ -61,6 +61,12 @@
   display: inline-block;
   padding: 5px 20px;
   border: solid 3px #fff; }
+  
+img {
+    max-width: 500px;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
 
 @media (max-width: 768px) /* Tablet */ {
   .title-card h5 {
