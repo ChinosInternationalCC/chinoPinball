@@ -139,7 +139,7 @@ Editor should have the following functionalities:
 	* rotation
 	* color
 * objects types: lever, hammer, obstacle ...
-
+![ScenarioEditor](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/EditorMode.png)
 
 ***
 ###Key bindings
