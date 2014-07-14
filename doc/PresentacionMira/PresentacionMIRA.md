@@ -98,7 +98,8 @@ Cada totem se iluminará y reaccionará de manera diferente cada vez que la boli
 
 ![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_4.png)
 
-![image alt text](image_5.png)![image alt text](image_6.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_5.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_6.png)
 
 ***
 ### Requisitos técnicos y material necesario para el desarrollo del proyecto
