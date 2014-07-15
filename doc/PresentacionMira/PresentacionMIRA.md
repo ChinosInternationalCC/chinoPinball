@@ -13,9 +13,19 @@ OUTDOOR MAPPING
 ***
 ###Artistas
 
-Colectivo Chinos Internacional:Kuba Markiewicz, Carles Gutiérrez, Ovidiu Cincheza, Angel Muñoz, Tony Higuchi, Augusto Zuniga, Mery Glez
+Colectivo Chinos Internacional:
+ * Kuba Markiewicz 
+ * Carles Gutiérrez
+ * Ovidiu Cincheza
+ * Angel Muñoz
+ * Augusto Zuniga
+ * Mery Glez
 
-Colaboradores: Alex Geell[http://chinosinternational.cc/](http://chinosinternational.cc/)
+Colaboradores: 
+ * Alex Geell - SoundArt
+ * Alex Reche - MadMapper
+
+[http://chinosinternational.cc/](http://chinosinternational.cc/)
 
 [https://www.facebook.com/chinos.international.cc](https://www.facebook.com/chinos.international.cc)
 
@@ -72,7 +82,8 @@ Un escenario pseudo-dinámico:
 
 El juego tiene integrado un editor de escenario, que da posibilidad de construir un escenario en cualquier superficie (pared, suelo) y adaptando los elementos reales 3D como elementos del escenario.
 
-El público:Probablemente ya en futuras versiones, el público a parte de ser espectador, podrá llegar a interferir sobre el juego modificando el curso del juego. Ya desde un inicio se plantea un diseño compatible con Camaras para usar visión por ordenador ( interpretando sus posiciones y presencia ) o sensores físicos, y que dispuestos sobre el escenario o el área sirvan como actuadores dentro de los eventos del juego.
+El público:
+Probablemente ya en futuras versiones, el público a parte de ser espectador, podrá llegar a interferir sobre el juego modificando el curso del juego. Ya desde un inicio se plantea un diseño compatible con Camaras para usar visión por ordenador ( interpretando sus posiciones y presencia ) o sensores físicos, y que dispuestos sobre el escenario o el área sirvan como actuadores dentro de los eventos del juego.
 
 ![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_1.jpg)
 
@@ -104,20 +115,21 @@ Cada totem se iluminará y reaccionará de manera diferente cada vez que la boli
 ***
 ### Requisitos técnicos y material necesario para el desarrollo del proyecto
 
-- Electrical wiring for the entire facility (Mira)
+* Electrical wiring for the entire facility (Mira)
 
-- 1 Mac Computer: 4GB, monitor, keyboard, mouse (ChinosInternational)
+* 1 Mac Computer: 4GB, monitor, keyboard, mouse (ChinosInternational)
 
-- Video Projector 6000-10000 Ansi Lumen 1.2-1:00 optical + VGA 10 mt to create a video projection of 7x3 mt (Mira)
+* Video Projector 6000-10000 Ansi Lumen 1.2-1:00 optical + VGA 10 mt to create a video projection of 7x3 mt (Mira)
 
-- Minidisplayport cable (ChinosInternational)
+* Minidisplayport cable (ChinosInternational)
 
-- 2 Speakers and 1 Amplifier+cables (Mira)
+* 2 Speakers and 1 Amplifier+cables (Mira)
 
 ***
 ### Presupuesto necesario y aportaciones propias
 
-Aportaciones propias:
+
+Aportaciones propias:
 
 - Materiales necesarios para realizacion del proyecto (caja de controles)
 
@@ -125,16 +137,21 @@ Cada totem se iluminará y reaccionará de manera diferente cada vez que la boli
 
 - Licencias de software (Mad Mapper)
 
-- AlojamientoPresupuesto necesario:- un vuelo para una persona de Varsovia (Polonia) a Barcelona
+- Alojamiento
+
+Presupuesto necesario:
+- un vuelo para una persona de Varsovia (Polonia) a Barcelona
 
 ***
 ### Biografía artística de Chinos International
 
-Link: [http://chinosinternational.cc/projects/](http://chinosinternational.cc/projects/)
+
+Link: [http://chinosinternational.cc/projects/](http://chinosinternational.cc/projects/)
 
 EXHIBITIONS:
 
-* Instal·lació vídeo-màpping per a la cloenda de la Setmana Cultural de l’Escola d’Art i Disseny de Tortosa. Escola d’Art i Disseny de Tortosa, Tortosa, 24/05/2013[http://vimeo.com/67030695](http://vimeo.com/67030695)
+* Instal·lació vídeo-màpping per a la cloenda de la Setmana Cultural de l’Escola d’Art i Disseny de Tortosa. Escola d’Art i Disseny de Tortosa, Tortosa, 24/05/2013
+[http://vimeo.com/67030695](http://vimeo.com/67030695)
 
 * Paperjam, Daos Club, Timisoara (Rumania) 02/05/2013
 
