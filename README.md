@@ -186,3 +186,14 @@ Example PureData/collision.pd
 ![PureData](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PureData.png)
 
 The OSC implementation can be found in the OSCManager class
+
+***
+###Colaborators
+ * Kuba Markiewicz  - Openframeworks
+ * Carles Gutiérrez - Openframeworks
+ * Ovidiu Cincheza - Openframeworks
+ * Angel Muñoz - Openframeworks / Arduino
+ * Augusto Zuniga - 3D Art
+ * Mery Glez - DigitalFabrication
+ * Alex Geell - SoundArt
+ * Alex Reche - MadMapper
