@@ -197,3 +197,5 @@ The OSC implementation can be found in the OSCManager class
  * Mery Glez - DigitalFabrication
  * Alex Geell - SoundArt
  * Alex Reche - MadMapper
+
+Thanks to FABLab Barcelona for letting us use their CNC machines
