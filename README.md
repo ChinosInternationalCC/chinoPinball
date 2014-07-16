@@ -188,6 +188,15 @@ Example PureData/collision.pd
 The OSC implementation can be found in the OSCManager class
 
 ***
+###Sound
+
+
+https://soundcloud.com/alexgeell/chinos-internacional-pinball-raval-song
+
+Chinos Internacional Pinball Song utiliza una base de Rumba en la guitarra como símbolo los gitanos catalanes, una percusión afro india que aporta un ambiente oriental para que las melodías del baglama griego se combinen con el paisaje sonoro del barrio, que da cuenta de personas y actividades que se desarrollan cotidianamente en sus espacios públicos.
+
+
+***
 ###Colaborators
  * Kuba Markiewicz  - Openframeworks
  * Carles Gutiérrez - Openframeworks
