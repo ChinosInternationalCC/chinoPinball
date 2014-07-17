@@ -217,7 +217,7 @@ We support almos all the major 3D model file formats by using the AssimpModel Lo
         <path>3DMODELS/new/totem1.obj</path>
     </object>
 ```
-
+The tag *<type>* should hold the object type; one of the values defined in the *enum shapeType*
 ```
     enum shapeType{
         ShapeTypeBall = 0,
@@ -231,6 +231,7 @@ We support almos all the major 3D model file formats by using the AssimpModel Lo
     };
 ```
 
+The tag *<id>* should hold a unique id for each object.
 
 ***
 ###OSC
