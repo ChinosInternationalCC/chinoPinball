@@ -195,6 +195,12 @@ https://soundcloud.com/alexgeell/chinos-internacional-pinball-raval-song
 
 Chinos Internacional Pinball Song utiliza una base de Rumba en la guitarra como símbolo los gitanos catalanes, una percusión afro india que aporta un ambiente oriental para que las melodías del baglama griego se combinen con el paisaje sonoro del barrio, que da cuenta de personas y actividades que se desarrollan cotidianamente en sus espacios públicos.
 
+***
+###License
+
+ChinoPinball is released under a GPL license. You can read it here: https://github.com/ChinosInternationalCC/chinoPinball/blob/master/LICENSE
+
+If you have any doubts on what you can do and what you can not do with the code just drop us an email at chinopinball@gmail.com
 
 ***
 ###Colaborators
