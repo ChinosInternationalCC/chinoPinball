@@ -7,7 +7,7 @@ ChinoPinball is an opensource tool for mapping pinball via projection.
 ***
 ###Videos with the ChinoPinball in action
 
-ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
+**ChinoPinball@FAB10 2014** DHUB Barcelona https://vimeo.com/100059297
 
 
 ***
@@ -92,15 +92,38 @@ push from origin to master
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
 * ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 * ofxFTGL https://github.com/Flightphase/ofxFTGL
+ 
+
+To clone all the addons requested by the project you can also execute the ./clone_addons.sh script
 
 Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (CodeBlocks) (not countinued)
 
+The project should also compile in Windows or Linux if ofxSyphone is not used. Just don't add ofxSyphon files to the compilation and comment in *ExternalsConfig.h*  the line *#define USE_SYPHON*:
+
+```
+
+//
+// ExternalsConfig.h
+// chinoPinball
+//
+// Created by Ovidiu on 14/02/14.
+//
+//
+
+#ifndef chinoPinball_ExternalsConfig_h
+#define chinoPinball_ExternalsConfig_h
+
+/* comment define if don't want to use feature */
+//#define USE_SYPHON
+```
 We are using MadMapper for projection mapping http://www.madmapper.com
 
 ***
 ###ClassHierarchy
 
 ![ClassHierarchy](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/ClassHierarchy.png)
+
+The main class is **PinballChinoManager**. In this class are defines all the main object: a scenario and a scenario editor, objects that handles inputs and outputs like handling of the keyboard, OSC communication, DMX communication, Arduino communication, objects that handles the sound playback.
 
 ***
 ###SystemOverview
@@ -128,7 +151,7 @@ We don't know how to do this yet ...
 The idea is to be able to create scenario directly on the place where the game will be projected, without prior preparation (only the objects could be prepared earlier).
 Then, maybe we could also let the people create scenarios by themselves. 
 
-Editor should have the following functionalities:
+Editor has the following functionalities:
 * saved/load scenario to a file
 * change width and height of a table (with walls)
 * add new objects
@@ -139,6 +162,9 @@ Editor should have the following functionalities:
 	* rotation
 	* color
 * objects types: lever, hammer, obstacle ...
+
+To enter in the scenario editor mode press the key 'e'
+
 ![ScenarioEditor](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/EditorMode.png)
 
 ***
@@ -166,6 +192,45 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+
+***
+###3DModels
+
+We support almos all the major 3D model file formats by using the AssimpModel Loader. In order to load a model designed in Cinema4D for example you have to copy them in the */bin/data* path and to add a new entry in te *scenario.xml* file.
+
+```
+    <object>
+        <type>6</type>
+        <id>5</id>
+        <color>14423100</color>
+        <pointsCollision>0</pointsCollision>
+        <positionX>0.474898070</positionX>
+        <positionY>12.638760567</positionY>
+        <positionZ>-0.899999976</positionZ>
+        <scaleX>0.100000009</scaleX>
+        <scaleY>0.100000009</scaleY>
+        <scaleZ>0.100000009</scaleZ>
+        <rotationX>-0.541731715</rotationX>
+        <rotationY>-0.442292124</rotationY>
+        <rotationZ>0.587128937</rotationZ>
+        <rotationW>0.407656848</rotationW>
+        <path>3DMODELS/new/totem1.obj</path>
+    </object>
+```
+
+```
+    enum shapeType{
+        ShapeTypeBall = 0,
+        ShapeTypeSimpleBox = 1,
+        ShapeTypeSpring = 2,
+        ShapeTypeLever = 3,
+        ShapeTypeContainer = 4,
+        ShapeTypeHammer = 5,
+        ShapeTypeObstacle = 6,
+        ShapeTypeBounds = 7
+    };
+```
+
 
 ***
 ###OSC
