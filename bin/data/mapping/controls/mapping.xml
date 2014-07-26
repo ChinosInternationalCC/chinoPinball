@@ -1,0 +1,50 @@
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:FULLSCREEN</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:EDIT_SHAPES</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:SAVE</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:LOAD</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING_MODE:OUTPUT</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING_MODE:INPUT</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:CREATE_NEW_QUAD</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:CREATE_NEW_GRID</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:CREATE_NEW_TRIANGLE</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>20</Kind>
+    <Name>MAPPING:CREATE_NEW_MASK</Name>
+    <Value>0</Value>
+</Widget>

@@ -92,6 +92,8 @@ push from origin to master
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
 * ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 * ofxFTGL https://github.com/Flightphase/ofxFTGL
+* ofxMSAInteractiveObject https://github.com/memo/ofxMSAInteractiveObject
+* ofxMtlMapping2D https://github.com/morethanlogic/ofxMtlMapping2D
  
 
 To clone all the addons requested by the project you can also execute the ./clone_addons.sh script
@@ -182,9 +184,10 @@ PinballChinoManager
 InputEventManager
 * enter - restart game
 * down - move hammer
-* m/M - move right lever
-* z/Z - move right lever
+* q/Q - move right lever
+* w/W - move left lever
 * d/D - draw debug
+* m/M - open Mapping Editor if using MtlMapping
 ScenarioEditor
 * e - toggle editor mode
 * x - saving scenario to file

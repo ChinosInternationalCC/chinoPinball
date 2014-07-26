@@ -194,6 +194,19 @@
 		A58DD22B18F8577300B1FE41 /* ofxUIWaveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FA18F8577300B1FE41 /* ofxUIWaveform.cpp */; };
 		A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FC18F8577300B1FE41 /* ofxUIWidget.cpp */; };
 		A58DD22D18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */; };
+		A5A5D0F31983B72700295F0F /* ofxMtlMapping2DControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */; };
+		A5A5D0F41983B72700295F0F /* ofxMtlMapping2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D31983B72700295F0F /* ofxMtlMapping2D.cpp */; };
+		A5A5D0F51983B72700295F0F /* ofxMtlMapping2DShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D61983B72700295F0F /* ofxMtlMapping2DShapes.cpp */; };
+		A5A5D0F61983B72700295F0F /* ofxMtlMapping2DSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0DA1983B72700295F0F /* ofxMtlMapping2DSettings.cpp */; };
+		A5A5D0F71983B72700295F0F /* ofxMtlMapping2DGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0DD1983B72700295F0F /* ofxMtlMapping2DGrid.cpp */; };
+		A5A5D0F81983B72700295F0F /* ofxMtlMapping2DInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0DF1983B72700295F0F /* ofxMtlMapping2DInput.cpp */; };
+		A5A5D0F91983B72700295F0F /* ofxMtlMapping2DMask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0E11983B72700295F0F /* ofxMtlMapping2DMask.cpp */; };
+		A5A5D0FA1983B72700295F0F /* ofxMtlMapping2DPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0E31983B72700295F0F /* ofxMtlMapping2DPolygon.cpp */; };
+		A5A5D0FB1983B72700295F0F /* ofxMtlMapping2DQuad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0E51983B72700295F0F /* ofxMtlMapping2DQuad.cpp */; };
+		A5A5D0FC1983B72700295F0F /* ofxMtlMapping2DShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0E71983B72700295F0F /* ofxMtlMapping2DShape.cpp */; };
+		A5A5D0FD1983B72700295F0F /* ofxMtlMapping2DTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0E91983B72700295F0F /* ofxMtlMapping2DTriangle.cpp */; };
+		A5A5D0FE1983B72700295F0F /* ofxMtlMapping2DVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0EB1983B72700295F0F /* ofxMtlMapping2DVertex.cpp */; };
+		A5A5D10E1983BA6000295F0F /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D10A1983BA6000295F0F /* ofxMSAInteractiveObject.cpp */; };
 		A5AEAFAD19548F9F003C1ADB /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AEAF8E19548F9F003C1ADB /* libftgl.a */; };
 		A5AEAFAE19548F9F003C1ADB /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AEAF9019548F9F003C1ADB /* libftgl.a */; };
 		A5AEAFAF19548F9F003C1ADB /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AEAF9319548F9F003C1ADB /* libftgl.a */; };
@@ -851,6 +864,36 @@
 		A58DD20018F8577300B1FE41 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWidgetWithLabel.h; sourceTree = "<group>"; };
 		A58DD20118F8577300B1FE41 /* ofxUIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWrapper.h; sourceTree = "<group>"; };
 		A58E8C52F808AFF78C1E8E79 /* btConcaveShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConcaveShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConcaveShape.cpp; sourceTree = SOURCE_ROOT; };
+		A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DControls.cpp; sourceTree = "<group>"; };
+		A5A5D0D21983B72700295F0F /* ofxMtlMapping2DControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DControls.h; sourceTree = "<group>"; };
+		A5A5D0D31983B72700295F0F /* ofxMtlMapping2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2D.cpp; sourceTree = "<group>"; };
+		A5A5D0D41983B72700295F0F /* ofxMtlMapping2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2D.h; sourceTree = "<group>"; };
+		A5A5D0D51983B72700295F0F /* ofxMtlMapping2DMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DMode.h; sourceTree = "<group>"; };
+		A5A5D0D61983B72700295F0F /* ofxMtlMapping2DShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DShapes.cpp; sourceTree = "<group>"; };
+		A5A5D0D71983B72700295F0F /* ofxMtlMapping2DShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DShapes.h; sourceTree = "<group>"; };
+		A5A5D0D81983B72700295F0F /* ofxMtlMapping2DShapeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DShapeType.h; sourceTree = "<group>"; };
+		A5A5D0DA1983B72700295F0F /* ofxMtlMapping2DSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DSettings.cpp; sourceTree = "<group>"; };
+		A5A5D0DB1983B72700295F0F /* ofxMtlMapping2DSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DSettings.h; sourceTree = "<group>"; };
+		A5A5D0DD1983B72700295F0F /* ofxMtlMapping2DGrid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DGrid.cpp; sourceTree = "<group>"; };
+		A5A5D0DE1983B72700295F0F /* ofxMtlMapping2DGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DGrid.h; sourceTree = "<group>"; };
+		A5A5D0DF1983B72700295F0F /* ofxMtlMapping2DInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DInput.cpp; sourceTree = "<group>"; };
+		A5A5D0E01983B72700295F0F /* ofxMtlMapping2DInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DInput.h; sourceTree = "<group>"; };
+		A5A5D0E11983B72700295F0F /* ofxMtlMapping2DMask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DMask.cpp; sourceTree = "<group>"; };
+		A5A5D0E21983B72700295F0F /* ofxMtlMapping2DMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DMask.h; sourceTree = "<group>"; };
+		A5A5D0E31983B72700295F0F /* ofxMtlMapping2DPolygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DPolygon.cpp; sourceTree = "<group>"; };
+		A5A5D0E41983B72700295F0F /* ofxMtlMapping2DPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DPolygon.h; sourceTree = "<group>"; };
+		A5A5D0E51983B72700295F0F /* ofxMtlMapping2DQuad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DQuad.cpp; sourceTree = "<group>"; };
+		A5A5D0E61983B72700295F0F /* ofxMtlMapping2DQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DQuad.h; sourceTree = "<group>"; };
+		A5A5D0E71983B72700295F0F /* ofxMtlMapping2DShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DShape.cpp; sourceTree = "<group>"; };
+		A5A5D0E81983B72700295F0F /* ofxMtlMapping2DShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DShape.h; sourceTree = "<group>"; };
+		A5A5D0E91983B72700295F0F /* ofxMtlMapping2DTriangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DTriangle.cpp; sourceTree = "<group>"; };
+		A5A5D0EA1983B72700295F0F /* ofxMtlMapping2DTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DTriangle.h; sourceTree = "<group>"; };
+		A5A5D0EB1983B72700295F0F /* ofxMtlMapping2DVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DVertex.cpp; sourceTree = "<group>"; };
+		A5A5D0EC1983B72700295F0F /* ofxMtlMapping2DVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DVertex.h; sourceTree = "<group>"; };
+		A5A5D0EF1983B72700295F0F /* homography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homography.h; sourceTree = "<group>"; };
+		A5A5D0F01983B72700295F0F /* mtlUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtlUtils.h; sourceTree = "<group>"; };
+		A5A5D10A1983BA6000295F0F /* ofxMSAInteractiveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMSAInteractiveObject.cpp; sourceTree = "<group>"; };
+		A5A5D10B1983BA6000295F0F /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMSAInteractiveObject.h; sourceTree = "<group>"; };
 		A5AEAF7619548F9F003C1ADB /* FTBBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTBBox.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBBox.h; sourceTree = SOURCE_ROOT; };
 		A5AEAF7719548F9F003C1ADB /* FTBitmapGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTBitmapGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBitmapGlyph.h; sourceTree = SOURCE_ROOT; };
 		A5AEAF7819548F9F003C1ADB /* FTBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTBuffer.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBuffer.h; sourceTree = SOURCE_ROOT; };
@@ -2166,6 +2209,108 @@
 			path = ../../../addons/ofxUI/src;
 			sourceTree = "<group>";
 		};
+		A5A5D0AE1983B72700295F0F /* ofxMtlMapping2D */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0CF1983B72700295F0F /* src */,
+			);
+			name = ofxMtlMapping2D;
+			path = ../../../addons/ofxMtlMapping2D;
+			sourceTree = "<group>";
+		};
+		A5A5D0CF1983B72700295F0F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0D01983B72700295F0F /* controls */,
+				A5A5D0D31983B72700295F0F /* ofxMtlMapping2D.cpp */,
+				A5A5D0D41983B72700295F0F /* ofxMtlMapping2D.h */,
+				A5A5D0D51983B72700295F0F /* ofxMtlMapping2DMode.h */,
+				A5A5D0D61983B72700295F0F /* ofxMtlMapping2DShapes.cpp */,
+				A5A5D0D71983B72700295F0F /* ofxMtlMapping2DShapes.h */,
+				A5A5D0D81983B72700295F0F /* ofxMtlMapping2DShapeType.h */,
+				A5A5D0D91983B72700295F0F /* settings */,
+				A5A5D0DC1983B72700295F0F /* shapes */,
+				A5A5D0ED1983B72700295F0F /* utils */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A5A5D0D01983B72700295F0F /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */,
+				A5A5D0D21983B72700295F0F /* ofxMtlMapping2DControls.h */,
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
+		A5A5D0D91983B72700295F0F /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0DA1983B72700295F0F /* ofxMtlMapping2DSettings.cpp */,
+				A5A5D0DB1983B72700295F0F /* ofxMtlMapping2DSettings.h */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		A5A5D0DC1983B72700295F0F /* shapes */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0DD1983B72700295F0F /* ofxMtlMapping2DGrid.cpp */,
+				A5A5D0DE1983B72700295F0F /* ofxMtlMapping2DGrid.h */,
+				A5A5D0DF1983B72700295F0F /* ofxMtlMapping2DInput.cpp */,
+				A5A5D0E01983B72700295F0F /* ofxMtlMapping2DInput.h */,
+				A5A5D0E11983B72700295F0F /* ofxMtlMapping2DMask.cpp */,
+				A5A5D0E21983B72700295F0F /* ofxMtlMapping2DMask.h */,
+				A5A5D0E31983B72700295F0F /* ofxMtlMapping2DPolygon.cpp */,
+				A5A5D0E41983B72700295F0F /* ofxMtlMapping2DPolygon.h */,
+				A5A5D0E51983B72700295F0F /* ofxMtlMapping2DQuad.cpp */,
+				A5A5D0E61983B72700295F0F /* ofxMtlMapping2DQuad.h */,
+				A5A5D0E71983B72700295F0F /* ofxMtlMapping2DShape.cpp */,
+				A5A5D0E81983B72700295F0F /* ofxMtlMapping2DShape.h */,
+				A5A5D0E91983B72700295F0F /* ofxMtlMapping2DTriangle.cpp */,
+				A5A5D0EA1983B72700295F0F /* ofxMtlMapping2DTriangle.h */,
+				A5A5D0EB1983B72700295F0F /* ofxMtlMapping2DVertex.cpp */,
+				A5A5D0EC1983B72700295F0F /* ofxMtlMapping2DVertex.h */,
+			);
+			path = shapes;
+			sourceTree = "<group>";
+		};
+		A5A5D0ED1983B72700295F0F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0EE1983B72700295F0F /* homography */,
+				A5A5D0F01983B72700295F0F /* mtlUtils.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		A5A5D0EE1983B72700295F0F /* homography */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D0EF1983B72700295F0F /* homography.h */,
+			);
+			path = homography;
+			sourceTree = "<group>";
+		};
+		A5A5D0FF1983BA6000295F0F /* ofxMSAInteractiveObject */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D1091983BA6000295F0F /* src */,
+			);
+			name = ofxMSAInteractiveObject;
+			path = ../../../addons/ofxMSAInteractiveObject;
+			sourceTree = "<group>";
+		};
+		A5A5D1091983BA6000295F0F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5D10A1983BA6000295F0F /* ofxMSAInteractiveObject.cpp */,
+				A5A5D10B1983BA6000295F0F /* ofxMSAInteractiveObject.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		A5AEAF2619548F9E003C1ADB /* ofxFTGL */ = {
 			isa = PBXGroup;
 			children = (
@@ -2398,6 +2543,8 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A5A5D0FF1983BA6000295F0F /* ofxMSAInteractiveObject */,
+				A5A5D0AE1983B72700295F0F /* ofxMtlMapping2D */,
 				A5AEAF2619548F9E003C1ADB /* ofxFTGL */,
 				A58DD1A218F8577200B1FE41 /* ofxUI */,
 				A58AA50518E0BFFE00AA5372 /* ofxDmx */,
@@ -2862,12 +3009,14 @@
 				A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */,
 				B8846EF8E504895A4A9EFEC0 /* ofxAssimpTexture.cpp in Sources */,
 				D82740B1C3CA5499786DDB9F /* ofxBulletJoint.cpp in Sources */,
+				A5A5D0FA1983B72700295F0F /* ofxMtlMapping2DPolygon.cpp in Sources */,
 				AE83F0CEA2C8D83D72618074 /* ofxBulletWorldRigid.cpp in Sources */,
 				F393FD743E5B44AFF9917168 /* GLDebugDrawer.cpp in Sources */,
 				5241CC211D1318DE2DC0D83B /* ofxBulletBaseShape.cpp in Sources */,
 				C0405AAE75709CB731DB2A1F /* ofxBulletBox.cpp in Sources */,
 				B8E8938FC5AB7FE23FDC9F9A /* ofxBulletCapsule.cpp in Sources */,
 				9F7797B0AD4ADAC8D847A2EB /* ofxBulletCone.cpp in Sources */,
+				A5A5D0F41983B72700295F0F /* ofxMtlMapping2D.cpp in Sources */,
 				7FE73FEF709456B39C5ABAFD /* ofxBulletConvexShape.cpp in Sources */,
 				A58DD20818F8577300B1FE41 /* ofxUICircleSlider.cpp in Sources */,
 				27D2B9D0A2AA385576903C22 /* ofxBulletCustomShape.cpp in Sources */,
@@ -2894,6 +3043,7 @@
 				98D7898873CCB68F8220EA14 /* btBoxBoxCollisionAlgorithm.cpp in Sources */,
 				3480A64E7E2FF4EAC8D47A4A /* btBoxBoxDetector.cpp in Sources */,
 				6D943993BA411561F1C486EF /* btCollisionDispatcher.cpp in Sources */,
+				A5A5D0FE1983B72700295F0F /* ofxMtlMapping2DVertex.cpp in Sources */,
 				D50AF7C675388976B7E5B02E /* btCollisionObject.cpp in Sources */,
 				4AF03E8C60CFBB8F8303114A /* btCollisionWorld.cpp in Sources */,
 				E305FF1063F1C2981E53CCC0 /* btCompoundCollisionAlgorithm.cpp in Sources */,
@@ -2918,13 +3068,17 @@
 				A58DD21018F8577300B1FE41 /* ofxUIImageSampler.cpp in Sources */,
 				EA47D386AEEC6935DDC84294 /* SphereTriangleDetector.cpp in Sources */,
 				E549035BA7AF6E0B4F04D664 /* btBox2dShape.cpp in Sources */,
+				A5A5D0FB1983B72700295F0F /* ofxMtlMapping2DQuad.cpp in Sources */,
 				E824D7D50A58C65BAB4C1AC4 /* btBoxShape.cpp in Sources */,
 				00F1989034165F0A44EB88C2 /* btBvhTriangleMeshShape.cpp in Sources */,
 				455BC0A6B02E335D606793F4 /* btCapsuleShape.cpp in Sources */,
 				15C4FFE67623853FB1296D81 /* btCollisionShape.cpp in Sources */,
+				A5A5D0FD1983B72700295F0F /* ofxMtlMapping2DTriangle.cpp in Sources */,
 				A58DD22D18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp in Sources */,
 				887D2177F40E13FA207F944A /* btCompoundShape.cpp in Sources */,
+				A5A5D0F71983B72700295F0F /* ofxMtlMapping2DGrid.cpp in Sources */,
 				A7F6FE6C6C8F7BDE8D5C1FC2 /* btConcaveShape.cpp in Sources */,
+				A5A5D10E1983BA6000295F0F /* ofxMSAInteractiveObject.cpp in Sources */,
 				E5AEF5187E9E7742F33EAC05 /* btConeShape.cpp in Sources */,
 				A58DD20F18F8577300B1FE41 /* ofxUIImageButton.cpp in Sources */,
 				F5623F62F8F5B99A6FFC0D85 /* btConvex2dShape.cpp in Sources */,
@@ -2935,6 +3089,7 @@
 				F34682B6B07FFCDD83D82617 /* btConvexPolyhedron.cpp in Sources */,
 				A7C5BC5818B788BB006187D9 /* ofxSyphonServerDirectory.mm in Sources */,
 				0BF422C5D74543014EB85EB9 /* btConvexShape.cpp in Sources */,
+				A5A5D0FC1983B72700295F0F /* ofxMtlMapping2DShape.cpp in Sources */,
 				CD7BC8444D4204A2F23703E9 /* btConvexTriangleMeshShape.cpp in Sources */,
 				0D8F359716A086448237934C /* btCylinderShape.cpp in Sources */,
 				4E5F49A6791BB0E19693A183 /* btEmptyShape.cpp in Sources */,
@@ -2961,6 +3116,7 @@
 				B5E67E19FB3C2BE672AF8641 /* btTriangleIndexVertexArray.cpp in Sources */,
 				94F68024306DA7022852B616 /* btTriangleIndexVertexMaterialArray.cpp in Sources */,
 				2D1840447E106A889E421B65 /* btTriangleMesh.cpp in Sources */,
+				A5A5D0F81983B72700295F0F /* ofxMtlMapping2DInput.cpp in Sources */,
 				B730F490E5B057F3CD3C2200 /* btTriangleMeshShape.cpp in Sources */,
 				3141DDCB51B928D2AB223B0D /* btUniformScalingShape.cpp in Sources */,
 				AEB3F954EC98A3E7B15EEE78 /* btContactProcessing.cpp in Sources */,
@@ -2994,6 +3150,7 @@
 				B85E86521F414BC676809344 /* btPersistentManifold.cpp in Sources */,
 				A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */,
 				C173E94F9668A1778CE080BC /* btRaycastCallback.cpp in Sources */,
+				A5A5D0F91983B72700295F0F /* ofxMtlMapping2DMask.cpp in Sources */,
 				AE278440A4852E628138B806 /* btSubSimplexConvexCast.cpp in Sources */,
 				A58DD21F18F8577300B1FE41 /* ofxUIScrollableCanvas.cpp in Sources */,
 				A58DD20918F8577300B1FE41 /* ofxUIDragableLabelButton.cpp in Sources */,
@@ -3011,6 +3168,7 @@
 				A58C5F0918BBDCA100E99E78 /* json_value.cpp in Sources */,
 				A9B2F59918BF56AB002B9892 /* SoundManager.cpp in Sources */,
 				921313BA5C2E074F7702BA85 /* btPoint2PointConstraint.cpp in Sources */,
+				A5A5D0F31983B72700295F0F /* ofxMtlMapping2DControls.cpp in Sources */,
 				8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */,
 				4DB27BC1F52F8BCFE6BD98FC /* btSequentialImpulseConstraintSolver.cpp in Sources */,
 				A58DD22B18F8577300B1FE41 /* ofxUIWaveform.cpp in Sources */,
@@ -3047,6 +3205,7 @@
 				A58DD20C18F8577300B1FE41 /* ofxUIFPS.cpp in Sources */,
 				CFDE6D4F82B7044F9B53B5F3 /* SpuContactManifoldCollisionAlgorithm.cpp in Sources */,
 				A58DD22518F8577300B1FE41 /* ofxUITabBar.cpp in Sources */,
+				A5A5D0F61983B72700295F0F /* ofxMtlMapping2DSettings.cpp in Sources */,
 				C10CD799315D18A358A9A9CC /* SpuFakeDma.cpp in Sources */,
 				3CDA8935B85D571B5E7FE7D9 /* SpuGatheringCollisionDispatcher.cpp in Sources */,
 				A58DD22218F8577300B1FE41 /* ofxUISpacer.cpp in Sources */,
@@ -3061,6 +3220,7 @@
 				F4D76A7D05B937286CEC6144 /* SpuSampleTaskProcess.cpp in Sources */,
 				CAFC4B4AB1D8E1177B6962C0 /* Win32ThreadSupport.cpp in Sources */,
 				A58DD22418F8577300B1FE41 /* ofxUISuperCanvas.cpp in Sources */,
+				A5A5D0F51983B72700295F0F /* ofxMtlMapping2DShapes.cpp in Sources */,
 				37ADBC9D2F7191E9EE87C409 /* btDefaultSoftBodySolver.cpp in Sources */,
 				10B0B9BB4F32AC7C8DFCED5B /* btSoftBody.cpp in Sources */,
 				C4DF50CA31E9F6F375C8C98C /* btSoftBodyConcaveCollisionAlgorithm.cpp in Sources */,
@@ -3527,104 +3687,14 @@
 					../../../addons/ofxFTGL/src,
 					../../../addons/ofxFTGL/libs/FTGL/include/,
 					../../../addons/ofxFTGL/libs/FTGL/lib/osx/,
-				);
-				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxAssimpModelLoader/libs,
-					../../../addons/ofxAssimpModelLoader/libs/assimp,
-					../../../addons/ofxAssimpModelLoader/libs/assimp/include,
-					../../../addons/ofxAssimpModelLoader/libs/assimp/include/Compiler,
-					../../../addons/ofxAssimpModelLoader/libs/assimp/lib,
-					../../../addons/ofxAssimpModelLoader/libs/assimp/lib/osx,
-					../../../addons/ofxAssimpModelLoader/src,
-					../../../addons/ofxBullet/libs,
-					../../../addons/ofxBullet/libs/bullet2.8.1,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/BroadphaseCollision,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/NarrowPhaseCollision,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Character,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/ConstraintSolver,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Dynamics,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletDynamics/Vehicle,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/DX11/HLSL,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/AMD,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Intel,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/GpuSoftBodySolvers/Shared,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuNarrowPhaseCollisionTask,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletMultiThreaded/SpuSampleTask,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/LinearMath,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/MiniCLTask,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/neon,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/scalar,
-					../../../addons/ofxBullet/libs/bullet2.8.1/include/vectormath/sse,
-					../../../addons/ofxBullet/libs/bullet2.8.1/lib,
-					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx,
-					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/fat,
-					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/i386,
-					../../../addons/ofxBullet/libs/bullet2.8.1/lib/osx/x86_64,
-					../../../addons/ofxBullet/src,
-					../../../addons/ofxBullet/src/events,
-					../../../addons/ofxBullet/src/joints,
-					../../../addons/ofxBullet/src/render,
-					../../../addons/ofxBullet/src/shapes,
-					../../../addons/ofxOsc/libs,
-					../../../addons/ofxOsc/libs/oscpack,
-					../../../addons/ofxOsc/libs/oscpack/src,
-					../../../addons/ofxOsc/libs/oscpack/src/ip,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/posix,
-					../../../addons/ofxOsc/libs/oscpack/src/ip/win32,
-					../../../addons/ofxOsc/libs/oscpack/src/osc,
-					../../../addons/ofxOsc/src,
-					../../../addons/ofxSyphon/libs,
-					../../../addons/ofxSyphon/libs/Syphon,
-					../../../addons/ofxSyphon/libs/Syphon/lib,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Headers,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Resources/English.lproj,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Headers,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/A/Resources/English.lproj,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Headers,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources,
-					../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework/Versions/Current/Resources/English.lproj,
-					../../../addons/ofxSyphon/libs/Syphon/src,
-					../../../addons/ofxSyphon/src,
-					../../../addons/ofxUI/libs,
-					../../../addons/ofxUI/src,
-					../../../addons/ofxXmlSettings/libs,
-					../../../addons/ofxXmlSettings/src,
-					../../../addons/ofxJSON/libs/jsoncpp/include,
-					../../../addons/ofxJSON/src,
-					src,
-					src/GameObjects,
-					src/Managers,
-					src/Media,
-					src/Missions,
-					src/Scenario,
-					src/ScenarioEditor,
-					src/World,
-					../../../addons/ofxDmx/src,
+					../../../addons/ofxMtlMapping2D/libs,
+					../../../addons/ofxMtlMapping2D/src,
+					../../../addons/ofxMtlMapping2D/src/controls,
+					../../../addons/ofxMtlMapping2D/src/settings,
+					../../../addons/ofxMtlMapping2D/src/utils,
+					../../../addons/ofxMtlMapping2D/src/shapes,
+					../../../addons/ofxMtlMapping2D/src/utils/homography,
+					../../../addons/ofxMSAInteractiveObject/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";

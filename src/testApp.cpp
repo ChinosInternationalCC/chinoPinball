@@ -11,6 +11,12 @@ void testApp::setup() {
     mainOutputSyphonServer.setName("Screen Output");
 	//mainOutputSyphonServer.
 #endif
+ 
+#ifdef USE_MTL_MAPPING
+    // ----
+    _mapping = new ofxMtlMapping2D();
+    _mapping->init(ofGetWidth(), ofGetHeight(), "mapping/xml/shapes.xml", "mapping/controls/mapping.xml");
+#endif
 
 	chinopinball.setup();
 	
@@ -20,7 +26,9 @@ void testApp::setup() {
 
 //--------------------------------------------------------------
 void testApp::update() {
-    
+ #ifdef USE_MTL_MAPPING
+    _mapping->update();
+#endif
     chinopinball.update();
     
 }
@@ -32,7 +40,16 @@ void testApp::draw() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
+#ifdef USE_MTL_MAPPING
+    _mapping->bind();
+#endif
     chinopinball.draw();
+#ifdef USE_MTL_MAPPING
+    _mapping->unbind();
+    
+    _mapping->draw();
+#endif
+    
 #ifdef USE_SYPHON
     mainOutputSyphonServer.publishScreen();
 #endif

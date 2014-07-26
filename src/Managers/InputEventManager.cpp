@@ -34,12 +34,12 @@ void InputEventManager::keyPressed(int key)
         case OF_KEY_DOWN:
             onMoveBallLauncherEvent();
             break;
-        case 'z':
-        case 'Z':
+        case 'q':
+        case 'Q':
             onMoveLeftLeverEvent();
 			break;
-        case 'm':
-        case 'M':
+        case 'w':
+        case 'W':
             onMoveRightLeverEvent();
 	       break;
         case 'd':
@@ -61,13 +61,13 @@ void InputEventManager::keyReleased(int key)
             onReleaseBallLauncherEvent();
             break;
             
-        case 'z':
-		case 'Z':
+        case 'q':
+		case 'Q':
             onReleaseLeftLeverEvent();
             break;
             
-        case 'm':
-        case 'M':
+        case 'w':
+        case 'W':
             onReleaseRightLeverEvent();
             break;
             
