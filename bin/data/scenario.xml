@@ -270,7 +270,7 @@
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
         <rotationX>0.274471372</rotationX>
-        <rotationY>0.961508870</rotationY>
+        <rotationY>0.961508930</rotationY>
         <rotationZ>-0.004483534</rotationZ>
         <rotationW>-0.012087960</rotationW>
         <path>3DMODELS/pinball_stl/channel1_a.stl</path>
@@ -289,7 +289,7 @@
         <rotationX>0.413528293</rotationX>
         <rotationY>0.910399973</rotationY>
         <rotationZ>-0.002648243</rotationZ>
-        <rotationW>-0.012617726</rotationW>
+        <rotationW>-0.012617727</rotationW>
         <path>3DMODELS/pinball_stl/channel1_b.stl</path>
     </object>
     <object>
@@ -320,9 +320,9 @@
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.968602419</rotationX>
-        <rotationY>-0.248280510</rotationY>
-        <rotationZ>0.011961820</rotationZ>
+        <rotationX>0.968602359</rotationX>
+        <rotationY>-0.248280495</rotationY>
+        <rotationZ>0.011961818</rotationZ>
         <rotationW>-0.004809889</rotationW>
         <path>3DMODELS/pinball_stl/channel2_b.stl</path>
     </object>
