@@ -16,7 +16,7 @@ MissionInfoDisplay::MissionInfoDisplay(void){
     fontLarge.loadFont("ARCADE.TTF", 30);
     fontMedium.loadFont("ARCADE.TTF", 30);
     startPositionX = 0;
-    startPositionY = -ofGetHeight()*0.5;
+    startPositionY = -ofGetHeight()*0.40;
     
     ofAddListener(eventMission::onMissionUpdate,this, &MissionInfoDisplay::listenerOnUpdateMission);
     SplashScreenDuration = 1000;

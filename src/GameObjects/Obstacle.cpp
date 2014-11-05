@@ -221,7 +221,7 @@ void Obstacle::onCollision(){
 //------------------------------------------------------------
 void Obstacle::setDefaultZ(){
     
-    position.z = -0.9;
+    position.z = -1.5;
     setPosition(position);
     
 }
