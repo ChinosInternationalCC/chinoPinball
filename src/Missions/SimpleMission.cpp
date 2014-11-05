@@ -261,7 +261,7 @@ int SimpleMission::getElapsedMissionTime(void){
 int SimpleMission::getRemainingMissionTime(void){
     int elapsedTime = -1;
     if (MISSION_STARTED == MissionState)
-        elapsedTime = Timer - ofGetElapsedTimeMillis();
+        elapsedTime = MissionDuration + (Timer - ofGetElapsedTimeMillis());
     return elapsedTime;
     
 }

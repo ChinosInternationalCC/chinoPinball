@@ -120,8 +120,8 @@ void Scenario::draw(bool bEditorMode){
 	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
 		//Not Paint the Walls, id 9 and 10...
-		if( i == 11){}
-		else if (i == 12){}
+		if( i == 10){}
+		else if (i == 11){}
 		else {
 			ScenarioObjects[i]->draw(bEditorMode);
 		}
@@ -137,7 +137,7 @@ void Scenario::draw(bool bEditorMode){
 		material.end();
 	}
     
-	ofDrawAxis(1);
+	//ofDrawAxis(1);
     
 }
 
@@ -230,69 +230,7 @@ void Scenario::popObject(SimpleObject* obj){
 	}
 }
 
-//--------------------------------------------------------------
-#if 0 //the function is not mentained, update it first if you want to use it
-void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
-    ofxJSONElement ScenarioJSON;
-    
-    std::string file = "scenario.json";
-	
-	// Now parse the JSON
-	bool parsingSuccessful = ScenarioJSON.open(file);
-    if (parsingSuccessful) {
-        /* the root JSON value si a list so go through each element */
-        for(unsigned int i=0; i<ScenarioJSON.size(); ++i){
-            Json::Value Object = ScenarioJSON[i];
-            SimpleObject::shapeType Type = (SimpleObject::shapeType)Object["SimpleObject"]["type"].asInt();
-            
-            ofVec3f pos;
-            
-            pos.x = Object["SimpleObject"]["position"]["X"].asFloat();
-            pos.y = Object["SimpleObject"]["position"]["Y"].asFloat();
-            pos.z = Object["SimpleObject"]["position"]["Z"].asFloat();
 
-            switch(Type){
-                    
-                case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball();
-                    oBall->setup(world, pos);
-                    ScenarioObjects.push_back(oBall);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeHammer:{
-                    Hammer *oHammer = new Hammer();
-                    oHammer->setup(world, pos);
-                    ScenarioObjects.push_back(oHammer);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeLever:{
-                    Lever *oLever = new Lever();
-                    int dir = Object["SimpleObject"]["SubType"].asInt();
-                    oLever->setup(world, pos, dir);
-                    ScenarioObjects.push_back(oLever);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeObstacle:{
-                    Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
-                    ScenarioObjects.push_back(oObstable);
-                }
-                break;
-                    
-            }
-            
-        }
-		
-	} else {
-		cout  << "Failed to parse JSON" << endl;
-	}
-
-    
-}
-#endif
 
 //--------------------------------------------------------------
 
@@ -476,43 +414,3 @@ void Scenario::saveToXml(){
     
 }
 
-//------------------------------
-#if 0 //the function is not mentained, update it firs if you want to use it
-void Scenario::saveToJSON(){
-   
-    ofxJSONElement ScenarioJSON;
-    Json::Value Object;
-    
-    for(int i = 0; i < ScenarioObjects.size(); i++){
-
-        Object["SimpleObject"]["type"] = ScenarioObjects[i]->type;
-        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
-            /* for the moment only LEVER has subtypes left and right */
-            Lever *pLever;
-            pLever = (Lever*)ScenarioObjects[i];
-            Object["SimpleObject"]["SubType"] = pLever->direction;
-        }
-        else{
-            /* The other objects don«t have this field so we put it to 0*/
-            Object["SimpleObject"]["SubType"] = 0;
-        }
-		
-        Object["SimpleObject"]["position"]["X"] = ScenarioObjects[i]->position.x;
-        Object["SimpleObject"]["position"]["Y"] = ScenarioObjects[i]->position.y;
-        Object["SimpleObject"]["position"]["Z"] = ScenarioObjects[i]->position.z;
-
-    
-        ScenarioJSON.append(Object);
-    }
-
-    // now write
-    if(!ScenarioJSON.save("scenario.json",true)) {
-        cout << "scenario.json written unsuccessfully." << endl;
-    } else {
-        cout << "scenario.json written successfully." << endl;
-    }
-    
-    
-    
-}
-#endif

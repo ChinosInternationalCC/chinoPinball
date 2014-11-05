@@ -73,8 +73,51 @@ SoundManager::SoundManager(void){
     soundObj[5]->setVolume(0.5f);
     soundObj[5]->setMultiPlay(false);
 	
+	soundFiles.push_back("sounds/paletas.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[6]->loadSound(soundFiles[6]);
+    soundObj[6]->setVolume(0.5f);
+    soundObj[6]->setMultiPlay(false);
+
+	soundFiles.push_back("sounds/pierde.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[7]->loadSound(soundFiles[7]);
+    soundObj[7]->setVolume(0.5f);
+    soundObj[7]->setMultiPlay(false);
+
+	/*
+	soundFiles.push_back("sounds/vocesraval01.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[8]->loadSound(soundFiles[8]);
+    soundObj[8]->setVolume(0.5f);
+    soundObj[8]->setMultiPlay(false);
 	
-	//EVENTS
+	soundFiles.push_back("sounds/vocesraval02.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[9]->loadSound(soundFiles[9]);
+    soundObj[9]->setVolume(0.5f);
+    soundObj[9]->setMultiPlay(false);
+	
+	soundFiles.push_back("sounds/vocesraval03.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[10]->loadSound(soundFiles[10]);
+    soundObj[10]->setVolume(0.5f);
+    soundObj[10]->setMultiPlay(false);
+
+	soundFiles.push_back("sounds/chinospinballsong03.mp3");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[11]->loadSound(soundFiles[11]);
+	soundObj[11]->setVolume(0.5f);
+	soundObj[11]->setMultiPlay(false);
+	 */
+	
+			 //EVENTS
 	ofAddListener(eventGame::onGameEvent,this, &SoundManager::listenerOnHammerLaunch);
 	
 	ofAddListener(eventComunication::onNewCom,this, &SoundManager::listenerOnCollission);
@@ -108,10 +151,28 @@ void SoundManager::listenerOnHammerLaunch(eventGame & args){
 
 //--------------------------------------------------------------------
 void SoundManager::listenerOnCollission(eventComunication & args){
+	
+	if (!bMute){
+		if(args.collision){
 			
-	if(args.collision){
-		if (!bMute)
+			if(args.pObject->idobject == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			
+	/*		else if(args.pObject->idobject == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			else if(args.pObject->idobject == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			else if(args.pObject->idobject == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+	*/
+			
 			soundObj[ObjCol1]->play();
+		}
+
 	}
 }
 

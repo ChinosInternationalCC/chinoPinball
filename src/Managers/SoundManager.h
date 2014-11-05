@@ -19,7 +19,7 @@ class SoundManager {
 public:
 	
 	enum SoundsType { startGame = 1, launchBall = 2, ObjCol1
-		= 3, ObjCol3 = 0, songGeneralGame = 4};
+		= 3, ObjCol3 = 0, songGeneralGame = 4, ObjCol2 = 5, paletasSound = 6, pierdeSound = 7/* , voces1 = 8, voces2 = 9, voces3 = 10, musicWait = 11 */};
 	
 	SoundManager();
 	static SoundManager* getInstance(void);

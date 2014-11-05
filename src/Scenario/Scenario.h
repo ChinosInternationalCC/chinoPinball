@@ -18,7 +18,7 @@
 #include "Bounds.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
-#include "ofxJSONElement.h"
+
 #include "SimpleMission.h"
 
 

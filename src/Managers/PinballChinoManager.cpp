@@ -33,7 +33,7 @@ void PinballChinoManager::setup(){
 
     // setup bullet world
 	world.setup();
-	world.setGravity( ofVec3f(0, 4, 7) );
+	world.setGravity( ofVec3f(0, 10, 17) );
 
     // setup camera
 	camera.setPosition(ofVec3f(0, -2, -15.f));
@@ -213,7 +213,16 @@ void PinballChinoManager::onRestartGameEvent(void){
 	if(GameStatus::getInstance()->Death()){
 		GameStatus::getInstance()->NewPlayer();
 		statusDisplay.GameOver();
+		
+		//Send new envet
+		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
 	}
+	else{
+		//Send Dramatic event sound
+		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
+	}
+	
+	
 	
     
 }
