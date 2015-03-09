@@ -28,6 +28,7 @@
 #include "LightsManager.h"
 //#include "ofxShadow.h"
 #include "ScenarioEditor.h"
+#include "WebSocketsManager.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -45,6 +46,7 @@ public:
 	
 	////Inputs
 	arduComunicationManager arduCom;
+    WebSocketsManager webSock;
     
     ///Outputs
     DMXManager dmx;
@@ -65,6 +67,8 @@ public:
     //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     MissionInfoDisplay      missionDisplay;
+    
+    
     
 	vector<SimpleMission *> currentMissions;
 	int idcurrentMission;

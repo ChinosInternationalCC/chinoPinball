@@ -78,6 +78,7 @@ void PinballChinoManager::setup(){
 	//simple_shadow.setup(&camera);
 	
 
+    webSock.setup(this);
     
 }
 
@@ -115,6 +116,7 @@ void PinballChinoManager::update(){
     }
 
     (currentMissions)[idcurrentMission]->update();
+    
     
 }
 
