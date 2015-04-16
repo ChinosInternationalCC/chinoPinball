@@ -141,6 +141,7 @@
 		A1AC89E9D8DAC3C116114616 /* btConvex2dConvex2dAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D64767FE0DD5558FBFAED25D /* btConvex2dConvex2dAlgorithm.cpp */; };
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
 		A4C3BC6971D284EF22A17336 /* btPolyhedralContactClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F033F871421760F17C150FB3 /* btPolyhedralContactClipping.cpp */; };
+		A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535520A1AE050A50003463B /* AnimatedObject.cpp */; };
 		A535952C18F3430A00065D69 /* arduComunicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952A18F3430A00065D69 /* arduComunicationManager.cpp */; };
 		A535952F18F3435100065D69 /* OSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952D18F3435100065D69 /* OSCManager.cpp */; };
 		A53649EF1AAE34D70099D1B9 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A53649C01AAE34D70099D1B9 /* jsoncpp.cpp */; };
@@ -747,6 +748,8 @@
 		A309102D19BCB56BA0130302 /* gim_array.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_array.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_array.h; sourceTree = SOURCE_ROOT; };
 		A430FFBD7BF0BA514D54CBDB /* gim_geom_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geom_types.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geom_types.h; sourceTree = SOURCE_ROOT; };
 		A4CB26411CB1901F8D91B850 /* cl_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cl_platform.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/MiniCL/cl_platform.h; sourceTree = SOURCE_ROOT; };
+		A535520A1AE050A50003463B /* AnimatedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedObject.cpp; path = GameObjects/AnimatedObject.cpp; sourceTree = "<group>"; };
+		A535520B1AE050A50003463B /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedObject.h; path = GameObjects/AnimatedObject.h; sourceTree = "<group>"; };
 		A535952A18F3430A00065D69 /* arduComunicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arduComunicationManager.cpp; path = src/Managers/arduComunicationManager.cpp; sourceTree = SOURCE_ROOT; };
 		A535952B18F3430A00065D69 /* arduComunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arduComunicationManager.h; path = src/Managers/arduComunicationManager.h; sourceTree = SOURCE_ROOT; };
 		A535952D18F3435100065D69 /* OSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSCManager.cpp; path = Managers/OSCManager.cpp; sourceTree = "<group>"; };
@@ -1280,6 +1283,8 @@
 				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				A99834FB19540EAB0086E53E /* Bounds.cpp */,
 				A99834FC19540EAB0086E53E /* Bounds.h */,
+				A535520A1AE050A50003463B /* AnimatedObject.cpp */,
+				A535520B1AE050A50003463B /* AnimatedObject.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3300,6 +3305,7 @@
 				10B0B9BB4F32AC7C8DFCED5B /* btSoftBody.cpp in Sources */,
 				C4DF50CA31E9F6F375C8C98C /* btSoftBodyConcaveCollisionAlgorithm.cpp in Sources */,
 				264975BFE8CE634589F69994 /* btSoftBodyHelpers.cpp in Sources */,
+				A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */,
 				BF8273797EA05A8E8904CAD7 /* btSoftBodyRigidBodyCollisionConfiguration.cpp in Sources */,
 				D7C00993776805B9F73E1A68 /* btSoftRigidCollisionAlgorithm.cpp in Sources */,
 				3242CE728D9A464AD6FE8ED9 /* btSoftRigidDynamicsWorld.cpp in Sources */,

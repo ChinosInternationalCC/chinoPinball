@@ -7,6 +7,7 @@
 //
 
 #include "Scenario.h"
+#include "PinballChinoManager.h"
 
 //---------------------------------------------------
 void Scenario::setCurrentMission(int _idcurrentMission){
@@ -237,7 +238,7 @@ void Scenario::popObject(SimpleObject* obj){
 void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     ofxXmlSettings ScenarioXml;
     
-    if(ScenarioXml.loadFile("scenario.xml")){
+    if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
         
         ScenarioXml.pushTag("scenario");
         

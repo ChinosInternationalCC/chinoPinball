@@ -10,6 +10,7 @@
 #include "SimpleMission.h"
 #include "ofxXmlSettings.h"
 #include "eventMission.h"
+#include "PinballChinoManager.h"
 
 SimpleMission::SimpleMission(int MissionID){
     loadMissionFromXML(MissionID);
@@ -29,7 +30,7 @@ SimpleMission::SimpleMission(int MissionID){
 void SimpleMission::loadMissionFromXML(int MissionID){
     ofxXmlSettings MissionXml;
     cout<<"Load mission from xml"<<endl;
-    if(MissionXml.loadFile("missions.xml")){
+    if(MissionXml.loadFile(PinballChinoManager::projectName+"/missions.xml")){
         
         MissionXml.pushTag("missions");
         

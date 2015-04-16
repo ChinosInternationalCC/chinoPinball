@@ -1,0 +1,113 @@
+[
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : -3.50,
+            "Y" : -4.0,
+            "Z" : -0.6999999880790710
+         },
+         "type" : 6
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : -0.50,
+            "Y" : -4.0,
+            "Z" : -0.6999999880790710
+         },
+         "type" : 6
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 2.50,
+            "Y" : -4.0,
+            "Z" : -0.6999999880790710
+         },
+         "type" : 6
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 5.50,
+            "Y" : -4.0,
+            "Z" : -0.6999999880790710
+         },
+         "type" : 6
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 5.0,
+            "Y" : 0.0,
+            "Z" : -0.50
+         },
+         "type" : 0
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : -3.0,
+            "Y" : 8.0,
+            "Z" : -0.2000000029802322
+         },
+         "type" : 3
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 1,
+         "position" : {
+            "X" : 3.0,
+            "Y" : 8.0,
+            "Z" : -0.2000000029802322
+         },
+         "type" : 3
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 5.0,
+            "Y" : 5.0,
+            "Z" : -0.4000000059604645
+         },
+         "type" : 5
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : 0.0,
+            "Y" : 0.0,
+            "Z" : 0.0
+         },
+         "type" : 6
+      }
+   },
+   {
+      "SimpleObject" : {
+         "SubType" : 0,
+         "position" : {
+            "X" : -3.924876213073730,
+            "Y" : 1.49716043472290,
+            "Z" : -1.430500014976133e-05
+         },
+         "type" : 6
+      }
+   }
+]
+
