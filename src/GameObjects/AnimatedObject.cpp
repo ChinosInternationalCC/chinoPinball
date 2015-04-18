@@ -7,7 +7,7 @@
 //
 
 #include "AnimatedObject.h"
-
+string sysPath = "Sysiphous/sysiphus_centred.dae";
 
 AnimatedObject::AnimatedObject(vector <SimpleMission *> * _currentMissions) :
 SimpleObject(_currentMissions)
@@ -87,6 +87,9 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
     assimpPath.setPosition(0, 0, 0);
     currentVetice = 0;
     
+    ofRegisterMouseEvents(this);
+    
+    
 }
 
 
@@ -128,14 +131,18 @@ void AnimatedObject::update(bool bEditorMode){
 	}
     
     assimpPath.update();
-    if ( currentVetice < assimpPath.getMesh(0).getNumVertices()){
+  /*
+   
+    if ( (currentVetice < assimpPath.getMesh(0).getNumVertices()) &&
+         (ModelPath.compare(sysPath) == 0)
+        ){
         ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
         setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
         currentVetice ++;
     }
     else
         currentVetice = 0;
-	
+	*/
 	body.activate();
     
 }
@@ -197,17 +204,17 @@ void AnimatedObject::draw(bool bEditorMode){
 	material.begin();
     
 	ofPoint scaleModel		= assimpModel.getScale();
-	
 	body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     //assimpModel.getMesh(0).drawFaces();
     //assimpModel.getMesh(0).drawWireframe();
+    if (ModelPath.compare(sysPath) == 0)
+        ofRotateX(90);
     assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
-    
-    assimpPath.getMesh(0).drawWireframe();
+
     
 	body.restoreTramsformGL();
-	
+    
 	glPopAttrib();
 	material.end();
     
@@ -241,7 +248,7 @@ void AnimatedObject::onCollision(){
 //------------------------------------------------------------
 void AnimatedObject::setDefaultZ(){
     
-    position.z = -1.5;
+    position.z = -0.511;
     setPosition(position);
     
 }
@@ -328,3 +335,15 @@ void AnimatedObject::setAnimation(bool bAnimate) {
     this->bAnimate = bAnimate;
 }
 
+void AnimatedObject::mousePressed(ofMouseEventArgs &args){
+    //setPosition(ofVec3f(args.x, args.y,0.01));
+}
+
+void AnimatedObject::mouseDragged(ofMouseEventArgs &args){
+    
+}
+void AnimatedObject::mouseMoved(ofMouseEventArgs &args){
+    
+}
+void AnimatedObject::mouseReleased(ofMouseEventArgs &args){
+}
