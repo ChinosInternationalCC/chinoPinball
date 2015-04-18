@@ -17,7 +17,7 @@ SimpleObject(_currentMissions)
 
 //---------------------------------
 void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeObstacle;
+    type = ShapeTypeAnimatedObject;
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
@@ -48,6 +48,7 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
     
+    bAnimate = true;
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
@@ -81,6 +82,10 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
     body.activate();
 	
 	setDefaultZ();
+    
+    assimpPath.loadModel("Sysiphous/lineMesh.obj");
+    assimpPath.setPosition(0, 0, 0);
+    currentVetice = 0;
     
 }
 
@@ -121,6 +126,15 @@ void AnimatedObject::update(bool bEditorMode){
 		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
 		last_angleValZ = angleValZ;
 	}
+    
+    assimpPath.update();
+    if ( currentVetice < assimpPath.getMesh(0).getNumVertices()){
+        ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
+        setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
+        currentVetice ++;
+    }
+    else
+        currentVetice = 0;
 	
 	body.activate();
     
@@ -186,7 +200,12 @@ void AnimatedObject::draw(bool bEditorMode){
 	
 	body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    assimpModel.getMesh(0).drawFaces();
+    //assimpModel.getMesh(0).drawFaces();
+    //assimpModel.getMesh(0).drawWireframe();
+    assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
+    
+    assimpPath.getMesh(0).drawWireframe();
+    
 	body.restoreTramsformGL();
 	
 	glPopAttrib();
@@ -302,5 +321,10 @@ void AnimatedObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 	body.activate();
 	
 	
+}
+
+//-------------------------------------------------------------
+void AnimatedObject::setAnimation(bool bAnimate) {
+    this->bAnimate = bAnimate;
 }
 

@@ -668,9 +668,6 @@
 		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
 		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
 		84E6E5F718E60E3A00A582DF /* eventComunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventComunication.h; sourceTree = "<group>"; };
-		84F697BF19647D1900E2174B /* missions.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = missions.xml; path = bin/data/missions.xml; sourceTree = SOURCE_ROOT; };
-		84F697C019647D1900E2174B /* ranking.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ranking.xml; path = bin/data/ranking.xml; sourceTree = SOURCE_ROOT; };
-		84F697C119647D1900E2174B /* scenario.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/scenario.xml; sourceTree = SOURCE_ROOT; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
 		855DCF71E53BBF4F674E54A6 /* btSoftRigidDynamicsWorld.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = btSoftRigidDynamicsWorld.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletSoftBody/btSoftRigidDynamicsWorld.h; sourceTree = SOURCE_ROOT; };
 		8679507735E9709428BD3117 /* btConvexPointCloudShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btConvexPointCloudShape.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp; sourceTree = SOURCE_ROOT; };
@@ -942,6 +939,14 @@
 		A5AEAF9E19548F9F003C1ADB /* ofxFTGLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxFTGLFont.h; path = ../../../addons/ofxFTGL/src/ofxFTGLFont.h; sourceTree = SOURCE_ROOT; };
 		A5AEAF9F19548F9F003C1ADB /* ofxFTGLSimpleLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxFTGLSimpleLayout.cpp; path = ../../../addons/ofxFTGL/src/ofxFTGLSimpleLayout.cpp; sourceTree = SOURCE_ROOT; };
 		A5AEAFA019548F9F003C1ADB /* ofxFTGLSimpleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxFTGLSimpleLayout.h; path = ../../../addons/ofxFTGL/src/ofxFTGLSimpleLayout.h; sourceTree = SOURCE_ROOT; };
+		A5B2CC591AE1802D0022560D /* scenario.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/Demo/scenario.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5A1AE1803A0022560D /* missions.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = missions.xml; path = bin/data/Demo/missions.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5B1AE180540022560D /* cameraSettings.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = cameraSettings.xml; path = bin/data/Demo/cameraSettings.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5C1AE1806B0022560D /* scenario.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/Sysiphous/scenario.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5D1AE180760022560D /* ranking.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ranking.xml; path = bin/data/Sysiphous/ranking.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5E1AE1807E0022560D /* missions.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = missions.xml; path = bin/data/Sysiphous/missions.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC5F1AE180880022560D /* cameraSettings.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = cameraSettings.xml; path = bin/data/Sysiphous/cameraSettings.xml; sourceTree = SOURCE_ROOT; };
+		A5B2CC601AE181B30022560D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A5BE9DA798AD2B20FA548773 /* btCollisionObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = btCollisionObject.cpp; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/CollisionDispatch/btCollisionObject.cpp; sourceTree = SOURCE_ROOT; };
 		A626AFF72A089B0674C727F3 /* gim_tri_collision.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_tri_collision.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_tri_collision.h; sourceTree = SOURCE_ROOT; };
 		A62BE439E0BA41B8956DDA6F /* gim_geometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gim_geometry.h; path = ../../../addons/ofxBullet/libs/bullet2.8.1/include/BulletCollision/Gimpact/gim_geometry.h; sourceTree = SOURCE_ROOT; };
@@ -1893,9 +1898,8 @@
 		84F697BE19647CAF00E2174B /* FilesConfigurations */ = {
 			isa = PBXGroup;
 			children = (
-				84F697BF19647D1900E2174B /* missions.xml */,
-				84F697C019647D1900E2174B /* ranking.xml */,
-				84F697C119647D1900E2174B /* scenario.xml */,
+				A5B2CC581AE1800B0022560D /* Sysiphus */,
+				A5B2CC571AE180010022560D /* Demo */,
 			);
 			name = FilesConfigurations;
 			sourceTree = "<group>";
@@ -2520,6 +2524,27 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		A5B2CC571AE180010022560D /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A5B2CC5B1AE180540022560D /* cameraSettings.xml */,
+				A5B2CC5A1AE1803A0022560D /* missions.xml */,
+				A5B2CC591AE1802D0022560D /* scenario.xml */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		A5B2CC581AE1800B0022560D /* Sysiphus */ = {
+			isa = PBXGroup;
+			children = (
+				A5B2CC5F1AE180880022560D /* cameraSettings.xml */,
+				A5B2CC5E1AE1807E0022560D /* missions.xml */,
+				A5B2CC5D1AE180760022560D /* ranking.xml */,
+				A5B2CC5C1AE1806B0022560D /* scenario.xml */,
+			);
+			name = Sysiphus;
+			sourceTree = "<group>";
+		};
 		A7C5BC2618B788BA006187D9 /* ofxSyphon */ = {
 			isa = PBXGroup;
 			children = (
@@ -2782,6 +2807,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				A5B2CC601AE181B30022560D /* README.md */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,

@@ -35,9 +35,15 @@ public:
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
+    void setAnimation(bool bAnimate);
     void onCollision();
     void setDefaultZ();
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
+
+private:
+    bool bAnimate;
+    ofxAssimpModelLoader	assimpPath;
+    unsigned int currentVetice;
 };

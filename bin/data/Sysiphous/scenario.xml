@@ -14,43 +14,41 @@
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
-        <path>Demo/</path>
+        <path></path>
     </object>
     <object>
-        <type>6</type>
+        <type>8</type>
         <id>2</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>-8.248406410</positionX>
-        <positionY>16.235761642</positionY>
-        <positionZ>-0.500000000</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.000000000</rotationX>
+        <positionX>-3.768406391</positionX>
+        <positionY>-0.024235476</positionY>
+        <positionZ>5.000000000</positionZ>
+        <scaleX>0.010000000</scaleX>
+        <scaleY>0.010000000</scaleY>
+        <scaleZ>0.010000000</scaleZ>
+        <rotationX>0.999605060</rotationX>
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
-        <rotationW>1.000000000</rotationW>
+        <rotationW>0.028103026</rotationW>
         <path>Sysiphous/MOUNTAINfinal.3ds</path>
-        <LeverType>0</LeverType>
     </object>
     <object>
-        <type>6</type>
+        <type>8</type>
         <id>3</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
-        <positionX>8.127855301</positionX>
-        <positionY>16.360452652</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionX>0.947855890</positionX>
+        <positionY>9.900447845</positionY>
+        <positionZ>-1.500000000</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.000000000</rotationX>
-        <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
-        <rotationW>1.000000000</rotationW>
+        <rotationX>-0.495430827</rotationX>
+        <rotationY>-0.477861106</rotationY>
+        <rotationZ>0.634742260</rotationZ>
+        <rotationW>0.351140052</rotationW>
         <path>Sysiphous/sysiphus2.dae</path>
-        <LeverType>1</LeverType>
     </object>
     <object>
         <type>5</type>
@@ -67,6 +65,42 @@
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
-        <path>Demo/</path>
+        <path></path>
     </object>
-  </scenario>
+    <object>
+        <type>3</type>
+        <id>2</id>
+        <color>16777215</color>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-8.248406410</positionX>
+        <positionY>16.235761642</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher_def_ok.obj</path>
+        <LeverType>0</LeverType>
+    </object>
+    <object>
+        <type>3</type>
+        <id>3</id>
+        <color>16777215</color>
+        <pointsCollision>0</pointsCollision>
+        <positionX>8.127855301</positionX>
+        <positionY>16.360452652</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.100000001</scaleX>
+        <scaleY>0.100000001</scaleY>
+        <scaleZ>0.100000001</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher2_def_ok.obj</path>
+        <LeverType>1</LeverType>
+    </object>
+</scenario>

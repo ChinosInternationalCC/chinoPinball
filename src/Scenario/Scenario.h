@@ -16,6 +16,7 @@
 #include "Hammer.h"
 #include "Obstacle.h"
 #include "Bounds.h"
+#include "AnimatedObject.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 

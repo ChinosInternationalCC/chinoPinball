@@ -330,6 +330,20 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 }
                 break;
                     
+                case SimpleObject::ShapeTypeAnimatedObject:{
+                    AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oAnimatedObject->setup(world, pos, path, scale);
+                    oAnimatedObject->SetObjectId(objId);
+					oAnimatedObject->setRotation(rotation);
+                    oAnimatedObject->color = color;
+                    ScenarioObjects.push_back(oAnimatedObject);
+					oAnimatedObject->setPointsCollision(pointsCollision);
+					oAnimatedObject->setupRot();
+                    
+                }
+                    break;
+                    
                 case SimpleObject::ShapeTypeBounds:{
                     Bounds *oBounds = new Bounds(currentMissions);
                     oBounds->setup(world, pos, path, scale);
@@ -411,7 +425,7 @@ void Scenario::saveToXml(){
     }
     
     ScenarioXml.popTag();
-    ScenarioXml.saveFile("scenario.xml");
+    ScenarioXml.saveFile(PinballChinoManager::projectName+"/scenario.xml");
     
 }
 
