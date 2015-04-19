@@ -20,13 +20,14 @@ void Scenario::setupMissions(vector<SimpleMission*> *vectorMission){
 }
 
 //--------------------------------------------------------------
-void Scenario::setup(ofxBulletWorldRigid &_world){
+void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
     
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
 	loadBasicScenario(_world, ofVec3f(0,0,0));
-    addCoverScenario(_world);
+    if (bAddScenarioCover)
+        addCoverScenario(_world);
 	
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
@@ -342,7 +343,20 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oAnimatedObject->setupRot();
                     
                 }
-                    break;
+                break;
+                case SimpleObject::ShapeTypeAnimatedMesh:{
+                    AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oAnimatedMesh->setup(world, pos, path, scale);
+                    oAnimatedMesh->SetObjectId(objId);
+					oAnimatedMesh->setRotation(rotation);
+                    oAnimatedMesh->color = color;
+                    ScenarioObjects.push_back(oAnimatedMesh);
+					oAnimatedMesh->setPointsCollision(pointsCollision);
+					oAnimatedMesh->setupRot();
+                    
+                }
+                break;
                     
                 case SimpleObject::ShapeTypeBounds:{
                     Bounds *oBounds = new Bounds(currentMissions);

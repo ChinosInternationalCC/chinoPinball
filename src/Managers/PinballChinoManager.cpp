@@ -27,7 +27,8 @@ PinballChinoManager::PinballChinoManager():
 	cout << "Loading projectSettings.xml" << message << endl;
 	
 	
-	projectName= XML.getValue("PROJECT_NAME","", 0);
+	projectName = XML.getValue("PROJECT_NAME","", 0);
+    bAddScenarioCover = XML.getValue("ADD_SCENARIO_COVER",0, 0);
 
 	SimpleMission* mission0 = new SimpleMission(0);
 	idcurrentMission = 0;
@@ -64,7 +65,7 @@ void PinballChinoManager::setup(){
     // setup scenario
 	myScenario.setupMissions(&currentMissions);
 	myScenario.setCurrentMission(idcurrentMission);
-    myScenario.setup(world);
+    myScenario.setup(world, bAddScenarioCover);
     
     // setup scenario editor
     ScenarioEditor::getInstance()->setup(world, myScenario);
@@ -214,7 +215,8 @@ void PinballChinoManager::onRestartGameEvent(void){
                 {
                     Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
                     ofVec3f pos;
-                    pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    //pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    pos.set(2.388406008,-7.564235449,-6.500999928);
                     ball->setPosition(pos);
                 }
             }

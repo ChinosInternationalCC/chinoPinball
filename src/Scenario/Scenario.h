@@ -17,6 +17,7 @@
 #include "Obstacle.h"
 #include "Bounds.h"
 #include "AnimatedObject.h"
+#include "AnimatedMesh.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 
@@ -32,7 +33,7 @@ public:
     void setupMissions(vector <SimpleMission *> *missions);
 	
 	///
-	void setup(ofxBulletWorldRigid &world);
+	void setup(ofxBulletWorldRigid &world, bool bAddScenarioCover);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
     void drawDebug(void);

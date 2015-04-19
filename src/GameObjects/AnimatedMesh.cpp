@@ -6,29 +6,29 @@
 //
 //
 
-#include "AnimatedObject.h"
-string sysPath = "Sysiphous/sysiphus_centred.dae";
+#include "AnimatedMesh.h"
+string _sysPath = "Sysiphous/sysiphus_centred.dae";
 
-AnimatedObject::AnimatedObject(vector <SimpleMission *> * _currentMissions) :
+AnimatedMesh::AnimatedMesh(vector <SimpleMission *> * _currentMissions) :
 SimpleObject(_currentMissions)
 {
     collisionPoints = 0;
+    world = NULL;
 }
 
 //---------------------------------
-void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeAnimatedObject;
+void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+    type = ShapeTypeAnimatedMesh;
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
+    this->world = &world;
 	
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
     
-    // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
-    
+
     
     // load 3D model
     scale = ModelScale;
@@ -40,13 +40,14 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
     
 	//save init values
 	initScale = scale;
-	
-	
-    // add 3D meshes to ofxBullet shape
-   // for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-   // {
-        body.addMesh(assimpModel.getCurrentAnimatedMesh(0), scale, true);
-   // }
+	mesh = assimpModel.getCurrentAnimatedMesh(0);
+    // create ofxBullet shape
+    //body.create(world.world, position, 0); // we set m=0 for kinematic body
+    body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
+    body.add();
+    body.enableKinematic();
+    body.setActivationState( DISABLE_DEACTIVATION );
+    
     
     bAnimate = true;
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
@@ -54,27 +55,12 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
     body.add();
     
 	
-    body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
 	
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
-    // btTransform transform;
-    //btRigidBody* a_rb = body.getRigidBody();
-    //a_rb->getMotionState()->getWorldTransform( transform );
-    
-    // rotate
-    //    btQuaternion currentRotation = transform.getRotation();
-    //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
-    //    btQuaternion rotate;
-    
-    //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
-    //   rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
-    //   transform.setRotation(rotate * rotation);
-    
-    //   a_rb->getMotionState()->setWorldTransform( transform );
 	
 	//Set Rotation Objects
 	setupRot();
@@ -94,11 +80,14 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
 
 
 //--------------------------------------------------------------
-void AnimatedObject::update(bool bEditorMode){
+void AnimatedMesh::update(bool bEditorMode){
     
 	autoScalingXYZ();
     
     assimpModel.update();
+    
+    
+    
     
 	//Udpate mesch if there are changes
 	// add 3D mashes to ofxBullet shape
@@ -131,18 +120,18 @@ void AnimatedObject::update(bool bEditorMode){
 	}
     
     assimpPath.update();
-  /*
-   
-    if ( (currentVetice < assimpPath.getMesh(0).getNumVertices()) &&
-         (ModelPath.compare(sysPath) == 0)
-        ){
-        ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
-        setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
-        currentVetice ++;
-    }
-    else
-        currentVetice = 0;
-	*/
+    /*
+     
+     if ( (currentVetice < assimpPath.getMesh(0).getNumVertices()) &&
+     (ModelPath.compare(sysPath) == 0)
+     ){
+     ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
+     setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
+     currentVetice ++;
+     }
+     else
+     currentVetice = 0;
+     */
 	body.activate();
     
 }
@@ -153,7 +142,7 @@ void AnimatedObject::update(bool bEditorMode){
  }*/
 
 //--------------------------------------------------------------
-void AnimatedObject::autoScalingXYZ(){
+void AnimatedMesh::autoScalingXYZ(){
 	
 	btVector3 myObjectScale;
 	ofVec3f myOfObjectScale;
@@ -184,7 +173,7 @@ void AnimatedObject::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void AnimatedObject::draw(bool bEditorMode){
+void AnimatedMesh::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
@@ -204,14 +193,21 @@ void AnimatedObject::draw(bool bEditorMode){
 	material.begin();
     
 	ofPoint scaleModel		= assimpModel.getScale();
-	body.transformGL();
+ 
+    mesh = assimpModel.getCurrentAnimatedMesh(0);
+    body.updateMesh( this->world->world, mesh );
+    body.getRigidBody()->getCollisionShape()->setLocalScaling(btVector3(scaleModel.x, scaleModel.y,  scaleModel.z));
+                                                                    
+    body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     //assimpModel.getMesh(0).drawFaces();
     //assimpModel.getMesh(0).drawWireframe();
-    if (ModelPath.compare(sysPath) == 0)
-        ofRotateX(90);
-    assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
+    //if (ModelPath.compare(_sysPath) == 0)
+    //    ofRotateX(90);
+    
 
+    mesh.drawWireframe();
+    
     
 	body.restoreTramsformGL();
     
@@ -220,17 +216,17 @@ void AnimatedObject::draw(bool bEditorMode){
     
 }
 //-------------------------------------------------------------
-ofxBulletBaseShape* AnimatedObject::getBulletBaseShape(){
+ofxBulletBaseShape* AnimatedMesh::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
 }
 
 //------------------------------------------------------------
-string AnimatedObject::getObjectName(){
+string AnimatedMesh::getObjectName(){
     return "Obstacle";
 }
 
 //------------------------------------------------------------
-void AnimatedObject::onCollision(){
+void AnimatedMesh::onCollision(){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
@@ -246,7 +242,7 @@ void AnimatedObject::onCollision(){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setDefaultZ(){
+void AnimatedMesh::setDefaultZ(){
     
     position.z = -0.511;
     setPosition(position);
@@ -254,7 +250,7 @@ void AnimatedObject::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setPosition(ofVec3f position){
+void AnimatedMesh::setPosition(ofVec3f position){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -269,7 +265,7 @@ void AnimatedObject::setPosition(ofVec3f position){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setRotation(ofQuaternion rotation){
+void AnimatedMesh::setRotation(ofQuaternion rotation){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -288,7 +284,7 @@ void AnimatedObject::setRotation(ofQuaternion rotation){
 }
 
 //--------------------------------------------------------------
-void AnimatedObject::setupRot(){
+void AnimatedMesh::setupRot(){
 	btTransform transform;
 	btRigidBody* a_rb = body.getRigidBody();
 	a_rb->getMotionState()->getWorldTransform( transform );
@@ -304,7 +300,7 @@ void AnimatedObject::setupRot(){
 
 
 //--------------------------------------------------------------
-void AnimatedObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+void AnimatedMesh::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 	
 	
 	btTransform transform;
@@ -331,19 +327,19 @@ void AnimatedObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 }
 
 //-------------------------------------------------------------
-void AnimatedObject::setAnimation(bool bAnimate) {
+void AnimatedMesh::setAnimation(bool bAnimate) {
     this->bAnimate = bAnimate;
 }
 
-void AnimatedObject::mousePressed(ofMouseEventArgs &args){
+void AnimatedMesh::mousePressed(ofMouseEventArgs &args){
     //setPosition(ofVec3f(args.x, args.y,0.01));
 }
 
-void AnimatedObject::mouseDragged(ofMouseEventArgs &args){
+void AnimatedMesh::mouseDragged(ofMouseEventArgs &args){
     
 }
-void AnimatedObject::mouseMoved(ofMouseEventArgs &args){
+void AnimatedMesh::mouseMoved(ofMouseEventArgs &args){
     
 }
-void AnimatedObject::mouseReleased(ofMouseEventArgs &args){
+void AnimatedMesh::mouseReleased(ofMouseEventArgs &args){
 }

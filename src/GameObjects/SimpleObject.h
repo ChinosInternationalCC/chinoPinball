@@ -32,7 +32,8 @@ public:
         ShapeTypeHammer = 5,
         ShapeTypeObstacle = 6,
         ShapeTypeBounds = 7,
-        ShapeTypeAnimatedObject = 8
+        ShapeTypeAnimatedObject = 8,
+        ShapeTypeAnimatedMesh = 9,
     };
     
     //ofxBulletCustomShape	body;
