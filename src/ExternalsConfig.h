@@ -12,6 +12,6 @@
 /* comment define if don't want to use feature */
 #define USE_SYPHON
 #define USE_OSC
-#define USE_MTL_MAPPING
+//#define USE_MTL_MAPPING
 
 #endif

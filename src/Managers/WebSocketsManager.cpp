@@ -32,7 +32,7 @@ void WebSocketsManager::setup(InputEventManager * inputs){
         url += "s";
     }
     url += "://localhost:" + ofToString( server.getPort() );
-    ofLaunchBrowser(url);
+    //ofLaunchBrowser(url);
 }
 
 //--------------------------------------------------------------

@@ -10,9 +10,24 @@
 #include "Ball.h"
 #include "eventComunication.h"
 
-PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
+string PinballChinoManager::projectName = "";
+
+//-------------------------------------------------------------
+PinballChinoManager::PinballChinoManager():
+            statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150)
+{
 //  currentMission = new SimpleMission(1);
 	
+    string message = "loading project name";
+	if( XML.loadFile("projectSettings.xml") ){
+		message = "projectSettings.xml loaded!";
+	}else{
+		message = "unable to load projectSettings.xml check folder data/" + projectName;
+	}
+	cout << "Loading projectSettings.xml" << message << endl;
+	
+	
+	projectName= XML.getValue("PROJECT_NAME","", 0);
 
 	SimpleMission* mission0 = new SimpleMission(0);
 	idcurrentMission = 0;
@@ -319,13 +334,13 @@ void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 	cout << "saveCameraPosition ?? " << endl;
 	
 	//_camPose = cam.getTarget().getGlobalTransformMatrix();
-	ofxXmlSettings *XML = new ofxXmlSettings("cameraSettings.xml");
+	ofxXmlSettings *XML = new ofxXmlSettings(projectName+"/cameraSettings.xml");
     XML->setValue("_camPose_00", _camPose(0,0), 0); XML->setValue("_camPose_01", _camPose(0,1), 0); XML->setValue("_camPose_02", _camPose(0,2), 0); XML->setValue("_camPose_03", _camPose(0,3), 0);
     XML->setValue("_camPose_10", _camPose(1,0), 0); XML->setValue("_camPose_11", _camPose(1,1), 0); XML->setValue("_camPose_12", _camPose(1,2), 0); XML->setValue("_camPose_13", _camPose(1,3), 0);
     XML->setValue("_camPose_20", _camPose(2,0), 0); XML->setValue("_camPose_21", _camPose(2,1), 0); XML->setValue("_camPose_22", _camPose(2,2), 0); XML->setValue("_camPose_23", _camPose(2,3), 0);
     XML->setValue("_camPose_30", _camPose(3,0), 0); XML->setValue("_camPose_31", _camPose(3,1), 0); XML->setValue("_camPose_32", _camPose(3,2), 0); XML->setValue("_camPose_33", _camPose(3,3), 0);
 	//XML->setValue("distance", cam.getDistance(), 0);
-	XML->saveFile("cameraSettings.xml");
+	XML->saveFile(projectName+"/cameraSettings.xml");
     delete XML;
 	
 	cout << "end saveCameraPosition ?? " << endl;
@@ -337,10 +352,10 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 	ofMatrix4x4 _camPose;
 	
 	string message = "loading cameraSettings.xml";
-	if( XML.loadFile("cameraSettings.xml") ){
-		message = "cameraSettings.xml loaded!";
+	if( XML.loadFile(projectName+"/cameraSettings.xml") ){
+		message = projectName+"/cameraSettings.xml loaded!";
 	}else{
-		message = "unable to load cameraSettings.xml check data/ folder";
+		message = "unable to load cameraSettings.xml check folder data/" + projectName;
 	}
 	cout << "Loading Camera position" << message << endl;
 	

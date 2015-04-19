@@ -56,6 +56,7 @@ public:
     ofEasyCam				camera;
     ofMatrix4x4 savedPose;
 	ofxXmlSettings XML;
+    static string projectName;
 	void saveCameraPosition(ofMatrix4x4 _camPose);
 	ofMatrix4x4 loadCameraPosition();
     bool bMouseCameraEvents(bool activate);

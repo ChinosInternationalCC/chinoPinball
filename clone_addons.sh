@@ -17,3 +17,4 @@ ${PREFIX}kylemcdonald/ofxDmx.git
 ${PREFIX}Flightphase/ofxFTGL.git
 ${PREFIX}memo/ofxMSAInteractiveObject
 ${PREFIX}morethanlogic/ofxMtlMapping2D
+${PREFIX}labatrockwell/ofxLibwebsockets
