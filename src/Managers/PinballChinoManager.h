@@ -93,6 +93,7 @@ public:
 	
 private:
 	
+    bool bAddScenarioCover;
 	void listenerAddObject2Scenario(eventObjectScenario & args);
 	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
 	

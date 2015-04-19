@@ -219,6 +219,7 @@
 		A544B03F1AE2C00E00BA7F27 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */; };
 		A544B0401AE2C00F00BA7F27 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */; };
 		A544B0411AE2C00F00BA7F27 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */; };
+		A54C8F671AE3E999000F8AC0 /* AnimatedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */; };
 		A589868818B94214007D9BB5 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7C5BC4318B788BA006187D9 /* Syphon.framework */; };
 		A58AA50418E0BF4700AA5372 /* DMXManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58AA50218E0BF4700AA5372 /* DMXManager.cpp */; };
 		A58AA52D18E0BFFE00AA5372 /* ofxDmx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58AA52718E0BFFE00AA5372 /* ofxDmx.cpp */; };
@@ -906,6 +907,9 @@
 		A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletDynamics.a; sourceTree = "<group>"; };
 		A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletSoftBody.a; sourceTree = "<group>"; };
 		A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLinearMath.a; sourceTree = "<group>"; };
+		A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedMesh.cpp; path = GameObjects/AnimatedMesh.cpp; sourceTree = "<group>"; };
+		A54C8F661AE3E999000F8AC0 /* AnimatedMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedMesh.h; path = GameObjects/AnimatedMesh.h; sourceTree = "<group>"; };
+		A54C8F681AE3F00D000F8AC0 /* projectSettings.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = projectSettings.xml; path = bin/data/projectSettings.xml; sourceTree = SOURCE_ROOT; };
 		A58AA50218E0BF4700AA5372 /* DMXManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DMXManager.cpp; path = Managers/DMXManager.cpp; sourceTree = "<group>"; };
 		A58AA50318E0BF4700AA5372 /* DMXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMXManager.h; path = Managers/DMXManager.h; sourceTree = "<group>"; };
 		A58AA52718E0BFFE00AA5372 /* ofxDmx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxDmx.cpp; path = ../../../addons/ofxDmx/src/ofxDmx.cpp; sourceTree = SOURCE_ROOT; };
@@ -1230,6 +1234,8 @@
 				A99834FC19540EAB0086E53E /* Bounds.h */,
 				A535520A1AE050A50003463B /* AnimatedObject.cpp */,
 				A535520B1AE050A50003463B /* AnimatedObject.h */,
+				A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */,
+				A54C8F661AE3E999000F8AC0 /* AnimatedMesh.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -1383,6 +1389,7 @@
 		84F697BE19647CAF00E2174B /* FilesConfigurations */ = {
 			isa = PBXGroup;
 			children = (
+				A54C8F681AE3F00D000F8AC0 /* projectSettings.xml */,
 				A5B2CC581AE1800B0022560D /* Sysiphus */,
 				A5B2CC571AE180010022560D /* Demo */,
 			);
@@ -3161,6 +3168,7 @@
 				A544AFA71AE2C00E00BA7F27 /* ofxBulletSphere.cpp in Sources */,
 				A544AFC61AE2C00E00BA7F27 /* btManifoldResult.cpp in Sources */,
 				A58DD20F18F8577300B1FE41 /* ofxUIImageButton.cpp in Sources */,
+				A54C8F671AE3E999000F8AC0 /* AnimatedMesh.cpp in Sources */,
 				A58DD21318F8577300B1FE41 /* ofxUILabel.cpp in Sources */,
 				A544B0321AE2C00E00BA7F27 /* btPolarDecomposition.cpp in Sources */,
 				A544B0281AE2C00E00BA7F27 /* btSoftBodyConcaveCollisionAlgorithm.cpp in Sources */,
