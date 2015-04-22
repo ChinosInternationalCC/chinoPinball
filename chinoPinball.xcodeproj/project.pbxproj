@@ -3755,15 +3755,15 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					../../../addons/ofxFTGL/libs/FTGL/lib/osx/,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/linux,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/linux64,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/osx,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs64,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxLibwebsockets/libs/libwebsockets/lib/osx,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/fat,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/i386,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/x86_64,
+					../../../addons/ofxFTGL/libs/FTGL/lib/linux,
+					../../../addons/ofxFTGL/libs/FTGL/lib/linux64,
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/fat,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/i386,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/x86_64,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				SDKROOT = macosx10.8;
@@ -3890,15 +3890,15 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					../../../addons/ofxFTGL/libs/FTGL/lib/osx/,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/linux,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/linux64,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/osx,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxFTGL/libs/FTGL/lib/vs64,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxLibwebsockets/libs/libwebsockets/lib/osx,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/fat,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/i386,
-					/Users/ovidiu/work/openframeworks/of_v0.8.1_osx_release/addons/ofxBullet/libs/bullet2.8.2/lib/osx/x86_64,
+					../../../addons/ofxFTGL/libs/FTGL/lib/linux,
+					../../../addons/ofxFTGL/libs/FTGL/lib/linux64,
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/fat,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/i386,
+					../../../addons/ofxBullet/libs/bullet2.8.2/lib/osx/x86_64,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
