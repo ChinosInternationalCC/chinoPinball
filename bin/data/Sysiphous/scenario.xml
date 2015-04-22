@@ -51,8 +51,8 @@
         <path>Sysiphous/sysiphus_centred.dae</path>
     </object>
     <object>
-        <type>8</type>
-        <id>3</id>
+        <type>9</type>
+        <id>4</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
         <positionX>15.947871208</positionX>
@@ -68,8 +68,25 @@
         <path>Sysiphous/tonnel_test.obj</path>
     </object>
     <object>
-        <type>8</type>
-        <id>3</id>
+        <type>10</type>
+        <id>4</id>
+        <color>16777215</color>
+        <pointsCollision>0</pointsCollision>
+        <positionX>15.947871208</positionX>
+        <positionY>-9.499558449</positionY>
+        <positionZ>-0.510999978</positionZ>
+        <scaleX>0.390376449</scaleX>
+        <scaleY>0.390376449</scaleY>
+        <scaleZ>0.390376449</scaleZ>
+        <rotationX>-0.495430827</rotationX>
+        <rotationY>-0.477861106</rotationY>
+        <rotationZ>0.634742260</rotationZ>
+        <rotationW>0.351140052</rotationW>
+        <path></path>
+    </object>
+    <object>
+        <type>9</type>
+        <id>5</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
         <positionX>-0.388406008</positionX>
@@ -86,7 +103,7 @@
     </object>
     <object>
         <type>5</type>
-        <id>4</id>
+        <id>6</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
         <positionX>-11.039986610</positionX>
@@ -103,7 +120,7 @@
     </object>
     <object>
         <type>3</type>
-        <id>2</id>
+        <id>7</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
         <positionX>-8.248406410</positionX>
@@ -121,7 +138,7 @@
     </object>
     <object>
         <type>3</type>
-        <id>3</id>
+        <id>8</id>
         <color>16777215</color>
         <pointsCollision>0</pointsCollision>
         <positionX>8.127855301</positionX>
