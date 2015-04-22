@@ -18,6 +18,7 @@
 #include "Bounds.h"
 #include "AnimatedObject.h"
 #include "AnimatedMesh.h"
+#include "GeneratedMesh.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 

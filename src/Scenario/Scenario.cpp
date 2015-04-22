@@ -357,6 +357,19 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
+                case SimpleObject::ShapeTypeGeneratedMesh:{
+                    GeneratedMesh *oGeneratedMesh = new GeneratedMesh(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oGeneratedMesh->setup(world, pos, path, scale);
+                    oGeneratedMesh->SetObjectId(objId);
+					oGeneratedMesh->setRotation(rotation);
+                    oGeneratedMesh->color = color;
+                    ScenarioObjects.push_back(oGeneratedMesh);
+					oGeneratedMesh->setPointsCollision(pointsCollision);
+					oGeneratedMesh->setupRot();
+                    
+                }
+                break;
                     
                 case SimpleObject::ShapeTypeBounds:{
                     Bounds *oBounds = new Bounds(currentMissions);

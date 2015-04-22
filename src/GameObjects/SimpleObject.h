@@ -34,6 +34,7 @@ public:
         ShapeTypeBounds = 7,
         ShapeTypeAnimatedObject = 8,
         ShapeTypeAnimatedMesh = 9,
+        ShapeTypeGeneratedMesh = 10
     };
     
     //ofxBulletCustomShape	body;
