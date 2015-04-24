@@ -13,7 +13,7 @@ AnimatedMotionPath::AnimatedMotionPath(vector <SimpleMission *> * _currentMissio
 SimpleObject(_currentMissions)
 {
     collisionPoints = 0;
-    ofRegisterKeyEvents(this);
+    
 }
 
 //---------------------------------
@@ -75,8 +75,12 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
     assimpPath.setPosition(0, 0, 0);
     assimpPath.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpPath.playAllAnimations();
+    m_motionPathCurPos = assimpPath.getAnimation(0).getPosition();
     
     
+    m_eMotionControl = MOTION_CONTROL_LOOP;
+    
+    ofRegisterKeyEvents(this);
     
 }
 
@@ -106,6 +110,29 @@ void AnimatedMotionPath::update(bool bEditorMode){
 	}
 
     /* Update the model position acording to the motion path */
+    switch(m_eMotionControl){
+        case MOTION_CONTROL_LOOP:
+            assimpPath.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
+            assimpPath.playAllAnimations();
+            break;
+        case MOTION_CONTROL_MANUAL:
+            assimpPath.setPausedForAllAnimations(true);
+            assimpPath.getAnimation(0).setPosition(m_motionPathCurPos);
+            break;
+        case MOTION_CONTROL_END_POINT:
+            /* 
+             check if the current animation position is not >= m_bAnimationEndPos
+             and pause the animation until a new AnimationEndPos is given
+             
+             TODO the end of the model animation, should reloop?
+             */
+            if (m_motionPathCurPos >= m_bAnimationEndPos)
+                 assimpPath.setPausedForAllAnimations(true);
+            else
+                assimpPath.setPausedForAllAnimations(false);
+            break;
+    }
+    
     assimpPath.update();
     m_motionPathCurPos = assimpPath.getAnimation(0).getPosition();
     setPosition(AssimpUtils::getAnimatedObjectPosition(assimpPath));
@@ -327,6 +354,25 @@ void AnimatedMotionPath::MotionPathSetAnimationEndPos(float position){
     m_bAnimationEndPos = position;
 }
 
+
+void AnimatedMotionPath::MotionPathMoveFW(){
+    m_motionPathCurPos = m_motionPathCurPos + 0.01;
+    if (m_motionPathCurPos >= 1){
+        m_motionPathCurPos = 0;
+    }
+}
+
+void AnimatedMotionPath::MotionPathMoveBK(){
+    m_motionPathCurPos = m_motionPathCurPos - 0.01;
+    if (m_motionPathCurPos <= 0){
+        m_motionPathCurPos = 1;
+    }
+}
+
+void AnimatedMotionPath::MotionPathIncrementAnimationEndPosition(){
+    m_bAnimationEndPos = m_bAnimationEndPos + 0.2;
+}
+
 //------------------------------------------------------------
 void AnimatedMotionPath::keyPressed  (ofKeyEventArgs& args){
     if(args.key == 'p'){
@@ -339,6 +385,16 @@ void AnimatedMotionPath::keyPressed  (ofKeyEventArgs& args){
         MotionPathStop();
     }
     else if (args.key == 'u'){
+        m_eMotionControl = MOTION_CONTROL_MANUAL;
+        MotionPathMoveFW();
+    }
+    else if (args.key == 'y'){
+        m_eMotionControl = MOTION_CONTROL_MANUAL;
+        MotionPathMoveBK();
+    }
+    else if (args.key == 't'){
+        m_eMotionControl = MOTION_CONTROL_END_POINT;
+        MotionPathIncrementAnimationEndPosition();
     }
 }
 

@@ -18,6 +18,12 @@ class AnimatedMotionPath : public SimpleObject {
     
 public:
     
+    enum enMotionControl{
+        MOTION_CONTROL_LOOP = 0,
+        MOTION_CONTROL_MANUAL,
+        MOTION_CONTROL_END_POINT
+    };
+    
     AnimatedMotionPath(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, string pathMotionModel,ofVec3f ModelScale);
 	virtual void update(bool bEditorMode);
@@ -46,6 +52,9 @@ public:
     void MotionPathPause(bool paused);
     void MotionPathSetPosition(float position);
     void MotionPathSetAnimationEndPos(float position);
+    void MotionPathMoveFW();
+    void MotionPathMoveBK();
+    void MotionPathIncrementAnimationEndPosition();
     
     
     string getMotionModelPath();
@@ -59,5 +68,6 @@ private:
     string m_pathMotionModel;
     float m_bAnimationEndPos;
     float m_motionPathCurPos;
+    enMotionControl m_eMotionControl;
     
 };

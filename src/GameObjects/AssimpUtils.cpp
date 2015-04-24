@@ -41,10 +41,6 @@ ofVec3f AssimpUtils::getAnimatedObjectPosition(ofxAssimpModelLoader &model){
             presentPosition = key.mValue;
         }
     }
-/*
-    cout << "Animated Pos.x " << presentPosition.x << endl;
-    cout << "Animated Pos.y " << presentPosition.y << endl;
-    cout << "Animated Pos.z " << presentPosition.z << endl;
- */
+
     return ofVec3f(presentPosition.x, presentPosition.y, presentPosition.z);
 }
