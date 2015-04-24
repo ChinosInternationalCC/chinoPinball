@@ -284,7 +284,11 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball(currentMissions);
-                    oBall->setup(world, pos);
+                    float mass = ScenarioXml.getValue("mass", 0.0);
+                    float radius = ScenarioXml.getValue("radius", 0.0);
+                    float restitution = ScenarioXml.getValue("restitution", 0.0);
+                    float friction = ScenarioXml.getValue("friction", 0.0);
+                    oBall->setup(world, pos, mass, radius, restitution, friction);
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
                     oBall->color = color;
@@ -470,6 +474,15 @@ void Scenario::saveToXml(){
             ScenarioXml.addValue("pathMotionModel", pAnimatedMotionPath->getMotionModelPath());
         }
         
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
+            Ball *pBall;
+            pBall = (Ball*)ScenarioObjects[i];
+            ScenarioXml.addValue("mass", pBall->mass);
+            ScenarioXml.addValue("radius", pBall->radius);
+            ScenarioXml.addValue("restitution", pBall->restitution);
+            ScenarioXml.addValue("friction", pBall->friction);
+        }
+        
         ScenarioXml.popTag();
     }
     
@@ -478,3 +491,21 @@ void Scenario::saveToXml(){
     
 }
 
+SimpleObject* Scenario::FindScenarioObjectByName(string name){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+        if (ScenarioObjects[i]->getObjectName().compare(name) == 0){
+            return ScenarioObjects[i];
+        }
+    }
+    return NULL;
+    
+}
+SimpleObject* Scenario::FindScenarioObjectById(int id){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+        if (ScenarioObjects[i]->GetObjectId() == id){
+            return ScenarioObjects[i];
+        }
+    }
+    return NULL;
+    
+}

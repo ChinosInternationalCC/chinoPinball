@@ -15,6 +15,10 @@
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
         <path></path>
+        <mass>1</mass>
+        <radius>0.5</radius>
+        <restitution>0.45</restitution>
+        <friction>0.25</friction>
     </object>
     <object>
         <type>8</type>

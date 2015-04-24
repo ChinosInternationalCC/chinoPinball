@@ -69,5 +69,6 @@ private:
     float m_bAnimationEndPos;
     float m_motionPathCurPos;
     enMotionControl m_eMotionControl;
+    float m_fixedZ;
     
 };

@@ -266,6 +266,15 @@ The tag *<type>* should hold the object type; one of the values defined in the *
 The tag *<id>* should hold a unique id for each object.
 
 ***
+###Shape Types
+
+*Hammer* is the object used to launch the ball and it gives to the loaded 3D model a movement like in the image below.
+![Hammer](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/hammer.gif)
+
+*Lever* are the objects used to hit the ball and they give the movement from bellow to the 3D model:
+![Lever](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/lever.gif)
+
+***
 ###OSC
 
 All the collision events and other information regarding the game like the curent mission, score etc are sent via OSC in order to be available to other external application like MadMapper, Module8, PureData, MaxMsp, SuperCollider etc

@@ -13,24 +13,35 @@ Ball::Ball(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
     m_status = BallStatusWaiting;
-	radius = .5;
-	mass = 10;
-	
-	shadow.set(radius, 0.1);
-	shadow.setResolution(20, 1);
+
 }
 
 //---------------------------------
-void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
+void Ball::setup(ofxBulletWorldRigid &myWorld,
+                 ofVec3f pos,
+                 float mass,
+                 float radius,
+                 float restitution,
+                 float friction){
+    
+    
     m_status = BallStatusWaiting;
     position = pos;
+    m_initialPos = pos;
+    this->mass = mass;
+    this->radius = radius;
+    this->restitution = restitution;
+    this->friction = friction;
+	
+	shadow.set(radius, 0.1);
+	shadow.setResolution(20, 1);
     
     // place on table
 //    position.z = -radius/2.;
     
     world = myWorld;
     body.create(world.world, position, mass, radius);
-    body.setProperties(0.02, 0.95); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(restitution, friction); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
     type = ShapeTypeBall;
@@ -158,4 +169,8 @@ void Ball::setRotation(ofQuaternion rotation){
 	
     rigidBody->getMotionState()->setWorldTransform( transform );
     
+}
+
+ofVec3f Ball::getInitialPos(){
+    return m_initialPos;
 }

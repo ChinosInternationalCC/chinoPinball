@@ -96,5 +96,7 @@ private:
     bool bAddScenarioCover;
 	void listenerAddObject2Scenario(eventObjectScenario & args);
 	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
+    
+    bool m_bLinkInitialBallPositionToHammer;
 	
 };

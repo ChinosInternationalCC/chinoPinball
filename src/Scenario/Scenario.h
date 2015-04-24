@@ -84,6 +84,8 @@ public:
     
     void setDebugMode(bool &DebugMode);
 
+    SimpleObject* FindScenarioObjectByName(string name);
+    SimpleObject* FindScenarioObjectById(int id);
 	
 private:
 	
