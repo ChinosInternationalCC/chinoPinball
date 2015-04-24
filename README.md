@@ -190,11 +190,13 @@ To enter in the scenario editor mode press the key 'e'
 * F2 - OF_LOG_VERBOSE
 * F3 - CollisionVerbose
 * F4 - EditorVerbose
+
 PinballChinoManager
 * f - fullscreen
 * s - save camera position to file
 * l - load camera postion
 * m - mute sounds
+
 InputEventManager
 * enter - restart game
 * down - move hammer
@@ -202,6 +204,7 @@ InputEventManager
 * w/W - move left lever
 * d/D - draw debug
 * m/M - open Mapping Editor if using MtlMapping
+
 ScenarioEditor
 * e - toggle editor mode
 * x - saving scenario to file
@@ -209,11 +212,14 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+
 AnimatedMotionPath
 * p - play motion path animation
 * o - pause motion path animation
 * i - stop motion path animation
-* u - increment animation position
+* u - FW animation position
+* y - BK animation position
+* t - increment animation end point
 
 ***
 ###3DModels
@@ -249,7 +255,11 @@ The tag *<type>* should hold the object type; one of the values defined in the *
         ShapeTypeContainer = 4,
         ShapeTypeHammer = 5,
         ShapeTypeObstacle = 6,
-        ShapeTypeBounds = 7
+        ShapeTypeBounds = 7,
+        ShapeTypeAnimatedObject = 8,
+        ShapeTypeAnimatedMesh = 9,
+        ShapeTypeGeneratedMesh = 10,
+        ShapeTypeAnimatedMotionPath = 11
     };
 ```
 
