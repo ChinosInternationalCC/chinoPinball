@@ -43,11 +43,6 @@ public:
 	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
     
-    void mousePressed(ofMouseEventArgs &args);
-    void mouseDragged(ofMouseEventArgs &args);
-    void mouseMoved(ofMouseEventArgs &args);
-    void mouseReleased(ofMouseEventArgs &args);
-    
 private:
     bool bAnimate;
     ofxAssimpModelLoader	assimpPath;

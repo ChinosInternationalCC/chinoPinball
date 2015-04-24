@@ -73,9 +73,6 @@ void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string ur
     assimpPath.setPosition(0, 0, 0);
     currentVetice = 0;
     
-    ofRegisterMouseEvents(this);
-    
-    
 }
 
 
@@ -331,15 +328,3 @@ void AnimatedMesh::setAnimation(bool bAnimate) {
     this->bAnimate = bAnimate;
 }
 
-void AnimatedMesh::mousePressed(ofMouseEventArgs &args){
-    //setPosition(ofVec3f(args.x, args.y,0.01));
-}
-
-void AnimatedMesh::mouseDragged(ofMouseEventArgs &args){
-    
-}
-void AnimatedMesh::mouseMoved(ofMouseEventArgs &args){
-    
-}
-void AnimatedMesh::mouseReleased(ofMouseEventArgs &args){
-}

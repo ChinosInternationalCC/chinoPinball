@@ -19,6 +19,7 @@
 #include "AnimatedObject.h"
 #include "AnimatedMesh.h"
 #include "GeneratedMesh.h"
+#include "AnimatedMotionPath.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 

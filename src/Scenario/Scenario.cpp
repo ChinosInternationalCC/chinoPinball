@@ -344,6 +344,22 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
+                
+                case SimpleObject::ShapeTypeAnimatedMotionPath:{
+                    string pathMotionModel;
+                    pathMotionModel = ScenarioXml.getValue("pathMotionModel","", 0);
+                    AnimatedMotionPath *oAnimatedMotionPath = new AnimatedMotionPath(currentMissions);
+                    oAnimatedMotionPath->setup(world, pos, path, pathMotionModel, scale);
+                    oAnimatedMotionPath->SetObjectId(objId);
+					oAnimatedMotionPath->setRotation(rotation);
+                    oAnimatedMotionPath->color = color;
+                    ScenarioObjects.push_back(oAnimatedMotionPath);
+					oAnimatedMotionPath->setPointsCollision(pointsCollision);
+					oAnimatedMotionPath->setupRot();
+                    
+                }
+                break;
+                    
                 case SimpleObject::ShapeTypeAnimatedMesh:{
                     AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
@@ -446,6 +462,12 @@ void Scenario::saveToXml(){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];
             ScenarioXml.addValue("LeverType", pLever->direction);
+        }
+        
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath){
+            AnimatedMotionPath *pAnimatedMotionPath;
+            pAnimatedMotionPath = (AnimatedMotionPath*)ScenarioObjects[i];
+            ScenarioXml.addValue("pathMotionModel", pAnimatedMotionPath->getMotionModelPath());
         }
         
         ScenarioXml.popTag();

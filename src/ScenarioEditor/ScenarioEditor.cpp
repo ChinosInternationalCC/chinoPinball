@@ -232,9 +232,6 @@ void ScenarioEditor::keyReleased(int key){
         case '6':
             addObject(SimpleObject::ShapeTypeObstacle);
             break;
-        case '8':
-            addObject(SimpleObject::ShapeTypeAnimatedObject);
-            break;
             
     }
     

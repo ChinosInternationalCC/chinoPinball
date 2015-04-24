@@ -1,5 +1,5 @@
 //
-//  AnimatedObject.h
+//  GeneratedMesh.h
 //  chinoPinball
 //
 //  Created by Ovidiu on 16/4/15.

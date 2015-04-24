@@ -209,6 +209,11 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+AnimatedMotionPath
+* p - play motion path animation
+* o - pause motion path animation
+* i - stop motion path animation
+* u - increment animation position
 
 ***
 ###3DModels
