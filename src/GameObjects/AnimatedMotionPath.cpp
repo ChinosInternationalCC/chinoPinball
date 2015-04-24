@@ -23,6 +23,7 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
     ModelPath = url;
     m_pathMotionModel = pathMotionModel;
     this->position = position;
+    m_fixedZ = position.z;
 	
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
@@ -242,7 +243,8 @@ void AnimatedMotionPath::onCollision(){
 //------------------------------------------------------------
 void AnimatedMotionPath::setDefaultZ(){
     
-    position.z = -0.511;
+    //position.z = -0.511;
+    position.z = m_fixedZ;
     setPosition(position);
     
 }

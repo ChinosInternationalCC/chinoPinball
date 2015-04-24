@@ -29,6 +29,7 @@ PinballChinoManager::PinballChinoManager():
 	
 	projectName = XML.getValue("PROJECT_NAME","", 0);
     bAddScenarioCover = XML.getValue("ADD_SCENARIO_COVER",0, 0);
+    m_bLinkInitialBallPositionToHammer = XML.getValue("LINK_INITIAL_BALL_POS_TO_HAMMER",0, 0);
 
 	SimpleMission* mission0 = new SimpleMission(0);
 	idcurrentMission = 0;
@@ -215,8 +216,12 @@ void PinballChinoManager::onRestartGameEvent(void){
                 {
                     Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
                     ofVec3f pos;
-                    //pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
-                    pos.set(2.388406008,-7.564235449,-6.500999928);
+                    if(m_bLinkInitialBallPositionToHammer){
+                        pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    }
+                    else{
+                        pos.set(ball->getInitialPos());
+                    }
                     ball->setPosition(pos);
                 }
             }
