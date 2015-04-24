@@ -1,25 +1,27 @@
 //
-//  AnimatedObject.cpp
+//  AAnimatedMotionPath.cpp
 //  chinoPinball
 //
 //  Created by Ovidiu on 16/4/15.
 //
 //
 
-#include "AnimatedObject.h"
-string sysPath = "Sysiphous/sysiphus_centred.dae";
+#include "AnimatedMotionPath.h"
+#include "AssimpUtils.h"
 
-AnimatedObject::AnimatedObject(vector <SimpleMission *> * _currentMissions) :
+AnimatedMotionPath::AnimatedMotionPath(vector <SimpleMission *> * _currentMissions) :
 SimpleObject(_currentMissions)
 {
     collisionPoints = 0;
+    ofRegisterKeyEvents(this);
 }
 
 //---------------------------------
-void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeAnimatedObject;
+void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, string pathMotionModel, ofVec3f ModelScale){
+    type = ShapeTypeAnimatedMotionPath;
     collisionTime = -120;
     ModelPath = url;
+    m_pathMotionModel = pathMotionModel;
     this->position = position;
 	
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
@@ -43,10 +45,10 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
 	
 	
     // add 3D meshes to ofxBullet shape
-   // for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-   // {
-        body.addMesh(assimpModel.getCurrentAnimatedMesh(0), scale, true);
-   // }
+    // for(int i = 0; i < assimpModel.getNumMeshes(); i++)
+    // {
+    body.addMesh(assimpModel.getCurrentAnimatedMesh(0), scale, true);
+    // }
     
     bAnimate = true;
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
@@ -60,21 +62,7 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
 	
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
-    
-    // btTransform transform;
-    //btRigidBody* a_rb = body.getRigidBody();
-    //a_rb->getMotionState()->getWorldTransform( transform );
-    
-    // rotate
-    //    btQuaternion currentRotation = transform.getRotation();
-    //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
-    //    btQuaternion rotate;
-    
-    //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
-    //   rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
-    //   transform.setRotation(rotate * rotation);
-    
-    //   a_rb->getMotionState()->setWorldTransform( transform );
+
 	
 	//Set Rotation Objects
 	setupRot();
@@ -83,33 +71,23 @@ void AnimatedObject::setup(ofxBulletWorldRigid &world, ofVec3f position, string 
 	
 	setDefaultZ();
     
-    assimpPath.loadModel("Sysiphous/lineMesh.obj");
+    assimpPath.loadModel(m_pathMotionModel);
     assimpPath.setPosition(0, 0, 0);
-    currentVetice = 0;
+    assimpPath.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
+    assimpPath.playAllAnimations();
+    
+    
     
 }
 
 
 //--------------------------------------------------------------
-void AnimatedObject::update(bool bEditorMode){
+void AnimatedMotionPath::update(bool bEditorMode){
     
 	autoScalingXYZ();
     
     assimpModel.update();
     
-	//Udpate mesch if there are changes
-	// add 3D mashes to ofxBullet shape
-    //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-    //{
-    //btVector3 myBtScale;
-    //myBtScale.setX(scale.x);
-    //myBtScale.setY(scale.y);
-    //myBtScale.setZ(scale.z);
-    
-    //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
-    //setImplicitShapeDimensions(myBtScale);
-    //addMesh(assimpModel.getMesh(i), scale, true);
-    //}
 	
 	if(angleValX != last_angleValX){
 		
@@ -126,20 +104,12 @@ void AnimatedObject::update(bool bEditorMode){
 		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
 		last_angleValZ = angleValZ;
 	}
-    
+
+    /* Update the model position acording to the motion path */
     assimpPath.update();
-  /*
-   
-    if ( (currentVetice < assimpPath.getMesh(0).getNumVertices()) &&
-         (ModelPath.compare(sysPath) == 0)
-        ){
-        ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
-        setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
-        currentVetice ++;
-    }
-    else
-        currentVetice = 0;
-	*/
+    m_motionPathCurPos = assimpPath.getAnimation(0).getPosition();
+    setPosition(AssimpUtils::getAnimatedObjectPosition(assimpPath));
+
 	body.activate();
     
 }
@@ -150,7 +120,7 @@ void AnimatedObject::update(bool bEditorMode){
  }*/
 
 //--------------------------------------------------------------
-void AnimatedObject::autoScalingXYZ(){
+void AnimatedMotionPath::autoScalingXYZ(){
 	
 	btVector3 myObjectScale;
 	ofVec3f myOfObjectScale;
@@ -181,7 +151,7 @@ void AnimatedObject::autoScalingXYZ(){
 }
 
 //--------------------------------------------------------------
-void AnimatedObject::draw(bool bEditorMode){
+void AnimatedMotionPath::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
@@ -205,10 +175,10 @@ void AnimatedObject::draw(bool bEditorMode){
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     //assimpModel.getMesh(0).drawFaces();
     //assimpModel.getMesh(0).drawWireframe();
-    if (ModelPath.compare(sysPath) == 0)
-        ofRotateX(90);
+    //if (ModelPath.compare(sysPath) == 0)
+    //    ofRotateX(90);
     assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
-
+    
     
 	body.restoreTramsformGL();
     
@@ -217,17 +187,17 @@ void AnimatedObject::draw(bool bEditorMode){
     
 }
 //-------------------------------------------------------------
-ofxBulletBaseShape* AnimatedObject::getBulletBaseShape(){
+ofxBulletBaseShape* AnimatedMotionPath::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
 }
 
 //------------------------------------------------------------
-string AnimatedObject::getObjectName(){
-    return "AnimatedObject";
+string AnimatedMotionPath::getObjectName(){
+    return "AnimatedMotionPath";
 }
 
 //------------------------------------------------------------
-void AnimatedObject::onCollision(){
+void AnimatedMotionPath::onCollision(){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
@@ -243,7 +213,7 @@ void AnimatedObject::onCollision(){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setDefaultZ(){
+void AnimatedMotionPath::setDefaultZ(){
     
     position.z = -0.511;
     setPosition(position);
@@ -251,7 +221,7 @@ void AnimatedObject::setDefaultZ(){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setPosition(ofVec3f position){
+void AnimatedMotionPath::setPosition(ofVec3f position){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -266,7 +236,7 @@ void AnimatedObject::setPosition(ofVec3f position){
 }
 
 //------------------------------------------------------------
-void AnimatedObject::setRotation(ofQuaternion rotation){
+void AnimatedMotionPath::setRotation(ofQuaternion rotation){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -285,7 +255,7 @@ void AnimatedObject::setRotation(ofQuaternion rotation){
 }
 
 //--------------------------------------------------------------
-void AnimatedObject::setupRot(){
+void AnimatedMotionPath::setupRot(){
 	btTransform transform;
 	btRigidBody* a_rb = body.getRigidBody();
 	a_rb->getMotionState()->getWorldTransform( transform );
@@ -301,7 +271,7 @@ void AnimatedObject::setupRot(){
 
 
 //--------------------------------------------------------------
-void AnimatedObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+void AnimatedMotionPath::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 	
 	
 	btTransform transform;
@@ -325,5 +295,55 @@ void AnimatedObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 	body.activate();
 	
 	
+}
+
+//------------------------------------------------------------
+string AnimatedMotionPath::getMotionModelPath(){
+    return m_pathMotionModel;
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::MotionPathPlay(){
+    assimpPath.getAnimation(0).play();
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::MotionPathStop(){
+    assimpPath.getAnimation(0).stop();
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::MotionPathPause(bool paused){
+    assimpPath.getAnimation(0).setPaused(paused);
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::MotionPathSetPosition(float position){
+    assimpPath.getAnimation(0).setPosition(position);
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::MotionPathSetAnimationEndPos(float position){
+    m_bAnimationEndPos = position;
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::keyPressed  (ofKeyEventArgs& args){
+    if(args.key == 'p'){
+        MotionPathPlay();
+	}
+    else if (args.key == 'o'){
+        MotionPathPause(true);
+    }
+    else if (args.key == 'i'){
+        MotionPathStop();
+    }
+    else if (args.key == 'u'){
+    }
+}
+
+//------------------------------------------------------------
+void AnimatedMotionPath::keyReleased(ofKeyEventArgs& args){
+    
 }
 

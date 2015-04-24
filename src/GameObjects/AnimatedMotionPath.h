@@ -1,5 +1,5 @@
 //
-//  AnimatedObject.h
+//  AnimatedMotionPath.h
 //  chinoPinball
 //
 //  Created by Ovidiu on 16/4/15.
@@ -14,13 +14,12 @@
 #include "SoundManager.h"
 #include "SimpleObject.h"
 
-
-class AnimatedObject : public SimpleObject {
+class AnimatedMotionPath : public SimpleObject {
     
 public:
     
-    AnimatedObject(vector <SimpleMission *> * _currentMissions);
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
+    AnimatedMotionPath(vector <SimpleMission *> * _currentMissions);
+	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, string pathMotionModel,ofVec3f ModelScale);
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	
@@ -41,9 +40,24 @@ public:
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
-
+    
+    void MotionPathPlay();
+    void MotionPathStop();
+    void MotionPathPause(bool paused);
+    void MotionPathSetPosition(float position);
+    void MotionPathSetAnimationEndPos(float position);
+    
+    
+    string getMotionModelPath();
+    
+    void keyPressed(ofKeyEventArgs& args);
+	void keyReleased(ofKeyEventArgs& args);
+    
 private:
     bool bAnimate;
     ofxAssimpModelLoader	assimpPath;
-    unsigned int currentVetice;
+    string m_pathMotionModel;
+    float m_bAnimationEndPos;
+    float m_motionPathCurPos;
+    
 };

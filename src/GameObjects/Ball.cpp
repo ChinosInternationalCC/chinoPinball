@@ -14,7 +14,7 @@ Ball::Ball(vector <SimpleMission *> * _currentMissions) :
 {
     m_status = BallStatusWaiting;
 	radius = .5;
-	mass = 1;
+	mass = 10;
 	
 	shadow.set(radius, 0.1);
 	shadow.setResolution(20, 1);
@@ -30,7 +30,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld, ofVec3f pos){
     
     world = myWorld;
     body.create(world.world, position, mass, radius);
-    body.setProperties(0.45, 0.25); // .25 (more restituition means more energy) , .95 ( friction )
+    body.setProperties(0.02, 0.95); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
     type = ShapeTypeBall;
