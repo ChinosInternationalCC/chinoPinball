@@ -9,3 +9,4 @@
 #include "eventMission.h"
 
 ofEvent <eventMission> eventMission::onMissionUpdate;
+SimpleMission *eventMission::pMission = NULL;

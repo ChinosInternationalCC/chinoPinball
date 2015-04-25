@@ -29,7 +29,7 @@
 class Scenario {
     
 public:
-	
+	Scenario();
 	//Missions
     void setCurrentMission(int idMission);
     void setupMissions(vector <SimpleMission *> *missions);
@@ -93,26 +93,26 @@ private:
 	ofVec3f startLoc;
 	ofPoint dimens;
 	
-	float scaleStage = 0.25;
-	float	boundsWidth = 7.;;
-	float depthStage = 160;
-	float frontbackwallHeigh = 40;
-	float heightwalls = 20;
+	float scaleStage;
+	float	boundsWidth;
+	float depthStage;
+	float frontbackwallHeigh;
+	float heightwalls;
 	
 	//Ground
-	float widthbasePlane = 100;
-	float heightbasePlane = depthStage;
-	float depthbasePlane = boundsWidth;
+	float widthbasePlane;
+	float heightbasePlane;
+	float depthbasePlane;
 	
 	//BackWall
-	float widthbkPlane = 100;
-	float heightbkPlane = boundsWidth*1.5;
-	float depthbkPlane = frontbackwallHeigh;
+	float widthbkPlane;
+	float heightbkPlane;
+	float depthbkPlane;
 	
 	//RightLeftWall
-	float widthrlPlane = boundsWidth;
-	float heightrlPlane = depthStage;
-	float depthrlPlane = heightwalls;
+	float widthrlPlane;
+	float heightrlPlane;
+	float depthrlPlane;
 	
 	int	 lastPosIdCoverScenario;
 	//BASIC SCENARIO STATGE/////////////////////////////////////

@@ -1,7 +1,10 @@
 ofxAssimpModelLoader
-ofxBullet
 ofxOsc
-ofxSyphon
-ofxUI
 ofxXmlSettings
-ofxJSON
+ofxBullet
+ofxDmx
+ofxFTGL
+ofxLibwebsockets
+ofxMSAInteractiveObject
+ofxMtlMapping2D
+ofxUI

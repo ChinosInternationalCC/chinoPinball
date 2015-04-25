@@ -85,6 +85,7 @@ void GameStatus::AddPoints(int points){
 //------------------------------------
 bool GameStatus::Play(void){
     status = PLAYING;
+	return true;
 }
 //-------------------------------------
 bool GameStatus::Death(){

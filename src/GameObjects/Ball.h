@@ -19,7 +19,6 @@ class Ball : public SimpleObject
 {
 public:
     Ball(vector <SimpleMission *> * _currentMissions);//SimpleObjects force that
-    Ball(SimpleObject simpleObject);
     void setup(ofxBulletWorldRigid &world, ofVec3f pos,
                float mass = 1,
                float radius = .5,
