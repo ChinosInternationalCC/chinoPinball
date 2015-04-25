@@ -1,8 +1,7 @@
 #pragma once
 
-
-#include "ExternalsConfig.h"
 #include "ofMain.h"
+#include "ExternalsConfig.h"
 #include "PinballChinoManager.h"
 
 

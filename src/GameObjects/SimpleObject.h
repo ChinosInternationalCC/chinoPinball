@@ -121,7 +121,7 @@ public:
 	
 	//Game vars
 	void setPointsCollision(int points);
-	int collisionPoints = 0;
+	int collisionPoints;
 	
     
 protected:

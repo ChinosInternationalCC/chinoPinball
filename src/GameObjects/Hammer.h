@@ -47,7 +47,7 @@ public:
 	
 	
 	//Event launch hammer
-	bool bLaunch = true;
+	bool bLaunch;
     
  /*
     energy ( float )

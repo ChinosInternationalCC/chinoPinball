@@ -11,7 +11,7 @@
 Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
-    
+   bLaunch = true; 
 }
 
 //---------------------------------

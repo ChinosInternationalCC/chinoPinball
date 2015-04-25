@@ -9,6 +9,29 @@
 #include "Scenario.h"
 #include "PinballChinoManager.h"
 
+ Scenario::Scenario(){
+	scaleStage = 0.25;
+	boundsWidth = 7.;;
+	depthStage = 160;
+	frontbackwallHeigh = 40;
+	heightwalls = 20;
+	
+	//Ground
+	widthbasePlane = 100;
+	heightbasePlane = depthStage;
+	depthbasePlane = boundsWidth;
+	
+	//BackWall
+	widthbkPlane = 100;
+	heightbkPlane = boundsWidth*1.5;
+	depthbkPlane = frontbackwallHeigh;
+	
+	//RightLeftWall
+	widthrlPlane = boundsWidth;
+	heightrlPlane = depthStage;
+	depthrlPlane = heightwalls;
+}
+
 //---------------------------------------------------
 void Scenario::setCurrentMission(int _idcurrentMission){
     this->idCurrentMission = _idcurrentMission;
