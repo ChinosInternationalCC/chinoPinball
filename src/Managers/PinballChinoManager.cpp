@@ -51,7 +51,6 @@ void PinballChinoManager::setup(){
     // setup bullet world
 	world.setup();
 	world.setGravity( ofVec3f(0, 10, 17) );
-
     // setup camera
 	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
@@ -261,6 +260,11 @@ void PinballChinoManager::onMoveLeftLeverEvent(void){
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
             if (!lever->direction) lever->onMoveEvent();
         }
+        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
+        {
+            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
+            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
+        }
     }
     
 }
@@ -288,6 +292,11 @@ void PinballChinoManager::onMoveRightLeverEvent(void){
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
             if (lever->direction) lever->onMoveEvent();
+        }
+        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
+        {
+            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
+            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
         }
     }
     

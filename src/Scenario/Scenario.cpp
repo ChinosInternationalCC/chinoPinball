@@ -48,10 +48,11 @@ void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
-	loadBasicScenario(_world, ofVec3f(0,0,0));
-    if (bAddScenarioCover)
+    if (bAddScenarioCover){
+        loadBasicScenario(_world, ofVec3f(0,0,0));
         addCoverScenario(_world);
-	
+	}
+    
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
     /* set light position */
@@ -86,8 +87,10 @@ void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 
 //--------------------------------------------------------------
 void Scenario::removeCoverScenario(){
-	bounds[lastPosIdCoverScenario]->removeRigidBody();
-	bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    if (bounds.size() > 0){
+        bounds[lastPosIdCoverScenario]->removeRigidBody();
+        bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    }
 }
 
 

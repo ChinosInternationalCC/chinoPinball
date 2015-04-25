@@ -205,8 +205,6 @@ void AnimatedObject::draw(bool bEditorMode){
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     //assimpModel.getMesh(0).drawFaces();
     //assimpModel.getMesh(0).drawWireframe();
-    if (ModelPath.compare(sysPath) == 0)
-        ofRotateX(90);
     assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
 
     

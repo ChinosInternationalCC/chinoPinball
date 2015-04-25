@@ -112,7 +112,7 @@ push from origin to master
 
 To clone all the addons requested by the project you can also execute the ./clone_addons.sh script
 
-Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (CodeBlocks) (not countinued)
+Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (VisualStudio 2012)
 
 The project should also compile in Windows or Linux if ofxSyphone is not used. Just don't add ofxSyphon files to the compilation and comment in *ExternalsConfig.h*  the line *#define USE_SYPHON*:
 
@@ -268,10 +268,12 @@ The tag *<id>* should hold a unique id for each object.
 ***
 ###Shape Types
 
-*Hammer* is the object used to launch the ball and it gives to the loaded 3D model a movement like in the image below.
+**Hammer** is the object used to launch the ball and it gives to the loaded 3D model a movement like in the image below
+
 ![Hammer](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/hammer.gif)
 
-*Lever* are the objects used to hit the ball and they give the movement from bellow to the 3D model:
+**Lever** are the objects used to hit the ball and they give the movement from bellow to the 3D model
+
 ![Lever](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/lever.gif)
 
 ***

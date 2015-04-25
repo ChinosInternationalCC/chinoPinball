@@ -24,7 +24,8 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
     m_pathMotionModel = pathMotionModel;
     this->position = position;
     m_fixedZ = position.z;
-	
+	m_AnimationMeshNo = 1;
+    
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
@@ -38,6 +39,7 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
+    assimpModel.update();
     
     //ofEnableSeparateSpecularLight();
     
@@ -70,13 +72,14 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
 	
     body.activate();
 	
-	setDefaultZ();
+	//setDefaultZ();
     
     assimpPath.loadModel(m_pathMotionModel);
     assimpPath.setPosition(0, 0, 0);
+    assimpPath.setScale(scale.x, scale.y, scale.z);
     assimpPath.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpPath.playAllAnimations();
-    m_motionPathCurPos = assimpPath.getAnimation(0).getPosition();
+    m_motionPathCurPos = assimpPath.getAnimation(m_AnimationMeshNo).getPosition();
     
     
     m_eMotionControl = MOTION_CONTROL_LOOP;
@@ -93,7 +96,6 @@ void AnimatedMotionPath::update(bool bEditorMode){
     
     assimpModel.update();
     
-	
 	if(angleValX != last_angleValX){
 		
 		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
@@ -118,7 +120,7 @@ void AnimatedMotionPath::update(bool bEditorMode){
             break;
         case MOTION_CONTROL_MANUAL:
             assimpPath.setPausedForAllAnimations(true);
-            assimpPath.getAnimation(0).setPosition(m_motionPathCurPos);
+            assimpPath.getAnimation(m_AnimationMeshNo).setPosition(m_motionPathCurPos);
             break;
         case MOTION_CONTROL_END_POINT:
             /* 
@@ -135,7 +137,7 @@ void AnimatedMotionPath::update(bool bEditorMode){
     }
     
     assimpPath.update();
-    m_motionPathCurPos = assimpPath.getAnimation(0).getPosition();
+    m_motionPathCurPos = assimpPath.getAnimation(m_AnimationMeshNo).getPosition();
     setPosition(AssimpUtils::getAnimatedObjectPosition(assimpPath));
 
 	body.activate();
@@ -174,6 +176,7 @@ void AnimatedMotionPath::autoScalingXYZ(){
 		//update physyc object
 		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
 		assimpModel.setScale(scale.x, scale.y, scale.z);
+        assimpPath.setScale(scale.x, scale.y, scale.z);
 	}
     
 }
@@ -204,10 +207,20 @@ void AnimatedMotionPath::draw(bool bEditorMode){
     //assimpModel.getMesh(0).drawFaces();
     //assimpModel.getMesh(0).drawWireframe();
     //if (ModelPath.compare(sysPath) == 0)
-    //    ofRotateX(90);
-    assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
-    
-    
+    //   ofRotateX(90);
+    ofxAssimpMeshHelper &modelMeshHelper = assimpModel.getMeshHelper(0);
+    //assimpModel.getCurrentAnimatedMesh(0).drawWireframe();
+    ofPushMatrix();
+    //ofMultMatrix(modelMeshHelper.matrix);
+    modelMeshHelper.vbo.drawElements(GL_LINES,modelMeshHelper.indices.size());
+    ofPopMatrix();
+    ofxAssimpMeshHelper &pathMeshHelper = assimpPath.getMeshHelper(m_AnimationMeshNo);
+    //assimpPath.getCurrentAnimatedMesh(m_AnimationMeshNo).drawWireframe();
+    ofPushMatrix();
+    //ofMultMatrix(pathMeshHelper.matrix);
+    pathMeshHelper.vbo.drawElements(GL_LINES,pathMeshHelper.indices.size());
+    ofPopMatrix();
+    assimpPath.drawWireframe();
 	body.restoreTramsformGL();
     
 	glPopAttrib();
@@ -243,8 +256,9 @@ void AnimatedMotionPath::onCollision(){
 //------------------------------------------------------------
 void AnimatedMotionPath::setDefaultZ(){
     
-    //position.z = -0.511;
-    position.z = m_fixedZ;
+    position.z = -0.511;
+    
+    //position.z = m_fixedZ;
     setPosition(position);
     
 }
