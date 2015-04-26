@@ -48,6 +48,8 @@ public:
     void setDebugMode(bool &DebugMode);
     void drawDebug(void);
 	
+	//--------------------------------------------------------------
+	void setVisibility(int invisible);
 	void setupRot();
     
 	//general vars
@@ -70,7 +72,7 @@ public:
 	float angleRotZ;
 	
 	
-	bool bvisible;
+	bool bVisible;
 
     int color;
     
@@ -122,6 +124,8 @@ public:
 	//Game vars
 	void setPointsCollision(int points);
 	int collisionPoints;
+	
+	
 	
     
 protected:

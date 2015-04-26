@@ -144,12 +144,11 @@ void Scenario::draw(bool bEditorMode){
 	material.begin();
 	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-		//Not Paint the Walls, id 9 and 10...
-		if( i == 10){}
-		else if (i == 11){}
-		else {
+		//CHECK if OBJECT is Visible in object properties. LOAD First from XMl that parameter
+		if(ScenarioObjects[i]->bVisible){
 			ScenarioObjects[i]->draw(bEditorMode);
 		}
+
     }
 	material.end();
 	
@@ -303,6 +302,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
 			int pointsCollision = ScenarioXml.getValue("pointsCollision", 0, 0);
 
+			int invisible = 0; // Visible by default event if this value is not implemented in the Xml editor
+			invisible = ScenarioXml.getValue("invisible", 0, 0);
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
@@ -315,6 +316,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
                     oBall->color = color;
+					oBall->setVisibility(invisible);
 					
                     ScenarioObjects.push_back(oBall);
                 }
@@ -326,6 +328,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oHammer->SetObjectId(objId);
 					oHammer->setRotation(rotation);
                     oHammer->color = color;
+					oHammer->setVisibility(invisible);
                     ScenarioObjects.push_back(oHammer);
 					
 					oHammer->setupRot();
@@ -339,6 +342,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oLever->SetObjectId(objId);
 					oLever->setRotation(rotation);
                     oLever->color = color;
+					oLever->setVisibility(invisible);
                     ScenarioObjects.push_back(oLever);
 
                 }
@@ -351,6 +355,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oObstable->SetObjectId(objId);
 					oObstable->setRotation(rotation);
                     oObstable->color = color;
+					oObstable->setVisibility(invisible);
                     ScenarioObjects.push_back(oObstable);
 					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
@@ -365,6 +370,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oAnimatedObject->SetObjectId(objId);
 					oAnimatedObject->setRotation(rotation);
                     oAnimatedObject->color = color;
+					oAnimatedObject->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedObject);
 					oAnimatedObject->setPointsCollision(pointsCollision);
 					oAnimatedObject->setupRot();
@@ -380,6 +386,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oAnimatedMotionPath->SetObjectId(objId);
 					oAnimatedMotionPath->setRotation(rotation);
                     oAnimatedMotionPath->color = color;
+					oAnimatedMotionPath->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedMotionPath);
 					oAnimatedMotionPath->setPointsCollision(pointsCollision);
 					oAnimatedMotionPath->setupRot();
@@ -394,6 +401,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oAnimatedMesh->SetObjectId(objId);
 					oAnimatedMesh->setRotation(rotation);
                     oAnimatedMesh->color = color;
+					oAnimatedMesh->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedMesh);
 					oAnimatedMesh->setPointsCollision(pointsCollision);
 					oAnimatedMesh->setupRot();
@@ -407,6 +415,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oGeneratedMesh->SetObjectId(objId);
 					oGeneratedMesh->setRotation(rotation);
                     oGeneratedMesh->color = color;
+					oGeneratedMesh->setVisibility(invisible);
                     ScenarioObjects.push_back(oGeneratedMesh);
 					oGeneratedMesh->setPointsCollision(pointsCollision);
 					oGeneratedMesh->setupRot();
@@ -420,6 +429,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBounds->SetObjectId(objId);
 					oBounds->setRotation(rotation);
                     oBounds->color = color;
+					oBounds->setVisibility(invisible);
                     ScenarioObjects.push_back(oBounds);
 					
 					oBounds->setupRot();
@@ -463,9 +473,8 @@ void Scenario::saveToXml(){
         //ScenarioXml.addValue("color", "0x"+resColor);
 		
 		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		ScenarioXml.addValue("invisible", !ScenarioObjects[i]->bVisible);
 		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
-
-        
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);

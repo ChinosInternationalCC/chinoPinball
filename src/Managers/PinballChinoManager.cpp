@@ -168,11 +168,6 @@ void PinballChinoManager::draw(){
 	//Draw Scenario
 	myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
 	
-	//Draw Sceario shadow Map
-	//simple_shadow.begin();
-    //myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
-	//simple_shadow.end();
-	
 	chinoLights.disable();
 	ofDisableLighting();
 
@@ -180,7 +175,6 @@ void PinballChinoManager::draw(){
 	glDisable(GL_DEPTH_TEST);
 	camera.end();
 
-    
     statusDisplay.draw();
     missionDisplay.draw();
     

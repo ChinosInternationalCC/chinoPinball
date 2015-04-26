@@ -330,21 +330,4 @@
         <rotationW>-0.004809889</rotationW>
         <path>Demo/3DMODELS/pinball_stl/channel2_b.stl</path>
     </object>
-    <object>
-        <type>7</type>
-        <id>19</id>
-        <color>16777215</color>
-        <pointsCollision>0</pointsCollision>
-        <positionX>1.303305387</positionX>
-        <positionY>-19.183036804</positionY>
-        <positionZ>-0.899999976</positionZ>
-        <scaleX>0.365011573</scaleX>
-        <scaleY>0.365011573</scaleY>
-        <scaleZ>0.365011573</scaleZ>
-        <rotationX>0.716758370</rotationX>
-        <rotationY>0.697293699</rotationY>
-        <rotationZ>-0.003015504</rotationZ>
-        <rotationW>-0.005470976</rotationW>
-        <path>Demo/3DMODELS/pinball_stl/TorreCentral.stl</path>
-    </object>
 </scenario>

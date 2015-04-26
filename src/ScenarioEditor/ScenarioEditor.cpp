@@ -42,7 +42,7 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	
 	gui = NULL;
 	//bGoForRemove = false;
-	deleteObject = false;
+	bVisibleObject = true;
 	resetUIvalues();
     
 }
@@ -121,7 +121,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addSpacer();
 			
 			gui->addSpacer();
-			gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
+			gui->addLabelToggle("Toggle Visibility", &bVisibleObject); // PRESS & PICK TO Toogle Visibility
 			
 			gui->addLabel("Escenario BoundingBox");
 			gui->addSpacer();
@@ -261,6 +261,7 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			
 			
 			//Create Personal GUI of this type OR Remove Object Touched
+			/*
 			if(deleteObject){
 				
 				cout << "Going to del Gui and Object" << endl;
@@ -272,8 +273,9 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 				deleteObject = false;
 			}
 			else {
+			 */
 				bgui = createGUI(selectedObject);
-			}
+			//}
 			
 			
 			break; //Stop looking for objects
@@ -383,8 +385,11 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
 void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
     string name = e.widget->getName();
     //	int kind = e.widget->getKind();
-    if (name == "PRESS & PICK TO DELETE IT"){
-
+    if (name == "Toggle Visibility"){
+		if(selectedObject!=NULL){
+			selectedObject ->bVisible = !selectedObject ->bVisible;
+			cout << "Visibility is " << selectedObject ->bVisible << endl;
+		}
     }else if(name == "SAMPLER"){
         ofxUIImageSampler *is = (ofxUIImageSampler *) e.widget;
         ofColor clr = is->getColor();
@@ -406,7 +411,7 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 		
 		//free the selectedObject
-		selectedObject = NULL;
+		//selectedObject = NULL;
 	}
 	
 }
