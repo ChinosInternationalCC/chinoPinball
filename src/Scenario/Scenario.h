@@ -26,6 +26,10 @@
 #include "SimpleMission.h"
 
 
+#include "ofxUI.h"
+#include "ofxUIDefines.h"
+
+
 class Scenario {
     
 public:
@@ -54,17 +58,7 @@ public:
     //ofxXmlSettings ScenarioXml;
     
     ofxBulletWorldRigid *     world;
-   /*
-    Ball                    m_Ball,m_Ball2;
-    Lever                   leverLeft;
-    Lever                   leverRight;
-    Hammer                   m_Hammer;
-    
-    Obstacle                m_obstable1;
-    Obstacle                m_obstable2;
-    Obstacle                m_obstable3;
-    Obstacle                m_obstable4;
-    */
+
     vector<SimpleObject*> ScenarioObjects;
     
 	//basic World
@@ -86,6 +80,15 @@ public:
 
     SimpleObject* FindScenarioObjectByName(string name);
     SimpleObject* FindScenarioObjectById(int id);
+	
+	
+	//Basic Gui
+	bool bEditorMode, lastbEditorMode;
+	ofxUICanvas *guiBasicScenario;
+	void createBasicGUIScenario();
+	bool bVisibleBasicTerrain;
+	ofVec2f posGui;
+	void guiEventBasics(ofxUIEventArgs &e);
 	
 private:
 	
@@ -121,5 +124,7 @@ private:
 	int idCurrentMission;
 	
     bool DebugMode;
+
+	
 	
 };

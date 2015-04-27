@@ -67,6 +67,8 @@ public:
 	float		angleValY, last_angleValY;
 	float		angleValZ, last_angleValZ;
 	
+	float last_positionX, last_positionY, last_positionZ;
+	
 	float angleRotX;
 	float angleRotY;
 	float angleRotZ;

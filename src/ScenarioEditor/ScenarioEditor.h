@@ -56,15 +56,13 @@ public:
     ofMouseEventArgs mouseOldPosition;
     
     
-    /* GUI stuff */
+    /* GUI stuff */	
+	//Dynamic GUI
 	bool bgui;
 	bool createGUI(SimpleObject *);
 	void resetUIvalues();
-    
 	ofxUICanvas *gui;
-	//bool bGoForRemove;
 	ofVec2f posGui;
-	
 	bool bGuiPointer;//var to protect from gui * bad accsss
 	
 	bool bVisibleObject;//deleteObject;

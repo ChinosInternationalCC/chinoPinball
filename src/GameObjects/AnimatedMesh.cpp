@@ -72,6 +72,11 @@ void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string ur
     assimpPath.loadModel("Sysiphous/lineMesh.obj");
     assimpPath.setPosition(0, 0, 0);
     currentVetice = 0;
+	
+	
+	last_positionX = position.x;
+	last_positionY = position.y;
+	last_positionZ = position.z;
     
 }
 
@@ -99,6 +104,20 @@ void AnimatedMesh::update(bool bEditorMode){
     //setImplicitShapeDimensions(myBtScale);
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	if(position.x != last_positionX){
+		setPosition(position);
+		last_positionX = position.x;
+	}
+	if(position.y != last_positionY){
+		setPosition(position);
+		last_positionY = position.y;
+	}
+	if(position.z != last_positionZ){
+		setPosition(position);
+		last_positionZ = position.z;
+	}
+	
 	
 	if(angleValX != last_angleValX){
 		

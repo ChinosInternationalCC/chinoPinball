@@ -378,6 +378,8 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
 	
+	int amountX = 3;
+	
     switch(key)
     {
         case 'f':
@@ -399,17 +401,42 @@ void PinballChinoManager::keyReleased(int key){
 		case 'n':
 			SoundManager::getInstance()->TogleMute();
             break;
-			/*
-		case 'g':
-			myScenario.ScenarioObjects[11]->onCollision();
-			myScenario.ScenarioObjects[12]->onCollision();
-			myScenario.ScenarioObjects[13]->onCollision();
-            break;
-			*/
+
+		case 'o':
+			cout << "camera.getPosition().x = " << camera.getPosition().x << endl;
+				camera.move(+amountX, 0, 0);
+			break;
 			
+		case 'p':
+			cout << "camera.getPosition().x = " << camera.getPosition().x << endl;
+				camera.move(-amountX, 0, 0);
+			break;
+		case 'i':
+			cout << "camera.getPosition().z = " << camera.getPosition().z << endl;
+			camera.move(0, 0, +amountX);
+			break;
+			
+		case 'k':
+			cout << "camera.getPosition().z = " << camera.getPosition().z << endl;
+			camera.move(0, 0, -amountX);
+			break;
+		case 'u':
+			cout << "camera.getPosition().y = " << camera.getPosition().y << endl;
+			camera.move(0, +amountX, 0);
+			break;
+			
+		case 'j':
+			cout << "camera.getPosition().y = " << camera.getPosition().y << endl;
+			camera.move(0, -amountX, 0);
+			break;
+			
+			//Hack a simple mission
+			//myScenario.ScenarioObjects[11]->onCollision();
+			//myScenario.ScenarioObjects[12]->onCollision();
+			//myScenario.ScenarioObjects[13]->onCollision();
 			
     }
-    
+	
     InputEventManager::keyReleased(key);
    
 	ScenarioEditor::getInstance()->keyReleased(key);

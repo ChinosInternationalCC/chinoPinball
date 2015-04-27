@@ -47,6 +47,7 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
     
 }
 
+
 //--------------------------------------------------------------
 void ScenarioEditor::resetUIvalues(){
 	/*GUI setup */
@@ -102,14 +103,18 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
 			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
 			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
-				
+			
+			gui->addSlider("move posX", -100, 100, &selectedObject->position.x);
+			gui->addSlider("move posY", -100, 100, &selectedObject->position.y);
+			gui->addSlider("move posZ", -10, 10, &selectedObject->position.z);
+			
 
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
 				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
 	
 				gui->addSpacer();
-				gui->addSlider("Scale XYZ", 0, 1, &selectedObject->scaleXyz);
+				gui->addSlider("Scale XYZ", -1, 1, &selectedObject->scaleXyz);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
@@ -193,7 +198,7 @@ void ScenarioEditor::draw(){
     if(bEscenarioEditorMode){
         //ofSetColor(100, 100, 100);
         string fpsStr = "Scenario Editor Mode";
-        ofDrawBitmapString(fpsStr, 50,ofGetHeight()-100);
+        ofDrawBitmapString(fpsStr, OFX_UI_GLOBAL_CANVAS_WIDTH+10,20);
     }
 }
 
@@ -399,6 +404,7 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
         clr.getHex();
     }
 }
+
 
 
 //--------------------------------------------------------

@@ -42,4 +42,13 @@ private:
     ofxMtlMapping2D* _mapping;
 #endif
 	
+	//EXTRA STUFF TO match a real space (PhotograFied) to the virtual model projected
+	ofImage sceneOverlapedImage;
+	ofFbo scene3dinFBO;
+	bool setupXMLPhotoAlpha();
+	ofxXmlSettings XML;
+	bool bPhotoScenario;
+	string myPhotoScenarioPath;
+	bool bIsPhotoToMatch;
+	
 };

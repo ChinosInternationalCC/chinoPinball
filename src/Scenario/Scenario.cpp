@@ -30,6 +30,13 @@
 	widthrlPlane = boundsWidth;
 	heightrlPlane = depthStage;
 	depthrlPlane = heightwalls;
+	 
+	 guiBasicScenario = NULL;
+	 createBasicGUIScenario();
+	 bVisibleBasicTerrain = true;
+	 
+	 bEditorMode = false;
+	 lastbEditorMode = true;
 }
 
 //---------------------------------------------------
@@ -63,6 +70,7 @@ void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
 
 }
 
+//--------------------------------------------------------------
 void Scenario::setDebugMode(bool &DebugMode){
     this->DebugMode = DebugMode;
     for(int i = 0; i < ScenarioObjects.size(); i++) {
@@ -128,11 +136,29 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 }
 
 //--------------------------------------------------------------
-void Scenario::update(bool bEditorMode){
-    
+void Scenario::update(bool _bEditorMode){
+	
+	bEditorMode = _bEditorMode;
+	
+    //TODO Check this if its not being usefull pass all time that boolean , also that for and try to Optimiza
     for(int i = 0; i < ScenarioObjects.size(); i++) {
         ScenarioObjects[i]->update(bEditorMode);
     }
+	
+	
+	
+	///Crappy Toogle Gui Visibility
+	if(bEditorMode == true){
+		if (lastbEditorMode == false) {
+			guiBasicScenario->toggleVisible();
+		}
+	}else{
+		if (lastbEditorMode == true) {
+			guiBasicScenario->toggleVisible();
+		}
+	}
+	
+	lastbEditorMode = bEditorMode;
     
 }
 
@@ -155,11 +181,15 @@ void Scenario::draw(bool bEditorMode){
 	ofSetColor(ofColor::gray);
 	
 	//Draw the basic scneario ground
-	if(bounds.size()>0){
-		material.begin();
-		bounds[0]->draw();
-		material.end();
+	if(bVisibleBasicTerrain){
+		
+		if(bounds.size()>0){
+			material.begin();
+			bounds[0]->draw();
+			material.end();
+		}
 	}
+	
     
 	//ofDrawAxis(1);
     
@@ -541,3 +571,26 @@ SimpleObject* Scenario::FindScenarioObjectById(int id){
     return NULL;
     
 }
+
+
+//--------------------------------------------------------------
+void Scenario::createBasicGUIScenario(){
+	
+	posGui = ofVec2f(0, 0);
+	guiBasicScenario = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
+	
+	guiBasicScenario->autoSizeToFitWidgets();
+	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
+	guiBasicScenario->loadSettings("GUI/guiSettings.xml");
+}
+//--------------------------------------------------------
+void Scenario::guiEventBasics(ofxUIEventArgs &e){
+	string name = e.widget->getName();
+	//	int kind = e.widget->getKind();
+	if (name == "Toggle Floor Visibility"){
+		//bVisibleBasicTerrain = !bVisibleBasicTerrain;
+		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
+	}
+}
+

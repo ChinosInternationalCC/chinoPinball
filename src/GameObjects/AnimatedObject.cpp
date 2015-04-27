@@ -111,6 +111,20 @@ void AnimatedObject::update(bool bEditorMode){
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
+	if(position.x != last_positionX){
+		setPosition(position);
+		last_positionX = position.x;
+	}
+	if(position.y != last_positionY){
+		setPosition(position);
+		last_positionY = position.y;
+	}
+	if(position.z != last_positionZ){
+		setPosition(position);
+		last_positionZ = position.z;
+	}
+	
+	
 	if(angleValX != last_angleValX){
 		
 		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);

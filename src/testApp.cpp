@@ -22,6 +22,17 @@ void testApp::setup() {
 	
 	ofEnableAlphaBlending(); //TODO TEST for send Alpha with Syphon ??
 	
+	bIsPhotoToMatch = false;
+	bIsPhotoToMatch = setupXMLPhotoAlpha();
+	
+	if(bIsPhotoToMatch){
+		
+		scene3dinFBO.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA, 0);
+		scene3dinFBO.begin();
+		ofClear(255,255,255, 0);
+		scene3dinFBO.end();
+	}
+	
 }
 
 //--------------------------------------------------------------
@@ -30,7 +41,15 @@ void testApp::update() {
     _mapping->update();
 #endif
     chinopinball.update();
-    
+	
+	
+	if(bIsPhotoToMatch){
+		scene3dinFBO.begin();
+		ofClear(255,255,255, 0);
+		chinopinball.draw();
+		scene3dinFBO.end();
+	}
+	
 }
 
 //--------------------------------------------------------------
@@ -43,7 +62,18 @@ void testApp::draw() {
 #ifdef USE_MTL_MAPPING
     _mapping->bind();
 #endif
-    chinopinball.draw();
+	
+	if(bIsPhotoToMatch){
+		ofSetColor(ofColor::white);
+		sceneOverlapedImage.draw(0,0, ofGetWidth(), ofGetHeight());
+		
+		ofSetColor(255,255,255,255); // TODO set Alpha in a GUI Then easy to modify.. but may be not necessary use alpha
+		scene3dinFBO.draw(0,0);
+	}
+	else{
+		chinopinball.draw();
+	}
+	
 #ifdef USE_MTL_MAPPING
     _mapping->unbind();
     
@@ -113,5 +143,33 @@ void testApp::gotMessage(ofMessage msg) {
 
 //--------------------------------------------------------------
 void testApp::dragEvent(ofDragInfo dragInfo) {
+
+}
+
+//--------------------------------------------------------------
+bool testApp::setupXMLPhotoAlpha(){
+
+	bool bthereisPhoto = false;
+	//Get some XML extra Data
+	string message = "loading extra XMl Data";
+	if( XML.loadFile("projectSettings.xml") ){
+		message = "projectSettings.xml loaded!";
+	}else{
+		message = "unable to load projectSettings.xml check folder data/projectSettings.xml";
+	}
+	
+	cout << "projectSettings.xml loading: " << message << endl;
+	
+	bPhotoScenario = (bool)XML.getValue("ADD_PHOTOSCENARIO_LAYER",0, 0);
+	string myPhotoScenarioPath = "";
+	if(bPhotoScenario){
+		myPhotoScenarioPath = XML.getValue ("PHOTOSCENARIO_LAYER"," ");
+		bthereisPhoto = sceneOverlapedImage.loadImage(myPhotoScenarioPath);
+		cout << "myPhotoScenarioPath " << myPhotoScenarioPath << "Is there Photo ? " << myPhotoScenarioPath << endl;
+	}else{
+		cout << "Raw mode game mapping (without Photo Matching) " << myPhotoScenarioPath << endl;
+	}
+	
+	return bthereisPhoto;
 
 }

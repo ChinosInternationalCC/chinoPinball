@@ -80,10 +80,18 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.activate();
 	
 	setDefaultZ();
+	
+	setDefaultPostion();
+	
     
 }
 
-
+//--------------------------------------------------------------
+void Obstacle::setDefaultPostion(){
+	last_positionX = position.x;
+	last_positionY = position.y;
+	last_positionZ = position.z;
+}
 //--------------------------------------------------------------
 void Obstacle::update(bool bEditorMode){
 
@@ -104,6 +112,20 @@ void Obstacle::update(bool bEditorMode){
 		//setImplicitShapeDimensions(myBtScale);
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
+	
+	if(position.x != last_positionX){
+		setPosition(position);
+		last_positionX = position.x;
+	}
+	if(position.y != last_positionY){
+		setPosition(position);
+		last_positionY = position.y;
+	}
+	if(position.z != last_positionZ){
+		setPosition(position);
+		last_positionZ = position.z;
+	}
+	
 	
 	if(angleValX != last_angleValX){
 		
