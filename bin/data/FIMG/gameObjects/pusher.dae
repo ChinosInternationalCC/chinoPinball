@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2015-04-27T09:21:56Z</created><keywords></keywords><modified>2015-04-27T09:21:56Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx" name="lambert1">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.400000  0.400000 0.400000 1.000000</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pusher_def_ok_Polygon_1-lib" name="pusher_def_ok_Polygon_1Mesh">
+      <mesh>
+        <source id="pusher_def_ok_Polygon_1-POSITION">
+          <float_array id="pusher_def_ok_Polygon_1-POSITION-array" count="48">
+6.652752 10.971479 -3.900162
+6.652751 10.971479 2.794005
+4.187566 41.925983 -2.540433
+4.187565 41.925983 2.849836
+4.186279 41.925983 -2.539634
+4.186278 41.925983 2.849836
+-1.979817 -0.001263 -3.900195
+-1.979818 0.025845 3.240650
+6.652680 11.038872 2.791539
+6.655996 11.037823 2.849838
+-1.642596 20.819134 3.245562
+6.652680 13.561773 2.849838
+-1.650015 20.800756 3.242933
+3.023451 41.949867 2.958166
+3.052548 41.935211 -2.610384
+-1.229095 20.780457 -3.270767
+</float_array>
+          <technique_common>
+            <accessor source="#pusher_def_ok_Polygon_1-POSITION-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pusher_def_ok_Polygon_1-Normal0">
+          <float_array id="pusher_def_ok_Polygon_1-Normal0-array" count="243">
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+0.996700 0.079378 -0.016952
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.990074 0.136426 -0.033775
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.055757 -0.003319 -0.998439
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+-0.027838 0.036227 -0.998956
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.053011 -0.000830 0.998594
+0.053011 -0.000830 0.998594
+0.053011 -0.000830 0.998594
+0.053011 -0.000830 0.998594
+0.053011 -0.000830 0.998594
+0.053011 -0.000830 0.998594
+0.785571 -0.618771 0.001213
+0.785571 -0.618770 0.001213
+0.785571 -0.618771 0.001213
+0.785571 -0.618770 0.001213
+0.785571 -0.618771 0.001213
+0.785571 -0.618771 0.001213
+0.026358 -0.024037 0.999364
+0.026358 -0.024037 0.999364
+0.026358 -0.024037 0.999363
+0.026358 -0.024037 0.999364
+0.026358 -0.024037 0.999364
+0.026358 -0.024037 0.999364
+</float_array>
+          <technique_common>
+            <accessor source="#pusher_def_ok_Polygon_1-Normal0-array" count="81" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pusher_def_ok_Polygon_1-UV0">
+          <float_array id="pusher_def_ok_Polygon_1-UV0-array" count="74">
+1.000000 0.000000
+1.000000 1.000000
+0.071929 1.000000
+0.071929 1.000000
+0.071000 1.000000
+0.000000 1.000000
+0.000000 0.000000
+0.069562 0.329186
+0.070000 0.031557
+0.944200 0.001893
+1.000000 0.000000
+1.000000 0.999997
+0.948000 0.999998
+0.462624 0.999999
+0.000000 1.000000
+0.000000 0.329365
+0.000000 0.000000
+1.000000 0.000000
+1.000000 0.940000
+1.000000 1.000000
+0.000000 1.000000
+0.462624 0.000000
+0.948000 0.000000
+1.000000 0.000000
+1.000000 1.000000
+0.000000 1.000000
+0.000000 0.000000
+0.000000 0.000000
+0.000000 0.000000
+1.000000 0.000000
+1.000000 1.000000
+0.000000 1.000000
+1.000000 0.000000
+0.000000 1.000000
+1.000000 0.000000
+1.000000 1.000000
+0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pusher_def_ok_Polygon_1-UV0-array" count="37" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pusher_def_ok_Polygon_1-VERTEX">
+          <input semantic="POSITION" source="#pusher_def_ok_Polygon_1-POSITION"/>
+        </vertices>
+        <triangles count="27" material="lambert1"><input semantic="VERTEX" offset="0" source="#pusher_def_ok_Polygon_1-VERTEX"/><input semantic="NORMAL" offset="1" source="#pusher_def_ok_Polygon_1-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pusher_def_ok_Polygon_1-UV0"/><p> 8 0 4 0 1 6 11 2 2 11 3 2 2 4 0 3 5 1 9 6 3 8 7 4 11 8 2 1 9 5 0 10 6 8 11 4 2 12 0 11 13 2 0 14 6 10 15 8 13 16 9 5 17 10 10 18 8 15 19 13 12 20 7 4 21 11 15 22 13 10 23 8 10 24 8 5 25 10 4 26 11 15 27 13 7 28 15 12 29 7 15 30 13 4 31 11 14 32 12 7 33 15 15 34 13 6 35 14 5 36 19 10 37 17 13 38 18 10 39 17 3 40 20 11 41 16 3 42 20 10 43 17 5 44 19 2 45 24 0 46 25 15 47 21 15 48 21 14 49 22 4 50 23 15 51 21 4 52 23 2 53 24 6 54 26 15 55 21 0 56 25 3 57 20 4 58 23 5 59 19 3 60 20 2 61 27 4 62 23 8 63 31 12 64 28 1 65 30 12 66 28 7 67 29 1 68 30 1 69 30 6 70 26 0 71 32 6 72 26 1 73 30 7 74 33 11 75 35 12 76 28 8 77 34 12 78 28 11 79 35 10 80 36</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="pusher" name="pusher">
+      <node name="pusher_def_ok_Polygon_1" id="pusher_def_ok_Polygon_1" sid="pusher_def_ok_Polygon_1"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pusher_def_ok_Polygon_1-lib"><bind_material><technique_common><instance_material symbol="lambert1" target="#lambert1"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <extra><technique profile="MAX3D"><frame_rate>24.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.041667</start_time><end_time>8.333333</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#pusher"></instance_visual_scene>
+  </scene>
+</COLLADA>

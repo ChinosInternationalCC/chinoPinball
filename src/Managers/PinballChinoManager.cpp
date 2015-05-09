@@ -39,8 +39,6 @@ PinballChinoManager::PinballChinoManager():
 	
 	currentMissions.push_back(mission1);
 	currentMissions.push_back(mission2);
-	
-
 }
 
 //--------------------------------------------------------------
@@ -378,7 +376,7 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
 	
-	int amountX = 3;
+	int amountX = 1;
 	
     switch(key)
     {
