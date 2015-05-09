@@ -55,10 +55,11 @@ void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
-	loadBasicScenario(_world, ofVec3f(0,0,0));
-    if (bAddScenarioCover)
+    if (bAddScenarioCover){
+        loadBasicScenario(_world, ofVec3f(0,0,0));
         addCoverScenario(_world);
-	
+	}
+    
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
     /* set light position */
@@ -94,8 +95,10 @@ void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 
 //--------------------------------------------------------------
 void Scenario::removeCoverScenario(){
-	bounds[lastPosIdCoverScenario]->removeRigidBody();
-	bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    if (bounds.size() > 0){
+        bounds[lastPosIdCoverScenario]->removeRigidBody();
+        bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    }
 }
 
 
@@ -390,6 +393,36 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
 
+                }
+                break;
+                
+                case SimpleObject::ShapeTypeGravity:{
+                    Gravity *oGravity = new Gravity(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oGravity->setup(world, pos, path, scale);
+                    oGravity->SetObjectId(objId);
+					oGravity->setRotation(rotation);
+                    oGravity->color = color;
+					oGravity->setVisibility(invisible);
+                    ScenarioObjects.push_back(oGravity);
+					oGravity->setPointsCollision(pointsCollision);
+					oGravity->setupRot();
+                    
+                }
+                break;
+                   
+                case SimpleObject::ShapeTypeTeleporter:{
+                    Teleporter *oTeleporter = new Teleporter(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oTeleporter->setup(world, pos, path, scale);
+                    oTeleporter->SetObjectId(objId);
+					oTeleporter->setRotation(rotation);
+                    oTeleporter->color = color;
+					oTeleporter->setVisibility(invisible);
+                    ScenarioObjects.push_back(oTeleporter);
+					oTeleporter->setPointsCollision(pointsCollision);
+					oTeleporter->setupRot();
+                    
                 }
                 break;
                     

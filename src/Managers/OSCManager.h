@@ -15,9 +15,11 @@
 #include "ofxOsc.h"
 #include "eventComunication.h"
 #include "eventMission.h"
+#include "InputEventManager.h"
 
 #define HOST "localhost"
 #define PORT 9001
+#define RECEIVER_PORT 9002
 
 class OSCManager{
 	
@@ -30,9 +32,12 @@ public:
 	void listenerOnCollission(eventComunication & args);
     void listenerOnUpdateMission(eventMission & args);
     
+    void update(InputEventManager * inputs);
+    
 private:
     
     ofxOscSender sender;
+    ofxOscReceiver receiver;
 };
 
 

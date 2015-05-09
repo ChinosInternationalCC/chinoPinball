@@ -20,20 +20,22 @@ class Obstacle : public SimpleObject {
 public:
 
     Obstacle(vector <SimpleMission *> * _currentMissions);
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
-	virtual void update(bool bEditorMode);
-	virtual void draw(bool bEditorMode);
+	
+    void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
+	void update(bool bEditorMode);
+    void draw(bool bEditorMode);
 	
 	void autoScalingXYZ();
 	void setupRot();
 	
 	ofxBulletCustomShape	body;
+    ofxBulletWorldRigid *m_poWorld;
     
 	ofVec3f         initScale;
 
 
     ofxBulletBaseShape* getBulletBaseShape();
-    string getObjectName();
+    virtual string getObjectName();
     
     void onCollision();
     void setDefaultZ();
@@ -42,4 +44,9 @@ public:
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
 	
 	void setDefaultPostion();
+    
+protected:
+    virtual void setupSpecific();
+    virtual void updateSpecific(bool bEditorMode);
+    virtual void onCollisionSpecific();
 };

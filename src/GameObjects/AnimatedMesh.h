@@ -15,6 +15,10 @@
 #include "SimpleObject.h"
 
 
+/**
+ *  AnimatedMesh is used to load models that have embedded animated meshes, or models that
+ *  we want to add to the physics model using the ofxBulletTriMeshShape object
+ */
 class AnimatedMesh : public SimpleObject {
     
 public:
