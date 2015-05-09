@@ -212,6 +212,12 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+* o - move a bit the scenario to in X axis +
+* p - move a bit the scenario to in X axis -
+* i - move a bit the scenario to in Z axis +
+* k - move a bit the scenario to in Z axis -
+* u - move a bit the scenario to in Y axis +
+* j - move a bit the scenario to in Y axis -
 
 AnimatedMotionPath
 * p - play motion path animation
