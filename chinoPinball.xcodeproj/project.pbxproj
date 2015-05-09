@@ -433,6 +433,10 @@
 		845EA3F01963358500A6EC71 /* eventGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventGame.h; sourceTree = "<group>"; };
 		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
 		84673CC418D9C7FB00071D6F /* eventMoveObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventMoveObjectScenario.h; sourceTree = "<group>"; };
+		849286771AED416F002F47DC /* cameraSettings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = cameraSettings.xml; path = bin/data/FIMG/cameraSettings.xml; sourceTree = SOURCE_ROOT; };
+		849286781AED416F002F47DC /* missions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = missions.xml; path = bin/data/FIMG/missions.xml; sourceTree = SOURCE_ROOT; };
+		849286791AED416F002F47DC /* ranking.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ranking.xml; path = bin/data/FIMG/ranking.xml; sourceTree = SOURCE_ROOT; };
+		8492867A1AED416F002F47DC /* scenario.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/FIMG/scenario.xml; sourceTree = SOURCE_ROOT; };
 		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
 		84E6E5F718E60E3A00A582DF /* eventComunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventComunication.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
@@ -1401,12 +1405,24 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		849286731AED32FA002F47DC /* FIMG */ = {
+			isa = PBXGroup;
+			children = (
+				849286771AED416F002F47DC /* cameraSettings.xml */,
+				849286781AED416F002F47DC /* missions.xml */,
+				849286791AED416F002F47DC /* ranking.xml */,
+				8492867A1AED416F002F47DC /* scenario.xml */,
+			);
+			name = FIMG;
+			sourceTree = "<group>";
+		};
 		84F697BE19647CAF00E2174B /* FilesConfigurations */ = {
 			isa = PBXGroup;
 			children = (
 				A54C8F681AE3F00D000F8AC0 /* projectSettings.xml */,
 				A5B2CC581AE1800B0022560D /* Sysiphus */,
 				A5B2CC571AE180010022560D /* Demo */,
+				849286731AED32FA002F47DC /* FIMG */,
 			);
 			name = FilesConfigurations;
 			sourceTree = "<group>";

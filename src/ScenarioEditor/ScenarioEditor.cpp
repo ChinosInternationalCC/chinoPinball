@@ -42,10 +42,11 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	
 	gui = NULL;
 	//bGoForRemove = false;
-	deleteObject = false;
+	bVisibleObject = true;
 	resetUIvalues();
     
 }
+
 
 //--------------------------------------------------------------
 void ScenarioEditor::resetUIvalues(){
@@ -102,14 +103,18 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
 			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
 			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
-				
+			
+			gui->addSlider("move posX", -100, 100, &selectedObject->position.x);
+			gui->addSlider("move posY", -100, 100, &selectedObject->position.y);
+			gui->addSlider("move posZ", -10, 10, &selectedObject->position.z);
+			
 
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
 				//gui->addSpacer();
 				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
 	
 				gui->addSpacer();
-				gui->addSlider("Scale XYZ", 0, 1, &selectedObject->scaleXyz);
+				gui->addSlider("Scale XYZ", -1, 1, &selectedObject->scaleXyz);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
@@ -121,7 +126,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addSpacer();
 			
 			gui->addSpacer();
-			gui->addLabelToggle("PRESS & PICK TO DELETE IT", &deleteObject);
+			gui->addLabelToggle("Toggle Visibility", &bVisibleObject); // PRESS & PICK TO Toogle Visibility
 			
 			gui->addLabel("Escenario BoundingBox");
 			gui->addSpacer();
@@ -193,7 +198,7 @@ void ScenarioEditor::draw(){
     if(bEscenarioEditorMode){
         //ofSetColor(100, 100, 100);
         string fpsStr = "Scenario Editor Mode";
-        ofDrawBitmapString(fpsStr, 50,ofGetHeight()-100);
+        ofDrawBitmapString(fpsStr, OFX_UI_GLOBAL_CANVAS_WIDTH+10,20);
     }
 }
 
@@ -261,6 +266,7 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 			
 			
 			//Create Personal GUI of this type OR Remove Object Touched
+			/*
 			if(deleteObject){
 				
 				cout << "Going to del Gui and Object" << endl;
@@ -272,8 +278,9 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 				deleteObject = false;
 			}
 			else {
+			 */
 				bgui = createGUI(selectedObject);
-			}
+			//}
 			
 			
 			break; //Stop looking for objects
@@ -383,8 +390,11 @@ void ScenarioEditor::mousePressed(ofMouseEventArgs &args){
 void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
     string name = e.widget->getName();
     //	int kind = e.widget->getKind();
-    if (name == "PRESS & PICK TO DELETE IT"){
-
+    if (name == "Toggle Visibility"){
+		if(selectedObject!=NULL){
+			selectedObject ->bVisible = !selectedObject ->bVisible;
+			cout << "Visibility is " << selectedObject ->bVisible << endl;
+		}
     }else if(name == "SAMPLER"){
         ofxUIImageSampler *is = (ofxUIImageSampler *) e.widget;
         ofColor clr = is->getColor();
@@ -394,6 +404,7 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
         clr.getHex();
     }
 }
+
 
 
 //--------------------------------------------------------
@@ -406,7 +417,7 @@ void ScenarioEditor::mouseReleased(ofMouseEventArgs &args){
         ofNotifyEvent(eventMoveObjectScenario::onMoveObject, newMoveObjectEvent);
 		
 		//free the selectedObject
-		selectedObject = NULL;
+		//selectedObject = NULL;
 	}
 	
 }

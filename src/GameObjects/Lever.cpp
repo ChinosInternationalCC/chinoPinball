@@ -85,6 +85,16 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     
     isKeyPressed = false;
     
+	setDefaultPostion();
+	
+	
+}
+
+//--------------------------------------------------------------
+void Lever::setDefaultPostion(){
+	last_positionX = position.x;
+	last_positionY = position.y;
+	last_positionZ = position.z;
 }
 
 //--------------------------------------------------------------

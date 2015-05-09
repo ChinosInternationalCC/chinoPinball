@@ -12,6 +12,7 @@ SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	idobject = -1;
 	bAnimation = false;
     color = 0xffffff;
+	bVisible = true;
     highlightColor = 0xff00ff;
 	scale = ofVec3f(); last_scale = scale;
 	scaleXyz = 0; last_scaleXyz = scaleXyz;
@@ -26,7 +27,7 @@ SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	axis2RotateX = ofVec3f(1,0,0);
 	axis2RotateY = ofVec3f(0,1,0);
 	axis2RotateZ = ofVec3f(0,0,1);
-	
+
 	
 	//////
 	this->idCurrtentMission = 0;
@@ -82,6 +83,14 @@ void SimpleObject::drawDebug(void){
 void SimpleObject::setPointsCollision(int points){
 	collisionPoints = points;
 }
+
+//--------------------------------------------------------------
+void SimpleObject::setVisibility(int invisible){
+	if(invisible == 1)
+	bVisible = false;
+	else bVisible = true;
+}
+
 
 
 
