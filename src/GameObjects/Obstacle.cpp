@@ -12,11 +12,13 @@ Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
     collisionPoints = 0;
+    m_poWorld = NULL;
 }
 
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeObstacle;
+    
+    m_poWorld = &world;
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
@@ -83,8 +85,13 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	
 	setDefaultPostion();
 	
-    
+    setupSpecific();
 }
+
+void Obstacle::setupSpecific(){
+    type = ShapeTypeObstacle;
+}
+
 
 //--------------------------------------------------------------
 void Obstacle::setDefaultPostion(){
@@ -144,8 +151,15 @@ void Obstacle::update(bool bEditorMode){
 	}
 	
 	body.activate();
+    
+    updateSpecific(bEditorMode);
 
 }
+
+void Obstacle::updateSpecific(bool bEditorMode){
+    //DO Nothing
+}
+
 /*
 //--------------------------------------------------------------
 void Obstacle::autoScalingXYZ(){
@@ -238,6 +252,13 @@ void Obstacle::onCollision(){
 	newComEvent.collision = true;
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+    
+    onCollisionSpecific();
+}
+
+
+void Obstacle::onCollisionSpecific(){
+    //Do Nothing
 }
 
 //------------------------------------------------------------

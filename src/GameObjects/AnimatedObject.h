@@ -14,10 +14,17 @@
 #include "SoundManager.h"
 #include "SimpleObject.h"
 
-
+/**
+ *  The Animate Object should be used to load models that have animated meshes embedded
+ *  The phisics object used is of type ofxBulletCustomShape and we observed that this kind of 
+ *  object doesn't work very well with models that have negative angles. If you want to load 
+ *  this kind of model you might also take a look at AnimatedMesh that adds the model to the 
+ *  physics model using the ofxBulletTriMeshShape
+ */
 class AnimatedObject : public SimpleObject {
     
 public:
+    
     
     AnimatedObject(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
