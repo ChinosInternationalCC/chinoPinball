@@ -35,7 +35,9 @@ public:
         ShapeTypeAnimatedObject = 8,
         ShapeTypeAnimatedMesh = 9,
         ShapeTypeGeneratedMesh = 10,
-        ShapeTypeAnimatedMotionPath = 11
+        ShapeTypeAnimatedMotionPath = 11,
+        ShapeTypeGravity = 12,
+        ShapeTypeTeleporter = 13
     };
     
     //ofxBulletCustomShape	body;

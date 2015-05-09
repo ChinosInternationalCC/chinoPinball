@@ -14,6 +14,19 @@
 #include "SoundManager.h"
 #include "SimpleObject.h"
 
+/**
+ *  DRAFT!!! This kind of objects are not working properly
+ *
+ *  The AnimatedMotionPath object is used to load a model that will be draw and another animated model
+ *  that moves around o a certain path (a sphere for example). This animated object will define the position 
+ *  of the obkect that will be draw.
+ *  
+ *  In the current implementation we have problems in recovering the correct transformation matrix from the 
+ *  animated object and pass it to the object that it drawn. Initialy we were recovering only the position 
+ *  but we also have to recover the scale and rotation of the animated objetc
+ *
+ */
+
 class AnimatedMotionPath : public SimpleObject {
     
 public:

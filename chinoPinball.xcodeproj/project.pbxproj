@@ -270,6 +270,8 @@
 		A58DD22B18F8577300B1FE41 /* ofxUIWaveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FA18F8577300B1FE41 /* ofxUIWaveform.cpp */; };
 		A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FC18F8577300B1FE41 /* ofxUIWidget.cpp */; };
 		A58DD22D18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */; };
+		A59DCD781AFE6E69006C2A3A /* Teleporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */; };
+		A59DCD7B1AFE6EA7006C2A3A /* Gravity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */; };
 		A5A5D0F31983B72700295F0F /* ofxMtlMapping2DControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */; };
 		A5A5D0F41983B72700295F0F /* ofxMtlMapping2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D31983B72700295F0F /* ofxMtlMapping2D.cpp */; };
 		A5A5D0F51983B72700295F0F /* ofxMtlMapping2DShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D61983B72700295F0F /* ofxMtlMapping2DShapes.cpp */; };
@@ -1021,6 +1023,10 @@
 		A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUIWidgetWithLabel.cpp; sourceTree = "<group>"; };
 		A58DD20018F8577300B1FE41 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWidgetWithLabel.h; sourceTree = "<group>"; };
 		A58DD20118F8577300B1FE41 /* ofxUIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWrapper.h; sourceTree = "<group>"; };
+		A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Teleporter.cpp; path = GameObjects/Teleporter.cpp; sourceTree = "<group>"; };
+		A59DCD771AFE6E69006C2A3A /* Teleporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Teleporter.h; path = GameObjects/Teleporter.h; sourceTree = "<group>"; };
+		A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Gravity.cpp; path = GameObjects/Gravity.cpp; sourceTree = "<group>"; };
+		A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gravity.h; path = GameObjects/Gravity.h; sourceTree = "<group>"; };
 		A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2DControls.cpp; sourceTree = "<group>"; };
 		A5A5D0D21983B72700295F0F /* ofxMtlMapping2DControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMtlMapping2DControls.h; sourceTree = "<group>"; };
 		A5A5D0D31983B72700295F0F /* ofxMtlMapping2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMtlMapping2D.cpp; sourceTree = "<group>"; };
@@ -1255,6 +1261,10 @@
 				A54B11011AEA9D0F001BC2CD /* AnimatedMotionPath.h */,
 				A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */,
 				A54B11041AEA9EC2001BC2CD /* AssimpUtils.h */,
+				A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */,
+				A59DCD771AFE6E69006C2A3A /* Teleporter.h */,
+				A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */,
+				A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3163,6 +3173,7 @@
 				A544AFF71AE2C00E00BA7F27 /* btTriangleShapeEx.cpp in Sources */,
 				A544B02E1AE2C00E00BA7F27 /* btAlignedAllocator.cpp in Sources */,
 				A544B00F1AE2C00E00BA7F27 /* btHinge2Constraint.cpp in Sources */,
+				A59DCD7B1AFE6EA7006C2A3A /* Gravity.cpp in Sources */,
 				A544AFB51AE2C00E00BA7F27 /* btBox2dBox2dCollisionAlgorithm.cpp in Sources */,
 				A58DD20818F8577300B1FE41 /* ofxUICircleSlider.cpp in Sources */,
 				A544B0151AE2C00E00BA7F27 /* btTypedConstraint.cpp in Sources */,
@@ -3306,6 +3317,7 @@
 				84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */,
 				A544B0191AE2C00E00BA7F27 /* btSimpleDynamicsWorld.cpp in Sources */,
 				A544AFEA1AE2C00E00BA7F27 /* btTriangleBuffer.cpp in Sources */,
+				A59DCD781AFE6E69006C2A3A /* Teleporter.cpp in Sources */,
 				A58DD20E18F8577300B1FE41 /* ofxUIImage.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				A544AFBD1AE2C00E00BA7F27 /* btConvex2dConvex2dAlgorithm.cpp in Sources */,

@@ -20,6 +20,8 @@
 #include "AnimatedMesh.h"
 #include "GeneratedMesh.h"
 #include "AnimatedMotionPath.h"
+#include "Gravity.h"
+#include "Teleporter.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 

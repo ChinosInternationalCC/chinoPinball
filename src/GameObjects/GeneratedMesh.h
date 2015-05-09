@@ -14,7 +14,10 @@
 #include "SoundManager.h"
 #include "SimpleObject.h"
 
-
+/**
+ *  GeneratedMesh is based on the ofxBullet mesh example and is a mesh built in code 
+ *  that moves(like the waves of the sea)
+ */
 class GeneratedMesh : public SimpleObject {
     
 public:

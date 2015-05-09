@@ -395,6 +395,36 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 
                 }
                 break;
+                
+                case SimpleObject::ShapeTypeGravity:{
+                    Gravity *oGravity = new Gravity(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oGravity->setup(world, pos, path, scale);
+                    oGravity->SetObjectId(objId);
+					oGravity->setRotation(rotation);
+                    oGravity->color = color;
+					oGravity->setVisibility(invisible);
+                    ScenarioObjects.push_back(oGravity);
+					oGravity->setPointsCollision(pointsCollision);
+					oGravity->setupRot();
+                    
+                }
+                break;
+                   
+                case SimpleObject::ShapeTypeTeleporter:{
+                    Teleporter *oTeleporter = new Teleporter(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oTeleporter->setup(world, pos, path, scale);
+                    oTeleporter->SetObjectId(objId);
+					oTeleporter->setRotation(rotation);
+                    oTeleporter->color = color;
+					oTeleporter->setVisibility(invisible);
+                    ScenarioObjects.push_back(oTeleporter);
+					oTeleporter->setPointsCollision(pointsCollision);
+					oTeleporter->setupRot();
+                    
+                }
+                break;
                     
                 case SimpleObject::ShapeTypeAnimatedObject:{
                     AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);

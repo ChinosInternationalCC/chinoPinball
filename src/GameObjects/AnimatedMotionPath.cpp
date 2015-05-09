@@ -9,6 +9,7 @@
 #include "AnimatedMotionPath.h"
 #include "AssimpUtils.h"
 
+
 AnimatedMotionPath::AnimatedMotionPath(vector <SimpleMission *> * _currentMissions) :
 SimpleObject(_currentMissions)
 {
