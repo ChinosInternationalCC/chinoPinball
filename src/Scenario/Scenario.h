@@ -22,6 +22,9 @@
 #include "AnimatedMotionPath.h"
 #include "Gravity.h"
 #include "Teleporter.h"
+#include "Ramp.h"
+#include "ObstacleTriShapeMesh.h"
+#include "ofxBulletTriMeshShape.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
 

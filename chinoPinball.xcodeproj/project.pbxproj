@@ -30,6 +30,8 @@
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
 		845EA3F11963358500A6EC71 /* eventGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3EF1963358500A6EC71 /* eventGame.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
+		84A1085A1AFF68CA0096EA0E /* Ramp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A108581AFF68CA0096EA0E /* Ramp.cpp */; };
+		84A1085D1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */; };
 		84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6E5F618E60E3A00A582DF /* eventComunication.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
@@ -439,6 +441,10 @@
 		849286781AED416F002F47DC /* missions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = missions.xml; path = bin/data/FIMG/missions.xml; sourceTree = SOURCE_ROOT; };
 		849286791AED416F002F47DC /* ranking.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ranking.xml; path = bin/data/FIMG/ranking.xml; sourceTree = SOURCE_ROOT; };
 		8492867A1AED416F002F47DC /* scenario.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/FIMG/scenario.xml; sourceTree = SOURCE_ROOT; };
+		84A108581AFF68CA0096EA0E /* Ramp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ramp.cpp; path = GameObjects/Ramp.cpp; sourceTree = "<group>"; };
+		84A108591AFF68CA0096EA0E /* Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ramp.h; path = GameObjects/Ramp.h; sourceTree = "<group>"; };
+		84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObstacleTriShapeMesh.cpp; path = GameObjects/ObstacleTriShapeMesh.cpp; sourceTree = "<group>"; };
+		84A1085C1AFF7A910096EA0E /* ObstacleTriShapeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleTriShapeMesh.h; path = GameObjects/ObstacleTriShapeMesh.h; sourceTree = "<group>"; };
 		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
 		84E6E5F718E60E3A00A582DF /* eventComunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventComunication.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
@@ -1247,6 +1253,8 @@
 				5BAE6FA692BC31E0D587051E /* Lever.h */,
 				349581733A8DAE2DCC57BEF5 /* Obstacle.cpp */,
 				BBF2C1C9F7F371F8B1268B74 /* Obstacle.h */,
+				84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */,
+				84A1085C1AFF7A910096EA0E /* ObstacleTriShapeMesh.h */,
 				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
 				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				A99834FB19540EAB0086E53E /* Bounds.cpp */,
@@ -1265,6 +1273,8 @@
 				A59DCD771AFE6E69006C2A3A /* Teleporter.h */,
 				A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */,
 				A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */,
+				84A108581AFF68CA0096EA0E /* Ramp.cpp */,
+				84A108591AFF68CA0096EA0E /* Ramp.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3224,6 +3234,7 @@
 				B083A78A196097AD00BC0D89 /* MediaUtils.cpp in Sources */,
 				A544B02C1AE2C00E00BA7F27 /* btSoftRigidDynamicsWorld.cpp in Sources */,
 				A544B02B1AE2C00E00BA7F27 /* btSoftRigidCollisionAlgorithm.cpp in Sources */,
+				84A1085A1AFF68CA0096EA0E /* Ramp.cpp in Sources */,
 				A544AFAC1AE2C00E00BA7F27 /* btCollisionAlgorithm.cpp in Sources */,
 				A544AFB71AE2C00E00BA7F27 /* btBoxBoxDetector.cpp in Sources */,
 				A58DD22618F8577300B1FE41 /* ofxUITextArea.cpp in Sources */,
@@ -3247,6 +3258,7 @@
 				A544AFF81AE2C00E00BA7F27 /* gim_box_set.cpp in Sources */,
 				A99834FD19540EAB0086E53E /* Bounds.cpp in Sources */,
 				A544AFB41AE2C00E00BA7F27 /* btActivatingCollisionAlgorithm.cpp in Sources */,
+				84A1085D1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp in Sources */,
 				A58DD20A18F8577300B1FE41 /* ofxUIDropDownList.cpp in Sources */,
 				A544AFB91AE2C00E00BA7F27 /* btCollisionObject.cpp in Sources */,
 				A58DD20718F8577300B1FE41 /* ofxUICanvas.cpp in Sources */,
