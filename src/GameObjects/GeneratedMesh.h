@@ -32,9 +32,9 @@ public:
 	
 	//ofxBulletCustomShape	body;
     ofxBulletTriMeshShape body;
+	ofxBulletWorldRigid *world;
+	
 	ofVec3f         initScale;
-    ofMesh mesh, omesh;
-    ofxBulletWorldRigid *world;
     
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
@@ -45,8 +45,13 @@ public:
     void setPosition(ofVec3f position);
 	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
+	
+	//Mesh stuff
+	ofMesh mesh, omesh;
     
 private:
+	
+	//Mesh stuff
     bool bAnimate;
     unsigned int currentVetice;
     
