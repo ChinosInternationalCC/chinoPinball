@@ -212,6 +212,12 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+* o - move a bit the scenario to in X axis +
+* p - move a bit the scenario to in X axis -
+* i - move a bit the scenario to in Z axis +
+* k - move a bit the scenario to in Z axis -
+* u - move a bit the scenario to in Y axis +
+* j - move a bit the scenario to in Y axis -
 
 AnimatedMotionPath
 * p - play motion path animation
@@ -248,18 +254,25 @@ We support almos all the major 3D model file formats by using the AssimpModel Lo
 The tag *<type>* should hold the object type; one of the values defined in the *enum shapeType*
 ```
     enum shapeType{
-        ShapeTypeBall = 0,
-        ShapeTypeSimpleBox = 1,
-        ShapeTypeSpring = 2,
-        ShapeTypeLever = 3,
-        ShapeTypeContainer = 4,
-        ShapeTypeHammer = 5,
-        ShapeTypeObstacle = 6,
-        ShapeTypeBounds = 7,
-        ShapeTypeAnimatedObject = 8,
-        ShapeTypeAnimatedMesh = 9,
-        ShapeTypeGeneratedMesh = 10,
-        ShapeTypeAnimatedMotionPath = 11
+
+		enum shapeType{
+		ShapeTypeBall = 0,
+		ShapeTypeSimpleBox = 1,
+		ShapeTypeSpring = 2,
+		ShapeTypeLever = 3,
+		ShapeTypeContainer = 4,
+		ShapeTypeHammer = 5,
+		ShapeTypeObstacle = 6,
+		ShapeTypeBounds = 7,
+		ShapeTypeAnimatedObject = 8,
+		ShapeTypeAnimatedMesh = 9,
+		ShapeTypeGeneratedMesh = 10,
+		ShapeTypeAnimatedMotionPath = 11,
+		ShapeTypeGravity = 12,
+		ShapeTypeTeleporter = 13,
+		ShapeTypeRamp = 14,
+		ShapeTypeObstacleTriShapeMesh = 15
+
     };
 ```
 

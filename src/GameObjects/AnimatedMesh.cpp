@@ -215,12 +215,7 @@ void AnimatedMesh::draw(bool bEditorMode){
     body.getRigidBody()->getCollisionShape()->setLocalScaling(btVector3(scaleModel.x, scaleModel.y,  scaleModel.z));
                                                                     
     body.transformGL();
-    ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    //assimpModel.getMesh(0).drawFaces();
-    //assimpModel.getMesh(0).drawWireframe();
-    //if (ModelPath.compare(_sysPath) == 0)
-    //    ofRotateX(90);
-    
+    ofScale(scaleModel.x,scaleModel.y,scaleModel.z);    
 
     mesh.drawWireframe();
     

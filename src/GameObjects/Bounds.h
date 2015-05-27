@@ -25,6 +25,8 @@ public:
 	virtual void update(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	
+	//void autoScalingXYZ();
+	void setupRot();
 
 	ofxBulletCustomShape	body;
     ofMesh                  assimpModelMesh;
@@ -39,7 +41,7 @@ public:
 
     void setPosition(ofVec3f position);
 
-	void setupRot();
+
 	void setRotation(ofQuaternion rotation);
 	
 	//void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);

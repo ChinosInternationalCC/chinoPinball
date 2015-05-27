@@ -160,12 +160,6 @@ void Obstacle::updateSpecific(bool bEditorMode){
     //DO Nothing
 }
 
-/*
-//--------------------------------------------------------------
-void Obstacle::autoScalingXYZ(){
-	
-}*/
-
 //--------------------------------------------------------------
 void Obstacle::autoScalingXYZ(){
 	

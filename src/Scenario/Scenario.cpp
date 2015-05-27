@@ -425,7 +425,35 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
-                    
+					
+				case SimpleObject::ShapeTypeRamp:{
+					Ramp *oRamp = new Ramp(currentMissions);
+					//oObstable->setup(world, pos, "3DModels/chino_6.dae");
+					oRamp->setup(world, pos, path, scale);
+					oRamp->SetObjectId(objId);
+					oRamp->setRotation(rotation);
+					oRamp->color = color;
+					oRamp->setVisibility(invisible);
+					ScenarioObjects.push_back(oRamp);
+					oRamp->setPointsCollision(pointsCollision);
+					oRamp->setupRot();
+				}
+					break;
+					
+				case SimpleObject::ShapeTypeObstacleTriShapeMesh:{
+					ObstacleTriShapeMesh *oObstacleTriShapeMesh= new ObstacleTriShapeMesh(currentMissions);
+					
+					oObstacleTriShapeMesh->setup(world, pos, path, scale);
+					oObstacleTriShapeMesh->SetObjectId(objId);
+					oObstacleTriShapeMesh->setRotation(rotation);
+					oObstacleTriShapeMesh->color = color;
+					oObstacleTriShapeMesh->setVisibility(invisible);
+					ScenarioObjects.push_back(oObstacleTriShapeMesh);
+					oObstacleTriShapeMesh->setPointsCollision(pointsCollision);
+					oObstacleTriShapeMesh->setupRot();
+				}
+					break;
+					
                 case SimpleObject::ShapeTypeAnimatedObject:{
                     AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
