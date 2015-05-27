@@ -11,7 +11,7 @@
 
 
 AnimatedMotionPath::AnimatedMotionPath(vector <SimpleMission *> * _currentMissions) :
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.511)
 {
     collisionPoints = 0;
     
@@ -19,6 +19,9 @@ SimpleObject(_currentMissions)
 
 //---------------------------------
 void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, string pathMotionModel, ofVec3f ModelScale){
+    // position.z = -0.511;
+
+    
     type = ShapeTypeAnimatedMotionPath;
     collisionTime = -120;
     ModelPath = url;
@@ -73,7 +76,7 @@ void AnimatedMotionPath::setup(ofxBulletWorldRigid &world, ofVec3f position, str
 	
     body.activate();
 	
-	//setDefaultZ();
+	setDefaultZ();
     
     assimpPath.loadModel(m_pathMotionModel);
     assimpPath.setPosition(0, 0, 0);
@@ -158,43 +161,11 @@ void AnimatedMotionPath::update(bool bEditorMode){
 	body.activate();
     
 }
-/*
- //--------------------------------------------------------------
- void Obstacle::autoScalingXYZ(){
- 
- }*/
-
 //--------------------------------------------------------------
-void AnimatedMotionPath::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-        
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = scale;
-        
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);
-        
-		//update physyc object
-		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-		assimpModel.setScale(scale.x, scale.y, scale.z);
-        assimpPath.setScale(scale.x, scale.y, scale.z);
-	}
-    
+void AnimatedMotionPath::updateSpecific(bool bEditorMode){
+	//TODO
 }
+
 
 //--------------------------------------------------------------
 void AnimatedMotionPath::draw(bool bEditorMode){
@@ -266,50 +237,6 @@ void AnimatedMotionPath::onCollision(){
 	newComEvent.collision = true;
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-}
-
-//------------------------------------------------------------
-void AnimatedMotionPath::setDefaultZ(){
-    
-    position.z = -0.511;
-    
-    //position.z = m_fixedZ;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void AnimatedMotionPath::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-//------------------------------------------------------------
-void AnimatedMotionPath::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
 }
 
 //--------------------------------------------------------------

@@ -9,7 +9,7 @@
 #include "GeneratedMesh.h"
 
 GeneratedMesh::GeneratedMesh(vector <SimpleMission *> * _currentMissions) :
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.511)
 {
     collisionPoints = 0;
     world = NULL;
@@ -17,9 +17,14 @@ SimpleObject(_currentMissions)
 
 //---------------------------------
 void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+    // position.z = -0.511;
+
+    
     type = ShapeTypeAnimatedMesh;
     collisionTime = -120;
     ModelPath = url;
+    
+    
     this->position = position;
     this->world = &world;
 	
@@ -115,10 +120,6 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string u
 	
 	setDefaultZ();
     
-
-    
-    
-    
 }
 
 
@@ -189,42 +190,13 @@ void GeneratedMesh::update(bool bEditorMode){
 	body.activate();
     
 }
-/*
- //--------------------------------------------------------------
- void Obstacle::autoScalingXYZ(){
- 
- }*/
+
 
 //--------------------------------------------------------------
-void GeneratedMesh::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-        
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = scale;
-        
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);
-        
-		//update physyc object
-		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-	
-	}
-    
+void GeneratedMesh::updateSpecific(bool bEditorMode){
+	//TODO
 }
+
 
 //--------------------------------------------------------------
 void GeneratedMesh::draw(bool bEditorMode){
@@ -303,48 +275,6 @@ void GeneratedMesh::onCollision(){
 	newComEvent.collision = true;
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-}
-
-//------------------------------------------------------------
-void GeneratedMesh::setDefaultZ(){
-    
-    position.z = -0.511;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void GeneratedMesh::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-//------------------------------------------------------------
-void GeneratedMesh::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
 }
 
 //--------------------------------------------------------------

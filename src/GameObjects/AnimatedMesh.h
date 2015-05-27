@@ -25,7 +25,7 @@ public:
     
     AnimatedMesh(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
-	virtual void update(bool bEditorMode);
+    void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	
 	void autoScalingXYZ();
@@ -42,9 +42,6 @@ public:
     
     void setAnimation(bool bAnimate);
     void onCollision();
-    void setDefaultZ();
-    void setPosition(ofVec3f position);
-	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
     
 private:

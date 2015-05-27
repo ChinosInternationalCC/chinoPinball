@@ -225,8 +225,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
     switch(typeObject){
 
         case SimpleObject::ShapeTypeBall:{
-            Ball *oBall = new Ball(currentMissions);
-            oBall->setup(world, pos);
+            Ball *oBall = new Ball(currentMissions, 0.5);
+            oBall->setup(world, pos, 1, 0.25, 0.44, 0.25);
             oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
         }
@@ -340,14 +340,15 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball(currentMissions);
-                    float mass = ScenarioXml.getValue("mass", 0.0);
                     float radius = ScenarioXml.getValue("radius", 0.0);
+                    Ball *oBall = new Ball(currentMissions, radius);
+                    float mass = ScenarioXml.getValue("mass", 0.0);
+                    
                     float restitution = ScenarioXml.getValue("restitution", 0.0);
                     float friction = ScenarioXml.getValue("friction", 0.0);
                     oBall->setup(world, pos, mass, radius, restitution, friction);
                     oBall->SetObjectId(objId);
-					oBall->setRotation(rotation);
+					oBall->setPhysicsRotation(rotation);
                     oBall->color = color;
 					oBall->setVisibility(invisible);
 					
@@ -359,7 +360,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Hammer *oHammer = new Hammer(currentMissions);
                     oHammer->setup(world, pos);
                     oHammer->SetObjectId(objId);
-					oHammer->setRotation(rotation);
+					oHammer->setPhysicsRotation(rotation);
                     oHammer->color = color;
 					oHammer->setVisibility(invisible);
                     ScenarioObjects.push_back(oHammer);
@@ -373,7 +374,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     int dir = ScenarioXml.getValue("LeverType", 0);
                     oLever->setup(world, pos, path, scale, dir);
                     oLever->SetObjectId(objId);
-					oLever->setRotation(rotation);
+					oLever->setPhysicsRotation(rotation);
                     oLever->color = color;
 					oLever->setVisibility(invisible);
                     ScenarioObjects.push_back(oLever);
@@ -386,7 +387,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oObstable->setup(world, pos, path, scale);
                     oObstable->SetObjectId(objId);
-					oObstable->setRotation(rotation);
+					oObstable->setPhysicsRotation(rotation);
                     oObstable->color = color;
 					oObstable->setVisibility(invisible);
                     ScenarioObjects.push_back(oObstable);
@@ -401,7 +402,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oGravity->setup(world, pos, path, scale);
                     oGravity->SetObjectId(objId);
-					oGravity->setRotation(rotation);
+					oGravity->setPhysicsRotation(rotation);
                     oGravity->color = color;
 					oGravity->setVisibility(invisible);
                     ScenarioObjects.push_back(oGravity);
@@ -416,7 +417,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oTeleporter->setup(world, pos, path, scale);
                     oTeleporter->SetObjectId(objId);
-					oTeleporter->setRotation(rotation);
+					oTeleporter->setPhysicsRotation(rotation);
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
                     ScenarioObjects.push_back(oTeleporter);
@@ -431,7 +432,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					//oObstable->setup(world, pos, "3DModels/chino_6.dae");
 					oRamp->setup(world, pos, path, scale);
 					oRamp->SetObjectId(objId);
-					oRamp->setRotation(rotation);
+					oRamp->setPhysicsRotation(rotation);
 					oRamp->color = color;
 					oRamp->setVisibility(invisible);
 					ScenarioObjects.push_back(oRamp);
@@ -445,7 +446,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					
 					oObstacleTriShapeMesh->setup(world, pos, path, scale);
 					oObstacleTriShapeMesh->SetObjectId(objId);
-					oObstacleTriShapeMesh->setRotation(rotation);
+					oObstacleTriShapeMesh->setPhysicsRotation(rotation);
 					oObstacleTriShapeMesh->color = color;
 					oObstacleTriShapeMesh->setVisibility(invisible);
 					ScenarioObjects.push_back(oObstacleTriShapeMesh);
@@ -459,7 +460,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oAnimatedObject->setup(world, pos, path, scale);
                     oAnimatedObject->SetObjectId(objId);
-					oAnimatedObject->setRotation(rotation);
+					oAnimatedObject->setPhysicsRotation(rotation);
                     oAnimatedObject->color = color;
 					oAnimatedObject->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedObject);
@@ -475,7 +476,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     AnimatedMotionPath *oAnimatedMotionPath = new AnimatedMotionPath(currentMissions);
                     oAnimatedMotionPath->setup(world, pos, path, pathMotionModel, scale);
                     oAnimatedMotionPath->SetObjectId(objId);
-					oAnimatedMotionPath->setRotation(rotation);
+					oAnimatedMotionPath->setPhysicsRotation(rotation);
                     oAnimatedMotionPath->color = color;
 					oAnimatedMotionPath->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedMotionPath);
@@ -490,7 +491,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oAnimatedMesh->setup(world, pos, path, scale);
                     oAnimatedMesh->SetObjectId(objId);
-					oAnimatedMesh->setRotation(rotation);
+					oAnimatedMesh->setPhysicsRotation(rotation);
                     oAnimatedMesh->color = color;
 					oAnimatedMesh->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedMesh);
@@ -504,7 +505,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
                     oGeneratedMesh->setup(world, pos, path, scale);
                     oGeneratedMesh->SetObjectId(objId);
-					oGeneratedMesh->setRotation(rotation);
+					oGeneratedMesh->setPhysicsRotation(rotation);
                     oGeneratedMesh->color = color;
 					oGeneratedMesh->setVisibility(invisible);
                     ScenarioObjects.push_back(oGeneratedMesh);
@@ -518,7 +519,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Bounds *oBounds = new Bounds(currentMissions);
                     oBounds->setup(world, pos, path, scale);
                     oBounds->SetObjectId(objId);
-					oBounds->setRotation(rotation);
+					oBounds->setPhysicsRotation(rotation);
                     oBounds->color = color;
 					oBounds->setVisibility(invisible);
                     ScenarioObjects.push_back(oBounds);

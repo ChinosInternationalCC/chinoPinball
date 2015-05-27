@@ -1245,6 +1245,8 @@
 		0C7B7E46723914CB38E9D865 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
+				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				6307ED7E818A748D22DBB63B /* Ball.cpp */,
 				61036DF8AF6A2EEBFB8892E9 /* Ball.h */,
 				0B5F11AE69A054442FA8FF1B /* Hammer.cpp */,
@@ -1255,8 +1257,6 @@
 				BBF2C1C9F7F371F8B1268B74 /* Obstacle.h */,
 				84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */,
 				84A1085C1AFF7A910096EA0E /* ObstacleTriShapeMesh.h */,
-				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
-				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				A99834FB19540EAB0086E53E /* Bounds.cpp */,
 				A99834FC19540EAB0086E53E /* Bounds.h */,
 				A535520A1AE050A50003463B /* AnimatedObject.cpp */,

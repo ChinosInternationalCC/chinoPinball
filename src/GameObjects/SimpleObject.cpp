@@ -8,7 +8,11 @@
 
 #include "SimpleObject.h"
 
-SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
+SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
+                           vector <SimpleMission *> * _currentMissions,
+                           float _DefaultPositionZ){
+   
+    poSimpleBody = poBulletBaseShape;
 	idobject = -1;
 	bAnimation = false;
     color = 0xffffff;
@@ -34,6 +38,8 @@ SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	this->currentMissions = _currentMissions;
 	
 	collisionPoints = 0;
+    
+        fDefaultPositionZ = _DefaultPositionZ;
 	
 }
 
@@ -42,14 +48,49 @@ void SimpleObject::setCurrentMissionId(int _idCurrentMission){
 	this->idCurrtentMission = _idCurrentMission;
 }
 
-
 //--------------------------------------------------------------
-void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
+void SimpleObject::update(bool bEditorMode){
+    
+	autoScalingXYZ();
+    
+    assimpModel.update();
+
+	
+	if(getPosition().x != last_positionX){
+		setPhysicsPosition(getPosition());
+		last_positionX = getPosition().x;
+	}
+	if(getPosition().y != last_positionY){
+		setPosition(getPosition());
+		last_positionY = getPosition().y;
+	}
+	if(getPosition().z != last_positionZ){
+		setPosition(getPosition());
+		last_positionZ = getPosition().z;
+	}
+	
+	
+	if(angleValX != last_angleValX){
+		
+		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValX = angleValX;
+	}
+	if(angleValY != last_angleValY){
+		
+		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValY = angleValY;
+	}
+	if(angleValZ != last_angleValZ){
+		
+		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
+		last_angleValZ = angleValZ;
+	}
+	
+	//poSimpleBody->activate();
+    
+    updateSpecific(bEditorMode);
+    
 }
-
-//--------------------------------------------------------------
-//void SimpleObject::update(bool bEditorMode){
-//}
 
 //--------------------------------------------------------------
 //void SimpleObject::draw(bool bEditorMode){
@@ -91,6 +132,120 @@ void SimpleObject::setVisibility(int invisible){
 	else bVisible = true;
 }
 
+//--------------------------------------------------------------
+void SimpleObject::setDefaultZ(){
+  
+    if(poSimpleBody != NULL){
+        position.z = fDefaultPositionZ;
+        setPhysicsPosition(position);
+    }else {
+        cout << "Error the Object must setDefaultZ after create the object in the world" << endl;
+    }
+    
+}
 
+//--------------------------------------------------------------
+void SimpleObject::setPhysicsPosition(ofVec3f position){
+    btTransform transform;
+    btRigidBody* rigidBody = poSimpleBody->getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
 
+//--------------------------------------------------------------
+void SimpleObject::setPhysicsRotation(ofQuaternion rotation){
+    btTransform transform;
+    btRigidBody* rigidBody = poSimpleBody->getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+}
 
+//--------------------------------------------------------------
+void SimpleObject::setPosition(ofVec3f _position){
+    position = _position;
+}
+
+//--------------------------------------------------------------
+ofVec3f SimpleObject::getPosition(){
+    return position;
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setDefaultPostion(){
+	last_positionX = position.x;
+	last_positionY = position.y;
+	last_positionZ = position.z;
+}
+
+//--------------------------------------------------------------
+void SimpleObject::autoScalingXYZ(){
+	
+	btVector3 myObjectScale;
+	ofVec3f myOfObjectScale;
+	
+	
+	if (scaleXyz != last_scaleXyz) {
+		float diff = scaleXyz - last_scaleXyz;
+		last_scaleXyz = scaleXyz;
+		
+		//Get Scales
+		myObjectScale = poSimpleBody->getRigidBody()->getCollisionShape()->getLocalScaling();
+		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
+        
+		//Update sizes values
+		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
+		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
+		last_scale = scale;
+        
+		myObjectScale.setX(myOfObjectScale.x);
+		myObjectScale.setY(myOfObjectScale.y);
+		myObjectScale.setZ(myOfObjectScale.z);
+        
+		//update physyc object
+		poSimpleBody->getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
+		assimpModel.setScale(scale.x, scale.y, scale.z);
+	}
+    
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
+	
+	
+	btTransform transform;
+	btRigidBody* a_rb = poSimpleBody->getRigidBody();
+    a_rb->getMotionState()->getWorldTransform( transform );
+    
+    // rotate
+	btQuaternion currentRotation = transform.getRotation();
+	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
+    
+	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
+	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
+	transform.setRotation(rotate * currentRotation);
+    
+	a_rb->getMotionState()->setWorldTransform( transform );
+	
+	btQuaternion Rotation2Save = a_rb->getOrientation();
+	//save this var for the XML
+	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
+	
+	poSimpleBody->activate();
+	
+	
+}

@@ -10,7 +10,7 @@
 string _sysPath = "Sysiphous/sysiphus_centred.dae";
 
 AnimatedMesh::AnimatedMesh(vector <SimpleMission *> * _currentMissions) :
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.511)
 {
     collisionPoints = 0;
     world = NULL;
@@ -18,6 +18,8 @@ SimpleObject(_currentMissions)
 
 //---------------------------------
 void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+    //position.z = -0.511;
+    
     type = ShapeTypeAnimatedMesh;
     collisionTime = -120;
     ModelPath = url;
@@ -80,112 +82,9 @@ void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string ur
     
 }
 
-
 //--------------------------------------------------------------
-void AnimatedMesh::update(bool bEditorMode){
-    
-	autoScalingXYZ();
-    
-    assimpModel.update();
-    
-    
-    
-    
-	//Udpate mesch if there are changes
-	// add 3D mashes to ofxBullet shape
-    //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-    //{
-    //btVector3 myBtScale;
-    //myBtScale.setX(scale.x);
-    //myBtScale.setY(scale.y);
-    //myBtScale.setZ(scale.z);
-    
-    //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
-    //setImplicitShapeDimensions(myBtScale);
-    //addMesh(assimpModel.getMesh(i), scale, true);
-    //}
-	
-	if(position.x != last_positionX){
-		setPosition(position);
-		last_positionX = position.x;
-	}
-	if(position.y != last_positionY){
-		setPosition(position);
-		last_positionY = position.y;
-	}
-	if(position.z != last_positionZ){
-		setPosition(position);
-		last_positionZ = position.z;
-	}
-	
-	
-	if(angleValX != last_angleValX){
-		
-		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValX = angleValX;
-	}
-	if(angleValY != last_angleValY){
-		
-		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValY = angleValY;
-	}
-	if(angleValZ != last_angleValZ){
-		
-		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValZ = angleValZ;
-	}
-    
-    assimpPath.update();
-    /*
-     
-     if ( (currentVetice < assimpPath.getMesh(0).getNumVertices()) &&
-     (ModelPath.compare(sysPath) == 0)
-     ){
-     ofVec3f pos = assimpPath.getMesh(0).getVertex(currentVetice);
-     setPosition(ofVec3f(pos.x/100, pos.y/100, pos.z/100));
-     currentVetice ++;
-     }
-     else
-     currentVetice = 0;
-     */
-	body.activate();
-    
-}
-/*
- //--------------------------------------------------------------
- void Obstacle::autoScalingXYZ(){
- 
- }*/
-
-//--------------------------------------------------------------
-void AnimatedMesh::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-        
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = scale;
-        
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);
-        
-		//update physyc object
-		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-		assimpModel.setScale(scale.x, scale.y, scale.z);
-	}
-    
+void AnimatedMesh::updateSpecific(bool bEditorMode){
+	//TODO
 }
 
 //--------------------------------------------------------------
@@ -250,48 +149,6 @@ void AnimatedMesh::onCollision(){
 	newComEvent.collision = true;
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-}
-
-//------------------------------------------------------------
-void AnimatedMesh::setDefaultZ(){
-    
-    position.z = -0.511;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void AnimatedMesh::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-//------------------------------------------------------------
-void AnimatedMesh::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
 }
 
 //--------------------------------------------------------------

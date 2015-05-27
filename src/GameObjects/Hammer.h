@@ -22,6 +22,7 @@ public:
     Hammer(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, ofVec3f pos);
 	virtual void update(bool bEditorMode);
+    void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	void move(float height);
 	
@@ -41,9 +42,6 @@ public:
     string getObjectName();
     
     void onCollision();
-    void setDefaultZ();
-    void setPosition(ofVec3f position);
-	void setRotation(ofQuaternion rotation);
 	
 	
 	//Event launch hammer

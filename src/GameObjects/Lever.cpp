@@ -8,15 +8,18 @@
 
 #include "Lever.h"
 Lever::Lever(vector <SimpleMission *> * _currentMissions):
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.5)
 {
     
 }
 
 //--------------------------------------------------------------
-void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, ofVec3f ModelScale, int setDirection = 1){
+void Lever::setup(ofxBulletWorldRigid &world, ofVec3f Pos,  string url, ofVec3f ModelScale, int setDirection = 1){
+    //position.z = -0.5;
+    
+    
     type = ShapeTypeLever;
-    position = setPosition;
+    setPosition(Pos);
     direction = setDirection;
 	ModelPath = url;
     //Two rotationLever to set the lever in the right position
@@ -43,7 +46,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     }
     
     // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
+    body.create(world.world, getPosition(), 0); // we set m=0 for kinematic body
     
     // load 3D model
     scale = ModelScale;
@@ -86,15 +89,9 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     isKeyPressed = false;
     
 	setDefaultPostion();
+    setDefaultZ();
 	
 	
-}
-
-//--------------------------------------------------------------
-void Lever::setDefaultPostion(){
-	last_positionX = position.x;
-	last_positionY = position.y;
-	last_positionZ = position.z;
 }
 
 //--------------------------------------------------------------
@@ -117,6 +114,11 @@ void Lever::update(bool bEditorMode){
         }
     }
     
+}
+
+//--------------------------------------------------------------
+void Lever::updateSpecific(bool bEditorMode){
+	//TODO
 }
 
 //--------------------------------------------------------------
@@ -175,8 +177,8 @@ void Lever::rotate(float degrees) {
     
     // translate
     btVector3 origin = transform.getOrigin();
-    origin.setX(position.x + axisX - axisX * cos(ofDegToRad(degrees)));
-    origin.setY(position.y - axisX * sin(ofDegToRad(degrees)));
+    origin.setX(getPosition().x + axisX - axisX * cos(ofDegToRad(degrees)));
+    origin.setY(getPosition().y - axisX * sin(ofDegToRad(degrees)));
     
     transform.setOrigin(origin);
     
@@ -198,34 +200,6 @@ string Lever::getObjectName(){
 //------------------------------------------------------------
 void Lever::onCollision(){}
 
-
-//------------------------------------------------------------
-void Lever::setDefaultZ(){
-    
-    position.z = -0.5;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Lever::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-
-//------------------------------------------------------------
-void Lever::setRotation(ofQuaternion rotation){
-}
 
 //--------------------------------------------------------------
 void Lever::setupRot(){

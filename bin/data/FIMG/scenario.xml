@@ -85,7 +85,7 @@
         <pointsCollision>0</pointsCollision>
         <positionX>0.380005568</positionX>
         <positionY>15.060027122</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -103,7 +103,7 @@
         <pointsCollision>2</pointsCollision>
         <positionX>-6.214899063</positionX>
         <positionY>-13.880000114</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -121,7 +121,7 @@
         <pointsCollision>2</pointsCollision>
         <positionX>-2.796697855</positionX>
         <positionY>-10.460008621</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>-6.398302078</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -139,7 +139,7 @@
         <pointsCollision>2</pointsCollision>
         <positionX>-1.156696081</positionX>
         <positionY>-2.739999294</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -157,7 +157,7 @@
         <pointsCollision>3</pointsCollision>
         <positionX>3.375074863</positionX>
         <positionY>-9.520008087</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -175,7 +175,7 @@
         <pointsCollision>3</pointsCollision>
         <positionX>6.688331604</positionX>
         <positionY>-5.371165752</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000024</scaleX>
         <scaleY>0.100000024</scaleY>
         <scaleZ>0.100000024</scaleZ>
@@ -193,7 +193,7 @@
         <pointsCollision>3</pointsCollision>
         <positionX>8.311673164</positionX>
         <positionY>-14.371187210</positionY>
-        <positionZ>-1.499999762</positionZ>
+        <positionZ>0.000000000</positionZ>
         <scaleX>0.100000009</scaleX>
         <scaleY>0.100000009</scaleY>
         <scaleZ>0.100000009</scaleZ>
@@ -216,8 +216,8 @@
         <scaleY>0.402305156</scaleY>
         <scaleZ>0.402305156</scaleZ>
         <rotationX>-0.000867290</rotationX>
-        <rotationY>0.011896699</rotationY>
-        <rotationZ>0.999921083</rotationZ>
+        <rotationY>0.011896698</rotationY>
+        <rotationZ>0.999920964</rotationZ>
         <rotationW>0.003965911</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
@@ -234,8 +234,8 @@
         <scaleY>0.482200563</scaleY>
         <scaleZ>0.482200563</scaleZ>
         <rotationX>0.997245193</rotationX>
-        <rotationY>0.049742982</rotationY>
-        <rotationZ>-0.054875892</rotationZ>
+        <rotationY>0.049742986</rotationY>
+        <rotationZ>-0.054875895</rotationZ>
         <rotationW>0.004033231</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
@@ -285,12 +285,12 @@
         <pointsCollision>0</pointsCollision>
         <positionX>5.103310585</positionX>
         <positionY>-7.263003826</positionY>
-        <positionZ>-0.935960412</positionZ>
+        <positionZ>1.953099847</positionZ>
         <scaleX>0.100000001</scaleX>
         <scaleY>0.100000001</scaleY>
         <scaleZ>0.100000001</scaleZ>
         <rotationX>0.274471372</rotationX>
-        <rotationY>0.961508870</rotationY>
+        <rotationY>0.961508930</rotationY>
         <rotationZ>-0.004483534</rotationZ>
         <rotationW>-0.012087960</rotationW>
         <path>Demo/3DModels/pinball_stl/channel1_a.stl</path>

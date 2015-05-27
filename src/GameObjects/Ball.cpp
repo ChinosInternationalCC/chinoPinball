@@ -9,11 +9,9 @@
 #include "Ball.h"
 
 //---------------------------------
-Ball::Ball(vector <SimpleMission *> * _currentMissions) :
-    SimpleObject(_currentMissions)
+Ball::Ball(vector <SimpleMission *> * _currentMissions,  float radius) : SimpleObject(&body, _currentMissions, -radius)
 {
-    m_status = BallStatusWaiting;
-
+    
 }
 
 //---------------------------------
@@ -24,29 +22,31 @@ void Ball::setup(ofxBulletWorldRigid &myWorld,
                  float restitution,
                  float friction){
     
-    
-    m_status = BallStatusWaiting;
-    position = pos;
-    m_initialPos = pos;
+    setPosition(pos);
+
+
     this->mass = mass;
     this->radius = radius;
     this->restitution = restitution;
     this->friction = friction;
-	
-	shadow.set(radius, 0.1);
-	shadow.setResolution(20, 1);
     
-    // place on table
-//    position.z = -radius/2.;
-    
-    world = myWorld;
-    body.create(world.world, position, mass, radius);
+    world = &myWorld;
+    body.create(world->world, this->getPosition(), mass, radius);
     body.setProperties(restitution, friction); // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
     
+    setDefaultZ();//Only after create it
+    
+    //specific
     type = ShapeTypeBall;
     
     SoundManager::getInstance()->PlaySound(1);
+    
+    //position.z = -radius;
+    shadow.set(radius, 0.1);
+	shadow.setResolution(20, 1);
+    
+    
 }
 
 //----------------------------------
@@ -55,6 +55,11 @@ void Ball::update(bool bEditorMode){
     shadow.setPosition(body.getPosition().x, body.getPosition().y, 0.0);
 	shadow.setRadius(radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
 
+}
+
+//--------------------------------------------------------------
+void Ball::updateSpecific(bool bEditorMode){
+	//TODO
 }
 
 //--------------------------------------------------------------
@@ -78,14 +83,6 @@ void Ball::draw(bool bEditorMode){
     
 }
 
-//---------------------------------
-bool Ball::setGameOverBall(void){
-    if (m_status == BallStatusGameOver)
-        return false;
-    m_status = BallStatusGameOver;
-    return true;
-}
-
 //--------------------------------
 bool Ball::isInsideBox(float boxSize){
     
@@ -107,7 +104,7 @@ bool Ball::isInsideBox(float boxSize){
 void Ball::reset() {
     
     body.remove();
-    body.create(world.world, position, mass, radius);
+    body.create(world->world, this->getPosition(), mass, radius);
     body.add();
     SoundManager::getInstance()->PlaySound(1);
 }
@@ -127,50 +124,6 @@ void Ball::onCollision(){}
 
 
 //------------------------------------------------------------
-void Ball::setDefaultZ(){
-    
-    position.z = -radius;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Ball::setPosition(ofVec3f pos){
-    
-    position = pos;
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-
-//------------------------------------------------------------
-void Ball::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-	
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
 ofVec3f Ball::getInitialPos(){
     return m_initialPos;
 }

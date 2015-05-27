@@ -19,6 +19,7 @@ public:
 	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url, ofVec3f ModelScale, int setDirection);
     
 	void update(bool bEditorMode);
+    void updateSpecific(bool bEditorMode);
 	void draw(bool bEditorMode);
 	void rotate(float degrees);
 	
@@ -46,11 +47,7 @@ public:
     string getObjectName();
     
     void onCollision();
-    void setDefaultZ();
-    void setPosition(ofVec3f position);
-    void setRotation(ofQuaternion rotation);
-	
-	void setDefaultPostion();
+
     
     
 };

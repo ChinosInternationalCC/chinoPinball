@@ -9,7 +9,7 @@
 #include "Hammer.h"
 
 Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
-    SimpleObject(_currentMissions)
+    SimpleObject(&body, _currentMissions, -0.375)
 {
    bLaunch = true; 
 }
@@ -17,10 +17,13 @@ Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
 //---------------------------------
 void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
+    //position.z = -0.375;
+
+    
    /* position = ofVec3f(7, 4, 0);*/
                 /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
-    position = pos;
-    body.create(world.world, position, 0, .75, 4, .75); // we set m=0 for kinematic body
+    setPosition(pos);
+    body.create(world.world, getPosition(), 0, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -28,8 +31,8 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     isKeyPressed = false;
     
 	//y position
-	lowerLimit = position.y;
-	upperLimit = position.y+2;
+	lowerLimit = getPosition().y;
+	upperLimit = getPosition().y+2;
     speed = 0.8;    // pos per frame
     
     color = 0x00ff00;
@@ -40,13 +43,16 @@ void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
     
     type = ShapeTypeHammer;
     
+    
+    setDefaultZ();
+    
 }
 
 //--------------------------------------------------------------
 void Hammer::update(bool bEditorMode){
     
-    lowerLimit = position.y;
-	upperLimit = position.y+2;
+    lowerLimit = getPosition().y;
+	upperLimit = getPosition().y+2;
     
 	// get current translation
     ofVec3f translation = body.getPosition();
@@ -85,12 +91,19 @@ void Hammer::update(bool bEditorMode){
 	
 	//Update Physic work rotation if GUI change it
 	if(rotation != last_rotation){
-		setRotation(rotation);
+		setPhysicsRotation(rotation);
 		last_rotation = rotation;
 	}
 
     
 }
+
+
+//--------------------------------------------------------------
+void Hammer::updateSpecific(bool bEditorMode){
+	//TODO
+}
+
 
 //--------------------------------------------------------------
 void Hammer::draw(bool bEditorMode){
@@ -159,49 +172,6 @@ void Hammer::onCollision(){
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
 
-}
-
-//------------------------------------------------------------
-void Hammer::setDefaultZ(){
-    
-    position.z = -0.375;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Hammer::setPosition(ofVec3f position){
-
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-
-//------------------------------------------------------------
-void Hammer::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-	
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
 }
 
 //--------------------------------------------------------------
