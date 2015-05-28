@@ -87,8 +87,6 @@ public:
     
     ofImage *image;
 	
-	
-	//&_obj->angleRotX
 	ofVec3f angleRotations;
 	
 };

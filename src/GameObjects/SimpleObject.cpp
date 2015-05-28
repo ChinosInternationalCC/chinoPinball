@@ -40,8 +40,28 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 	collisionPoints = 0;
     
         fDefaultPositionZ = _DefaultPositionZ;
-	
+	pAttrib = NULL;
 }
+
+//--------------------------------------------------------------
+void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes){
+    
+    pAttrib = &Attributes;
+    
+    setupType();
+    world = &myWorld;
+    setupBody(Attributes);
+    
+    
+    setPosition(Attributes.position);
+    setDefaultZ();//Only after create it
+    
+
+    setupLookStyle(Attributes);
+    setupAnimations(Attributes);
+
+}
+
 
 //--------------------------------------------------------------
 void SimpleObject::setCurrentMissionId(int _idCurrentMission){
@@ -116,8 +136,8 @@ void SimpleObject::setDebugMode(bool &DebugMode){
 void SimpleObject::drawDebug(void){
     
         ofSetColor(255, 255, 255);
-        ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
-        ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), position.x,position.y+1);
+        ofDrawBitmapString("ID:"+ofToString(GetObjectId()), pAttrib->position.x,pAttrib->position.y);
+        ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), pAttrib->position.x,pAttrib->position.y+1);
 }
 
 //--------------------------------------------------------------
@@ -135,9 +155,9 @@ void SimpleObject::setVisibility(int invisible){
 //--------------------------------------------------------------
 void SimpleObject::setDefaultZ(){
   
-    if(poSimpleBody != NULL){
-        position.z = fDefaultPositionZ;
-        setPhysicsPosition(position);
+    if(poSimpleBody->checkCreate()){
+        pAttrib->position.z = fDefaultPositionZ;
+        setPhysicsPosition(pAttrib->position);
     }else {
         cout << "Error the Object must setDefaultZ after create the object in the world" << endl;
     }
@@ -177,19 +197,19 @@ void SimpleObject::setPhysicsRotation(ofQuaternion rotation){
 
 //--------------------------------------------------------------
 void SimpleObject::setPosition(ofVec3f _position){
-    position = _position;
+    pAttrib->position = _position;
 }
 
 //--------------------------------------------------------------
 ofVec3f SimpleObject::getPosition(){
-    return position;
+    return pAttrib->position;
 }
 
 //--------------------------------------------------------------
 void SimpleObject::setDefaultPostion(){
-	last_positionX = position.x;
-	last_positionY = position.y;
-	last_positionZ = position.z;
+	last_positionX = pAttrib->position.x;
+	last_positionY = pAttrib->position.y;
+	last_positionZ = pAttrib->position.z;
 }
 
 //--------------------------------------------------------------
@@ -248,4 +268,9 @@ void SimpleObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 	poSimpleBody->activate();
 	
 	
+}
+
+//--------------------------------------------------------------
+SimpleObjectAttrib * SimpleObject::getSimpleAttrib(){
+    return pAttrib;
 }

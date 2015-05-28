@@ -8,51 +8,52 @@
 
 #include "Obstacle.h"
 
+
+
 Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(&body, _currentMissions, -1.0)
 {
     collisionPoints = 0;
-    m_poWorld = NULL;
 }
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+void Obstacle::setup(ofxBulletWorldRigid &world,
+                     SimpleObjectAttrib *Attributes){
     //position.z = -1.5;
    // setDefaultZ();
     
-    m_poWorld = &world;
-    collisionTime = -120;
-    ModelPath = url;
-    
- //   position.z = -1.5;
-    setPosition(position);
-	
-    //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    
-    //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
-    
-    // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
+    genericSetup(world, *Attributes);
 
-    
-    // load 3D model
-    scale = ModelScale;
-	assimpModel.loadModel(url, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
-	assimpModel.setPosition(0, 0, 0);
-
-    //ofEnableSeparateSpecularLight();
-    
 	//save init values
 	initScale = scale;
 	
-	
+    setupSpecific();
+}
+
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+
+
+//----------------------------------
+void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
+    
+    // load 3D model
+	assimpModel.loadModel(getObstacleAttr()->url, true);
+	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setPosition(0, 0, 0);
+    
+    
     // add 3D meshes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
         body.addMesh(assimpModel.getMesh(i), scale, true);
     }
-
+    
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
@@ -65,42 +66,38 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
-   // btTransform transform;
-    //btRigidBody* a_rb = body.getRigidBody();
-    //a_rb->getMotionState()->getWorldTransform( transform );
     
-    // rotate
-    //    btQuaternion currentRotation = transform.getRotation();
-    //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
-//    btQuaternion rotate;
-    
-    //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
- //   rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
- //   transform.setRotation(rotate * rotation);
-    
- //   a_rb->getMotionState()->setWorldTransform( transform );
-	
-	//Set Rotation Objects
-	setupRot();
-	
     body.activate();
-	
-
-	setDefaultPostion();
-    setDefaultZ();
-	
-    setupSpecific();
 }
+
+
+//----------------------------------
+void Obstacle::setupLookStyle(SimpleObjectAttrib &Attributes){
+    //NOTHING
+}
+
+//----------------------------------
+void Obstacle::setupAnimations(SimpleObjectAttrib &Attributes){
+    
+    collisionTime = -120;
+}
+
+//----------------------------------
+void Obstacle::setupType(){
+    type = ShapeTypeObstacle;
+}
+
 
 //--------------------------------------------------------------
 void Obstacle::setupSpecific(){
-    type = ShapeTypeObstacle;
+    //DO Nothing
 }
 
 //--------------------------------------------------------------
 void Obstacle::updateSpecific(bool bEditorMode){
     //DO Nothing
 }
+
 
 //--------------------------------------------------------------
 void Obstacle::draw(bool bEditorMode){
@@ -161,7 +158,7 @@ void Obstacle::onCollision(){
     onCollisionSpecific();
 }
 
-
+//--------------------------------------------------------------
 void Obstacle::onCollisionSpecific(){
     //Do Nothing
 }
@@ -180,6 +177,12 @@ void Obstacle::setupRot(){
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
 }
+
+//--------------------------------------------------------------
+ObstacleAttrib* Obstacle::getObstacleAttr(){
+    return (ObstacleAttrib*) getSimpleAttrib();
+}
+
 
 
 

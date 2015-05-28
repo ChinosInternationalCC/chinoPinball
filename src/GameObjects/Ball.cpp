@@ -16,44 +16,60 @@ Ball::Ball(vector <SimpleMission *> * _currentMissions,  float radius) : SimpleO
 
 //---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld,
+                 SimpleObjectAttrib *Attrib/*
                  ofVec3f pos,
                  float mass,
                  float radius,
                  float restitution,
-                 float friction){
-    
-    setPosition(pos);
-
-
-    this->mass = mass;
-    this->radius = radius;
-    this->restitution = restitution;
-    this->friction = friction;
-    
-    world = &myWorld;
-    body.create(world->world, this->getPosition(), mass, radius);
-    body.setProperties(restitution, friction); // .25 (more restituition means more energy) , .95 ( friction )
-    body.add();
-    
-    setDefaultZ();//Only after create it
+                 float friction*/){
+                     
+    genericSetup(myWorld, *Attrib);
     
     //specific
-    type = ShapeTypeBall;
-    
     SoundManager::getInstance()->PlaySound(1);
-    
-    //position.z = -radius;
-    shadow.set(radius, 0.1);
+    shadow.set(getBallAttr()->radius, 0.1);
 	shadow.setResolution(20, 1);
     
     
 }
+//----------------------------------
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+void Ball::setupBody(SimpleObjectAttrib &Attributes){
+    
+    body.create(world->world, this->getPosition(), getBallAttr()->mass, getBallAttr()->radius);
+    body.setProperties(getBallAttr()->restitution, getBallAttr()->friction);
+    // .25 (more restituition means more energy) , .95 ( friction )
+    body.add();
+    
+   
+}
 
+
+//----------------------------------
+void Ball::setupLookStyle(SimpleObjectAttrib &Attributes){
+//NOTHING
+}
+
+//----------------------------------
+void Ball::setupAnimations(SimpleObjectAttrib &Attributes){
+//NOTHING
+}
+
+//----------------------------------
+void Ball::setupType(){
+    type = ShapeTypeBall;
+}
 //----------------------------------
 void Ball::update(bool bEditorMode){
 
     shadow.setPosition(body.getPosition().x, body.getPosition().y, 0.0);
-	shadow.setRadius(radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
+	shadow.setRadius(getBallAttr()->radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
 
 }
 
@@ -104,7 +120,7 @@ bool Ball::isInsideBox(float boxSize){
 void Ball::reset() {
     
     body.remove();
-    body.create(world->world, this->getPosition(), mass, radius);
+    body.create(world->world, this->getPosition(), getBallAttr()->mass, getBallAttr()->radius);
     body.add();
     SoundManager::getInstance()->PlaySound(1);
 }
@@ -126,4 +142,8 @@ void Ball::onCollision(){}
 //------------------------------------------------------------
 ofVec3f Ball::getInitialPos(){
     return m_initialPos;
+}
+
+BallAttrib* Ball::getBallAttr(){
+    return (BallAttrib*) getSimpleAttrib();
 }

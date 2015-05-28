@@ -208,7 +208,7 @@ void PinballChinoManager::onRestartGameEvent(void){
                     Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
                     ofVec3f pos;
                     if(m_bLinkInitialBallPositionToHammer){
-                        pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                        pos.set(hammer->getPosition().x,hammer->getPosition().y-5,hammer->getPosition().z);
                     }
                     else{
                         pos.set(ball->getInitialPos());

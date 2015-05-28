@@ -15,37 +15,52 @@ Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
 }
 
 //---------------------------------
-void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
+void Hammer::setup(ofxBulletWorldRigid &myWorld,
+                   SimpleObjectAttrib *Attrib){
     
-    //position.z = -0.375;
+    genericSetup(myWorld, *Attrib);
 
+
+    isKeyPressed = false;
     
-   /* position = ofVec3f(7, 4, 0);*/
-                /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
-    setPosition(pos);
-    body.create(world.world, getPosition(), 0, .75, 4, .75); // we set m=0 for kinematic body
+}
+
+//----------------------------------
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+void Hammer::setupBody(SimpleObjectAttrib &Attributes){
+    
+    body.create(world->world, getPosition(), getSimpleAttrib()->mass, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
-    isKeyPressed = false;
-    
-	//y position
+}
+
+
+//----------------------------------
+void Hammer::setupLookStyle(SimpleObjectAttrib &Attributes){
+    color = 0x00ff00;
+}
+
+//----------------------------------
+void Hammer::setupAnimations(SimpleObjectAttrib &Attributes){
+    //y position
 	lowerLimit = getPosition().y;
 	upperLimit = getPosition().y+2;
     speed = 0.8;    // pos per frame
-    
-    color = 0x00ff00;
-    
-    
     // move hammer to lower position
     move(lowerLimit);
-    
+}
+
+//----------------------------------
+void Hammer::setupType(){
     type = ShapeTypeHammer;
-    
-    
-    setDefaultZ();
-    
 }
 
 //--------------------------------------------------------------

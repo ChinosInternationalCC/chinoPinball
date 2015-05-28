@@ -10,13 +10,47 @@
 
 #include "SimpleObject.h"
 
+class LeverAttrib : public SimpleObjectAttrib{
+public:
+    inline LeverAttrib(ofVec3f _position,
+                      float _damping,
+                      float _friction,
+                      float _mass,
+                      float _restitution,
+                      string _url,
+                      ofVec3f _ModelScale,
+                      int _direction);
+    string url;
+    ofVec3f ModelScale;
+    int direction; // rotation direction: 1 - clockwise, 0 - counter clockwise
+    
+};
+
+inline LeverAttrib::LeverAttrib(ofVec3f _position,
+                                float _damping,
+                                float _friction,
+                                float _mass,
+                                float _restitution,
+                                string _url,
+                                ofVec3f _ModelScale,
+                                int _direction) :
+        SimpleObjectAttrib(_position,
+                   _damping,
+                   _friction,
+                   _mass,
+                   _restitution){
+            url = _url;
+            ModelScale = _ModelScale;
+            direction = _direction;
+    
+}
 
 class Lever : public SimpleObject {
     
 public:
     
     Lever(vector <SimpleMission *> * _currentMissions);
-	void setup(ofxBulletWorldRigid &world, ofVec3f setPosition, string url, ofVec3f ModelScale, int setDirection);
+	void setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attributes);
     
 	void update(bool bEditorMode);
     void updateSpecific(bool bEditorMode);
@@ -27,9 +61,6 @@ public:
     
 	ofxBulletCustomShape	body;
     
-    
-	//ofVec3f         position;
-    int             direction; // rotation direction: 1 - clockwise, 0 - counter clockwise
     
     btQuaternion    rotationLever;
     
@@ -48,6 +79,12 @@ public:
     
     void onCollision();
 
+    LeverAttrib* getLeverAttr();
     
+private:
+    void setupBody(SimpleObjectAttrib &Attributes);
+    void setupLookStyle(SimpleObjectAttrib &Attributes);
+    void setupAnimations(SimpleObjectAttrib &Attributes);
+    void setupType();
     
 };

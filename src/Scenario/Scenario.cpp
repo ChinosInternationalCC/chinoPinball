@@ -226,7 +226,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
 
         case SimpleObject::ShapeTypeBall:{
             Ball *oBall = new Ball(currentMissions, 0.5);
-            oBall->setup(world, pos, 1, 0.25, 0.44, 0.25);
+            BallAttrib *poBallAttrib = new BallAttrib(pos,0, 1, 0.25, 0.44, 0.25); // damping not used  so we use 0...
+            oBall->setup(world, (SimpleObjectAttrib*) poBallAttrib /*1, 0.25, 0.44, 0.25*/);
             oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
         }
@@ -234,7 +235,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             
         case SimpleObject::ShapeTypeHammer:{
             Hammer *oHammer = new Hammer(currentMissions);
-            oHammer->setup(world, pos);
+            SimpleObjectAttrib *poAttrib = new SimpleObjectAttrib();
+            oHammer->setup(world, poAttrib);
             oHammer->setDefaultZ();
             ScenarioObjects.push_back(oHammer);
         }
@@ -243,7 +245,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         case SimpleObject::ShapeTypeLever:{
             Lever *oLever = new Lever(currentMissions);
             int dir = 0;
-            oLever->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05), dir);
+            LeverAttrib *poAttr = new LeverAttrib();
+            oLever->setup(world, (SimpleObjectAttrib*) poAttr/*pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05), dir*/);
             oLever->setDefaultZ();
             ScenarioObjects.push_back(oLever);
         }

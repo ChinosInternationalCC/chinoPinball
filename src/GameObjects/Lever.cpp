@@ -14,42 +14,21 @@ SimpleObject(&body, _currentMissions, -0.5)
 }
 
 //--------------------------------------------------------------
-void Lever::setup(ofxBulletWorldRigid &world, ofVec3f Pos,  string url, ofVec3f ModelScale, int setDirection = 1){
+void Lever::setup(ofxBulletWorldRigid &world,
+                  SimpleObjectAttrib *Attributes/*
+                  ofVec3f Pos,  string url, ofVec3f ModelScale, int setDirection = 1*/
+                  ){
     //position.z = -0.5;
     
     
-    type = ShapeTypeLever;
-    setPosition(Pos);
-    direction = setDirection;
-	ModelPath = url;
+    genericSetup(world, *Attributes);
+    
     //Two rotationLever to set the lever in the right position
     //rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
     
-    // lever rotationLever angles
-    angle = 0;
-	upperLimit = 60;
-	lowerLimit = -30;
-    speed = 15;    // degrees per frame
-    
-    // distance from object center to rotation axis
-    axisX = 1.3;
-    
-    // settings for counter clockwise rotation
-    if (direction == 0)
-    {
-        upperLimit = -upperLimit;
-        lowerLimit = -lowerLimit;
-        speed = -speed;
-        axisX = -axisX;
-        rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(-90));
-    }
-    
-    // create ofxBullet shape
-    body.create(world.world, getPosition(), 0); // we set m=0 for kinematic body
     
     // load 3D model
-    scale = ModelScale;
+    scale = getLeverAttr()->ModelScale;
 	assimpModel.loadModel(ModelPath, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
@@ -61,11 +40,41 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f Pos,  string url, ofVec3f 
     }
     
     
-    body.add();
-    body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
+    isKeyPressed = false;
+}
+
+//----------------------------------
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+void Lever::setupBody(SimpleObjectAttrib &Attributes){
     
-	// lever rotationLever angles
+    // create ofxBullet shape
+    body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
+    
+
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
+    //body.setProperties(getSimpleAttrib()->restitution, getSimpleAttrib()->friction);
+    // .25 (more restituition means more energy) , .95 ( friction )
+    body.add();
+    
+    body.enableKinematic();
+}
+
+
+//----------------------------------
+void Lever::setupLookStyle(SimpleObjectAttrib &Attributes){
+    //NOTHING
+}
+
+//----------------------------------
+void Lever::setupAnimations(SimpleObjectAttrib &Attributes){
+    rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
+    // lever rotationLever angles
     angle = 0;
 	upperLimit = 60;
 	lowerLimit = -30;
@@ -75,7 +84,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f Pos,  string url, ofVec3f 
     axisX = 1.3;
     
     // settings for counter clockwise rotationLever
-    if (direction == 0)
+    if (getLeverAttr()->direction == 0)
     {
         upperLimit = -upperLimit;
         lowerLimit = -lowerLimit;
@@ -85,13 +94,11 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f Pos,  string url, ofVec3f 
     
     // rotate lever to lower position
     rotate(lowerLimit);
-    
-    isKeyPressed = false;
-    
-	setDefaultPostion();
-    setDefaultZ();
-	
-	
+}
+
+//----------------------------------
+void Lever::setupType(){
+    type = ShapeTypeLever;
 }
 
 //--------------------------------------------------------------
@@ -99,7 +106,7 @@ void Lever::update(bool bEditorMode){
     
     if (isKeyPressed)
     {
-        if ((direction && (angle < upperLimit)) || (!direction && (angle > upperLimit))) // rotate up
+        if ((getLeverAttr()->direction && (angle < upperLimit)) || (!getLeverAttr()->direction && (angle > upperLimit))) // rotate up
         {
             angle += speed;
             rotate(angle);
@@ -107,7 +114,7 @@ void Lever::update(bool bEditorMode){
     }
     if (!isKeyPressed)
     {
-        if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
+        if ((getLeverAttr()->direction && (angle > lowerLimit)) || (!getLeverAttr()->direction && (angle < lowerLimit))) // rotate down
         {
             angle -= speed;
             rotate(angle);
@@ -206,7 +213,9 @@ void Lever::setupRot(){
     
 }
 
-
+LeverAttrib* Lever::getLeverAttr(){
+    return (LeverAttrib*) getSimpleAttrib();
+}
 
 
 

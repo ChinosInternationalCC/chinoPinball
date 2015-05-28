@@ -104,9 +104,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
 			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
 			
-			gui->addSlider("move posX", -100, 100, &selectedObject->position.x);
-			gui->addSlider("move posY", -100, 100, &selectedObject->position.y);
-			gui->addSlider("move posZ", -10, 10, &selectedObject->position.z);
+			gui->addSlider("move posX", -100, 100, &selectedObject->getSimpleAttrib()->position.x);
+			gui->addSlider("move posY", -100, 100, &selectedObject->getSimpleAttrib()->position.y);
+			gui->addSlider("move posZ", -10, 10, &selectedObject->getSimpleAttrib()->position.z);
 			
 
 				//gui->addSlider("Resolution", 0.0, 100.0, &selectedObject->scale);
@@ -116,8 +116,8 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				gui->addSpacer();
 				gui->addSlider("Scale XYZ", -1, 1, &selectedObject->scaleXyz);
 				gui->addSpacer();
-				gui->addSlider("damping", 0.0, 1.0, &selectedObject->damping);
-				gui->addSlider("friction", 0.0, 1.0, &selectedObject->friction);
+				gui->addSlider("damping", 0.0, 1.0, &selectedObject->getSimpleAttrib()->damping);
+				gui->addSlider("friction", 0.0, 1.0, &selectedObject->getSimpleAttrib()->friction);
 			
 
 			gui->addLabel("Object Type ["+ofToString(selectedObject->type)+"]");
@@ -306,10 +306,10 @@ void ScenarioEditor::mouseDragged(ofMouseEventArgs &args){
 			if( (gui != NULL) && (selectedObject != NULL) && bGuiPointer ){
 				if(gui->isHit(args.x, args.y) == false){ // BAD ACCES While moving Objects out of Shape Collision
 					
-						ofVec3f newPos = selectedObject->position;
+						ofVec3f newPos = selectedObject->getSimpleAttrib()->position;
 						newPos.x = newPos.x + (args.x - mouseOldPosition.x)/50;
 						newPos.y = newPos.y + (args.y - mouseOldPosition.y)/50;
-						selectedObject -> position = newPos;
+						selectedObject -> getSimpleAttrib()->position = newPos;
 						selectedObject -> setPosition(newPos);
 					
 					mouseOldPosition = args;

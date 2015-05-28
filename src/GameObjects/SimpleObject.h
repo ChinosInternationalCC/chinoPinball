@@ -13,6 +13,37 @@
 #include "ofxAssimpModelLoader.h"
 #include "SimpleMission.h"
 
+class SimpleObjectAttrib{
+public:
+    inline SimpleObjectAttrib(ofVec3f _position,
+                              float _damping,
+                              float _friction,
+                              float _mass,
+                              float _restitution);
+    //positions
+    ofVec3f position;
+    
+    float damping;
+	float friction;
+    float mass;
+    float restitution;
+    
+private:
+};
+
+inline SimpleObjectAttrib::SimpleObjectAttrib(ofVec3f _position,
+                                              float _damping,
+                                              float _friction,
+                                              float _mass,
+                                              float _restitution){
+    
+    position = _position;
+    damping = _damping;
+    friction = _friction;
+    mass = _mass;
+    restitution = _restitution;
+}
+
 class SimpleObject {
     
 public:
@@ -51,6 +82,7 @@ public:
 	//--------------------------------------------------------------
 
     
+    
 	//general vars
 	int idobject;
 	
@@ -76,10 +108,7 @@ public:
     
 	//physics vars
 	//enum {Static/dynamic/Kinematic}
-	float damping;
-	float friction;
-    float mass;
-    float restitution;
+
 	
 	//var status
 	bool bAnimation;
@@ -105,10 +134,8 @@ public:
     void setPhysicsPosition(ofVec3f position);
 	void setPhysicsRotation(ofQuaternion rotation);
     
-    //positions
-	float last_positionX, last_positionY, last_positionZ;
-    ofVec3f position;
-    
+
+    float last_positionX, last_positionY, last_positionZ;
     
 	void setupRot();
     //Rotations
@@ -119,9 +146,7 @@ public:
 	float		angleValX, last_angleValX;
 	float		angleValY, last_angleValY;
 	float		angleValZ, last_angleValZ;
-	float angleRotX;
-	float angleRotY;
-	float angleRotZ;
+
     
     //Scaling
     ofVec3f         initScale;
@@ -145,6 +170,8 @@ public:
 	   
     bool bDebugMode;
     
+    void genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes);
+    SimpleObjectAttrib * getSimpleAttrib();
     
 protected:
 	int						idCurrtentMission;
@@ -157,13 +184,25 @@ protected:
                  vector <SimpleMission *> * _currentMissions, // [<in] pointer to the current mission
                 float _DefaultPositionZ
     );
+    
+    virtual void setupBody(SimpleObjectAttrib &Attributes) = 0;
+    virtual void setupLookStyle(SimpleObjectAttrib &Attributes) = 0;
+    virtual void setupAnimations(SimpleObjectAttrib &Attributes) = 0;
+    virtual void setupType() = 0;
+    
+
 
 private:
     ofxBulletBaseShape	*poSimpleBody;
     float fDefaultPositionZ;
     
     ofMatrix4x4 worldposition;
+    SimpleObjectAttrib *pAttrib;
+    
 	
     
    
 };
+
+
+
