@@ -9,6 +9,8 @@
 #include "AnimatedMesh.h"
 string _sysPath = "Sysiphous/sysiphus_centred.dae";
 
+
+//----------------------------------
 AnimatedMesh::AnimatedMesh(vector <SimpleMission *> * _currentMissions) :
 SimpleObject(&body, _currentMissions, -0.511)
 {
@@ -17,70 +19,69 @@ SimpleObject(&body, _currentMissions, -0.511)
 }
 
 //---------------------------------
-void AnimatedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    //position.z = -0.511;
-    
-    type = ShapeTypeAnimatedMesh;
-    collisionTime = -120;
-    ModelPath = url;
-    this->position = position;
-    this->world = &world;
+void AnimatedMesh::setup(ofxBulletWorldRigid &world,  SimpleObjectAttrib *Attributes){
 	
-    //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    
-    //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
-    
+	//position.z = -1.5;
+	// setDefaultZ();
+	
+	genericSetup(world, *Attributes);
+	
+	//save init values
+	initScale = scale;
+	
+}
 
-    
-    // load 3D model
-    scale = ModelScale;
+//----------------------------------
+void AnimatedMesh::setupBody(SimpleObjectAttrib &Attributes){
+	
+	////
+	
 	assimpModel.loadModel(url, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
-    
-    //ofEnableSeparateSpecularLight();
-    
+	
+	
 	//save init values
-	initScale = scale;
 	mesh = assimpModel.getCurrentAnimatedMesh(0);
-    // create ofxBullet shape
-    //body.create(world.world, position, 0); // we set m=0 for kinematic body
-    body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
-    body.add();
-    body.enableKinematic();
-    body.setActivationState( DISABLE_DEACTIVATION );
-    
-    
-    bAnimate = true;
-    assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
-    assimpModel.playAllAnimations();
-    body.add();
-    
+	// create ofxBullet shape
+	//body.create(world.world, position, 0); // we set m=0 for kinematic body
+	body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
+	body.add();
+	body.enableKinematic();
+	body.setActivationState( DISABLE_DEACTIVATION );
 	
-    //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
-    // to add force to the ball on collision set restitution to > 1
 	
+	bAnimate = true;
+	assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
+	assimpModel.playAllAnimations();
+	body.add();
+	
+	
+	//Set properties to the body // TODO check others if they are setted
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
-    
+	body.activate();
 	
-	//Set Rotation Objects
-	setupRot();
-	
-    body.activate();
-	
-	setDefaultZ();
-    
-    assimpPath.loadModel("Sysiphous/lineMesh.obj");
-    assimpPath.setPosition(0, 0, 0);
-    currentVetice = 0;
-	
-	
-	last_positionX = position.x;
-	last_positionY = position.y;
-	last_positionZ = position.z;
-    
 }
+
+
+
+//----------------------------------
+void AnimatedMesh::setupLookStyle(SimpleObjectAttrib &Attributes){
+	//NOTHING
+}
+
+//----------------------------------
+void AnimatedMesh::setupAnimations(SimpleObjectAttrib &Attributes){
+	
+	collisionTime = -120;
+}
+
+//----------------------------------
+void AnimatedMesh::setupType(){
+	type = ShapeTypeAnimatedMesh;
+}
+
 
 //--------------------------------------------------------------
 void AnimatedMesh::updateSpecific(bool bEditorMode){
@@ -197,5 +198,10 @@ void AnimatedMesh::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 //-------------------------------------------------------------
 void AnimatedMesh::setAnimation(bool bAnimate) {
     this->bAnimate = bAnimate;
+}
+
+//--------------------------------------------------------------
+AnimatedMeshAttrib* AnimatedMesh::getAnimatedMeshAttr(){
+	return (AnimatedMeshAttrib*) getSimpleAttrib();
 }
 

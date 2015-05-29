@@ -15,12 +15,14 @@
 
 class SimpleObjectAttrib{
 public:
-    inline SimpleObjectAttrib(ofVec3f _position,
+    inline SimpleObjectAttrib(string modelPath,
+							  ofVec3f _position,
                               float _damping,
                               float _friction,
                               float _mass,
                               float _restitution);
     //positions
+	string modelPath;
     ofVec3f position;
     
     float damping;
@@ -31,12 +33,14 @@ public:
 private:
 };
 
-inline SimpleObjectAttrib::SimpleObjectAttrib(ofVec3f _position,
+inline SimpleObjectAttrib::SimpleObjectAttrib(string _modelPath,
+											  ofVec3f _position,
                                               float _damping,
                                               float _friction,
                                               float _mass,
                                               float _restitution){
-    
+	
+	modelPath = _modelPath;
     position = _position;
     damping = _damping;
     friction = _friction;
@@ -60,17 +64,12 @@ public:
         ShapeTypeAnimatedObject = 8,
         ShapeTypeAnimatedMesh = 9,
         ShapeTypeGeneratedMesh = 10,
-        ShapeTypeAnimatedMotionPath = 11,
-        ShapeTypeGravity = 12,
-        ShapeTypeTeleporter = 13,
-		ShapeTypeRamp = 14,
-		ShapeTypeObstacleTriShapeMesh = 15
-		
+        ShapeTypeGravity = 11,
+        ShapeTypeTeleporter = 12,
+		ShapeTypeRamp = 13
     };
-    
-    
+	
     shapeType type;
-
     
 	virtual void update(bool bEditorMode);
     virtual void updateSpecific(bool bEditorMode) = 0;

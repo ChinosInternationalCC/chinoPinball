@@ -16,6 +16,8 @@
 
 */
 
+
+
 class Hammer : public SimpleObject {
     
 public:

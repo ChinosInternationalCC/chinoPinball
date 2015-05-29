@@ -16,7 +16,8 @@
 
 class BallAttrib : public SimpleObjectAttrib{
 public:
-    inline BallAttrib(ofVec3f _position,
+    inline BallAttrib(string modelPath,
+					  ofVec3f _position,
                       float _damping,
                       float _friction,
                       float _mass,
@@ -26,20 +27,22 @@ public:
     
 };
 
-inline BallAttrib::BallAttrib(ofVec3f _position,
+inline BallAttrib::BallAttrib(string _modelPath,
+							  ofVec3f _position,
                               float _damping,
                               float _friction,
                               float _mass,
                               float _restitution,
                               float _radius) :
-    SimpleObjectAttrib(_position,
-                   _damping,
-                   _friction,
-                   _mass,
-                   _restitution){
+    SimpleObjectAttrib(_modelPath,
+					   _position,
+					   _damping,
+					   _friction,
+					   _mass,
+					   _restitution)
+	{
         radius = _radius;
-    
-}
+	}
 
 
 class Ball : public SimpleObject

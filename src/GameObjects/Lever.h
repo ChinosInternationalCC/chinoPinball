@@ -12,12 +12,13 @@
 
 class LeverAttrib : public SimpleObjectAttrib{
 public:
-    inline LeverAttrib(ofVec3f _position,
+    inline LeverAttrib(
+					   string _modelData,
+					   ofVec3f _position,
                       float _damping,
                       float _friction,
                       float _mass,
                       float _restitution,
-                      string _url,
                       ofVec3f _ModelScale,
                       int _direction);
     string url;
@@ -26,20 +27,21 @@ public:
     
 };
 
-inline LeverAttrib::LeverAttrib(ofVec3f _position,
+inline LeverAttrib::LeverAttrib(string _modelData,
+								ofVec3f _position,
                                 float _damping,
                                 float _friction,
                                 float _mass,
                                 float _restitution,
-                                string _url,
                                 ofVec3f _ModelScale,
                                 int _direction) :
-        SimpleObjectAttrib(_position,
+        SimpleObjectAttrib(_modelData,
+				   _position,
                    _damping,
                    _friction,
                    _mass,
                    _restitution){
-            url = _url;
+			
             ModelScale = _ModelScale;
             direction = _direction;
     

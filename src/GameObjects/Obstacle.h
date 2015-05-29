@@ -16,30 +16,29 @@
 
 class ObstacleAttrib : public SimpleObjectAttrib{
 public:
-    inline ObstacleAttrib(ofVec3f _position,
+    inline ObstacleAttrib(string _modelPath,
+					   ofVec3f _position,
                        float _damping,
                        float _friction,
                        float _mass,
                        float _restitution,
-                       string _url,
                        ofVec3f _ModelScale);
-    string url;
     ofVec3f ModelScale;
 };
 
-inline ObstacleAttrib::ObstacleAttrib(ofVec3f _position,
+inline ObstacleAttrib::ObstacleAttrib(string  _modelPath,
+								ofVec3f _position,
                                 float _damping,
                                 float _friction,
                                 float _mass,
                                 float _restitution,
-                                string _url,
                                 ofVec3f _ModelScale) :
-SimpleObjectAttrib(_position,
+SimpleObjectAttrib(_modelPath,
+				   _position,
                    _damping,
                    _friction,
                    _mass,
                    _restitution){
-    url = _url;
     ModelScale = _ModelScale;
 }
 

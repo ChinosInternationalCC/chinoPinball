@@ -345,11 +345,34 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeBall:{
                     float radius = ScenarioXml.getValue("radius", 0.0);
                     Ball *oBall = new Ball(currentMissions, radius);
-                    float mass = ScenarioXml.getValue("mass", 0.0);
-                    
+					
+					float mass = ScenarioXml.getValue("mass", 0.0);
                     float restitution = ScenarioXml.getValue("restitution", 0.0);
                     float friction = ScenarioXml.getValue("friction", 0.0);
-                    oBall->setup(world, pos, mass, radius, restitution, friction);
+					
+					/* Simple Attrib Params
+					 string 3dmodelPath,
+					 ofVec3f position;
+					 float damping;
+					 float friction;
+					 float mass;
+					 float restitution;
+					 +
+					 Ball Attr Params
+					 float radius
+					 */
+					
+					
+					BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
+															pos,	//position
+															0,		//damping
+															friction,//friction
+															mass,	//mass
+															restitution,
+															radius);
+
+					
+                    oBall->setup(world, ballAttrib);
                     oBall->SetObjectId(objId);
 					oBall->setPhysicsRotation(rotation);
                     oBall->color = color;
@@ -361,7 +384,9 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeHammer:{
                     Hammer *oHammer = new Hammer(currentMissions);
-                    oHammer->setup(world, pos);
+					
+					SimpleObjectAttrib *Attrib = new SimpleObjectAttrib("", pos, 0, 0, 0, 0);
+                    oHammer->setup(world, Attrib);
                     oHammer->SetObjectId(objId);
 					oHammer->setPhysicsRotation(rotation);
                     oHammer->color = color;
@@ -374,8 +399,20 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeLever:{
                     Lever *oLever = new Lever(currentMissions);
+
+					//pos, path, scale, dir
+					LeverAttrib *Attrib = new LeverAttrib(path,
+														  pos,
+														  0,
+														  0,
+														  0,
+														  0,
+														  0,
+														  0);
+
+					
                     int dir = ScenarioXml.getValue("LeverType", 0);
-                    oLever->setup(world, pos, path, scale, dir);
+                    oLever->setup(world, Attrib);
                     oLever->SetObjectId(objId);
 					oLever->setPhysicsRotation(rotation);
                     oLever->color = color;
@@ -387,8 +424,17 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle(currentMissions);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oObstable->setup(world, pos, path, scale);
+                    oObstable->setup(world, Attrib);
                     oObstable->SetObjectId(objId);
 					oObstable->setPhysicsRotation(rotation);
                     oObstable->color = color;
@@ -402,8 +448,16 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 
                 case SimpleObject::ShapeTypeGravity:{
                     Gravity *oGravity = new Gravity(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oGravity->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+                    oGravity->setup(world, Attrib);
                     oGravity->SetObjectId(objId);
 					oGravity->setPhysicsRotation(rotation);
                     oGravity->color = color;
@@ -417,8 +471,16 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                    
                 case SimpleObject::ShapeTypeTeleporter:{
                     Teleporter *oTeleporter = new Teleporter(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oTeleporter->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+                    oTeleporter->setup(world, Attrib);
                     oTeleporter->SetObjectId(objId);
 					oTeleporter->setPhysicsRotation(rotation);
                     oTeleporter->color = color;
@@ -432,8 +494,16 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					
 				case SimpleObject::ShapeTypeRamp:{
 					Ramp *oRamp = new Ramp(currentMissions);
-					//oObstable->setup(world, pos, "3DModels/chino_6.dae");
-					oRamp->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+					oRamp->setup(world, Attrib);
 					oRamp->SetObjectId(objId);
 					oRamp->setPhysicsRotation(rotation);
 					oRamp->color = color;
@@ -444,51 +514,6 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 				}
 					break;
 					
-				case SimpleObject::ShapeTypeObstacleTriShapeMesh:{
-					ObstacleTriShapeMesh *oObstacleTriShapeMesh= new ObstacleTriShapeMesh(currentMissions);
-					
-					oObstacleTriShapeMesh->setup(world, pos, path, scale);
-					oObstacleTriShapeMesh->SetObjectId(objId);
-					oObstacleTriShapeMesh->setPhysicsRotation(rotation);
-					oObstacleTriShapeMesh->color = color;
-					oObstacleTriShapeMesh->setVisibility(invisible);
-					ScenarioObjects.push_back(oObstacleTriShapeMesh);
-					oObstacleTriShapeMesh->setPointsCollision(pointsCollision);
-					oObstacleTriShapeMesh->setupRot();
-				}
-					break;
-					
-                case SimpleObject::ShapeTypeAnimatedObject:{
-                    AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oAnimatedObject->setup(world, pos, path, scale);
-                    oAnimatedObject->SetObjectId(objId);
-					oAnimatedObject->setPhysicsRotation(rotation);
-                    oAnimatedObject->color = color;
-					oAnimatedObject->setVisibility(invisible);
-                    ScenarioObjects.push_back(oAnimatedObject);
-					oAnimatedObject->setPointsCollision(pointsCollision);
-					oAnimatedObject->setupRot();
-                    
-                }
-                break;
-                
-                case SimpleObject::ShapeTypeAnimatedMotionPath:{
-                    string pathMotionModel;
-                    pathMotionModel = ScenarioXml.getValue("pathMotionModel","", 0);
-                    AnimatedMotionPath *oAnimatedMotionPath = new AnimatedMotionPath(currentMissions);
-                    oAnimatedMotionPath->setup(world, pos, path, pathMotionModel, scale);
-                    oAnimatedMotionPath->SetObjectId(objId);
-					oAnimatedMotionPath->setPhysicsRotation(rotation);
-                    oAnimatedMotionPath->color = color;
-					oAnimatedMotionPath->setVisibility(invisible);
-                    ScenarioObjects.push_back(oAnimatedMotionPath);
-					oAnimatedMotionPath->setPointsCollision(pointsCollision);
-					oAnimatedMotionPath->setupRot();
-                    
-                }
-                break;
-                    
                 case SimpleObject::ShapeTypeAnimatedMesh:{
                     AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");

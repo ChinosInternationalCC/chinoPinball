@@ -14,17 +14,45 @@
 #include "SoundManager.h"
 #include "SimpleObject.h"
 
+class AnimatedMeshAttrib : public SimpleObjectAttrib{
+public:
+	inline AnimatedMeshAttrib(string _modelPath,
+					   ofVec3f _position,
+						  float _damping,
+						  float _friction,
+						  float _mass,
+						  float _restitution,
+						  ofVec3f _ModelScale);
+	ofVec3f ModelScale;
+};
+
+inline AnimatedMeshAttrib::AnimatedMeshAttrib(string  _modelPath,
+									  ofVec3f _position,
+									  float _damping,
+									  float _friction,
+									  float _mass,
+									  float _restitution,
+									  ofVec3f _ModelScale) :
+SimpleObjectAttrib(_modelPath,
+				   _position,
+				   _damping,
+				   _friction,
+				   _mass,
+				   _restitution){
+	ModelScale = _ModelScale;
+}
+
 
 /**
  *  AnimatedMesh is used to load models that have embedded animated meshes, or models that
  *  we want to add to the physics model using the ofxBulletTriMeshShape object
  */
 class AnimatedMesh : public SimpleObject {
-    
+	
 public:
     
     AnimatedMesh(vector <SimpleMission *> * _currentMissions);
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
+	virtual void setup(ofxBulletWorldRigid &world,  SimpleObjectAttrib *Attributes);
     void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	
@@ -43,9 +71,17 @@ public:
     void setAnimation(bool bAnimate);
     void onCollision();
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
-    
+	AnimatedMeshAttrib* getAnimatedMeshAttr();
+	
+	
 private:
     bool bAnimate;
     ofxAssimpModelLoader	assimpPath;
     unsigned int currentVetice;
+	
+	void setupBody(SimpleObjectAttrib &Attributes);
+	void setupLookStyle(SimpleObjectAttrib &Attributes);
+	void setupAnimations(SimpleObjectAttrib &Attributes);
+	void setupType();
+	
 };

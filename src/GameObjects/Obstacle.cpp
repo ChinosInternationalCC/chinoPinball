@@ -33,17 +33,19 @@ void Obstacle::setup(ofxBulletWorldRigid &world,
 /**
  *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
  *  Use this line to copy the reference of the Atributes to your specifics methods
- *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes; 
+ *  >>> getObstacleAttr() simplifies this cast
  *
  *  @param Attributes reference to the Attribute object
  */
 
-
-//----------------------------------
 void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
-    
+	
+	// create ofxBullet shape
+	body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
+	
     // load 3D model
-	assimpModel.loadModel(getObstacleAttr()->url, true);
+	assimpModel.loadModel(getSimpleAttrib()->modelPath, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
     
