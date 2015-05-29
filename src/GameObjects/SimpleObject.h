@@ -60,8 +60,6 @@ public:
         ShapeTypeContainer = 4,
         ShapeTypeHammer = 5,
         ShapeTypeObstacle = 6,
-        ShapeTypeBounds = 7,
-        ShapeTypeAnimatedObject = 8,
         ShapeTypeAnimatedMesh = 9,
         ShapeTypeGeneratedMesh = 10,
         ShapeTypeGravity = 11,

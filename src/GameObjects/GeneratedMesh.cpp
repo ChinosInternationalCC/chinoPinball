@@ -16,9 +16,9 @@ SimpleObject(&body, _currentMissions, -0.511)
 }
 
 //---------------------------------
-void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+void GeneratedMesh::setup(SimpleObjectAttrib &Attributes){
     // position.z = -0.511;
-
+//ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale
     
     type = ShapeTypeAnimatedMesh;
     collisionTime = -120;

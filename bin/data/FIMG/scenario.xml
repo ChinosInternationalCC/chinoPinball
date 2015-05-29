@@ -204,7 +204,7 @@
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
-        <type>7</type>
+        <type>8</type>
         <id>12</id>
         <color>16777215</color>
         <invisible>1</invisible>
@@ -222,7 +222,7 @@
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>7</type>
+        <type>8</type>
         <id>13</id>
         <color>16777215</color>
         <invisible>1</invisible>
@@ -296,7 +296,7 @@
         <path>Demo/3DModels/pinball_stl/channel1_a.stl</path>
     </object>
     <object>
-        <type>7</type>
+        <type>8</type>
         <id>16</id>
         <color>16777215</color>
         <invisible>0</invisible>
@@ -314,7 +314,7 @@
         <path>Demo/3DModels/pinball_stl/channel1_b.stl</path>
     </object>
     <object>
-        <type>7</type>
+        <type>8</type>
         <id>17</id>
         <color>16777215</color>
         <invisible>0</invisible>
@@ -332,7 +332,7 @@
         <path>Demo/3DModels/pinball_stl/channel2_a.stl</path>
     </object>
     <object>
-        <type>7</type>
+        <type>8</type>
         <id>18</id>
         <color>16777215</color>
         <invisible>0</invisible>

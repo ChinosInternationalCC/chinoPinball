@@ -216,18 +216,12 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
  //   ScenarioObjects.push_back(&m_obstable1);
 
 /*
-    ofVec3f pos;
-    pos.x = ScenarioXml.getValue("positionX",0.0, 0);
-    pos.y = ScenarioXml.getValue("positionY",0.0, 0);
-    pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
-*/
-
     switch(typeObject){
 
         case SimpleObject::ShapeTypeBall:{
             Ball *oBall = new Ball(currentMissions, 0.5);
             BallAttrib *poBallAttrib = new BallAttrib(pos,0, 1, 0.25, 0.44, 0.25); // damping not used  so we use 0...
-            oBall->setup(world, (SimpleObjectAttrib*) poBallAttrib /*1, 0.25, 0.44, 0.25*/);
+            oBall->setup(world, (SimpleObjectAttrib*) poBallAttrib);
             oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
         }
@@ -246,7 +240,7 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             Lever *oLever = new Lever(currentMissions);
             int dir = 0;
             LeverAttrib *poAttr = new LeverAttrib();
-            oLever->setup(world, (SimpleObjectAttrib*) poAttr/*pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05), dir*/);
+            oLever->setup(world, (SimpleObjectAttrib*) poAttr);
             oLever->setDefaultZ();
             ScenarioObjects.push_back(oLever);
         }
@@ -261,6 +255,9 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
     }
+
+*/
+
 }
 
 //--------------------------------------------------------------
@@ -349,19 +346,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					float mass = ScenarioXml.getValue("mass", 0.0);
                     float restitution = ScenarioXml.getValue("restitution", 0.0);
                     float friction = ScenarioXml.getValue("friction", 0.0);
-					
-					/* Simple Attrib Params
-					 string 3dmodelPath,
-					 ofVec3f position;
-					 float damping;
-					 float friction;
-					 float mass;
-					 float restitution;
-					 +
-					 Ball Attr Params
-					 float radius
-					 */
-					
+
 					
 					BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
 															pos,	//position
@@ -401,14 +386,14 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     Lever *oLever = new Lever(currentMissions);
 
 					//pos, path, scale, dir
-					LeverAttrib *Attrib = new LeverAttrib(path,
-														  pos,
-														  0,
-														  0,
-														  0,
-														  0,
-														  0,
-														  0);
+					LeverAttrib *Attrib = new LeverAttrib(path, //string _modelData,
+														  pos,	//ofVec3f _position,
+														  0,	//float _damping,
+														  0,	//float _friction,
+														  0,	//float _mass,
+														  0,	//float _restitution,
+														  ofVec3f(0),	//ofVec3f _ModelScale,
+														  0);	//int _direction);
 
 					
                     int dir = ScenarioXml.getValue("LeverType", 0);
@@ -516,8 +501,17 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					
                 case SimpleObject::ShapeTypeAnimatedMesh:{
                     AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oAnimatedMesh->setup(world, pos, path, scale);
+					
+					AnimatedMeshAttrib *Attrib = new AnimatedMeshAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+					
+                    oAnimatedMesh->setup(world, Attrib);
                     oAnimatedMesh->SetObjectId(objId);
 					oAnimatedMesh->setPhysicsRotation(rotation);
                     oAnimatedMesh->color = color;
@@ -528,34 +522,6 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
-                case SimpleObject::ShapeTypeGeneratedMesh:{
-                    GeneratedMesh *oGeneratedMesh = new GeneratedMesh(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oGeneratedMesh->setup(world, pos, path, scale);
-                    oGeneratedMesh->SetObjectId(objId);
-					oGeneratedMesh->setPhysicsRotation(rotation);
-                    oGeneratedMesh->color = color;
-					oGeneratedMesh->setVisibility(invisible);
-                    ScenarioObjects.push_back(oGeneratedMesh);
-					oGeneratedMesh->setPointsCollision(pointsCollision);
-					oGeneratedMesh->setupRot();
-                    
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeBounds:{
-                    Bounds *oBounds = new Bounds(currentMissions);
-                    oBounds->setup(world, pos, path, scale);
-                    oBounds->SetObjectId(objId);
-					oBounds->setPhysicsRotation(rotation);
-                    oBounds->color = color;
-					oBounds->setVisibility(invisible);
-                    ScenarioObjects.push_back(oBounds);
-					
-					oBounds->setupRot();
-                }
-                break;
-
             }
             ScenarioXml.popTag();
         }

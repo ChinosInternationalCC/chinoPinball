@@ -43,7 +43,6 @@
 		989AFEB35DE611395A04702B /* Scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B58D5242A93AA20C3562059D /* Scenario.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
-		A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535520A1AE050A50003463B /* AnimatedObject.cpp */; };
 		A535952C18F3430A00065D69 /* arduComunicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952A18F3430A00065D69 /* arduComunicationManager.cpp */; };
 		A535952F18F3435100065D69 /* OSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952D18F3435100065D69 /* OSCManager.cpp */; };
 		A53649EF1AAE34D70099D1B9 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A53649C01AAE34D70099D1B9 /* jsoncpp.cpp */; };
@@ -458,8 +457,6 @@
 		9F5725666F17D63A0FD29016 /* ScenarioEditor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScenarioEditor.h; path = src/ScenarioEditor/ScenarioEditor.h; sourceTree = SOURCE_ROOT; };
 		9F7986DC4EB05E75FCE2C777 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
 		A2AAA8CA403479E6FCDF920E /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscHostEndianness.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
-		A535520A1AE050A50003463B /* AnimatedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedObject.cpp; path = GameObjects/AnimatedObject.cpp; sourceTree = "<group>"; };
-		A535520B1AE050A50003463B /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedObject.h; path = GameObjects/AnimatedObject.h; sourceTree = "<group>"; };
 		A535952A18F3430A00065D69 /* arduComunicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arduComunicationManager.cpp; path = src/Managers/arduComunicationManager.cpp; sourceTree = SOURCE_ROOT; };
 		A535952B18F3430A00065D69 /* arduComunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arduComunicationManager.h; path = src/Managers/arduComunicationManager.h; sourceTree = SOURCE_ROOT; };
 		A535952D18F3435100065D69 /* OSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSCManager.cpp; path = Managers/OSCManager.cpp; sourceTree = "<group>"; };
@@ -1246,8 +1243,6 @@
 				5BAE6FA692BC31E0D587051E /* Lever.h */,
 				349581733A8DAE2DCC57BEF5 /* Obstacle.cpp */,
 				BBF2C1C9F7F371F8B1268B74 /* Obstacle.h */,
-				A535520A1AE050A50003463B /* AnimatedObject.cpp */,
-				A535520B1AE050A50003463B /* AnimatedObject.h */,
 				A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */,
 				A54C8F661AE3E999000F8AC0 /* AnimatedMesh.h */,
 				A551CA801AE83ABD00E372B2 /* GeneratedMesh.cpp */,
@@ -3305,7 +3300,6 @@
 				A58AA52D18E0BFFE00AA5372 /* ofxDmx.cpp in Sources */,
 				A58DD22418F8577300B1FE41 /* ofxUISuperCanvas.cpp in Sources */,
 				A5A5D0F51983B72700295F0F /* ofxMtlMapping2DShapes.cpp in Sources */,
-				A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */,
 				A544AFBE1AE2C00E00BA7F27 /* btConvexConcaveCollisionAlgorithm.cpp in Sources */,
 				A551CA821AE83ABD00E372B2 /* GeneratedMesh.cpp in Sources */,
 				84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */,

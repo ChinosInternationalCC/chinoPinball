@@ -36,7 +36,7 @@ void AnimatedMesh::setupBody(SimpleObjectAttrib &Attributes){
 	
 	////
 	
-	assimpModel.loadModel(url, true);
+	assimpModel.loadModel(getAnimatedMeshAttr()->modelPath, true);
 	assimpModel.setScale(scale.x, scale.y, scale.z);
 	assimpModel.setPosition(0, 0, 0);
 	
@@ -45,7 +45,7 @@ void AnimatedMesh::setupBody(SimpleObjectAttrib &Attributes){
 	mesh = assimpModel.getCurrentAnimatedMesh(0);
 	// create ofxBullet shape
 	//body.create(world.world, position, 0); // we set m=0 for kinematic body
-	body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
+	body.create( world->world, mesh, getPosition(), 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
 	body.add();
 	body.enableKinematic();
 	body.setActivationState( DISABLE_DEACTIVATION );

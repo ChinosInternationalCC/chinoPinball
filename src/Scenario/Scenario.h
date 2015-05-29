@@ -16,7 +16,7 @@
 #include "Hammer.h"
 #include "Obstacle.h"
 #include "Bounds.h"
-#include "AnimatedObject.h"
+
 #include "AnimatedMesh.h"
 #include "GeneratedMesh.h"
 
