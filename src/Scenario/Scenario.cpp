@@ -385,6 +385,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeLever:{
                     Lever *oLever = new Lever(currentMissions);
 
+                    int dir = ScenarioXml.getValue("LeverType", 0);
 					//pos, path, scale, dir
 					LeverAttrib *Attrib = new LeverAttrib(path, //string _modelData,
 														  pos,	//ofVec3f _position,
@@ -392,11 +393,11 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 														  0,	//float _friction,
 														  0,	//float _mass,
 														  0,	//float _restitution,
-														  ofVec3f(0),	//ofVec3f _ModelScale,
-														  0);	//int _direction);
+														  scale,	//ofVec3f _ModelScale,
+														  dir);	//int _direction);
 
 					
-                    int dir = ScenarioXml.getValue("LeverType", 0);
+                    
                     oLever->setup(world, Attrib);
                     oLever->SetObjectId(objId);
 					oLever->setPhysicsRotation(rotation);
@@ -561,9 +562,9 @@ void Scenario::saveToXml(){
 		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
 		ScenarioXml.addValue("invisible", !ScenarioObjects[i]->bVisible);
 		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
-        ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
-        ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
-        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
+        ScenarioXml.addValue("positionX", ScenarioObjects[i]->getPosition().x);
+        ScenarioXml.addValue("positionY", ScenarioObjects[i]->getPosition().y);
+        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->getPosition().z);
         ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
         ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
         ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
@@ -571,34 +572,22 @@ void Scenario::saveToXml(){
 		ScenarioXml.addValue("rotationY", ScenarioObjects[i]->rotation.y());
 		ScenarioXml.addValue("rotationZ", ScenarioObjects[i]->rotation.z());
 		ScenarioXml.addValue("rotationW", ScenarioObjects[i]->rotation.w());
-        ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
-		
-		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBounds){
-			
-			cout << "rotation.x()= " << ScenarioObjects[i]->rotation.x() << endl;
-			cout << "rotation.y()= " << ScenarioObjects[i]->rotation.y() << endl;
-			cout << "rotation.z()= " << ScenarioObjects[i]->rotation.z() << endl;
-		}
+        ScenarioXml.addValue("path", ScenarioObjects[i]->getSimpleAttrib()->modelPath);
+    
 		
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];
-            ScenarioXml.addValue("LeverType", pLever->direction);
-        }
-        
-        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath){
-            AnimatedMotionPath *pAnimatedMotionPath;
-            pAnimatedMotionPath = (AnimatedMotionPath*)ScenarioObjects[i];
-            ScenarioXml.addValue("pathMotionModel", pAnimatedMotionPath->getMotionModelPath());
+            ScenarioXml.addValue("LeverType", pLever->getLeverAttr()->direction);
         }
         
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
             Ball *pBall;
             pBall = (Ball*)ScenarioObjects[i];
-            ScenarioXml.addValue("mass", pBall->mass);
-            ScenarioXml.addValue("radius", pBall->radius);
-            ScenarioXml.addValue("restitution", pBall->restitution);
-            ScenarioXml.addValue("friction", pBall->friction);
+            ScenarioXml.addValue("mass", pBall->getBallAttr()->mass);
+            ScenarioXml.addValue("radius", pBall->getBallAttr()->radius);
+            ScenarioXml.addValue("restitution", pBall->getBallAttr()->restitution);
+            ScenarioXml.addValue("friction", pBall->getBallAttr()->friction);
         }
         
         ScenarioXml.popTag();

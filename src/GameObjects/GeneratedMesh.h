@@ -23,7 +23,7 @@ class GeneratedMesh : public SimpleObject {
 public:
     
     GeneratedMesh(vector <SimpleMission *> * _currentMissions);
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
+	virtual void setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attributes);
 	virtual void update(bool bEditorMode);
     void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);

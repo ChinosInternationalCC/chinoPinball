@@ -119,8 +119,7 @@ public:
     ofVec3f scale, last_scale;  // if we load a 3D model this variable should store the scale factors
 	float scaleXyz, last_scaleXyz;
                     // with the correct values so that our model nicely fits inside the Scenario
-    string ModelPath; //if we load an external 3D Model this variable should hold the path of the
-                      // model
+
     int ObjectId; //this should be a unique identificator for each object that we have on the scenario
 
     

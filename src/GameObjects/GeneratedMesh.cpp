@@ -16,16 +16,15 @@ SimpleObject(&body, _currentMissions, -0.511)
 }
 
 //---------------------------------
-void GeneratedMesh::setup(SimpleObjectAttrib &Attributes){
+void GeneratedMesh::setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attributes){
     // position.z = -0.511;
 //ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale
     
+    genericSetup(world, *Attributes);
+
     type = ShapeTypeAnimatedMesh;
     collisionTime = -120;
-    ModelPath = url;
-    
-    
-    this->position = position;
+
     this->world = &world;
 	
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
@@ -95,7 +94,7 @@ void GeneratedMesh::setup(SimpleObjectAttrib &Attributes){
 	initScale = scale;
     // create ofxBullet shape
     //body.create(world.world, position, 0); // we set m=0 for kinematic body
-    body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
+    body.create( world.world, mesh, getPosition(), 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
     body.add();
     body.enableKinematic();
     body.setActivationState( DISABLE_DEACTIVATION );
@@ -146,17 +145,17 @@ void GeneratedMesh::update(bool bEditorMode){
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
-	if(position.x != last_positionX){
-		setPosition(position);
-		last_positionX = position.x;
+	if(getPosition().x != last_positionX){
+		setPosition(getPosition());
+		last_positionX = getPosition().x;
 	}
-	if(position.y != last_positionY){
-		setPosition(position);
-		last_positionY = position.y;
+	if(getPosition().y != last_positionY){
+		setPosition(getPosition());
+		last_positionY = getPosition().y;
 	}
-	if(position.z != last_positionZ){
-		setPosition(position);
-		last_positionZ = position.z;
+	if(getPosition().z != last_positionZ){
+		setPosition(getPosition());
+		last_positionZ = getPosition().z;
 	}
 	
 	

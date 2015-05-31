@@ -20,24 +20,18 @@ void Lever::setup(ofxBulletWorldRigid &world,
                   ){
     //position.z = -0.5;
     
-    
+    //save init values
+    LeverAttrib *pAttr = (LeverAttrib*) Attributes;
+    scale = pAttr->ModelScale;
+    initScale = scale;
+                      
     genericSetup(world, *Attributes);
     
     //Two rotationLever to set the lever in the right position
     //rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
     
     
-    // load 3D model
-    scale = getLeverAttr()->ModelScale;
-	assimpModel.loadModel(ModelPath, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
-	assimpModel.setPosition(0, 0, 0);
-    
-    // add 3D mashes to ofxBullet shape
-    for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-    {
-        body.addMesh(assimpModel.getMesh(i), scale, true);
-    }
+
     
     
     isKeyPressed = false;
@@ -56,11 +50,24 @@ void Lever::setupBody(SimpleObjectAttrib &Attributes){
     // create ofxBullet shape
     body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
     
+    // load 3D model
+    scale = getLeverAttr()->ModelScale;
+	assimpModel.loadModel(getLeverAttr()->modelPath, true);
+	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setPosition(0, 0, 0);
+    
+    // add 3D mashes to ofxBullet shape
+    for(int i = 0; i < assimpModel.getNumMeshes(); i++)
+    {
+        body.addMesh(assimpModel.getMesh(i), scale, true);
+    }
 
+    body.add();
+    
     body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
     //body.setProperties(getSimpleAttrib()->restitution, getSimpleAttrib()->friction);
     // .25 (more restituition means more energy) , .95 ( friction )
-    body.add();
+    
     
     body.enableKinematic();
 }
