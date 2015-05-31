@@ -20,9 +20,11 @@ public:
                               float _damping,
                               float _friction,
                               float _mass,
-                              float _restitution);
+                              float _restitution,
+							  ofVec3f _ModelScale);
     //positions
 	string modelPath;
+	ofVec3f ModelScale;
     ofVec3f position;
     
     float damping;
@@ -38,7 +40,8 @@ inline SimpleObjectAttrib::SimpleObjectAttrib(string _modelPath,
                                               float _damping,
                                               float _friction,
                                               float _mass,
-                                              float _restitution){
+                                              float _restitution,
+											  ofVec3f _ModelScale){
 	
 	modelPath = _modelPath;
     position = _position;
@@ -46,6 +49,7 @@ inline SimpleObjectAttrib::SimpleObjectAttrib(string _modelPath,
     friction = _friction;
     mass = _mass;
     restitution = _restitution;
+	ModelScale = _ModelScale;
 }
 
 class SimpleObject {

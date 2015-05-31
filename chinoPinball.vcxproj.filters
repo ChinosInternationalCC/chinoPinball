@@ -22,19 +22,10 @@
     <ClCompile Include="src\GameObjects\AnimatedMesh.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObjects\AnimatedMotionPath.cpp">
-      <Filter>src\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameObjects\AnimatedObject.cpp">
-      <Filter>src\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameObjects\AssimpUtils.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObjects\Ball.cpp">
-      <Filter>src\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameObjects\Bounds.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObjects\GeneratedMesh.cpp">
@@ -808,6 +799,15 @@
     <ClCompile Include="..\..\..\addons\ofxUI\src\ofxUIWidgetWithLabel.cpp">
       <Filter>addons\ofxUI\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameObjects\Gravity.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObjects\Ramp.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObjects\Teleporter.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -1070,19 +1070,10 @@
     <ClInclude Include="src\GameObjects\AnimatedMesh.h">
       <Filter>src\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObjects\AnimatedMotionPath.h">
-      <Filter>src\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameObjects\AnimatedObject.h">
-      <Filter>src\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameObjects\AssimpUtils.h">
       <Filter>src\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObjects\Ball.h">
-      <Filter>src\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameObjects\Bounds.h">
       <Filter>src\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObjects\GeneratedMesh.h">
@@ -2359,6 +2350,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxUI\src\ofxUIWrapper.h">
       <Filter>addons\ofxUI\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObjects\Gravity.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObjects\Ramp.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObjects\Teleporter.h">
+      <Filter>src\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

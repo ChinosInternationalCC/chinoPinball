@@ -91,6 +91,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameObjects\Gravity.cpp" />
+    <ClCompile Include="src\GameObjects\Ramp.cpp" />
+    <ClCompile Include="src\GameObjects\Teleporter.cpp" />
     <ClCompile Include="src\main.cpp">
       <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</MultiProcessorCompilation>
     </ClCompile>
@@ -100,11 +103,8 @@
     <ClCompile Include="src\Events\eventMoveObjectScenario.cpp" />
     <ClCompile Include="src\Events\eventObjectScenario.cpp" />
     <ClCompile Include="src\GameObjects\AnimatedMesh.cpp" />
-    <ClCompile Include="src\GameObjects\AnimatedMotionPath.cpp" />
-    <ClCompile Include="src\GameObjects\AnimatedObject.cpp" />
     <ClCompile Include="src\GameObjects\AssimpUtils.cpp" />
     <ClCompile Include="src\GameObjects\Ball.cpp" />
-    <ClCompile Include="src\GameObjects\Bounds.cpp" />
     <ClCompile Include="src\GameObjects\GeneratedMesh.cpp" />
     <ClCompile Include="src\GameObjects\Hammer.cpp" />
     <ClCompile Include="src\GameObjects\Lever.cpp" />
@@ -370,16 +370,16 @@
     <ClInclude Include="src\Events\eventObjectScenario.h" />
     <ClInclude Include="src\ExternalsConfig.h" />
     <ClInclude Include="src\GameObjects\AnimatedMesh.h" />
-    <ClInclude Include="src\GameObjects\AnimatedMotionPath.h" />
-    <ClInclude Include="src\GameObjects\AnimatedObject.h" />
     <ClInclude Include="src\GameObjects\AssimpUtils.h" />
     <ClInclude Include="src\GameObjects\Ball.h" />
-    <ClInclude Include="src\GameObjects\Bounds.h" />
     <ClInclude Include="src\GameObjects\GeneratedMesh.h" />
+    <ClInclude Include="src\GameObjects\Gravity.h" />
     <ClInclude Include="src\GameObjects\Hammer.h" />
     <ClInclude Include="src\GameObjects\Lever.h" />
     <ClInclude Include="src\GameObjects\Obstacle.h" />
+    <ClInclude Include="src\GameObjects\Ramp.h" />
     <ClInclude Include="src\GameObjects\SimpleObject.h" />
+    <ClInclude Include="src\GameObjects\Teleporter.h" />
     <ClInclude Include="src\Managers\arduComunicationManager.h" />
     <ClInclude Include="src\Managers\DMXManager.h" />
     <ClInclude Include="src\Managers\GameStatus.h" />

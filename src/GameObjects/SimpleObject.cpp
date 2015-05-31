@@ -48,6 +48,7 @@ void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib
     
     pAttrib = &Attributes;
     
+	scale = pAttrib->ModelScale;
     setupType();
     world = &myWorld;
     setupBody(Attributes);

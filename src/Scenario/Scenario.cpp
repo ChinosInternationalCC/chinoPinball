@@ -354,7 +354,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 															friction,//friction
 															mass,	//mass
 															restitution,
-															radius);
+															radius,
+															ofVec3f(0,0,0));
 
 					
                     oBall->setup(world, ballAttrib);
@@ -370,7 +371,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 case SimpleObject::ShapeTypeHammer:{
                     Hammer *oHammer = new Hammer(currentMissions);
 					
-					SimpleObjectAttrib *Attrib = new SimpleObjectAttrib("", pos, 0, 0, 0, 0);
+					SimpleObjectAttrib *Attrib = new SimpleObjectAttrib("", pos, 0, 0, 0, 0, ofVec3f(0,0,0));
                     oHammer->setup(world, Attrib);
                     oHammer->SetObjectId(objId);
 					oHammer->setPhysicsRotation(rotation);

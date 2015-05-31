@@ -22,7 +22,8 @@ public:
                       float _friction,
                       float _mass,
                       float _restitution,
-                      float _radius);
+                      float _radius,
+					  ofVec3f _ModelScale);
     float radius;
     
 };
@@ -33,13 +34,15 @@ inline BallAttrib::BallAttrib(string _modelPath,
                               float _friction,
                               float _mass,
                               float _restitution,
-                              float _radius) :
+                              float _radius,
+							  ofVec3f _ModelScale) :
     SimpleObjectAttrib(_modelPath,
 					   _position,
 					   _damping,
 					   _friction,
 					   _mass,
-					   _restitution)
+					   _restitution,
+					   _ModelScale)
 	{
         radius = _radius;
 	}

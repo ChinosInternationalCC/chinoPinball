@@ -22,7 +22,6 @@ public:
                       ofVec3f _ModelScale,
                       int _direction);
     string url;
-    ofVec3f ModelScale;
     int direction; // rotation direction: 1 - clockwise, 0 - counter clockwise
     
 };
@@ -40,9 +39,9 @@ inline LeverAttrib::LeverAttrib(string _modelData,
                    _damping,
                    _friction,
                    _mass,
-                   _restitution){
+                   _restitution,
+				   _ModelScale){
 			
-            ModelScale = _ModelScale;
             direction = _direction;
     
 }

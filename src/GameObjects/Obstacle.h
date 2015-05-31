@@ -23,7 +23,7 @@ public:
                        float _mass,
                        float _restitution,
                        ofVec3f _ModelScale);
-    ofVec3f ModelScale;
+    
 };
 
 inline ObstacleAttrib::ObstacleAttrib(string  _modelPath,
@@ -38,8 +38,8 @@ SimpleObjectAttrib(_modelPath,
                    _damping,
                    _friction,
                    _mass,
-                   _restitution){
-    ModelScale = _ModelScale;
+                   _restitution,
+				   _ModelScale){
 }
 
 

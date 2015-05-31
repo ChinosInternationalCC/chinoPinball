@@ -21,8 +21,6 @@ void Lever::setup(ofxBulletWorldRigid &world,
     //position.z = -0.5;
     
     //save init values
-    LeverAttrib *pAttr = (LeverAttrib*) Attributes;
-    scale = pAttr->ModelScale;
     initScale = scale;
                       
     genericSetup(world, *Attributes);
