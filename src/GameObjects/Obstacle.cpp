@@ -22,9 +22,7 @@ void Obstacle::setup(ofxBulletWorldRigid &world,
     //position.z = -1.5;
    // setDefaultZ();
     
-    //save init values
-	initScale = scale;
-    
+	
     genericSetup(world, *Attributes);
 
 

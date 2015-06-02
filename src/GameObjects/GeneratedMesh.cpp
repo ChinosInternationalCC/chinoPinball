@@ -91,7 +91,7 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attrib
     //ofEnableSeparateSpecularLight();
     
 	//save init values
-	initScale = scale;
+	initScale = getScale();
     // create ofxBullet shape
     //body.create(world.world, position, 0); // we set m=0 for kinematic body
     body.create( world.world, mesh, getPosition(), 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );

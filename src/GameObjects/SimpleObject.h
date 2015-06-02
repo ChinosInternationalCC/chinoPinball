@@ -120,7 +120,10 @@ public:
 	int  collisionTime;
 	int colisionCounter;
     
-    ofVec3f scale, last_scale;  // if we load a 3D model this variable should store the scale factors
+    //ofVec3f scale //TODO use now ModelScale
+	ofVec3f getScale();
+	ofVec3f* getScaleRef();
+	ofVec3f last_scale;  // if we load a 3D model this variable should store the scale factors
 	float scaleXyz, last_scaleXyz;
                     // with the correct values so that our model nicely fits inside the Scenario
 

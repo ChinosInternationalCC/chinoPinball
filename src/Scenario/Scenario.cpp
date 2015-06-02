@@ -566,9 +566,9 @@ void Scenario::saveToXml(){
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->getPosition().x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->getPosition().y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->getPosition().z);
-        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
-        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
-        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
+        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->getScale().x);
+        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->getScale().y);
+        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->getScale().z);
 		ScenarioXml.addValue("rotationX", ScenarioObjects[i]->rotation.x());
 		ScenarioXml.addValue("rotationY", ScenarioObjects[i]->rotation.y());
 		ScenarioXml.addValue("rotationZ", ScenarioObjects[i]->rotation.z());
