@@ -46,14 +46,14 @@ void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
 	
     // load 3D model
 	assimpModel.loadModel(getSimpleAttrib()->modelPath, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setScale(getScale().x, getScale().y, getScale().z);
 	assimpModel.setPosition(0, 0, 0);
     
     
     // add 3D meshes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
-        body.addMesh(assimpModel.getMesh(i), scale, true);
+        body.addMesh(assimpModel.getMesh(i), getScale(), true);
     }
     
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);

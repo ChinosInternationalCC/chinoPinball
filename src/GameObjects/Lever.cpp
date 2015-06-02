@@ -21,7 +21,6 @@ void Lever::setup(ofxBulletWorldRigid &world,
     //position.z = -0.5;
     
     //save init values
-    initScale = scale;
                       
     genericSetup(world, *Attributes);
     
@@ -49,15 +48,14 @@ void Lever::setupBody(SimpleObjectAttrib &Attributes){
     body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
     
     // load 3D model
-    scale = getLeverAttr()->ModelScale;
 	assimpModel.loadModel(getLeverAttr()->modelPath, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setScale(getScale().x, getScale().y, getScale().z);
 	assimpModel.setPosition(0, 0, 0);
     
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
-        body.addMesh(assimpModel.getMesh(i), scale, true);
+        body.addMesh(assimpModel.getMesh(i), getScale(), true);
     }
 
     body.add();

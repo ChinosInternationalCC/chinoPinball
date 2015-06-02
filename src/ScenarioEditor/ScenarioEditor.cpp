@@ -45,6 +45,7 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	bVisibleObject = true;
 	resetUIvalues();
     
+	bEscenarioEditorMode = false;
 }
 
 
