@@ -26,8 +26,6 @@ void AnimatedMesh::setup(ofxBulletWorldRigid &world,  SimpleObjectAttrib *Attrib
 	
 	genericSetup(world, *Attributes);
 	
-	//save init values
-	initScale = scale;
 	
 }
 
@@ -37,7 +35,7 @@ void AnimatedMesh::setupBody(SimpleObjectAttrib &Attributes){
 	////
 	
 	assimpModel.loadModel(getAnimatedMeshAttr()->modelPath, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.setScale(getScale().x, getScale().y, getScale().z);
 	assimpModel.setPosition(0, 0, 0);
 	
 	
