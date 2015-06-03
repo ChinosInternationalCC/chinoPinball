@@ -65,17 +65,12 @@ void Ball::setupAnimations(SimpleObjectAttrib &Attributes){
 void Ball::setupType(){
     type = ShapeTypeBall;
 }
-//----------------------------------
-void Ball::update(bool bEditorMode){
-
-    shadow.setPosition(body.getPosition().x, body.getPosition().y, 0.0);
-	shadow.setRadius(getBallAttr()->radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
-
-}
 
 //--------------------------------------------------------------
 void Ball::updateSpecific(bool bEditorMode){
 	//TODO
+	shadow.setPosition(body.getPosition().x, body.getPosition().y, 0.0);
+	shadow.setRadius(getBallAttr()->radius+ofMap((-0.5-body.getPosition().z), 0, 1, 0, 0.2));
 }
 
 //--------------------------------------------------------------

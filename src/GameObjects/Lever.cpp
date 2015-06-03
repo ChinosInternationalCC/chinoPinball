@@ -105,30 +105,25 @@ void Lever::setupType(){
 }
 
 //--------------------------------------------------------------
-void Lever::update(bool bEditorMode){
-    
-    if (isKeyPressed)
-    {
-        if ((getLeverAttr()->direction && (angle < upperLimit)) || (!getLeverAttr()->direction && (angle > upperLimit))) // rotate up
-        {
-            angle += speed;
-            rotate(angle);
-        }
-    }
-    if (!isKeyPressed)
-    {
-        if ((getLeverAttr()->direction && (angle > lowerLimit)) || (!getLeverAttr()->direction && (angle < lowerLimit))) // rotate down
-        {
-            angle -= speed;
-            rotate(angle);
-        }
-    }
-    
-}
-
-//--------------------------------------------------------------
 void Lever::updateSpecific(bool bEditorMode){
 	//TODO
+	
+	if (isKeyPressed)
+	{
+		if ((getLeverAttr()->direction && (angle < upperLimit)) || (!getLeverAttr()->direction && (angle > upperLimit))) // rotate up
+		{
+			angle += speed;
+			rotate(angle);
+		}
+	}
+	if (!isKeyPressed)
+	{
+		if ((getLeverAttr()->direction && (angle > lowerLimit)) || (!getLeverAttr()->direction && (angle < lowerLimit))) // rotate down
+		{
+			angle -= speed;
+			rotate(angle);
+		}
+	}
 }
 
 //--------------------------------------------------------------

@@ -23,7 +23,7 @@ class Hammer : public SimpleObject {
 public:
     Hammer(vector <SimpleMission *> * _currentMissions);
 	virtual void setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attrib);
-	virtual void update(bool bEditorMode);
+
     void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	void move(float height);

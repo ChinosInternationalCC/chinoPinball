@@ -62,7 +62,6 @@ public:
                float friction
                 */);
     
-    void update(bool bEditorMode);
     void updateSpecific(bool bEditorMode);
     void draw(bool bEditorMode);
 

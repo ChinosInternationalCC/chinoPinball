@@ -64,30 +64,31 @@ void Hammer::setupType(){
 }
 
 //--------------------------------------------------------------
-void Hammer::update(bool bEditorMode){
-    
-    lowerLimit = getPosition().y;
+void Hammer::updateSpecific(bool bEditorMode){
+	//TODO
+	
+	lowerLimit = getPosition().y;
 	upperLimit = getPosition().y+2;
-    
+	
 	// get current translation
-    ofVec3f translation = body.getPosition();
-    float translationY = translation.y;
-    
-    if (isKeyPressed)
-    {
-        if (translationY < upperLimit)
-        {
-            move(translationY + speed/8);
-        }
+	ofVec3f translation = body.getPosition();
+	float translationY = translation.y;
+	
+	if (isKeyPressed)
+	{
+		if (translationY < upperLimit)
+		{
+			move(translationY + speed/8);
+		}
 		
 		bLaunch = false;
-    }
-    else
-    {
+	}
+	else
+	{
 		if(!bEditorMode){
 			if (translationY > lowerLimit)
 			{
-
+				
 				move(translationY - speed);
 			}
 			else{
@@ -98,25 +99,19 @@ void Hammer::update(bool bEditorMode){
 					eventGame lanchHammerSoundEvent;
 					lanchHammerSoundEvent.gameEvent = eventGame::GAME_EVENT_HAMMER_LAUNCH;
 					ofNotifyEvent(eventGame::onGameEvent, lanchHammerSoundEvent);
-					//ofNotifyEvent(eventComunication::onNewCom, newComEvent);					
+					//ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 				}
 			}
 		}
-    }
+	}
 	
 	//Update Physic work rotation if GUI change it
 	if(rotation != last_rotation){
 		setPhysicsRotation(rotation);
 		last_rotation = rotation;
 	}
+	
 
-    
-}
-
-
-//--------------------------------------------------------------
-void Hammer::updateSpecific(bool bEditorMode){
-	//TODO
 }
 
 

@@ -123,7 +123,7 @@ void Obstacle::draw(bool bEditorMode){
 
 	ofPoint scaleModel		= assimpModel.getScale();
 	
-	body.transformGL();
+	 body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     assimpModel.getMesh(0).drawFaces();
 	body.restoreTramsformGL();

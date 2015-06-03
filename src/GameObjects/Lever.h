@@ -53,7 +53,6 @@ public:
     Lever(vector <SimpleMission *> * _currentMissions);
 	void setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attributes);
     
-	void update(bool bEditorMode);
     void updateSpecific(bool bEditorMode);
 	void draw(bool bEditorMode);
 	void rotate(float degrees);
