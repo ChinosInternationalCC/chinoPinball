@@ -639,4 +639,15 @@ void Scenario::guiEventBasics(ofxUIEventArgs &e){
 		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
 	}
 }
+//--------------------------------------------------------
+vector <Ball *> Scenario::getBalls(){
+	vector <Ball *> Balls;
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
+			Ball *pBall = (Ball*)ScenarioObjects[i];
+			Balls.push_back(pBall);
+		}
+	}
 
+	return Balls;
+}

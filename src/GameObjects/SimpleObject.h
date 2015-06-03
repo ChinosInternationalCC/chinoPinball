@@ -85,9 +85,7 @@ public:
     
     
 	//general vars
-	int idobject;
 	
-    
 	void setVisibility(int invisible);
     
 	bool bVisible;

@@ -139,6 +139,19 @@ ofVec3f Ball::getInitialPos(){
     return m_initialPos;
 }
 
+//------------------------------------------------------------
 BallAttrib* Ball::getBallAttr(){
     return (BallAttrib*) getSimpleAttrib();
+}
+
+//------------------------------------------------------------
+void Ball::stop(bool bStopBall){
+	if(bStopBall){
+		cout<<"Stop Ball"<<endl;
+		body.getRigidBody()->setActivationState(ISLAND_SLEEPING);
+	}
+	else{
+		cout<<"Resume Ball"<<endl;
+		body.getRigidBody()->setActivationState(ACTIVE_TAG);
+	}
 }

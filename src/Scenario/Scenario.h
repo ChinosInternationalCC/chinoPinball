@@ -85,6 +85,7 @@ public:
 
     SimpleObject* FindScenarioObjectByName(string name);
     SimpleObject* FindScenarioObjectById(int id);
+	vector <Ball *> getBalls();
 	
 	
 	//Basic Gui
@@ -95,6 +96,8 @@ public:
 	ofVec2f posGui;
 	void guiEventBasics(ofxUIEventArgs &e);
 	
+	
+
 private:
 	
 	//BASIC SCENARIO STATGE/////////////////////////////////////

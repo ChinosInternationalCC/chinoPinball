@@ -46,6 +46,8 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	resetUIvalues();
     
 	bEscenarioEditorMode = false;
+
+	bStopBall = false;
 }
 
 
@@ -128,6 +130,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			
 			gui->addSpacer();
 			gui->addLabelToggle("Toggle Visibility", &bVisibleObject); // PRESS & PICK TO Toogle Visibility
+
+			gui->addSpacer();
+			gui->addLabelToggle("Stop Ball", &bStopBall);
 			
 			gui->addLabel("Escenario BoundingBox");
 			gui->addSpacer();
@@ -403,7 +408,9 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
         //blue = clr.b;
         //green = clr.g;
         clr.getHex();
-    }
+    }else if(name == "Stop Ball"){
+		scenario->getBalls()[0]->stop(bStopBall);
+	}
 }
 
 

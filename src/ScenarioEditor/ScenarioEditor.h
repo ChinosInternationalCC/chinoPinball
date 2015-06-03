@@ -75,6 +75,8 @@ public:
     //float gresolution;
     ofPoint gposition;
     
+	bool bStopBall;
+
     float gnoiseScale;
     float *buffer;
     //vector<float> xPos;

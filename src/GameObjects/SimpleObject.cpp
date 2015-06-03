@@ -13,7 +13,7 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
                            float _DefaultPositionZ){
    
     poSimpleBody = poBulletBaseShape;
-	idobject = -1;
+	ObjectId = -1;
 	bAnimation = false;
     color = 0xffffff;
 	bVisible = true;
@@ -41,8 +41,12 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 	
 	collisionPoints = 0;
     
-        fDefaultPositionZ = _DefaultPositionZ;
+    fDefaultPositionZ = _DefaultPositionZ;
+
+	/* init pointers */
 	pAttrib = NULL;
+	world = NULL;
+
 }
 
 //--------------------------------------------------------------

@@ -156,17 +156,17 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 	if (!bMute){
 		if(args.collision){
 			
-			if(args.pObject->idobject == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+			if(args.pObject->ObjectId == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
 			
-	/*		else if(args.pObject->idobject == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+	/*		else if(args.pObject->ObjectId == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
-			else if(args.pObject->idobject == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+			else if(args.pObject->ObjectId == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
-			else if(args.pObject->idobject == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+			else if(args.pObject->ObjectId == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
 	*/
