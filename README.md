@@ -103,11 +103,13 @@ push from origin to master
 * OF008 http://www.openframeworks.cc 
 * ofxBullet https://github.com/NickHardeman/ofxBullet
 * ofxSyphon https://github.com/astellato/ofxSyphon
+* ofxUI https://github.com/rezaali/ofxUI
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
 * ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 * ofxFTGL https://github.com/Flightphase/ofxFTGL
 * ofxMSAInteractiveObject https://github.com/memo/ofxMSAInteractiveObject
 * ofxMtlMapping2D https://github.com/morethanlogic/ofxMtlMapping2D
+* ofxLibwebsockets https://github.com/labatrockwell/ofxLibwebsockets
  
 
 To clone all the addons requested by the project you can also execute the ./clone_addons.sh script
