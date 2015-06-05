@@ -7,6 +7,37 @@
 //
 
 #include "Scenario.h"
+#include "PinballChinoManager.h"
+
+ Scenario::Scenario(){
+	scaleStage = 0.25;
+	boundsWidth = 7.;;
+	depthStage = 160;
+	frontbackwallHeigh = 40;
+	heightwalls = 20;
+	
+	//Ground
+	widthbasePlane = 100;
+	heightbasePlane = depthStage;
+	depthbasePlane = boundsWidth;
+	
+	//BackWall
+	widthbkPlane = 100;
+	heightbkPlane = boundsWidth*1.5;
+	depthbkPlane = frontbackwallHeigh;
+	
+	//RightLeftWall
+	widthrlPlane = boundsWidth;
+	heightrlPlane = depthStage;
+	depthrlPlane = heightwalls;
+	 
+	 guiBasicScenario = NULL;
+	 createBasicGUIScenario();
+	 bVisibleBasicTerrain = true;
+	 
+	 bEditorMode = false;
+	 lastbEditorMode = true;
+}
 
 //---------------------------------------------------
 void Scenario::setCurrentMission(int _idcurrentMission){
@@ -19,14 +50,16 @@ void Scenario::setupMissions(vector<SimpleMission*> *vectorMission){
 }
 
 //--------------------------------------------------------------
-void Scenario::setup(ofxBulletWorldRigid &_world){
+void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
     
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
-	loadBasicScenario(_world, ofVec3f(0,0,0));
-    addCoverScenario(_world);
-	
+    if (bAddScenarioCover){
+        loadBasicScenario(_world, ofVec3f(0,0,0));
+        addCoverScenario(_world);
+	}
+    
     ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
     /* set light position */
@@ -38,6 +71,7 @@ void Scenario::setup(ofxBulletWorldRigid &_world){
 
 }
 
+//--------------------------------------------------------------
 void Scenario::setDebugMode(bool &DebugMode){
     this->DebugMode = DebugMode;
     for(int i = 0; i < ScenarioObjects.size(); i++) {
@@ -61,8 +95,10 @@ void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 
 //--------------------------------------------------------------
 void Scenario::removeCoverScenario(){
-	bounds[lastPosIdCoverScenario]->removeRigidBody();
-	bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    if (bounds.size() > 0){
+        bounds[lastPosIdCoverScenario]->removeRigidBody();
+        bounds.erase(bounds.begin()+lastPosIdCoverScenario);
+    }
 }
 
 
@@ -103,11 +139,29 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 }
 
 //--------------------------------------------------------------
-void Scenario::update(bool bEditorMode){
-    
+void Scenario::update(bool _bEditorMode){
+	
+	bEditorMode = _bEditorMode;
+	
+    //TODO Check this if its not being usefull pass all time that boolean , also that for and try to Optimiza
     for(int i = 0; i < ScenarioObjects.size(); i++) {
         ScenarioObjects[i]->update(bEditorMode);
     }
+	
+	
+	
+	///Crappy Toogle Gui Visibility
+	if(bEditorMode == true){
+		if (lastbEditorMode == false) {
+			guiBasicScenario->toggleVisible();
+		}
+	}else{
+		if (lastbEditorMode == true) {
+			guiBasicScenario->toggleVisible();
+		}
+	}
+	
+	lastbEditorMode = bEditorMode;
     
 }
 
@@ -119,25 +173,28 @@ void Scenario::draw(bool bEditorMode){
 	material.begin();
 	
     for(int i = 0; i < ScenarioObjects.size(); i++) {
-		//Not Paint the Walls, id 9 and 10...
-		if( i == 11){}
-		else if (i == 12){}
-		else {
+		//CHECK if OBJECT is Visible in object properties. LOAD First from XMl that parameter
+		if(ScenarioObjects[i]->bVisible){
 			ScenarioObjects[i]->draw(bEditorMode);
 		}
+
     }
 	material.end();
 	
 	ofSetColor(ofColor::gray);
 	
 	//Draw the basic scneario ground
-	if(bounds.size()>0){
-		material.begin();
-		bounds[0]->draw();
-		material.end();
+	if(bVisibleBasicTerrain){
+		
+		if(bounds.size()>0){
+			material.begin();
+			bounds[0]->draw();
+			material.end();
+		}
 	}
+	
     
-	ofDrawAxis(1);
+	//ofDrawAxis(1);
     
 }
 
@@ -230,76 +287,14 @@ void Scenario::popObject(SimpleObject* obj){
 	}
 }
 
-//--------------------------------------------------------------
-#if 0 //the function is not mentained, update it first if you want to use it
-void Scenario::loadFromJSON(ofxBulletWorldRigid &world){
-    ofxJSONElement ScenarioJSON;
-    
-    std::string file = "scenario.json";
-	
-	// Now parse the JSON
-	bool parsingSuccessful = ScenarioJSON.open(file);
-    if (parsingSuccessful) {
-        /* the root JSON value si a list so go through each element */
-        for(unsigned int i=0; i<ScenarioJSON.size(); ++i){
-            Json::Value Object = ScenarioJSON[i];
-            SimpleObject::shapeType Type = (SimpleObject::shapeType)Object["SimpleObject"]["type"].asInt();
-            
-            ofVec3f pos;
-            
-            pos.x = Object["SimpleObject"]["position"]["X"].asFloat();
-            pos.y = Object["SimpleObject"]["position"]["Y"].asFloat();
-            pos.z = Object["SimpleObject"]["position"]["Z"].asFloat();
 
-            switch(Type){
-                    
-                case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball();
-                    oBall->setup(world, pos);
-                    ScenarioObjects.push_back(oBall);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeHammer:{
-                    Hammer *oHammer = new Hammer();
-                    oHammer->setup(world, pos);
-                    ScenarioObjects.push_back(oHammer);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeLever:{
-                    Lever *oLever = new Lever();
-                    int dir = Object["SimpleObject"]["SubType"].asInt();
-                    oLever->setup(world, pos, dir);
-                    ScenarioObjects.push_back(oLever);
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeObstacle:{
-                    Obstacle *oObstable = new Obstacle();
-                    oObstable->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05));
-                    ScenarioObjects.push_back(oObstable);
-                }
-                break;
-                    
-            }
-            
-        }
-		
-	} else {
-		cout  << "Failed to parse JSON" << endl;
-	}
-
-    
-}
-#endif
 
 //--------------------------------------------------------------
 
 void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     ofxXmlSettings ScenarioXml;
     
-    if(ScenarioXml.loadFile("scenario.xml")){
+    if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
         
         ScenarioXml.pushTag("scenario");
         
@@ -340,14 +335,21 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
 			int pointsCollision = ScenarioXml.getValue("pointsCollision", 0, 0);
 
+			int invisible = 0; // Visible by default event if this value is not implemented in the Xml editor
+			invisible = ScenarioXml.getValue("invisible", 0, 0);
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
                     Ball *oBall = new Ball(currentMissions);
-                    oBall->setup(world, pos);
+                    float mass = ScenarioXml.getValue("mass", 0.0);
+                    float radius = ScenarioXml.getValue("radius", 0.0);
+                    float restitution = ScenarioXml.getValue("restitution", 0.0);
+                    float friction = ScenarioXml.getValue("friction", 0.0);
+                    oBall->setup(world, pos, mass, radius, restitution, friction);
                     oBall->SetObjectId(objId);
 					oBall->setRotation(rotation);
                     oBall->color = color;
+					oBall->setVisibility(invisible);
 					
                     ScenarioObjects.push_back(oBall);
                 }
@@ -359,6 +361,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oHammer->SetObjectId(objId);
 					oHammer->setRotation(rotation);
                     oHammer->color = color;
+					oHammer->setVisibility(invisible);
                     ScenarioObjects.push_back(oHammer);
 					
 					oHammer->setupRot();
@@ -372,6 +375,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oLever->SetObjectId(objId);
 					oLever->setRotation(rotation);
                     oLever->color = color;
+					oLever->setVisibility(invisible);
                     ScenarioObjects.push_back(oLever);
 
                 }
@@ -384,10 +388,129 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oObstable->SetObjectId(objId);
 					oObstable->setRotation(rotation);
                     oObstable->color = color;
+					oObstable->setVisibility(invisible);
                     ScenarioObjects.push_back(oObstable);
 					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
 
+                }
+                break;
+                
+                case SimpleObject::ShapeTypeGravity:{
+                    Gravity *oGravity = new Gravity(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oGravity->setup(world, pos, path, scale);
+                    oGravity->SetObjectId(objId);
+					oGravity->setRotation(rotation);
+                    oGravity->color = color;
+					oGravity->setVisibility(invisible);
+                    ScenarioObjects.push_back(oGravity);
+					oGravity->setPointsCollision(pointsCollision);
+					oGravity->setupRot();
+                    
+                }
+                break;
+                   
+                case SimpleObject::ShapeTypeTeleporter:{
+                    Teleporter *oTeleporter = new Teleporter(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oTeleporter->setup(world, pos, path, scale);
+                    oTeleporter->SetObjectId(objId);
+					oTeleporter->setRotation(rotation);
+                    oTeleporter->color = color;
+					oTeleporter->setVisibility(invisible);
+                    ScenarioObjects.push_back(oTeleporter);
+					oTeleporter->setPointsCollision(pointsCollision);
+					oTeleporter->setupRot();
+                    
+                }
+                break;
+					
+				case SimpleObject::ShapeTypeRamp:{
+					Ramp *oRamp = new Ramp(currentMissions);
+					//oObstable->setup(world, pos, "3DModels/chino_6.dae");
+					oRamp->setup(world, pos, path, scale);
+					oRamp->SetObjectId(objId);
+					oRamp->setRotation(rotation);
+					oRamp->color = color;
+					oRamp->setVisibility(invisible);
+					ScenarioObjects.push_back(oRamp);
+					oRamp->setPointsCollision(pointsCollision);
+					oRamp->setupRot();
+				}
+					break;
+					
+				case SimpleObject::ShapeTypeObstacleTriShapeMesh:{
+					ObstacleTriShapeMesh *oObstacleTriShapeMesh= new ObstacleTriShapeMesh(currentMissions);
+					
+					oObstacleTriShapeMesh->setup(world, pos, path, scale);
+					oObstacleTriShapeMesh->SetObjectId(objId);
+					oObstacleTriShapeMesh->setRotation(rotation);
+					oObstacleTriShapeMesh->color = color;
+					oObstacleTriShapeMesh->setVisibility(invisible);
+					ScenarioObjects.push_back(oObstacleTriShapeMesh);
+					oObstacleTriShapeMesh->setPointsCollision(pointsCollision);
+					oObstacleTriShapeMesh->setupRot();
+				}
+					break;
+					
+                case SimpleObject::ShapeTypeAnimatedObject:{
+                    AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oAnimatedObject->setup(world, pos, path, scale);
+                    oAnimatedObject->SetObjectId(objId);
+					oAnimatedObject->setRotation(rotation);
+                    oAnimatedObject->color = color;
+					oAnimatedObject->setVisibility(invisible);
+                    ScenarioObjects.push_back(oAnimatedObject);
+					oAnimatedObject->setPointsCollision(pointsCollision);
+					oAnimatedObject->setupRot();
+                    
+                }
+                break;
+                
+                case SimpleObject::ShapeTypeAnimatedMotionPath:{
+                    string pathMotionModel;
+                    pathMotionModel = ScenarioXml.getValue("pathMotionModel","", 0);
+                    AnimatedMotionPath *oAnimatedMotionPath = new AnimatedMotionPath(currentMissions);
+                    oAnimatedMotionPath->setup(world, pos, path, pathMotionModel, scale);
+                    oAnimatedMotionPath->SetObjectId(objId);
+					oAnimatedMotionPath->setRotation(rotation);
+                    oAnimatedMotionPath->color = color;
+					oAnimatedMotionPath->setVisibility(invisible);
+                    ScenarioObjects.push_back(oAnimatedMotionPath);
+					oAnimatedMotionPath->setPointsCollision(pointsCollision);
+					oAnimatedMotionPath->setupRot();
+                    
+                }
+                break;
+                    
+                case SimpleObject::ShapeTypeAnimatedMesh:{
+                    AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oAnimatedMesh->setup(world, pos, path, scale);
+                    oAnimatedMesh->SetObjectId(objId);
+					oAnimatedMesh->setRotation(rotation);
+                    oAnimatedMesh->color = color;
+					oAnimatedMesh->setVisibility(invisible);
+                    ScenarioObjects.push_back(oAnimatedMesh);
+					oAnimatedMesh->setPointsCollision(pointsCollision);
+					oAnimatedMesh->setupRot();
+                    
+                }
+                break;
+                case SimpleObject::ShapeTypeGeneratedMesh:{
+                    GeneratedMesh *oGeneratedMesh = new GeneratedMesh(currentMissions);
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oGeneratedMesh->setup(world, pos, path, scale);
+                    oGeneratedMesh->SetObjectId(objId);
+					oGeneratedMesh->setRotation(rotation);
+                    oGeneratedMesh->color = color;
+					oGeneratedMesh->setVisibility(invisible);
+                    ScenarioObjects.push_back(oGeneratedMesh);
+					oGeneratedMesh->setPointsCollision(pointsCollision);
+					oGeneratedMesh->setupRot();
+                    
                 }
                 break;
                     
@@ -397,6 +520,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oBounds->SetObjectId(objId);
 					oBounds->setRotation(rotation);
                     oBounds->color = color;
+					oBounds->setVisibility(invisible);
                     ScenarioObjects.push_back(oBounds);
 					
 					oBounds->setupRot();
@@ -440,9 +564,8 @@ void Scenario::saveToXml(){
         //ScenarioXml.addValue("color", "0x"+resColor);
 		
 		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
+		ScenarioXml.addValue("invisible", !ScenarioObjects[i]->bVisible);
 		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
-
-        
         ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
         ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
         ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
@@ -468,51 +591,67 @@ void Scenario::saveToXml(){
             ScenarioXml.addValue("LeverType", pLever->direction);
         }
         
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath){
+            AnimatedMotionPath *pAnimatedMotionPath;
+            pAnimatedMotionPath = (AnimatedMotionPath*)ScenarioObjects[i];
+            ScenarioXml.addValue("pathMotionModel", pAnimatedMotionPath->getMotionModelPath());
+        }
+        
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
+            Ball *pBall;
+            pBall = (Ball*)ScenarioObjects[i];
+            ScenarioXml.addValue("mass", pBall->mass);
+            ScenarioXml.addValue("radius", pBall->radius);
+            ScenarioXml.addValue("restitution", pBall->restitution);
+            ScenarioXml.addValue("friction", pBall->friction);
+        }
+        
         ScenarioXml.popTag();
     }
     
     ScenarioXml.popTag();
-    ScenarioXml.saveFile("scenario.xml");
+    ScenarioXml.saveFile(PinballChinoManager::projectName+"/scenario.xml");
     
 }
 
-//------------------------------
-#if 0 //the function is not mentained, update it firs if you want to use it
-void Scenario::saveToJSON(){
-   
-    ofxJSONElement ScenarioJSON;
-    Json::Value Object;
-    
+SimpleObject* Scenario::FindScenarioObjectByName(string name){
     for(int i = 0; i < ScenarioObjects.size(); i++){
-
-        Object["SimpleObject"]["type"] = ScenarioObjects[i]->type;
-        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
-            /* for the moment only LEVER has subtypes left and right */
-            Lever *pLever;
-            pLever = (Lever*)ScenarioObjects[i];
-            Object["SimpleObject"]["SubType"] = pLever->direction;
+        if (ScenarioObjects[i]->getObjectName().compare(name) == 0){
+            return ScenarioObjects[i];
         }
-        else{
-            /* The other objects don«t have this field so we put it to 0*/
-            Object["SimpleObject"]["SubType"] = 0;
-        }
-		
-        Object["SimpleObject"]["position"]["X"] = ScenarioObjects[i]->position.x;
-        Object["SimpleObject"]["position"]["Y"] = ScenarioObjects[i]->position.y;
-        Object["SimpleObject"]["position"]["Z"] = ScenarioObjects[i]->position.z;
-
-    
-        ScenarioJSON.append(Object);
     }
-
-    // now write
-    if(!ScenarioJSON.save("scenario.json",true)) {
-        cout << "scenario.json written unsuccessfully." << endl;
-    } else {
-        cout << "scenario.json written successfully." << endl;
-    }
-    
-    
+    return NULL;
     
 }
-#endif
+SimpleObject* Scenario::FindScenarioObjectById(int id){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+        if (ScenarioObjects[i]->GetObjectId() == id){
+            return ScenarioObjects[i];
+        }
+    }
+    return NULL;
+    
+}
+
+
+//--------------------------------------------------------------
+void Scenario::createBasicGUIScenario(){
+	
+	posGui = ofVec2f(0, 0);
+	guiBasicScenario = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
+	
+	guiBasicScenario->autoSizeToFitWidgets();
+	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
+	guiBasicScenario->loadSettings("GUI/guiSettings.xml");
+}
+//--------------------------------------------------------
+void Scenario::guiEventBasics(ofxUIEventArgs &e){
+	string name = e.widget->getName();
+	//	int kind = e.widget->getKind();
+	if (name == "Toggle Floor Visibility"){
+		//bVisibleBasicTerrain = !bVisibleBasicTerrain;
+		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
+	}
+}
+

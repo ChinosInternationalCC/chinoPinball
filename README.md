@@ -1,13 +1,27 @@
 chinoPinball
 ============
 
-ChinoPinball is an opensource tool for mapping pinball via projection.
+ChinoPinball it’s a video-mapping pinball game that uses 3d structures as a projection support. Compared to 
+other video-mapping games, this project stands out with the possibility of making the projection on 3d 
+spaces and not only the usual 2D facades.
+
+ChinoPinball was created as an opensource tool game that can be configured and adapted for anyone. This 
+game is designed to be projected in public spaces like streets, squares and buildings or just on a small 
+table with some 3D objects.
+Ideally you could adapt this game to any context scenario or media content. This can be done with the 3d 
+editor and configuration files.
+
+The game interface is basically composed by 3 inputs (sensors): the start game, the right and the left 
+lever.
+
+The game rules consist of obtaining as much points as possible by reaching all the different objects and 
+missions available.
 
 
 ***
 ###Videos with the ChinoPinball in action
 
-ChinoPinball@FAB10 2014 DHUB Barcelona https://vimeo.com/100059297
+**ChinoPinball@FAB10 2014** DHUB Barcelona https://vimeo.com/100059297
 
 
 ***
@@ -92,15 +106,40 @@ push from origin to master
 * ofxJSON https://github.com/jefftimesten/ofxJSON.git
 * ofxDmx https://github.com/kylemcdonald/ofxDmx.git
 * ofxFTGL https://github.com/Flightphase/ofxFTGL
+* ofxMSAInteractiveObject https://github.com/memo/ofxMSAInteractiveObject
+* ofxMtlMapping2D https://github.com/morethanlogic/ofxMtlMapping2D
+ 
 
-Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (CodeBlocks) (not countinued)
+To clone all the addons requested by the project you can also execute the ./clone_addons.sh script
 
+Currently developed on MAC (XCode 5.0.2, MAC OS SDK 10.9, LLVM compiler) and Windows (VisualStudio 2012)
+
+The project should also compile in Windows or Linux if ofxSyphone is not used. Just don't add ofxSyphon files to the compilation and comment in *ExternalsConfig.h*  the line *#define USE_SYPHON*:
+
+```
+
+//
+// ExternalsConfig.h
+// chinoPinball
+//
+// Created by Ovidiu on 14/02/14.
+//
+//
+
+#ifndef chinoPinball_ExternalsConfig_h
+#define chinoPinball_ExternalsConfig_h
+
+/* comment define if don't want to use feature */
+//#define USE_SYPHON
+```
 We are using MadMapper for projection mapping http://www.madmapper.com
 
 ***
 ###ClassHierarchy
 
 ![ClassHierarchy](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/ClassHierarchy.png)
+
+The main class is **PinballChinoManager**. In this class are defines all the main object: a scenario and a scenario editor, objects that handles inputs and outputs like handling of the keyboard, OSC communication, DMX communication, Arduino communication, objects that handles the sound playback.
 
 ***
 ###SystemOverview
@@ -128,7 +167,7 @@ We don't know how to do this yet ...
 The idea is to be able to create scenario directly on the place where the game will be projected, without prior preparation (only the objects could be prepared earlier).
 Then, maybe we could also let the people create scenarios by themselves. 
 
-Editor should have the following functionalities:
+Editor has the following functionalities:
 * saved/load scenario to a file
 * change width and height of a table (with walls)
 * add new objects
@@ -140,6 +179,9 @@ Editor should have the following functionalities:
 	* color
 * objects types: lever, hammer, obstacle ...
 
+To enter in the scenario editor mode press the key 'e'
+
+![ScenarioEditor](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/EditorMode.png)
 
 ***
 ###Key bindings
@@ -148,17 +190,21 @@ Editor should have the following functionalities:
 * F2 - OF_LOG_VERBOSE
 * F3 - CollisionVerbose
 * F4 - EditorVerbose
+
 PinballChinoManager
 * f - fullscreen
 * s - save camera position to file
 * l - load camera postion
 * m - mute sounds
+
 InputEventManager
 * enter - restart game
 * down - move hammer
-* m/M - move right lever
-* z/Z - move right lever
+* q/Q - move right lever
+* w/W - move left lever
 * d/D - draw debug
+* m/M - open Mapping Editor if using MtlMapping
+
 ScenarioEditor
 * e - toggle editor mode
 * x - saving scenario to file
@@ -166,6 +212,82 @@ ScenarioEditor
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
+* o - move a bit the scenario to in X axis +
+* p - move a bit the scenario to in X axis -
+* i - move a bit the scenario to in Z axis +
+* k - move a bit the scenario to in Z axis -
+* u - move a bit the scenario to in Y axis +
+* j - move a bit the scenario to in Y axis -
+
+AnimatedMotionPath
+* p - play motion path animation
+* o - pause motion path animation
+* i - stop motion path animation
+* u - FW animation position
+* y - BK animation position
+* t - increment animation end point
+
+***
+###3DModels
+
+We support almos all the major 3D model file formats by using the AssimpModel Loader. In order to load a model designed in Cinema4D for example you have to copy them in the */bin/data* path and to add a new entry in te *scenario.xml* file.
+
+```
+    <object>
+        <type>6</type>
+        <id>5</id>
+        <color>14423100</color>
+        <pointsCollision>0</pointsCollision>
+        <positionX>0.474898070</positionX>
+        <positionY>12.638760567</positionY>
+        <positionZ>-0.899999976</positionZ>
+        <scaleX>0.100000009</scaleX>
+        <scaleY>0.100000009</scaleY>
+        <scaleZ>0.100000009</scaleZ>
+        <rotationX>-0.541731715</rotationX>
+        <rotationY>-0.442292124</rotationY>
+        <rotationZ>0.587128937</rotationZ>
+        <rotationW>0.407656848</rotationW>
+        <path>3DMODELS/new/totem1.obj</path>
+    </object>
+```
+The tag *<type>* should hold the object type; one of the values defined in the *enum shapeType*
+```
+    enum shapeType{
+
+		enum shapeType{
+		ShapeTypeBall = 0,
+		ShapeTypeSimpleBox = 1,
+		ShapeTypeSpring = 2,
+		ShapeTypeLever = 3,
+		ShapeTypeContainer = 4,
+		ShapeTypeHammer = 5,
+		ShapeTypeObstacle = 6,
+		ShapeTypeBounds = 7,
+		ShapeTypeAnimatedObject = 8,
+		ShapeTypeAnimatedMesh = 9,
+		ShapeTypeGeneratedMesh = 10,
+		ShapeTypeAnimatedMotionPath = 11,
+		ShapeTypeGravity = 12,
+		ShapeTypeTeleporter = 13,
+		ShapeTypeRamp = 14,
+		ShapeTypeObstacleTriShapeMesh = 15
+
+    };
+```
+
+The tag *<id>* should hold a unique id for each object.
+
+***
+###Shape Types
+
+**Hammer** is the object used to launch the ball and it gives to the loaded 3D model a movement like in the image below
+
+![Hammer](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/hammer.gif)
+
+**Lever** are the objects used to hit the ball and they give the movement from bellow to the 3D model
+
+![Lever](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/lever.gif)
 
 ***
 ###OSC
@@ -186,3 +308,36 @@ Example PureData/collision.pd
 ![PureData](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PureData.png)
 
 The OSC implementation can be found in the OSCManager class
+
+***
+###Sound
+
+
+https://soundcloud.com/alexgeell/chinos-internacional-pinball-raval-song
+
+Chinos Internacional Pinball Song utiliza una base de Rumba en la guitarra como símbolo los gitanos catalanes, una percusión afro india que aporta un ambiente oriental para que las melodías del baglama griego se combinen con el paisaje sonoro del barrio, que da cuenta de personas y actividades que se desarrollan cotidianamente en sus espacios públicos.
+
+***
+###License
+
+ChinoPinball is released under a GPL license. You can read it here: https://github.com/ChinosInternationalCC/chinoPinball/blob/master/LICENSE
+
+If you have any doubts on what you can do and what you can not do with the code just drop us an email at chinopinball@gmail.com
+
+***
+###Colaborators
+ * Kuba Markiewicz  - Openframeworks
+ * Carles Gutiérrez - Openframeworks
+ * Ovidiu Cincheza - Openframeworks
+ * Angel Muñoz - Openframeworks / Arduino
+ * Augusto Zuniga - 3D Art
+ * Mery Glez - DigitalFabrication
+ * Alex Geell - SoundArt
+ * Alex Reche - MadMapper
+
+Thanks to FABLab Barcelona for letting us use their CNC machines
+
+***
+###Contact
+
+chinopinball@gmail.com

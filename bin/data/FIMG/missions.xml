@@ -1,0 +1,41 @@
+<missions>
+    <mission>
+        <missionID>0</missionID>
+        <duration>100000</duration>
+    </mission>
+
+    <mission>
+        <missionID>1</missionID>
+        <duration>100000</duration>
+	<object>
+        	<id>11</id>
+			<color>1</color>
+	</object>
+	<object>
+		<id>9</id>
+		<color>1</color>
+	</object>
+	<object>
+		<id>10</id>
+		<color>1</color>
+	</object>
+    </mission>
+	
+
+    <mission>
+        <missionID>2</missionID>
+        <duration>10000</duration>
+	<object>
+        	<id>6</id>
+		<color>2</color>
+	</object>
+	<object>
+		<id>7</id>
+		<color>2</color>
+	</object>
+	<object>
+		<id>8</id>
+		<color>2</color>
+	</object>
+    </mission>
+</missions>

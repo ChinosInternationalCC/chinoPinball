@@ -14,12 +14,16 @@
 #include "SimpleObject.h"
 #include "SoundManager.h"
 
+
 class Ball : public SimpleObject
 {
 public:
     Ball(vector <SimpleMission *> * _currentMissions);//SimpleObjects force that
-    Ball(SimpleObject simpleObject);
-    void setup(ofxBulletWorldRigid &world, ofVec3f pos);
+    void setup(ofxBulletWorldRigid &world, ofVec3f pos,
+               float mass = 1,
+               float radius = .5,
+               float restitution = 0.45,
+               float friction = 0.25);
     void update(bool bEditorMode);
     void draw(bool bEditorMode);
 
@@ -27,6 +31,8 @@ public:
     
     float radius;
     float mass;
+    float restitution;
+    float friction;
     ofxBulletSphere body;
     ofxBulletWorldRigid world;
     
@@ -48,10 +54,12 @@ public:
     void setDefaultZ();
     void setPosition(ofVec3f position);
     		void setRotation(ofQuaternion rotation);
+    
+    ofVec3f getInitialPos();
 
 private:
     BallStatus m_status; // waiting, playing, game over
-	
+	ofVec3f m_initialPos;
 	
 	//shadow fake
 	ofCylinderPrimitive shadow;

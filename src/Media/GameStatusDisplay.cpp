@@ -36,7 +36,7 @@ void GameStatusDisplay::setup3dFont(void){
     //material.setShininess(64);
 	fontMedium.loadFont("ARCADE.TTF", 30);
     GOstartPositionX = 0;
-    GOstartPositionY = -ofGetHeight()*0.5;
+    GOstartPositionY = -ofGetHeight()*0.4;
     
 }
 

@@ -11,8 +11,30 @@
 
 OSCManager::OSCManager(){
     sender.setup(HOST, PORT);
+    
+    receiver.setup(RECEIVER_PORT);
+    
     ofAddListener(eventComunication::onNewCom,this, &OSCManager::listenerOnCollission);
     ofAddListener(eventMission::onMissionUpdate,this, &OSCManager::listenerOnUpdateMission);
+    
+}
+
+void OSCManager::update(InputEventManager * inputs){
+    // check for waiting messages
+    while(receiver.hasWaitingMessages()){
+        // get the next message
+        ofxOscMessage m;
+        receiver.getNextMessage(&m);
+        
+        // check for mouse moved message
+        if(m.getAddress() == "/roll"){
+            inputs->onMoveLeftLeverEvent();
+            
+        }
+        else if(m.getAddress() == "/pitch"){
+            inputs->onMoveRightLeverEvent();
+        }
+    }
     
 }
 

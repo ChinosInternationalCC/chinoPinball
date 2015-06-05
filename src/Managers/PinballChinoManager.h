@@ -28,6 +28,7 @@
 #include "LightsManager.h"
 //#include "ofxShadow.h"
 #include "ScenarioEditor.h"
+#include "WebSocketsManager.h"
 
 class PinballChinoManager: public InputEventManager {
     
@@ -45,6 +46,7 @@ public:
 	
 	////Inputs
 	arduComunicationManager arduCom;
+    WebSocketsManager webSock;
     
     ///Outputs
     DMXManager dmx;
@@ -54,6 +56,7 @@ public:
     ofEasyCam				camera;
     ofMatrix4x4 savedPose;
 	ofxXmlSettings XML;
+    static string projectName;
 	void saveCameraPosition(ofMatrix4x4 _camPose);
 	ofMatrix4x4 loadCameraPosition();
     bool bMouseCameraEvents(bool activate);
@@ -65,6 +68,8 @@ public:
     //ScenarioEditor          scenarioEditor;
     GameStatusDisplay       statusDisplay;
     MissionInfoDisplay      missionDisplay;
+    
+    
     
 	vector<SimpleMission *> currentMissions;
 	int idcurrentMission;
@@ -88,7 +93,10 @@ public:
 	
 private:
 	
+    bool bAddScenarioCover;
 	void listenerAddObject2Scenario(eventObjectScenario & args);
 	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
+    
+    bool m_bLinkInitialBallPositionToHammer;
 	
 };

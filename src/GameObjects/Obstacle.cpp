@@ -12,11 +12,13 @@ Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(_currentMissions)
 {
     collisionPoints = 0;
+    m_poWorld = NULL;
 }
 
 //---------------------------------
 void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-    type = ShapeTypeObstacle;
+    
+    m_poWorld = &world;
     collisionTime = -120;
     ModelPath = url;
     this->position = position;
@@ -80,10 +82,23 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
     body.activate();
 	
 	setDefaultZ();
-    
+	
+	setDefaultPostion();
+	
+    setupSpecific();
+}
+
+void Obstacle::setupSpecific(){
+    type = ShapeTypeObstacle;
 }
 
 
+//--------------------------------------------------------------
+void Obstacle::setDefaultPostion(){
+	last_positionX = position.x;
+	last_positionY = position.y;
+	last_positionZ = position.z;
+}
 //--------------------------------------------------------------
 void Obstacle::update(bool bEditorMode){
 
@@ -105,6 +120,20 @@ void Obstacle::update(bool bEditorMode){
 		//addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
+	if(position.x != last_positionX){
+		setPosition(position);
+		last_positionX = position.x;
+	}
+	if(position.y != last_positionY){
+		setPosition(position);
+		last_positionY = position.y;
+	}
+	if(position.z != last_positionZ){
+		setPosition(position);
+		last_positionZ = position.z;
+	}
+	
+	
 	if(angleValX != last_angleValX){
 		
 		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
@@ -122,13 +151,14 @@ void Obstacle::update(bool bEditorMode){
 	}
 	
 	body.activate();
+    
+    updateSpecific(bEditorMode);
 
 }
-/*
-//--------------------------------------------------------------
-void Obstacle::autoScalingXYZ(){
-	
-}*/
+
+void Obstacle::updateSpecific(bool bEditorMode){
+    //DO Nothing
+}
 
 //--------------------------------------------------------------
 void Obstacle::autoScalingXYZ(){
@@ -216,12 +246,19 @@ void Obstacle::onCollision(){
 	newComEvent.collision = true;
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+    
+    onCollisionSpecific();
+}
+
+
+void Obstacle::onCollisionSpecific(){
+    //Do Nothing
 }
 
 //------------------------------------------------------------
 void Obstacle::setDefaultZ(){
     
-    position.z = -0.9;
+    position.z = -1.5;
     setPosition(position);
     
 }

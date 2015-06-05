@@ -7,6 +7,7 @@
 //
 
 #include "SoundManager.h"
+#include "PinballChinoManager.h"
 
 // SINGLETON initalizations
 bool SoundManager::instanceFlag = false;
@@ -29,14 +30,14 @@ SoundManager* SoundManager::getInstance(void){
 SoundManager::SoundManager(void){
 	//loadSounds
     
-    soundFiles.push_back("sounds/campanaraval.wav");
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/campanaraval.wav");
     ofSoundPlayer *audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[0]->loadSound(soundFiles[0]);
     soundObj[0]->setVolume(0.5f);
     soundObj[0]->setMultiPlay(false);
     
-    soundFiles.push_back("sounds/ball.mp3");
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/ball.mp3");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[1]->loadSound(soundFiles[1]);
@@ -44,21 +45,21 @@ SoundManager::SoundManager(void){
     soundObj[1]->setMultiPlay(false);
 
 
-	soundFiles.push_back("sounds/bengalalanzabola.wav");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/bengalalanzabola.wav");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[2]->loadSound(soundFiles[2]);
     soundObj[2]->setVolume(0.5f);
     soundObj[2]->setMultiPlay(false);
  
-	soundFiles.push_back("sounds/bumper02.wav");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/bumper02.wav");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[3]->loadSound(soundFiles[3]);
     soundObj[3]->setVolume(0.5f);
     soundObj[3]->setMultiPlay(false);
 
-	soundFiles.push_back("sounds/chinospinballsong02.mp3");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/chinospinballsong02.mp3");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[4]->loadSound(soundFiles[4]);
@@ -66,15 +67,58 @@ SoundManager::SoundManager(void){
     soundObj[4]->setMultiPlay(false);
 	
 
-	soundFiles.push_back("sounds/bumper01.wav");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/bumper01.wav");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[5]->loadSound(soundFiles[5]);
     soundObj[5]->setVolume(0.5f);
     soundObj[5]->setMultiPlay(false);
 	
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/paletas.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[6]->loadSound(soundFiles[6]);
+    soundObj[6]->setVolume(0.5f);
+    soundObj[6]->setMultiPlay(false);
+
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/pierde.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[7]->loadSound(soundFiles[7]);
+    soundObj[7]->setVolume(0.5f);
+    soundObj[7]->setMultiPlay(false);
+
+	/*
+	soundFiles.push_back("sounds/vocesraval01.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[8]->loadSound(soundFiles[8]);
+    soundObj[8]->setVolume(0.5f);
+    soundObj[8]->setMultiPlay(false);
 	
-	//EVENTS
+	soundFiles.push_back("sounds/vocesraval02.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[9]->loadSound(soundFiles[9]);
+    soundObj[9]->setVolume(0.5f);
+    soundObj[9]->setMultiPlay(false);
+	
+	soundFiles.push_back("sounds/vocesraval03.wav");
+    audio  = new ofSoundPlayer();
+    soundObj.push_back(audio);
+    soundObj[10]->loadSound(soundFiles[10]);
+    soundObj[10]->setVolume(0.5f);
+    soundObj[10]->setMultiPlay(false);
+
+	soundFiles.push_back("sounds/chinospinballsong03.mp3");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[11]->loadSound(soundFiles[11]);
+	soundObj[11]->setVolume(0.5f);
+	soundObj[11]->setMultiPlay(false);
+	 */
+	
+			 //EVENTS
 	ofAddListener(eventGame::onGameEvent,this, &SoundManager::listenerOnHammerLaunch);
 	
 	ofAddListener(eventComunication::onNewCom,this, &SoundManager::listenerOnCollission);
@@ -108,10 +152,28 @@ void SoundManager::listenerOnHammerLaunch(eventGame & args){
 
 //--------------------------------------------------------------------
 void SoundManager::listenerOnCollission(eventComunication & args){
+	
+	if (!bMute){
+		if(args.collision){
 			
-	if(args.collision){
-		if (!bMute)
+			if(args.pObject->idobject == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			
+	/*		else if(args.pObject->idobject == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			else if(args.pObject->idobject == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+			else if(args.pObject->idobject == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol1]->play();
+			}
+	*/
+			
 			soundObj[ObjCol1]->play();
+		}
+
 	}
 }
 

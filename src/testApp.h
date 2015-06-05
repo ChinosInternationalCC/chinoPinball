@@ -1,11 +1,16 @@
 #pragma once
 
-
-#include "ExternalsConfig.h"
 #include "ofMain.h"
+#include "ExternalsConfig.h"
 #include "PinballChinoManager.h"
+
+
 #ifdef USE_SYPHON  /* configured in ExternalsConfig.h */
 #include "ofxSyphon.h"
+#endif
+
+#ifdef USE_MTL_MAPPING
+#include "ofxMtlMapping2D.h"
 #endif
 
 class testApp : public ofBaseApp{
@@ -25,10 +30,25 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
     
+private:
+    
     PinballChinoManager    chinopinball;
     
 #ifdef USE_SYPHON
     ofxSyphonServer mainOutputSyphonServer;
 #endif
+
+#ifdef USE_MTL_MAPPING
+    ofxMtlMapping2D* _mapping;
+#endif
+	
+	//EXTRA STUFF TO match a real space (PhotograFied) to the virtual model projected
+	ofImage sceneOverlapedImage;
+	ofFbo scene3dinFBO;
+	bool setupXMLPhotoAlpha();
+	ofxXmlSettings XML;
+	bool bPhotoScenario;
+	string myPhotoScenarioPath;
+	bool bIsPhotoToMatch;
 	
 };

@@ -12,6 +12,10 @@ obj/
 *.app
 *.dll
 *.exe
+*.exp
+*.ilk
+*.lib
+*.pdb
 
 #mac files
 .DS_Store

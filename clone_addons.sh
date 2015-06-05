@@ -15,3 +15,6 @@ ${PREFIX}rezaali/ofxUI.git
 ${PREFIX}jefftimesten/ofxJSON.git
 ${PREFIX}kylemcdonald/ofxDmx.git
 ${PREFIX}Flightphase/ofxFTGL.git
+${PREFIX}memo/ofxMSAInteractiveObject
+${PREFIX}morethanlogic/ofxMtlMapping2D
+${PREFIX}labatrockwell/ofxLibwebsockets

@@ -16,22 +16,35 @@
 #include "Hammer.h"
 #include "Obstacle.h"
 #include "Bounds.h"
+#include "AnimatedObject.h"
+#include "AnimatedMesh.h"
+#include "GeneratedMesh.h"
+#include "AnimatedMotionPath.h"
+#include "Gravity.h"
+#include "Teleporter.h"
+#include "Ramp.h"
+#include "ObstacleTriShapeMesh.h"
+#include "ofxBulletTriMeshShape.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
-#include "ofxJSONElement.h"
+
 #include "SimpleMission.h"
+
+
+#include "ofxUI.h"
+#include "ofxUIDefines.h"
 
 
 class Scenario {
     
 public:
-	
+	Scenario();
 	//Missions
     void setCurrentMission(int idMission);
     void setupMissions(vector <SimpleMission *> *missions);
 	
 	///
-	void setup(ofxBulletWorldRigid &world);
+	void setup(ofxBulletWorldRigid &world, bool bAddScenarioCover);
 	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
     void drawDebug(void);
@@ -50,17 +63,7 @@ public:
     //ofxXmlSettings ScenarioXml;
     
     ofxBulletWorldRigid *     world;
-   /*
-    Ball                    m_Ball,m_Ball2;
-    Lever                   leverLeft;
-    Lever                   leverRight;
-    Hammer                   m_Hammer;
-    
-    Obstacle                m_obstable1;
-    Obstacle                m_obstable2;
-    Obstacle                m_obstable3;
-    Obstacle                m_obstable4;
-    */
+
     vector<SimpleObject*> ScenarioObjects;
     
 	//basic World
@@ -80,6 +83,17 @@ public:
     
     void setDebugMode(bool &DebugMode);
 
+    SimpleObject* FindScenarioObjectByName(string name);
+    SimpleObject* FindScenarioObjectById(int id);
+	
+	
+	//Basic Gui
+	bool bEditorMode, lastbEditorMode;
+	ofxUICanvas *guiBasicScenario;
+	void createBasicGUIScenario();
+	bool bVisibleBasicTerrain;
+	ofVec2f posGui;
+	void guiEventBasics(ofxUIEventArgs &e);
 	
 private:
 	
@@ -87,26 +101,26 @@ private:
 	ofVec3f startLoc;
 	ofPoint dimens;
 	
-	float scaleStage = 0.25;
-	float	boundsWidth = 7.;;
-	float depthStage = 160;
-	float frontbackwallHeigh = 40;
-	float heightwalls = 20;
+	float scaleStage;
+	float	boundsWidth;
+	float depthStage;
+	float frontbackwallHeigh;
+	float heightwalls;
 	
 	//Ground
-	float widthbasePlane = 100;
-	float heightbasePlane = depthStage;
-	float depthbasePlane = boundsWidth;
+	float widthbasePlane;
+	float heightbasePlane;
+	float depthbasePlane;
 	
 	//BackWall
-	float widthbkPlane = 100;
-	float heightbkPlane = boundsWidth*1.5;
-	float depthbkPlane = frontbackwallHeigh;
+	float widthbkPlane;
+	float heightbkPlane;
+	float depthbkPlane;
 	
 	//RightLeftWall
-	float widthrlPlane = boundsWidth;
-	float heightrlPlane = depthStage;
-	float depthrlPlane = heightwalls;
+	float widthrlPlane;
+	float heightrlPlane;
+	float depthrlPlane;
 	
 	int	 lastPosIdCoverScenario;
 	//BASIC SCENARIO STATGE/////////////////////////////////////
@@ -115,5 +129,7 @@ private:
 	int idCurrentMission;
 	
     bool DebugMode;
+
+	
 	
 };

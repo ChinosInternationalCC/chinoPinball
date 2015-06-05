@@ -1,28 +1,43 @@
-ChinoPinball @ MIRA 2014
+###ChinoPinball @ MIRA 2014
 
-# Nombre del proyecto y país de procedencia
+***
+###Nombre del proyecto y país de procedencia
 
 ChinoPinball - España
 
-# Categoría artística
+***
+###Categoría artística
 
 OUTDOOR MAPPING
 
-# Artistas
+***
+###Artistas
 
-**Colectivo ****Chinos Internacional:**Kuba Markiewicz, Carles Gutiérrez, Ovidiu Cincheza, Angel Muñoz, Tony Higuchi, Augusto Zuniga, Mery Glez
+Colectivo Chinos Internacional:
+ * Kuba Markiewicz 
+ * Carles Gutiérrez
+ * Ovidiu Cincheza
+ * Angel Muñoz
+ * Augusto Zuniga
+ * Mery Glez
 
-Colaboradores: Alex Geell[http://chinosinternational.cc/](http://chinosinternational.cc/)
+Colaboradores: 
+ * Alex Geell - SoundArt
+ * Alex Reche - MadMapper
+
+[http://chinosinternational.cc/](http://chinosinternational.cc/)
 
 [https://www.facebook.com/chinos.international.cc](https://www.facebook.com/chinos.international.cc)
 
 [https://github.com/chinosInternationalCC](https://github.com/chinosInternationalCC)
 
-# Datos de contacto
+***
+### Datos de contacto
 
 Carles Gutiérrez Valles
 
-# Descripción del proyecto
+***
+### Descripción del proyecto
 
 ChinoPinball es un juego de videoArte mapeado con proyección. El juego es una versión de los juegos electronicos [Pinball](http://es.wikipedia.org/wiki/Pinball).
 
@@ -30,9 +45,10 @@ Este Pinball entre lo analógico y lo digital, es un videojuego interactivo que 
 
 Concepto sobre los videojuegos en el espacio público.
 
-### F**eatures del** ChinoPinball: 
+***
+### Features del ChinoPinball: 
 
-**Los controladores (hardware):**
+Los controladores (hardware):
 
 Es una aplicación interactiva y la gente puede controlarla mediante unos controles externos que utilizan Arduino y otras tecnologías.
 
@@ -40,7 +56,7 @@ No todo el juego es digital, también tiene actuadores físicos, que ofrecen una
 
 El juego se controla usando una mesa diseñada y fabricada usando métodos de la fabricación digital. A partir de un modelo 3D la mesa hecha de madera esta cortada usando una cortadora laser.
 
-![image alt text](image_0.jpg)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_0.jpg)
 
 La mesa tiene unos botones tipo arcade, y su estado se lee usando un Arduino conectado por el puerto serial con el ordenador en que corre el juego.
 
@@ -52,7 +68,7 @@ El juego tiene tambien salidas por OSC (Open Sound Control) que permite la comun
 
 Las salidas por DMX permite la conexión de una gama muy variada de dispositivos para efectos de luces, lasers, humo etc.
 
-**La proyección:**
+La proyección:
 
 La perspectiva del juego depende de la posición del usuario/s. En la posición del jugador hay una mesa con los botones y desde ahí se disfruta de la perspectiva ideal. Las proyecciones y el escenario se modifican en el lugar adaptándose a cada lugar dependiendo de sus posibilidades arquitectónicas.
 
@@ -60,27 +76,30 @@ La perspectiva del juego depende de la posición del usuario/s. En la posición 
 
 Pero en otros casos por ejemplo podría usarse una calle como rampa cuesta arriba y las paredes de los edificios como paredes del escenario entre otras posibilidades. 
 
-**El escenario:**
+El escenario:
 
-Un escenario pseudo-dinámico: ** **
+Un escenario pseudo-dinámico: 
 
 El juego tiene integrado un editor de escenario, que da posibilidad de construir un escenario en cualquier superficie (pared, suelo) y adaptando los elementos reales 3D como elementos del escenario.
 
-**El público:** Probablemente ya en futuras versiones, el público a parte de ser espectador, podrá llegar a interferir sobre el juego modificando el curso del juego. Ya desde un inicio se plantea un diseño compatible con Camaras para usar visión por ordenador ( interpretando sus posiciones y presencia ) o sensores físicos, y que dispuestos sobre el escenario o el área sirvan como actuadores dentro de los eventos del juego.
+El público:
+Probablemente ya en futuras versiones, el público a parte de ser espectador, podrá llegar a interferir sobre el juego modificando el curso del juego. Ya desde un inicio se plantea un diseño compatible con Camaras para usar visión por ordenador ( interpretando sus posiciones y presencia ) o sensores físicos, y que dispuestos sobre el escenario o el área sirvan como actuadores dentro de los eventos del juego.
 
-![image alt text](image_1.jpg)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_1.jpg)
 
-*El proyector mapea sobre el solar y parte de las paredes de los edificios para crear el escenario 3d del juego.*
+El proyector mapea sobre el solar y parte de las paredes de los edificios para crear el escenario 3d del juego.
 
-Localización estimada:![image alt text](image_2.png)
+Localización estimada:![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_2.png)
 
-**Derechos de autor:**
+***
+###Derechos de autor:
 
 ChinoPinball es un proyecto OpenSource y se encuentra en github: [https://github.com/ChinosInternationalCC/chinoPinball](https://github.com/ChinosInternationalCC/chinoPinball)
 
-# Soporte gráfico de la propuesta
+***
+###Soporte gráfico de la propuesta
 
-# ![image alt text](image_3.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_3.png)
 
 La propuesta estética representa el espacio publico catalán, caracterizada por la linea arquitectónica de sus representantes más ilustres, Gaudi y Doménech y Muntaner. Hacemos referencia a las terrazas modernistas y su simbología a través de los tomes distribuidos a lo largo de nuestro escenario.
 
@@ -88,25 +107,29 @@ Estos elementos, así como los muros que contornan los límites de nuestro espac
 
 Cada totem se iluminará y reaccionará de manera diferente cada vez que la bolita haya "tocado" su area correspondiente, haciendo que la puntuación del usuario se acumule o se reste.
 
-![image alt text](image_4.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_4.png)
 
-# ![image alt text](image_5.png)![image alt text](image_6.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_5.png)
+![image alt text](https://raw.githubusercontent.com/ChinosInternationalCC/chinoPinball/master/doc/PresentacionMira/image_6.png)
 
-# Requisitos técnicos y material necesario para el desarrollo del proyecto
+***
+### Requisitos técnicos y material necesario para el desarrollo del proyecto
 
-- Electrical wiring for the entire facility (Mira)
+* Electrical wiring for the entire facility (Mira)
 
-- 1 Mac Computer: 4GB, monitor, keyboard, mouse (ChinosInternational)
+* 1 Mac Computer: 4GB, monitor, keyboard, mouse (ChinosInternational)
 
-- Video Projector 6000-10000 Ansi Lumen 1.2-1:00 optical + VGA 10 mt to create a video projection of 7x3 mt (Mira)
+* Video Projector 6000-10000 Ansi Lumen 1.2-1:00 optical + VGA 10 mt to create a video projection of 7x3 mt (Mira)
 
-- Minidisplayport cable (ChinosInternational)
+* Minidisplayport cable (ChinosInternational)
 
-- 2 Speakers and 1 Amplifier+cables (Mira)
+* 2 Speakers and 1 Amplifier+cables (Mira)
 
-# Presupuesto necesario y aportaciones propias
+***
+### Presupuesto necesario y aportaciones propias
 
-**Aportaciones propias:**
+
+Aportaciones propias:
 
 - Materiales necesarios para realizacion del proyecto (caja de controles)
 
@@ -114,15 +137,21 @@ Cada totem se iluminará y reaccionará de manera diferente cada vez que la boli
 
 - Licencias de software (Mad Mapper)
 
-- Alojamiento**Presupuesto necesario:**- un vuelo para una persona de Varsovia (Polonia) a Barcelona
+- Alojamiento
 
-# Biografía artística de Chinos International
+Presupuesto necesario:
+- un vuelo para una persona de Varsovia (Polonia) a Barcelona
 
-Link: [http://chinosinternational.cc/projects/](http://chinosinternational.cc/projects/)
+***
+### Biografía artística de Chinos International
 
-##### **EXHIBITIONS:**
 
-* Instal·lació vídeo-màpping per a la cloenda de la Setmana Cultural de l’Escola d’Art i Disseny de Tortosa. Escola d’Art i Disseny de Tortosa, Tortosa, 24/05/2013[http://vimeo.com/67030695](http://vimeo.com/67030695)
+Link: [http://chinosinternational.cc/projects/](http://chinosinternational.cc/projects/)
+
+EXHIBITIONS:
+
+* Instal·lació vídeo-màpping per a la cloenda de la Setmana Cultural de l’Escola d’Art i Disseny de Tortosa. Escola d’Art i Disseny de Tortosa, Tortosa, 24/05/2013
+[http://vimeo.com/67030695](http://vimeo.com/67030695)
 
 * Paperjam, Daos Club, Timisoara (Rumania) 02/05/2013
 
@@ -132,23 +161,23 @@ Cada totem se iluminará y reaccionará de manera diferente cada vez que la boli
 
 * Supernova T-34, P52, BCN, 16/11/2012[ (link)](https://www.facebook.com/events/421286761254030/)
 
-##### **FESTIVALS:**
+FESTIVALS:
 
 * Cau d’Orellla, Freedonia, BCN, 22/03/2013
 
 * Micro-Muteck, BCN, 9/02/2013[ (link)](https://www.facebook.com/events/306764999446826/)
 
-##### **WORKSHOPS:**
+WORKSHOPS:
 
 * TV-Oscil·loscopi: Hackejant el Hardware, Escola d’Art i Disseny de Tortosa, Tortosa, 26/04/2013
 
 * TV-Oscilloscope, TTwister gallery, BCN, 28/02/2013[ (link)](https://www.facebook.com/events/156963477794899/)
 
-##### **CONFERENCES:**
+CONFERENCES:
 
 * "Estratègies de profanació del dispositiu virtual en l’era post-digital", Escola d’Art i Disseny de Tortosa.[ ](http://jordiplanas.net/article/)26/04/2013
 
-# Muestra de obra 
+Muestra de obra 
 
 Un video del prototipo del juego con efectos de luces LED: [https://vimeo.com/95458930](https://vimeo.com/95458930)
 

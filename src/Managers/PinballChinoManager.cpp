@@ -10,9 +10,26 @@
 #include "Ball.h"
 #include "eventComunication.h"
 
-PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150){
+string PinballChinoManager::projectName = "";
+
+//-------------------------------------------------------------
+PinballChinoManager::PinballChinoManager():
+            statusDisplay(ofGetWidth() - 300,ofGetHeight() - 150)
+{
 //  currentMission = new SimpleMission(1);
 	
+    string message = "loading project name";
+	if( XML.loadFile("projectSettings.xml") ){
+		message = "projectSettings.xml loaded!";
+	}else{
+		message = "unable to load projectSettings.xml check folder data/" + projectName;
+	}
+	cout << "Loading projectSettings.xml" << message << endl;
+	
+	
+	projectName = XML.getValue("PROJECT_NAME","", 0);
+    bAddScenarioCover = XML.getValue("ADD_SCENARIO_COVER",0, 0);
+    m_bLinkInitialBallPositionToHammer = XML.getValue("LINK_INITIAL_BALL_POS_TO_HAMMER",0, 0);
 
 	SimpleMission* mission0 = new SimpleMission(0);
 	idcurrentMission = 0;
@@ -22,8 +39,6 @@ PinballChinoManager::PinballChinoManager():statusDisplay(ofGetWidth() - 300,ofGe
 	
 	currentMissions.push_back(mission1);
 	currentMissions.push_back(mission2);
-	
-
 }
 
 //--------------------------------------------------------------
@@ -33,8 +48,7 @@ void PinballChinoManager::setup(){
 
     // setup bullet world
 	world.setup();
-	world.setGravity( ofVec3f(0, 4, 7) );
-
+	world.setGravity( ofVec3f(0, 10, 17) );
     // setup camera
 	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
@@ -49,7 +63,7 @@ void PinballChinoManager::setup(){
     // setup scenario
 	myScenario.setupMissions(&currentMissions);
 	myScenario.setCurrentMission(idcurrentMission);
-    myScenario.setup(world);
+    myScenario.setup(world, bAddScenarioCover);
     
     // setup scenario editor
     ScenarioEditor::getInstance()->setup(world, myScenario);
@@ -78,6 +92,7 @@ void PinballChinoManager::setup(){
 	//simple_shadow.setup(&camera);
 	
 
+    webSock.setup(this);
     
 }
 
@@ -116,6 +131,7 @@ void PinballChinoManager::update(){
 
     (currentMissions)[idcurrentMission]->update();
     
+    
 }
 
 //--------------------------------------------------------------
@@ -149,11 +165,6 @@ void PinballChinoManager::draw(){
 	//Draw Scenario
 	myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
 	
-	//Draw Sceario shadow Map
-	//simple_shadow.begin();
-    //myScenario.draw(ScenarioEditor::getInstance()->bEscenarioEditorMode);
-	//simple_shadow.end();
-	
 	chinoLights.disable();
 	ofDisableLighting();
 
@@ -161,7 +172,6 @@ void PinballChinoManager::draw(){
 	glDisable(GL_DEPTH_TEST);
 	camera.end();
 
-    
     statusDisplay.draw();
     missionDisplay.draw();
     
@@ -197,7 +207,12 @@ void PinballChinoManager::onRestartGameEvent(void){
                 {
                     Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
                     ofVec3f pos;
-                    pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    if(m_bLinkInitialBallPositionToHammer){
+                        pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                    }
+                    else{
+                        pos.set(ball->getInitialPos());
+                    }
                     ball->setPosition(pos);
                 }
             }
@@ -213,7 +228,16 @@ void PinballChinoManager::onRestartGameEvent(void){
 	if(GameStatus::getInstance()->Death()){
 		GameStatus::getInstance()->NewPlayer();
 		statusDisplay.GameOver();
+		
+		//Send new envet
+		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
 	}
+	else{
+		//Send Dramatic event sound
+		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
+	}
+	
+	
 	
     
 }
@@ -227,6 +251,11 @@ void PinballChinoManager::onMoveLeftLeverEvent(void){
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
             if (!lever->direction) lever->onMoveEvent();
+        }
+        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
+        {
+            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
+            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
         }
     }
     
@@ -255,6 +284,11 @@ void PinballChinoManager::onMoveRightLeverEvent(void){
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
             if (lever->direction) lever->onMoveEvent();
+        }
+        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
+        {
+            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
+            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
         }
     }
     
@@ -308,13 +342,13 @@ void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
 	cout << "saveCameraPosition ?? " << endl;
 	
 	//_camPose = cam.getTarget().getGlobalTransformMatrix();
-	ofxXmlSettings *XML = new ofxXmlSettings("cameraSettings.xml");
+	ofxXmlSettings *XML = new ofxXmlSettings(projectName+"/cameraSettings.xml");
     XML->setValue("_camPose_00", _camPose(0,0), 0); XML->setValue("_camPose_01", _camPose(0,1), 0); XML->setValue("_camPose_02", _camPose(0,2), 0); XML->setValue("_camPose_03", _camPose(0,3), 0);
     XML->setValue("_camPose_10", _camPose(1,0), 0); XML->setValue("_camPose_11", _camPose(1,1), 0); XML->setValue("_camPose_12", _camPose(1,2), 0); XML->setValue("_camPose_13", _camPose(1,3), 0);
     XML->setValue("_camPose_20", _camPose(2,0), 0); XML->setValue("_camPose_21", _camPose(2,1), 0); XML->setValue("_camPose_22", _camPose(2,2), 0); XML->setValue("_camPose_23", _camPose(2,3), 0);
     XML->setValue("_camPose_30", _camPose(3,0), 0); XML->setValue("_camPose_31", _camPose(3,1), 0); XML->setValue("_camPose_32", _camPose(3,2), 0); XML->setValue("_camPose_33", _camPose(3,3), 0);
 	//XML->setValue("distance", cam.getDistance(), 0);
-	XML->saveFile("cameraSettings.xml");
+	XML->saveFile(projectName+"/cameraSettings.xml");
     delete XML;
 	
 	cout << "end saveCameraPosition ?? " << endl;
@@ -326,10 +360,10 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 	ofMatrix4x4 _camPose;
 	
 	string message = "loading cameraSettings.xml";
-	if( XML.loadFile("cameraSettings.xml") ){
-		message = "cameraSettings.xml loaded!";
+	if( XML.loadFile(projectName+"/cameraSettings.xml") ){
+		message = projectName+"/cameraSettings.xml loaded!";
 	}else{
-		message = "unable to load cameraSettings.xml check data/ folder";
+		message = "unable to load cameraSettings.xml check folder data/" + projectName;
 	}
 	cout << "Loading Camera position" << message << endl;
 	
@@ -350,6 +384,8 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 
 //--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
+	
+	int amountX = 1;
 	
     switch(key)
     {
@@ -372,17 +408,42 @@ void PinballChinoManager::keyReleased(int key){
 		case 'n':
 			SoundManager::getInstance()->TogleMute();
             break;
-			/*
-		case 'g':
-			myScenario.ScenarioObjects[11]->onCollision();
-			myScenario.ScenarioObjects[12]->onCollision();
-			myScenario.ScenarioObjects[13]->onCollision();
-            break;
-			*/
+
+		case 'o':
+			cout << "camera.getPosition().x = " << camera.getPosition().x << endl;
+				camera.move(+amountX, 0, 0);
+			break;
 			
+		case 'p':
+			cout << "camera.getPosition().x = " << camera.getPosition().x << endl;
+				camera.move(-amountX, 0, 0);
+			break;
+		case 'i':
+			cout << "camera.getPosition().z = " << camera.getPosition().z << endl;
+			camera.move(0, 0, +amountX);
+			break;
+			
+		case 'k':
+			cout << "camera.getPosition().z = " << camera.getPosition().z << endl;
+			camera.move(0, 0, -amountX);
+			break;
+		case 'u':
+			cout << "camera.getPosition().y = " << camera.getPosition().y << endl;
+			camera.move(0, +amountX, 0);
+			break;
+			
+		case 'j':
+			cout << "camera.getPosition().y = " << camera.getPosition().y << endl;
+			camera.move(0, -amountX, 0);
+			break;
+			
+			//Hack a simple mission
+			//myScenario.ScenarioObjects[11]->onCollision();
+			//myScenario.ScenarioObjects[12]->onCollision();
+			//myScenario.ScenarioObjects[13]->onCollision();
 			
     }
-    
+	
     InputEventManager::keyReleased(key);
    
 	ScenarioEditor::getInstance()->keyReleased(key);

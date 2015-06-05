@@ -31,7 +31,16 @@ public:
         ShapeTypeContainer = 4,
         ShapeTypeHammer = 5,
         ShapeTypeObstacle = 6,
-        ShapeTypeBounds = 7
+        ShapeTypeBounds = 7,
+        ShapeTypeAnimatedObject = 8,
+        ShapeTypeAnimatedMesh = 9,
+        ShapeTypeGeneratedMesh = 10,
+        ShapeTypeAnimatedMotionPath = 11,
+        ShapeTypeGravity = 12,
+        ShapeTypeTeleporter = 13,
+		ShapeTypeRamp = 14,
+		ShapeTypeObstacleTriShapeMesh = 15
+		
     };
     
     //ofxBulletCustomShape	body;
@@ -44,6 +53,8 @@ public:
     void setDebugMode(bool &DebugMode);
     void drawDebug(void);
 	
+	//--------------------------------------------------------------
+	void setVisibility(int invisible);
 	void setupRot();
     
 	//general vars
@@ -61,12 +72,14 @@ public:
 	float		angleValY, last_angleValY;
 	float		angleValZ, last_angleValZ;
 	
+	float last_positionX, last_positionY, last_positionZ;
+	
 	float angleRotX;
 	float angleRotY;
 	float angleRotZ;
 	
 	
-	bool bvisible;
+	bool bVisible;
 
     int color;
     
@@ -117,7 +130,9 @@ public:
 	
 	//Game vars
 	void setPointsCollision(int points);
-	int collisionPoints = 0;
+	int collisionPoints;
+	
+	
 	
     
 protected:
