@@ -103,9 +103,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addLabel("Editor Object");
 			gui->addSpacer();
 			
-			gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
-			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
-			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
+			gui->addSlider("angleValX", 0, PI, &selectedObject->getFreeTransform()->angleValX);
+			gui->addSlider("angleValY", 0, PI, &selectedObject->getFreeTransform()->angleValY);
+			gui->addSlider("angleValZ", 0, PI, &selectedObject->getFreeTransform()->angleValZ);
 			
 			gui->addSlider("move posX", -100, 100, &selectedObject->getSimpleAttrib()->position.x);
 			gui->addSlider("move posY", -100, 100, &selectedObject->getSimpleAttrib()->position.y);

@@ -219,6 +219,7 @@
 		A544B03F1AE2C00E00BA7F27 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */; };
 		A544B0401AE2C00F00BA7F27 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */; };
 		A544B0411AE2C00F00BA7F27 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */; };
+		A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */; };
 		A54B11051AEA9EC2001BC2CD /* AssimpUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */; };
 		A54C8F671AE3E999000F8AC0 /* AnimatedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */; };
 		A551CA821AE83ABD00E372B2 /* GeneratedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A551CA801AE83ABD00E372B2 /* GeneratedMesh.cpp */; };
@@ -914,6 +915,8 @@
 		A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletDynamics.a; sourceTree = "<group>"; };
 		A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletSoftBody.a; sourceTree = "<group>"; };
 		A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLinearMath.a; sourceTree = "<group>"; };
+		A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreeTransformObject.cpp; sourceTree = "<group>"; };
+		A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTransformObject.h; sourceTree = "<group>"; };
 		A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssimpUtils.cpp; path = GameObjects/AssimpUtils.cpp; sourceTree = "<group>"; };
 		A54B11041AEA9EC2001BC2CD /* AssimpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssimpUtils.h; path = GameObjects/AssimpUtils.h; sourceTree = "<group>"; };
 		A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedMesh.cpp; path = GameObjects/AnimatedMesh.cpp; sourceTree = "<group>"; };
@@ -1255,6 +1258,8 @@
 				A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */,
 				84A108581AFF68CA0096EA0E /* Ramp.cpp */,
 				84A108591AFF68CA0096EA0E /* Ramp.h */,
+				A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */,
+				A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3236,6 +3241,7 @@
 				A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */,
 				A544AFF81AE2C00E00BA7F27 /* gim_box_set.cpp in Sources */,
 				A544AFB41AE2C00E00BA7F27 /* btActivatingCollisionAlgorithm.cpp in Sources */,
+				A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */,
 				A58DD20A18F8577300B1FE41 /* ofxUIDropDownList.cpp in Sources */,
 				A544AFB91AE2C00E00BA7F27 /* btCollisionObject.cpp in Sources */,
 				A58DD20718F8577300B1FE41 /* ofxUICanvas.cpp in Sources */,

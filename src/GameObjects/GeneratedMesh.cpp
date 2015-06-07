@@ -145,35 +145,7 @@ void GeneratedMesh::update(bool bEditorMode){
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
-	if(getPosition().x != last_positionX){
-		setPosition(getPosition());
-		last_positionX = getPosition().x;
-	}
-	if(getPosition().y != last_positionY){
-		setPosition(getPosition());
-		last_positionY = getPosition().y;
-	}
-	if(getPosition().z != last_positionZ){
-		setPosition(getPosition());
-		last_positionZ = getPosition().z;
-	}
-	
-	
-	if(angleValX != last_angleValX){
-		
-		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValX = angleValX;
-	}
-	if(angleValY != last_angleValY){
-		
-		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValY = angleValY;
-	}
-	if(angleValZ != last_angleValZ){
-		
-		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValZ = angleValZ;
-	}
+    getFreeTransform()->update();
     
     if(bAnimate) {
         vector< ofVec3f >& verts = mesh.getVertices();
@@ -285,7 +257,7 @@ void GeneratedMesh::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	//rotation.set(0, 0, 0, 0);
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
-    last_rotation = rotation;
+    getFreeTransform()->SetLastRotation(rotation);
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
