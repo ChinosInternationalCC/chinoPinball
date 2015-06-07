@@ -125,7 +125,7 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attrib
 //--------------------------------------------------------------
 void GeneratedMesh::update(bool bEditorMode){
     
-	autoScalingXYZ();
+	getFreeTransform()->autoScalingXYZ();
 
     
     

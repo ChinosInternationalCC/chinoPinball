@@ -20,8 +20,6 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 	bVisible = true;
     highlightColor = 0xff00ff;
 
-    //xlast_scale = scale;
-	scaleXyz = 0; last_scaleXyz = scaleXyz;
 	
     highlightTime = 60; // what units?
 
@@ -55,7 +53,7 @@ void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib
 	
 	//TODO scale
 	initScale = pAttrib->ModelScale;
-	last_scale = initScale;
+	getFreeTransform()->SetLastScale(initScale);
 	
     setupType();
     world = &myWorld;
@@ -80,7 +78,7 @@ void SimpleObject::setCurrentMissionId(int _idCurrentMission){
 //--------------------------------------------------------------
 void SimpleObject::update(bool bEditorMode){
     
-	autoScalingXYZ();
+	getFreeTransform()->autoScalingXYZ();
     
     assimpModel.update();
     
@@ -204,36 +202,6 @@ ofVec3f* SimpleObject::getScaleRef(){
 	return &pAttrib->ModelScale;
 }
 
-//--------------------------------------------------------------
-void SimpleObject::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = poSimpleBody->getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-        
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		pAttrib->ModelScale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = pAttrib->ModelScale;
-        
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);
-        
-		//update physyc object
-		poSimpleBody->getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-		assimpModel.setScale(pAttrib->ModelScale.x, pAttrib->ModelScale.y, pAttrib->ModelScale.z);
-	}
-    
-}
 
 
 
