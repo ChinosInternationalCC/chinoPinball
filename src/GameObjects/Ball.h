@@ -88,6 +88,8 @@ public:
     ofVec3f getInitialPos();
 
     BallAttrib* getBallAttr();
+
+	void stop(bool bStopBall);
 private:
 
     void setupBody(SimpleObjectAttrib &Attributes);

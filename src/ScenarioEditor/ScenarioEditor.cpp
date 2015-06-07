@@ -46,6 +46,8 @@ void ScenarioEditor::setup(chinoWorld &world, Scenario &scenario){
 	resetUIvalues();
     
 	bEscenarioEditorMode = false;
+
+	bStopBall = false;
 }
 
 
@@ -101,9 +103,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			gui->addLabel("Editor Object");
 			gui->addSpacer();
 			
-			gui->addSlider("angleValX", 0, PI, &selectedObject->angleValX);
-			gui->addSlider("angleValY", 0, PI, &selectedObject->angleValY);
-			gui->addSlider("angleValZ", 0, PI, &selectedObject->angleValZ);
+			gui->addSlider("angleValX", 0, PI, &selectedObject->getFreeTransform()->angleValX);
+			gui->addSlider("angleValY", 0, PI, &selectedObject->getFreeTransform()->angleValY);
+			gui->addSlider("angleValZ", 0, PI, &selectedObject->getFreeTransform()->angleValZ);
 			
 			gui->addSlider("move posX", -100, 100, &selectedObject->getSimpleAttrib()->position.x);
 			gui->addSlider("move posY", -100, 100, &selectedObject->getSimpleAttrib()->position.y);
@@ -128,6 +130,9 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 			
 			gui->addSpacer();
 			gui->addLabelToggle("Toggle Visibility", &bVisibleObject); // PRESS & PICK TO Toogle Visibility
+
+			gui->addSpacer();
+			gui->addLabelToggle("Stop Ball", &bStopBall);
 			
 			gui->addLabel("Escenario BoundingBox");
 			gui->addSpacer();
@@ -403,7 +408,9 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
         //blue = clr.b;
         //green = clr.g;
         clr.getHex();
-    }
+    }else if(name == "Stop Ball"){
+		scenario->getBalls()[0]->stop(bStopBall);
+	}
 }
 
 

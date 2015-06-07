@@ -105,12 +105,6 @@ void Hammer::updateSpecific(bool bEditorMode){
 		}
 	}
 	
-	//Update Physic work rotation if GUI change it
-	if(rotation != last_rotation){
-		setPhysicsRotation(rotation);
-		last_rotation = rotation;
-	}
-	
 
 }
 
@@ -193,7 +187,7 @@ void Hammer::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	//rotation.set(0, 0, 0, 0);
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
-    last_rotation = rotation;
+    getFreeTransform()->SetLastRotation(rotation);
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );

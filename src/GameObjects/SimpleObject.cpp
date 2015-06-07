@@ -10,10 +10,11 @@
 
 SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
                            vector <SimpleMission *> * _currentMissions,
-                           float _DefaultPositionZ){
+                           float _DefaultPositionZ)
+:oFreeTransform(this){
    
     poSimpleBody = poBulletBaseShape;
-	idobject = -1;
+	ObjectId = -1;
 	bAnimation = false;
     color = 0xffffff;
 	bVisible = true;
@@ -25,14 +26,6 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
     highlightTime = 60; // what units?
 
     bDebugMode = false;
-	
-	last_angleValX = angleValX = 0;
-	last_angleValY = angleValY = 0;
-	last_angleValZ = angleValZ = 0;
-	
-	axis2RotateX = ofVec3f(1,0,0);
-	axis2RotateY = ofVec3f(0,1,0);
-	axis2RotateZ = ofVec3f(0,0,1);
 
 	
 	//////
@@ -41,8 +34,12 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 	
 	collisionPoints = 0;
     
-        fDefaultPositionZ = _DefaultPositionZ;
+    fDefaultPositionZ = _DefaultPositionZ;
+
+	/* init pointers */
 	pAttrib = NULL;
+	world = NULL;
+
 }
 
 //--------------------------------------------------------------
@@ -86,39 +83,8 @@ void SimpleObject::update(bool bEditorMode){
 	autoScalingXYZ();
     
     assimpModel.update();
-
-	
-	if(getPosition().x != last_positionX){
-		setPhysicsPosition(getPosition());
-		last_positionX = getPosition().x;
-	}
-	if(getPosition().y != last_positionY){
-		setPosition(getPosition());
-		last_positionY = getPosition().y;
-	}
-	if(getPosition().z != last_positionZ){
-		setPosition(getPosition());
-		last_positionZ = getPosition().z;
-	}
-	
-	
-	if(angleValX != last_angleValX){
-		
-		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValX = angleValX;
-	}
-	if(angleValY != last_angleValY){
-		
-		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValY = angleValY;
-	}
-	if(angleValZ != last_angleValZ){
-		
-		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValZ = angleValZ;
-	}
-	
-	//poSimpleBody->activate();
+    
+    oFreeTransform.update();
     
     updateSpecific(bEditorMode);
     
@@ -219,9 +185,12 @@ ofVec3f SimpleObject::getPosition(){
 
 //--------------------------------------------------------------
 void SimpleObject::setDefaultPostion(){
+
+    /*
 	last_positionX = pAttrib->position.x;
 	last_positionY = pAttrib->position.y;
 	last_positionZ = pAttrib->position.z;
+     */
 }
 
 
@@ -266,34 +235,19 @@ void SimpleObject::autoScalingXYZ(){
     
 }
 
-//--------------------------------------------------------------
-void SimpleObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
-	
-	
-	btTransform transform;
-	btRigidBody* a_rb = poSimpleBody->getRigidBody();
-    a_rb->getMotionState()->getWorldTransform( transform );
-    
-    // rotate
-	btQuaternion currentRotation = transform.getRotation();
-	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
-    
-	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
-	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
-	transform.setRotation(rotate * currentRotation);
-    
-	a_rb->getMotionState()->setWorldTransform( transform );
-	
-	btQuaternion Rotation2Save = a_rb->getOrientation();
-	//save this var for the XML
-	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
-	
-	poSimpleBody->activate();
-	
-	
-}
+
 
 //--------------------------------------------------------------
 SimpleObjectAttrib * SimpleObject::getSimpleAttrib(){
     return pAttrib;
+}
+
+//--------------------------------------------------------------
+ofxBulletBaseShape* SimpleObject::getSimpleBody(){
+    return poSimpleBody;
+}
+
+//--------------------------------------------------------------
+FreeTransformObject* SimpleObject::getFreeTransform(){
+    return &oFreeTransform;
 }

@@ -12,6 +12,7 @@
 #include "ofxBullet.h"
 #include "ofxAssimpModelLoader.h"
 #include "SimpleMission.h"
+#include "FreeTransformObject.h"
 
 class SimpleObjectAttrib{
 public:
@@ -85,9 +86,7 @@ public:
     
     
 	//general vars
-	int idobject;
 	
-    
 	void setVisibility(int invisible);
     
 	bool bVisible;
@@ -138,23 +137,14 @@ public:
 	void setPhysicsRotation(ofQuaternion rotation);
     
 
-    float last_positionX, last_positionY, last_positionZ;
-    
-	void setupRot();
-    //Rotations
-	ofQuaternion    rotation, last_rotation;
-	ofVec3f		axis2RotateX;
-	ofVec3f		axis2RotateY;
-	ofVec3f		axis2RotateZ;
-	float		angleValX, last_angleValX;
-	float		angleValY, last_angleValY;
-	float		angleValZ, last_angleValZ;
+    ofQuaternion    rotation;
+
 
     
     //Scaling
     ofVec3f         initScale;
     void autoScalingXYZ();
-    void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
+    
     
 	
 	//3d models, Texteres and Colors
@@ -176,6 +166,9 @@ public:
     void genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes);
     SimpleObjectAttrib * getSimpleAttrib();
     
+    ofxBulletBaseShape* getSimpleBody();
+    FreeTransformObject* getFreeTransform();
+    
 protected:
 	int						idCurrtentMission;
     vector <SimpleMission *> *currentMissions;
@@ -194,17 +187,15 @@ protected:
     virtual void setupType() = 0;
     
 
-
+   
 private:
     ofxBulletBaseShape	*poSimpleBody;
     float fDefaultPositionZ;
     
     ofMatrix4x4 worldposition;
     SimpleObjectAttrib *pAttrib;
-    
+    FreeTransformObject oFreeTransform;
 	
-    
-   
 };
 
 
