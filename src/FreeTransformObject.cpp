@@ -19,6 +19,9 @@ FreeTransformObject::FreeTransformObject(SimpleObject *pSimpleObj){
 	axis2RotateX = ofVec3f(1,0,0);
 	axis2RotateY = ofVec3f(0,1,0);
 	axis2RotateZ = ofVec3f(0,0,1);
+    
+    //xlast_scale = scale;
+	scaleXyz = 0; last_scaleXyz = scaleXyz;
 }
 
 void FreeTransformObject::update(){
@@ -84,4 +87,41 @@ void FreeTransformObject::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
 //--------------------------------------------------------------
 void FreeTransformObject::SetLastRotation(ofQuaternion rotation){
     last_rotation = rotation;
+}
+
+//--------------------------------------------------------------
+void FreeTransformObject::autoScalingXYZ(){
+	
+	btVector3 myObjectScale;
+	ofVec3f myOfObjectScale;
+	
+	
+	if (scaleXyz != last_scaleXyz) {
+		float diff = scaleXyz - last_scaleXyz;
+		last_scaleXyz = scaleXyz;
+		
+		//Get Scales
+		myObjectScale = m_poSimpleObj->getSimpleBody()->getRigidBody()->getCollisionShape()->getLocalScaling();
+		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
+        
+		//Update sizes values
+		myOfObjectScale += ofMap(diff, 0, m_poSimpleObj->initScale.z, 0, 0.45); //+= diff;
+		m_poSimpleObj->getSimpleAttrib()->ModelScale += ofMap(diff, 0, m_poSimpleObj->initScale.z, 0, 0.025);
+		last_scale = m_poSimpleObj->getSimpleAttrib()->ModelScale;
+        
+		myObjectScale.setX(myOfObjectScale.x);
+		myObjectScale.setY(myOfObjectScale.y);
+		myObjectScale.setZ(myOfObjectScale.z);
+        
+		//update physyc object
+		m_poSimpleObj->getSimpleBody()->getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
+		m_poSimpleObj->assimpModel.setScale(m_poSimpleObj->getSimpleAttrib()->ModelScale.x,
+                                            m_poSimpleObj->getSimpleAttrib()->ModelScale.y,
+                                            m_poSimpleObj->getSimpleAttrib()->ModelScale.z);
+	}
+    
+}
+
+void FreeTransformObject::SetLastScale(ofVec3f scale){
+    last_scale = scale;
 }

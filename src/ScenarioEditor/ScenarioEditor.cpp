@@ -117,7 +117,7 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 				//gui->addIntSlider("COLOR", 0.0, 255.0, &selectedObject->color);
 	
 				gui->addSpacer();
-				gui->addSlider("Scale XYZ", -1, 1, &selectedObject->scaleXyz);
+				gui->addSlider("Scale XYZ", -1, 1, &selectedObject->getFreeTransform()->scaleXyz);
 				gui->addSpacer();
 				gui->addSlider("damping", 0.0, 1.0, &selectedObject->getSimpleAttrib()->damping);
 				gui->addSlider("friction", 0.0, 1.0, &selectedObject->getSimpleAttrib()->friction);
