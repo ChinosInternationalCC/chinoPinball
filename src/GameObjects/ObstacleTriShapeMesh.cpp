@@ -10,7 +10,7 @@
 
 
 ObstacleTriShapeMesh::ObstacleTriShapeMesh(vector <SimpleMission *> * _currentMissions) :
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -1.5)
 {
 	collisionPoints = 0;
 	    world = NULL;
@@ -19,7 +19,8 @@ SimpleObject(_currentMissions)
 
 //---------------------------------
 void ObstacleTriShapeMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
-	
+	//position.z = -1.5;
+    //setDefaultZ();
 	
 }
 
@@ -42,12 +43,6 @@ void ObstacleTriShapeMesh::setDefaultPostion(){
 }
 
 //--------------------------------------------------------------
-void ObstacleTriShapeMesh::update(bool bEditorMode){
-	
-	
-	
-}
-
 void ObstacleTriShapeMesh::updateSpecific(bool bEditorMode){
 	//DO Nothing
 }
@@ -90,50 +85,6 @@ void ObstacleTriShapeMesh::onCollision(){
 
 void ObstacleTriShapeMesh::onCollisionSpecific(){
 	//Do Nothing
-}
-
-
-
-//------------------------------------------------------------
-void ObstacleTriShapeMesh::setDefaultZ(){
-	
-	position.z = -1.5;
-	setPosition(position);
-	
-}
-
-//------------------------------------------------------------
-void ObstacleTriShapeMesh::setPosition(ofVec3f position){
-	
-	btTransform transform;
-	btRigidBody* rigidBody = body.getRigidBody();
-	rigidBody->getMotionState()->getWorldTransform( transform );
-	btVector3 origin;
-	origin.setX(position.x);
-	origin.setY(position.y);
-	origin.setZ(position.z);
-	transform.setOrigin(origin);
-	rigidBody->getMotionState()->setWorldTransform( transform );
-	
-}
-
-//------------------------------------------------------------
-void ObstacleTriShapeMesh::setRotation(ofQuaternion rotation){
-	
-	btTransform transform;
-	btRigidBody* rigidBody = body.getRigidBody();
-	rigidBody->getMotionState()->getWorldTransform( transform );
-	
-	btQuaternion originRot;
-	originRot.setX(rotation.x());
-	originRot.setY(rotation.y());
-	originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-	
-	transform.setRotation(originRot);
-	
-	rigidBody->getMotionState()->setWorldTransform( transform );
-	
 }
 
 //--------------------------------------------------------------

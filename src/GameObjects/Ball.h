@@ -14,31 +14,64 @@
 #include "SimpleObject.h"
 #include "SoundManager.h"
 
+class BallAttrib : public SimpleObjectAttrib{
+public:
+    inline BallAttrib(string modelPath,
+					  ofVec3f _position,
+                      float _damping,
+                      float _friction,
+                      float _mass,
+                      float _restitution,
+                      float _radius,
+					  ofVec3f _ModelScale);
+    float radius;
+    
+};
+
+inline BallAttrib::BallAttrib(string _modelPath,
+							  ofVec3f _position,
+                              float _damping,
+                              float _friction,
+                              float _mass,
+                              float _restitution,
+                              float _radius,
+							  ofVec3f _ModelScale) :
+    SimpleObjectAttrib(_modelPath,
+					   _position,
+					   _damping,
+					   _friction,
+					   _mass,
+					   _restitution,
+					   _ModelScale)
+	{
+        radius = _radius;
+	}
+
 
 class Ball : public SimpleObject
 {
 public:
-    Ball(vector <SimpleMission *> * _currentMissions);//SimpleObjects force that
-    void setup(ofxBulletWorldRigid &world, ofVec3f pos,
-               float mass = 1,
-               float radius = .5,
-               float restitution = 0.45,
-               float friction = 0.25);
-    void update(bool bEditorMode);
+    Ball(vector <SimpleMission *> * _currentMissions, float radius);//SimpleObjects force that
+    void setup(ofxBulletWorldRigid &myWorld,
+               SimpleObjectAttrib *Attrib
+               /*
+               ofVec3f pos,
+               float mass,
+               float radius,
+               float restitution,
+               float friction
+                */);
+    
+    void updateSpecific(bool bEditorMode);
     void draw(bool bEditorMode);
 
 	void setupRot();
-    
-    float radius;
-    float mass;
-    float restitution;
-    float friction;
+
     ofxBulletSphere body;
-    ofxBulletWorldRigid world;
+
     
     bool isInsideBox(float boxSize);
-    bool setGameOverBall(void); //callback from GameOverCollision,
-                                //returns true if the status was changed, false if already set
+
     enum BallStatus{
         BallStatusWaiting = 0,
         BallStatusPlaying,
@@ -51,14 +84,19 @@ public:
     void reset();
     
     void onCollision();
-    void setDefaultZ();
-    void setPosition(ofVec3f position);
-    		void setRotation(ofQuaternion rotation);
     
     ofVec3f getInitialPos();
 
+    BallAttrib* getBallAttr();
+
+	void stop(bool bStopBall);
 private:
-    BallStatus m_status; // waiting, playing, game over
+
+    void setupBody(SimpleObjectAttrib &Attributes);
+    void setupLookStyle(SimpleObjectAttrib &Attributes);
+    void setupAnimations(SimpleObjectAttrib &Attributes);
+    void setupType();
+
 	ofVec3f m_initialPos;
 	
 	//shadow fake

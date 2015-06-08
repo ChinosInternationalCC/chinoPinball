@@ -208,7 +208,7 @@ void PinballChinoManager::onRestartGameEvent(void){
                     Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
                     ofVec3f pos;
                     if(m_bLinkInitialBallPositionToHammer){
-                        pos.set(hammer->position.x,hammer->position.y-5,hammer->position.z);
+                        pos.set(hammer->getPosition().x,hammer->getPosition().y-5,hammer->getPosition().z);
                     }
                     else{
                         pos.set(ball->getInitialPos());
@@ -250,12 +250,7 @@ void PinballChinoManager::onMoveLeftLeverEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 3)
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
-            if (!lever->direction) lever->onMoveEvent();
-        }
-        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
-        {
-            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
-            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
+            if (!lever->getLeverAttr()->direction) lever->onMoveEvent();
         }
     }
     
@@ -269,7 +264,7 @@ void PinballChinoManager::onReleaseLeftLeverEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 3)
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
-            if (!lever->direction) lever->onReleaseEvent();
+            if (!lever->getLeverAttr()->direction) lever->onReleaseEvent();
         }
     }
     
@@ -283,12 +278,7 @@ void PinballChinoManager::onMoveRightLeverEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 3)
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
-            if (lever->direction) lever->onMoveEvent();
-        }
-        if (myScenario.ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath)
-        {
-            AnimatedMotionPath* poAnimatedMotionPath = (AnimatedMotionPath*) myScenario.ScenarioObjects[i];
-            poAnimatedMotionPath->MotionPathIncrementAnimationEndPosition();
+            if (lever->getLeverAttr()->direction) lever->onMoveEvent();
         }
     }
     
@@ -302,7 +292,7 @@ void PinballChinoManager::onReleaseRightLeverEvent(void){
         if (myScenario.ScenarioObjects[i]->type == 3)
         {
             Lever* lever = (Lever*) myScenario.ScenarioObjects[i];
-            if (lever->direction) lever->onReleaseEvent();
+            if (lever->getLeverAttr()->direction) lever->onReleaseEvent();
         }
     }
     

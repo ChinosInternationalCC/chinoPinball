@@ -8,47 +8,54 @@
 
 #include "Obstacle.h"
 
+
+
 Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
-    SimpleObject(_currentMissions)
+    SimpleObject(&body, _currentMissions, -1.0)
 {
     collisionPoints = 0;
-    m_poWorld = NULL;
 }
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+void Obstacle::setup(ofxBulletWorldRigid &world,
+                     SimpleObjectAttrib *Attributes){
+    //position.z = -1.5;
+   // setDefaultZ();
     
-    m_poWorld = &world;
-    collisionTime = -120;
-    ModelPath = url;
-    this->position = position;
 	
-    //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    
-    //TODO to try with ofBtGetCylinderCollisionShape, for improve collision detection
-    
-    // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
+    genericSetup(world, *Attributes);
 
-    
+
+	
+    setupSpecific();
+}
+
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes; 
+ *  >>> getObstacleAttr() simplifies this cast
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+
+void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
+	
+	// create ofxBullet shape
+	body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
+	
     // load 3D model
-    scale = ModelScale;
-	assimpModel.loadModel(url, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.loadModel(getSimpleAttrib()->modelPath, true);
+	assimpModel.setScale(getScale().x, getScale().y, getScale().z);
 	assimpModel.setPosition(0, 0, 0);
-
-    //ofEnableSeparateSpecularLight();
     
-	//save init values
-	initScale = scale;
-	
-	
+    
     // add 3D meshes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
-        body.addMesh(assimpModel.getMesh(i), scale, true);
+        body.addMesh(assimpModel.getMesh(i), getScale(), true);
     }
-
+    
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
@@ -61,135 +68,38 @@ void Obstacle::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, o
 	body.setProperties(3, .95); // restitution, friction
 	body.setDamping( .25 );
     
-   // btTransform transform;
-    //btRigidBody* a_rb = body.getRigidBody();
-    //a_rb->getMotionState()->getWorldTransform( transform );
     
-    // rotate
-    //    btQuaternion currentRotation = transform.getRotation();
-    //    btQuaternion rotate = btQuaternion(btVector3(0,0,1), ofDegToRad(degrees));
-//    btQuaternion rotate;
-    
-    //    rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle));
- //   rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
- //   transform.setRotation(rotate * rotation);
-    
- //   a_rb->getMotionState()->setWorldTransform( transform );
-	
-	//Set Rotation Objects
-	setupRot();
-	
     body.activate();
-	
-	setDefaultZ();
-	
-	setDefaultPostion();
-	
-    setupSpecific();
 }
 
-void Obstacle::setupSpecific(){
+
+//----------------------------------
+void Obstacle::setupLookStyle(SimpleObjectAttrib &Attributes){
+    //NOTHING
+}
+
+//----------------------------------
+void Obstacle::setupAnimations(SimpleObjectAttrib &Attributes){
+    
+    collisionTime = -120;
+}
+
+//----------------------------------
+void Obstacle::setupType(){
     type = ShapeTypeObstacle;
 }
 
 
 //--------------------------------------------------------------
-void Obstacle::setDefaultPostion(){
-	last_positionX = position.x;
-	last_positionY = position.y;
-	last_positionZ = position.z;
-}
-//--------------------------------------------------------------
-void Obstacle::update(bool bEditorMode){
-
-	autoScalingXYZ();
-
-    assimpModel.update();
-
-	//Udpate mesch if there are changes
-	// add 3D mashes to ofxBullet shape
-    //for(int i = 0; i < assimpModel.getNumMeshes(); i++)
-    //{
-		//btVector3 myBtScale;
-		//myBtScale.setX(scale.x);
-		//myBtScale.setY(scale.y);
-		//myBtScale.setZ(scale.z);
-		
-        //body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);//->m_collisionShape
-		//setImplicitShapeDimensions(myBtScale);
-		//addMesh(assimpModel.getMesh(i), scale, true);
-    //}
-	
-	if(position.x != last_positionX){
-		setPosition(position);
-		last_positionX = position.x;
-	}
-	if(position.y != last_positionY){
-		setPosition(position);
-		last_positionY = position.y;
-	}
-	if(position.z != last_positionZ){
-		setPosition(position);
-		last_positionZ = position.z;
-	}
-	
-	
-	if(angleValX != last_angleValX){
-		
-		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValX = angleValX;
-	}
-	if(angleValY != last_angleValY){
-		
-		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValY = angleValY;
-	}
-	if(angleValZ != last_angleValZ){
-		
-		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValZ = angleValZ;
-	}
-	
-	body.activate();
-    
-    updateSpecific(bEditorMode);
-
-}
-
-void Obstacle::updateSpecific(bool bEditorMode){
+void Obstacle::setupSpecific(){
     //DO Nothing
 }
 
 //--------------------------------------------------------------
-void Obstacle::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = scale;
-
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);		
-
-		//update physyc object
-		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-		assimpModel.setScale(scale.x, scale.y, scale.z);
-	}
-
+void Obstacle::updateSpecific(bool bEditorMode){
+    //DO Nothing
 }
+
 
 //--------------------------------------------------------------
 void Obstacle::draw(bool bEditorMode){
@@ -213,7 +123,7 @@ void Obstacle::draw(bool bEditorMode){
 
 	ofPoint scaleModel		= assimpModel.getScale();
 	
-	body.transformGL();
+	 body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
     assimpModel.getMesh(0).drawFaces();
 	body.restoreTramsformGL();
@@ -250,51 +160,9 @@ void Obstacle::onCollision(){
     onCollisionSpecific();
 }
 
-
+//--------------------------------------------------------------
 void Obstacle::onCollisionSpecific(){
     //Do Nothing
-}
-
-//------------------------------------------------------------
-void Obstacle::setDefaultZ(){
-    
-    position.z = -1.5;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Obstacle::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-//------------------------------------------------------------
-void Obstacle::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-   
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
 }
 
 //--------------------------------------------------------------
@@ -306,39 +174,20 @@ void Obstacle::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	//rotation.set(0, 0, 0, 0);
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
-    last_rotation = rotation;
+    getFreeTransform()->SetLastRotation(rotation);
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );
 }
 
-
 //--------------------------------------------------------------
-void Obstacle::setAngle2Rotate(float angle2rot, ofVec3f axis2rot) {
-	
-	
-	btTransform transform;
-	btRigidBody* a_rb = body.getRigidBody();
-    a_rb->getMotionState()->getWorldTransform( transform );
-    
-    // rotate
-	btQuaternion currentRotation = transform.getRotation();
-	btQuaternion rotate = btQuaternion(btVector3(axis2rot.x,axis2rot.y,axis2rot.z), ofDegToRad(angle2rot));
-    
-	//rotation.setRotation(btVector3(0,0,1), ofDegToRad(angle2rot));
-	//rotate.setEuler(ofDegToRad(0), ofDegToRad(90), ofDegToRad(0));
-	transform.setRotation(rotate * currentRotation);
-    
-	a_rb->getMotionState()->setWorldTransform( transform );
-	
-	btQuaternion Rotation2Save = a_rb->getOrientation();
-	//save this var for the XML
-	rotation.set(Rotation2Save.x(), Rotation2Save.y(), Rotation2Save.z(), Rotation2Save.w());
-	
-	body.activate();
-	
-	
+ObstacleAttrib* Obstacle::getObstacleAttr(){
+    return (ObstacleAttrib*) getSimpleAttrib();
 }
+
+
+
+
 
 
 

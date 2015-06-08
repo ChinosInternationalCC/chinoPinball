@@ -75,6 +75,8 @@ public:
     //float gresolution;
     ofPoint gposition;
     
+	bool bStopBall;
+
     float gnoiseScale;
     float *buffer;
     //vector<float> xPos;
@@ -87,8 +89,6 @@ public:
     
     ofImage *image;
 	
-	
-	//&_obj->angleRotX
 	ofVec3f angleRotations;
 	
 };

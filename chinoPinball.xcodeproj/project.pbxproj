@@ -31,7 +31,6 @@
 		845EA3F11963358500A6EC71 /* eventGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3EF1963358500A6EC71 /* eventGame.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
 		84A1085A1AFF68CA0096EA0E /* Ramp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A108581AFF68CA0096EA0E /* Ramp.cpp */; };
-		84A1085D1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */; };
 		84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E6E5F618E60E3A00A582DF /* eventComunication.cpp */; };
 		85AD5D8F65A5DCAC92E9B56F /* Lever.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526021A4148A762F4E6258D8 /* Lever.cpp */; };
 		879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */; };
@@ -44,7 +43,6 @@
 		989AFEB35DE611395A04702B /* Scenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B58D5242A93AA20C3562059D /* Scenario.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A5B1FAD3F30C8065C396ACB /* NetworkingUtilsWin.cpp */; };
-		A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535520A1AE050A50003463B /* AnimatedObject.cpp */; };
 		A535952C18F3430A00065D69 /* arduComunicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952A18F3430A00065D69 /* arduComunicationManager.cpp */; };
 		A535952F18F3435100065D69 /* OSCManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535952D18F3435100065D69 /* OSCManager.cpp */; };
 		A53649EF1AAE34D70099D1B9 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A53649C01AAE34D70099D1B9 /* jsoncpp.cpp */; };
@@ -221,7 +219,7 @@
 		A544B03F1AE2C00E00BA7F27 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */; };
 		A544B0401AE2C00F00BA7F27 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */; };
 		A544B0411AE2C00F00BA7F27 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */; };
-		A54B11021AEA9D0F001BC2CD /* AnimatedMotionPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54B11001AEA9D0F001BC2CD /* AnimatedMotionPath.cpp */; };
+		A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */; };
 		A54B11051AEA9EC2001BC2CD /* AssimpUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */; };
 		A54C8F671AE3E999000F8AC0 /* AnimatedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */; };
 		A551CA821AE83ABD00E372B2 /* GeneratedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A551CA801AE83ABD00E372B2 /* GeneratedMesh.cpp */; };
@@ -301,7 +299,6 @@
 		A7C5BC5618B788BB006187D9 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4B18B788BB006187D9 /* ofxSyphonClient.mm */; };
 		A7C5BC5718B788BB006187D9 /* ofxSyphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4D18B788BB006187D9 /* ofxSyphonServer.mm */; };
 		A7C5BC5818B788BB006187D9 /* ofxSyphonServerDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7C5BC4F18B788BB006187D9 /* ofxSyphonServerDirectory.mm */; };
-		A99834FD19540EAB0086E53E /* Bounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A99834FB19540EAB0086E53E /* Bounds.cpp */; };
 		A9B2F59918BF56AB002B9892 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9B2F59718BF56AB002B9892 /* SoundManager.cpp */; };
 		AD2A8FA9407668D094995282 /* GameStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BE00BCB6354681E4D18380F /* GameStatus.cpp */; };
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
@@ -443,8 +440,6 @@
 		8492867A1AED416F002F47DC /* scenario.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = scenario.xml; path = bin/data/FIMG/scenario.xml; sourceTree = SOURCE_ROOT; };
 		84A108581AFF68CA0096EA0E /* Ramp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ramp.cpp; path = GameObjects/Ramp.cpp; sourceTree = "<group>"; };
 		84A108591AFF68CA0096EA0E /* Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ramp.h; path = GameObjects/Ramp.h; sourceTree = "<group>"; };
-		84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObstacleTriShapeMesh.cpp; path = GameObjects/ObstacleTriShapeMesh.cpp; sourceTree = "<group>"; };
-		84A1085C1AFF7A910096EA0E /* ObstacleTriShapeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObstacleTriShapeMesh.h; path = GameObjects/ObstacleTriShapeMesh.h; sourceTree = "<group>"; };
 		84E6E5F618E60E3A00A582DF /* eventComunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventComunication.cpp; sourceTree = "<group>"; };
 		84E6E5F718E60E3A00A582DF /* eventComunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventComunication.h; sourceTree = "<group>"; };
 		8504FF32A0062075B2B34F3C /* aiMatrix3x3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiMatrix3x3.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiMatrix3x3.h; sourceTree = SOURCE_ROOT; };
@@ -463,8 +458,6 @@
 		9F5725666F17D63A0FD29016 /* ScenarioEditor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScenarioEditor.h; path = src/ScenarioEditor/ScenarioEditor.h; sourceTree = SOURCE_ROOT; };
 		9F7986DC4EB05E75FCE2C777 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
 		A2AAA8CA403479E6FCDF920E /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscHostEndianness.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
-		A535520A1AE050A50003463B /* AnimatedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedObject.cpp; path = GameObjects/AnimatedObject.cpp; sourceTree = "<group>"; };
-		A535520B1AE050A50003463B /* AnimatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedObject.h; path = GameObjects/AnimatedObject.h; sourceTree = "<group>"; };
 		A535952A18F3430A00065D69 /* arduComunicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arduComunicationManager.cpp; path = src/Managers/arduComunicationManager.cpp; sourceTree = SOURCE_ROOT; };
 		A535952B18F3430A00065D69 /* arduComunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arduComunicationManager.h; path = src/Managers/arduComunicationManager.h; sourceTree = SOURCE_ROOT; };
 		A535952D18F3435100065D69 /* OSCManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSCManager.cpp; path = Managers/OSCManager.cpp; sourceTree = "<group>"; };
@@ -922,8 +915,8 @@
 		A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletDynamics.a; sourceTree = "<group>"; };
 		A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletSoftBody.a; sourceTree = "<group>"; };
 		A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLinearMath.a; sourceTree = "<group>"; };
-		A54B11001AEA9D0F001BC2CD /* AnimatedMotionPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedMotionPath.cpp; path = GameObjects/AnimatedMotionPath.cpp; sourceTree = "<group>"; };
-		A54B11011AEA9D0F001BC2CD /* AnimatedMotionPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedMotionPath.h; path = GameObjects/AnimatedMotionPath.h; sourceTree = "<group>"; };
+		A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreeTransformObject.cpp; sourceTree = "<group>"; };
+		A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTransformObject.h; sourceTree = "<group>"; };
 		A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssimpUtils.cpp; path = GameObjects/AssimpUtils.cpp; sourceTree = "<group>"; };
 		A54B11041AEA9EC2001BC2CD /* AssimpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssimpUtils.h; path = GameObjects/AssimpUtils.h; sourceTree = "<group>"; };
 		A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedMesh.cpp; path = GameObjects/AnimatedMesh.cpp; sourceTree = "<group>"; };
@@ -1117,8 +1110,6 @@
 		A7C5BC4D18B788BB006187D9 /* ofxSyphonServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSyphonServer.mm; sourceTree = "<group>"; };
 		A7C5BC4E18B788BB006187D9 /* ofxSyphonServerDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSyphonServerDirectory.h; sourceTree = "<group>"; };
 		A7C5BC4F18B788BB006187D9 /* ofxSyphonServerDirectory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSyphonServerDirectory.mm; sourceTree = "<group>"; };
-		A99834FB19540EAB0086E53E /* Bounds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bounds.cpp; path = GameObjects/Bounds.cpp; sourceTree = "<group>"; };
-		A99834FC19540EAB0086E53E /* Bounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bounds.h; path = GameObjects/Bounds.h; sourceTree = "<group>"; };
 		A9B2F59718BF56AB002B9892 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundManager.cpp; path = Managers/SoundManager.cpp; sourceTree = "<group>"; };
 		A9B2F59818BF56AB002B9892 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = Managers/SoundManager.h; sourceTree = "<group>"; };
 		ADD194746185E2DA11468377 /* IpEndpointName.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = IpEndpointName.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp; sourceTree = SOURCE_ROOT; };
@@ -1245,6 +1236,8 @@
 		0C7B7E46723914CB38E9D865 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
+				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				6307ED7E818A748D22DBB63B /* Ball.cpp */,
 				61036DF8AF6A2EEBFB8892E9 /* Ball.h */,
 				0B5F11AE69A054442FA8FF1B /* Hammer.cpp */,
@@ -1253,20 +1246,10 @@
 				5BAE6FA692BC31E0D587051E /* Lever.h */,
 				349581733A8DAE2DCC57BEF5 /* Obstacle.cpp */,
 				BBF2C1C9F7F371F8B1268B74 /* Obstacle.h */,
-				84A1085B1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp */,
-				84A1085C1AFF7A910096EA0E /* ObstacleTriShapeMesh.h */,
-				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
-				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
-				A99834FB19540EAB0086E53E /* Bounds.cpp */,
-				A99834FC19540EAB0086E53E /* Bounds.h */,
-				A535520A1AE050A50003463B /* AnimatedObject.cpp */,
-				A535520B1AE050A50003463B /* AnimatedObject.h */,
 				A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */,
 				A54C8F661AE3E999000F8AC0 /* AnimatedMesh.h */,
 				A551CA801AE83ABD00E372B2 /* GeneratedMesh.cpp */,
 				A551CA811AE83ABD00E372B2 /* GeneratedMesh.h */,
-				A54B11001AEA9D0F001BC2CD /* AnimatedMotionPath.cpp */,
-				A54B11011AEA9D0F001BC2CD /* AnimatedMotionPath.h */,
 				A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */,
 				A54B11041AEA9EC2001BC2CD /* AssimpUtils.h */,
 				A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */,
@@ -1275,6 +1258,8 @@
 				A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */,
 				84A108581AFF68CA0096EA0E /* Ramp.cpp */,
 				84A108591AFF68CA0096EA0E /* Ramp.h */,
+				A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */,
+				A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3229,7 +3214,6 @@
 				A544B0181AE2C00E00BA7F27 /* btRigidBody.cpp in Sources */,
 				A7C5BC5818B788BB006187D9 /* ofxSyphonServerDirectory.mm in Sources */,
 				A5A5D0FC1983B72700295F0F /* ofxMtlMapping2DShape.cpp in Sources */,
-				A54B11021AEA9D0F001BC2CD /* AnimatedMotionPath.cpp in Sources */,
 				A544AFB81AE2C00E00BA7F27 /* btCollisionDispatcher.cpp in Sources */,
 				B083A78A196097AD00BC0D89 /* MediaUtils.cpp in Sources */,
 				A544B02C1AE2C00E00BA7F27 /* btSoftRigidDynamicsWorld.cpp in Sources */,
@@ -3256,9 +3240,8 @@
 				A544AFFA1AE2C00E00BA7F27 /* gim_memory.cpp in Sources */,
 				A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */,
 				A544AFF81AE2C00E00BA7F27 /* gim_box_set.cpp in Sources */,
-				A99834FD19540EAB0086E53E /* Bounds.cpp in Sources */,
 				A544AFB41AE2C00E00BA7F27 /* btActivatingCollisionAlgorithm.cpp in Sources */,
-				84A1085D1AFF7A910096EA0E /* ObstacleTriShapeMesh.cpp in Sources */,
+				A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */,
 				A58DD20A18F8577300B1FE41 /* ofxUIDropDownList.cpp in Sources */,
 				A544AFB91AE2C00E00BA7F27 /* btCollisionObject.cpp in Sources */,
 				A58DD20718F8577300B1FE41 /* ofxUICanvas.cpp in Sources */,
@@ -3323,7 +3306,6 @@
 				A58AA52D18E0BFFE00AA5372 /* ofxDmx.cpp in Sources */,
 				A58DD22418F8577300B1FE41 /* ofxUISuperCanvas.cpp in Sources */,
 				A5A5D0F51983B72700295F0F /* ofxMtlMapping2DShapes.cpp in Sources */,
-				A535520C1AE050A50003463B /* AnimatedObject.cpp in Sources */,
 				A544AFBE1AE2C00E00BA7F27 /* btConvexConcaveCollisionAlgorithm.cpp in Sources */,
 				A551CA821AE83ABD00E372B2 /* GeneratedMesh.cpp in Sources */,
 				84E6E5F818E60E3A00A582DF /* eventComunication.cpp in Sources */,

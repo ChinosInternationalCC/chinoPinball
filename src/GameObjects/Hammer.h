@@ -16,16 +16,20 @@
 
 */
 
+
+
 class Hammer : public SimpleObject {
     
 public:
     Hammer(vector <SimpleMission *> * _currentMissions);
-	virtual void setup(ofxBulletWorldRigid &world, ofVec3f pos);
-	virtual void update(bool bEditorMode);
+	virtual void setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attrib);
+
+    void updateSpecific(bool bEditorMode);
 	virtual void draw(bool bEditorMode);
 	void move(float height);
 	
 	void setupRot();
+
     
 	ofxBulletBox	body;
     
@@ -41,9 +45,6 @@ public:
     string getObjectName();
     
     void onCollision();
-    void setDefaultZ();
-    void setPosition(ofVec3f position);
-	void setRotation(ofQuaternion rotation);
 	
 	
 	//Event launch hammer
@@ -63,5 +64,9 @@ public:
      checkDistance2ball(int idBall);
 
      */
-    
+private:
+    void setupBody(SimpleObjectAttrib &Attributes);
+    void setupLookStyle(SimpleObjectAttrib &Attributes);
+    void setupAnimations(SimpleObjectAttrib &Attributes);
+    void setupType();
 };

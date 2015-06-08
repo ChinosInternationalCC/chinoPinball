@@ -63,9 +63,9 @@ void OSCManager::listenerOnCollission(eventComunication & args){
     
         m.clear();
         m.setAddress("/Collision/Object/Position");
-        m.addFloatArg(args.pObject->position.x);
-        m.addFloatArg(args.pObject->position.y);
-        m.addFloatArg(args.pObject->position.z);
+        m.addFloatArg(args.pObject->getPosition().x);
+        m.addFloatArg(args.pObject->getPosition().y);
+        m.addFloatArg(args.pObject->getPosition().z);
         sender.sendMessage(m);
         
         /* send also the score on a collision */

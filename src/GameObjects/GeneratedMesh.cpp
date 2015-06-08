@@ -9,18 +9,22 @@
 #include "GeneratedMesh.h"
 
 GeneratedMesh::GeneratedMesh(vector <SimpleMission *> * _currentMissions) :
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.511)
 {
     collisionPoints = 0;
     world = NULL;
 }
 
 //---------------------------------
-void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale){
+void GeneratedMesh::setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attributes){
+    // position.z = -0.511;
+//ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale
+    
+    genericSetup(world, *Attributes);
+
     type = ShapeTypeAnimatedMesh;
     collisionTime = -120;
-    ModelPath = url;
-    this->position = position;
+
     this->world = &world;
 	
     //rotation = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
@@ -87,10 +91,10 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string u
     //ofEnableSeparateSpecularLight();
     
 	//save init values
-	initScale = scale;
+	initScale = getScale();
     // create ofxBullet shape
     //body.create(world.world, position, 0); // we set m=0 for kinematic body
-    body.create( world.world, mesh, position, 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
+    body.create( world.world, mesh, getPosition(), 0.f, ofVec3f(-10000, -10000, -10000), ofVec3f(10000,10000,10000) );
     body.add();
     body.enableKinematic();
     body.setActivationState( DISABLE_DEACTIVATION );
@@ -115,17 +119,13 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, ofVec3f position, string u
 	
 	setDefaultZ();
     
-
-    
-    
-    
 }
 
 
 //--------------------------------------------------------------
 void GeneratedMesh::update(bool bEditorMode){
     
-	autoScalingXYZ();
+	getFreeTransform()->autoScalingXYZ();
 
     
     
@@ -145,35 +145,7 @@ void GeneratedMesh::update(bool bEditorMode){
     //addMesh(assimpModel.getMesh(i), scale, true);
     //}
 	
-	if(position.x != last_positionX){
-		setPosition(position);
-		last_positionX = position.x;
-	}
-	if(position.y != last_positionY){
-		setPosition(position);
-		last_positionY = position.y;
-	}
-	if(position.z != last_positionZ){
-		setPosition(position);
-		last_positionZ = position.z;
-	}
-	
-	
-	if(angleValX != last_angleValX){
-		
-		setAngle2Rotate(angleValX, axis2RotateX); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValX = angleValX;
-	}
-	if(angleValY != last_angleValY){
-		
-		setAngle2Rotate(angleValY, axis2RotateY); // , angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValY = angleValY;
-	}
-	if(angleValZ != last_angleValZ){
-		
-		setAngle2Rotate(angleValZ, axis2RotateZ); //, angleValY, axis2RotateY, angleValZ, axis2RotateZ);
-		last_angleValZ = angleValZ;
-	}
+    getFreeTransform()->update();
     
     if(bAnimate) {
         vector< ofVec3f >& verts = mesh.getVertices();
@@ -189,42 +161,13 @@ void GeneratedMesh::update(bool bEditorMode){
 	body.activate();
     
 }
-/*
- //--------------------------------------------------------------
- void Obstacle::autoScalingXYZ(){
- 
- }*/
+
 
 //--------------------------------------------------------------
-void GeneratedMesh::autoScalingXYZ(){
-	
-	btVector3 myObjectScale;
-	ofVec3f myOfObjectScale;
-	
-	
-	if (scaleXyz != last_scaleXyz) {
-		float diff = scaleXyz - last_scaleXyz;
-		last_scaleXyz = scaleXyz;
-		
-		//Get Scales
-		myObjectScale = body.getRigidBody()->getCollisionShape()->getLocalScaling();
-		myOfObjectScale = ofVec3f(myObjectScale.x(), myObjectScale.y(), myObjectScale.z());
-        
-		//Update sizes values
-		myOfObjectScale += ofMap(diff, 0, initScale.z, 0, 0.45); //+= diff;
-		scale += ofMap(diff, 0, initScale.z, 0, 0.025);
-		last_scale = scale;
-        
-		myObjectScale.setX(myOfObjectScale.x);
-		myObjectScale.setY(myOfObjectScale.y);
-		myObjectScale.setZ(myOfObjectScale.z);
-        
-		//update physyc object
-		body.getRigidBody()->getCollisionShape()->setLocalScaling(myObjectScale);
-	
-	}
-    
+void GeneratedMesh::updateSpecific(bool bEditorMode){
+	//TODO
 }
+
 
 //--------------------------------------------------------------
 void GeneratedMesh::draw(bool bEditorMode){
@@ -305,48 +248,6 @@ void GeneratedMesh::onCollision(){
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 }
 
-//------------------------------------------------------------
-void GeneratedMesh::setDefaultZ(){
-    
-    position.z = -0.511;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void GeneratedMesh::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-//------------------------------------------------------------
-void GeneratedMesh::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
 //--------------------------------------------------------------
 void GeneratedMesh::setupRot(){
 	btTransform transform;
@@ -356,7 +257,7 @@ void GeneratedMesh::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	//rotation.set(0, 0, 0, 0);
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
-    last_rotation = rotation;
+    getFreeTransform()->SetLastRotation(rotation);
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );

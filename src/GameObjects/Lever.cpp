@@ -8,61 +8,76 @@
 
 #include "Lever.h"
 Lever::Lever(vector <SimpleMission *> * _currentMissions):
-SimpleObject(_currentMissions)
+SimpleObject(&body, _currentMissions, -0.5)
 {
     
 }
 
 //--------------------------------------------------------------
-void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, ofVec3f ModelScale, int setDirection = 1){
-    type = ShapeTypeLever;
-    position = setPosition;
-    direction = setDirection;
-	ModelPath = url;
+void Lever::setup(ofxBulletWorldRigid &world,
+                  SimpleObjectAttrib *Attributes/*
+                  ofVec3f Pos,  string url, ofVec3f ModelScale, int setDirection = 1*/
+                  ){
+    //position.z = -0.5;
+    
+    //save init values
+                      
+    genericSetup(world, *Attributes);
+    
     //Two rotationLever to set the lever in the right position
     //rotationLever = btQuaternion(btVector3(0,1,0), ofDegToRad(-90));
-    rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
     
-    // lever rotationLever angles
-    angle = 0;
-	upperLimit = 60;
-	lowerLimit = -30;
-    speed = 15;    // degrees per frame
     
-    // distance from object center to rotation axis
-    axisX = 1.3;
+
     
-    // settings for counter clockwise rotation
-    if (direction == 0)
-    {
-        upperLimit = -upperLimit;
-        lowerLimit = -lowerLimit;
-        speed = -speed;
-        axisX = -axisX;
-        rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(-90));
-    }
+    
+    isKeyPressed = false;
+}
+
+//----------------------------------
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+void Lever::setupBody(SimpleObjectAttrib &Attributes){
     
     // create ofxBullet shape
-    body.create(world.world, position, 0); // we set m=0 for kinematic body
+    body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
     
     // load 3D model
-    scale = ModelScale;
-	assimpModel.loadModel(ModelPath, true);
-	assimpModel.setScale(scale.x, scale.y, scale.z);
+	assimpModel.loadModel(getLeverAttr()->modelPath, true);
+	assimpModel.setScale(getScale().x, getScale().y, getScale().z);
 	assimpModel.setPosition(0, 0, 0);
     
     // add 3D mashes to ofxBullet shape
     for(int i = 0; i < assimpModel.getNumMeshes(); i++)
     {
-        body.addMesh(assimpModel.getMesh(i), scale, true);
+        body.addMesh(assimpModel.getMesh(i), getScale(), true);
     }
-    
-    
+
     body.add();
-    body.enableKinematic();
-    body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
     
-	// lever rotationLever angles
+    body.setProperties(1., 0.); // .25 (more restituition means more energy) ,this	Lever *	0x21fdc00	0x021fdc00 .95 ( friction )
+    //body.setProperties(getSimpleAttrib()->restitution, getSimpleAttrib()->friction);
+    // .25 (more restituition means more energy) , .95 ( friction )
+    
+    
+    body.enableKinematic();
+}
+
+
+//----------------------------------
+void Lever::setupLookStyle(SimpleObjectAttrib &Attributes){
+    //NOTHING
+}
+
+//----------------------------------
+void Lever::setupAnimations(SimpleObjectAttrib &Attributes){
+    rotationLever = btQuaternion(btVector3(0,0,1), ofDegToRad(90));
+    // lever rotationLever angles
     angle = 0;
 	upperLimit = 60;
 	lowerLimit = -30;
@@ -72,7 +87,7 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     axisX = 1.3;
     
     // settings for counter clockwise rotationLever
-    if (direction == 0)
+    if (getLeverAttr()->direction == 0)
     {
         upperLimit = -upperLimit;
         lowerLimit = -lowerLimit;
@@ -82,41 +97,33 @@ void Lever::setup(ofxBulletWorldRigid &world, ofVec3f setPosition,  string url, 
     
     // rotate lever to lower position
     rotate(lowerLimit);
-    
-    isKeyPressed = false;
-    
-	setDefaultPostion();
-	
-	
+}
+
+//----------------------------------
+void Lever::setupType(){
+    type = ShapeTypeLever;
 }
 
 //--------------------------------------------------------------
-void Lever::setDefaultPostion(){
-	last_positionX = position.x;
-	last_positionY = position.y;
-	last_positionZ = position.z;
-}
-
-//--------------------------------------------------------------
-void Lever::update(bool bEditorMode){
-    
-    if (isKeyPressed)
-    {
-        if ((direction && (angle < upperLimit)) || (!direction && (angle > upperLimit))) // rotate up
-        {
-            angle += speed;
-            rotate(angle);
-        }
-    }
-    if (!isKeyPressed)
-    {
-        if ((direction && (angle > lowerLimit)) || (!direction && (angle < lowerLimit))) // rotate down
-        {
-            angle -= speed;
-            rotate(angle);
-        }
-    }
-    
+void Lever::updateSpecific(bool bEditorMode){
+	//TODO
+	
+	if (isKeyPressed)
+	{
+		if ((getLeverAttr()->direction && (angle < upperLimit)) || (!getLeverAttr()->direction && (angle > upperLimit))) // rotate up
+		{
+			angle += speed;
+			rotate(angle);
+		}
+	}
+	if (!isKeyPressed)
+	{
+		if ((getLeverAttr()->direction && (angle > lowerLimit)) || (!getLeverAttr()->direction && (angle < lowerLimit))) // rotate down
+		{
+			angle -= speed;
+			rotate(angle);
+		}
+	}
 }
 
 //--------------------------------------------------------------
@@ -175,8 +182,8 @@ void Lever::rotate(float degrees) {
     
     // translate
     btVector3 origin = transform.getOrigin();
-    origin.setX(position.x + axisX - axisX * cos(ofDegToRad(degrees)));
-    origin.setY(position.y - axisX * sin(ofDegToRad(degrees)));
+    origin.setX(getPosition().x + axisX - axisX * cos(ofDegToRad(degrees)));
+    origin.setY(getPosition().y - axisX * sin(ofDegToRad(degrees)));
     
     transform.setOrigin(origin);
     
@@ -199,40 +206,14 @@ string Lever::getObjectName(){
 void Lever::onCollision(){}
 
 
-//------------------------------------------------------------
-void Lever::setDefaultZ(){
-    
-    position.z = -0.5;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Lever::setPosition(ofVec3f position){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-
-//------------------------------------------------------------
-void Lever::setRotation(ofQuaternion rotation){
-}
-
 //--------------------------------------------------------------
 void Lever::setupRot(){
     
 }
 
-
+LeverAttrib* Lever::getLeverAttr(){
+    return (LeverAttrib*) getSimpleAttrib();
+}
 
 
 

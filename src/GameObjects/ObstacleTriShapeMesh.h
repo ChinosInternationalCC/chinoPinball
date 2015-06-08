@@ -22,7 +22,6 @@ public:
 	ObstacleTriShapeMesh(vector <SimpleMission *> * _currentMissions);
 	
 	void setup(ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale);
-	void update(bool bEditorMode);
 	void draw(bool bEditorMode);
 	
 	void autoScalingXYZ();
@@ -40,9 +39,6 @@ public:
 	string getObjectName();
 	
     void onCollision();
-	void setDefaultZ();
-	void setPosition(ofVec3f position);
-	void setRotation(ofQuaternion rotation);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
 	
 	void setDefaultPostion();

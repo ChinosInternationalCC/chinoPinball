@@ -16,14 +16,14 @@
 #include "Hammer.h"
 #include "Obstacle.h"
 #include "Bounds.h"
-#include "AnimatedObject.h"
+
 #include "AnimatedMesh.h"
 #include "GeneratedMesh.h"
-#include "AnimatedMotionPath.h"
+
 #include "Gravity.h"
 #include "Teleporter.h"
 #include "Ramp.h"
-#include "ObstacleTriShapeMesh.h"
+
 #include "ofxBulletTriMeshShape.h"
 #include "SimpleObject.h"
 #include "ofxXmlSettings.h"
@@ -85,6 +85,7 @@ public:
 
     SimpleObject* FindScenarioObjectByName(string name);
     SimpleObject* FindScenarioObjectById(int id);
+	vector <Ball *> getBalls();
 	
 	
 	//Basic Gui
@@ -95,6 +96,8 @@ public:
 	ofVec2f posGui;
 	void guiEventBasics(ofxUIEventArgs &e);
 	
+	
+
 private:
 	
 	//BASIC SCENARIO STATGE/////////////////////////////////////

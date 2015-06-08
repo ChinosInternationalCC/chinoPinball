@@ -8,25 +8,22 @@
 
 #include "SimpleObject.h"
 
-SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
-	idobject = -1;
+SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
+                           vector <SimpleMission *> * _currentMissions,
+                           float _DefaultPositionZ)
+:oFreeTransform(this){
+   
+    poSimpleBody = poBulletBaseShape;
+	ObjectId = -1;
 	bAnimation = false;
     color = 0xffffff;
 	bVisible = true;
     highlightColor = 0xff00ff;
-	scale = ofVec3f(); last_scale = scale;
-	scaleXyz = 0; last_scaleXyz = scaleXyz;
+
+	
     highlightTime = 60; // what units?
 
     bDebugMode = false;
-	
-	last_angleValX = angleValX = 0;
-	last_angleValY = angleValY = 0;
-	last_angleValZ = angleValZ = 0;
-	
-	axis2RotateX = ofVec3f(1,0,0);
-	axis2RotateY = ofVec3f(0,1,0);
-	axis2RotateZ = ofVec3f(0,0,1);
 
 	
 	//////
@@ -34,22 +31,62 @@ SimpleObject::SimpleObject(vector <SimpleMission *> * _currentMissions){
 	this->currentMissions = _currentMissions;
 	
 	collisionPoints = 0;
-	
+    
+    fDefaultPositionZ = _DefaultPositionZ;
+
+	/* init pointers */
+	pAttrib = NULL;
+	world = NULL;
+
 }
+
+//--------------------------------------------------------------
+void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes){
+    
+    pAttrib = &Attributes;
+    
+	//scale = pAttrib->ModelScale;
+	
+	//save init values
+	//initScale = scale;
+	
+	
+	//TODO scale
+	initScale = pAttrib->ModelScale;
+	getFreeTransform()->SetLastScale(initScale);
+	
+    setupType();
+    world = &myWorld;
+    setupBody(Attributes);
+    
+    
+    setPosition(Attributes.position);
+    setDefaultZ();//Only after create it
+    
+
+    setupLookStyle(Attributes);
+    setupAnimations(Attributes);
+
+}
+
 
 //--------------------------------------------------------------
 void SimpleObject::setCurrentMissionId(int _idCurrentMission){
 	this->idCurrtentMission = _idCurrentMission;
 }
 
-
 //--------------------------------------------------------------
-void SimpleObject::setup(ofxBulletWorldRigid &world, ofVec3f _pos){
+void SimpleObject::update(bool bEditorMode){
+    
+	getFreeTransform()->autoScalingXYZ();
+    
+    assimpModel.update();
+    
+    oFreeTransform.update();
+    
+    updateSpecific(bEditorMode);
+    
 }
-
-//--------------------------------------------------------------
-//void SimpleObject::update(bool bEditorMode){
-//}
 
 //--------------------------------------------------------------
 //void SimpleObject::draw(bool bEditorMode){
@@ -75,8 +112,8 @@ void SimpleObject::setDebugMode(bool &DebugMode){
 void SimpleObject::drawDebug(void){
     
         ofSetColor(255, 255, 255);
-        ofDrawBitmapString("ID:"+ofToString(GetObjectId()), position.x,position.y);
-        ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), position.x,position.y+1);
+        ofDrawBitmapString("ID:"+ofToString(GetObjectId()), pAttrib->position.x,pAttrib->position.y);
+        ofDrawBitmapString("HIT:"+ofToString((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())), pAttrib->position.x,pAttrib->position.y+1);
 }
 
 //--------------------------------------------------------------
@@ -91,6 +128,94 @@ void SimpleObject::setVisibility(int invisible){
 	else bVisible = true;
 }
 
+//--------------------------------------------------------------
+void SimpleObject::setDefaultZ(){
+  
+    if(poSimpleBody->checkCreate()){
+        pAttrib->position.z = fDefaultPositionZ;
+        setPhysicsPosition(pAttrib->position);
+    }else {
+        cout << "Error the Object must setDefaultZ after create the object in the world" << endl;
+    }
+    
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setPhysicsPosition(ofVec3f position){
+    btTransform transform;
+    btRigidBody* rigidBody = poSimpleBody->getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    btVector3 origin;
+    origin.setX(position.x);
+    origin.setY(position.y);
+    origin.setZ(position.z);
+    transform.setOrigin(origin);
+    rigidBody->getMotionState()->setWorldTransform( transform );
+    
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setPhysicsRotation(ofQuaternion rotation){
+    btTransform transform;
+    btRigidBody* rigidBody = poSimpleBody->getRigidBody();
+    rigidBody->getMotionState()->getWorldTransform( transform );
+    
+	btQuaternion originRot;
+    originRot.setX(rotation.x());
+    originRot.setY(rotation.y());
+    originRot.setZ(rotation.z());
+	originRot.setW(rotation.w());
+    
+	transform.setRotation(originRot);
+	
+    rigidBody->getMotionState()->setWorldTransform( transform );
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setPosition(ofVec3f _position){
+    pAttrib->position = _position;
+}
+
+//--------------------------------------------------------------
+ofVec3f SimpleObject::getPosition(){
+    return pAttrib->position;
+}
+
+//--------------------------------------------------------------
+void SimpleObject::setDefaultPostion(){
+
+    /*
+	last_positionX = pAttrib->position.x;
+	last_positionY = pAttrib->position.y;
+	last_positionZ = pAttrib->position.z;
+     */
+}
+
+
+//--------------------------------------------------------------
+ofVec3f SimpleObject::getScale(){
+	return pAttrib->ModelScale;
+}
+
+//--------------------------------------------------------------
+ofVec3f* SimpleObject::getScaleRef(){
+	return &pAttrib->ModelScale;
+}
 
 
 
+
+//--------------------------------------------------------------
+SimpleObjectAttrib * SimpleObject::getSimpleAttrib(){
+    return pAttrib;
+}
+
+//--------------------------------------------------------------
+ofxBulletBaseShape* SimpleObject::getSimpleBody(){
+    return poSimpleBody;
+}
+
+//--------------------------------------------------------------
+FreeTransformObject* SimpleObject::getFreeTransform(){
+    return &oFreeTransform;
+}

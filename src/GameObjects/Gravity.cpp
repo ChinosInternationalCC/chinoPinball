@@ -17,7 +17,7 @@ void Gravity::setupSpecific(){
 
 void Gravity::updateSpecific(bool bEditorMode){
     /* set the world gravity to the position of this object */
-    m_poWorld->setGravity(this->position);
+    world->setGravity(getPosition());
 }
 
 string Gravity::getObjectName(){

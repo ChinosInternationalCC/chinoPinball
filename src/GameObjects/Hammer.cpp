@@ -9,64 +9,86 @@
 #include "Hammer.h"
 
 Hammer::Hammer(vector <SimpleMission *> * _currentMissions) :
-    SimpleObject(_currentMissions)
+    SimpleObject(&body, _currentMissions, -0.375)
 {
    bLaunch = true; 
 }
 
 //---------------------------------
-void Hammer::setup(ofxBulletWorldRigid &world, ofVec3f pos){
+void Hammer::setup(ofxBulletWorldRigid &myWorld,
+                   SimpleObjectAttrib *Attrib){
     
-   /* position = ofVec3f(7, 4, 0);*/
-                /*(world, position,  mass, sizeX, sizeY, sizeZ)*/
-    position = pos;
-    body.create(world.world, position, 0, .75, 4, .75); // we set m=0 for kinematic body
+    genericSetup(myWorld, *Attrib);
+
+
+    isKeyPressed = false;
+    
+}
+
+//----------------------------------
+/**
+ *  Supper Ovi Cast is used to simplify all Atributes methods of ChinoPinball.
+ *  Use this line to copy the reference of the Atributes to your specifics methods
+ *  >>> allAttrib *pBallAttr = (BallAttrib*) &Attributes;
+ *
+ *  @param Attributes reference to the Attribute object
+ */
+void Hammer::setupBody(SimpleObjectAttrib &Attributes){
+    
+    body.create(world->world, getPosition(), getSimpleAttrib()->mass, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
-    isKeyPressed = false;
-    
-	//y position
-	lowerLimit = position.y;
-	upperLimit = position.y+2;
-    speed = 0.8;    // pos per frame
-    
+}
+
+
+//----------------------------------
+void Hammer::setupLookStyle(SimpleObjectAttrib &Attributes){
     color = 0x00ff00;
-    
-    
+}
+
+//----------------------------------
+void Hammer::setupAnimations(SimpleObjectAttrib &Attributes){
+    //y position
+	lowerLimit = getPosition().y;
+	upperLimit = getPosition().y+2;
+    speed = 0.8;    // pos per frame
     // move hammer to lower position
     move(lowerLimit);
-    
+}
+
+//----------------------------------
+void Hammer::setupType(){
     type = ShapeTypeHammer;
-    
 }
 
 //--------------------------------------------------------------
-void Hammer::update(bool bEditorMode){
-    
-    lowerLimit = position.y;
-	upperLimit = position.y+2;
-    
+void Hammer::updateSpecific(bool bEditorMode){
+	//TODO
+	
+	lowerLimit = getPosition().y;
+	upperLimit = getPosition().y+2;
+	
 	// get current translation
-    ofVec3f translation = body.getPosition();
-    float translationY = translation.y;
-    
-    if (isKeyPressed)
-    {
-        if (translationY < upperLimit)
-        {
-            move(translationY + speed/8);
-        }
+	ofVec3f translation = body.getPosition();
+	float translationY = translation.y;
+	
+	if (isKeyPressed)
+	{
+		if (translationY < upperLimit)
+		{
+			move(translationY + speed/8);
+		}
 		
 		bLaunch = false;
-    }
-    else
-    {
+	}
+	else
+	{
 		if(!bEditorMode){
 			if (translationY > lowerLimit)
 			{
-
+				
 				move(translationY - speed);
 			}
 			else{
@@ -77,20 +99,15 @@ void Hammer::update(bool bEditorMode){
 					eventGame lanchHammerSoundEvent;
 					lanchHammerSoundEvent.gameEvent = eventGame::GAME_EVENT_HAMMER_LAUNCH;
 					ofNotifyEvent(eventGame::onGameEvent, lanchHammerSoundEvent);
-					//ofNotifyEvent(eventComunication::onNewCom, newComEvent);					
+					//ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 				}
 			}
 		}
-    }
-	
-	//Update Physic work rotation if GUI change it
-	if(rotation != last_rotation){
-		setRotation(rotation);
-		last_rotation = rotation;
 	}
+	
 
-    
 }
+
 
 //--------------------------------------------------------------
 void Hammer::draw(bool bEditorMode){
@@ -161,49 +178,6 @@ void Hammer::onCollision(){
 
 }
 
-//------------------------------------------------------------
-void Hammer::setDefaultZ(){
-    
-    position.z = -0.375;
-    setPosition(position);
-    
-}
-
-//------------------------------------------------------------
-void Hammer::setPosition(ofVec3f position){
-
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-    btVector3 origin;
-    origin.setX(position.x);
-    origin.setY(position.y);
-    origin.setZ(position.z);
-    transform.setOrigin(origin);
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
-
-//------------------------------------------------------------
-void Hammer::setRotation(ofQuaternion rotation){
-    
-    btTransform transform;
-    btRigidBody* rigidBody = body.getRigidBody();
-    rigidBody->getMotionState()->getWorldTransform( transform );
-	
-	btQuaternion originRot;
-    originRot.setX(rotation.x());
-    originRot.setY(rotation.y());
-    originRot.setZ(rotation.z());
-	originRot.setW(rotation.w());
-    
-	transform.setRotation(originRot);
-	
-    rigidBody->getMotionState()->setWorldTransform( transform );
-    
-}
-
 //--------------------------------------------------------------
 void Hammer::setupRot(){
 	btTransform transform;
@@ -213,7 +187,7 @@ void Hammer::setupRot(){
 	btQuaternion currentRotation = transform.getRotation();
 	//rotation.set(0, 0, 0, 0);
 	rotation.set(currentRotation.x(), currentRotation.y(), currentRotation.z(), currentRotation.w());
-    last_rotation = rotation;
+    getFreeTransform()->SetLastRotation(rotation);
 	
 	transform.setRotation(currentRotation);
 	a_rb->getMotionState()->setWorldTransform( transform );

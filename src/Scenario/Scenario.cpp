@@ -216,17 +216,12 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
  //   ScenarioObjects.push_back(&m_obstable1);
 
 /*
-    ofVec3f pos;
-    pos.x = ScenarioXml.getValue("positionX",0.0, 0);
-    pos.y = ScenarioXml.getValue("positionY",0.0, 0);
-    pos.z = ScenarioXml.getValue("positionZ",0.0, 0);
-*/
-
     switch(typeObject){
 
         case SimpleObject::ShapeTypeBall:{
-            Ball *oBall = new Ball(currentMissions);
-            oBall->setup(world, pos);
+            Ball *oBall = new Ball(currentMissions, 0.5);
+            BallAttrib *poBallAttrib = new BallAttrib(pos,0, 1, 0.25, 0.44, 0.25); // damping not used  so we use 0...
+            oBall->setup(world, (SimpleObjectAttrib*) poBallAttrib);
             oBall->setDefaultZ();
             ScenarioObjects.push_back(oBall);
         }
@@ -234,7 +229,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
             
         case SimpleObject::ShapeTypeHammer:{
             Hammer *oHammer = new Hammer(currentMissions);
-            oHammer->setup(world, pos);
+            SimpleObjectAttrib *poAttrib = new SimpleObjectAttrib();
+            oHammer->setup(world, poAttrib);
             oHammer->setDefaultZ();
             ScenarioObjects.push_back(oHammer);
         }
@@ -243,7 +239,8 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         case SimpleObject::ShapeTypeLever:{
             Lever *oLever = new Lever(currentMissions);
             int dir = 0;
-            oLever->setup(world, pos, "cylinder.stl", ofVec3f(0.05, 0.05, 0.05), dir);
+            LeverAttrib *poAttr = new LeverAttrib();
+            oLever->setup(world, (SimpleObjectAttrib*) poAttr);
             oLever->setDefaultZ();
             ScenarioObjects.push_back(oLever);
         }
@@ -258,6 +255,9 @@ void Scenario::pushObject(ofxBulletWorldRigid &world, int typeObject, ofVec3f po
         break;
             
     }
+
+*/
+
 }
 
 //--------------------------------------------------------------
@@ -340,14 +340,27 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
-                    Ball *oBall = new Ball(currentMissions);
-                    float mass = ScenarioXml.getValue("mass", 0.0);
                     float radius = ScenarioXml.getValue("radius", 0.0);
+                    Ball *oBall = new Ball(currentMissions, radius);
+					
+					float mass = ScenarioXml.getValue("mass", 0.0);
                     float restitution = ScenarioXml.getValue("restitution", 0.0);
                     float friction = ScenarioXml.getValue("friction", 0.0);
-                    oBall->setup(world, pos, mass, radius, restitution, friction);
+
+					
+					BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
+															pos,	//position
+															0,		//damping
+															friction,//friction
+															mass,	//mass
+															restitution,
+															radius,
+															ofVec3f(0,0,0));
+
+					
+                    oBall->setup(world, ballAttrib);
                     oBall->SetObjectId(objId);
-					oBall->setRotation(rotation);
+					oBall->setPhysicsRotation(rotation);
                     oBall->color = color;
 					oBall->setVisibility(invisible);
 					
@@ -357,9 +370,11 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeHammer:{
                     Hammer *oHammer = new Hammer(currentMissions);
-                    oHammer->setup(world, pos);
+					
+					SimpleObjectAttrib *Attrib = new SimpleObjectAttrib("", pos, 0, 0, 0, 0, ofVec3f(0,0,0));
+                    oHammer->setup(world, Attrib);
                     oHammer->SetObjectId(objId);
-					oHammer->setRotation(rotation);
+					oHammer->setPhysicsRotation(rotation);
                     oHammer->color = color;
 					oHammer->setVisibility(invisible);
                     ScenarioObjects.push_back(oHammer);
@@ -370,10 +385,23 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeLever:{
                     Lever *oLever = new Lever(currentMissions);
+
                     int dir = ScenarioXml.getValue("LeverType", 0);
-                    oLever->setup(world, pos, path, scale, dir);
+					//pos, path, scale, dir
+					LeverAttrib *Attrib = new LeverAttrib(path, //string _modelData,
+														  pos,	//ofVec3f _position,
+														  0,	//float _damping,
+														  0,	//float _friction,
+														  0,	//float _mass,
+														  0,	//float _restitution,
+														  scale,	//ofVec3f _ModelScale,
+														  dir);	//int _direction);
+
+					
+                    
+                    oLever->setup(world, Attrib);
                     oLever->SetObjectId(objId);
-					oLever->setRotation(rotation);
+					oLever->setPhysicsRotation(rotation);
                     oLever->color = color;
 					oLever->setVisibility(invisible);
                     ScenarioObjects.push_back(oLever);
@@ -383,10 +411,19 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 case SimpleObject::ShapeTypeObstacle:{
                     Obstacle *oObstable = new Obstacle(currentMissions);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
                     //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oObstable->setup(world, pos, path, scale);
+                    oObstable->setup(world, Attrib);
                     oObstable->SetObjectId(objId);
-					oObstable->setRotation(rotation);
+					oObstable->setPhysicsRotation(rotation);
                     oObstable->color = color;
 					oObstable->setVisibility(invisible);
                     ScenarioObjects.push_back(oObstable);
@@ -398,10 +435,18 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                 
                 case SimpleObject::ShapeTypeGravity:{
                     Gravity *oGravity = new Gravity(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oGravity->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+                    oGravity->setup(world, Attrib);
                     oGravity->SetObjectId(objId);
-					oGravity->setRotation(rotation);
+					oGravity->setPhysicsRotation(rotation);
                     oGravity->color = color;
 					oGravity->setVisibility(invisible);
                     ScenarioObjects.push_back(oGravity);
@@ -413,10 +458,18 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                    
                 case SimpleObject::ShapeTypeTeleporter:{
                     Teleporter *oTeleporter = new Teleporter(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oTeleporter->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+                    oTeleporter->setup(world, Attrib);
                     oTeleporter->SetObjectId(objId);
-					oTeleporter->setRotation(rotation);
+					oTeleporter->setPhysicsRotation(rotation);
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
                     ScenarioObjects.push_back(oTeleporter);
@@ -428,10 +481,18 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					
 				case SimpleObject::ShapeTypeRamp:{
 					Ramp *oRamp = new Ramp(currentMissions);
-					//oObstable->setup(world, pos, "3DModels/chino_6.dae");
-					oRamp->setup(world, pos, path, scale);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+					oRamp->setup(world, Attrib);
 					oRamp->SetObjectId(objId);
-					oRamp->setRotation(rotation);
+					oRamp->setPhysicsRotation(rotation);
 					oRamp->color = color;
 					oRamp->setVisibility(invisible);
 					ScenarioObjects.push_back(oRamp);
@@ -440,57 +501,21 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 				}
 					break;
 					
-				case SimpleObject::ShapeTypeObstacleTriShapeMesh:{
-					ObstacleTriShapeMesh *oObstacleTriShapeMesh= new ObstacleTriShapeMesh(currentMissions);
-					
-					oObstacleTriShapeMesh->setup(world, pos, path, scale);
-					oObstacleTriShapeMesh->SetObjectId(objId);
-					oObstacleTriShapeMesh->setRotation(rotation);
-					oObstacleTriShapeMesh->color = color;
-					oObstacleTriShapeMesh->setVisibility(invisible);
-					ScenarioObjects.push_back(oObstacleTriShapeMesh);
-					oObstacleTriShapeMesh->setPointsCollision(pointsCollision);
-					oObstacleTriShapeMesh->setupRot();
-				}
-					break;
-					
-                case SimpleObject::ShapeTypeAnimatedObject:{
-                    AnimatedObject *oAnimatedObject = new AnimatedObject(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oAnimatedObject->setup(world, pos, path, scale);
-                    oAnimatedObject->SetObjectId(objId);
-					oAnimatedObject->setRotation(rotation);
-                    oAnimatedObject->color = color;
-					oAnimatedObject->setVisibility(invisible);
-                    ScenarioObjects.push_back(oAnimatedObject);
-					oAnimatedObject->setPointsCollision(pointsCollision);
-					oAnimatedObject->setupRot();
-                    
-                }
-                break;
-                
-                case SimpleObject::ShapeTypeAnimatedMotionPath:{
-                    string pathMotionModel;
-                    pathMotionModel = ScenarioXml.getValue("pathMotionModel","", 0);
-                    AnimatedMotionPath *oAnimatedMotionPath = new AnimatedMotionPath(currentMissions);
-                    oAnimatedMotionPath->setup(world, pos, path, pathMotionModel, scale);
-                    oAnimatedMotionPath->SetObjectId(objId);
-					oAnimatedMotionPath->setRotation(rotation);
-                    oAnimatedMotionPath->color = color;
-					oAnimatedMotionPath->setVisibility(invisible);
-                    ScenarioObjects.push_back(oAnimatedMotionPath);
-					oAnimatedMotionPath->setPointsCollision(pointsCollision);
-					oAnimatedMotionPath->setupRot();
-                    
-                }
-                break;
-                    
                 case SimpleObject::ShapeTypeAnimatedMesh:{
                     AnimatedMesh *oAnimatedMesh = new AnimatedMesh(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oAnimatedMesh->setup(world, pos, path, scale);
+					
+					AnimatedMeshAttrib *Attrib = new AnimatedMeshAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+					
+                    oAnimatedMesh->setup(world, Attrib);
                     oAnimatedMesh->SetObjectId(objId);
-					oAnimatedMesh->setRotation(rotation);
+					oAnimatedMesh->setPhysicsRotation(rotation);
                     oAnimatedMesh->color = color;
 					oAnimatedMesh->setVisibility(invisible);
                     ScenarioObjects.push_back(oAnimatedMesh);
@@ -499,34 +524,6 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
-                case SimpleObject::ShapeTypeGeneratedMesh:{
-                    GeneratedMesh *oGeneratedMesh = new GeneratedMesh(currentMissions);
-                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
-                    oGeneratedMesh->setup(world, pos, path, scale);
-                    oGeneratedMesh->SetObjectId(objId);
-					oGeneratedMesh->setRotation(rotation);
-                    oGeneratedMesh->color = color;
-					oGeneratedMesh->setVisibility(invisible);
-                    ScenarioObjects.push_back(oGeneratedMesh);
-					oGeneratedMesh->setPointsCollision(pointsCollision);
-					oGeneratedMesh->setupRot();
-                    
-                }
-                break;
-                    
-                case SimpleObject::ShapeTypeBounds:{
-                    Bounds *oBounds = new Bounds(currentMissions);
-                    oBounds->setup(world, pos, path, scale);
-                    oBounds->SetObjectId(objId);
-					oBounds->setRotation(rotation);
-                    oBounds->color = color;
-					oBounds->setVisibility(invisible);
-                    ScenarioObjects.push_back(oBounds);
-					
-					oBounds->setupRot();
-                }
-                break;
-
             }
             ScenarioXml.popTag();
         }
@@ -566,44 +563,32 @@ void Scenario::saveToXml(){
 		ScenarioXml.addValue("color", ScenarioObjects[i]->color);
 		ScenarioXml.addValue("invisible", !ScenarioObjects[i]->bVisible);
 		ScenarioXml.addValue("pointsCollision", ScenarioObjects[i]->collisionPoints);
-        ScenarioXml.addValue("positionX", ScenarioObjects[i]->position.x);
-        ScenarioXml.addValue("positionY", ScenarioObjects[i]->position.y);
-        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->position.z);
-        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->scale.x);
-        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->scale.y);
-        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->scale.z);
+        ScenarioXml.addValue("positionX", ScenarioObjects[i]->getPosition().x);
+        ScenarioXml.addValue("positionY", ScenarioObjects[i]->getPosition().y);
+        ScenarioXml.addValue("positionZ", ScenarioObjects[i]->getPosition().z);
+        ScenarioXml.addValue("scaleX", ScenarioObjects[i]->getScale().x);
+        ScenarioXml.addValue("scaleY", ScenarioObjects[i]->getScale().y);
+        ScenarioXml.addValue("scaleZ", ScenarioObjects[i]->getScale().z);
 		ScenarioXml.addValue("rotationX", ScenarioObjects[i]->rotation.x());
 		ScenarioXml.addValue("rotationY", ScenarioObjects[i]->rotation.y());
 		ScenarioXml.addValue("rotationZ", ScenarioObjects[i]->rotation.z());
 		ScenarioXml.addValue("rotationW", ScenarioObjects[i]->rotation.w());
-        ScenarioXml.addValue("path", ScenarioObjects[i]->ModelPath);
-		
-		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBounds){
-			
-			cout << "rotation.x()= " << ScenarioObjects[i]->rotation.x() << endl;
-			cout << "rotation.y()= " << ScenarioObjects[i]->rotation.y() << endl;
-			cout << "rotation.z()= " << ScenarioObjects[i]->rotation.z() << endl;
-		}
+        ScenarioXml.addValue("path", ScenarioObjects[i]->getSimpleAttrib()->modelPath);
+    
 		
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeLever){
             Lever *pLever;
             pLever = (Lever*)ScenarioObjects[i];
-            ScenarioXml.addValue("LeverType", pLever->direction);
-        }
-        
-        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeAnimatedMotionPath){
-            AnimatedMotionPath *pAnimatedMotionPath;
-            pAnimatedMotionPath = (AnimatedMotionPath*)ScenarioObjects[i];
-            ScenarioXml.addValue("pathMotionModel", pAnimatedMotionPath->getMotionModelPath());
+            ScenarioXml.addValue("LeverType", pLever->getLeverAttr()->direction);
         }
         
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
             Ball *pBall;
             pBall = (Ball*)ScenarioObjects[i];
-            ScenarioXml.addValue("mass", pBall->mass);
-            ScenarioXml.addValue("radius", pBall->radius);
-            ScenarioXml.addValue("restitution", pBall->restitution);
-            ScenarioXml.addValue("friction", pBall->friction);
+            ScenarioXml.addValue("mass", pBall->getBallAttr()->mass);
+            ScenarioXml.addValue("radius", pBall->getBallAttr()->radius);
+            ScenarioXml.addValue("restitution", pBall->getBallAttr()->restitution);
+            ScenarioXml.addValue("friction", pBall->getBallAttr()->friction);
         }
         
         ScenarioXml.popTag();
@@ -654,4 +639,15 @@ void Scenario::guiEventBasics(ofxUIEventArgs &e){
 		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
 	}
 }
+//--------------------------------------------------------
+vector <Ball *> Scenario::getBalls(){
+	vector <Ball *> Balls;
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
+			Ball *pBall = (Ball*)ScenarioObjects[i];
+			Balls.push_back(pBall);
+		}
+	}
 
+	return Balls;
+}
