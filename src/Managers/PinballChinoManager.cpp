@@ -427,6 +427,20 @@ void PinballChinoManager::keyReleased(int key){
 			camera.move(0, -amountX, 0);
 			break;
 			
+		case 'c':
+			cout << "movement of the camera ";
+			if (camera.getMouseInputEnabled())
+            {
+                camera.disableMouseInput();
+                cout << "disabled" << endl;
+            }
+            else
+            {
+                camera.enableMouseInput();
+                cout << "enabled" << endl;
+            }
+			break;
+			
 			//Hack a simple mission
 			//myScenario.ScenarioObjects[11]->onCollision();
 			//myScenario.ScenarioObjects[12]->onCollision();

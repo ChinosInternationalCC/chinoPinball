@@ -192,12 +192,21 @@ To enter in the scenario editor mode press the key 'e'
 * F4 - EditorVerbose
 
 PinballChinoManager
+
 * f - fullscreen
+* c - enable/disable movement of the camera
 * s - save camera position to file
 * l - load camera postion
+* o - move camera in X axis +
+* p - move camera in X axis -
+* i - move camera in Z axis +
+* k - move camera in Z axis -
+* u - move camera in Y axis +
+* j - move camera in Y axis -
 * m - mute sounds
 
 InputEventManager
+
 * enter - restart game
 * down - move hammer
 * q/Q - move right lever
@@ -206,20 +215,16 @@ InputEventManager
 * m/M - open Mapping Editor if using MtlMapping
 
 ScenarioEditor
+
 * e - toggle editor mode
 * x - saving scenario to file
 * 0 - add a ball
 * 3 - add a lever
 * 5 - add a hammer
 * 6 - add an obstacle
-* o - move a bit the scenario to in X axis +
-* p - move a bit the scenario to in X axis -
-* i - move a bit the scenario to in Z axis +
-* k - move a bit the scenario to in Z axis -
-* u - move a bit the scenario to in Y axis +
-* j - move a bit the scenario to in Y axis -
 
 AnimatedMotionPath
+
 * p - play motion path animation
 * o - pause motion path animation
 * i - stop motion path animation
