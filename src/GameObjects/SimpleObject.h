@@ -166,6 +166,7 @@ public:
     
     ofxBulletBaseShape* getSimpleBody();
     FreeTransformObject* getFreeTransform();
+    void SelectedInEditor(bool selected);
     
 protected:
 	int						idCurrtentMission;
@@ -184,7 +185,7 @@ protected:
     virtual void setupAnimations(SimpleObjectAttrib &Attributes) = 0;
     virtual void setupType() = 0;
     
-
+    bool bSelectedInEditor;
    
 private:
     ofxBulletBaseShape	*poSimpleBody;
@@ -193,6 +194,8 @@ private:
     ofMatrix4x4 worldposition;
     SimpleObjectAttrib *pAttrib;
     FreeTransformObject oFreeTransform;
+    
+
 	
 };
 

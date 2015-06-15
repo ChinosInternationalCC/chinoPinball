@@ -19,6 +19,7 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
     color = 0xffffff;
 	bVisible = true;
     highlightColor = 0xff00ff;
+    bSelectedInEditor = false;
 
 	
     highlightTime = 60; // what units?
@@ -202,7 +203,9 @@ ofVec3f* SimpleObject::getScaleRef(){
 	return &pAttrib->ModelScale;
 }
 
-
+void SimpleObject::SelectedInEditor(bool selected){
+    bSelectedInEditor = selected;
+}
 
 
 //--------------------------------------------------------------

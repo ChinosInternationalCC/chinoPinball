@@ -249,6 +249,13 @@ void ScenarioEditor::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
+void ScenarioEditor::ClearSelectedObjectFlags(){
+    for(int i = 0; i < scenario->ScenarioObjects.size(); i++) {
+        scenario->ScenarioObjects[i]->SelectedInEditor(false);
+    }
+}
+
+//--------------------------------------------------------------
 void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
     
     selectedObject = NULL;
@@ -261,6 +268,8 @@ void ScenarioEditor::onMousePick( ofxBulletMousePickEvent &e ) {
 		if( *baseShape == e ) {
             
             selectedObject = scenario->ScenarioObjects[i];
+            ClearSelectedObjectFlags();
+            selectedObject->SelectedInEditor(true);
             
             //selectedObject
             ofLogVerbose("EditorVerbose") << "ScenarioEditor::onMousePick : selected a " << scenario->ScenarioObjects[i]->getObjectName() << endl;
