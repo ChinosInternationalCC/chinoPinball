@@ -17,7 +17,16 @@ public:
     void updateSpecific(bool bEditorMode);
     string getObjectName();
     void onCollisionSpecific();
+    
     void SetDestinationObject(SimpleObject &object);
+    
+    
+    void SetMultiBallStickyFlag(bool bFlag);
+    bool GetMultiBallStickyFlag(void);
+    bool IsBallStuck();
+    void ReleaseBall();
 private:
     SimpleObject *m_poDestinationObject;
+    bool bSticky;//if this flag is true the ball will remain trapped when hitting the object
+    bool bBallStuck;
 };

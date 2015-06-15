@@ -24,6 +24,8 @@ class ScenarioEditor {
 private:
     static bool	instanceFlag;
     static ScenarioEditor *single;
+    
+    void ClearSelectedObjectFlags();
 	
 public:
 	static ScenarioEditor* getInstance();
@@ -62,6 +64,8 @@ public:
 	bool createGUI(SimpleObject *);
 	void resetUIvalues();
 	ofxUICanvas *gui;
+    //ofxUITabBar *tabBar;
+    //ofxUICanvas *guiHierarchy;
 	ofVec2f posGui;
 	bool bGuiPointer;//var to protect from gui * bad accsss
 	

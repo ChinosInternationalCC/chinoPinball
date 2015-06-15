@@ -113,7 +113,9 @@ void Hammer::updateSpecific(bool bEditorMode){
 void Hammer::draw(bool bEditorMode){
     
 	int t = ofGetElapsedTimef()*100-collisionTime;
-    if(t<highlightTime){
+    if(bEditorMode && bSelectedInEditor){
+        ofSetHexColor(highlightColor);
+    }else if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
         ofSetHexColor(color);

@@ -106,7 +106,10 @@ void Obstacle::draw(bool bEditorMode){
 	
 	//>>??
 	int t = ofGetElapsedTimef()*100-collisionTime;
-    if(t<highlightTime){
+    if(bEditorMode && bSelectedInEditor){
+        ofSetHexColor(highlightColor);
+    }
+    else if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
         if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */
