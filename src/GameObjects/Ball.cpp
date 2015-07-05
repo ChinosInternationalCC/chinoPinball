@@ -82,7 +82,12 @@ void Ball::draw(bool bEditorMode){
     body.draw();
     material.end();
 	
-	ofSetColor(ofColor::black);
+    if(bEditorMode && bSelectedInEditor){
+        ofSetHexColor(highlightColor);
+    }
+    else{
+        ofSetColor(ofColor::black);
+    }
 	
 	//black color
 	ofPushMatrix();

@@ -129,8 +129,13 @@ void Lever::updateSpecific(bool bEditorMode){
 //--------------------------------------------------------------
 void Lever::draw(bool bEditorMode){
 	
-	ofSetHexColor(color);
-	
+    if(bEditorMode && bSelectedInEditor){
+        ofSetHexColor(highlightColor);
+    }
+    else{
+        ofSetHexColor(color);
+	}
+    
     material.begin();
 	
     body.transformGL();

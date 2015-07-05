@@ -196,6 +196,7 @@ To enter in the scenario editor mode press the key 'e'
 PinballChinoManager
 
 * f - fullscreen
+* c - enable/disable movement of the camera
 * s - save camera position to file
 * l - load camera postion
 * o - move camera in X axis +
