@@ -58,7 +58,9 @@ public:
 	ofxXmlSettings XML;
     static string projectName;
 	void saveCameraPosition(ofMatrix4x4 _camPose);
+	void saveCameraFov(float fov);
 	ofMatrix4x4 loadCameraPosition();
+    float loadCameraFov();
     bool bMouseCameraEvents(bool activate);
 	//////////////////////////////////////////
     LightsManager           chinoLights;
