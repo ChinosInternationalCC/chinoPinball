@@ -338,10 +338,25 @@ void PinballChinoManager::saveCameraPosition(ofMatrix4x4 _camPose)
     XML->setValue("_camPose_20", _camPose(2,0), 0); XML->setValue("_camPose_21", _camPose(2,1), 0); XML->setValue("_camPose_22", _camPose(2,2), 0); XML->setValue("_camPose_23", _camPose(2,3), 0);
     XML->setValue("_camPose_30", _camPose(3,0), 0); XML->setValue("_camPose_31", _camPose(3,1), 0); XML->setValue("_camPose_32", _camPose(3,2), 0); XML->setValue("_camPose_33", _camPose(3,3), 0);
 	//XML->setValue("distance", cam.getDistance(), 0);
+    //	XML->setValue("fov", cam.getFov(), 0);
 	XML->saveFile(projectName+"/cameraSettings.xml");
     delete XML;
 	
 	cout << "end saveCameraPosition ?? " << endl;
+}
+
+//--------------------------------------------------------------
+void PinballChinoManager::saveCameraFov(float fov)
+{
+	cout << "saveCameraFov " << endl;
+	
+	ofxXmlSettings *XML = new ofxXmlSettings(projectName+"/cameraSettings.xml");
+    XML->setValue("fov", fov, 0); 	//XML->setValue("distance", cam.getDistance(), 0);
+    //	XML->setValue("fov", cam.getFov(), 0);
+	XML->saveFile(projectName+"/cameraSettings.xml");
+    delete XML;
+	
+	cout << "end saveCameraFov " << endl;
 }
 
 //--------------------------------------------------------------
@@ -373,6 +388,27 @@ ofMatrix4x4 PinballChinoManager::loadCameraPosition()
 }
 
 //--------------------------------------------------------------
+float PinballChinoManager::loadCameraFov()
+{
+	float fov;
+	
+	string message = "loading cameraSettings.xml";
+	if( XML.loadFile(projectName+"/cameraSettings.xml") ){
+		message = projectName+"/cameraSettings.xml loaded!";
+	}else{
+		message = "unable to load cameraSettings.xml check folder data/" + projectName;
+	}
+	cout << "Loading Camera position" << message << endl;
+	
+	
+	fov = XML.getValue("fov",0.0, 0);
+	printf("(%.4f)\n ", fov);
+	
+	//cam.getTarget().setTransformMatrix(_camPose);
+	return fov;
+}
+
+//--------------------------------------------------------------
 void PinballChinoManager::keyReleased(int key){
 	
 	int amountX = 1;
@@ -387,12 +423,14 @@ void PinballChinoManager::keyReleased(int key){
         case 's':
             savedPose = camera.getGlobalTransformMatrix();
             saveCameraPosition(savedPose); // ideal to save on XML
+            saveCameraFov(camera.getFov());
             cout << "saved camera Pose xml" << endl;
             break;
 	
         case 'l':
             savedPose = loadCameraPosition(); // write over the savedCamPose var
             camera.setTransformMatrix(savedPose);
+            camera.setFov(loadCameraFov());
             cout << "load camera Pose xml" << endl;
             break;
 		case 'n':
@@ -420,6 +458,13 @@ void PinballChinoManager::keyReleased(int key){
 		case 'u':
 			cout << "camera.getPosition().y = " << camera.getPosition().y << endl;
 			camera.move(0, +amountX, 0);
+            
+            
+            //works no matter what is pressed first
+            if(ofGetKeyPressed(OF_KEY_CONTROL) && ofGetKeyPressed(OF_KEY_SHIFT)){
+                cout<<"shift "<<ofGetFrameNum()<<endl;
+            }
+            
 			break;
 			
 		case 'j':
@@ -445,6 +490,19 @@ void PinballChinoManager::keyReleased(int key){
 			//myScenario.ScenarioObjects[11]->onCollision();
 			//myScenario.ScenarioObjects[12]->onCollision();
 			//myScenario.ScenarioObjects[13]->onCollision();
+            
+			
+		case 'U':
+            camera.setFov(camera.getFov() + 1);
+            camera.dolly(-1);
+			cout << "FOV: " << camera.getFov() << endl;
+			break;
+			
+		case 'J':
+            camera.setFov(camera.getFov() - 1);
+            camera.dolly(1);
+			cout << "FOV: " << camera.getFov() << endl;
+			break;
 			
     }
 	

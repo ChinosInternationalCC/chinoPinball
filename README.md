@@ -205,6 +205,8 @@ PinballChinoManager
 * k - move camera in Z axis -
 * u - move camera in Y axis +
 * j - move camera in Y axis -
+* U - increase camera Field Of View
+* J - decrease camera Field Of View
 * m - mute sounds
 
 InputEventManager
