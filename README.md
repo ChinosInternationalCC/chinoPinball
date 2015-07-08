@@ -346,4 +346,4 @@ Thanks to FABLab Barcelona for letting us use their CNC machines
 ***
 ###Contact
 
-chinopinball@gmail.com
+chinos.international@gmail.com
