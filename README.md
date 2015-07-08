@@ -333,11 +333,12 @@ If you have any doubts on what you can do and what you can not do with the code 
 ***
 ###Colaborators
  * Kuba Markiewicz  - Openframeworks
- * Carles Gutiérrez - Openframeworks
+ * Carles Gutiérrez - Openframeworks - http://carlesgutierrez.github.io
  * Ovidiu Cincheza - Openframeworks
  * Angel Muñoz - Openframeworks / Arduino
  * Augusto Zuniga - 3D Art
  * Mery Glez - DigitalFabrication
+ * Anastasia Pistofidou - DigitalFabrication
  * Alex Geell - SoundArt
  * Alex Reche - MadMapper
 
