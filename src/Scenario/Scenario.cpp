@@ -10,6 +10,8 @@
 #include "PinballChinoManager.h"
 
  Scenario::Scenario(){
+	
+	
 	scaleStage = 0.25;
 	boundsWidth = 7.;;
 	depthStage = 160;
@@ -30,6 +32,8 @@
 	widthrlPlane = boundsWidth;
 	heightrlPlane = depthStage;
 	depthrlPlane = heightwalls;
+	 
+	
 	 
 	 guiBasicScenario = NULL;
 	 createBasicGUIScenario();
@@ -59,8 +63,12 @@ void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
         loadBasicScenario(_world, ofVec3f(0,0,0));
         addCoverScenario(_world);
 	}
-    
-    ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
+	
+	
+	//Load XML values
+	
+	
+    //ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
     /* set light position */
     lightPos = ofVec3f(0, 10, -15.f);
@@ -82,7 +90,7 @@ void Scenario::setDebugMode(bool &DebugMode){
 
 //--------------------------------------------------------------
 void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
-	
+	/*
 	bounds.push_back( new ofxBulletBox() );
 	startLoc.set(0, 0, -2*heightbkPlane);
 	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
@@ -90,21 +98,23 @@ void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 	bounds[lastPosIdCoverScenario]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 	bounds[lastPosIdCoverScenario]->setProperties(.95, .5);
 	bounds[lastPosIdCoverScenario]->add();
+	 */
 	
 }
 
 //--------------------------------------------------------------
 void Scenario::removeCoverScenario(){
-    if (bounds.size() > 0){
+   /* if (bounds.size() > 0){
         bounds[lastPosIdCoverScenario]->removeRigidBody();
         bounds.erase(bounds.begin()+lastPosIdCoverScenario);
     }
+	*/
 }
 
 
 //--------------------------------------------------------------
 void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
-    
+   /*
 	// STATGE
 	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
@@ -131,8 +141,8 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 
 
 	}
-	
-	
+	*/
+
 	
 	
 
@@ -183,6 +193,7 @@ void Scenario::draw(bool bEditorMode){
 	
 	ofSetColor(ofColor::gray);
 	
+	/*
 	//Draw the basic scneario ground
 	if(bVisibleBasicTerrain){
 		
@@ -192,6 +203,7 @@ void Scenario::draw(bool bEditorMode){
 			material.end();
 		}
 	}
+	 */
 	
     
 	//ofDrawAxis(1);
@@ -295,6 +307,8 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     ofxXmlSettings ScenarioXml;
     
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
+
+
         
         ScenarioXml.pushTag("scenario");
         
@@ -524,11 +538,47 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
+					
+				case SimpleObject::ShapeTypeScenario:{
+					
+					ScenarioObject * oScenarioObject = new ScenarioObject(currentMissions);
+					
+					//string _modelData,
+					//ofVec3f _position,
+					//float _damping,
+					//float _friction,
+					//float _mass,
+					//float _restitution,
+					//ofVec3f _ModelScale,
+					//int _direction);
+					
+					ScenarioObjectAttrib *Attrib = new ScenarioObjectAttrib(path,
+																		pos,
+																		0,
+																		0,
+																		0,
+																		0.95, //restitution by default to walls?
+																		scale);
+					
+					oScenarioObject->setup(world, Attrib);
+					oScenarioObject->SetObjectId(objId);
+					oScenarioObject->setPhysicsRotation(rotation);
+					oScenarioObject->color = color;
+					oScenarioObject->setVisibility(invisible);
+					ScenarioObjects.push_back(oScenarioObject);
+					oScenarioObject->setPointsCollision(pointsCollision);
+					oScenarioObject->setupRot();
+				}
+				break;
             }
             ScenarioXml.popTag();
         }
-        
+		
         ScenarioXml.popTag(); //pop position
+		
+		ScenarioXml.pushTag("ScenarioBoxArea");
+		ballLimitsBoxSize = ScenarioXml.getValue("ScenarioBoxArea",0.0, 0);
+		ScenarioXml.popTag();
     }
     
     else{
@@ -543,7 +593,15 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 //------------------------------
 
 void Scenario::saveToXml(){
+	
+	
+	
     ofxXmlSettings ScenarioXml;
+	
+	ScenarioXml.pushTag("scenarioBoxArea");
+	ScenarioXml.addValue("ScenarioBoxArea", ballLimitsBoxSize);
+
+	
     ScenarioXml.addTag("scenario");
     ScenarioXml.pushTag("scenario");
     
@@ -626,9 +684,12 @@ void Scenario::createBasicGUIScenario(){
 	guiBasicScenario = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
 	
+	guiBasicScenario->addSlider("ballLimitBox", 0.0, 50.0, &ballLimitsBoxSize);
+	
 	guiBasicScenario->autoSizeToFitWidgets();
 	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
 	guiBasicScenario->loadSettings("GUI/guiSettings.xml");
+	
 }
 //--------------------------------------------------------
 void Scenario::guiEventBasics(ofxUIEventArgs &e){
@@ -638,6 +699,7 @@ void Scenario::guiEventBasics(ofxUIEventArgs &e){
 		//bVisibleBasicTerrain = !bVisibleBasicTerrain;
 		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
 	}
+
 }
 //--------------------------------------------------------
 vector <Ball *> Scenario::getBalls(){
