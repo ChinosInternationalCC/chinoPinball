@@ -42,6 +42,7 @@ private:
 	int SplashScreenDuration;
     double SplashScreenTimer;
 	bool displayGameOver;
+	bool displayNewGame;
 
 };
 

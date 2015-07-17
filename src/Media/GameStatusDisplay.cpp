@@ -19,6 +19,7 @@ GameStatusDisplay::GameStatusDisplay(int posX, int posY){
 	SplashScreenDuration = 1000;
     SplashScreenTimer = SplashScreenDuration;
 	displayGameOver= false;
+	displayNewGame= false;
     
 }
 
@@ -143,8 +144,8 @@ void GameStatusDisplay::draw(void){
     else
         draw2dFont();
 	
-	if (displayGameOver)
-	//game over
+	if (displayGameOver) {
+        //game over
 		if ((ofGetElapsedTimeMillis() - SplashScreenTimer) < SplashScreenDuration){
 			cam.begin();
 			MediaUtils::billboardBegin();//always facing the camera
@@ -160,9 +161,35 @@ void GameStatusDisplay::draw(void){
 			MediaUtils::billboardEnd();
 			cam.end();
 		}
-		else{
+		else {
 			displayGameOver = false;
+			displayNewGame = true;
+            SplashScreenTimer = ofGetElapsedTimeMillis();
 		}
+    }
+    else if (displayNewGame) {
+        // new game
+		if ((ofGetElapsedTimeMillis() - SplashScreenTimer) < SplashScreenDuration){
+			cam.begin();
+			MediaUtils::billboardBegin();//always facing the camera
+			{
+				ofScale(1, -1, 1);  // Flip back since we're in 3D.
+				//font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
+				ofSetColor(5, 200, 220);
+				string GOstr = "NEW GAME";
+				fontMedium.drawString(GOstr, GOstartPositionX, GOstartPositionY);
+                GOstr = "PRESS A BUTTON";
+				fontMedium.drawString(GOstr, GOstartPositionX, GOstartPositionY + 50);
+                
+                
+			}
+			MediaUtils::billboardEnd();
+			cam.end();
+		}
+		else {
+			displayNewGame = false;
+		}
+    }
     
 }
 
