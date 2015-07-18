@@ -11,29 +11,6 @@
 
  Scenario::Scenario(){
 	
-	
-	scaleStage = 0.25;
-	boundsWidth = 7.;;
-	depthStage = 160;
-	frontbackwallHeigh = 40;
-	heightwalls = 20;
-	
-	//Ground
-	widthbasePlane = 100;
-	heightbasePlane = depthStage;
-	depthbasePlane = boundsWidth;
-	
-	//BackWall
-	widthbkPlane = 100;
-	heightbkPlane = boundsWidth*1.5;
-	depthbkPlane = frontbackwallHeigh;
-	
-	//RightLeftWall
-	widthrlPlane = boundsWidth;
-	heightrlPlane = depthStage;
-	depthrlPlane = heightwalls;
-	 
-	
 	 
 	 guiBasicScenario = NULL;
 	 createBasicGUIScenario();
@@ -308,7 +285,10 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
 
-
+		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
+		ballLimitsBoxSize = ScenarioXml.getValue("ScenarioBoxArea",0.0, 0);
+		cout << " ballLimitsBoxSize loaded = " << ballLimitsBoxSize << endl;
+		ScenarioXml.popTag();
         
         ScenarioXml.pushTag("scenario");
         
@@ -576,9 +556,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 		
         ScenarioXml.popTag(); //pop position
 		
-		ScenarioXml.pushTag("ScenarioBoxArea");
-		ballLimitsBoxSize = ScenarioXml.getValue("ScenarioBoxArea",0.0, 0);
-		ScenarioXml.popTag();
+
     }
     
     else{
