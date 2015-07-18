@@ -69,7 +69,8 @@ public:
         ShapeTypeGeneratedMesh = 10,
         ShapeTypeGravity = 11,
         ShapeTypeTeleporter = 12,
-		ShapeTypeRamp = 13
+		ShapeTypeRamp = 13,
+		ShapeTypeScenario = 14
     };
 	
     shapeType type;

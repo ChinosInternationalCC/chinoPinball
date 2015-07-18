@@ -11,6 +11,8 @@
 
 #include "ofxBullet.h"
 
+#include "ScenarioObject.h"
+
 #include "Ball.h"
 #include "Lever.h"
 #include "Hammer.h"
@@ -67,7 +69,7 @@ public:
     vector<SimpleObject*> ScenarioObjects;
     
 	//basic World
-	vector <ofxBulletBox*>		bounds;
+	//vector <ofxBulletBox*>		bounds; //FIMG
 
     float                       ballLimitsBoxSize;
 
@@ -101,11 +103,12 @@ public:
 private:
 	
 	//BASIC SCENARIO STATGE/////////////////////////////////////
+	// bounds FIMG
 	ofVec3f startLoc;
 	ofPoint dimens;
 	
 	float scaleStage;
-	float	boundsWidth;
+	float	boundsWidth;//FIMG
 	float depthStage;
 	float frontbackwallHeigh;
 	float heightwalls;
@@ -126,6 +129,11 @@ private:
 	float depthrlPlane;
 	
 	int	 lastPosIdCoverScenario;
+	
+	
+	
+	 
+	 
 	//BASIC SCENARIO STATGE/////////////////////////////////////
 	
     vector<SimpleMission *> *currentMissions;

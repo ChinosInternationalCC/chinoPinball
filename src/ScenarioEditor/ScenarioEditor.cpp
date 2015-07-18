@@ -133,12 +133,8 @@ bool ScenarioEditor::createGUI(SimpleObject * _obj){
 
 			gui->addSpacer();
 			gui->addLabelToggle("Stop Ball", &bStopBall);
-			
-			gui->addLabel("Escenario BoundingBox");
+
 			gui->addSpacer();
-			
-				gui->addSpacer();
-                gui->addSlider("ballLimitBox", 0.0, 50.0, &scenario->ballLimitsBoxSize);
 			
 			gui->addLabel("Escenario Lighting");
 			gui->addSpacer();
