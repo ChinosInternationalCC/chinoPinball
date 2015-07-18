@@ -537,7 +537,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 																		0,
 																		0,
 																		0,
-																		0.95, //restitution by default to walls?
+																		0, //restitution by default to walls?
 																		scale);
 					
 					oScenarioObject->setup(world, Attrib);

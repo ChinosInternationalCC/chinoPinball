@@ -62,12 +62,13 @@ void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib
     
     
     setPosition(Attributes.position);
-    setDefaultZ();//Only after create it
-    
+	
+	if(type != ShapeTypeScenario){
+		setDefaultZ();//Only after create it
+	}
 
     setupLookStyle(Attributes);
     setupAnimations(Attributes);
-
 }
 
 
@@ -131,7 +132,7 @@ void SimpleObject::setVisibility(int invisible){
 
 //--------------------------------------------------------------
 void SimpleObject::setDefaultZ(){
-  
+	
     if(poSimpleBody->checkCreate()){
         pAttrib->position.z = fDefaultPositionZ;
         setPhysicsPosition(pAttrib->position);

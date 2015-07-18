@@ -243,21 +243,21 @@
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
-        <type>6</type>
+        <type>14</type>
         <id>20</id>
         <color>4633401</color>
-        <invisible>1</invisible>
+        <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>9.060012817</positionX>
-        <positionY>-47.580001831</positionY>
-        <positionZ>-1.000000000</positionZ>
+        <positionX>-2.659986973</positionX>
+        <positionY>-52.000049591</positionY>
+        <positionZ>1.499999762</positionZ>
         <scaleX>1.009999990</scaleX>
         <scaleY>1.009999990</scaleY>
         <scaleZ>1.009999990</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
-        <rotationW>1.000000000</rotationW>
+        <rotationZ>0.999916196</rotationZ>
+        <rotationW>-0.012948957</rotationW>
         <path>FIMG/Scenarios/scenarioBase.dae</path>
     </object>
 </scenario>

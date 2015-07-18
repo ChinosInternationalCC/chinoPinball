@@ -62,7 +62,7 @@ void ScenarioObject::setupBody(SimpleObjectAttrib &Attributes){
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
 	
-	body.setProperties(3, .95); // restitution, friction
+	body.setProperties(1, .95); // restitution, friction
 	body.setDamping( .25 );
     
     
@@ -124,11 +124,7 @@ void ScenarioObject::draw(bool bEditorMode){
 
 	ofPoint scaleModel = assimpModel.getScale();
 	
-	material.begin();
-	body.draw();
-	material.end();
-	
-	/*
+
 	 body.transformGL();
 	 ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
      assimpModel.getMesh(0).drawFaces();
@@ -136,7 +132,7 @@ void ScenarioObject::draw(bool bEditorMode){
 	
 	 glPopAttrib();
 	 material.end();
-	 */
+
 
 }
 //-------------------------------------------------------------
