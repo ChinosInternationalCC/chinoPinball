@@ -77,7 +77,7 @@ public:
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
-    void onCollision();
+    void onCollision(int ObjId);
 
     LeverAttrib* getLeverAttr();
     

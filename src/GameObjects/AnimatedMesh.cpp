@@ -53,6 +53,7 @@ void AnimatedMesh::setupBody(SimpleObjectAttrib &Attributes){
 	assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
 	assimpModel.playAllAnimations();
 	body.add();
+	//body.setData(this);
 	
 	
 	//Set properties to the body // TODO check others if they are setted
@@ -138,7 +139,7 @@ string AnimatedMesh::getObjectName(){
 }
 
 //------------------------------------------------------------
-void AnimatedMesh::onCollision(){
+void AnimatedMesh::onCollision(int ObjId){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time

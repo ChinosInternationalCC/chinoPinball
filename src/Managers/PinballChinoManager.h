@@ -35,6 +35,7 @@ class PinballChinoManager: public InputEventManager {
 public:
     
     PinballChinoManager();
+	~PinballChinoManager();
     
 	void setup();
 	void update();

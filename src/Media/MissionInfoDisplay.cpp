@@ -24,6 +24,10 @@ MissionInfoDisplay::MissionInfoDisplay(void){
     
 }
 
+MissionInfoDisplay::~MissionInfoDisplay(void){
+}
+
+
 void MissionInfoDisplay::draw(void){
     if (currentMission != NULL){
     

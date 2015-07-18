@@ -98,8 +98,8 @@ void GeneratedMesh::setup(ofxBulletWorldRigid &world, SimpleObjectAttrib *Attrib
     body.add();
     body.enableKinematic();
     body.setActivationState( DISABLE_DEACTIVATION );
-    
-    
+	//body.setData(this);
+	
     bAnimate = true;
 
     body.add();
@@ -237,7 +237,7 @@ string GeneratedMesh::getObjectName(){
 }
 
 //------------------------------------------------------------
-void GeneratedMesh::onCollision(){
+void GeneratedMesh::onCollision(int ObjId){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time

@@ -30,7 +30,7 @@ string Ramp::getObjectName(){
 }
 
 //--------------------------------------------------------------
-void Ramp::onCollisionSpecific(){
+void Ramp::onCollisionSpecific(int ObjId){
 	//TODO active RampGravityON and then detect when the ball goes out ramp so change againg to normal gravity or return to the custom physics
 }
 

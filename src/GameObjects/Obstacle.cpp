@@ -59,7 +59,7 @@ void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
-    
+	//body.setData(this);
 	
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
@@ -146,7 +146,7 @@ string Obstacle::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Obstacle::onCollision(){
+void Obstacle::onCollision(int ObjId){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
@@ -160,11 +160,11 @@ void Obstacle::onCollision(){
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
     
-    onCollisionSpecific();
+    onCollisionSpecific(ObjId);
 }
 
 //--------------------------------------------------------------
-void Obstacle::onCollisionSpecific(){
+void Obstacle::onCollisionSpecific(int ObjId){
     //Do Nothing
 }
 

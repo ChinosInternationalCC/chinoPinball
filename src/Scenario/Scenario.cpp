@@ -466,6 +466,9 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oTeleporter->setPhysicsRotation(rotation);
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
+					oTeleporter->RegisterScenarioRef(this);
+					oTeleporter->SetDetinationObjectId(8);//TODO read this from xml
+					oTeleporter->SetMultiBallStickyFlag(false); //TODO read this from xml
                     ScenarioObjects.push_back(oTeleporter);
 					oTeleporter->setPointsCollision(pointsCollision);
 					oTeleporter->setupRot();
