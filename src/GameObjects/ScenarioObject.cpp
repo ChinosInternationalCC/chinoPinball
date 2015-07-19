@@ -147,7 +147,7 @@ string ScenarioObject::getObjectName(){
 
 //------------------------------------------------------------
 void ScenarioObject::onCollision(int ObjId){
-    
+   /*
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;
@@ -161,6 +161,7 @@ void ScenarioObject::onCollision(int ObjId){
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
     
     onCollisionSpecific();
+    */
 }
 
 //--------------------------------------------------------------

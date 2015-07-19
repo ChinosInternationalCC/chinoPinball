@@ -160,7 +160,7 @@ void PinballChinoManager::draw(){
         // draw the box that is used to detect if the ball is outside the scenario
         ofNoFill();
         ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
-		cout << "PinballChinoManager ballLimitsBoxSize = " << myScenario.ballLimitsBoxSize << endl;
+		//cout << "PinballChinoManager ballLimitsBoxSize = " << myScenario.ballLimitsBoxSize << endl;
         ofDrawSphere(myScenario.lightPos, 2);
         ofFill();
          

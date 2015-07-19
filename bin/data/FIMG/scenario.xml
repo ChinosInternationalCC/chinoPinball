@@ -8,7 +8,7 @@
         <pointsCollision>0</pointsCollision>
         <positionX>8.300035477</positionX>
         <positionY>-18.279954910</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionZ>-0.375000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -264,18 +264,36 @@
         <type>14</type>
         <id>20</id>
         <color>4633401</color>
-        <invisible>1</invisible>
+        <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-2.959996462</positionX>
-        <positionY>-51.800052643</positionY>
-        <positionZ>0.89999762</positionZ>
-        <scaleX>0.512065566</scaleX>
-        <scaleY>0.512065566</scaleY>
-        <scaleZ>0.512065566</scaleZ>
+        <positionX>-2.519996405</positionX>
+        <positionY>-45.820053101</positionY>
+        <positionZ>0.899997950</positionZ>
+        <scaleX>0.512065589</scaleX>
+        <scaleY>0.512065589</scaleY>
+        <scaleZ>0.512065589</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.999916196</rotationZ>
         <rotationW>-0.012948957</rotationW>
         <path>FIMG/Scenarios/scenarioBase.dae</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>21</id>
+        <color>6438584</color>
+        <invisible>0</invisible>
+        <pointsCollision>3</pointsCollision>
+        <positionX>1.570036650</positionX>
+        <positionY>-41.611167908</positionY>
+        <positionZ>-1.000000238</positionZ>
+        <scaleX>0.025354460</scaleX>
+        <scaleY>0.025354460</scaleY>
+        <scaleZ>0.025354460</scaleZ>
+        <rotationX>0.995859504</rotationX>
+        <rotationY>0.089317381</rotationY>
+        <rotationZ>0.008240975</rotationZ>
+        <rotationW>0.014777766</rotationW>
+        <path>FIMG/cityObjects/escalera2.stl</path>
     </object>
 </scenario>
