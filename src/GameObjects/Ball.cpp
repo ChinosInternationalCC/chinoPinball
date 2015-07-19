@@ -29,7 +29,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld,
     SoundManager::getInstance()->PlaySound(1);
     shadow.set(getBallAttr()->radius, 0.1);
 	shadow.setResolution(20, 1);
-    
+	m_enBallState = BALL_STATE_INIT;
     
 }
 //----------------------------------
@@ -125,6 +125,7 @@ void Ball::reset() {
     body.add();
 	//body.setData(this);
     SoundManager::getInstance()->PlaySound(1);
+	m_enBallState = BALL_STATE_INIT;
 }
 
 //------------------------------------------------------------
@@ -161,4 +162,12 @@ void Ball::stop(bool bStopBall){
 		cout<<"Resume Ball"<<endl;
 		body.getRigidBody()->setActivationState(ACTIVE_TAG);
 	}
+}
+//------------------------------------------------------------
+Ball::BallState Ball::GetBallState(){
+	return m_enBallState;
+}
+//------------------------------------------------------------
+void Ball::SetBallState(BallState enState){
+	m_enBallState = enState;
 }

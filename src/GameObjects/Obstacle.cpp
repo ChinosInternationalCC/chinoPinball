@@ -147,19 +147,23 @@ string Obstacle::getObjectName(){
 
 //------------------------------------------------------------
 void Obstacle::onCollision(SimpleObject* Obj){
-    
-	GameStatus::getInstance()->AddPoints(collisionPoints);
-    //save time to show color during some time
-    collisionTime = ofGetElapsedTimef()*100;
-    //play sound
-    //SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
-   
-	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
-	eventComunication newComEvent;
-	newComEvent.collision = true;
-    newComEvent.pObject = this;
-	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-    
+	
+	
+	if (0 != collisionPoints){
+		GameStatus::getInstance()->AddPoints(collisionPoints);
+		//save time to show color during some time
+		collisionTime = ofGetElapsedTimef()*100;
+		//play sound
+		//SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
+	   
+		//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+		eventComunication newComEvent;
+		newComEvent.collision = true;
+		newComEvent.pObject = this;
+		ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+	}
+	
+	
     onCollisionSpecific(Obj);
 }
 

@@ -32,12 +32,14 @@ void Scenario::setupMissions(vector<SimpleMission*> *vectorMission){
 
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
-    
+	
+
+	
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
     if (bAddScenarioCover){
-        loadBasicScenario(_world, ofVec3f(0,0,0));
+        //loadBasicScenario(_world, ofVec3f(0,0,0));
         addCoverScenario(_world);
 	}
 	
@@ -51,7 +53,7 @@ void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
     lightPos = ofVec3f(0, 10, -15.f);
 	
 	//copy a reference
-	//world = _world;
+	world = &_world;
     DebugMode = false;
 
 }
@@ -90,7 +92,7 @@ void Scenario::removeCoverScenario(){
 
 
 //--------------------------------------------------------------
-void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
+//void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
    /*
 	// STATGE
 	for(int i = 0; i < 5; i++) {
@@ -119,11 +121,7 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 
 	}
 	*/
-
-	
-	
-
-}
+//}
 
 //--------------------------------------------------------------
 void Scenario::update(bool _bEditorMode){
@@ -277,12 +275,37 @@ void Scenario::popObject(SimpleObject* obj){
 }
 
 
-
 //--------------------------------------------------------------
+void Scenario::addOneBallMore(){
+	
+	ballCounter++;
+
+	
+	oBall = new Ball(currentMissions, radiusBall);
+
+	BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
+											posBall,	//position
+											0,		//damping
+											frictionBall,//friction
+											massBall,	//mass
+											restitutionBall,
+											radiusBall,
+											ofVec3f(0,0,0));
+	
+	oBall->setup(*world, ballAttrib);
+	oBall->SetObjectId(0 - ballCounter);
+	oBall->setPhysicsRotation(rotationBall);
+	oBall->color = colorBall;
+	oBall->setVisibility(invisibleBall);
+	
+	ScenarioObjects.push_back(oBall);
+	
+}
+
 
 void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     ofxXmlSettings ScenarioXml;
-    
+	
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
 
 		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
@@ -334,29 +357,34 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
-                    float radius = ScenarioXml.getValue("radius", 0.0);
-                    Ball *oBall = new Ball(currentMissions, radius);
 					
-					float mass = ScenarioXml.getValue("mass", 0.0);
-                    float restitution = ScenarioXml.getValue("restitution", 0.0);
-                    float friction = ScenarioXml.getValue("friction", 0.0);
-
+					ballCounter = 0;
+					ofQuaternion rotationBall = rotation;
+					posBall = pos;
+					rotationBall = rotation;
+					radiusBall = ScenarioXml.getValue("radius", 0.0);
+                    oBall = new Ball(currentMissions, radiusBall);
+					colorBall = color;
+					massBall = ScenarioXml.getValue("mass", 0.0);
+                    restitutionBall = ScenarioXml.getValue("restitution", 0.0);
+                    frictionBall = ScenarioXml.getValue("friction", 0.0);
+					invisibleBall = invisible;
 					
 					BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
 															pos,	//position
 															0,		//damping
-															friction,//friction
-															mass,	//mass
-															restitution,
-															radius,
+															frictionBall,//friction
+															massBall,	//mass
+															restitutionBall,
+															radiusBall,
 															ofVec3f(0,0,0));
 
 					
                     oBall->setup(world, ballAttrib);
                     oBall->SetObjectId(objId);
-					oBall->setPhysicsRotation(rotation);
-                    oBall->color = color;
-					oBall->setVisibility(invisible);
+					oBall->setPhysicsRotation(rotationBall);
+                    oBall->color = colorBall;
+					oBall->setVisibility(invisibleBall);
 					
                     ScenarioObjects.push_back(oBall);
                 }
@@ -468,7 +496,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oTeleporter->setVisibility(invisible);
 					oTeleporter->RegisterScenarioRef(this);
 					oTeleporter->SetDetinationObjectId(8);//TODO read this from xml
-					oTeleporter->SetMultiBallStickyFlag(false); //TODO read this from xml
+					oTeleporter->SetMultiBallStickyFlag(true); //TODO read this from xml
                     ScenarioObjects.push_back(oTeleporter);
 					oTeleporter->setPointsCollision(pointsCollision);
 					oTeleporter->setupRot();

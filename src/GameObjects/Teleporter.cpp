@@ -39,8 +39,32 @@ void Teleporter::onCollisionSpecific(SimpleObject* Obj){
 	
 	
     if (bSticky){
-		pMyBall->stop(true);
-		m_iBallStuckCount ++;
+		if (Ball::BALL_STATE_STUCK != pMyBall->GetBallState()){
+			//pMyBall->stop(true);
+			m_iBallStuckCount ++;
+			pMyBall->SetBallState(Ball::BALL_STATE_STUCK);
+			
+			//pMyBall->body.getRigidBody()->setFlags(0);
+		//	btRigidBody::setFlags
+			
+			//SetDestinationObject(m_poScenario->FindScenarioObjectById(m_iDestinationObjectId));
+			SetDestinationObject(this);
+			ofVec3f deltaPos = ofVec3f(5+m_iBallStuckCount*2,0,0);
+			
+			pMyBall->setPosition(m_poDestinationObject->getPosition() + deltaPos);
+			
+			pMyBall->body.getRigidBody()->setActivationState(DISABLE_SIMULATION);
+			
+			//create a newq ball;
+		
+			m_poScenario->addOneBallMore();
+			
+			//float aux_dimZ1 = (float)m_poDestinationObject->getSimpleBody()->getRigidBody()->getCollisionShape()->getMargin();//getLocalScaling
+			//btVector3 aux_dimZ2 = (btVector3)m_poDestinationObject->getSimpleBody()->getRigidBody()->getCollisionShape()->getLocalScaling();//
+			//cout << "aux_dimZ1 =" << aux_dimZ1 << endl;
+			//cout << "aux_dimZ2 =" << *aux_dimZ2 << endl;
+		}
+		
     }
 	else{
 		SetDestinationObject(m_poScenario->FindScenarioObjectById(m_iDestinationObjectId));
