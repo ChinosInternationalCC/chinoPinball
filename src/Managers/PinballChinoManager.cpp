@@ -121,16 +121,21 @@ void PinballChinoManager::update(){
 	//Arduino
 	arduCom.update(this);
     
+    bool ballsLeftOnTable = false;
     //check if ball inside box
     for(int i = 0; i < myScenario.ScenarioObjects.size(); i++)
     {
         if (myScenario.ScenarioObjects[i]->type == 0)
         {
             Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
-            if (!ball->isInsideBox(myScenario.ballLimitsBoxSize))
-                onRestartGameEvent();
+            if (ball->isInsideBox(myScenario.ballLimitsBoxSize) &&
+                ball->GetBallState() != Ball::BALL_STATE_STUCK)
+                ballsLeftOnTable = true;
         }
     }
+    
+    if(!ballsLeftOnTable)
+        onRestartGameEvent();
 
     (currentMissions)[idcurrentMission]->update();
     
@@ -205,23 +210,31 @@ void PinballChinoManager::onRestartGameEvent(void){
         {
             Ball* ball = (Ball*) myScenario.ScenarioObjects[i];
             
-            for(int j = 0; j < myScenario.ScenarioObjects.size(); j++)
-            {
-                if (myScenario.ScenarioObjects[j]->type == 5)
-                {
-                    Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
-                    ofVec3f pos;
-                    if(m_bLinkInitialBallPositionToHammer){
-                        pos.set(hammer->getPosition().x,hammer->getPosition().y-5,hammer->getPosition().z);
-                    }
-                    else{
-                        pos.set(ball->getInitialPos());
-                    }
-                    ball->setPosition(pos);
-                }
+            if (ball->GetObjectId() < 0){
+                // if the ball has a negative id is a multiball ball so it should be deleted
+                myScenario.ScenarioObjects.erase(myScenario.ScenarioObjects.begin()+i);
+                delete ball;
             }
-            
-            ball->reset();
+            else{
+                //the initial ball should be reseted
+                for(int j = 0; j < myScenario.ScenarioObjects.size(); j++)
+                {
+                    if (myScenario.ScenarioObjects[j]->type == 5)
+                    {
+                        Hammer* hammer = (Hammer*) myScenario.ScenarioObjects[j];
+                        ofVec3f pos;
+                        if(m_bLinkInitialBallPositionToHammer){
+                            pos.set(hammer->getPosition().x,hammer->getPosition().y-5,hammer->getPosition().z);
+                        }
+                        else{
+                            pos.set(ball->getInitialPos());
+                        }
+                        ball->setPosition(pos);
+                    }
+                }
+                
+                ball->reset();
+            }
         }
     }
     
