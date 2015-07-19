@@ -132,6 +132,7 @@ public:
     ofVec3f getPosition();
     void setPosition(ofVec3f _position);
     void setDefaultZ();
+	void modifyDefaultZ(float _DeltaZ);
     void setPhysicsPosition(ofVec3f position);
 	void setPhysicsRotation(ofQuaternion rotation);
     

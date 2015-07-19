@@ -695,6 +695,8 @@ void Scenario::createBasicGUIScenario(){
 	
 	guiBasicScenario->addSlider("ballLimitBox", 0.0, 50.0, &ballLimitsBoxSize);
 	
+	guiBasicScenario->addSlider("deltaDefaultZ", -10, 10, &defaulDeltaZPos);
+	
 	guiBasicScenario->autoSizeToFitWidgets();
 	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
 	guiBasicScenario->loadSettings("GUI/guiSettings.xml");
@@ -708,6 +710,13 @@ void Scenario::guiEventBasics(ofxUIEventArgs &e){
 		//bVisibleBasicTerrain = !bVisibleBasicTerrain;
 		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
 	}
+	/*else if(name == "deltaDefaultZ"){
+		for(int i = 0; i < ScenarioObjects.size(); i++){
+			if (ScenarioObjects[i]->type != SimpleObject::ShapeTypeBall || ScenarioObjects[i]->type != SimpleObject::ShapeTypeScenario){
+				ScenarioObjects[i]->modifyDefaultZ(defaulDeltaZPos);
+			}
+		}
+	}*/
 
 }
 //--------------------------------------------------------

@@ -98,6 +98,7 @@ public:
 	ofVec2f posGui;
 	void guiEventBasics(ofxUIEventArgs &e);
 	
+	float defaulDeltaZPos = 0;
 	
 
 private:
