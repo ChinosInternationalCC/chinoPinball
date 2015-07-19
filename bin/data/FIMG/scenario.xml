@@ -6,9 +6,9 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>8.300035477</positionX>
-        <positionY>-18.279954910</positionY>
-        <positionZ>-0.500000000</positionZ>
+        <positionX>16.971679688</positionX>
+        <positionY>-40.051166534</positionY>
+        <positionZ>-1.000000000</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -243,11 +243,11 @@
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
-        <type>6</type>
+        <type>12</type>
         <id>11</id>
         <color>6438584</color>
         <invisible>0</invisible>
-        <pointsCollision>3</pointsCollision>
+        <pointsCollision>0</pointsCollision>
         <positionX>9.971678734</positionX>
         <positionY>-40.051166534</positionY>
         <positionZ>-1.000000000</positionZ>
@@ -286,14 +286,36 @@
         <pointsCollision>3</pointsCollision>
         <positionX>-13.509965897</positionX>
         <positionY>-36.251171112</positionY>
-        <positionZ>-1.000000238</positionZ>
+        <positionZ>-1.000000000</positionZ>
         <scaleX>0.025354460</scaleX>
         <scaleY>0.025354460</scaleY>
         <scaleZ>0.025354460</scaleZ>
         <rotationX>0.972195923</rotationX>
-        <rotationY>-0.233556703</rotationY>
+        <rotationY>-0.233556718</rotationY>
         <rotationZ>0.003087294</rotationZ>
         <rotationW>0.016636245</rotationW>
         <path>FIMG/cityObjects/escalera2.stl</path>
+    </object>
+    <object>
+        <type>0</type>
+        <id>-1</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>8.300035477</positionX>
+        <positionY>-18.279954910</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path></path>
+        <mass>1.000000000</mass>
+        <radius>0.500000000</radius>
+        <restitution>0.449999988</restitution>
+        <friction>0.250000000</friction>
     </object>
 </scenario>

@@ -14,6 +14,11 @@ Ball::Ball(vector <SimpleMission *> * _currentMissions,  float radius) : SimpleO
     
 }
 
+Ball::~Ball(){
+    //remove the ball from the physics
+    body.remove();
+    
+}
 //---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld,
                  SimpleObjectAttrib *Attrib/*
