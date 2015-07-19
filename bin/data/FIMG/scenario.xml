@@ -6,9 +6,15 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
+<<<<<<< HEAD
         <positionX>8.300035477</positionX>
         <positionY>-18.279954910</positionY>
         <positionZ>-0.375000000</positionZ>
+=======
+        <positionX>16.971679688</positionX>
+        <positionY>-40.051166534</positionY>
+        <positionZ>-1.000000000</positionZ>
+>>>>>>> bb68fce8175fc35a62b629452d426b83aaa90370
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -248,7 +254,7 @@
         <color>6438584</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>9.971677780</positionX>
+        <positionX>9.971678734</positionX>
         <positionY>-40.051166534</positionY>
         <positionZ>-1.724137664</positionZ>
         <scaleX>0.190405786</scaleX>
@@ -295,5 +301,27 @@
         <rotationZ>0.003087294</rotationZ>
         <rotationW>0.016636245</rotationW>
         <path>FIMG/cityObjects/escalera2.stl</path>
+    </object>
+    <object>
+        <type>0</type>
+        <id>-1</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>8.300035477</positionX>
+        <positionY>-18.279954910</positionY>
+        <positionZ>-0.500000000</positionZ>
+        <scaleX>0.000000000</scaleX>
+        <scaleY>0.000000000</scaleY>
+        <scaleZ>0.000000000</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path></path>
+        <mass>1.000000000</mass>
+        <radius>0.500000000</radius>
+        <restitution>0.449999988</restitution>
+        <friction>0.250000000</friction>
     </object>
 </scenario>

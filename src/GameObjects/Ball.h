@@ -59,6 +59,7 @@ public:
 	};
 	
     Ball(vector <SimpleMission *> * _currentMissions, float radius);//SimpleObjects force that
+    ~Ball();
     void setup(ofxBulletWorldRigid &myWorld,
                SimpleObjectAttrib *Attrib
                /*
