@@ -105,7 +105,7 @@ public:
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
-    virtual void onCollision(int objId) = 0;
+    virtual void onCollision(SimpleObject* Obj) = 0;
     
 	//physics vars
 	//enum {Static/dynamic/Kinematic}

@@ -146,7 +146,7 @@ string Obstacle::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Obstacle::onCollision(int ObjId){
+void Obstacle::onCollision(SimpleObject* Obj){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
@@ -160,11 +160,11 @@ void Obstacle::onCollision(int ObjId){
     newComEvent.pObject = this;
 	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
     
-    onCollisionSpecific(ObjId);
+    onCollisionSpecific(Obj);
 }
 
 //--------------------------------------------------------------
-void Obstacle::onCollisionSpecific(int ObjId){
+void Obstacle::onCollisionSpecific(SimpleObject* Obj){
     //Do Nothing
 }
 

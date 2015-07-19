@@ -146,7 +146,7 @@ string ScenarioObject::getObjectName(){
 }
 
 //------------------------------------------------------------
-void ScenarioObject::onCollision(int ObjId){
+void ScenarioObject::onCollision(SimpleObject* Obj){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time

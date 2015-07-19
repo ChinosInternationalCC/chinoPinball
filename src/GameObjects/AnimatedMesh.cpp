@@ -139,7 +139,7 @@ string AnimatedMesh::getObjectName(){
 }
 
 //------------------------------------------------------------
-void AnimatedMesh::onCollision(int ObjId){
+void AnimatedMesh::onCollision(SimpleObject* Obj){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time

@@ -44,7 +44,7 @@ public:
     ofxBulletBaseShape* getBulletBaseShape();
     string getObjectName();
     
-    void onCollision(int ObjId);
+    void onCollision(SimpleObject* Obj);
 	
 	
 	//Event launch hammer
