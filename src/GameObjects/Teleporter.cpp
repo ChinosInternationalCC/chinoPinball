@@ -28,16 +28,15 @@ string Teleporter::getObjectName(){
     return "Teleporter";
 }
 
-void Teleporter::onCollisionSpecific(int ObjId){
+void Teleporter::onCollisionSpecific(SimpleObject* Obj){
     //TODO move the ball to the destination point m_poDestinationObject
 	//if the sticky flag is active the ball should remain stuck
-	vector <Ball *> balls;
-	balls = m_poScenario->getBalls();
+	//vector <Ball *> balls;
+	//balls = m_poScenario->getBalls();
 	
 	//TODO find the ball that collisioned, for the moment stuck the first ball
-	Ball *pMyBall = balls[0];
+	Ball *pMyBall = (Ball*)Obj;
 	
-	cout << ObjId << endl;
 	
     if (bSticky){
 		pMyBall->stop(true);

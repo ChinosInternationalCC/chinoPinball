@@ -87,6 +87,7 @@ public:
 
     SimpleObject* FindScenarioObjectByName(string name);
     SimpleObject* FindScenarioObjectById(int id);
+	SimpleObject* FindScenarioObjectByRigidBody(const btRigidBody* body);
 	vector <Ball *> getBalls();
 	
 	

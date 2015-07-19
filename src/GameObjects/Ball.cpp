@@ -138,7 +138,7 @@ string Ball::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Ball::onCollision(int ObjId){}
+void Ball::onCollision(SimpleObject* Obj){}
 
 
 //------------------------------------------------------------

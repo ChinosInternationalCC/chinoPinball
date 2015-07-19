@@ -83,7 +83,7 @@ public:
     
     void reset();
     
-    void onCollision(int ObjId);
+    void onCollision(SimpleObject* Obj);
     
     ofVec3f getInitialPos();
 

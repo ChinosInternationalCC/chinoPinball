@@ -174,7 +174,7 @@ string Hammer::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Hammer::onCollision(int ObjId){
+void Hammer::onCollision(SimpleObject* Obj){
 
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;

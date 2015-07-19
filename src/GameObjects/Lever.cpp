@@ -208,7 +208,7 @@ string Lever::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Lever::onCollision(int ObjId){}
+void Lever::onCollision(SimpleObject* Obj){}
 
 
 //--------------------------------------------------------------
