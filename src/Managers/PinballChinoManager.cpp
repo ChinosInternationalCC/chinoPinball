@@ -524,8 +524,10 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
     {
         if(*myScenario.ScenarioObjects[i]->getBulletBaseShape() == cdata)
         {
+
             ofLogVerbose("CollisionVerbose") << "PinballChinoManager::onCollision : " << myScenario.ScenarioObjects[i]->getObjectName() << endl;
-            myScenario.ScenarioObjects[i]->onCollision(myScenario.ScenarioObjects[i]->GetObjectId());
+			SimpleObject *object2 = myScenario.FindScenarioObjectByRigidBody(cdata.body2);
+            myScenario.ScenarioObjects[i]->onCollision(object2);
             (currentMissions)[idcurrentMission]->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
 		}
 	}

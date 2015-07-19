@@ -694,3 +694,10 @@ vector <Ball *> Scenario::getBalls(){
 
 	return Balls;
 }
+//---------------------------------------------------------
+SimpleObject* Scenario::FindScenarioObjectByRigidBody(const btRigidBody* body){
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->getBulletBaseShape()->getRigidBody() == body)
+			return ScenarioObjects[i];
+	}
+}

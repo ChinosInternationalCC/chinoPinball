@@ -237,7 +237,7 @@ string GeneratedMesh::getObjectName(){
 }
 
 //------------------------------------------------------------
-void GeneratedMesh::onCollision(int ObjId){
+void GeneratedMesh::onCollision(SimpleObject* Obj){
     
 	GameStatus::getInstance()->AddPoints(collisionPoints);
     //save time to show color during some time
