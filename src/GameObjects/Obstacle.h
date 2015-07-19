@@ -61,7 +61,7 @@ public:
     ofxBulletBaseShape* getBulletBaseShape();
     virtual string getObjectName();
     
-    void onCollision();
+    void onCollision(int ObjId);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
 
     
@@ -71,7 +71,7 @@ public:
 protected:
     virtual void setupSpecific();
     virtual void updateSpecific(bool bEditorMode);
-    virtual void onCollisionSpecific();
+    virtual void onCollisionSpecific(int ObjId);
     
 private:
     void setupBody(SimpleObjectAttrib &Attributes);

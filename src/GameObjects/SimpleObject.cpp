@@ -97,6 +97,7 @@ void SimpleObject::update(bool bEditorMode){
 //--------------------------------------------------------------
 void SimpleObject::SetObjectId(int objId){
     ObjectId = objId;
+	
     
 }
 //--------------------------------------------------------------

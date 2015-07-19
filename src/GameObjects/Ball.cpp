@@ -46,6 +46,7 @@ void Ball::setupBody(SimpleObjectAttrib &Attributes){
     body.setProperties(getBallAttr()->restitution, getBallAttr()->friction);
     // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
+	//body.setData(this);
     
    
 }
@@ -122,6 +123,7 @@ void Ball::reset() {
     body.remove();
     body.create(world->world, this->getPosition(), getBallAttr()->mass, getBallAttr()->radius);
     body.add();
+	//body.setData(this);
     SoundManager::getInstance()->PlaySound(1);
 }
 
@@ -136,7 +138,7 @@ string Ball::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Ball::onCollision(){}
+void Ball::onCollision(int ObjId){}
 
 
 //------------------------------------------------------------

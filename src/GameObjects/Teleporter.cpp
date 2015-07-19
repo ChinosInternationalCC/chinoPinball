@@ -7,10 +7,13 @@
 //
 
 #include "Teleporter.h"
+#include "Ball.h"
+#include "Scenario.h"
 
 Teleporter::Teleporter(vector <SimpleMission *> * _currentMissions)
 : Obstacle(_currentMissions){
     m_poDestinationObject = NULL;
+	m_iBallStuckCount = 0;
 }
 
 void Teleporter::setupSpecific(){
@@ -25,22 +28,46 @@ string Teleporter::getObjectName(){
     return "Teleporter";
 }
 
-void Teleporter::onCollisionSpecific(){
+void Teleporter::onCollisionSpecific(int ObjId){
     //TODO move the ball to the destination point m_poDestinationObject
-    
+	//if the sticky flag is active the ball should remain stuck
+	vector <Ball *> balls;
+	balls = m_poScenario->getBalls();
+	
+	//TODO find the ball that collisioned, for the moment stuck the first ball
+	Ball *pMyBall = balls[0];
+	
+	cout << ObjId << endl;
+	
     if (bSticky){
-        //if the sticky flag is active the ball should remain stuck
+		pMyBall->stop(true);
+		m_iBallStuckCount ++;
     }
+	else{
+		SetDestinationObject(m_poScenario->FindScenarioObjectById(m_iDestinationObjectId));
+	
+		pMyBall->setPosition(m_poDestinationObject->getPosition());
+		pMyBall->reset();
+	}
 }
 
 void Teleporter::ReleaseBall(){
-    if (bBallStuck){
+    if (m_iBallStuckCount > 0){
+		m_iBallStuckCount = 0;
         //TODO release the Ball
+		
+		vector <Ball *> balls;
+		balls = m_poScenario->getBalls();
+		
+		//TODO find the ball that collisioned, for the moment stuck the first ball
+		Ball *pMyBall = balls[0];
+		pMyBall->stop(false);
+
     }
 }
 
-void Teleporter::SetDestinationObject(SimpleObject &object){
-    m_poDestinationObject = &object;
+void Teleporter::SetDestinationObject(SimpleObject *object){
+    m_poDestinationObject = object;
 }
 
 void Teleporter::SetMultiBallStickyFlag(bool bFlag){
@@ -55,5 +82,13 @@ bool Teleporter::GetMultiBallStickyFlag(void){
 }
 
 bool Teleporter::IsBallStuck(){
-    return bBallStuck;
+	return (m_iBallStuckCount > 0)? true : false;
+}
+
+void Teleporter::RegisterScenarioRef(Scenario *pScenario){
+	m_poScenario = pScenario;
+}
+
+void Teleporter::SetDetinationObjectId(int id){
+	m_iDestinationObjectId = id;
 }

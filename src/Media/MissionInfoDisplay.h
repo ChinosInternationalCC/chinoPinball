@@ -1,4 +1,4 @@
-//
+		//
 //  MissionInfoDisplay.h
 //  chinoPinball
 //
@@ -16,6 +16,7 @@
 class MissionInfoDisplay{
 public:
     MissionInfoDisplay(void);
+	~MissionInfoDisplay(void);
     void draw(void);
     
     void listenerOnUpdateMission(eventMission & args);
