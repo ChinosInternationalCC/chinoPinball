@@ -51,6 +51,13 @@ inline BallAttrib::BallAttrib(string _modelPath,
 class Ball : public SimpleObject
 {
 public:
+	
+	enum BallState{
+		BALL_STATE_INIT,
+		BALL_STATE_ROLLING,
+		BALL_STATE_STUCK
+	};
+	
     Ball(vector <SimpleMission *> * _currentMissions, float radius);//SimpleObjects force that
     void setup(ofxBulletWorldRigid &myWorld,
                SimpleObjectAttrib *Attrib
@@ -90,6 +97,9 @@ public:
     BallAttrib* getBallAttr();
 
 	void stop(bool bStopBall);
+	
+	BallState GetBallState();
+	void SetBallState(BallState enState);
 private:
 
     void setupBody(SimpleObjectAttrib &Attributes);
@@ -101,6 +111,8 @@ private:
 	
 	//shadow fake
 	ofCylinderPrimitive shadow;
+	
+	BallState m_enBallState;
     
 };
 
