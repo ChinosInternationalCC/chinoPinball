@@ -106,7 +106,7 @@ void Ball::draw(bool bEditorMode){
 }
 
 //--------------------------------
-bool Ball::isInsideBox(float boxSize){
+bool Ball::isInsideBox(ofVec3f boxSize){
     
     btTransform transform;
     btRigidBody* rigidBody = body.getRigidBody();
@@ -114,9 +114,9 @@ bool Ball::isInsideBox(float boxSize){
     btVector3 origin;
     origin = transform.getOrigin();
     
-    if ((origin.getX() > boxSize) ||
-        (origin.getY() > boxSize) ||
-        (origin.getZ() > boxSize))
+    if ((origin.getX() > boxSize.x) ||
+        (origin.getY() > boxSize.y) ||
+        (origin.getZ() > boxSize.z))
         return false;
     else
         return true;

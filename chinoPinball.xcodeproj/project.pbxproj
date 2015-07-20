@@ -220,7 +220,6 @@
 		A544B03F1AE2C00E00BA7F27 /* libBulletDynamics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */; };
 		A544B0401AE2C00F00BA7F27 /* libBulletSoftBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */; };
 		A544B0411AE2C00F00BA7F27 /* libLinearMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */; };
-		A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */; };
 		A54B11051AEA9EC2001BC2CD /* AssimpUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */; };
 		A54C8F671AE3E999000F8AC0 /* AnimatedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */; };
 		A551CA821AE83ABD00E372B2 /* GeneratedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A551CA801AE83ABD00E372B2 /* GeneratedMesh.cpp */; };
@@ -271,6 +270,8 @@
 		A58DD22B18F8577300B1FE41 /* ofxUIWaveform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FA18F8577300B1FE41 /* ofxUIWaveform.cpp */; };
 		A58DD22C18F8577300B1FE41 /* ofxUIWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FC18F8577300B1FE41 /* ofxUIWidget.cpp */; };
 		A58DD22D18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */; };
+		A59272EB1B5D7222006972A0 /* FreeTransformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59272E91B5D7222006972A0 /* FreeTransformObject.cpp */; };
+		A59272EE1B5D7262006972A0 /* AnimatedObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59272EC1B5D7262006972A0 /* AnimatedObstacle.cpp */; };
 		A59DCD781AFE6E69006C2A3A /* Teleporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */; };
 		A59DCD7B1AFE6EA7006C2A3A /* Gravity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */; };
 		A5A5D0F31983B72700295F0F /* ofxMtlMapping2DControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5A5D0D11983B72700295F0F /* ofxMtlMapping2DControls.cpp */; };
@@ -918,8 +919,6 @@
 		A544AF8C1AE2C00E00BA7F27 /* libBulletDynamics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletDynamics.a; sourceTree = "<group>"; };
 		A544AF8D1AE2C00E00BA7F27 /* libBulletSoftBody.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBulletSoftBody.a; sourceTree = "<group>"; };
 		A544AF8E1AE2C00E00BA7F27 /* libLinearMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLinearMath.a; sourceTree = "<group>"; };
-		A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreeTransformObject.cpp; sourceTree = "<group>"; };
-		A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTransformObject.h; sourceTree = "<group>"; };
 		A54B11031AEA9EC2001BC2CD /* AssimpUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssimpUtils.cpp; path = GameObjects/AssimpUtils.cpp; sourceTree = "<group>"; };
 		A54B11041AEA9EC2001BC2CD /* AssimpUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssimpUtils.h; path = GameObjects/AssimpUtils.h; sourceTree = "<group>"; };
 		A54C8F651AE3E999000F8AC0 /* AnimatedMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedMesh.cpp; path = GameObjects/AnimatedMesh.cpp; sourceTree = "<group>"; };
@@ -1025,6 +1024,10 @@
 		A58DD1FF18F8577300B1FE41 /* ofxUIWidgetWithLabel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUIWidgetWithLabel.cpp; sourceTree = "<group>"; };
 		A58DD20018F8577300B1FE41 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWidgetWithLabel.h; sourceTree = "<group>"; };
 		A58DD20118F8577300B1FE41 /* ofxUIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxUIWrapper.h; sourceTree = "<group>"; };
+		A59272E91B5D7222006972A0 /* FreeTransformObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FreeTransformObject.cpp; path = src/GameObjects/FreeTransformObject.cpp; sourceTree = SOURCE_ROOT; };
+		A59272EA1B5D7222006972A0 /* FreeTransformObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreeTransformObject.h; path = src/GameObjects/FreeTransformObject.h; sourceTree = SOURCE_ROOT; };
+		A59272EC1B5D7262006972A0 /* AnimatedObstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimatedObstacle.cpp; path = GameObjects/AnimatedObstacle.cpp; sourceTree = "<group>"; };
+		A59272ED1B5D7262006972A0 /* AnimatedObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedObstacle.h; path = GameObjects/AnimatedObstacle.h; sourceTree = "<group>"; };
 		A59DCD761AFE6E69006C2A3A /* Teleporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Teleporter.cpp; path = GameObjects/Teleporter.cpp; sourceTree = "<group>"; };
 		A59DCD771AFE6E69006C2A3A /* Teleporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Teleporter.h; path = GameObjects/Teleporter.h; sourceTree = "<group>"; };
 		A59DCD791AFE6EA7006C2A3A /* Gravity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Gravity.cpp; path = GameObjects/Gravity.cpp; sourceTree = "<group>"; };
@@ -1239,6 +1242,8 @@
 		0C7B7E46723914CB38E9D865 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				A59272E91B5D7222006972A0 /* FreeTransformObject.cpp */,
+				A59272EA1B5D7222006972A0 /* FreeTransformObject.h */,
 				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
 				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
 				8439E7B51B59161700FEF5A9 /* ScenarioObject.cpp */,
@@ -1263,8 +1268,8 @@
 				A59DCD7A1AFE6EA7006C2A3A /* Gravity.h */,
 				84A108581AFF68CA0096EA0E /* Ramp.cpp */,
 				84A108591AFF68CA0096EA0E /* Ramp.h */,
-				A5462B011B24BA4C00F31B00 /* FreeTransformObject.cpp */,
-				A5462B021B24BA4C00F31B00 /* FreeTransformObject.h */,
+				A59272EC1B5D7262006972A0 /* AnimatedObstacle.cpp */,
+				A59272ED1B5D7262006972A0 /* AnimatedObstacle.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -3085,6 +3090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59272EE1B5D7262006972A0 /* AnimatedObstacle.cpp in Sources */,
 				A544B0331AE2C00E00BA7F27 /* btQuickprof.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				A544AFAD1AE2C00E00BA7F27 /* btDbvt.cpp in Sources */,
@@ -3247,7 +3253,6 @@
 				A7C5BC5518B788BB006187D9 /* SyphonNameboundClient.m in Sources */,
 				A544AFF81AE2C00E00BA7F27 /* gim_box_set.cpp in Sources */,
 				A544AFB41AE2C00E00BA7F27 /* btActivatingCollisionAlgorithm.cpp in Sources */,
-				A5462B031B24BA4C00F31B00 /* FreeTransformObject.cpp in Sources */,
 				A58DD20A18F8577300B1FE41 /* ofxUIDropDownList.cpp in Sources */,
 				A544AFB91AE2C00E00BA7F27 /* btCollisionObject.cpp in Sources */,
 				A58DD20718F8577300B1FE41 /* ofxUICanvas.cpp in Sources */,
@@ -3329,6 +3334,7 @@
 				A544AFF21AE2C00E00BA7F27 /* btGenericPoolAllocator.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				A53649F51AAE34D70099D1B9 /* Reactor.cpp in Sources */,
+				A59272EB1B5D7222006972A0 /* FreeTransformObject.cpp in Sources */,
 				A544AFA31AE2C00E00BA7F27 /* ofxBulletCone.cpp in Sources */,
 				A58DD20618F8577300B1FE41 /* ofxUIButton.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,

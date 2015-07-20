@@ -51,4 +51,5 @@ private:
 	string myPhotoScenarioPath;
 	bool bIsPhotoToMatch;
 	
+    
 };

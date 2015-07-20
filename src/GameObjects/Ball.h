@@ -78,7 +78,7 @@ public:
     ofxBulletSphere body;
 
     
-    bool isInsideBox(float boxSize);
+    bool isInsideBox(ofVec3f boxSize);
 
     enum BallStatus{
         BallStatusWaiting = 0,
