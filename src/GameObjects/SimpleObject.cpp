@@ -42,6 +42,13 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 }
 
 //--------------------------------------------------------------
+void SimpleObject::modifyDefaultZ(float _DeltaZ){
+	
+	fDefaultPositionZ += _DeltaZ;
+	
+}
+
+//--------------------------------------------------------------
 void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes){
     
     pAttrib = &Attributes;
@@ -64,7 +71,7 @@ void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib
     setPosition(Attributes.position);
 	
 	if(type != ShapeTypeScenario){
-		setDefaultZ();//Only after create it
+		//setDefaultZ();//Only after create it
 	}
 
     setupLookStyle(Attributes);
