@@ -808,6 +808,9 @@
     <ClCompile Include="src\GameObjects\Teleporter.cpp">
       <Filter>src\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\FreeTransformObject.cpp">
+      <Filter>src\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -2358,6 +2361,9 @@
       <Filter>src\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObjects\Teleporter.h">
+      <Filter>src\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FreeTransformObject.h">
       <Filter>src\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

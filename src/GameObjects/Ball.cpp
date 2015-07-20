@@ -14,6 +14,11 @@ Ball::Ball(vector <SimpleMission *> * _currentMissions,  float radius) : SimpleO
     
 }
 
+Ball::~Ball(){
+    //remove the ball from the physics
+    body.remove();
+    
+}
 //---------------------------------
 void Ball::setup(ofxBulletWorldRigid &myWorld,
                  SimpleObjectAttrib *Attrib/*
@@ -29,7 +34,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld,
     SoundManager::getInstance()->PlaySound(1);
     shadow.set(getBallAttr()->radius, 0.1);
 	shadow.setResolution(20, 1);
-    
+	m_enBallState = BALL_STATE_INIT;
     
 }
 //----------------------------------
@@ -46,6 +51,7 @@ void Ball::setupBody(SimpleObjectAttrib &Attributes){
     body.setProperties(getBallAttr()->restitution, getBallAttr()->friction);
     // .25 (more restituition means more energy) , .95 ( friction )
     body.add();
+	//body.setData(this);
     
    
 }
@@ -122,7 +128,9 @@ void Ball::reset() {
     body.remove();
     body.create(world->world, this->getPosition(), getBallAttr()->mass, getBallAttr()->radius);
     body.add();
+	//body.setData(this);
     SoundManager::getInstance()->PlaySound(1);
+	m_enBallState = BALL_STATE_INIT;
 }
 
 //------------------------------------------------------------
@@ -136,7 +144,7 @@ string Ball::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Ball::onCollision(){}
+void Ball::onCollision(SimpleObject* Obj){}
 
 
 //------------------------------------------------------------
@@ -159,4 +167,12 @@ void Ball::stop(bool bStopBall){
 		cout<<"Resume Ball"<<endl;
 		body.getRigidBody()->setActivationState(ACTIVE_TAG);
 	}
+}
+//------------------------------------------------------------
+Ball::BallState Ball::GetBallState(){
+	return m_enBallState;
+}
+//------------------------------------------------------------
+void Ball::SetBallState(BallState enState){
+	m_enBallState = enState;
 }

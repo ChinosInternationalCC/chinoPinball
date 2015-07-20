@@ -40,7 +40,7 @@ public:
     string getObjectName();
     
     void setAnimation(bool bAnimate);
-    void onCollision();
+    void onCollision(SimpleObject* Obj);
 	void setAngle2Rotate(float angle2rot, ofVec3f axis2rot);
 	
 	//Mesh stuff

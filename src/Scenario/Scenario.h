@@ -11,6 +11,8 @@
 
 #include "ofxBullet.h"
 
+#include "ScenarioObject.h"
+
 #include "Ball.h"
 #include "Lever.h"
 #include "Hammer.h"
@@ -66,8 +68,8 @@ public:
 
     vector<SimpleObject*> ScenarioObjects;
     
-	//basic World
-	vector <ofxBulletBox*>		bounds;
+	//Multiball methods
+	void addOneBallMore();
 
     float                       ballLimitsBoxSize;
 
@@ -77,7 +79,6 @@ public:
 	//material for shadows
 	ofMaterial material;
 	
-	void loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos);
 	void addCoverScenario(ofxBulletWorldRigid &world);
 	void removeCoverScenario();
     
@@ -85,6 +86,7 @@ public:
 
     SimpleObject* FindScenarioObjectByName(string name);
     SimpleObject* FindScenarioObjectById(int id);
+	SimpleObject* FindScenarioObjectByRigidBody(const btRigidBody* body);
 	vector <Ball *> getBalls();
 	
 	
@@ -96,36 +98,25 @@ public:
 	ofVec2f posGui;
 	void guiEventBasics(ofxUIEventArgs &e);
 	
+	float defaulDeltaZPos = 0;
 	
 
 private:
-	
-	//BASIC SCENARIO STATGE/////////////////////////////////////
-	ofVec3f startLoc;
-	ofPoint dimens;
-	
-	float scaleStage;
-	float	boundsWidth;
-	float depthStage;
-	float frontbackwallHeigh;
-	float heightwalls;
-	
-	//Ground
-	float widthbasePlane;
-	float heightbasePlane;
-	float depthbasePlane;
-	
-	//BackWall
-	float widthbkPlane;
-	float heightbkPlane;
-	float depthbkPlane;
-	
-	//RightLeftWall
-	float widthrlPlane;
-	float heightrlPlane;
-	float depthrlPlane;
-	
-	int	 lastPosIdCoverScenario;
+	///////////////////
+	//Ball atributes
+	int ballCounter; // from 0 to -X
+	ofVec3f posBall;
+	ofQuaternion rotationBall;
+	float radiusBall;
+	Ball *oBall;
+	float massBall;
+	float restitutionBall;
+	float frictionBall;
+	BallAttrib *ballAttrib;
+	int colorBall;
+	int invisibleBall;
+						   
+
 	//BASIC SCENARIO STATGE/////////////////////////////////////
 	
     vector<SimpleMission *> *currentMissions;

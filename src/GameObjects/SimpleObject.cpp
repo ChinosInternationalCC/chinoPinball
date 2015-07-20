@@ -42,6 +42,13 @@ SimpleObject::SimpleObject(ofxBulletBaseShape *poBulletBaseShape,
 }
 
 //--------------------------------------------------------------
+void SimpleObject::modifyDefaultZ(float _DeltaZ){
+	
+	fDefaultPositionZ += _DeltaZ;
+	
+}
+
+//--------------------------------------------------------------
 void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib &Attributes){
     
     pAttrib = &Attributes;
@@ -62,12 +69,13 @@ void SimpleObject::genericSetup(ofxBulletWorldRigid &myWorld, SimpleObjectAttrib
     
     
     setPosition(Attributes.position);
-    setDefaultZ();//Only after create it
-    
+	
+	if(type != ShapeTypeScenario){
+		//setDefaultZ();//Only after create it
+	}
 
     setupLookStyle(Attributes);
     setupAnimations(Attributes);
-
 }
 
 
@@ -96,6 +104,7 @@ void SimpleObject::update(bool bEditorMode){
 //--------------------------------------------------------------
 void SimpleObject::SetObjectId(int objId){
     ObjectId = objId;
+	
     
 }
 //--------------------------------------------------------------
@@ -131,7 +140,7 @@ void SimpleObject::setVisibility(int invisible){
 
 //--------------------------------------------------------------
 void SimpleObject::setDefaultZ(){
-  
+	
     if(poSimpleBody->checkCreate()){
         pAttrib->position.z = fDefaultPositionZ;
         setPhysicsPosition(pAttrib->position);

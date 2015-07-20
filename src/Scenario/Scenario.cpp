@@ -10,26 +10,7 @@
 #include "PinballChinoManager.h"
 
  Scenario::Scenario(){
-	scaleStage = 0.25;
-	boundsWidth = 7.;;
-	depthStage = 160;
-	frontbackwallHeigh = 40;
-	heightwalls = 20;
 	
-	//Ground
-	widthbasePlane = 100;
-	heightbasePlane = depthStage;
-	depthbasePlane = boundsWidth;
-	
-	//BackWall
-	widthbkPlane = 100;
-	heightbkPlane = boundsWidth*1.5;
-	depthbkPlane = frontbackwallHeigh;
-	
-	//RightLeftWall
-	widthrlPlane = boundsWidth;
-	heightrlPlane = depthStage;
-	depthrlPlane = heightwalls;
 	 
 	 guiBasicScenario = NULL;
 	 createBasicGUIScenario();
@@ -51,22 +32,28 @@ void Scenario::setupMissions(vector<SimpleMission*> *vectorMission){
 
 //--------------------------------------------------------------
 void Scenario::setup(ofxBulletWorldRigid &_world, bool bAddScenarioCover){
-    
+	
+
+	
     loadFromXml(_world);
     //loadFromJSON(world);
     //saveToJSON();
     if (bAddScenarioCover){
-        loadBasicScenario(_world, ofVec3f(0,0,0));
+        //loadBasicScenario(_world, ofVec3f(0,0,0));
         addCoverScenario(_world);
 	}
-    
-    ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
+	
+	
+	//Load XML values
+	
+	
+    //ballLimitsBoxSize = 25; // the size of the box that is used to detect is the ball is outside the scenario
     
     /* set light position */
     lightPos = ofVec3f(0, 10, -15.f);
 	
 	//copy a reference
-	//world = _world;
+	world = &_world;
     DebugMode = false;
 
 }
@@ -82,7 +69,7 @@ void Scenario::setDebugMode(bool &DebugMode){
 
 //--------------------------------------------------------------
 void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
-	
+	/*
 	bounds.push_back( new ofxBulletBox() );
 	startLoc.set(0, 0, -2*heightbkPlane);
 	dimens.set(widthbasePlane, heightbasePlane, depthbasePlane);
@@ -90,21 +77,23 @@ void Scenario::addCoverScenario(ofxBulletWorldRigid &world){
 	bounds[lastPosIdCoverScenario]->create( world.world, startLoc*scaleStage, 0., dimens.x*scaleStage, dimens.y*scaleStage, dimens.z*scaleStage );
 	bounds[lastPosIdCoverScenario]->setProperties(.95, .5);
 	bounds[lastPosIdCoverScenario]->add();
+	 */
 	
 }
 
 //--------------------------------------------------------------
 void Scenario::removeCoverScenario(){
-    if (bounds.size() > 0){
+   /* if (bounds.size() > 0){
         bounds[lastPosIdCoverScenario]->removeRigidBody();
         bounds.erase(bounds.begin()+lastPosIdCoverScenario);
     }
+	*/
 }
 
 
 //--------------------------------------------------------------
-void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
-    
+//void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
+   /*
 	// STATGE
 	for(int i = 0; i < 5; i++) {
 		bounds.push_back( new ofxBulletBox() );
@@ -131,12 +120,8 @@ void Scenario::loadBasicScenario(ofxBulletWorldRigid &world, ofVec3f _pos){
 
 
 	}
-	
-	
-	
-	
-
-}
+	*/
+//}
 
 //--------------------------------------------------------------
 void Scenario::update(bool _bEditorMode){
@@ -183,6 +168,7 @@ void Scenario::draw(bool bEditorMode){
 	
 	ofSetColor(ofColor::gray);
 	
+	/*
 	//Draw the basic scneario ground
 	if(bVisibleBasicTerrain){
 		
@@ -192,6 +178,7 @@ void Scenario::draw(bool bEditorMode){
 			material.end();
 		}
 	}
+	 */
 	
     
 	//ofDrawAxis(1);
@@ -288,13 +275,43 @@ void Scenario::popObject(SimpleObject* obj){
 }
 
 
-
 //--------------------------------------------------------------
+void Scenario::addOneBallMore(){
+	
+	ballCounter++;
+
+	
+	oBall = new Ball(currentMissions, radiusBall);
+
+	BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
+											posBall,	//position
+											0,		//damping
+											frictionBall,//friction
+											massBall,	//mass
+											restitutionBall,
+											radiusBall,
+											ofVec3f(0,0,0));
+	
+	oBall->setup(*world, ballAttrib);
+	oBall->SetObjectId(0 - ballCounter);
+	oBall->setPhysicsRotation(rotationBall);
+	oBall->color = colorBall;
+	oBall->setVisibility(invisibleBall);
+	
+	ScenarioObjects.push_back(oBall);
+	
+}
+
 
 void Scenario::loadFromXml(ofxBulletWorldRigid &world){
     ofxXmlSettings ScenarioXml;
-    
+	
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
+
+		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
+		ballLimitsBoxSize = ScenarioXml.getValue("ScenarioBoxArea",0.0, 0);
+		cout << " ballLimitsBoxSize loaded = " << ballLimitsBoxSize << endl;
+		ScenarioXml.popTag();
         
         ScenarioXml.pushTag("scenario");
         
@@ -340,29 +357,34 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 			
             switch(Type){
                 case SimpleObject::ShapeTypeBall:{
-                    float radius = ScenarioXml.getValue("radius", 0.0);
-                    Ball *oBall = new Ball(currentMissions, radius);
 					
-					float mass = ScenarioXml.getValue("mass", 0.0);
-                    float restitution = ScenarioXml.getValue("restitution", 0.0);
-                    float friction = ScenarioXml.getValue("friction", 0.0);
-
+					ballCounter = 0;
+					ofQuaternion rotationBall = rotation;
+					posBall = pos;
+					rotationBall = rotation;
+					radiusBall = ScenarioXml.getValue("radius", 0.0);
+                    oBall = new Ball(currentMissions, radiusBall);
+					colorBall = color;
+					massBall = ScenarioXml.getValue("mass", 0.0);
+                    restitutionBall = ScenarioXml.getValue("restitution", 0.0);
+                    frictionBall = ScenarioXml.getValue("friction", 0.0);
+					invisibleBall = invisible;
 					
 					BallAttrib *ballAttrib = new BallAttrib("",		//string 3dmodelPath
 															pos,	//position
 															0,		//damping
-															friction,//friction
-															mass,	//mass
-															restitution,
-															radius,
+															frictionBall,//friction
+															massBall,	//mass
+															restitutionBall,
+															radiusBall,
 															ofVec3f(0,0,0));
 
 					
                     oBall->setup(world, ballAttrib);
                     oBall->SetObjectId(objId);
-					oBall->setPhysicsRotation(rotation);
-                    oBall->color = color;
-					oBall->setVisibility(invisible);
+					oBall->setPhysicsRotation(rotationBall);
+                    oBall->color = colorBall;
+					oBall->setVisibility(invisibleBall);
 					
                     ScenarioObjects.push_back(oBall);
                 }
@@ -472,6 +494,9 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oTeleporter->setPhysicsRotation(rotation);
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
+					oTeleporter->RegisterScenarioRef(this);
+					oTeleporter->SetDetinationObjectId(8);//TODO read this from xml
+					oTeleporter->SetMultiBallStickyFlag(true); //TODO read this from xml
                     ScenarioObjects.push_back(oTeleporter);
 					oTeleporter->setPointsCollision(pointsCollision);
 					oTeleporter->setupRot();
@@ -524,11 +549,45 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     
                 }
                 break;
+					
+				case SimpleObject::ShapeTypeScenario:{
+					
+					ScenarioObject * oScenarioObject = new ScenarioObject(currentMissions);
+					
+					//string _modelData,
+					//ofVec3f _position,
+					//float _damping,
+					//float _friction,
+					//float _mass,
+					//float _restitution,
+					//ofVec3f _ModelScale,
+					//int _direction);
+					
+					ScenarioObjectAttrib *Attrib = new ScenarioObjectAttrib(path,
+																		pos,
+																		0,
+																		0,
+																		0,
+																		0, //restitution by default to walls?
+																		scale);
+					
+					oScenarioObject->setup(world, Attrib);
+					oScenarioObject->SetObjectId(objId);
+					oScenarioObject->setPhysicsRotation(rotation);
+					oScenarioObject->color = color;
+					oScenarioObject->setVisibility(invisible);
+					ScenarioObjects.push_back(oScenarioObject);
+					oScenarioObject->setPointsCollision(pointsCollision);
+					oScenarioObject->setupRot();
+				}
+				break;
             }
             ScenarioXml.popTag();
         }
-        
+		
         ScenarioXml.popTag(); //pop position
+		
+
     }
     
     else{
@@ -543,7 +602,15 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 //------------------------------
 
 void Scenario::saveToXml(){
+	
+	
+	
     ofxXmlSettings ScenarioXml;
+	
+	ScenarioXml.pushTag("scenarioBoxArea");
+	ScenarioXml.addValue("ScenarioBoxArea", ballLimitsBoxSize);
+
+	
     ScenarioXml.addTag("scenario");
     ScenarioXml.pushTag("scenario");
     
@@ -626,9 +693,14 @@ void Scenario::createBasicGUIScenario(){
 	guiBasicScenario = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
 	
+	guiBasicScenario->addSlider("ballLimitBox", 0.0, 50.0, &ballLimitsBoxSize);
+	
+	guiBasicScenario->addSlider("deltaDefaultZ", -10, 10, &defaulDeltaZPos);
+	
 	guiBasicScenario->autoSizeToFitWidgets();
 	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
 	guiBasicScenario->loadSettings("GUI/guiSettings.xml");
+	
 }
 //--------------------------------------------------------
 void Scenario::guiEventBasics(ofxUIEventArgs &e){
@@ -638,6 +710,14 @@ void Scenario::guiEventBasics(ofxUIEventArgs &e){
 		//bVisibleBasicTerrain = !bVisibleBasicTerrain;
 		cout << "bVisibleBasicTerrain invert = "  << bVisibleBasicTerrain << endl;
 	}
+	/*else if(name == "deltaDefaultZ"){
+		for(int i = 0; i < ScenarioObjects.size(); i++){
+			if (ScenarioObjects[i]->type != SimpleObject::ShapeTypeBall || ScenarioObjects[i]->type != SimpleObject::ShapeTypeScenario){
+				ScenarioObjects[i]->modifyDefaultZ(defaulDeltaZPos);
+			}
+		}
+	}*/
+
 }
 //--------------------------------------------------------
 vector <Ball *> Scenario::getBalls(){
@@ -650,4 +730,11 @@ vector <Ball *> Scenario::getBalls(){
 	}
 
 	return Balls;
+}
+//---------------------------------------------------------
+SimpleObject* Scenario::FindScenarioObjectByRigidBody(const btRigidBody* body){
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->getBulletBaseShape()->getRigidBody() == body)
+			return ScenarioObjects[i];
+	}
 }

@@ -2,30 +2,25 @@
 //  Obstacle.cpp
 //  chinoPinball
 //
-//  Created by Angel on 02/02/14.
+//  Created by Carles Gutierrez on 17/07/15.
 //
 //
 
-#include "Obstacle.h"
+#include "ScenarioObject.h"
 
 
 
-Obstacle::Obstacle(vector <SimpleMission *> * _currentMissions) :
+ScenarioObject::ScenarioObject(vector <SimpleMission *> * _currentMissions) :
     SimpleObject(&body, _currentMissions, -1.0)
 {
     collisionPoints = 0;
 }
 
 //---------------------------------
-void Obstacle::setup(ofxBulletWorldRigid &world,
+void ScenarioObject::setup(ofxBulletWorldRigid &world,
                      SimpleObjectAttrib *Attributes){
-    //position.z = -1.5;
-   // setDefaultZ();
-    
-	
+
     genericSetup(world, *Attributes);
-
-
 	
     setupSpecific();
 }
@@ -39,9 +34,11 @@ void Obstacle::setup(ofxBulletWorldRigid &world,
  *  @param Attributes reference to the Attribute object
  */
 
-void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
+void ScenarioObject::setupBody(SimpleObjectAttrib &Attributes){
 	
 	// create ofxBullet shape
+	cout << "Scenario getPosition() = " << getPosition() << endl;
+	
 	body.create(world->world, getPosition(), 0); // we set m=0 for kinematic body
 	
     // load 3D model
@@ -59,13 +56,13 @@ void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
     assimpModel.setLoopStateForAllAnimations(OF_LOOP_NORMAL);
     assimpModel.playAllAnimations();
     body.add();
-	//body.setData(this);
+    
 	
     body.enableKinematic();
     //body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     // to add force to the ball on collision set restitution to > 1
 	
-	body.setProperties(3, .95); // restitution, friction
+	body.setProperties(1, .95); // restitution, friction
 	body.setDamping( .25 );
     
     
@@ -74,37 +71,37 @@ void Obstacle::setupBody(SimpleObjectAttrib &Attributes){
 
 
 //----------------------------------
-void Obstacle::setupLookStyle(SimpleObjectAttrib &Attributes){
+void ScenarioObject::setupLookStyle(SimpleObjectAttrib &Attributes){
     //NOTHING
 }
 
 //----------------------------------
-void Obstacle::setupAnimations(SimpleObjectAttrib &Attributes){
+void ScenarioObject::setupAnimations(SimpleObjectAttrib &Attributes){
     
     collisionTime = -120;
 }
 
 //----------------------------------
-void Obstacle::setupType(){
-    type = ShapeTypeObstacle;
+void ScenarioObject::setupType(){
+    type = ShapeTypeScenario;
 }
 
 
 //--------------------------------------------------------------
-void Obstacle::setupSpecific(){
+void ScenarioObject::setupSpecific(){
     //DO Nothing
 }
 
 //--------------------------------------------------------------
-void Obstacle::updateSpecific(bool bEditorMode){
+void ScenarioObject::updateSpecific(bool bEditorMode){
     //DO Nothing
 }
 
 
 //--------------------------------------------------------------
-void Obstacle::draw(bool bEditorMode){
+void ScenarioObject::draw(bool bEditorMode){
 	
-	//>>??
+	/*
 	int t = ofGetElapsedTimef()*100-collisionTime;
     if(bEditorMode && bSelectedInEditor){
         ofSetHexColor(highlightColor);
@@ -112,68 +109,68 @@ void Obstacle::draw(bool bEditorMode){
     else if(t<highlightTime){
         ofSetHexColor(highlightColor);
     }else{
-        if(/*(SimpleMission::MISSION_CALIFICATIONS  == currentMission->GetMissionState()) && */
-		   (*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())){
+        if((*currentMissions)[idCurrtentMission]->isElementHit(GetObjectId())){
             ofSetHexColor(highlightColor);
         }
         else{
         ofSetHexColor(color);
         }
     }
-	//<<??
+	*/
 
+	ofSetColor(ofColor::white);
+	
 	material.begin();
 
-	ofPoint scaleModel		= assimpModel.getScale();
+	ofPoint scaleModel = assimpModel.getScale();
 	
+
 	 body.transformGL();
-    ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    assimpModel.getMesh(0).drawFaces();
-	body.restoreTramsformGL();
+	 ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
+     assimpModel.getMesh(0).drawFaces();
+	 body.restoreTramsformGL();
 	
-	glPopAttrib();
-	material.end();
+	 glPopAttrib();
+	 material.end();
+
 
 }
 //-------------------------------------------------------------
-ofxBulletBaseShape* Obstacle::getBulletBaseShape(){
+ofxBulletBaseShape* ScenarioObject::getBulletBaseShape(){
     return (ofxBulletBaseShape*)&body;
 }
 
 //------------------------------------------------------------
-string Obstacle::getObjectName(){
-    return "Obstacle";
+string ScenarioObject::getObjectName(){
+    return "Scenario";
 }
 
 //------------------------------------------------------------
-void Obstacle::onCollision(SimpleObject* Obj){
-	
-	
-	if (0 != collisionPoints){
-		GameStatus::getInstance()->AddPoints(collisionPoints);
-		//save time to show color during some time
-		collisionTime = ofGetElapsedTimef()*100;
-		//play sound
-		//SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
-	   
-		//Play rele //TODO After try to move this to SimpleObject ... then all objects will
-		eventComunication newComEvent;
-		newComEvent.collision = true;
-		newComEvent.pObject = this;
-		ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-	}
-	
-	
-    onCollisionSpecific(Obj);
+void ScenarioObject::onCollision(SimpleObject* Obj){
+    /*
+	GameStatus::getInstance()->AddPoints(collisionPoints);
+    //save time to show color during some time
+    collisionTime = ofGetElapsedTimef()*100;
+    //play sound
+    //SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
+   
+	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+	eventComunication newComEvent;
+	newComEvent.collision = true;
+    newComEvent.pObject = this;
+	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+    
+    onCollisionSpecific();
+    */
 }
 
 //--------------------------------------------------------------
-void Obstacle::onCollisionSpecific(SimpleObject* Obj){
+void ScenarioObject::onCollisionSpecific(){
     //Do Nothing
 }
 
 //--------------------------------------------------------------
-void Obstacle::setupRot(){
+void ScenarioObject::setupRot(){
 	btTransform transform;
 	btRigidBody* a_rb = body.getRigidBody();
 	a_rb->getMotionState()->getWorldTransform( transform );
@@ -188,8 +185,8 @@ void Obstacle::setupRot(){
 }
 
 //--------------------------------------------------------------
-ObstacleAttrib* Obstacle::getObstacleAttr(){
-    return (ObstacleAttrib*) getSimpleAttrib();
+ScenarioObjectAttrib* ScenarioObject::getScenarioObjectAttr(){
+    return (ScenarioObjectAttrib*) getSimpleAttrib();
 }
 
 

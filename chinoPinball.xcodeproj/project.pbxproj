@@ -28,6 +28,7 @@
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
 		78076AC5DE85D9362E103E9F /* objDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24433DD6207CFCD62B7C09AF /* objDisplay.cpp */; };
 		8422374318C10D6A009CE9EC /* eventObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */; };
+		8439E7B71B59161700FEF5A9 /* ScenarioObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439E7B51B59161700FEF5A9 /* ScenarioObject.cpp */; };
 		845EA3F11963358500A6EC71 /* eventGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845EA3EF1963358500A6EC71 /* eventGame.cpp */; };
 		84673CC518D9C7FB00071D6F /* eventMoveObjectScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */; };
 		84A1085A1AFF68CA0096EA0E /* Ramp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A108581AFF68CA0096EA0E /* Ramp.cpp */; };
@@ -430,6 +431,8 @@
 		838B1D2C3319363CF8762B06 /* aiCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = aiCamera.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/aiCamera.h; sourceTree = SOURCE_ROOT; };
 		8422374118C10D6A009CE9EC /* eventObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventObjectScenario.cpp; sourceTree = "<group>"; };
 		8422374218C10D6A009CE9EC /* eventObjectScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventObjectScenario.h; sourceTree = "<group>"; };
+		8439E7B51B59161700FEF5A9 /* ScenarioObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScenarioObject.cpp; path = GameObjects/ScenarioObject.cpp; sourceTree = "<group>"; };
+		8439E7B61B59161700FEF5A9 /* ScenarioObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScenarioObject.h; path = GameObjects/ScenarioObject.h; sourceTree = "<group>"; };
 		845EA3EF1963358500A6EC71 /* eventGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventGame.cpp; sourceTree = "<group>"; };
 		845EA3F01963358500A6EC71 /* eventGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventGame.h; sourceTree = "<group>"; };
 		84673CC318D9C7FB00071D6F /* eventMoveObjectScenario.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eventMoveObjectScenario.cpp; sourceTree = "<group>"; };
@@ -1238,6 +1241,8 @@
 			children = (
 				8704787E955DA23CE1373E20 /* SimpleObject.cpp */,
 				E8CD147B24CB49BC23673984 /* SimpleObject.h */,
+				8439E7B51B59161700FEF5A9 /* ScenarioObject.cpp */,
+				8439E7B61B59161700FEF5A9 /* ScenarioObject.h */,
 				6307ED7E818A748D22DBB63B /* Ball.cpp */,
 				61036DF8AF6A2EEBFB8892E9 /* Ball.h */,
 				0B5F11AE69A054442FA8FF1B /* Hammer.cpp */,
@@ -3123,6 +3128,7 @@
 				A544AFE11AE2C00E00BA7F27 /* btMultiSphereShape.cpp in Sources */,
 				A544AFA11AE2C00E00BA7F27 /* ofxBulletBox.cpp in Sources */,
 				A544AFCF1AE2C00E00BA7F27 /* btBvhTriangleMeshShape.cpp in Sources */,
+				8439E7B71B59161700FEF5A9 /* ScenarioObject.cpp in Sources */,
 				A544B0091AE2C00E00BA7F27 /* btConeTwistConstraint.cpp in Sources */,
 				530F5E957BC59820D9A0897C /* GameStatusDisplay.cpp in Sources */,
 				78076AC5DE85D9362E103E9F /* objDisplay.cpp in Sources */,

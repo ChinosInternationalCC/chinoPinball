@@ -37,6 +37,7 @@ void Hammer::setupBody(SimpleObjectAttrib &Attributes){
     
     body.create(world->world, getPosition(), getSimpleAttrib()->mass, .75, 4, .75); // we set m=0 for kinematic body
     body.add();
+	//body.setData(this);
     body.enableKinematic();
     body.setProperties(1., 0.); // .25 (more restituition means more energy) , .95 ( friction )
     
@@ -173,7 +174,7 @@ string Hammer::getObjectName(){
 }
 
 //------------------------------------------------------------
-void Hammer::onCollision(){
+void Hammer::onCollision(SimpleObject* Obj){
 
     //save time to show color during some time
     collisionTime = ofGetElapsedTimef()*100;

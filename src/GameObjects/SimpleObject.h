@@ -69,7 +69,8 @@ public:
         ShapeTypeGeneratedMesh = 10,
         ShapeTypeGravity = 11,
         ShapeTypeTeleporter = 12,
-		ShapeTypeRamp = 13
+		ShapeTypeRamp = 13,
+		ShapeTypeScenario = 14
     };
 	
     shapeType type;
@@ -104,7 +105,7 @@ public:
 	//objDisplay mygraphicobject;
 	virtual ofxBulletBaseShape* getBulletBaseShape() = 0;
     virtual string getObjectName() = 0;
-    virtual void onCollision() = 0;
+    virtual void onCollision(SimpleObject* Obj) = 0;
     
 	//physics vars
 	//enum {Static/dynamic/Kinematic}
@@ -131,6 +132,7 @@ public:
     ofVec3f getPosition();
     void setPosition(ofVec3f _position);
     void setDefaultZ();
+	void modifyDefaultZ(float _DeltaZ);
     void setPhysicsPosition(ofVec3f position);
 	void setPhysicsRotation(ofQuaternion rotation);
     

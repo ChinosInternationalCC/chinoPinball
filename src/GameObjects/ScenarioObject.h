@@ -1,8 +1,8 @@
 //
-//  Obstacle.h
+//  ScenarioObject.h
 //  chinoPinball
 //
-//  Created by Angel on 02/02/14.
+//  Created by Carles Gutierrez on 17/07/15.
 //
 //
 
@@ -13,9 +13,9 @@
 #include "GameStatus.h"
 #include "SoundManager.h"
 
-class ObstacleAttrib : public SimpleObjectAttrib{
+class ScenarioObjectAttrib : public SimpleObjectAttrib{
 public:
-    inline ObstacleAttrib(string _modelPath,
+    inline ScenarioObjectAttrib(string _modelPath,
 					   ofVec3f _position,
                        float _damping,
                        float _friction,
@@ -25,7 +25,7 @@ public:
     
 };
 
-inline ObstacleAttrib::ObstacleAttrib(string  _modelPath,
+inline ScenarioObjectAttrib::ScenarioObjectAttrib(string  _modelPath,
 								ofVec3f _position,
                                 float _damping,
                                 float _friction,
@@ -42,11 +42,11 @@ SimpleObjectAttrib(_modelPath,
 }
 
 
-class Obstacle : public SimpleObject {
+class ScenarioObject : public SimpleObject {
 
 public:
 
-    Obstacle(vector <SimpleMission *> * _currentMissions);
+    ScenarioObject(vector <SimpleMission *> * _currentMissions);
 	
     void setup(ofxBulletWorldRigid &world,
                SimpleObjectAttrib *Attributes
@@ -66,12 +66,12 @@ public:
 
     
     
-    ObstacleAttrib* getObstacleAttr();
+    ScenarioObjectAttrib* getScenarioObjectAttr();
     
 protected:
     virtual void setupSpecific();
     virtual void updateSpecific(bool bEditorMode);
-    virtual void onCollisionSpecific(SimpleObject *Obj);
+    virtual void onCollisionSpecific();
     
 private:
     void setupBody(SimpleObjectAttrib &Attributes);

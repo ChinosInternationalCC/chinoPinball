@@ -1,3 +1,4 @@
+<ScenarioBoxArea>31.773399353</ScenarioBoxArea>
 <scenario>
     <object>
         <type>0</type>
@@ -5,9 +6,9 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-11.059984207</positionX>
-        <positionY>14.080018997</positionY>
-        <positionZ>-0.400000215</positionZ>
+        <positionX>14.480071068</positionX>
+        <positionY>-12.239972115</positionY>
+        <positionZ>-0.541871786</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -16,10 +17,48 @@
         <rotationZ>0.000000000</rotationZ>
         <rotationW>1.000000000</rotationW>
         <path></path>
-        <mass>1.000000000</mass>
+        <mass>10.000000000</mass>
         <radius>0.500000000</radius>
         <restitution>0.449999988</restitution>
         <friction>0.250000000</friction>
+    </object>
+    <object>
+        <type>3</type>
+        <id>14</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-7.608395576</positionX>
+        <positionY>1.360020280</positionY>
+        <positionZ>-0.500000119</positionZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher_def_ok.obj</path>
+        <LeverType>0</LeverType>
+    </object>
+    <object>
+        <type>3</type>
+        <id>15</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>6.747817993</positionX>
+        <positionY>0.480457574</positionY>
+        <positionZ>-0.500000119</positionZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher2_def_ok.obj</path>
+        <LeverType>1</LeverType>
     </object>
     <object>
         <type>3</type>
@@ -27,12 +66,12 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-7.568402767</positionX>
-        <positionY>16.260019302</positionY>
+        <positionX>-2.248417616</positionX>
+        <positionY>0.860015988</positionY>
         <positionZ>-0.500000119</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
@@ -46,12 +85,12 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>9.047859192</positionX>
-        <positionY>16.700458527</positionY>
+        <positionX>11.907849312</positionX>
+        <positionY>0.760464847</positionY>
         <positionZ>-0.500000119</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.000000000</rotationZ>
@@ -65,9 +104,9 @@
         <color>16777215</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-11.059984207</positionX>
-        <positionY>19.080018997</positionY>
-        <positionZ>-0.400000215</positionZ>
+        <positionX>14.480071068</positionX>
+        <positionY>-7.239972115</positionY>
+        <positionZ>-0.541871786</positionZ>
         <scaleX>0.000000000</scaleX>
         <scaleY>0.000000000</scaleY>
         <scaleZ>0.000000000</scaleZ>
@@ -83,16 +122,16 @@
         <color>14423100</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>0.380005568</positionX>
-        <positionY>15.060027122</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.541731715</rotationX>
-        <rotationY>-0.442292124</rotationY>
-        <rotationZ>0.587128937</rotationZ>
-        <rotationW>0.407656848</rotationW>
+        <positionX>2.479998589</positionX>
+        <positionY>5.900062084</positionY>
+        <positionZ>-1.000000238</positionZ>
+        <scaleX>0.154577032</scaleX>
+        <scaleY>0.154577032</scaleY>
+        <scaleZ>0.154577032</scaleZ>
+        <rotationX>-0.545600057</rotationX>
+        <rotationY>-0.437514812</rotationY>
+        <rotationZ>0.583520830</rotationZ>
+        <rotationW>0.412801087</rotationW>
         <path>Demo/3DModels/new/totem1.obj</path>
     </object>
     <object>
@@ -101,17 +140,17 @@
         <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>2</pointsCollision>
-        <positionX>-6.214899063</positionX>
-        <positionY>-13.880000114</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.995659769</rotationX>
-        <rotationY>0.092062652</rotationY>
-        <rotationZ>0.005060362</rotationZ>
-        <rotationW>-0.012668232</rotationW>
-        <path>Demo/3DModels/pinball_stl/totem5.stl</path>
+        <positionX>3.005104065</positionX>
+        <positionY>-46.580059052</positionY>
+        <positionZ>-2.216748714</positionZ>
+        <scaleX>0.269671917</scaleX>
+        <scaleY>0.269671917</scaleY>
+        <scaleZ>0.269671917</scaleZ>
+        <rotationX>0.721760988</rotationX>
+        <rotationY>0.692007959</rotationY>
+        <rotationZ>-0.003928517</rotationZ>
+        <rotationW>-0.013063616</rotationW>
+        <path>Demo/3DModels/pinball_stl/concave.stl</path>
     </object>
     <object>
         <type>6</type>
@@ -119,17 +158,17 @@
         <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>2</pointsCollision>
-        <positionX>-2.796697855</positionX>
-        <positionY>-10.460008621</positionY>
-        <positionZ>-6.398302078</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
+        <positionX>-0.956693172</positionX>
+        <positionY>-51.240047455</positionY>
+        <positionZ>-1.527093649</positionZ>
+        <scaleX>0.269671917</scaleX>
+        <scaleY>0.269671917</scaleY>
+        <scaleZ>0.269671917</scaleZ>
         <rotationX>0.999819279</rotationX>
         <rotationY>0.015967002</rotationY>
         <rotationZ>-0.009050521</rotationZ>
         <rotationW>-0.004963317</rotationW>
-        <path>Demo/3DModels/pinball_stl/totem5.stl</path>
+        <path>Demo/3DModels/pinball_stl/concave.stl</path>
     </object>
     <object>
         <type>6</type>
@@ -137,34 +176,52 @@
         <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>2</pointsCollision>
-        <positionX>-1.156696081</positionX>
-        <positionY>-2.739999294</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
-        <rotationX>0.995323896</rotationX>
-        <rotationY>0.096134186</rotationY>
-        <rotationZ>0.007713288</rotationZ>
-        <rotationW>-0.005390263</rotationW>
-        <path>Demo/3DModels/pinball_stl/totem5.stl</path>
+        <positionX>2.563333511</positionX>
+        <positionY>-56.580081940</positionY>
+        <positionZ>-1.625615954</positionZ>
+        <scaleX>0.269671917</scaleX>
+        <scaleY>0.269671917</scaleY>
+        <scaleZ>0.269671917</scaleZ>
+        <rotationX>0.715387106</rotationX>
+        <rotationY>0.698664904</rotationY>
+        <rotationZ>0.002632806</rotationZ>
+        <rotationW>-0.009034270</rotationW>
+        <path>Demo/3DModels/pinball_stl/concave.stl</path>
+    </object>
+    <object>
+        <type>6</type>
+        <id>21</id>
+        <color>4633401</color>
+        <invisible>0</invisible>
+        <pointsCollision>2</pointsCollision>
+        <positionX>6.843320847</positionX>
+        <positionY>-54.180038452</positionY>
+        <positionZ>-1.527093649</positionZ>
+        <scaleX>0.269671917</scaleX>
+        <scaleY>0.269671917</scaleY>
+        <scaleZ>0.269671917</scaleZ>
+        <rotationX>0.715387106</rotationX>
+        <rotationY>0.698664904</rotationY>
+        <rotationZ>0.002632806</rotationZ>
+        <rotationW>-0.009034270</rotationW>
+        <path>Demo/3DModels/pinball_stl/concave.stl</path>
     </object>
     <object>
         <type>6</type>
         <id>9</id>
         <color>6438584</color>
         <invisible>0</invisible>
-        <pointsCollision>3</pointsCollision>
-        <positionX>3.375074863</positionX>
-        <positionY>-9.520008087</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.622195065</rotationX>
-        <rotationY>0.343409806</rotationY>
-        <rotationZ>-0.307824701</rotationZ>
-        <rotationW>0.632603347</rotationW>
+        <pointsCollision>2</pointsCollision>
+        <positionX>-8.684897423</positionX>
+        <positionY>-39.234416962</positionY>
+        <positionZ>-2.118227005</positionZ>
+        <scaleX>0.251520485</scaleX>
+        <scaleY>0.251520485</scaleY>
+        <scaleZ>0.251520485</scaleZ>
+        <rotationX>-0.548273504</rotationX>
+        <rotationY>0.452167213</rotationY>
+        <rotationZ>-0.419107705</rotationZ>
+        <rotationW>0.565057278</rotationW>
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
@@ -173,16 +230,16 @@
         <color>6438584</color>
         <invisible>0</invisible>
         <pointsCollision>3</pointsCollision>
-        <positionX>6.688331604</positionX>
-        <positionY>-5.371165752</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000024</scaleX>
-        <scaleY>0.100000024</scaleY>
-        <scaleZ>0.100000024</scaleZ>
-        <rotationX>-0.709990799</rotationX>
-        <rotationY>-0.019550852</rotationY>
-        <rotationZ>0.020933654</rotationZ>
-        <rotationW>0.703628182</rotationW>
+        <positionX>-9.751624107</positionX>
+        <positionY>-58.271270752</positionY>
+        <positionZ>-2.413793087</positionZ>
+        <scaleX>0.274688959</scaleX>
+        <scaleY>0.274688959</scaleY>
+        <scaleZ>0.274688959</scaleZ>
+        <rotationX>-0.509854555</rotationX>
+        <rotationY>0.494488239</rotationY>
+        <rotationZ>-0.488966525</rotationZ>
+        <rotationW>0.506400585</rotationW>
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
@@ -190,163 +247,233 @@
         <id>11</id>
         <color>6438584</color>
         <invisible>0</invisible>
-        <pointsCollision>3</pointsCollision>
-        <positionX>8.311673164</positionX>
-        <positionY>-14.371187210</positionY>
-        <positionZ>0.000000000</positionZ>
-        <scaleX>0.100000009</scaleX>
-        <scaleY>0.100000009</scaleY>
-        <scaleZ>0.100000009</scaleZ>
-        <rotationX>-0.645468235</rotationX>
-        <rotationY>0.241437003</rotationY>
-        <rotationZ>-0.342327327</rotationZ>
-        <rotationW>0.638663471</rotationW>
+        <pointsCollision>0</pointsCollision>
+        <positionX>12.291696548</positionX>
+        <positionY>-58.931098938</positionY>
+        <positionZ>-2.216748714</positionZ>
+        <scaleX>0.273533344</scaleX>
+        <scaleY>0.273533344</scaleY>
+        <scaleZ>0.273533344</scaleZ>
+        <rotationX>-0.602889419</rotationX>
+        <rotationY>0.333841354</rotationY>
+        <rotationZ>-0.432627589</rotationZ>
+        <rotationW>0.581298351</rotationW>
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
     <object>
-        <type>8</type>
-        <id>12</id>
-        <color>16777215</color>
-        <invisible>1</invisible>
+        <type>14</type>
+        <id>20</id>
+        <color>4633401</color>
+        <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>13.910955429</positionX>
-        <positionY>-2.461191654</positionY>
-        <positionZ>-4.500000000</positionZ>
-        <scaleX>0.402305156</scaleX>
-        <scaleY>0.402305156</scaleY>
-        <scaleZ>0.402305156</scaleZ>
-        <rotationX>-0.000867290</rotationX>
-        <rotationY>0.011896698</rotationY>
-        <rotationZ>0.999920964</rotationZ>
-        <rotationW>0.003965911</rotationW>
+        <positionX>1.480019093</positionX>
+        <positionY>-33.879966736</positionY>
+        <positionZ>1.625615358</positionZ>
+        <scaleX>1.073758602</scaleX>
+        <scaleY>1.073758602</scaleY>
+        <scaleZ>1.073758602</scaleZ>
+        <rotationX>1.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>0.000000000</rotationW>
+        <path>FIMG/Scenarios/ScenarioBasic.dae</path>
+    </object>
+    <object>
+        <type>12</type>
+        <id>21</id>
+        <color>6438584</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-6.769970417</positionX>
+        <positionY>-19.942293167</positionY>
+        <positionZ>-2.906404018</positionZ>
+        <scaleX>0.036590073</scaleX>
+        <scaleY>0.036590073</scaleY>
+        <scaleZ>0.036590073</scaleZ>
+        <rotationX>0.981013060</rotationX>
+        <rotationY>-0.193202257</rotationY>
+        <rotationZ>0.003771788</rotationZ>
+        <rotationW>0.016494550</rotationW>
+        <path>FIMG/cityObjects/escalera2.stl</path>
+    </object>
+    <object>
+        <type>14</type>
+        <id>22</id>
+        <color>6438584</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-10.248347282</positionX>
+        <positionY>-10.331208229</positionY>
+        <positionZ>-0.246305466</positionZ>
+        <scaleX>1.004057884</scaleX>
+        <scaleY>1.004057884</scaleY>
+        <scaleZ>1.004057884</scaleZ>
+        <rotationX>0.800856650</rotationX>
+        <rotationY>-0.598617136</rotationY>
+        <rotationZ>-0.003735827</rotationZ>
+        <rotationW>0.016502708</rotationW>
+        <path>FIMG/cityObjects/banch3d21mm.dae</path>
+    </object>
+    <object>
+        <type>14</type>
+        <id>23</id>
+        <color>6438584</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-6.968327045</positionX>
+        <positionY>-12.251151085</positionY>
+        <positionZ>-0.344827771</positionZ>
+        <scaleX>1.213012338</scaleX>
+        <scaleY>1.213012338</scaleY>
+        <scaleZ>1.213012338</scaleZ>
+        <rotationX>0.631712496</rotationX>
+        <rotationY>0.775018156</rotationY>
+        <rotationZ>0.016331330</rotationZ>
+        <rotationW>0.004425371</rotationW>
+        <path>FIMG/cityObjects/banch3d21mm.dae</path>
+    </object>
+    <object>
+        <type>14</type>
+        <id>24</id>
+        <color>6438584</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-9.148331642</positionX>
+        <positionY>-7.231149197</positionY>
+        <positionZ>-0.344827771</positionZ>
+        <scaleX>1.004057884</scaleX>
+        <scaleY>1.004057884</scaleY>
+        <scaleZ>1.004057884</scaleZ>
+        <rotationX>0.635482073</rotationX>
+        <rotationY>0.771930277</rotationY>
+        <rotationZ>0.016309556</rotationZ>
+        <rotationW>0.004504910</rotationW>
+        <path>FIMG/cityObjects/banch3d21mm.dae</path>
+    </object>
+    <object>
+        <type>14</type>
+        <id>25</id>
+        <color>4633401</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>17.959987640</positionX>
+        <positionY>-24.100059509</positionY>
+        <positionZ>-3.399014950</positionZ>
+        <scaleX>0.627817929</scaleX>
+        <scaleY>0.627817929</scaleY>
+        <scaleZ>0.627817929</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.999890447</rotationZ>
+        <rotationW>-0.014804580</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>8</type>
-        <id>13</id>
-        <color>16777215</color>
-        <invisible>1</invisible>
+        <type>14</type>
+        <id>26</id>
+        <color>4633401</color>
+        <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-13.800005913</positionX>
-        <positionY>-3.781195641</positionY>
-        <positionZ>-3.497536659</positionZ>
-        <scaleX>0.482200563</scaleX>
-        <scaleY>0.482200563</scaleY>
-        <scaleZ>0.482200563</scaleZ>
-        <rotationX>0.997245193</rotationX>
-        <rotationY>0.049742986</rotationY>
-        <rotationZ>-0.054875895</rotationZ>
-        <rotationW>0.004033231</rotationW>
+        <positionX>18.420192719</positionX>
+        <positionY>-55.880390167</positionY>
+        <positionZ>-4.088669777</positionZ>
+        <scaleX>0.505571961</scaleX>
+        <scaleY>0.505571961</scaleY>
+        <scaleZ>0.505571961</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.993256927</rotationZ>
+        <rotationW>0.115934029</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>3</type>
-        <id>14</id>
-        <color>16777215</color>
+        <type>14</type>
+        <id>27</id>
+        <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>-4.068407059</positionX>
-        <positionY>10.220022202</positionY>
-        <positionZ>-0.500000119</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
+        <positionX>-16.200029373</positionX>
+        <positionY>-18.619993210</positionY>
+        <positionZ>-4.679803371</positionZ>
+        <scaleX>0.524219334</scaleX>
+        <scaleY>0.524219334</scaleY>
+        <scaleZ>0.524219334</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
-        <rotationW>1.000000000</rotationW>
-        <path>Demo/3DModels/new/pusher_def_ok.obj</path>
-        <LeverType>0</LeverType>
+        <rotationZ>0.077788778</rotationZ>
+        <rotationW>0.996969879</rotationW>
+        <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>3</type>
-        <id>15</id>
-        <color>16777215</color>
+        <type>14</type>
+        <id>28</id>
+        <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>4.407844543</positionX>
-        <positionY>10.760475159</positionY>
-        <positionZ>-0.500000119</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
+        <positionX>3.820018291</positionX>
+        <positionY>-73.300178528</positionY>
+        <positionZ>-3.103448153</positionZ>
+        <scaleX>0.512065589</scaleX>
+        <scaleY>0.512065589</scaleY>
+        <scaleZ>0.512065589</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.000000000</rotationZ>
-        <rotationW>1.000000000</rotationW>
-        <path>Demo/3DModels/new/pusher2_def_ok.obj</path>
-        <LeverType>1</LeverType>
+        <rotationZ>-0.707263589</rotationZ>
+        <rotationW>0.706950009</rotationW>
+        <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>6</type>
-        <id>16</id>
-        <color>16777215</color>
+        <type>14</type>
+        <id>29</id>
+        <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>5.103310585</positionX>
-        <positionY>-7.263003826</positionY>
-        <positionZ>1.953099847</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.274471372</rotationX>
-        <rotationY>0.961508930</rotationY>
-        <rotationZ>-0.004483534</rotationZ>
-        <rotationW>-0.012087960</rotationW>
-        <path>Demo/3DModels/pinball_stl/channel1_a.stl</path>
+        <positionX>20.920026779</positionX>
+        <positionY>18.719959259</positionY>
+        <positionZ>-4.482758522</positionZ>
+        <scaleX>0.512065589</scaleX>
+        <scaleY>0.512065589</scaleY>
+        <scaleZ>0.512065589</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>-0.107059777</rotationZ>
+        <rotationW>0.994252622</rotationW>
+        <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>8</type>
-        <id>16</id>
-        <color>16777215</color>
+        <type>14</type>
+        <id>30</id>
+        <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>5.016689301</positionX>
-        <positionY>-5.142990112</positionY>
-        <positionZ>-0.899999738</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.413528293</rotationX>
-        <rotationY>0.910399973</rotationY>
-        <rotationZ>-0.002648243</rotationZ>
-        <rotationW>-0.012617729</rotationW>
-        <path>Demo/3DModels/pinball_stl/channel1_b.stl</path>
+        <positionX>-14.580060005</positionX>
+        <positionY>-58.220088959</positionY>
+        <positionZ>-4.285714149</positionZ>
+        <scaleX>0.538761556</scaleX>
+        <scaleY>0.538761556</scaleY>
+        <scaleZ>0.538761556</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>-0.047477502</rotationZ>
+        <rotationW>0.998872340</rotationW>
+        <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
-        <type>8</type>
-        <id>17</id>
-        <color>16777215</color>
+        <type>14</type>
+        <id>31</id>
+        <color>4633401</color>
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>8.303326607</positionX>
-        <positionY>-4.643051147</positionY>
-        <positionZ>-0.899999738</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.955862105</rotationX>
-        <rotationY>-0.293532580</rotationY>
-        <rotationZ>0.012174705</rotationZ>
-        <rotationW>-0.004242356</rotationW>
-        <path>Demo/3DModels/pinball_stl/channel2_a.stl</path>
-    </object>
-    <object>
-        <type>8</type>
-        <id>18</id>
-        <color>16777215</color>
-        <invisible>0</invisible>
-        <pointsCollision>0</pointsCollision>
-        <positionX>8.576720238</positionX>
-        <positionY>-7.062986374</positionY>
-        <positionZ>-0.899999738</positionZ>
-        <scaleX>0.100000001</scaleX>
-        <scaleY>0.100000001</scaleY>
-        <scaleZ>0.100000001</scaleZ>
-        <rotationX>0.968602359</rotationX>
-        <rotationY>-0.248280495</rotationY>
-        <rotationZ>0.011961818</rotationZ>
-        <rotationW>-0.004809889</rotationW>
-        <path>Demo/3DModels/pinball_stl/channel2_b.stl</path>
+        <positionX>-15.919931412</positionX>
+        <positionY>4.359896183</positionY>
+        <positionZ>-3.399014950</positionZ>
+        <scaleX>0.512065589</scaleX>
+        <scaleY>0.512065589</scaleY>
+        <scaleZ>0.512065589</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>-0.443252206</rotationZ>
+        <rotationW>0.896396935</rotationW>
+        <path>FIMG/neri/muroPiedra.dae</path>
     </object>
 </scenario>

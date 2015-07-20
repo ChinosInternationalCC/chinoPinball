@@ -16,7 +16,7 @@ public:
 	void setupSpecific();
 	void updateSpecific(bool bEditorMode);
 	string getObjectName();
-	void onCollisionSpecific();
+	void onCollisionSpecific(SimpleObject* Obj);
 
 private:
 	void setGravityRampOn();

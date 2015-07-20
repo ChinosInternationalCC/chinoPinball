@@ -91,6 +91,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\FreeTransformObject.cpp" />
     <ClCompile Include="src\GameObjects\Gravity.cpp" />
     <ClCompile Include="src\GameObjects\Ramp.cpp" />
     <ClCompile Include="src\GameObjects\Teleporter.cpp" />
@@ -369,6 +370,7 @@
     <ClInclude Include="src\Events\eventMoveObjectScenario.h" />
     <ClInclude Include="src\Events\eventObjectScenario.h" />
     <ClInclude Include="src\ExternalsConfig.h" />
+    <ClInclude Include="src\FreeTransformObject.h" />
     <ClInclude Include="src\GameObjects\AnimatedMesh.h" />
     <ClInclude Include="src\GameObjects\AssimpUtils.h" />
     <ClInclude Include="src\GameObjects\Ball.h" />
