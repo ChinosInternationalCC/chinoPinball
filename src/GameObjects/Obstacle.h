@@ -52,6 +52,7 @@ public:
                SimpleObjectAttrib *Attributes
                /*ofxBulletWorldRigid &world, ofVec3f position, string url, ofVec3f ModelScale*/);
     void draw(bool bEditorMode);
+    virtual bool drawAssimpModelSpecific();
 	
 	void setupRot();
 	

@@ -128,12 +128,17 @@ void Obstacle::draw(bool bEditorMode){
 	
 	 body.transformGL();
     ofScale(scaleModel.x,scaleModel.y,scaleModel.z);
-    assimpModel.getMesh(0).drawFaces();
+    if (!drawAssimpModelSpecific())
+        assimpModel.getMesh(0).drawFaces();
 	body.restoreTramsformGL();
 	
 	glPopAttrib();
 	material.end();
 
+}
+//-------------------------------------------------------------
+bool Obstacle::drawAssimpModelSpecific(){
+    return false;
 }
 //-------------------------------------------------------------
 ofxBulletBaseShape* Obstacle::getBulletBaseShape(){

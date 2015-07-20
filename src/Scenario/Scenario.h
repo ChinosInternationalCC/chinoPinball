@@ -17,6 +17,7 @@
 #include "Lever.h"
 #include "Hammer.h"
 #include "Obstacle.h"
+#include "AnimatedObstacle.h"
 #include "Bounds.h"
 
 #include "AnimatedMesh.h"
@@ -71,7 +72,7 @@ public:
 	//Multiball methods
 	void addOneBallMore();
 
-    float                       ballLimitsBoxSize;
+    ofVec3f ballLimitsBoxSize;
 
     //general Light ambient
     ofVec3f                 lightPos;
