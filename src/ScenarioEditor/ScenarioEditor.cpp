@@ -414,7 +414,22 @@ void ScenarioEditor::guiEvent(ofxUIEventArgs &e){
         //green = clr.g;
         clr.getHex();
     }else if(name == "Stop Ball"){
-		scenario->getBalls()[0]->stop(bStopBall);
+		cout << "getBalls numballs = " << scenario->getBalls().size() << endl;
+		
+		//bStopBall = !bStopBall;
+		
+		if(bStopBall){
+			for(int i=0 ; i < scenario->getBalls().size(); i++){
+				scenario->getBalls()[i]->getBulletBaseShape()->getRigidBody()->setActivationState(DISABLE_SIMULATION);
+			}
+		}else{
+			for(int i=0 ; i < scenario->getBalls().size(); i++){
+				scenario->getBalls()[i]->getBulletBaseShape()->getRigidBody()->forceActivationState(ACTIVE_TAG);
+			}
+		}
+		
+
+		
 	}
 }
 

@@ -49,7 +49,7 @@ void Teleporter::onCollisionSpecific(SimpleObject* Obj){
 			
 			//SetDestinationObject(m_poScenario->FindScenarioObjectById(m_iDestinationObjectId));
 			SetDestinationObject(this);
-			ofVec3f deltaPos = ofVec3f(5+m_iBallStuckCount*2,0,0);
+			ofVec3f deltaPos = ofVec3f(0,5+m_iBallStuckCount*2,0);
 			
 			pMyBall->setPosition(m_poDestinationObject->getPosition() + deltaPos);
 			
