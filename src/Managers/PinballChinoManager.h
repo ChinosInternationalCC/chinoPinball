@@ -101,5 +101,7 @@ private:
 	void listenerMovingObjectScenario(eventMoveObjectScenario & args);
     
     bool m_bLinkInitialBallPositionToHammer;
+    
+    ofVideoPlayer video;
 	
 };

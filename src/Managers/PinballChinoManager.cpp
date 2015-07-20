@@ -39,6 +39,8 @@ PinballChinoManager::PinballChinoManager():
 	
 	currentMissions.push_back(mission1);
 	currentMissions.push_back(mission2);
+    
+    
 }
 
 PinballChinoManager::~PinballChinoManager(){
@@ -47,7 +49,8 @@ PinballChinoManager::~PinballChinoManager(){
 //--------------------------------------------------------------
 void PinballChinoManager::setup(){
     
-    
+    video.loadMovie("fachadaFiMGVideo2.mov");
+   
 
     // setup bullet world
 	world.setup();
@@ -102,6 +105,12 @@ void PinballChinoManager::setup(){
 //--------------------------------------------------------------
 void PinballChinoManager::update(){
 	
+    video.update();
+    if (video.getIsMovieDone()){
+        video.stop();
+        video.setFrame(0);
+    }
+    
 	// Shadows
 	//updating shadow color using mouse position
 	//ofColor shadow_color = ofFloatColor(0.1);
@@ -164,7 +173,7 @@ void PinballChinoManager::draw(){
         world.drawDebug();
         // draw the box that is used to detect if the ball is outside the scenario
         ofNoFill();
-        ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize);
+        ofDrawBox(0, 0, 0, myScenario.ballLimitsBoxSize.x, myScenario.ballLimitsBoxSize.y, myScenario.ballLimitsBoxSize.z);
 		//cout << "PinballChinoManager ballLimitsBoxSize = " << myScenario.ballLimitsBoxSize << endl;
         ofDrawSphere(myScenario.lightPos, 2);
         ofFill();
@@ -192,6 +201,9 @@ void PinballChinoManager::draw(){
     }
     
     chinoLights.draw();
+    
+    
+     video.draw(0, ofGetHeight()*0.5, 320, 240);
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
@@ -542,8 +554,15 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
 			SimpleObject *object2 = myScenario.FindScenarioObjectByRigidBody(cdata.body2);
             myScenario.ScenarioObjects[i]->onCollision(object2);
             (currentMissions)[idcurrentMission]->OnCollision(myScenario.ScenarioObjects[i]->GetObjectId()); //call the mission OnCollision and pass the ID of the colisioned object
+            
+            //check if collision with object with ID 28 and activate the church video
+            if (myScenario.ScenarioObjects[i]->GetObjectId() == 28){
+                video.play();
+            }
+            
 		}
 	}
+    
 }
 
 ////////////////////////////////////////////////////////////////////////

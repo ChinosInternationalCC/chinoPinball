@@ -308,8 +308,11 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 	
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
 
-		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
-		ballLimitsBoxSize = ScenarioXml.getValue("ScenarioBoxArea",0.0, 0);
+		ScenarioXml.pushTag("ScenarioBoxArea");
+		ballLimitsBoxSize.x = ScenarioXml.getValue("ScenarioBoxAreaX",0.0, 0);
+        ballLimitsBoxSize.y = ScenarioXml.getValue("ScenarioBoxAreaY",0.0, 0);
+        ballLimitsBoxSize.z = ScenarioXml.getValue("ScenarioBoxAreaZ",0.0, 0);
+        
 		cout << " ballLimitsBoxSize loaded = " << ballLimitsBoxSize << endl;
 		ScenarioXml.popTag();
         
@@ -452,6 +455,30 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 					oObstable->setPointsCollision(pointsCollision);
 					oObstable->setupRot();
 
+                }
+                break;
+                
+                case SimpleObject::ShapeTypeAnimatedObstacle:{
+                    AnimatedObstacle *oAnimatedObstable = new AnimatedObstacle(currentMissions);
+					
+					ObstacleAttrib *Attrib = new ObstacleAttrib(path,
+																pos,
+																0,
+																0,
+																0,
+																0,
+																scale);
+					
+                    //oObstable->setup(world, pos, "3DModels/chino_6.dae");
+                    oAnimatedObstable->setup(world, Attrib);
+                    oAnimatedObstable->SetObjectId(objId);
+					oAnimatedObstable->setPhysicsRotation(rotation);
+                    oAnimatedObstable->color = color;
+					oAnimatedObstable->setVisibility(invisible);
+                    ScenarioObjects.push_back(oAnimatedObstable);
+					oAnimatedObstable->setPointsCollision(pointsCollision);
+					oAnimatedObstable->setupRot();
+                    
                 }
                 break;
                 
@@ -608,7 +635,9 @@ void Scenario::saveToXml(){
     ofxXmlSettings ScenarioXml;
 	
 	ScenarioXml.pushTag("scenarioBoxArea");
-	ScenarioXml.addValue("ScenarioBoxArea", ballLimitsBoxSize);
+	ScenarioXml.addValue("ScenarioBoxAreaX", ballLimitsBoxSize.x);
+    ScenarioXml.addValue("ScenarioBoxAreaY", ballLimitsBoxSize.y);
+    ScenarioXml.addValue("ScenarioBoxAreaZ", ballLimitsBoxSize.z);
 
 	
     ScenarioXml.addTag("scenario");
@@ -693,7 +722,9 @@ void Scenario::createBasicGUIScenario(){
 	guiBasicScenario = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
 	
-	guiBasicScenario->addSlider("ballLimitBox", 0.0, 50.0, &ballLimitsBoxSize);
+	guiBasicScenario->addSlider("ballLimitBoxX", 0.0, 50.0, &ballLimitsBoxSize.x);
+    	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
+    	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
 	
 	guiBasicScenario->addSlider("deltaDefaultZ", -10, 10, &defaulDeltaZPos);
 	

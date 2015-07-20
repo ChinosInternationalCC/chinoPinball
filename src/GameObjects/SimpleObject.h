@@ -70,7 +70,8 @@ public:
         ShapeTypeGravity = 11,
         ShapeTypeTeleporter = 12,
 		ShapeTypeRamp = 13,
-		ShapeTypeScenario = 14
+		ShapeTypeScenario = 14,
+        ShapeTypeAnimatedObstacle = 15
     };
 	
     shapeType type;

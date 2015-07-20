@@ -78,7 +78,7 @@ public:
     ofxBulletSphere body;
 
     
-    bool isInsideBox(float boxSize);
+    bool isInsideBox(ofVec3f boxSize);
 
     enum BallStatus{
         BallStatusWaiting = 0,
@@ -98,6 +98,7 @@ public:
     BallAttrib* getBallAttr();
 
 	void stop(bool bStopBall);
+
 	
 	BallState GetBallState();
 	void SetBallState(BallState enState);

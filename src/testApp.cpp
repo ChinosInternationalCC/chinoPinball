@@ -2,11 +2,12 @@
 
 //--------------------------------------------------------------
 void testApp::setup() {
+    
 	// setup OF
     //ofSetFrameRate(60);
 	//ofSetVerticalSync(true);
 	ofBackground( 255, 255, 255, 0);
-	
+	ofDisableArbTex();
 #ifdef USE_SYPHON
     mainOutputSyphonServer.setName("Screen Output");
 	//mainOutputSyphonServer.
@@ -32,11 +33,14 @@ void testApp::setup() {
 		ofClear(255,255,255, 0);
 		scene3dinFBO.end();
 	}
-	
+
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
+    
+    
+    
  #ifdef USE_MTL_MAPPING
     _mapping->update();
 #endif
@@ -73,6 +77,8 @@ void testApp::draw() {
 	else{
 		chinopinball.draw();
 	}
+
+   
 	
 #ifdef USE_MTL_MAPPING
     _mapping->unbind();
