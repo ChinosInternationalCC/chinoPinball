@@ -308,7 +308,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 	
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
 
-		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
+		ScenarioXml.pushTag("ScenarioBoxArea");
 		ballLimitsBoxSize.x = ScenarioXml.getValue("ScenarioBoxAreaX",0.0, 0);
         ballLimitsBoxSize.y = ScenarioXml.getValue("ScenarioBoxAreaY",0.0, 0);
         ballLimitsBoxSize.z = ScenarioXml.getValue("ScenarioBoxAreaZ",0.0, 0);
