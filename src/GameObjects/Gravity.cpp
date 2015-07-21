@@ -10,7 +10,7 @@
 
 Gravity::Gravity(vector <SimpleMission *> * _currentMissions)
 : Obstacle(_currentMissions){
-    newGravity = ofVec3f(0, -30, 50);
+    changedGravity = ofVec3f(0, -30, 50);
     gravityChangeDuration = 10000; // ms
 	changeGravity = false;
 }
@@ -27,10 +27,10 @@ string Gravity::getObjectName(){
 void Gravity::updateSpecific(bool bEditorMode) {
     if (changeGravity) {
         if ((ofGetElapsedTimeMillis() - gravityChangeTimer) < gravityChangeDuration) {
-            world->setGravity(newGravity);
+            world->setGravity(changedGravity);
         }
         else {
-            world->setGravity(oldGravity);
+            world->setGravity(normalGravity);
             changeGravity = false;
         }
     }
@@ -38,7 +38,8 @@ void Gravity::updateSpecific(bool bEditorMode) {
 
 
 void Gravity::onCollisionSpecific(SimpleObject* Obj){
-    oldGravity = world->getGravity();
+//    cout << idCurz`rtentMission << endl;
+    normalGravity = world->getGravity();
 	gravityChangeTimer = ofGetElapsedTimeMillis();
 	changeGravity = true;
 }

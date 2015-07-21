@@ -17,8 +17,8 @@ public:
     void updateSpecific(bool bEditorMode);
     string getObjectName();
     void onCollisionSpecific(SimpleObject *Obj);
-    ofVec3f newGravity;
-    ofVec3f oldGravity;
+    ofVec3f normalGravity;
+    ofVec3f changedGravity;
     
 private:
     int gravityChangeDuration;
