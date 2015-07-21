@@ -101,6 +101,8 @@ public:
 	
 	float defaulDeltaZPos = 0;
 	
+	ofVec2f ScorePos;
+	
 
 private:
 	///////////////////
