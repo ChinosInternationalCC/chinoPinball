@@ -59,7 +59,10 @@ void GameStatusDisplay::draw3dFont(void){
         ofScale(1, -1, 1);  // Flip back since we're in 3D.
         //font.drawString(str, font.stringWidth(str) * -0.5f, font.stringHeight(str) * 0.5f);
         ofSetColor(5, 200, 220);
-        font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -300);
+		
+		font.drawString(str+"  "+ofToString(status->GetCurrentPlayerScore(), 2), -450, -250);
+		
+		
         //font.drawString("FPS  "+ofToString(ofGetFrameRate(), 0), -450, -200);
         font.drawString("balls  "+ofToString(status->GetRemainingLifes(), 0), -450, -200);
     }
@@ -89,9 +92,13 @@ void GameStatusDisplay::draw2dFont(void){
     fpsStr = "Player id: "+ofToString(status->GetPlayerId(), 2);
     ofDrawBitmapString(fpsStr, posX,posY);
     posY += lineSpacing;
-    fpsStr = "Player score: "+ofToString(status->GetCurrentPlayerScore(), 2);
+	
+	
+	fpsStr = "Player score: "+ofToString(status->GetCurrentPlayerScore(), 2);
     ofDrawBitmapString(fpsStr, posX,posY);
-    posY += lineSpacing;
+	
+	
+	posY += lineSpacing;
     fpsStr = "FPS: "+ofToString(ofGetFrameRate(), 0);
     ofDrawBitmapString(fpsStr, posX,posY);
     posY += lineSpacing;

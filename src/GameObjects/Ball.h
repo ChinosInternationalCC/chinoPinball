@@ -98,6 +98,7 @@ public:
     BallAttrib* getBallAttr();
 
 	void stop(bool bStopBall);
+
 	
 	BallState GetBallState();
 	void SetBallState(BallState enState);

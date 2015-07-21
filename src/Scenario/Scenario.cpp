@@ -308,7 +308,7 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
 	
     if(ScenarioXml.loadFile(PinballChinoManager::projectName+"/scenario.xml")){
 
-		//ScenarioXml.pushTag("ScenarioBoxArea");PT:X
+		ScenarioXml.pushTag("ScenarioBoxArea");
 		ballLimitsBoxSize.x = ScenarioXml.getValue("ScenarioBoxAreaX",0.0, 0);
         ballLimitsBoxSize.y = ScenarioXml.getValue("ScenarioBoxAreaY",0.0, 0);
         ballLimitsBoxSize.z = ScenarioXml.getValue("ScenarioBoxAreaZ",0.0, 0);
@@ -723,10 +723,17 @@ void Scenario::createBasicGUIScenario(){
 	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
 	
 	guiBasicScenario->addSlider("ballLimitBoxX", 0.0, 50.0, &ballLimitsBoxSize.x);
-    	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
-    	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
+	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
+	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
+	
+	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
+	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
 	
 	guiBasicScenario->addSlider("deltaDefaultZ", -10, 10, &defaulDeltaZPos);
+	
+	guiBasicScenario->addSlider("ScorePosX", 0, ofGetWidth(), &ScorePos.x);
+	guiBasicScenario->addSlider("ScorePosY", 0, ofGetHeight(), &ScorePos.y);
+
 	
 	guiBasicScenario->autoSizeToFitWidgets();
 	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
