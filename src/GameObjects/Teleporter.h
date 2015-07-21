@@ -20,6 +20,7 @@ public:
     void onCollisionSpecific(SimpleObject* Obj);
 	
 	void SetDetinationObjectId(int id);
+    int GetDestinationObjectId();
     void SetDestinationObject(SimpleObject *object);
     
 	void RegisterScenarioRef(Scenario *pScenario);

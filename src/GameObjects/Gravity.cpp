@@ -16,15 +16,18 @@ Gravity::Gravity(vector <SimpleMission *> * _currentMissions)
     m_bGravityObjectActive = true;
 }
 
+//--------------------------------------------------------------
 void Gravity::setupSpecific(){
     type = ShapeTypeGravity;
 }
 
+//--------------------------------------------------------------
 string Gravity::getObjectName(){
     return "Gravity";
 }
 
 
+//--------------------------------------------------------------
 void Gravity::updateSpecific(bool bEditorMode) {
     if (changeGravity) {
         if ((ofGetElapsedTimeMillis() - gravityChangeTimer) < gravityChangeDuration) {
@@ -37,7 +40,7 @@ void Gravity::updateSpecific(bool bEditorMode) {
     }
 }
 
-
+//--------------------------------------------------------------
 void Gravity::onCollisionSpecific(SimpleObject* Obj){
 //    cout << idCurz`rtentMission << endl;
     if (m_bGravityObjectActive){
@@ -47,10 +50,12 @@ void Gravity::onCollisionSpecific(SimpleObject* Obj){
     }
 }
 
+//--------------------------------------------------------------
 void Gravity::ActivateGravityObject(bool gravityFlag){
     m_bGravityObjectActive = gravityFlag;
 }
 
+//--------------------------------------------------------------
 bool Gravity::GetActiveGravityFlag(){
     return m_bGravityObjectActive;
 }
