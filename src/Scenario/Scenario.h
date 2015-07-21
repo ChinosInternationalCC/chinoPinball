@@ -42,6 +42,7 @@ class Scenario {
     
 public:
 	Scenario();
+    ~Scenario();
 	//Missions
     void setCurrentMission(int idMission);
     void setupMissions(vector <SimpleMission *> *missions);
@@ -103,6 +104,7 @@ public:
 	
 	ofVec2f ScorePos;
 	
+    void ActivateTeleport(bool activateFlag);
 
 private:
 	///////////////////

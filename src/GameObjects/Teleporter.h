@@ -27,10 +27,13 @@ public:
     bool GetMultiBallStickyFlag(void);
     bool IsBallStuck();
     void ReleaseBall();
+    void ActivateTeleporter(bool activeFlag);
+    bool GetTeleporterStatus();
 private:
 	Scenario *m_poScenario;
     SimpleObject *m_poDestinationObject;
     bool bSticky;//if this flag is true the ball will remain trapped when hitting the object
     int m_iBallStuckCount;
 	int m_iDestinationObjectId;
+    bool m_bTeleporterActive;
 };
