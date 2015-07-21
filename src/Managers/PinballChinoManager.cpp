@@ -54,7 +54,7 @@ void PinballChinoManager::setup(){
 
     // setup bullet world
 	world.setup();
-	world.setGravity( ofVec3f(0, 10, 17) );
+	world.setGravity( ofVec3f(0, 30, 50) );
     // setup camera
 	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));

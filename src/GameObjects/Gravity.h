@@ -10,10 +10,19 @@
 
 #include "Obstacle.h"
 
-class Gravity : public Obstacle{
+class Gravity : public Obstacle {
 public:
     Gravity(vector <SimpleMission *> * _currentMissions);
     void setupSpecific();
     void updateSpecific(bool bEditorMode);
     string getObjectName();
+    void onCollisionSpecific(SimpleObject *Obj);
+    ofVec3f normalGravity;
+    ofVec3f changedGravity;
+    
+private:
+    int gravityChangeDuration;
+    double gravityChangeTimer;
+	bool changeGravity;
+    
 };

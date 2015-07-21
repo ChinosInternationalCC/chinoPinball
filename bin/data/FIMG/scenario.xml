@@ -50,7 +50,7 @@
         <invisible>0</invisible>
         <pointsCollision>0</pointsCollision>
         <positionX>6.747817993</positionX>
-        <positionY>0.480457574</positionY>
+        <positionY>0.480461121</positionY>
         <positionZ>-0.500000119</positionZ>
         <scaleX>0.103694595</scaleX>
         <scaleY>0.103694595</scaleY>
@@ -119,7 +119,7 @@
         <path></path>
     </object>
     <object>
-        <type>6</type>
+        <type>11</type>
         <id>5</id>
         <color>14423100</color>
         <invisible>0</invisible>
@@ -240,7 +240,7 @@
         <scaleZ>0.274688959</scaleZ>
         <rotationX>-0.509854257</rotationX>
         <rotationY>0.494488060</rotationY>
-        <rotationZ>-0.488966703</rotationZ>
+        <rotationZ>-0.488966763</rotationZ>
         <rotationW>0.506400704</rotationW>
         <path>Demo/3DModels/new/totem6.obj</path>
     </object>
@@ -359,7 +359,7 @@
         <invisible>1</invisible>
         <pointsCollision>0</pointsCollision>
         <positionX>18.560005188</positionX>
-        <positionY>-24.380065918</positionY>
+        <positionY>-24.380064011</positionY>
         <positionZ>-3.399014950</positionZ>
         <scaleX>0.627817929</scaleX>
         <scaleY>0.627817929</scaleY>
@@ -402,7 +402,7 @@
         <scaleZ>0.524219334</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.077788897</rotationZ>
+        <rotationZ>0.077788912</rotationZ>
         <rotationW>0.996969819</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
@@ -414,7 +414,7 @@
         <pointsCollision>0</pointsCollision>
         <positionX>3.820014000</positionX>
         <positionY>-73.300178528</positionY>
-        <positionZ>-3.103448153</positionZ>
+        <positionZ>-6.945812702</positionZ>
         <scaleX>0.512065589</scaleX>
         <scaleY>0.512065589</scaleY>
         <scaleZ>0.512065589</scaleZ>
@@ -456,7 +456,7 @@
         <scaleZ>0.538761556</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>-0.047477562</rotationZ>
+        <rotationZ>-0.047477569</rotationZ>
         <rotationW>0.998872340</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
@@ -477,5 +477,43 @@
         <rotationZ>0.897051930</rotationZ>
         <rotationW>0.441925168</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
+    </object>
+    <object>
+        <type>3</type>
+        <id>32</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>-6.968435287</positionX>
+        <positionY>-55.400001526</positionY>
+        <positionZ>-0.500000119</positionZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher_def_ok.obj</path>
+        <LeverType>0</LeverType>
+    </object>
+    <object>
+        <type>3</type>
+        <id>33</id>
+        <color>16777215</color>
+        <invisible>0</invisible>
+        <pointsCollision>0</pointsCollision>
+        <positionX>14.407862663</positionX>
+        <positionY>-55.339569092</positionY>
+        <positionZ>-0.500000119</positionZ>
+        <scaleX>0.103694595</scaleX>
+        <scaleY>0.103694595</scaleY>
+        <scaleZ>0.103694595</scaleZ>
+        <rotationX>0.000000000</rotationX>
+        <rotationY>0.000000000</rotationY>
+        <rotationZ>0.000000000</rotationZ>
+        <rotationW>1.000000000</rotationW>
+        <path>Demo/3DModels/new/pusher2_def_ok.obj</path>
+        <LeverType>1</LeverType>
     </object>
 </scenario>

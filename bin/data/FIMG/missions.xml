@@ -25,17 +25,10 @@
     <mission>
         <missionID>2</missionID>
         <duration>10000</duration>
-	<object>
-        	<id>6</id>
-		<color>2</color>
-	</object>
-	<object>
-		<id>7</id>
-		<color>2</color>
-	</object>
-	<object>
-		<id>8</id>
-		<color>2</color>
-	</object>
+        <object>
+        	<id>5</id>
+            <color>2</color>
+        </object>
     </mission>
+    
 </missions>
