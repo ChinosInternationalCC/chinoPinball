@@ -92,7 +92,7 @@ public:
 	//Shadoew
 	//ofxShadow simple_shadow;
 
-    
+    void listenerOnUpdateMission(eventMission & args);
 	
 private:
 	

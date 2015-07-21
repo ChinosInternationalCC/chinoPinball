@@ -20,6 +20,12 @@
 	 lastbEditorMode = true;
 }
 
+Scenario::~Scenario(){
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        delete ScenarioObjects[i];
+    }
+}
+
 //---------------------------------------------------
 void Scenario::setCurrentMission(int _idcurrentMission){
     this->idCurrentMission = _idcurrentMission;
@@ -769,6 +775,16 @@ vector <Ball *> Scenario::getBalls(){
 
 	return Balls;
 }
+
+void Scenario::ActivateTeleport(bool activateFlag){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+			Teleporter *pTeleporter = (Teleporter*)ScenarioObjects[i];
+			pTeleporter->ActivateTeleporter(activateFlag);
+		}
+	}
+}
+
 //---------------------------------------------------------
 SimpleObject* Scenario::FindScenarioObjectByRigidBody(const btRigidBody* body){
 	for(int i = 0; i < ScenarioObjects.size(); i++){
