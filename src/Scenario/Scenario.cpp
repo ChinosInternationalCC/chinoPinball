@@ -528,8 +528,10 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
 					oTeleporter->RegisterScenarioRef(this);
-					oTeleporter->SetDetinationObjectId(8);//TODO read this from xml
-					oTeleporter->SetMultiBallStickyFlag(true); //TODO read this from xml
+                    int TeleporterDestObjId = ScenarioXml.getValue("TeleporterDestObjId", 0);
+					oTeleporter->SetDetinationObjectId(TeleporterDestObjId);
+                    int TeleporterBallSticky = ScenarioXml.getValue("TeleporterBallSticky", 0);
+					oTeleporter->SetMultiBallStickyFlag(TeleporterBallSticky);
                     ScenarioObjects.push_back(oTeleporter);
 					oTeleporter->setPointsCollision(pointsCollision);
 					oTeleporter->setupRot();
@@ -684,6 +686,13 @@ void Scenario::saveToXml(){
             ScenarioXml.addValue("LeverType", pLever->getLeverAttr()->direction);
         }
         
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+            Teleporter *pTeleporter;
+            pTeleporter = (Teleporter*)ScenarioObjects[i];
+            ScenarioXml.addValue("TeleporterDestObjId", pTeleporter->GetDestinationObjectId());
+            ScenarioXml.addValue("TeleporterBallSticky", pTeleporter->GetMultiBallStickyFlag());
+
+        }
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
             Ball *pBall;
             pBall = (Ball*)ScenarioObjects[i];

@@ -17,18 +17,22 @@ Teleporter::Teleporter(vector <SimpleMission *> * _currentMissions)
     m_bTeleporterActive = true;
 }
 
+//--------------------------------------------------------------
 void Teleporter::setupSpecific(){
     type = ShapeTypeTeleporter;
 }
 
+//--------------------------------------------------------------
 void Teleporter::updateSpecific(bool bEditorMode){
     //TODO
 }
 
+//--------------------------------------------------------------
 string Teleporter::getObjectName(){
     return "Teleporter";
 }
 
+//--------------------------------------------------------------
 void Teleporter::onCollisionSpecific(SimpleObject* Obj){
     if (m_bTeleporterActive){
         //Teleport stuff only when the teleporter is activated
@@ -73,6 +77,7 @@ void Teleporter::onCollisionSpecific(SimpleObject* Obj){
     }
 }
 
+//--------------------------------------------------------------
 void Teleporter::ReleaseBall(){
     if (m_iBallStuckCount > 0){
 		m_iBallStuckCount = 0;
@@ -88,10 +93,16 @@ void Teleporter::ReleaseBall(){
     }
 }
 
+//--------------------------------------------------------------
 void Teleporter::SetDestinationObject(SimpleObject *object){
     m_poDestinationObject = object;
 }
 
+//--------------------------------------------------------------
+int Teleporter::GetDestinationObjectId(){
+    return m_iDestinationObjectId;
+}
+//--------------------------------------------------------------
 void Teleporter::SetMultiBallStickyFlag(bool bFlag){
     bSticky = bFlag;
     if (bFlag){
@@ -99,26 +110,32 @@ void Teleporter::SetMultiBallStickyFlag(bool bFlag){
     }
 }
 
+//--------------------------------------------------------------
 bool Teleporter::GetMultiBallStickyFlag(void){
     return bSticky;
 }
 
+//--------------------------------------------------------------
 bool Teleporter::IsBallStuck(){
 	return (m_iBallStuckCount > 0)? true : false;
 }
 
+//--------------------------------------------------------------
 void Teleporter::RegisterScenarioRef(Scenario *pScenario){
 	m_poScenario = pScenario;
 }
 
+//--------------------------------------------------------------
 void Teleporter::SetDetinationObjectId(int id){
 	m_iDestinationObjectId = id;
 }
 
+//--------------------------------------------------------------
 void Teleporter::ActivateTeleporter(bool activeFlag){
     m_bTeleporterActive = activeFlag;
 }
 
+//--------------------------------------------------------------
 bool Teleporter::GetTeleporterStatus(){
     return m_bTeleporterActive;
 }
