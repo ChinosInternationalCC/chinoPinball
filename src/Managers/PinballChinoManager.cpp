@@ -578,6 +578,7 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
 			}
 	
             myScenario.ActivateTeleport(true);
+            //myScenario.ActivateGravityObjects(true);
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
@@ -586,6 +587,7 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             }
             
             myScenario.ActivateTeleport(false);
+            //myScenario.ActivateGravityObjects(false);
             break;
         case eventMission::MISSION_EVENT_MISSION_COMPLETED:
             

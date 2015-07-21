@@ -776,6 +776,7 @@ vector <Ball *> Scenario::getBalls(){
 	return Balls;
 }
 
+//---------------------------------------------------------
 void Scenario::ActivateTeleport(bool activateFlag){
     for(int i = 0; i < ScenarioObjects.size(); i++){
 		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
@@ -783,6 +784,16 @@ void Scenario::ActivateTeleport(bool activateFlag){
 			pTeleporter->ActivateTeleporter(activateFlag);
 		}
 	}
+}
+
+//---------------------------------------------------------
+void Scenario::ActivateGravityObjects(bool activateFlag){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeGravity){
+			Gravity *pGravity = (Gravity*)ScenarioObjects[i];
+			pGravity->ActivateGravityObject(activateFlag);
+		}
+    }
 }
 
 //---------------------------------------------------------

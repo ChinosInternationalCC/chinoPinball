@@ -105,6 +105,7 @@ public:
 	ofVec2f ScorePos;
 	
     void ActivateTeleport(bool activateFlag);
+    void ActivateGravityObjects(bool activateFlag);
 
 private:
 	///////////////////
