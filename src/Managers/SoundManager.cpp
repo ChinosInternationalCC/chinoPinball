@@ -87,6 +87,13 @@ SoundManager::SoundManager(void){
     soundObj[7]->loadSound(soundFiles[7]);
     soundObj[7]->setVolume(0.5f);
     soundObj[7]->setMultiPlay(false);
+	
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/MultiBall_CoroAleluya.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[8]->loadSound(soundFiles[8]);
+	soundObj[8]->setVolume(0.5f);
+	soundObj[8]->setMultiPlay(false);
 
 	/*
 	soundFiles.push_back("sounds/vocesraval01.wav");
@@ -159,19 +166,26 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 			if(args.pObject->ObjectId == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
-			
-	/*		else if(args.pObject->ObjectId == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol1]->play();
+			else if(args.pObject->ObjectId == 6){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol2]->play();
+			}
+			else if(args.pObject->ObjectId == 7){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol2]->play();
+			}
+			else if(args.pObject->ObjectId == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol2]->play();
 			}
 			else if(args.pObject->ObjectId == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol1]->play();
+				soundObj[ObjCol3]->play();
 			}
 			else if(args.pObject->ObjectId == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol1]->play();
+				soundObj[ObjCol3]->play();
 			}
-	*/
+			else if(args.pObject->ObjectId == 11){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[ObjCol3]->play();
+			}
 			
-			soundObj[ObjCol1]->play();
+			soundObj[ObjCol3]->play();
 		}
 
 	}
@@ -204,7 +218,7 @@ void SoundManager::listenerOnUpdateMission(eventMission & args){
             }
             break;
         case eventMission::MISSION_EVENT_MISSION_COMPLETED:
-            
+            soundObj[missionCumplida]->play();
 			
 			
             break;
