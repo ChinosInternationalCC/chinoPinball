@@ -40,6 +40,7 @@ PinballChinoManager::PinballChinoManager():
 	currentMissions.push_back(mission1);
 	currentMissions.push_back(mission2);
     
+    ofAddListener(eventMission::onMissionUpdate,this, &PinballChinoManager::listenerOnUpdateMission);
     
 }
 
@@ -225,7 +226,9 @@ void PinballChinoManager::onRestartGameEvent(void){
             if (ball->GetObjectId() < 0){
                 // if the ball has a negative id is a multiball ball so it should be deleted
                 myScenario.ScenarioObjects.erase(myScenario.ScenarioObjects.begin()+i);
+                i = i - 1;//go back one position because we deleted one element and the vector decremented with one position
                 delete ball;
+                cout<<myScenario.ScenarioObjects.size()<<endl;
             }
             else{
                 //the initial ball should be reseted
@@ -250,7 +253,7 @@ void PinballChinoManager::onRestartGameEvent(void){
         }
     }
     
-    //do other stuff that should be done whe restaring game score stuff etc
+    //do other stuff that should be done when restaring game score stuff etc
     
 	/* reset current mission */
     (currentMissions)[idcurrentMission]->resetMission();
@@ -563,6 +566,46 @@ void PinballChinoManager::onCollision(ofxBulletCollisionData& cdata)
 		}
 	}
     
+}
+
+//--------------------------------------------------------------------
+void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
+    
+	switch(args.eventType){
+        case eventMission::MISSION_EVENT_START_MISSION:
+            
+            if (NULL != args.pMission){
+			}
+	
+            myScenario.ActivateTeleport(true);
+            //myScenario.ActivateGravityObjects(true);
+            
+            break;
+        case eventMission::MISSION_EVENT_END_MISSION:
+            
+            if (NULL != args.pMission){
+            }
+            
+            myScenario.ActivateTeleport(false);
+            //myScenario.ActivateGravityObjects(false);
+            break;
+        case eventMission::MISSION_EVENT_MISSION_COMPLETED:
+            
+			
+			
+            break;
+        case eventMission::MISSION_EVENT_START_CALIFICATION:
+            
+            
+            break;
+        case eventMission::MISSION_EVENT_RESTART_MISSION:
+            
+            break;
+        case eventMission::MISSION_EVENT_NEW_MISSION:
+            
+            break;
+    }
+	
 }
 
 ////////////////////////////////////////////////////////////////////////
