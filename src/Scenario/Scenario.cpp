@@ -158,6 +158,8 @@ void Scenario::update(bool _bEditorMode){
 
 //--------------------------------------------------------------
 void Scenario::draw(bool bEditorMode){
+	
+	if(bEditorMode)ofDrawAxis(100);
     
 	ofSetColor(ofColor::white);
 	
