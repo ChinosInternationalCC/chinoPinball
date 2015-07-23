@@ -245,7 +245,7 @@
         <rotationZ>-0.367075801</rotationZ>
         <rotationW>0.600654066</rotationW>
         <path>Demo/3DModels/new/totem6.obj</path>
-        <TeleporterDestObjId>8</TeleporterDestObjId>
+        <TeleporterDestObjId>7</TeleporterDestObjId>
         <TeleporterBallSticky>0</TeleporterBallSticky>
     </object>
     <object>

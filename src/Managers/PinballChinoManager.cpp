@@ -271,7 +271,8 @@ void PinballChinoManager::onRestartGameEvent(void){
 		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
 	}
 	
-	
+	//Deactivate Multiballs in case where activated
+	myScenario.ActivateMultiballObjects(false);
 	
     
 }
@@ -579,8 +580,9 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             if (NULL != args.pMission){
 			}
 	
-            myScenario.ActivateTeleport(true);
+            //myScenario.ActivateTeleport(true);
             //myScenario.ActivateGravityObjects(true);
+			myScenario.ActivateMultiballObjects(true);
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
@@ -588,8 +590,9 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             if (NULL != args.pMission){
             }
             
-            myScenario.ActivateTeleport(false);
+            //myScenario.ActivateTeleport(false);
             //myScenario.ActivateGravityObjects(false);
+			myScenario.ActivateMultiballObjects(false);
             break;
         case eventMission::MISSION_EVENT_MISSION_COMPLETED:
             
