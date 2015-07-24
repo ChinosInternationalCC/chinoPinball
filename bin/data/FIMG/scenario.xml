@@ -132,7 +132,7 @@
         <scaleZ>0.231565922</scaleZ>
         <rotationX>-0.570134699</rotationX>
         <rotationY>-0.401522845</rotationY>
-        <rotationZ>0.598553121</rotationZ>
+        <rotationZ>0.598553181</rotationZ>
         <rotationW>0.394284189</rotationW>
         <path>Demo/3DModels/new/totem1.obj</path>
     </object>
@@ -272,11 +272,11 @@
         <color>4633401</color>
         <invisible>1</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>1.640009880</positionX>
-        <positionY>-52.079959869</positionY>
+        <positionX>2.200007439</positionX>
+        <positionY>-35.579948425</positionY>
         <positionZ>1.428571939</positionZ>
         <scaleX>1.573758602</scaleX>
-        <scaleY>1.573758602</scaleY>
+        <scaleY>1.173758626</scaleY>
         <scaleZ>1.073758602</scaleZ>
         <rotationX>0.999999523</rotationX>
         <rotationY>0.001000000</rotationY>
@@ -373,7 +373,7 @@
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
         <rotationZ>0.994267762</rotationZ>
-        <rotationW>-0.106918201</rotationW>
+        <rotationW>-0.106918223</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
@@ -390,8 +390,8 @@
         <scaleZ>0.505571961</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.998808861</rotationZ>
-        <rotationW>0.048794661</rotationW>
+        <rotationZ>0.998808742</rotationZ>
+        <rotationW>0.048794653</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
@@ -407,9 +407,9 @@
         <scaleY>0.724219322</scaleY>
         <scaleZ>0.524219334</scaleZ>
         <rotationX>0.980495155</rotationX>
-        <rotationY>0.194618687</rotationY>
+        <rotationY>0.194618642</rotationY>
         <rotationZ>0.009086158</rotationZ>
-        <rotationW>-0.025888789</rotationW>
+        <rotationW>-0.025888784</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
@@ -418,16 +418,16 @@
         <color>4633401</color>
         <invisible>1</invisible>
         <pointsCollision>0</pointsCollision>
-        <positionX>7.480001450</positionX>
-        <positionY>-67.139976501</positionY>
+        <positionX>-10.960000992</positionX>
+        <positionY>-65.780113220</positionY>
         <positionZ>-3.103448153</positionZ>
         <scaleX>0.535394609</scaleX>
         <scaleY>0.835394621</scaleY>
         <scaleZ>0.535394609</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.679998636</rotationZ>
-        <rotationW>0.733213484</rotationW>
+        <rotationZ>0.638889313</rotationZ>
+        <rotationW>0.769298732</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
@@ -444,7 +444,7 @@
         <scaleZ>0.512065589</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>-0.107059777</rotationZ>
+        <rotationZ>-0.107059769</rotationZ>
         <rotationW>0.994252622</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
