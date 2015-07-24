@@ -20,6 +20,12 @@
 	 lastbEditorMode = true;
 }
 
+Scenario::~Scenario(){
+    for(int i = 0; i < ScenarioObjects.size(); i++) {
+        delete ScenarioObjects[i];
+    }
+}
+
 //---------------------------------------------------
 void Scenario::setCurrentMission(int _idcurrentMission){
     this->idCurrentMission = _idcurrentMission;
@@ -152,6 +158,8 @@ void Scenario::update(bool _bEditorMode){
 
 //--------------------------------------------------------------
 void Scenario::draw(bool bEditorMode){
+	
+	if(bEditorMode)ofDrawAxis(100);
     
 	ofSetColor(ofColor::white);
 	
@@ -522,8 +530,10 @@ void Scenario::loadFromXml(ofxBulletWorldRigid &world){
                     oTeleporter->color = color;
 					oTeleporter->setVisibility(invisible);
 					oTeleporter->RegisterScenarioRef(this);
-					oTeleporter->SetDetinationObjectId(8);//TODO read this from xml
-					oTeleporter->SetMultiBallStickyFlag(true); //TODO read this from xml
+                    int TeleporterDestObjId = ScenarioXml.getValue("TeleporterDestObjId", 0);
+					oTeleporter->SetDetinationObjectId(TeleporterDestObjId);
+                    int TeleporterBallSticky = ScenarioXml.getValue("TeleporterBallSticky", 0);
+					oTeleporter->SetMultiBallStickyFlag(TeleporterBallSticky);
                     ScenarioObjects.push_back(oTeleporter);
 					oTeleporter->setPointsCollision(pointsCollision);
 					oTeleporter->setupRot();
@@ -678,6 +688,13 @@ void Scenario::saveToXml(){
             ScenarioXml.addValue("LeverType", pLever->getLeverAttr()->direction);
         }
         
+        if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+            Teleporter *pTeleporter;
+            pTeleporter = (Teleporter*)ScenarioObjects[i];
+            ScenarioXml.addValue("TeleporterDestObjId", pTeleporter->GetDestinationObjectId());
+            ScenarioXml.addValue("TeleporterBallSticky", pTeleporter->GetMultiBallStickyFlag());
+
+        }
         if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
             Ball *pBall;
             pBall = (Ball*)ScenarioObjects[i];
@@ -723,10 +740,17 @@ void Scenario::createBasicGUIScenario(){
 	guiBasicScenario->addLabelToggle("Toggle Floor Visibility", &bVisibleBasicTerrain); // PRESS & PICK TO Toogle Visibility
 	
 	guiBasicScenario->addSlider("ballLimitBoxX", 0.0, 50.0, &ballLimitsBoxSize.x);
-    	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
-    	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
+	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
+	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
+	
+	guiBasicScenario->addSlider("ballLimitBoxY", 0.0, 50.0, &ballLimitsBoxSize.y);
+	guiBasicScenario->addSlider("ballLimitBoxZ", 0.0, 50.0, &ballLimitsBoxSize.z);
 	
 	guiBasicScenario->addSlider("deltaDefaultZ", -10, 10, &defaulDeltaZPos);
+	
+	guiBasicScenario->addSlider("ScorePosX", 0, ofGetWidth(), &ScorePos.x);
+	guiBasicScenario->addSlider("ScorePosY", 0, ofGetHeight(), &ScorePos.y);
+
 	
 	guiBasicScenario->autoSizeToFitWidgets();
 	ofAddListener(guiBasicScenario->newGUIEvent,this,&Scenario::guiEventBasics);
@@ -762,6 +786,41 @@ vector <Ball *> Scenario::getBalls(){
 
 	return Balls;
 }
+
+//---------------------------------------------------------
+void Scenario::ActivateTeleport(bool activateFlag){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+			Teleporter *pTeleporter = (Teleporter*)ScenarioObjects[i];
+			pTeleporter->SetMultiBallStickyFlag(false);
+			pTeleporter->ActivateTeleporter(activateFlag);
+		}
+	}
+}
+
+//---------------------------------------------------------
+void Scenario::ActivateMultiballObjects(bool activateFlag){
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+			if (ScenarioObjects[i]->GetObjectId() == 21){ //FIMG hack
+			Teleporter *pTeleporter = (Teleporter*)ScenarioObjects[i];
+			pTeleporter->SetMultiBallStickyFlag(activateFlag);
+			//pTeleporter->ActivateTeleporter(activateFlag);
+			}
+		}
+	}
+}
+
+//---------------------------------------------------------
+void Scenario::ActivateGravityObjects(bool activateFlag){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeGravity){
+			Gravity *pGravity = (Gravity*)ScenarioObjects[i];
+			pGravity->ActivateGravityObject(activateFlag);
+		}
+    }
+}
+
 //---------------------------------------------------------
 SimpleObject* Scenario::FindScenarioObjectByRigidBody(const btRigidBody* body){
 	for(int i = 0; i < ScenarioObjects.size(); i++){

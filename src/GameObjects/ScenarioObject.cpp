@@ -147,21 +147,25 @@ string ScenarioObject::getObjectName(){
 
 //------------------------------------------------------------
 void ScenarioObject::onCollision(SimpleObject* Obj){
-    /*
-	GameStatus::getInstance()->AddPoints(collisionPoints);
-    //save time to show color during some time
-    collisionTime = ofGetElapsedTimef()*100;
-    //play sound
-    //SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
-   
-	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
-	eventComunication newComEvent;
-	newComEvent.collision = true;
-    newComEvent.pObject = this;
-	ofNotifyEvent(eventComunication::onNewCom, newComEvent);
-    
-    onCollisionSpecific();
-    */
+	
+	if (GetObjectId() == 28) { //FIMG hack to play sound for church
+		
+		GameStatus::getInstance()->AddPoints(collisionPoints);
+		//save time to show color during some time
+		collisionTime = ofGetElapsedTimef()*100;
+		//play sound
+		//SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
+		
+		//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+		eventComunication newComEvent;
+		newComEvent.collision = true;
+		newComEvent.pObject = this;
+		ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+		
+		onCollisionSpecific();
+		
+	}
+	
 }
 
 //--------------------------------------------------------------

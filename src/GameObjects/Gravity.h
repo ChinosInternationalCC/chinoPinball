@@ -20,9 +20,12 @@ public:
     ofVec3f normalGravity;
     ofVec3f changedGravity;
     
+    void ActivateGravityObject(bool gravityFlag);
+    bool GetActiveGravityFlag();
 private:
     int gravityChangeDuration;
     double gravityChangeTimer;
 	bool changeGravity;
+    bool m_bGravityObjectActive;
     
 };

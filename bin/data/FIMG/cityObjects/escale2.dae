@@ -1,0 +1,2697 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>CINEMA4D 16.011 COLLADA Exporter</authoring_tool>
+        </contributor>
+        <created>2015-07-20T22:25:48Z</created>
+        <modified>2015-07-20T22:25:48Z</modified>
+        <unit meter="0.01" name="centimeter"/>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_effects>
+        <effect id="ID2">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>0.8 0.8 0.8 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                        <reflective>
+                            <color>1 1 1 1</color>
+                        </reflective>
+                        <reflectivity>
+                            <float>0</float>
+                        </reflectivity>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID4">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <emission>
+                            <color>0 0 0 1</color>
+                        </emission>
+                        <diffuse>
+                            <color>1 1 1 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>1 1 1 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                        <reflective>
+                            <color>1 1 1 1</color>
+                        </reflective>
+                        <reflectivity>
+                            <float>1</float>
+                        </reflectivity>
+                        <transparent opaque="RGB_ZERO">
+                            <color>0 0 0 1</color>
+                        </transparent>
+                        <transparency>
+                            <float>1</float>
+                        </transparency>
+                        <index_of_refraction>
+                            <float>0.25</float>
+                        </index_of_refraction>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID6">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 0 0.313725 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID8">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <color>1 1 1 1</color>
+                        </diffuse>
+                        <specular>
+                            <color>0.2 0.2 0.2 1</color>
+                        </specular>
+                        <shininess>
+                            <float>0.5</float>
+                        </shininess>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="ID1" name="Mat">
+            <instance_effect url="#ID2"/>
+        </material>
+        <material id="ID3" name="a0000000-0000-0000-0000-000000000000">
+            <instance_effect url="#ID4"/>
+        </material>
+        <material id="ID5" name="Mat.2">
+            <instance_effect url="#ID6"/>
+        </material>
+        <material id="ID7" name="Mat">
+            <instance_effect url="#ID8"/>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="ID210">
+            <mesh>
+                <source id="ID211">
+                    <float_array id="ID212" count="24">-84.9169 -0.1857 170.641 -84.9169 93.8825 40.678 80.106 93.8825 40.678 80.106 -0.1857 170.641 80.106 121.835 1.946 80.106 -0.1857 1.662 -84.9169 121.835 1.946 -84.9169 -0.1857 1.662</float_array>
+                    <technique_common>
+                        <accessor count="8" source="#ID212" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID213">
+                    <float_array id="ID214" count="18">0 0.810069 0.586335 1 -0 -0 0 0.00232746 -0.999997 -1 0 -0 0 0.810881 0.585211 0 -1 0</float_array>
+                    <technique_common>
+                        <accessor count="6" source="#ID214" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID215">
+                    <float_array id="ID216" count="16">0.67651 0.49969 0.5711 0.749535 0.925218 0.756998 0.819854 0.499686 0.996134 0.81482 0.996698 0.499262 0.503647 0.806207 0.503115 0.499304</float_array>
+                    <technique_common>
+                        <accessor count="8" source="#ID216" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID217">
+                    <input semantic="POSITION" source="#ID211"/>
+                </vertices>
+                <polylist count="6" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#ID217"/>
+                    <input offset="1" semantic="NORMAL" source="#ID213"/>
+                    <input offset="2" semantic="TEXCOORD" source="#ID215" set="0"/>
+                    <vcount>4 4 4 4 4 4</vcount>
+                    <p>3 0 3 2 0 2 1 0 1 0 0 0 5 1 5 4 1 4 2 1 2 3 1 3 7 2 7 6 2 6 4 2 4 5 2 5 0 3 0 1 3 1 6 3 6 7 3 7 2 4 2 4 4 4 6 4 6 1 4 1 5 5 5 3 5 3 0 5 0 7 5 7</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="ID418">
+            <mesh>
+                <source id="ID419">
+                    <float_array id="ID420" count="276">-166.259 110.334 52.9079 -166.259 110.332 38.7067 -0.3585 110.263 38.7067 -0.3585 110.303 52.8916 -166.259 125.333 38.7067 -166.259 125.698 3.4172 -0.3585 125.322 4.5597 -0.3585 125.283 38.7067 -166.259 0.331 -0.7345 -166.259 0.331 167.963 -0.3585 0.331 167.809 -0.3585 -0.058 -0.7345 -0.3585 20.3437 117.062 -0.3585 15.255 117.022 -166.259 15.25 117.078 -166.259 20.3197 117.078 -0.3585 15.303 167.815 -166.259 15.337 168.057 -0.3585 50.3034 86.5839 -0.3585 50.3338 97.1023 -166.259 50.3124 97.1579 -166.259 50.4638 86.5673 -0.3585 35.2268 97.1109 -166.259 35.2179 97.1311 -166.259 150.331 3.0518 -166.259 150.331 -0.7345 -0.3585 150.331 -0.7345 -0.3585 150.331 3.9195 -0.3585 35.3903 108.06 -166.259 35.3782 108.043 -0.3585 20.2916 107.91 -166.259 20.2967 108.205 -0.3585 95.2272 52.8823 -166.259 95.2854 53.0838 -0.3585 95.3689 65.4774 -166.259 95.4021 65.4498 -0.3585 80.334 65.4461 -166.259 80.3698 65.5004 -0.3585 80.3245 76.63 -166.259 80.3634 76.6452 -0.3585 65.2995 76.5721 -166.259 66.0836 76.851 -0.3585 65.2367 86.5708 -166.259 65.2646 86.5683 -0.3585 5.396 -0.7345 -0.3585 10.391 -0.7345 -0.3585 15.263 -0.7345 -0.3585 21.0158 -0.7345 -0.3585 26.1532 -0.7345 -0.3585 31.3704 -0.7345 -0.3585 37.1794 -0.7345 -0.3585 42.7436 -0.7345 -0.3585 47.7117 -0.7345 -0.3585 51.8092 -0.7345 -0.3585 55.8937 -0.7345 -0.3585 59.976 -0.7345 -0.3585 65.3385 -0.7345 -0.3585 70.7175 -0.7345 -0.3585 75.8814 -0.7345 -0.3585 80.7286 -0.7345 -0.3585 85.521 -0.7345 -0.3585 90.4061 -0.7345 -0.3585 95.3683 -0.7345 -0.3585 100.285 -0.7345 -0.3585 105.566 -0.7345 -0.3585 110.543 -0.7345 -0.3585 115.876 -0.7345 -0.3585 120.206 -0.7345 -166.259 121.083 -0.7345 -166.259 115.753 -0.7345 -166.259 110.773 -0.7345 -166.259 105.453 -0.7345 -166.259 101.127 -0.7345 -166.259 95.3593 -0.7345 -166.259 90.3976 -0.7345 -166.259 86.4176 -0.7345 -166.259 80.6237 -0.7345 -166.259 75.218 -0.7345 -166.259 69.497 -0.7345 -166.259 65.1151 -0.7345 -166.259 59.7709 -0.7345 -166.259 55.0444 -0.7345 -166.259 49.9749 -0.7345 -166.259 45.0217 -0.7345 -166.259 39.6121 -0.7345 -166.259 34.574 -0.7345 -166.259 29.587 -0.7345 -166.259 24.6066 -0.7345 -166.259 19.6243 -0.7345 -166.259 13.228 -0.7345 -166.259 8.285 -0.7345 -166.259 3.346 -0.7345</float_array>
+                    <technique_common>
+                        <accessor count="92" source="#ID420" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID421">
+                    <float_array id="ID422" count="72">0.000299472 0.999999 -0.00150813 0.00126229 0.999982 0.0058065 -0.00117185 -0.999999 0.00115348 0.000218847 -0.00394744 0.999992 0.00119314 -0.00333576 0.999994 8.6209e-05 0.999999 -0.00132649 0.000419592 0.999983 0.00573206 0.000228505 -0.000602619 1 0 1 0 -6.34133e-05 0.99989 -0.0148101 0.000836938 0.000367791 1 0.000657895 0.00553022 0.999985 -6.08688e-05 0.999991 -0.00416621 0.000270026 0.999946 -0.0103516 8.06032e-05 0.000641895 1 0.000225284 1 0.000712088 0.00089888 0.00504689 0.999987 0.00248201 0.998998 0.0446803 0 0 1 -5.73336e-05 0.00040694 1 -0.00603416 0.0202527 0.999777 0 -0 -1 -1 0 -0 1 -0 -0</float_array>
+                    <technique_common>
+                        <accessor count="24" source="#ID422" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID423">
+                    <float_array id="ID424" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID424" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID425">
+                    <float_array id="ID426" count="78">0.578665 0.5 0.560794 0.5 0.906402 0.5 0.883878 0.5 0.509672 0.5 0.981099 0.5 0.503302 0.5 0.663291 0.5 0.805757 0.5 0.994521 0.5 0.826318 0.5 0.82634 0.5 0.63668 0.5 0.805755 0.5 0.66333 0.5 0.846895 0.5 0.838767 0.5 0.622272 0.5 0.613408 0.5 0.838761 0.5 0.622251 0.5 0.509113 0.5 0.982712 0.5 0.831512 0.5 0.630486 0.5 0.831604 0.5 0.630602 0.5 0.883891 0.5 0.578874 0.5 0.867714 0.5 0.592849 0.5 0.86775 0.5 0.592904 0.5 0.855865 0.5 0.60425 0.5 0.855921 0.5 0.604449 0.5 0.846906 0.5 0.613409 0.5</float_array>
+                    <technique_common>
+                        <accessor count="39" source="#ID426" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID427">
+                    <input semantic="POSITION" source="#ID419"/>
+                </vertices>
+                <polylist count="24" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#ID427"/>
+                    <input offset="1" semantic="NORMAL" source="#ID421"/>
+                    <input offset="2" semantic="TEXCOORD" source="#ID425" set="0"/>
+                    <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 52 46 46</vcount>
+                    <p>3 0 3 2 0 2 1 0 1 0 0 0 7 1 2 6 1 5 5 1 4 4 1 1 11 2 9 10 2 8 9 2 7 8 2 6 15 3 12 14 3 12 13 3 11 12 3 10 17 4 14 9 4 7 10 4 8 16 4 13 16 5 13 13 5 11 14 5 12 17 5 14 21 6 18 20 6 17 19 6 16 18 6 15 20 7 17 23 7 20 22 7 19 19 7 16 27 8 22 26 8 9 25 8 6 24 8 21 23 9 20 29 9 24 28 9 23 22 9 19 29 10 24 31 10 26 30 10 25 28 10 23 0 11 0 33 11 28 32 11 27 3 11 3 31 12 26 15 12 12 12 12 10 30 12 25 33 13 28 35 13 30 34 13 29 32 13 27 35 14 30 37 14 32 36 14 31 34 14 29 37 15 32 39 15 34 38 15 33 36 15 31 39 16 34 41 16 36 40 16 35 38 16 33 41 17 36 43 17 38 42 17 37 40 17 35 2 18 2 7 18 2 4 18 1 1 18 1 43 19 38 21 19 18 18 19 15 42 19 37 24 20 21 5 20 4 6 20 5 27 20 22 8 21 6 91 21 6 90 21 6 89 21 6 88 21 6 87 21 6 86 21 6 85 21 6 84 21 6 83 21 6 82 21 6 81 21 6 80 21 6 79 21 6 78 21 6 77 21 6 76 21 6 75 21 6 74 21 6 73 21 6 72 21 6 71 21 6 70 21 6 69 21 6 68 21 6 25 21 6 26 21 9 67 21 9 66 21 9 65 21 9 64 21 9 63 21 9 62 21 9 61 21 9 60 21 9 59 21 9 58 21 9 57 21 9 56 21 9 55 21 9 54 21 9 53 21 9 52 21 9 51 21 9 50 21 9 49 21 9 48 21 9 47 21 9 46 21 9 45 21 9 44 21 9 11 21 9 9 22 7 17 22 14 14 22 12 15 22 12 31 22 26 29 22 24 23 22 20 20 22 17 21 22 18 43 22 38 41 22 36 39 22 34 37 22 32 35 22 30 33 22 28 0 22 0 1 22 1 4 22 1 5 22 4 24 22 21 25 22 6 68 22 6 69 22 6 70 22 6 71 22 6 72 22 6 73 22 6 74 22 6 75 22 6 76 22 6 77 22 6 78 22 6 79 22 6 80 22 6 81 22 6 82 22 6 83 22 6 84 22 6 85 22 6 86 22 6 87 22 6 88 22 6 89 22 6 90 22 6 91 22 6 8 22 6 11 23 9 44 23 9 45 23 9 46 23 9 47 23 9 48 23 9 49 23 9 50 23 9 51 23 9 52 23 9 53 23 9 54 23 9 55 23 9 56 23 9 57 23 9 58 23 9 59 23 9 60 23 9 61 23 9 62 23 9 63 23 9 64 23 9 65 23 9 66 23 9 67 23 9 26 23 9 27 23 22 6 23 5 7 23 2 2 23 2 3 23 3 32 23 27 34 23 29 36 23 31 38 23 33 40 23 35 42 23 37 18 23 15 19 23 16 22 23 19 28 23 23 30 23 25 12 23 10 13 23 11 16 23 13 10 23 8</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="ID529">
+            <mesh>
+                <source id="ID530">
+                    <float_array id="ID531" count="582">-14.3334 -157.996 47.949 -14.3334 -129.876 47.949 -14.3334 -129.876 52.949 -14.3334 -157.996 52.949 -14.3334 -113.862 47.949 -14.3334 -113.862 52.949 -14.3334 -107.429 47.949 -14.3334 -107.429 52.949 -14.3334 -101.85 47.949 -14.3334 -101.85 52.949 -14.3334 -100.143 47.949 -14.3334 -100.143 52.949 -14.3334 -95.3437 47.949 -14.3334 -95.3437 52.949 -14.3334 -95.3437 47.949 140.78 -95.3437 47.949 140.78 -95.3437 52.949 -14.3334 -95.3437 52.949 157.746 -95.3437 47.949 157.746 -95.3437 52.949 185.667 -95.3437 47.949 185.667 -95.3437 52.949 185.667 -95.3437 47.949 185.667 -214.289 47.949 185.667 -214.289 52.949 185.667 -95.3437 52.949 185.667 -214.289 47.949 -14.3334 -214.289 47.949 -14.3334 -214.289 52.949 185.667 -214.289 52.949 -14.3334 -214.289 47.949 -14.3334 -167.669 47.949 -14.3334 -167.669 52.949 -14.3334 -214.289 52.949 -14.3334 -157.996 47.949 -14.3334 -157.996 52.949 185.667 -214.289 52.949 -14.3334 -214.289 52.949 -14.3334 -167.669 52.949 140.78 -95.3437 52.949 157.746 -95.3437 52.949 185.667 -95.3437 52.949 -14.3334 -157.996 52.949 -14.3334 -129.876 52.949 -14.3334 -113.862 52.949 -14.3334 -107.429 52.949 -14.3334 -101.85 52.949 -14.3334 -100.143 52.949 -14.3334 -95.3437 52.949 -14.3334 -214.289 47.949 185.667 -214.289 47.949 -14.3334 -167.669 47.949 140.78 -95.3437 47.949 185.667 -95.3437 47.949 157.746 -95.3437 47.949 -14.3334 -157.996 47.949 -14.3334 -129.876 47.949 -14.3334 -113.862 47.949 -14.3334 -101.85 47.949 -14.3334 -107.429 47.949 -14.3334 -95.3437 47.949 -14.3334 -100.143 47.949 -14.3334 -131.412 42.949 -14.3334 -116.241 42.949 -14.3334 -116.241 47.949 -14.3334 -131.412 47.949 -14.3334 -107.601 42.949 -14.3334 -107.601 47.949 -14.3334 -104.131 42.949 -14.3334 -104.131 47.949 -14.3334 -101.121 42.949 -14.3334 -101.121 47.949 -14.3334 -100.2 42.949 -14.3334 -100.2 47.949 -14.3334 -97.6105 42.949 -14.3334 -97.6105 47.949 -14.3334 -97.6105 42.949 69.351 -97.6105 42.949 69.351 -97.6105 47.949 -14.3334 -97.6105 47.949 170.603 -97.6105 42.949 170.603 -97.6105 47.949 185.667 -97.6105 42.949 185.667 -97.6105 47.949 185.667 -97.6105 42.949 185.667 -214.289 42.949 185.667 -214.289 47.949 185.667 -97.6105 47.949 185.667 -214.289 42.949 -14.3334 -214.289 42.949 -14.3334 -214.289 47.949 185.667 -214.289 47.949 -14.3334 -214.289 42.949 -14.3334 -189.137 42.949 -14.3334 -189.137 47.949 -14.3334 -214.289 47.949 -14.3334 -131.412 42.949 -14.3334 -131.412 47.949 185.667 -214.289 47.949 -14.3334 -214.289 47.949 -14.3334 -189.137 47.949 69.351 -97.6105 47.949 170.603 -97.6105 47.949 185.667 -97.6105 47.949 -14.3334 -131.412 47.949 -14.3334 -116.241 47.949 -14.3334 -107.601 47.949 -14.3334 -104.131 47.949 -14.3334 -101.121 47.949 -14.3334 -100.2 47.949 -14.3334 -97.6105 47.949 -14.3334 -214.289 42.949 185.667 -214.289 42.949 -14.3334 -189.137 42.949 69.351 -97.6105 42.949 185.667 -97.6105 42.949 170.603 -97.6105 42.949 -14.3334 -131.412 42.949 -14.3334 -116.241 42.949 -14.3334 -107.601 42.949 -14.3334 -101.121 42.949 -14.3334 -104.131 42.949 -14.3334 -97.6105 42.949 -14.3334 -100.2 42.949 -14.3334 -104.828 37.949 -14.3334 -102.606 37.949 -14.3334 -102.606 42.949 -14.3334 -104.828 42.949 -14.3334 -101.34 37.949 -14.3334 -101.34 42.949 -14.3334 -100.832 37.949 -14.3334 -100.832 42.949 -14.3334 -100.391 37.949 -14.3334 -100.391 42.949 -14.3334 -100.256 37.949 -14.3334 -100.256 42.949 -14.3334 -99.8773 37.949 -14.3334 -99.8773 42.949 -14.3334 -99.8773 37.949 -2.07756 -99.8773 37.949 -2.07756 -99.8773 42.949 -14.3334 -99.8773 42.949 183.461 -99.8773 37.949 183.461 -99.8773 42.949 185.667 -99.8773 37.949 185.667 -99.8773 42.949 185.667 -99.8773 37.949 185.667 -214.289 37.949 185.667 -214.289 42.949 185.667 -99.8773 42.949 185.667 -214.289 37.949 -14.3334 -214.289 37.949 -14.3334 -214.289 42.949 185.667 -214.289 42.949 -14.3334 -214.289 37.949 -14.3334 -210.605 37.949 -14.3334 -210.605 42.949 -14.3334 -214.289 42.949 -14.3334 -104.828 37.949 -14.3334 -104.828 42.949 185.667 -214.289 42.949 -14.3334 -214.289 42.949 -14.3334 -210.605 42.949 -2.07756 -99.8773 42.949 183.461 -99.8773 42.949 185.667 -99.8773 42.949 -14.3334 -104.828 42.949 -14.3334 -102.606 42.949 -14.3334 -101.34 42.949 -14.3334 -100.832 42.949 -14.3334 -100.391 42.949 -14.3334 -100.256 42.949 -14.3334 -99.8773 42.949 -14.3334 -214.289 37.949 185.667 -214.289 37.949 -14.3334 -210.605 37.949 -2.07756 -99.8773 37.949 185.667 -99.8773 37.949 183.461 -99.8773 37.949 -14.3334 -104.828 37.949 -14.3334 -102.606 37.949 -14.3334 -101.34 37.949 -14.3334 -100.391 37.949 -14.3334 -100.832 37.949 -14.3334 -99.8773 37.949 -14.3334 -100.256 37.949 151.454 -162.928 39.4375 151.454 -162.928 187.942 154.878 -162.928 187.942 154.878 -162.928 39.4375 154.878 -45.6044 187.942 154.878 -45.6044 39.4375 151.454 -45.6044 187.942 151.454 -45.6044 39.4375</float_array>
+                    <technique_common>
+                        <accessor count="194" source="#ID531" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID532">
+                    <float_array id="ID533" count="24">-1 0 -0 -0 1 -0 1 0 -0 -0 -1 -0 0 0 1 0 0 -1 0 1 -9.56928e-17 0 -6.05628e-17 -1</float_array>
+                    <technique_common>
+                        <accessor count="8" source="#ID533" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID534">
+                    <float_array id="ID535" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID535" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID536">
+                    <float_array id="ID537" count="164">0.703769 0.0976428 0.703769 0.117074 0.707925 0.127208 0.707925 0.10637 0.703769 0.131816 0.707925 0.142906 0.703769 0.138769 0.707925 0.150275 0.703769 0.145377 0.707925 0.157257 0.703769 0.147518 0.707925 0.159513 0.703769 0.15386 0.707925 0.166186 0.947754 0.318536 0.942745 0.320163 0.953035 0.33311 0.948459 0.334375 0.959777 0.353128 0.955785 0.353991 0.959777 0.232356 0.955785 0.233434 0.703769 0.0730299 0.707925 0.0797696 0.703769 0.0923289 0.707925 0.100645 0.698735 0.105618 0.698735 0.118232 0.703769 0.129408 0.703769 0.115824 0.698735 0.126783 0.703769 0.138574 0.698735 0.130556 0.703769 0.142606 0.698735 0.134004 0.703769 0.146284 0.698735 0.135094 0.703769 0.147445 0.698735 0.138248 0.703769 0.150803 0.91175 0.221586 0.903723 0.226775 0.960749 0.33876 0.956393 0.339743 0.96382 0.349324 0.959777 0.350126 0.96382 0.231373 0.698735 0.0662816 0.698735 0.0747929 0.703769 0.0823376 0.692523 0.117528 0.692523 0.119842 0.698735 0.132282 0.698735 0.129781 0.692523 0.121199 0.698735 0.133748 0.692523 0.121752 0.698735 0.134344 0.692523 0.122236 0.698735 0.134867 0.692523 0.122385 0.698735 0.135027 0.692523 0.122804 0.698735 0.13548 0.741296 0.115739 0.742307 0.129405 0.967537 0.344095 0.9634 0.34485 0.967912 0.345605 0.96382 0.346339 0.967912 0.230488 0.692523 0.0595526 0.692523 0.0605695 0.698735 0.0674069 0.959458 0.243601 0.857955 0.311003 0.859697 0.312317 0.960317 0.246935 0.859697 0.441076 0.960317 0.411522 0.857955 0.44056 0.959458 0.409746</float_array>
+                    <technique_common>
+                        <accessor count="82" source="#ID537" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID538">
+                    <input semantic="POSITION" source="#ID530"/>
+                </vertices>
+                <polylist count="111" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#ID538"/>
+                    <input offset="1" semantic="NORMAL" source="#ID532"/>
+                    <input offset="2" semantic="TEXCOORD" source="#ID536" set="0"/>
+                    <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4</vcount>
+                    <p>3 0 3 2 0 2 1 0 1 0 0 0 2 0 2 5 0 5 4 0 4 1 0 1 5 0 5 7 0 7 6 0 6 4 0 4 7 0 7 9 0 9 8 0 8 6 0 6 9 0 9 11 0 11 10 0 10 8 0 8 11 0 11 13 0 13 12 0 12 10 0 10 17 1 13 16 1 15 15 1 14 14 1 12 16 1 15 19 1 17 18 1 16 15 1 14 19 1 17 21 1 19 20 1 18 18 1 16 25 2 19 24 2 21 23 2 20 22 2 18 29 3 21 28 3 23 27 3 22 26 3 20 33 0 23 32 0 25 31 0 24 30 0 22 32 0 25 35 0 3 34 0 0 31 0 24 38 4 25 37 4 23 36 4 21 39 4 15 38 4 25 36 4 21 36 4 21 41 4 19 40 4 17 36 4 21 40 4 17 39 4 15 39 4 15 42 4 3 38 4 25 39 4 15 43 4 2 42 4 3 39 4 15 44 4 5 43 4 2 39 4 15 46 4 9 45 4 7 39 4 15 48 4 13 47 4 11 39 4 15 47 4 11 46 4 9 39 4 15 45 4 7 44 4 5 51 5 24 50 5 20 49 5 22 52 5 14 50 5 20 51 5 24 50 5 20 54 5 16 53 5 18 50 5 20 52 5 14 54 5 16 52 5 14 51 5 24 55 5 0 52 5 14 55 5 0 56 5 1 52 5 14 56 5 1 57 5 4 52 5 14 59 5 6 58 5 8 52 5 14 61 5 10 60 5 12 52 5 14 58 5 8 61 5 10 52 5 14 57 5 4 59 5 6 65 0 29 64 0 28 63 0 27 62 0 26 64 0 28 67 0 31 66 0 30 63 0 27 67 0 31 69 0 33 68 0 32 66 0 30 69 0 33 71 0 35 70 0 34 68 0 32 71 0 35 73 0 37 72 0 36 70 0 34 73 0 37 75 0 39 74 0 38 72 0 36 79 1 39 78 1 41 77 1 40 76 1 38 78 1 41 81 1 43 80 1 42 77 1 40 81 1 43 83 1 45 82 1 44 80 1 42 87 2 45 86 2 20 85 2 46 84 2 44 91 3 20 90 3 22 89 3 47 88 3 46 95 0 22 94 0 49 93 0 48 92 0 47 94 0 49 97 0 29 96 0 26 93 0 48 100 4 49 99 4 22 98 4 20 101 4 41 100 4 49 98 4 20 98 4 20 103 4 45 102 4 43 98 4 20 102 4 43 101 4 41 101 4 41 104 4 29 100 4 49 101 4 41 105 4 28 104 4 29 101 4 41 106 4 31 105 4 28 101 4 41 108 4 35 107 4 33 101 4 41 110 4 39 109 4 37 101 4 41 109 4 37 108 4 35 101 4 41 107 4 33 106 4 31 113 5 48 112 5 46 111 5 47 114 5 40 112 5 46 113 5 48 112 5 46 116 5 42 115 5 44 112 5 46 114 5 40 116 5 42 114 5 40 113 5 48 117 5 26 114 5 40 117 5 26 118 5 27 114 5 40 118 5 27 119 5 30 114 5 40 121 5 32 120 5 34 114 5 40 123 5 36 122 5 38 114 5 40 120 5 34 123 5 36 114 5 40 119 5 30 121 5 32 127 0 53 126 0 52 125 0 51 124 0 50 126 0 52 129 0 55 128 0 54 125 0 51 129 0 55 131 0 57 130 0 56 128 0 54 131 0 57 133 0 59 132 0 58 130 0 56 133 0 59 135 0 61 134 0 60 132 0 58 135 0 61 137 0 63 136 0 62 134 0 60 141 1 63 140 1 65 139 1 64 138 1 62 140 1 65 143 1 67 142 1 66 139 1 64 143 1 67 145 1 69 144 1 68 142 1 66 149 2 69 148 2 46 147 2 70 146 2 68 153 3 46 152 3 47 151 3 71 150 3 70 157 0 47 156 0 73 155 0 72 154 0 71 156 0 73 159 0 53 158 0 50 155 0 72 162 4 73 161 4 47 160 4 46 163 4 65 162 4 73 160 4 46 160 4 46 165 4 69 164 4 67 160 4 46 164 4 67 163 4 65 163 4 65 166 4 53 162 4 73 163 4 65 167 4 52 166 4 53 163 4 65 168 4 55 167 4 52 163 4 65 170 4 59 169 4 57 163 4 65 172 4 63 171 4 61 163 4 65 171 4 61 170 4 59 163 4 65 169 4 57 168 4 55 175 5 72 174 5 70 173 5 71 176 5 64 174 5 70 175 5 72 174 5 70 178 5 66 177 5 68 174 5 70 176 5 64 178 5 66 176 5 64 175 5 72 179 5 50 176 5 64 179 5 50 180 5 51 176 5 64 180 5 51 181 5 54 176 5 64 183 5 56 182 5 58 176 5 64 185 5 60 184 5 62 176 5 64 182 5 58 185 5 60 176 5 64 181 5 54 183 5 56 189 3 77 188 3 76 187 3 75 186 3 74 191 2 79 190 2 78 188 2 76 189 2 77 193 6 81 192 6 80 190 6 78 191 6 79 186 0 74 187 0 75 192 0 80 193 0 81 188 4 76 190 4 78 192 4 80 187 4 75 191 7 79 189 7 77 186 7 74 193 7 81</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_animations>
+        <animation>
+            <animation>
+                <source id="ID11">
+                    <float_array id="ID12" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID12">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID13">
+                    <Name_array id="ID14" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID14">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID15">
+                    <float_array id="ID16" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID16" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID17">
+                    <float_array id="ID18" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID18" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID19">
+                    <float_array id="ID20" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID20">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID21">
+                    <input semantic="INPUT" source="#ID11"/>
+                    <input semantic="INTERPOLATION" source="#ID13"/>
+                    <input semantic="IN_TANGENT" source="#ID15"/>
+                    <input semantic="OUT_TANGENT" source="#ID17"/>
+                    <input semantic="OUTPUT" source="#ID19"/>
+                </sampler>
+                <channel source="#ID21" target="ID10/translate.X"/>
+            </animation>
+            <animation>
+                <source id="ID22">
+                    <float_array id="ID23" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID23">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID24">
+                    <Name_array id="ID25" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID25">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID26">
+                    <float_array id="ID27" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID27" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID28">
+                    <float_array id="ID29" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID29" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID30">
+                    <float_array id="ID31" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID31">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID32">
+                    <input semantic="INPUT" source="#ID22"/>
+                    <input semantic="INTERPOLATION" source="#ID24"/>
+                    <input semantic="IN_TANGENT" source="#ID26"/>
+                    <input semantic="OUT_TANGENT" source="#ID28"/>
+                    <input semantic="OUTPUT" source="#ID30"/>
+                </sampler>
+                <channel source="#ID32" target="ID10/translate.Y"/>
+            </animation>
+            <animation>
+                <source id="ID33">
+                    <float_array id="ID34" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID34">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID35">
+                    <Name_array id="ID36" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID36">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID37">
+                    <float_array id="ID38" count="2">0.833333 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID38" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID39">
+                    <float_array id="ID40" count="2">0.833333 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID40" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID41">
+                    <float_array id="ID42" count="1">-0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID42">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID43">
+                    <input semantic="INPUT" source="#ID33"/>
+                    <input semantic="INTERPOLATION" source="#ID35"/>
+                    <input semantic="IN_TANGENT" source="#ID37"/>
+                    <input semantic="OUT_TANGENT" source="#ID39"/>
+                    <input semantic="OUTPUT" source="#ID41"/>
+                </sampler>
+                <channel source="#ID43" target="ID10/translate.Z"/>
+            </animation>
+            <animation>
+                <source id="ID44">
+                    <float_array id="ID45" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID45">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID46">
+                    <Name_array id="ID47" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID47">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID48">
+                    <float_array id="ID49" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID49" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID50">
+                    <float_array id="ID51" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID51" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID52">
+                    <float_array id="ID53" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID53">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID54">
+                    <input semantic="INPUT" source="#ID44"/>
+                    <input semantic="INTERPOLATION" source="#ID46"/>
+                    <input semantic="IN_TANGENT" source="#ID48"/>
+                    <input semantic="OUT_TANGENT" source="#ID50"/>
+                    <input semantic="OUTPUT" source="#ID52"/>
+                </sampler>
+                <channel source="#ID54" target="ID10/rotateY.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID55">
+                    <float_array id="ID56" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID56">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID57">
+                    <Name_array id="ID58" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID58">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID59">
+                    <float_array id="ID60" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID60" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID61">
+                    <float_array id="ID62" count="2">0.833333 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID62" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID63">
+                    <float_array id="ID64" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID64">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID65">
+                    <input semantic="INPUT" source="#ID55"/>
+                    <input semantic="INTERPOLATION" source="#ID57"/>
+                    <input semantic="IN_TANGENT" source="#ID59"/>
+                    <input semantic="OUT_TANGENT" source="#ID61"/>
+                    <input semantic="OUTPUT" source="#ID63"/>
+                </sampler>
+                <channel source="#ID65" target="ID10/rotateX.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID66">
+                    <float_array id="ID67" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID67">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID68">
+                    <Name_array id="ID69" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID69">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID70">
+                    <float_array id="ID71" count="2">0.833333 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID71" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID72">
+                    <float_array id="ID73" count="2">0.833333 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID73" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID74">
+                    <float_array id="ID75" count="1">-0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID75">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID76">
+                    <input semantic="INPUT" source="#ID66"/>
+                    <input semantic="INTERPOLATION" source="#ID68"/>
+                    <input semantic="IN_TANGENT" source="#ID70"/>
+                    <input semantic="OUT_TANGENT" source="#ID72"/>
+                    <input semantic="OUTPUT" source="#ID74"/>
+                </sampler>
+                <channel source="#ID76" target="ID10/rotateZ.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID77">
+                    <float_array id="ID78" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID78">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID79">
+                    <Name_array id="ID80" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID80">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID81">
+                    <float_array id="ID82" count="2">0.833333 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID82" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID83">
+                    <float_array id="ID84" count="2">0.833333 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID84" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID85">
+                    <float_array id="ID86" count="1">1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID86">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID87">
+                    <input semantic="INPUT" source="#ID77"/>
+                    <input semantic="INTERPOLATION" source="#ID79"/>
+                    <input semantic="IN_TANGENT" source="#ID81"/>
+                    <input semantic="OUT_TANGENT" source="#ID83"/>
+                    <input semantic="OUTPUT" source="#ID85"/>
+                </sampler>
+                <channel source="#ID87" target="ID10/scale.X"/>
+            </animation>
+            <animation>
+                <source id="ID88">
+                    <float_array id="ID89" count="3">0 0.366667 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID89">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID90">
+                    <Name_array id="ID91" count="3">BEZIER BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID91">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID92">
+                    <float_array id="ID93" count="6">-0.122667 0 0.229333 0 0.677333 1</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID93" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID94">
+                    <float_array id="ID95" count="6">0.122667 0 0.504 0 0.989333 1</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID95" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID96">
+                    <float_array id="ID97" count="3">0 0 1</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID97">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID98">
+                    <input semantic="INPUT" source="#ID88"/>
+                    <input semantic="INTERPOLATION" source="#ID90"/>
+                    <input semantic="IN_TANGENT" source="#ID92"/>
+                    <input semantic="OUT_TANGENT" source="#ID94"/>
+                    <input semantic="OUTPUT" source="#ID96"/>
+                </sampler>
+                <channel source="#ID98" target="ID10/scale.Y"/>
+            </animation>
+            <animation>
+                <source id="ID99">
+                    <float_array id="ID100" count="1">0.833333</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID100">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID101">
+                    <Name_array id="ID102" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID102">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID103">
+                    <float_array id="ID104" count="2">0.833333 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID104" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID105">
+                    <float_array id="ID106" count="2">0.833333 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID106" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID107">
+                    <float_array id="ID108" count="1">1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID108">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID109">
+                    <input semantic="INPUT" source="#ID99"/>
+                    <input semantic="INTERPOLATION" source="#ID101"/>
+                    <input semantic="IN_TANGENT" source="#ID103"/>
+                    <input semantic="OUT_TANGENT" source="#ID105"/>
+                    <input semantic="OUTPUT" source="#ID107"/>
+                </sampler>
+                <channel source="#ID109" target="ID10/scale.Z"/>
+            </animation>
+        </animation>
+        <animation>
+            <animation>
+                <source id="ID111">
+                    <float_array id="ID112" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID112">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID113">
+                    <Name_array id="ID114" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID114">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID115">
+                    <float_array id="ID116" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID116" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID117">
+                    <float_array id="ID118" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID118" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID119">
+                    <float_array id="ID120" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID120">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID121">
+                    <input semantic="INPUT" source="#ID111"/>
+                    <input semantic="INTERPOLATION" source="#ID113"/>
+                    <input semantic="IN_TANGENT" source="#ID115"/>
+                    <input semantic="OUT_TANGENT" source="#ID117"/>
+                    <input semantic="OUTPUT" source="#ID119"/>
+                </sampler>
+                <channel source="#ID121" target="ID110/translate.X"/>
+            </animation>
+            <animation>
+                <source id="ID122">
+                    <float_array id="ID123" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID123">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID124">
+                    <Name_array id="ID125" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID125">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID126">
+                    <float_array id="ID127" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID127" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID128">
+                    <float_array id="ID129" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID129" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID130">
+                    <float_array id="ID131" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID131">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID132">
+                    <input semantic="INPUT" source="#ID122"/>
+                    <input semantic="INTERPOLATION" source="#ID124"/>
+                    <input semantic="IN_TANGENT" source="#ID126"/>
+                    <input semantic="OUT_TANGENT" source="#ID128"/>
+                    <input semantic="OUTPUT" source="#ID130"/>
+                </sampler>
+                <channel source="#ID132" target="ID110/translate.Y"/>
+            </animation>
+            <animation>
+                <source id="ID133">
+                    <float_array id="ID134" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID134">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID135">
+                    <Name_array id="ID136" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID136">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID137">
+                    <float_array id="ID138" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID138" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID139">
+                    <float_array id="ID140" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID140" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID141">
+                    <float_array id="ID142" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID142">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID143">
+                    <input semantic="INPUT" source="#ID133"/>
+                    <input semantic="INTERPOLATION" source="#ID135"/>
+                    <input semantic="IN_TANGENT" source="#ID137"/>
+                    <input semantic="OUT_TANGENT" source="#ID139"/>
+                    <input semantic="OUTPUT" source="#ID141"/>
+                </sampler>
+                <channel source="#ID143" target="ID110/translate.Z"/>
+            </animation>
+            <animation>
+                <source id="ID144">
+                    <float_array id="ID145" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID145">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID146">
+                    <Name_array id="ID147" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID147">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID148">
+                    <float_array id="ID149" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID149" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID150">
+                    <float_array id="ID151" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID151" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID152">
+                    <float_array id="ID153" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID153">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID154">
+                    <input semantic="INPUT" source="#ID144"/>
+                    <input semantic="INTERPOLATION" source="#ID146"/>
+                    <input semantic="IN_TANGENT" source="#ID148"/>
+                    <input semantic="OUT_TANGENT" source="#ID150"/>
+                    <input semantic="OUTPUT" source="#ID152"/>
+                </sampler>
+                <channel source="#ID154" target="ID110/rotateY.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID155">
+                    <float_array id="ID156" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID156">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID157">
+                    <Name_array id="ID158" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID158">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID159">
+                    <float_array id="ID160" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID160" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID161">
+                    <float_array id="ID162" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID162" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID163">
+                    <float_array id="ID164" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID164">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID165">
+                    <input semantic="INPUT" source="#ID155"/>
+                    <input semantic="INTERPOLATION" source="#ID157"/>
+                    <input semantic="IN_TANGENT" source="#ID159"/>
+                    <input semantic="OUT_TANGENT" source="#ID161"/>
+                    <input semantic="OUTPUT" source="#ID163"/>
+                </sampler>
+                <channel source="#ID165" target="ID110/rotateX.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID166">
+                    <float_array id="ID167" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID167">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID168">
+                    <Name_array id="ID169" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID169">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID170">
+                    <float_array id="ID171" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID171" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID172">
+                    <float_array id="ID173" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID173" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID174">
+                    <float_array id="ID175" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID175">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID176">
+                    <input semantic="INPUT" source="#ID166"/>
+                    <input semantic="INTERPOLATION" source="#ID168"/>
+                    <input semantic="IN_TANGENT" source="#ID170"/>
+                    <input semantic="OUT_TANGENT" source="#ID172"/>
+                    <input semantic="OUTPUT" source="#ID174"/>
+                </sampler>
+                <channel source="#ID176" target="ID110/rotateZ.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID177">
+                    <float_array id="ID178" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID178">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID179">
+                    <Name_array id="ID180" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID180">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID181">
+                    <float_array id="ID182" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID182" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID183">
+                    <float_array id="ID184" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID184" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID185">
+                    <float_array id="ID186" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID186">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID187">
+                    <input semantic="INPUT" source="#ID177"/>
+                    <input semantic="INTERPOLATION" source="#ID179"/>
+                    <input semantic="IN_TANGENT" source="#ID181"/>
+                    <input semantic="OUT_TANGENT" source="#ID183"/>
+                    <input semantic="OUTPUT" source="#ID185"/>
+                </sampler>
+                <channel source="#ID187" target="ID110/scale.X"/>
+            </animation>
+            <animation>
+                <source id="ID188">
+                    <float_array id="ID189" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID189">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID190">
+                    <Name_array id="ID191" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID191">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID192">
+                    <float_array id="ID193" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID193" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID194">
+                    <float_array id="ID195" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID195" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID196">
+                    <float_array id="ID197" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID197">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID198">
+                    <input semantic="INPUT" source="#ID188"/>
+                    <input semantic="INTERPOLATION" source="#ID190"/>
+                    <input semantic="IN_TANGENT" source="#ID192"/>
+                    <input semantic="OUT_TANGENT" source="#ID194"/>
+                    <input semantic="OUTPUT" source="#ID196"/>
+                </sampler>
+                <channel source="#ID198" target="ID110/scale.Y"/>
+            </animation>
+            <animation>
+                <source id="ID199">
+                    <float_array id="ID200" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID200">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID201">
+                    <Name_array id="ID202" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID202">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID203">
+                    <float_array id="ID204" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID204" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID205">
+                    <float_array id="ID206" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID206" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID207">
+                    <float_array id="ID208" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID208">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID209">
+                    <input semantic="INPUT" source="#ID199"/>
+                    <input semantic="INTERPOLATION" source="#ID201"/>
+                    <input semantic="IN_TANGENT" source="#ID203"/>
+                    <input semantic="OUT_TANGENT" source="#ID205"/>
+                    <input semantic="OUTPUT" source="#ID207"/>
+                </sampler>
+                <channel source="#ID209" target="ID110/scale.Z"/>
+            </animation>
+        </animation>
+        <animation>
+            <animation>
+                <source id="ID219">
+                    <float_array id="ID220" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID220">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID221">
+                    <Name_array id="ID222" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID222">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID223">
+                    <float_array id="ID224" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID224" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID225">
+                    <float_array id="ID226" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID226" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID227">
+                    <float_array id="ID228" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID228">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID229">
+                    <input semantic="INPUT" source="#ID219"/>
+                    <input semantic="INTERPOLATION" source="#ID221"/>
+                    <input semantic="IN_TANGENT" source="#ID223"/>
+                    <input semantic="OUT_TANGENT" source="#ID225"/>
+                    <input semantic="OUTPUT" source="#ID227"/>
+                </sampler>
+                <channel source="#ID229" target="ID218/translate.X"/>
+            </animation>
+            <animation>
+                <source id="ID230">
+                    <float_array id="ID231" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID231">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID232">
+                    <Name_array id="ID233" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID233">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID234">
+                    <float_array id="ID235" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID235" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID236">
+                    <float_array id="ID237" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID237" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID238">
+                    <float_array id="ID239" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID239">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID240">
+                    <input semantic="INPUT" source="#ID230"/>
+                    <input semantic="INTERPOLATION" source="#ID232"/>
+                    <input semantic="IN_TANGENT" source="#ID234"/>
+                    <input semantic="OUT_TANGENT" source="#ID236"/>
+                    <input semantic="OUTPUT" source="#ID238"/>
+                </sampler>
+                <channel source="#ID240" target="ID218/translate.Y"/>
+            </animation>
+            <animation>
+                <source id="ID241">
+                    <float_array id="ID242" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID242">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID243">
+                    <Name_array id="ID244" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID244">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID245">
+                    <float_array id="ID246" count="2">0 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID246" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID247">
+                    <float_array id="ID248" count="2">0 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID248" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID249">
+                    <float_array id="ID250" count="1">-0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID250">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID251">
+                    <input semantic="INPUT" source="#ID241"/>
+                    <input semantic="INTERPOLATION" source="#ID243"/>
+                    <input semantic="IN_TANGENT" source="#ID245"/>
+                    <input semantic="OUT_TANGENT" source="#ID247"/>
+                    <input semantic="OUTPUT" source="#ID249"/>
+                </sampler>
+                <channel source="#ID251" target="ID218/translate.Z"/>
+            </animation>
+            <animation>
+                <source id="ID252">
+                    <float_array id="ID253" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID253">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID254">
+                    <Name_array id="ID255" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID255">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID256">
+                    <float_array id="ID257" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID257" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID258">
+                    <float_array id="ID259" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID259" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID260">
+                    <float_array id="ID261" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID261">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID262">
+                    <input semantic="INPUT" source="#ID252"/>
+                    <input semantic="INTERPOLATION" source="#ID254"/>
+                    <input semantic="IN_TANGENT" source="#ID256"/>
+                    <input semantic="OUT_TANGENT" source="#ID258"/>
+                    <input semantic="OUTPUT" source="#ID260"/>
+                </sampler>
+                <channel source="#ID262" target="ID218/rotateY.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID263">
+                    <float_array id="ID264" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID264">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID265">
+                    <Name_array id="ID266" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID266">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID267">
+                    <float_array id="ID268" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID268" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID269">
+                    <float_array id="ID270" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID270" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID271">
+                    <float_array id="ID272" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID272">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID273">
+                    <input semantic="INPUT" source="#ID263"/>
+                    <input semantic="INTERPOLATION" source="#ID265"/>
+                    <input semantic="IN_TANGENT" source="#ID267"/>
+                    <input semantic="OUT_TANGENT" source="#ID269"/>
+                    <input semantic="OUTPUT" source="#ID271"/>
+                </sampler>
+                <channel source="#ID273" target="ID218/rotateX.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID274">
+                    <float_array id="ID275" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID275">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID276">
+                    <Name_array id="ID277" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID277">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID278">
+                    <float_array id="ID279" count="2">0 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID279" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID280">
+                    <float_array id="ID281" count="2">0 -0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID281" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID282">
+                    <float_array id="ID283" count="1">-0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID283">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID284">
+                    <input semantic="INPUT" source="#ID274"/>
+                    <input semantic="INTERPOLATION" source="#ID276"/>
+                    <input semantic="IN_TANGENT" source="#ID278"/>
+                    <input semantic="OUT_TANGENT" source="#ID280"/>
+                    <input semantic="OUTPUT" source="#ID282"/>
+                </sampler>
+                <channel source="#ID284" target="ID218/rotateZ.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID285">
+                    <float_array id="ID286" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID286">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID287">
+                    <Name_array id="ID288" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID288">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID289">
+                    <float_array id="ID290" count="2">0 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID290" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID291">
+                    <float_array id="ID292" count="2">0 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID292" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID293">
+                    <float_array id="ID294" count="1">1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID294">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID295">
+                    <input semantic="INPUT" source="#ID285"/>
+                    <input semantic="INTERPOLATION" source="#ID287"/>
+                    <input semantic="IN_TANGENT" source="#ID289"/>
+                    <input semantic="OUT_TANGENT" source="#ID291"/>
+                    <input semantic="OUTPUT" source="#ID293"/>
+                </sampler>
+                <channel source="#ID295" target="ID218/scale.X"/>
+            </animation>
+            <animation>
+                <source id="ID296">
+                    <float_array id="ID297" count="3">0 0.433333 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID297">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID298">
+                    <Name_array id="ID299" count="3">BEZIER BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID299">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID300">
+                    <float_array id="ID301" count="6">-0.144 1 0.294667 0 0.7 0</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID301" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID302">
+                    <float_array id="ID303" count="6">0.144 1 0.572 0 0.966667 0</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID303" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID304">
+                    <float_array id="ID305" count="3">1 0 0</float_array>
+                    <technique_common>
+                        <accessor count="3" source="#ID305">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID306">
+                    <input semantic="INPUT" source="#ID296"/>
+                    <input semantic="INTERPOLATION" source="#ID298"/>
+                    <input semantic="IN_TANGENT" source="#ID300"/>
+                    <input semantic="OUT_TANGENT" source="#ID302"/>
+                    <input semantic="OUTPUT" source="#ID304"/>
+                </sampler>
+                <channel source="#ID306" target="ID218/scale.Y"/>
+            </animation>
+            <animation>
+                <source id="ID307">
+                    <float_array id="ID308" count="1">0</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID308">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID309">
+                    <Name_array id="ID310" count="1">BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID310">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID311">
+                    <float_array id="ID312" count="2">0 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID312" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID313">
+                    <float_array id="ID314" count="2">0 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID314" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID315">
+                    <float_array id="ID316" count="1">1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID316">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID317">
+                    <input semantic="INPUT" source="#ID307"/>
+                    <input semantic="INTERPOLATION" source="#ID309"/>
+                    <input semantic="IN_TANGENT" source="#ID311"/>
+                    <input semantic="OUT_TANGENT" source="#ID313"/>
+                    <input semantic="OUTPUT" source="#ID315"/>
+                </sampler>
+                <channel source="#ID317" target="ID218/scale.Z"/>
+            </animation>
+        </animation>
+        <animation>
+            <animation>
+                <source id="ID319">
+                    <float_array id="ID320" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID320">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID321">
+                    <Name_array id="ID322" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID322">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID323">
+                    <float_array id="ID324" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID324" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID325">
+                    <float_array id="ID326" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID326" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID327">
+                    <float_array id="ID328" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID328">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID329">
+                    <input semantic="INPUT" source="#ID319"/>
+                    <input semantic="INTERPOLATION" source="#ID321"/>
+                    <input semantic="IN_TANGENT" source="#ID323"/>
+                    <input semantic="OUT_TANGENT" source="#ID325"/>
+                    <input semantic="OUTPUT" source="#ID327"/>
+                </sampler>
+                <channel source="#ID329" target="ID318/translate.X"/>
+            </animation>
+            <animation>
+                <source id="ID330">
+                    <float_array id="ID331" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID331">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID332">
+                    <Name_array id="ID333" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID333">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID334">
+                    <float_array id="ID335" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID335" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID336">
+                    <float_array id="ID337" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID337" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID338">
+                    <float_array id="ID339" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID339">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID340">
+                    <input semantic="INPUT" source="#ID330"/>
+                    <input semantic="INTERPOLATION" source="#ID332"/>
+                    <input semantic="IN_TANGENT" source="#ID334"/>
+                    <input semantic="OUT_TANGENT" source="#ID336"/>
+                    <input semantic="OUTPUT" source="#ID338"/>
+                </sampler>
+                <channel source="#ID340" target="ID318/translate.Y"/>
+            </animation>
+            <animation>
+                <source id="ID341">
+                    <float_array id="ID342" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID342">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID343">
+                    <Name_array id="ID344" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID344">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID345">
+                    <float_array id="ID346" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID346" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID347">
+                    <float_array id="ID348" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID348" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID349">
+                    <float_array id="ID350" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID350">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID351">
+                    <input semantic="INPUT" source="#ID341"/>
+                    <input semantic="INTERPOLATION" source="#ID343"/>
+                    <input semantic="IN_TANGENT" source="#ID345"/>
+                    <input semantic="OUT_TANGENT" source="#ID347"/>
+                    <input semantic="OUTPUT" source="#ID349"/>
+                </sampler>
+                <channel source="#ID351" target="ID318/translate.Z"/>
+            </animation>
+            <animation>
+                <source id="ID352">
+                    <float_array id="ID353" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID353">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID354">
+                    <Name_array id="ID355" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID355">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID356">
+                    <float_array id="ID357" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID357" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID358">
+                    <float_array id="ID359" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID359" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID360">
+                    <float_array id="ID361" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID361">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID362">
+                    <input semantic="INPUT" source="#ID352"/>
+                    <input semantic="INTERPOLATION" source="#ID354"/>
+                    <input semantic="IN_TANGENT" source="#ID356"/>
+                    <input semantic="OUT_TANGENT" source="#ID358"/>
+                    <input semantic="OUTPUT" source="#ID360"/>
+                </sampler>
+                <channel source="#ID362" target="ID318/rotateY.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID363">
+                    <float_array id="ID364" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID364">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID365">
+                    <Name_array id="ID366" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID366">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID367">
+                    <float_array id="ID368" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID368" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID369">
+                    <float_array id="ID370" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID370" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID371">
+                    <float_array id="ID372" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID372">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID373">
+                    <input semantic="INPUT" source="#ID363"/>
+                    <input semantic="INTERPOLATION" source="#ID365"/>
+                    <input semantic="IN_TANGENT" source="#ID367"/>
+                    <input semantic="OUT_TANGENT" source="#ID369"/>
+                    <input semantic="OUTPUT" source="#ID371"/>
+                </sampler>
+                <channel source="#ID373" target="ID318/rotateX.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID374">
+                    <float_array id="ID375" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID375">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID376">
+                    <Name_array id="ID377" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID377">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID378">
+                    <float_array id="ID379" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID379" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID380">
+                    <float_array id="ID381" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID381" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID382">
+                    <float_array id="ID383" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID383">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID384">
+                    <input semantic="INPUT" source="#ID374"/>
+                    <input semantic="INTERPOLATION" source="#ID376"/>
+                    <input semantic="IN_TANGENT" source="#ID378"/>
+                    <input semantic="OUT_TANGENT" source="#ID380"/>
+                    <input semantic="OUTPUT" source="#ID382"/>
+                </sampler>
+                <channel source="#ID384" target="ID318/rotateZ.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID385">
+                    <float_array id="ID386" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID386">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID387">
+                    <Name_array id="ID388" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID388">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID389">
+                    <float_array id="ID390" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID390" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID391">
+                    <float_array id="ID392" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID392" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID393">
+                    <float_array id="ID394" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID394">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID395">
+                    <input semantic="INPUT" source="#ID385"/>
+                    <input semantic="INTERPOLATION" source="#ID387"/>
+                    <input semantic="IN_TANGENT" source="#ID389"/>
+                    <input semantic="OUT_TANGENT" source="#ID391"/>
+                    <input semantic="OUTPUT" source="#ID393"/>
+                </sampler>
+                <channel source="#ID395" target="ID318/scale.X"/>
+            </animation>
+            <animation>
+                <source id="ID396">
+                    <float_array id="ID397" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID397">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID398">
+                    <Name_array id="ID399" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID399">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID400">
+                    <float_array id="ID401" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID401" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID402">
+                    <float_array id="ID403" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID403" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID404">
+                    <float_array id="ID405" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID405">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID406">
+                    <input semantic="INPUT" source="#ID396"/>
+                    <input semantic="INTERPOLATION" source="#ID398"/>
+                    <input semantic="IN_TANGENT" source="#ID400"/>
+                    <input semantic="OUT_TANGENT" source="#ID402"/>
+                    <input semantic="OUTPUT" source="#ID404"/>
+                </sampler>
+                <channel source="#ID406" target="ID318/scale.Y"/>
+            </animation>
+            <animation>
+                <source id="ID407">
+                    <float_array id="ID408" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID408">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID409">
+                    <Name_array id="ID410" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID410">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID411">
+                    <float_array id="ID412" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID412" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID413">
+                    <float_array id="ID414" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID414" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID415">
+                    <float_array id="ID416" count="0"/>
+                    <technique_common>
+                        <accessor count="0" source="#ID416">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID417">
+                    <input semantic="INPUT" source="#ID407"/>
+                    <input semantic="INTERPOLATION" source="#ID409"/>
+                    <input semantic="IN_TANGENT" source="#ID411"/>
+                    <input semantic="OUT_TANGENT" source="#ID413"/>
+                    <input semantic="OUTPUT" source="#ID415"/>
+                </sampler>
+                <channel source="#ID417" target="ID318/scale.Z"/>
+            </animation>
+        </animation>
+        <animation>
+            <animation>
+                <source id="ID429">
+                    <float_array id="ID430" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID430">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID431">
+                    <Name_array id="ID432" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID432">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID433">
+                    <float_array id="ID434" count="4">-0.277333 0 0.556 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID434" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID435">
+                    <float_array id="ID436" count="4">0.277333 0 1.11067 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID436" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID437">
+                    <float_array id="ID438" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID438">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID439">
+                    <input semantic="INPUT" source="#ID429"/>
+                    <input semantic="INTERPOLATION" source="#ID431"/>
+                    <input semantic="IN_TANGENT" source="#ID433"/>
+                    <input semantic="OUT_TANGENT" source="#ID435"/>
+                    <input semantic="OUTPUT" source="#ID437"/>
+                </sampler>
+                <channel source="#ID439" target="ID428/translate.X"/>
+            </animation>
+            <animation>
+                <source id="ID440">
+                    <float_array id="ID441" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID441">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID442">
+                    <Name_array id="ID443" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID443">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID444">
+                    <float_array id="ID445" count="4">-0.277333 0 0.556 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID445" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID446">
+                    <float_array id="ID447" count="4">0.277333 0 1.11067 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID447" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID448">
+                    <float_array id="ID449" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID449">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID450">
+                    <input semantic="INPUT" source="#ID440"/>
+                    <input semantic="INTERPOLATION" source="#ID442"/>
+                    <input semantic="IN_TANGENT" source="#ID444"/>
+                    <input semantic="OUT_TANGENT" source="#ID446"/>
+                    <input semantic="OUTPUT" source="#ID448"/>
+                </sampler>
+                <channel source="#ID450" target="ID428/translate.Y"/>
+            </animation>
+            <animation>
+                <source id="ID451">
+                    <float_array id="ID452" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID452">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID453">
+                    <Name_array id="ID454" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID454">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID455">
+                    <float_array id="ID456" count="4">-0.277333 -0 0.556 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID456" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID457">
+                    <float_array id="ID458" count="4">0.277333 -0 1.11067 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID458" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID459">
+                    <float_array id="ID460" count="2">-0 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID460">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID461">
+                    <input semantic="INPUT" source="#ID451"/>
+                    <input semantic="INTERPOLATION" source="#ID453"/>
+                    <input semantic="IN_TANGENT" source="#ID455"/>
+                    <input semantic="OUT_TANGENT" source="#ID457"/>
+                    <input semantic="OUTPUT" source="#ID459"/>
+                </sampler>
+                <channel source="#ID461" target="ID428/translate.Z"/>
+            </animation>
+            <animation>
+                <source id="ID462">
+                    <float_array id="ID463" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID463">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID464">
+                    <Name_array id="ID465" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID465">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID466">
+                    <float_array id="ID467" count="4">-0.277333 0 0.556 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID467" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID468">
+                    <float_array id="ID469" count="4">0.277333 0 1.11067 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID469" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID470">
+                    <float_array id="ID471" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID471">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID472">
+                    <input semantic="INPUT" source="#ID462"/>
+                    <input semantic="INTERPOLATION" source="#ID464"/>
+                    <input semantic="IN_TANGENT" source="#ID466"/>
+                    <input semantic="OUT_TANGENT" source="#ID468"/>
+                    <input semantic="OUTPUT" source="#ID470"/>
+                </sampler>
+                <channel source="#ID472" target="ID428/rotateY.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID473">
+                    <float_array id="ID474" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID474">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID475">
+                    <Name_array id="ID476" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID476">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID477">
+                    <float_array id="ID478" count="4">-0.277333 0 0.556 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID478" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID479">
+                    <float_array id="ID480" count="4">0.277333 0 1.11067 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID480" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID481">
+                    <float_array id="ID482" count="2">0 0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID482">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID483">
+                    <input semantic="INPUT" source="#ID473"/>
+                    <input semantic="INTERPOLATION" source="#ID475"/>
+                    <input semantic="IN_TANGENT" source="#ID477"/>
+                    <input semantic="OUT_TANGENT" source="#ID479"/>
+                    <input semantic="OUTPUT" source="#ID481"/>
+                </sampler>
+                <channel source="#ID483" target="ID428/rotateX.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID484">
+                    <float_array id="ID485" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID485">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID486">
+                    <Name_array id="ID487" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID487">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID488">
+                    <float_array id="ID489" count="4">-0.277333 -0 0.556 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID489" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID490">
+                    <float_array id="ID491" count="4">0.277333 -0 1.11067 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID491" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID492">
+                    <float_array id="ID493" count="2">-0 -0</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID493">
+                            <param name="ANGLE" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID494">
+                    <input semantic="INPUT" source="#ID484"/>
+                    <input semantic="INTERPOLATION" source="#ID486"/>
+                    <input semantic="IN_TANGENT" source="#ID488"/>
+                    <input semantic="OUT_TANGENT" source="#ID490"/>
+                    <input semantic="OUTPUT" source="#ID492"/>
+                </sampler>
+                <channel source="#ID494" target="ID428/rotateZ.ANGLE"/>
+            </animation>
+            <animation>
+                <source id="ID495">
+                    <float_array id="ID496" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID496">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID497">
+                    <Name_array id="ID498" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID498">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID499">
+                    <float_array id="ID500" count="4">-0.277333 1 0.556 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID500" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID501">
+                    <float_array id="ID502" count="4">0.277333 1 1.11067 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID502" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID503">
+                    <float_array id="ID504" count="2">1 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID504">
+                            <param name="X" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID505">
+                    <input semantic="INPUT" source="#ID495"/>
+                    <input semantic="INTERPOLATION" source="#ID497"/>
+                    <input semantic="IN_TANGENT" source="#ID499"/>
+                    <input semantic="OUT_TANGENT" source="#ID501"/>
+                    <input semantic="OUTPUT" source="#ID503"/>
+                </sampler>
+                <channel source="#ID505" target="ID428/scale.X"/>
+            </animation>
+            <animation>
+                <source id="ID506">
+                    <float_array id="ID507" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID507">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID508">
+                    <Name_array id="ID509" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID509">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID510">
+                    <float_array id="ID511" count="4">-0.277333 1 0.556 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID511" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID512">
+                    <float_array id="ID513" count="4">0.277333 1 1.11067 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID513" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID514">
+                    <float_array id="ID515" count="2">1 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID515">
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID516">
+                    <input semantic="INPUT" source="#ID506"/>
+                    <input semantic="INTERPOLATION" source="#ID508"/>
+                    <input semantic="IN_TANGENT" source="#ID510"/>
+                    <input semantic="OUT_TANGENT" source="#ID512"/>
+                    <input semantic="OUTPUT" source="#ID514"/>
+                </sampler>
+                <channel source="#ID516" target="ID428/scale.Y"/>
+            </animation>
+            <animation>
+                <source id="ID517">
+                    <float_array id="ID518" count="2">0 0.833333</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID518">
+                            <param name="TIME" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID519">
+                    <Name_array id="ID520" count="2">BEZIER BEZIER</Name_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID520">
+                            <param name="INTERPOLATION" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID521">
+                    <float_array id="ID522" count="4">-0.277333 1 0.556 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID522" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID523">
+                    <float_array id="ID524" count="4">0.277333 1 1.11067 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID524" stride="2">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID525">
+                    <float_array id="ID526" count="2">1 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID526">
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <sampler id="ID527">
+                    <input semantic="INPUT" source="#ID517"/>
+                    <input semantic="INTERPOLATION" source="#ID519"/>
+                    <input semantic="IN_TANGENT" source="#ID521"/>
+                    <input semantic="OUT_TANGENT" source="#ID523"/>
+                    <input semantic="OUTPUT" source="#ID525"/>
+                </sampler>
+                <channel source="#ID527" target="ID428/scale.Z"/>
+            </animation>
+        </animation>
+    </library_animations>
+    <library_visual_scenes>
+        <visual_scene id="ID9">
+            <node id="ID10" name="Nulo_.2">
+                <translate sid="translate">0 0 -0</translate>
+                <rotate sid="rotateY">0 1 0 -0</rotate>
+                <rotate sid="rotateX">1 0 0 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -0</rotate>
+                <scale sid="scale">1 1 1</scale>
+                <node id="ID110" name="Nulo_.1">
+                    <translate sid="translate">-18.9972 0.741804 0.451123</translate>
+                    <rotate sid="rotateY">0 1 0 -0</rotate>
+                    <rotate sid="rotateX">1 0 0 0</rotate>
+                    <rotate sid="rotateZ">0 0 1 -0</rotate>
+                    <scale sid="scale">1 1 1</scale>
+                    <instance_geometry url="#ID210">
+                        <bind_material>
+                            <technique_common>
+                                <instance_material symbol="Material1" target="#ID7">
+                                    <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+                                </instance_material>
+                            </technique_common>
+                        </bind_material>
+                    </instance_geometry>
+                </node>
+            </node>
+            <node id="ID218" name="Nulo_.1">
+                <translate sid="translate">0 0 -0</translate>
+                <rotate sid="rotateY">0 1 0 -0</rotate>
+                <rotate sid="rotateX">1 0 0 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -0</rotate>
+                <scale sid="scale">1 0 1</scale>
+                <node id="ID318" name="Nulo_">
+                    <translate sid="translate">62.7295 0.161704 2.88242</translate>
+                    <rotate sid="rotateY">0 1 0 -0</rotate>
+                    <rotate sid="rotateX">1 0 0 0</rotate>
+                    <rotate sid="rotateZ">0 0 1 -0</rotate>
+                    <scale sid="scale">1 1 1</scale>
+                    <instance_geometry url="#ID418">
+                        <bind_material>
+                            <technique_common>
+                                <instance_material symbol="Material1" target="#ID1">
+                                    <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+                                </instance_material>
+                            </technique_common>
+                        </bind_material>
+                    </instance_geometry>
+                </node>
+            </node>
+            <node id="ID428" name="Nulo_">
+                <translate sid="translate">0 0 -0</translate>
+                <rotate sid="rotateY">0 1 0 -0</rotate>
+                <rotate sid="rotateX">1 0 0 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -0</rotate>
+                <scale sid="scale">1 1 1</scale>
+                <node id="ID528" name="a573fd51-c6ac-4113-bc69-02db68ddbf46">
+                    <translate sid="translate">-89.0975 -37.4477 -43.4068</translate>
+                    <rotate sid="rotateY">0 1 0 0</rotate>
+                    <rotate sid="rotateX">1 0 0 -90</rotate>
+                    <rotate sid="rotateZ">0 0 1 -0</rotate>
+                    <scale sid="scale">1 1 1</scale>
+                    <instance_geometry url="#ID529">
+                        <bind_material>
+                            <technique_common>
+                                <instance_material symbol="Material1" target="#ID1">
+                                    <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+                                </instance_material>
+                            </technique_common>
+                        </bind_material>
+                    </instance_geometry>
+                </node>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#ID9"/>
+    </scene>
+</COLLADA>

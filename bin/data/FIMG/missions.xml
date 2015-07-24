@@ -9,15 +9,15 @@
         <duration>100000</duration>
 	<object>
         	<id>11</id>
-			<color>1</color>
+			<color>2</color>
 	</object>
 	<object>
-		<id>9</id>
-		<color>1</color>
+		<id>12</id>
+		<color>2</color>
 	</object>
 	<object>
 		<id>10</id>
-		<color>1</color>
+		<color>2</color>
 	</object>
     </mission>
 	

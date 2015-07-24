@@ -5,7 +5,10 @@ void testApp::setup() {
     
 	// setup OF
     //ofSetFrameRate(60);
-	//ofSetVerticalSync(true);
+	ofSetVerticalSync(true);
+	
+	ofSetWindowShape(1400, 900);
+	
 	ofBackground( 255, 255, 255, 0);
 	ofDisableArbTex();
 #ifdef USE_SYPHON
