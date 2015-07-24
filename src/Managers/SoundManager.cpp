@@ -193,10 +193,10 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 				soundObj[ObjCol3]->play();
 			}
 			else if(args.pObject->ObjectId == 28){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[campanasRepican]->play();
+				if(!soundObj[campanasRepican]->getIsPlaying())soundObj[campanasRepican]->play();
 			}
 			
-			soundObj[ObjCol3]->play();
+			if(args.pObject->ObjectId != 28 && !soundObj[ObjCol3]->getIsPlaying())soundObj[ObjCol3]->play();
 		}
 
 	}
