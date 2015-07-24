@@ -31,10 +31,10 @@ string Gravity::getObjectName(){
 void Gravity::updateSpecific(bool bEditorMode) {
     if (changeGravity) {
         if ((ofGetElapsedTimeMillis() - gravityChangeTimer) < gravityChangeDuration) {
-         //   world->setGravity(changedGravity);
+            world->setGravity(changedGravity);
         }
         else {
-         //   world->setGravity(normalGravity);
+            world->setGravity(normalGravity);
             changeGravity = false;
         }
     }
