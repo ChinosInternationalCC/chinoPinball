@@ -51,11 +51,12 @@ PinballChinoManager::~PinballChinoManager(){
 void PinballChinoManager::setup(){
     
     video.loadMovie("fachadaFiMGVideo2.mov");
+	video.setLoopState(OF_LOOP_NONE);
    
 
     // setup bullet world
 	world.setup();
-	world.setGravity( ofVec3f(0, 30, 50) );
+	world.setGravity( ofVec3f(0, 10, 17));//(0, 30, 50) );
     // setup camera
 	camera.setPosition(ofVec3f(0, -2, -15.f));
 	camera.lookAt(ofVec3f(0, 0, 0), ofVec3f(0, -1, 0));
@@ -169,6 +170,7 @@ void PinballChinoManager::draw(){
 
     // debug draw
     if(bDrawDebug){
+		
         //myScenario.drawDebug();
         
         world.drawDebug();
@@ -203,8 +205,8 @@ void PinballChinoManager::draw(){
     
     chinoLights.draw();
     
-    
-     video.draw(0, ofGetHeight()*0.5, 320, 240);
+	ofSetColor(ofColor::white);
+     video.draw(ofGetWidth()-400, 0);
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
@@ -269,7 +271,8 @@ void PinballChinoManager::onRestartGameEvent(void){
 		SoundManager::getInstance()->PlaySound(7); // Pierde Sound
 	}
 	
-	
+	//Deactivate Multiballs in case where activated
+	myScenario.ActivateMultiballObjects(false);
 	
     
 }
@@ -577,8 +580,9 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             if (NULL != args.pMission){
 			}
 	
-            myScenario.ActivateTeleport(true);
+            //myScenario.ActivateTeleport(true);
             //myScenario.ActivateGravityObjects(true);
+			myScenario.ActivateMultiballObjects(true);
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
@@ -586,8 +590,9 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             if (NULL != args.pMission){
             }
             
-            myScenario.ActivateTeleport(false);
+            //myScenario.ActivateTeleport(false);
             //myScenario.ActivateGravityObjects(false);
+			myScenario.ActivateMultiballObjects(false);
             break;
         case eventMission::MISSION_EVENT_MISSION_COMPLETED:
             

@@ -158,6 +158,8 @@ void Scenario::update(bool _bEditorMode){
 
 //--------------------------------------------------------------
 void Scenario::draw(bool bEditorMode){
+	
+	if(bEditorMode)ofDrawAxis(100);
     
 	ofSetColor(ofColor::white);
 	
@@ -790,7 +792,21 @@ void Scenario::ActivateTeleport(bool activateFlag){
     for(int i = 0; i < ScenarioObjects.size(); i++){
 		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
 			Teleporter *pTeleporter = (Teleporter*)ScenarioObjects[i];
+			pTeleporter->SetMultiBallStickyFlag(false);
 			pTeleporter->ActivateTeleporter(activateFlag);
+		}
+	}
+}
+
+//---------------------------------------------------------
+void Scenario::ActivateMultiballObjects(bool activateFlag){
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeTeleporter){
+			if (ScenarioObjects[i]->GetObjectId() == 21){ //FIMG hack
+			Teleporter *pTeleporter = (Teleporter*)ScenarioObjects[i];
+			pTeleporter->SetMultiBallStickyFlag(activateFlag);
+			//pTeleporter->ActivateTeleporter(activateFlag);
+			}
 		}
 	}
 }

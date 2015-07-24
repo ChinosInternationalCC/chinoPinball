@@ -94,6 +94,14 @@ SoundManager::SoundManager(void){
 	soundObj[8]->loadSound(soundFiles[8]);
 	soundObj[8]->setVolume(0.5f);
 	soundObj[8]->setMultiPlay(false);
+	
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/DobleCampanas.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[9]->loadSound(soundFiles[9]);
+	soundObj[9]->setVolume(0.5f);
+	soundObj[9]->setMultiPlay(false);
+
 
 	/*
 	soundFiles.push_back("sounds/vocesraval01.wav");
@@ -184,8 +192,11 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 			else if(args.pObject->ObjectId == 11){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol3]->play();
 			}
+			else if(args.pObject->ObjectId == 28){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				if(!soundObj[campanasRepican]->getIsPlaying())soundObj[campanasRepican]->play();
+			}
 			
-			soundObj[ObjCol3]->play();
+			if(args.pObject->ObjectId != 28 && !soundObj[ObjCol3]->getIsPlaying())soundObj[ObjCol3]->play();
 		}
 
 	}
