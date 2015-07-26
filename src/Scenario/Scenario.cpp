@@ -822,6 +822,16 @@ void Scenario::ActivateGravityObjects(bool activateFlag){
 }
 
 //---------------------------------------------------------
+void Scenario::ActivateGravityChange(bool activateFlag){
+    for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeGravity){
+			Gravity *pGravity = (Gravity*)ScenarioObjects[i];
+			pGravity->SetGravityChange(activateFlag);
+		}
+    }
+}
+
+//---------------------------------------------------------
 SimpleObject* Scenario::FindScenarioObjectByRigidBody(const btRigidBody* body){
 	for(int i = 0; i < ScenarioObjects.size(); i++){
 		if (ScenarioObjects[i]->getBulletBaseShape()->getRigidBody() == body)

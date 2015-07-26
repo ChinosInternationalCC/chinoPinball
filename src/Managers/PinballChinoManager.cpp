@@ -67,6 +67,7 @@ void PinballChinoManager::setup(){
     // load camera position
     savedPose = loadCameraPosition(); 
     camera.setTransformMatrix(savedPose);
+    camera.setFov(loadCameraFov());
     
     // setup scenario
 	myScenario.setupMissions(&currentMissions);
@@ -274,6 +275,7 @@ void PinballChinoManager::onRestartGameEvent(void){
 	//Deactivate Multiballs in case where activated
 	myScenario.ActivateMultiballObjects(false);
 	
+    myScenario.ActivateGravityChange(false);
     
 }
 
