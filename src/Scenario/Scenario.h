@@ -107,7 +107,7 @@ public:
     void ActivateTeleport(bool activateFlag);
     void ActivateGravityObjects(bool activateFlag);
 	void ActivateMultiballObjects(bool activateFlag);
-
+    void ActivateGravityChange(bool activateFlag);
 private:
 	///////////////////
 	//Ball atributes
