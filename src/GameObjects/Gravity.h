@@ -22,6 +22,7 @@ public:
     
     void ActivateGravityObject(bool gravityFlag);
     bool GetActiveGravityFlag();
+    void SetGravityChange(bool gravityChangeFlag);
 private:
     int gravityChangeDuration;
     double gravityChangeTimer;
