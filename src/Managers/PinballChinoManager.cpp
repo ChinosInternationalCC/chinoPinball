@@ -274,8 +274,6 @@ void PinballChinoManager::onRestartGameEvent(void){
 	
 	//Deactivate Multiballs in case where activated
 	myScenario.ActivateMultiballObjects(false);
-	
-    myScenario.ActivateGravityChange(false);
     
 }
 

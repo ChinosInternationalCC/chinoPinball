@@ -150,7 +150,7 @@
         <rotationZ>-0.062304221</rotationZ>
         <rotationW>0.057483841</rotationW>
         <path>Demo/3DModels/pinball_stl/concave.stl</path>
-        <TeleporterDestObjId>22</TeleporterDestObjId>
+        <TeleporterDestObjId>10</TeleporterDestObjId>
         <TeleporterBallSticky>0</TeleporterBallSticky>
     </object>
     <object>
@@ -216,10 +216,10 @@
         <invisible>1</invisible>
         <pointsCollision>0</pointsCollision>
         <positionX>-0.849139690</positionX>
-        <positionY>-30.659824371</positionY>
+        <positionY>-23.59824371</positionY>
         <positionZ>1.428571939</positionZ>
         <scaleX>1.073758602</scaleX>
-        <scaleY>1.173758626</scaleY>
+        <scaleY>1.00</scaleY>
         <scaleZ>1.073758602</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
