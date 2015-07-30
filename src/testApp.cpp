@@ -72,7 +72,7 @@ void testApp::draw() {
 	
 	if(bIsPhotoToMatch){
 		ofSetColor(ofColor::white);
-		sceneOverlapedImage.draw(0,0, ofGetWidth(), ofGetHeight());
+		sceneOverlapedImage.draw(-20,0, 1440, 900);
 		
 		ofSetColor(255,255,255,255); // TODO set Alpha in a GUI Then easy to modify.. but may be not necessary use alpha
 		scene3dinFBO.draw(0,0);
