@@ -75,7 +75,7 @@
         <scaleZ>0.271452904</scaleZ>
         <rotationX>-0.570134699</rotationX>
         <rotationY>-0.401522845</rotationY>
-        <rotationZ>0.598553121</rotationZ>
+        <rotationZ>0.598553181</rotationZ>
         <rotationW>0.394284189</rotationW>
         <path>Demo/3DModels/new/totem1.obj</path>
     </object>
@@ -109,8 +109,8 @@
         <scaleX>0.267044872</scaleX>
         <scaleY>0.287044883</scaleY>
         <scaleZ>0.267044872</scaleZ>
-        <rotationX>0.953932106</rotationX>
-        <rotationY>0.012456509</rotationY>
+        <rotationX>0.953932047</rotationX>
+        <rotationY>0.012456508</rotationY>
         <rotationZ>-0.013479399</rotationZ>
         <rotationW>0.299460918</rotationW>
         <path>Demo/3DModels/pinball_stl/concave.stl</path>
@@ -296,8 +296,8 @@
         <scaleY>1.082543612</scaleY>
         <scaleZ>0.798537970</scaleZ>
         <rotationX>0.489006519</rotationX>
-        <rotationY>0.861268938</rotationY>
-        <rotationZ>0.035681915</rotationZ>
+        <rotationY>0.861268878</rotationY>
+        <rotationZ>0.035681911</rotationZ>
         <rotationW>-0.133473858</rotationW>
         <path>FIMG/cityObjects/banch3d21mm.dae</path>
     </object>
@@ -333,8 +333,8 @@
         <scaleZ>0.505571961</scaleZ>
         <rotationX>0.000000000</rotationX>
         <rotationY>0.000000000</rotationY>
-        <rotationZ>0.998808861</rotationZ>
-        <rotationW>0.048794661</rotationW>
+        <rotationZ>0.998808742</rotationZ>
+        <rotationW>0.048794653</rotationW>
         <path>FIMG/neri/muroPiedra.dae</path>
     </object>
     <object>
