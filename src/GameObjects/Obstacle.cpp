@@ -161,13 +161,14 @@ void Obstacle::onCollision(SimpleObject* Obj){
 		//play sound
 		//SoundManager::getInstance()->PlaySound(0); // PLAYED in SoundManager
 	   
-		//Play rele //TODO After try to move this to SimpleObject ... then all objects will
-		eventComunication newComEvent;
-		newComEvent.collision = true;
-		newComEvent.pObject = this;
-		ofNotifyEvent(eventComunication::onNewCom, newComEvent);
+		
+
 	}
-	
+	//Play rele //TODO After try to move this to SimpleObject ... then all objects will
+    eventComunication newComEvent;
+    newComEvent.collision = true;
+    newComEvent.pObject = this;
+    ofNotifyEvent(eventComunication::onNewCom, newComEvent);
 	
     onCollisionSpecific(Obj);
 }

@@ -81,7 +81,7 @@ SoundManager::SoundManager(void){
     soundObj[6]->setVolume(0.5f);
     soundObj[6]->setMultiPlay(false);
 
-	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/pierde.wav");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/patos_01_pierde.aif");
     audio  = new ofSoundPlayer();
     soundObj.push_back(audio);
     soundObj[7]->loadSound(soundFiles[7]);
@@ -95,14 +95,62 @@ SoundManager::SoundManager(void){
 	soundObj[8]->setVolume(0.5f);
 	soundObj[8]->setMultiPlay(false);
 	
-	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/DobleCampanas.aif");
+	soundFiles.push_back(PinballChinoManager::projectName+"/sounds/campana 01_01.aif");
 	audio  = new ofSoundPlayer();
 	soundObj.push_back(audio);
 	soundObj[9]->loadSound(soundFiles[9]);
 	soundObj[9]->setVolume(0.5f);
 	soundObj[9]->setMultiPlay(false);
+    
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/plangIA_hamburguesa.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[10]->loadSound(soundFiles[10]);
+	soundObj[10]->setVolume(0.5f);
+	soundObj[10]->setMultiPlay(false);
+    
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/MujerDiceViezart_palmerita.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[11]->loadSound(soundFiles[11]);
+	soundObj[11]->setVolume(0.5f);
+	soundObj[11]->setMultiPlay(false);
 
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/VocesRuso2.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[12]->loadSound(soundFiles[12]);
+	soundObj[12]->setVolume(0.5f);
+	soundObj[12]->setMultiPlay(false);
+    
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/GAMEOVER_campanaIglesia.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[13]->loadSound(soundFiles[13]);
+	soundObj[13]->setVolume(0.5f);
+	soundObj[13]->setMultiPlay(false);
 
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/CoroMasOrgano.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[14]->loadSound(soundFiles[14]);
+	soundObj[14]->setVolume(0.5f);
+	soundObj[14]->setMultiPlay(false);
+    
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/patos_02_bancos.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[15]->loadSound(soundFiles[15]);
+	soundObj[15]->setVolume(0.5f);
+	soundObj[15]->setMultiPlay(false);
+    
+    soundFiles.push_back(PinballChinoManager::projectName+"/sounds/patos_03_bancos.aif");
+	audio  = new ofSoundPlayer();
+	soundObj.push_back(audio);
+	soundObj[16]->loadSound(soundFiles[16]);
+	soundObj[16]->setVolume(0.5f);
+	soundObj[16]->setMultiPlay(false);
+    
 	/*
 	soundFiles.push_back("sounds/vocesraval01.wav");
     audio  = new ofSoundPlayer();
@@ -172,6 +220,10 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 		if(args.collision){
 			
 			if(args.pObject->ObjectId == 5){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[cara1]->play();
+                soundObj[cara2]->play();
+			}
+            else if(args.pObject->ObjectId == 21){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				soundObj[ObjCol1]->play();
 			}
 			else if(args.pObject->ObjectId == 6){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
@@ -181,22 +233,31 @@ void SoundManager::listenerOnCollission(eventComunication & args){
 				soundObj[ObjCol2]->play();
 			}
 			else if(args.pObject->ObjectId == 8){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol2]->play();
+				soundObj[palmeras]->play();
 			}
 			else if(args.pObject->ObjectId == 9){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol3]->play();
+				soundObj[palmeras]->play();
 			}
 			else if(args.pObject->ObjectId == 10){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol3]->play();
+				soundObj[hamburguesa]->play();
 			}
 			else if(args.pObject->ObjectId == 11){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
-				soundObj[ObjCol3]->play();
+				soundObj[hamburguesa]->play();
+			}
+            else if(args.pObject->ObjectId == 12){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[hamburguesa]->play();
+			}
+            else if(args.pObject->ObjectId == 22){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[bancos1]->play();
+			}
+            else if(args.pObject->ObjectId == 23){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
+				soundObj[bancos2]->play();
 			}
 			else if(args.pObject->ObjectId == 28){//DHUB HACK SOUND OBJECTS ID MANUALLLLL
 				if(!soundObj[campanasRepican]->getIsPlaying())soundObj[campanasRepican]->play();
 			}
 			
-			if(args.pObject->ObjectId != 28 && !soundObj[ObjCol3]->getIsPlaying())soundObj[ObjCol3]->play();
+			//if(args.pObject->ObjectId != 28 && !soundObj[ObjCol3]->getIsPlaying())soundObj[ObjCol3]->play();
 		}
 
 	}
@@ -220,7 +281,7 @@ void SoundManager::listenerOnUpdateMission(eventMission & args){
             if (NULL != args.pMission){
 			}
 			if (!bMute)
-				soundObj[songGeneralGame]->play();
+				soundObj[mision]->play();
             
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
@@ -237,7 +298,7 @@ void SoundManager::listenerOnUpdateMission(eventMission & args){
             
             break;
         case eventMission::MISSION_EVENT_RESTART_MISSION:
-            soundObj[songGeneralGame]->stop();
+            soundObj[mision]->stop();
             break;
         case eventMission::MISSION_EVENT_NEW_MISSION:
 
