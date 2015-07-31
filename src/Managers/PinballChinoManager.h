@@ -102,6 +102,6 @@ private:
     
     bool m_bLinkInitialBallPositionToHammer;
     
-    ofVideoPlayer video;
+    ofVideoPlayer video, videoBandera;
 	
 };

@@ -787,6 +787,17 @@ vector <Ball *> Scenario::getBalls(){
 	return Balls;
 }
 
+//--------------------------------------------------------
+void Scenario::resetBalls(){
+	
+	for(int i = 0; i < ScenarioObjects.size(); i++){
+		if (ScenarioObjects[i]->type == SimpleObject::ShapeTypeBall){
+			Ball *pBall = (Ball*)ScenarioObjects[i];
+			pBall->reset();
+		}
+	}
+}
+
 //---------------------------------------------------------
 void Scenario::ActivateTeleport(bool activateFlag){
     for(int i = 0; i < ScenarioObjects.size(); i++){

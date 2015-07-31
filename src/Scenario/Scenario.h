@@ -108,6 +108,7 @@ public:
     void ActivateGravityObjects(bool activateFlag);
 	void ActivateMultiballObjects(bool activateFlag);
     void ActivateGravityChange(bool activateFlag);
+    void resetBalls();
 private:
 	///////////////////
 	//Ball atributes

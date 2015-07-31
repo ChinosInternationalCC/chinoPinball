@@ -36,8 +36,8 @@ void GameStatusDisplay::setup3dFont(void){
     //light.setPosition(startPositionX, startPositionY, 200);
     //material.setShininess(64);
 	fontMedium.loadFont("ARCADE.TTF", 30);
-    GOstartPositionX = 0;
-    GOstartPositionY = -ofGetHeight()*0.4;
+    GOstartPositionX = -680/*0*/;
+    GOstartPositionY = 300 /*-ofGetHeight()*0.4*/;
     
 }
 
@@ -150,7 +150,7 @@ void GameStatusDisplay::draw(void){
         draw3dFont();
     else
         draw2dFont();
-	
+
 	if (displayGameOver) {
         //game over
 		if ((ofGetElapsedTimeMillis() - SplashScreenTimer) < SplashScreenDuration){
@@ -185,7 +185,7 @@ void GameStatusDisplay::draw(void){
 				ofSetColor(5, 200, 220);
 				string GOstr = "NEW GAME";
 				fontMedium.drawString(GOstr, GOstartPositionX, GOstartPositionY);
-                GOstr = "PRESS A BUTTON";
+                GOstr = "LAUNCH BALL";
 				fontMedium.drawString(GOstr, GOstartPositionX, GOstartPositionY + 50);
                 
                 

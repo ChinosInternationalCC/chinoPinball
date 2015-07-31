@@ -52,6 +52,11 @@ void PinballChinoManager::setup(){
     
     video.loadMovie("fachadaFiMGVideo2.mov");
 	video.setLoopState(OF_LOOP_NONE);
+    
+    videoBandera.loadMovie("banderaCatalana.mov");
+	//videoBandera.setLoopState(OF_LOOP_NORMAL);
+    videoBandera.setLoopState(OF_LOOP_NONE);
+    //videoBandera.play();
    
 
     // setup bullet world
@@ -109,9 +114,15 @@ void PinballChinoManager::setup(){
 void PinballChinoManager::update(){
 	
     video.update();
+    videoBandera.update();
     if (video.getIsMovieDone()){
         video.stop();
         video.setFrame(0);
+    }
+    
+    if (videoBandera.getIsMovieDone()){
+        videoBandera.stop();
+        videoBandera.setFrame(0);
     }
     
 	// Shadows
@@ -208,6 +219,7 @@ void PinballChinoManager::draw(){
     
 	ofSetColor(ofColor::white);
      video.draw(ofGetWidth()-400, 0);
+    videoBandera.draw(ofGetWidth()-400, 300);
 }
 
 void PinballChinoManager::ToggleDrawDebug(void){
@@ -583,7 +595,7 @@ void PinballChinoManager::listenerOnUpdateMission(eventMission & args){
             //myScenario.ActivateTeleport(true);
             //myScenario.ActivateGravityObjects(true);
 			myScenario.ActivateMultiballObjects(true);
-            
+            videoBandera.play();
             break;
         case eventMission::MISSION_EVENT_END_MISSION:
             
