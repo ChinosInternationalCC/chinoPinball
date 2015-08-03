@@ -31,7 +31,7 @@ void Ball::setup(ofxBulletWorldRigid &myWorld,
     genericSetup(myWorld, *Attrib);
     
     //specific
-    SoundManager::getInstance()->PlaySound(1);
+    //SoundManager::getInstance()->PlaySound(1);
     shadow.set(getBallAttr()->radius, 0.1);
 	shadow.setResolution(20, 1);
 	m_enBallState = BALL_STATE_INIT;
@@ -129,7 +129,7 @@ void Ball::reset() {
     body.create(world->world, this->getPosition(), getBallAttr()->mass, getBallAttr()->radius);
     body.add();
 	//body.setData(this);
-    SoundManager::getInstance()->PlaySound(1);
+    //SoundManager::getInstance()->PlaySound(1);
 	m_enBallState = BALL_STATE_INIT;
 }
 

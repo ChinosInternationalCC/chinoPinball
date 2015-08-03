@@ -58,8 +58,14 @@ void Teleporter::onCollisionSpecific(SimpleObject* Obj){
                 pMyBall->body.getRigidBody()->setActivationState(DISABLE_SIMULATION);
                 
                 //create a newq ball;
-            
-                m_poScenario->addOneBallMore();
+                
+                if (m_iBallStuckCount > 2){
+                    //release all the balls
+                    m_poScenario->resetBalls();
+                }
+                else{
+                    m_poScenario->addOneBallMore();
+                }
                 
                 //float aux_dimZ1 = (float)m_poDestinationObject->getSimpleBody()->getRigidBody()->getCollisionShape()->getMargin();//getLocalScaling
                 //btVector3 aux_dimZ2 = (btVector3)m_poDestinationObject->getSimpleBody()->getRigidBody()->getCollisionShape()->getLocalScaling();//
@@ -107,6 +113,10 @@ void Teleporter::SetMultiBallStickyFlag(bool bFlag){
     bSticky = bFlag;
     if (bFlag){
         m_poDestinationObject = this;
+        collisionPoints = 0;
+    }
+    else{
+        collisionPoints = 5;
     }
 }
 
@@ -133,6 +143,7 @@ void Teleporter::SetDetinationObjectId(int id){
 //--------------------------------------------------------------
 void Teleporter::ActivateTeleporter(bool activeFlag){
     m_bTeleporterActive = activeFlag;
+    
 }
 
 //--------------------------------------------------------------
